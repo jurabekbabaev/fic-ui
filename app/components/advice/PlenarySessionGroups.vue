@@ -255,7 +255,7 @@ function readMore(item: IType) {
   <div :id="sectionId">
     <client-only>
       <h1 class="lg:text-[54px] text-[32px] uppercase font-black mb-12 mt-24">
-        {{ t("межведомственные рабочие группы") }}
+        {{ t("межведомственные рабочие группы (МРГ)") }}
       </h1>
       <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 mt-8">
         <div
