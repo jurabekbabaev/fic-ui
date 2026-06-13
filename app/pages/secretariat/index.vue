@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import SecretariatProfileBlock from "~/components/secretariat/SecretariatProfileBlock.vue";
+import PageHero from "~/components/shared/PageHero.vue";
 import Aziz from "@/assets/images/experts/aziz.png";
 import Avaz from "@/assets/images/experts/Avazbek.jpg";
 import Madina from "@/assets/images/experts/Madina1.png";
@@ -759,11 +760,8 @@ const members = computed(() => [
 <template>
   <div class="secretariat-page">
     <client-only>
+      <PageHero title="Секретариат" />
       <section class="container secretariat-page__container">
-        <h1 class="secretariat-page__title">
-          {{ t("Секретариат") }}
-        </h1>
-
         <div class="secretariat-page__intro w-full">
           <p class="text-base lg:text-lg text-[#505A63] font-normal leading-[170%] pb-5">
             {{ t("Секретариат Совета иностранных инвесторов — постоянно действующий операционный орган, обеспечивающий преемственность и системность работы Совета между сессиями. Секретариат организует пленарные и промежуточные заседания, координирует деятельность шестнадцати рабочих групп, ведёт ежедневный диалог с членами Совета и иностранными инвесторами, собирает и анализирует инициативы по улучшению инвестиционного климата и обеспечивает их продвижение в профильную государственную политику.") }}

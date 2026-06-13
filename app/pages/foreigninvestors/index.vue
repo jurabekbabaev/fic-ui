@@ -3,21 +3,10 @@
     <client-only>
       <!-- <ForeignInvestors /> -->
 
+      <PageHero title="Руководство" />
       <div class="container">
         <div>
-          <div class="text-center mb-[28px] fade-in-down fade-in-down--soft mt-[56px]">
-            <h2 class="lg:text-[64px] text-[32px] font-bold mb-4 text-gray-900 uppercase">
-              {{ t("Руководство") }}
-            </h2>
-            <div class="w-full flex justify-center">
-              <div class="text-base lg:text-xl lg:w-1/2 text-gray-600 mb-5">
-                {{
-                  t(
-                    "barqaror rivojlanish va iqtisodiy islohotlarni qo‘llab-quvvatlash maqsadidagi tashkilotlarni birlashtiradi."
-                  )
-                }}
-              </div>
-            </div>
+          <div class="text-center mb-[28px] fade-in-down fade-in-down--soft">
             <h6 class="lg:text-[64px] text-[32px] font-bold mb-4 text-gray-900 uppercase">
               {{ t("Руководство Совета") }}
             </h6>
@@ -78,6 +67,7 @@
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 import Investors from "./investors.vue";
+import PageHero from "~/components/shared/PageHero.vue";
 import Management1 from "@/assets/images/management/image11.png";
 import Management2 from "@/assets/images/management/image12.png";
 import EBank from "@/assets/images/brands/e-bank.png";
