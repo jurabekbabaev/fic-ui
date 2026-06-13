@@ -1,5 +1,7 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
+import PageHero from '~/components/shared/PageHero.vue'
+import WLocaleLink from '~/components/shared/WLocaleLink.vue'
 const { t } = useI18n()
 
 const mainParagraphs = [
@@ -26,15 +28,13 @@ const structure = [
 <template>
   <div>
     <client-only>
-      <div class="container">
-        <div class="bg-[#F7F7F7] rounded-[32px] border-[#0000001A] mb-[50px] mt-[50px] p-10 max-w-[900px] w-full mx-auto">
-<h1
-          class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mb-8"
-        >
-          {{ t('Ассоциация') }}
-        </h1>
+      <PageHero title="Ассоциация" />
 
-        <div class="lg:max-w-[1100px] w-full mx-auto">
+      <div class="container">
+        <div class="lg:max-w-[900px] w-full">
+          <h1 class="lg:text-[44px] text-[28px] uppercase font-black text-[#191C1F] mb-6">
+            {{ t('О Совете') }}
+          </h1>
           <p
             v-for="(paragraph, i) in mainParagraphs"
             :key="i"
@@ -43,14 +43,13 @@ const structure = [
             {{ t(paragraph) }}
           </p>
 
-          <a href="#" class="btn btn-secondary mt-2">
+          <WLocaleLink to="/reports" class="btn btn-secondary mt-2">
             {{ t('Устав Ассоциации') }}
-          </a>
-        </div>
+          </WLocaleLink>
         </div>
 
         <div
-          class="grid lg:grid-cols-2 sm:grid-cols-1 gap-5 lg:max-w-[900px] w-full mx-auto mt-12 mb-[80px]"
+          class="grid lg:grid-cols-2 sm:grid-cols-1 gap-5 mt-12 mb-[80px]"
         >
           <div class="bg-[#F7F7F7] rounded-2xl p-6 lg:p-7">
             <h2 class="text-lg lg:text-xl uppercase font-black text-[#191C1F]">
