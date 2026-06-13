@@ -5,8 +5,6 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 // @ts-ignore
 import { useExpertFeedbacksStore } from "@/stores/expertFeedbacks";
-// @ts-ignore
-import PageHero from "~/components/shared/PageHero5.vue";
 
 const store = useExpertFeedbacksStore();
 const slides = computed(() => store.list || []);
@@ -239,7 +237,6 @@ onUnmounted(() => {
 
 <template>
   <client-only>
-    <PageHero title="Блиц-интервью" />
     <div class="mt-6">
       <div class="mb-6">
         <h1 class="text-[32px] lg:text-[72px] font-extrabold uppercase text-[#191C1F] text-center">

@@ -188,7 +188,7 @@ function goBack() {
           <h1
             class="text-left lg:text-[64px] text-[32px] text-[#191C1F] uppercase font-extrabold mb-12 mt-[100px]"
           >
-            {{ t("со стороны СИИ") }}
+            {{ t("со стороны совета") }}
           </h1>
           <div class="grid lg:grid-cols-4 sm:grid-cols-1 gap-5">
             <div
