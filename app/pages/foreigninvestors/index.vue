@@ -6,11 +6,11 @@
       <div class="container">
         <div>
           <div class="text-center mb-[28px] fade-in-down fade-in-down--soft mt-[56px]">
-            <h2 class="lg:text-[64px] text-[32px] font-bold mb-4 text-gray-900">
-              {{ t("Совет Иностранных Инвесторов") }}
+            <h2 class="lg:text-[64px] text-[32px] font-bold mb-4 text-gray-900 uppercase">
+              {{ t("Руководство") }}
             </h2>
             <div class="w-full flex justify-center">
-              <div class="text-base lg:text-xl lg:w-1/2 text-gray-600">
+              <div class="text-base lg:text-xl lg:w-1/2 text-gray-600 mb-5">
                 {{
                   t(
                     "barqaror rivojlanish va iqtisodiy islohotlarni qo‘llab-quvvatlash maqsadidagi tashkilotlarni birlashtiradi."
@@ -18,6 +18,9 @@
                 }}
               </div>
             </div>
+            <h6 class="lg:text-[64px] text-[32px] font-bold mb-4 text-gray-900 uppercase">
+              {{ t("Руководство Совета") }}
+            </h6>
           </div>
 
           <div class="leaders-grid">
@@ -90,7 +93,7 @@ const leaders = ref([
     logoClass: "investor-profile-logo-image--sm",
     image: Management2,
     fullname: t("Шавкат Миромонович Мирзиёев"),
-    position: t("Председатель совета"),
+    position: t("Председатель Совета — Президент Республики Узбекистан"),
   },
   {
     id: 2,
@@ -99,7 +102,7 @@ const leaders = ref([
     logoClass: "investor-profile-logo-image--ebrd",
     image: Management1,
     fullname: t("Одиль Рено-Бассо"),
-    position: t("Сопредседатель совета"),
+    position: t("Сопредседатель Совета — Президент ЕБРР"),
   },
 ]);
 </script>

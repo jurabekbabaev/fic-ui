@@ -73,7 +73,7 @@
         </div>
       </div> -->
       <!-- Loading skeleton -->
-      <div v-if="isLoading" class="grid lg:grid-cols-3 sm:grid-cols-1 gap-4">
+      <div v-if="isLoading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="mb-4" v-for="n in 6" :key="n">
           <div class="card-item">
             <div
@@ -90,7 +90,7 @@
       </div>
 
       <!-- Actual content -->
-      <div v-else class="grid lg:grid-cols-3 sm:grid-cols-1 gap-4">
+      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div
           class="mb-4 rounded-bl-xl rounded-br-xl"
           v-for="(item, i) in data"

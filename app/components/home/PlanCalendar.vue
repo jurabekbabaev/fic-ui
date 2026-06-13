@@ -7,98 +7,48 @@
         >
           {{ t("календарный план") }}
         </h1>
-      </div>
 
-      <!-- Desktop: Infinite auto-scroll marquee with drag support -->
-      <div
-        v-if="!isMobile"
-        ref="marqueeContainer"
-        class="overflow-hidden mt-8 cursor-grab select-none"
-        @mousedown="onMouseDown"
-        @mouseleave="onMouseUp"
-        @mouseup="onMouseUp"
-        @mousemove="onMouseMove"
-      >
-        <div ref="track" class="calendar-track">
-          <!-- Original set -->
-          <div
-            v-for="item in data"
-            :key="'a-' + item.id"
-            class="calendar-card bg-[#F7F7F7] p-4 rounded-xl flex-shrink-0 lg:min-h-[200px] min-h-[148px]"
-          >
-            <span
-              class="text-[#191C1F] bg-[#191C1F1A] px-4 py-1.5 rounded-[4px] text-base font-normal inline-block leading-snug"
+        <section class="evFlow">
+          <!-- coverflow stage -->
+          <div class="evFlow__stage">
+            <article
+              v-for="(item, index) in data"
+              :key="item.id"
+              class="evFlow__card"
+              :class="{ 'is-active': index === active }"
+              :style="cardStyle(index)"
+              @click="select(index)"
             >
-              {{ item.date }}
-            </span>
-            <div class="font-medium lg:text-2xl text-[#191C1F] text-xl mt-4">
-              {{ item.content }}
-            </div>
-          </div>
-          <!-- Duplicate set for seamless loop (aria-hidden for a11y) -->
-          <div
-            aria-hidden="true"
-            v-for="item in data"
-            :key="'b-' + item.id"
-            class="calendar-card bg-[#F7F7F7] p-4 rounded-xl flex-shrink-0 lg:min-h-[200px] min-h-[148px]"
-          >
-            <span
-              class="text-[#191C1F] bg-[#191C1F1A] px-4 py-1.5 rounded-[4px] text-base font-normal inline-block leading-snug"
-            >
-              {{ item.date }}
-            </span>
-            <div class="font-medium lg:text-2xl text-[#191C1F] text-xl mt-4">
-              {{ item.content }}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div v-else class="container mt-8">
-          <div class="relative">
-            <div
-              ref="slider"
-              class="carousel flex gap-4 overflow-x-auto snap-x snap-mandatory touch-pan-x scrollbar-hidden py-2"
-              @scroll="onScroll"
-            >
-              <div
-                v-for="(item, index) in data"
-                :key="item.id"
-                class="slide snap-start flex-shrink-0 w-[90%]"
-              >
-                <div
-                  class="bg-[#F7F7F7] p-4 rounded-xl min-h-[148px]"
-                >
-                  <span
-                    class="text-[#191C1F] bg-[#191C1F1A] px-4 py-1.5 rounded-[4px] text-base font-normal inline-block leading-snug"
-                  >
-                    {{ item.date }}
-                  </span>
-                  <div class="font-medium text-xl text-[#191C1F] mt-4">
-                    {{ item.content }}
-                  </div>
-                </div>
+              <div class="evFlow__cardBody">
+                <span class="evFlow__accent" aria-hidden="true"></span>
+                <span class="evFlow__date">{{ item.date }}</span>
+                <p class="evFlow__event">{{ item.content }}</p>
               </div>
-            </div>
-
-            <!-- Dots -->
-            <div class="dots mt-3 flex justify-center gap-2">
-              <button
-                v-for="(item, i) in data"
-                :key="i"
-                @click="goTo(i)"
-                :class="[
-                  'dot w-3 h-3 rounded-full',
-                  currentIndex === i ? 'active' : '',
-                ]"
-                :aria-label="'Go to slide ' + (i + 1)"
-              />
-            </div>
+            </article>
           </div>
-      </div>
 
-      <div class="container">
-        <div class="text-center mt-[50px]">
+          <!-- nav buttons -->
+          <div class="evFlow__nav">
+            <button
+              type="button"
+              class="evFlow__navBtn"
+              @click="prev"
+              aria-label="prev"
+            >
+              <i class="icon-move-right" style="transform: rotate(180deg)"></i>
+            </button>
+            <button
+              type="button"
+              class="evFlow__navBtn"
+              @click="next"
+              aria-label="next"
+            >
+              <i class="icon-move-right"></i>
+            </button>
+          </div>
+        </section>
+
+        <div class="text-center mt-[40px]">
           <WLocaleLink to="/calendarplan" class="btn btn-primary">
             {{ t("Все мероприятия") }}
           </WLocaleLink>
@@ -109,10 +59,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted, nextTick } from "vue";
+import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 import WLocaleLink from "~/components/shared/WLocaleLink.vue";
-import { DESKTOP_MARQUEE_SPEED } from "./useDesktopMarquee";
 const { t } = useI18n();
 
 interface IType {
@@ -149,162 +98,170 @@ const data = ref<IType[]>([
   },
 ]);
 
-// ─── Responsive ─────────────────────────────────────────────────────────────
-const isMobile = ref(false);
-function handleResize() {
-  isMobile.value =
-    typeof window !== "undefined" ? window.innerWidth <= 768 : false;
-}
+const active = ref(2);
 
-// ─── Desktop marquee (RAF-based) ─────────────────────────────────────────────
-const marqueeContainer = ref<HTMLElement | null>(null);
-const track = ref<HTMLElement | null>(null);
-const position = ref(0);      // current translateX in px (always in [-halfWidth, 0])
-const halfWidth = ref(0);     // width of one full set of cards
-const rafId = ref<number | null>(null);
+const select = (i: number) => {
+  active.value = i;
+};
+const prev = () => {
+  active.value = (active.value - 1 + data.value.length) % data.value.length;
+};
+const next = () => {
+  active.value = (active.value + 1) % data.value.length;
+};
 
-// Drag state
-const isDragging = ref(false);
-const dragStartX = ref(0);
-const dragStartPos = ref(0);
-
-function measureHalfWidth() {
-  if (!track.value) return;
-  // Track contains 2 identical sets → half of scrollWidth = one set width
-  halfWidth.value = track.value.scrollWidth / 2;
-}
-
-/** Normalise any position into the seamless range [-halfWidth, 0) */
-function normalise(pos: number): number {
-  const h = halfWidth.value;
-  if (h <= 0) return 0;
-  let n = pos % h; // result in (-h, h)
-  if (n > 0) n -= h; // shift positive values into (-h, 0]
-  return n;
-}
-
-function applyTransform(pos: number) {
-  if (track.value) {
-    track.value.style.transform = `translateX(${pos}px)`;
-  }
-}
-
-function tick() {
-  if (!isDragging.value) {
-    position.value = normalise(position.value - DESKTOP_MARQUEE_SPEED);
-    applyTransform(position.value);
-  }
-  rafId.value = requestAnimationFrame(tick);
-}
-
-// ─── Mouse drag handlers ─────────────────────────────────────────────────────
-function onMouseDown(e: MouseEvent) {
-  isDragging.value = true;
-  dragStartX.value = e.clientX;
-  dragStartPos.value = position.value;
-  if (marqueeContainer.value) marqueeContainer.value.style.cursor = "grabbing";
-}
-
-function onMouseMove(e: MouseEvent) {
-  if (!isDragging.value) return;
-  const delta = e.clientX - dragStartX.value;
-  // Allow free dragging in both directions; normalise keeps it seamless
-  position.value = normalise(dragStartPos.value + delta);
-  applyTransform(position.value);
-}
-
-function onMouseUp() {
-  if (!isDragging.value) return;
-  isDragging.value = false;
-  if (marqueeContainer.value) marqueeContainer.value.style.cursor = "grab";
-}
-
-// ─── Mobile carousel ─────────────────────────────────────────────────────────
-const slider = ref<HTMLElement | null>(null);
-const currentIndex = ref(0);
-const slideGap = 16;
-
-function onScroll() {
-  if (!slider.value) return;
-  const slides = slider.value.querySelectorAll<HTMLElement>(".slide");
-  if (!slides.length) return;
-  const firstW = slides[0].getBoundingClientRect().width;
-  const step = firstW + slideGap;
-  const idx = Math.round(slider.value.scrollLeft / step);
-  currentIndex.value = Math.min(Math.max(idx, 0), slides.length - 1);
-}
-
-function goTo(index: number) {
-  if (!slider.value) return;
-  const slides = slider.value.querySelectorAll<HTMLElement>(".slide");
-  if (!slides.length) return;
-  const firstW = slides[0].getBoundingClientRect().width;
-  const step = firstW + slideGap;
-  slider.value.scrollTo({ left: index * step, behavior: "smooth" });
-  currentIndex.value = index;
-}
-
-// ─── Lifecycle ───────────────────────────────────────────────────────────────
-onMounted(() => {
-  handleResize();
-  window.addEventListener("resize", handleResize);
-
-  nextTick(() => {
-    onScroll();
-    if (!isMobile.value) {
-      measureHalfWidth();
-      rafId.value = requestAnimationFrame(tick);
-    }
-  });
-});
-
-onUnmounted(() => {
-  window.removeEventListener("resize", handleResize);
-  if (rafId.value !== null) cancelAnimationFrame(rafId.value);
-});
+const cardStyle = (i: number) => {
+  const offset = i - active.value;
+  const abs = Math.abs(offset);
+  const hidden = abs > 2;
+  const scale = abs === 0 ? 1 : Math.max(0.78, 1 - abs * 0.1);
+  return {
+    transform: `translateX(${offset * 72}%) translateZ(${-abs * 140}px) rotateY(${offset * -5}deg) scale(${scale})`,
+    zIndex: String(100 - abs),
+    opacity: hidden ? "0" : "1",
+    pointerEvents: hidden ? "none" : "auto",
+  };
+};
 </script>
 
 <style scoped>
-/* ── Desktop marquee track ── */
-.calendar-track {
+.evFlow {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* ---- coverflow stage ---- */
+.evFlow__stage {
+  position: relative;
+  height: 380px;
+  margin-bottom: 36px;
+  perspective: 1800px;
+  transform-style: preserve-3d;
+}
+
+.evFlow__card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 360px;
+  margin: -180px 0 0 -160px;
   display: flex;
-  gap: 12px;
-  will-change: transform;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 36px 30px;
+  text-align: left;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid rgba(25, 28, 31, 0.08);
+  color: #191c1f;
+  box-shadow: 0 30px 70px -34px rgba(25, 28, 31, 0.35);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.55s ease,
+    box-shadow 0.55s ease,
+    filter 0.55s ease;
 }
 
-.calendar-card {
-  width: 340px;
+.evFlow__card.is-active {
+  border-color: rgba(25, 28, 31, 0.12);
+  box-shadow: 0 45px 90px -30px rgba(25, 28, 31, 0.4);
+  cursor: default;
 }
 
-/* ── Mobile: hide scrollbar ── */
-.scrollbar-hidden::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hidden {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.evFlow__card:not(.is-active) {
+  filter: brightness(0.96) saturate(0.95);
 }
 
-/* ── dots ── */
-.dots .dot {
-  background: #e2e8f0;
-  border: none;
-  display: inline-block;
+.evFlow__cardBody {
+  display: flex;
+  flex-direction: column;
 }
-.dots .dot.active {
+
+.evFlow__accent {
+  width: 36px;
+  height: 4px;
+  margin-bottom: 22px;
+  border-radius: 999px;
+  background: rgba(25, 28, 31, 0.16);
+  transition:
+    background-color 0.4s ease,
+    width 0.4s ease;
+}
+
+.evFlow__card.is-active .evFlow__accent {
+  width: 52px;
   background: #191c1f;
 }
 
-/* ── ensure slide content fills ── */
-.slide > div {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.evFlow__date {
+  margin-bottom: 14px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #191c1f;
 }
 
-.carousel {
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
+.evFlow__event {
+  margin: 0;
+  color: #505a63;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* ---- nav buttons ---- */
+.evFlow__nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.evFlow__navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(25, 28, 31, 0.2);
+  background: #fff;
+  color: #191c1f;
+  font-size: 18px;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.evFlow__navBtn:hover {
+  background: #191c1f;
+  border-color: #191c1f;
+  color: #fff;
+}
+
+.evFlow__navBtn:active {
+  transform: scale(0.94);
+}
+
+.evFlow__navBtn i {
+  display: inline-flex;
+}
+
+@media (max-width: 768px) {
+  .evFlow__stage {
+    height: 340px;
+  }
+
+  .evFlow__card {
+    width: 260px;
+    height: 320px;
+    margin: -160px 0 0 -130px;
+    padding: 24px;
+  }
 }
 </style>

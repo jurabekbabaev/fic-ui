@@ -4,14 +4,14 @@
       <div class="mainContainer lg:text-center sm:text-left">
         <div class="w-full flex justify-center">
           <h2
-            class="title-64 lg:text-[64px] text-[32px] w-[729px] font-extrabold mb-5"
+            class="title-64 lg:text-[64px] text-[32px] w-full max-w-[729px] font-extrabold mb-5"
             style="color: rgba(0, 0, 0, 1)"
           >
             {{ $t("Пленарные сессии в объективе") }}
           </h2>
         </div>
         <div class="w-full flex justify-center">
-          <p class="lg:text-xl text-base font-normal leading-[100%] w-[596px]">
+          <p class="lg:text-xl text-base font-normal leading-[140%] lg:leading-[100%] w-full max-w-[596px]">
             {{ $t("Диалог государства и инвесторов, где обсуждаются реформы, принимаются ключевые решения и создаётся инвестиционное будущее Узбекистана") }}
           </p>
         </div>

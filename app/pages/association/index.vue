@@ -33,7 +33,7 @@ const structure = [
       <div class="container">
         <div class="lg:max-w-[900px] w-full">
           <h1 class="lg:text-[44px] text-[28px] uppercase font-black text-[#191C1F] mb-6">
-            {{ t('О Совете') }}
+            {{ t('Правовая основа и институциональный статус') }}
           </h1>
           <p
             v-for="(paragraph, i) in mainParagraphs"
@@ -44,12 +44,12 @@ const structure = [
           </p>
 
           <WLocaleLink to="/reports" class="btn btn-secondary mt-2">
-            {{ t('Устав Ассоциации') }}
+            {{ t('Документы') }}
           </WLocaleLink>
         </div>
 
         <div
-          class="grid lg:grid-cols-2 sm:grid-cols-1 gap-5 mt-12 mb-[80px]"
+          class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-12 mb-[80px]"
         >
           <div class="bg-[#F7F7F7] rounded-2xl p-6 lg:p-7">
             <h2 class="text-lg lg:text-xl uppercase font-black text-[#191C1F]">

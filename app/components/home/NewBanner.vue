@@ -54,7 +54,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         @click.stop
-                        class="block relative z-20 lg:-top-[60px] -top-[72px] lg:w-[78%] text-white transition-opacity hover:opacity-85 cursor-pointer"
+                        class="block relative z-20 top-0 lg:-top-[60px] lg:w-[78%] text-white transition-opacity hover:opacity-85 cursor-pointer"
                       >
                         <h1
                           class="font-black lg:text-[44px] text-[24px] uppercase mb-1 leading-[1.1]"
@@ -81,7 +81,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         @click.stop
-                        class="block relative z-20 lg:-top-[98px] -top-[105px] text-white transition-opacity hover:opacity-85 cursor-pointer"
+                        class="block relative z-20 top-0 lg:-top-[98px] text-white transition-opacity hover:opacity-85 cursor-pointer"
                       >
                         <h1
                           class="font-black lg:text-[44px] text-[24px] uppercase mb-3 leading-[1.1]"
@@ -265,7 +265,9 @@ const leaders = computed(() => [
 ]);
 
 const introTrackStyle = computed(() => ({
-  height: isMobile.value ? "210svh" : "215vh",
+  // On mobile the scroll-jacking is disabled and the hero + leaders render as
+  // normal stacked sections, so the track must size to its content.
+  height: isMobile.value ? "auto" : "215vh",
 }));
 
 const heroSwitchProgress = computed(() =>
@@ -686,6 +688,7 @@ function transitionToStage(targetStage) {
 }
 
 function handleWheel(event) {
+  if (isMobile.value) return;
   if (!isWithinIntroFlow()) return;
 
   if (isStageTransitionLocked.value) {
@@ -710,11 +713,13 @@ function handleWheel(event) {
 }
 
 function handleTouchStart(event) {
+  if (isMobile.value) return;
   touchStartY.value = event.touches[0]?.clientY ?? null;
   hasTouchGestureTriggeredStage.value = false;
 }
 
 function handleTouchMove(event) {
+  if (isMobile.value) return;
   if (!isWithinIntroFlow()) return;
 
   if (isStageTransitionLocked.value) {
@@ -1066,8 +1071,54 @@ onUnmounted(() => {
 }
 
 @media (max-width: 768px) {
+  /* Mobile: scroll-jacking is disabled — render hero + leaders as plain
+     stacked sections so the leaders reveal no longer overflows the sticky
+     and bleeds into the following sections. */
+  .introHeroTrack {
+    height: auto !important;
+  }
+
   .introHeroSticky {
+    position: static;
+    height: auto;
+    overflow: visible;
+  }
+
+  .introHeroBanner,
+  :deep(#newmainBanner) {
     height: 100dvh;
+    min-height: 560px;
+    margin-top: 0;
+    overflow: hidden;
+  }
+
+  .introHeroScene {
+    height: 100dvh;
+    min-height: 560px;
+  }
+
+  /* stronger top→bottom scrim so the white headline stays readable over the
+     light photo on phones */
+  .introHeroPanel__bg::after {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 23, 18, 0.6) 0%,
+      rgba(15, 23, 18, 0.28) 34%,
+      rgba(15, 23, 18, 0.18) 60%,
+      rgba(15, 23, 18, 0.55) 100%
+    );
+  }
+
+  .introHeroOverlay {
+    position: static;
+    z-index: 1;
+    background: #fff;
+  }
+
+  .introHeroOverlay :deep(#newfInvestorsSection) {
+    position: static;
+    transform: none !important;
+    opacity: 1 !important;
   }
 
   .introHeroPanel :deep(.mainBannerTxt) {

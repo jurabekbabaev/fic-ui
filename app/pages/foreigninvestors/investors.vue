@@ -338,7 +338,13 @@ const investorCards = computed<InvestorCard[]>(() => [
 }
 @media (min-width: 640px) {
   .investor-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .investor-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
