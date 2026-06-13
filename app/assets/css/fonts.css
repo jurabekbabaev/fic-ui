@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'NT Somic';
+    src: url('../fonts/NTSomic-Regular.eot');
+    src: url('../fonts/NTSomic-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/NTSomic-Regular.woff2') format('woff2'),
+        url('../fonts/NTSomic-Regular.woff') format('woff'),
+        url('../fonts/NTSomic-Regular.ttf') format('truetype'),
+        url('../fonts/NTSomic-Regular.svg#NTSomic-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NT Somic';
+    src: url('../fonts/NTSomic-Medium.eot');
+    src: url('../fonts/NTSomic-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/NTSomic-Medium.woff2') format('woff2'),
+        url('../fonts/NTSomic-Medium.woff') format('woff'),
+        url('../fonts/NTSomic-Medium.ttf') format('truetype'),
+        url('../fonts/NTSomic-Medium.svg#NTSomic-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NT Somic';
+    src: url('../fonts/NTSomic-Bold.eot');
+    src: url('../fonts/NTSomic-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/NTSomic-Bold.woff2') format('woff2'),
+        url('../fonts/NTSomic-Bold.woff') format('woff'),
+        url('../fonts/NTSomic-Bold.ttf') format('truetype'),
+        url('../fonts/NTSomic-Bold.svg#NTSomic-Bold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aeonik Pro';
+    src: url('../fonts/Aeonik-Pro-Black.eot');
+    src: url('../fonts/Aeonik-Pro-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Aeonik-Pro-Black.woff2') format('woff2'),
+        url('../fonts/Aeonik-Pro-Black.woff') format('woff'),
+        url('../fonts/Aeonik-Pro-Black.ttf') format('truetype'),
+        url('../fonts/Aeonik-Pro-Black.svg#Aeonik-Pro-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@font-face {
+    font-family: 'Onest';
+    src: url('../fonts/Onest-Regular.ttf');
+    src: url('../fonts/Onest-Regular.ttf') format('embedded-opentype'),
+        url('../fonts/Onest-Regular.ttf') format('woff2'),
+        url('../fonts/Onest-Regular.ttf') format('woff'),
+        url('../fonts/Onest-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('../fonts/NTSomic-Medium.eot');
+    src: url('../fonts/Onest-Medium.ttf') format('embedded-opentype'),
+        url('../fonts/Onest-Medium.ttf') format('woff2'),
+        url('../fonts/Onest-Medium.ttf') format('woff'),
+        url('../fonts/Onest-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('../fonts/Onest-SemiBold.ttf');
+    src: url('../fonts/Onest-SemiBold.ttf') format('embedded-opentype'),
+        url('../fonts/Onest-SemiBold.ttf') format('woff2'),
+        url('../fonts/Onest-SemiBold.ttf') format('woff'),
+        url('../fonts/Onest-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('../fonts/Onest-Bold.ttf');
+    src: url('../fonts/Onest-Bold.ttf') format('embedded-opentype'),
+        url('../fonts/Onest-Bold.ttf') format('woff2'),
+        url('../fonts/Onest-Bold.ttf') format('woff'),
+        url('../fonts/Onest-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('../fonts/Onest-Black.ttf');
+    src: url('../fonts/Onest-Black.ttf') format('embedded-opentype'),
+        url('../fonts/Onest-Black.ttf') format('woff2'),
+        url('../fonts/Onest-Black.ttf') format('woff'),
+        url('../fonts/Onest-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}

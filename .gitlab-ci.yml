@@ -1,0 +1,74 @@
+stages:
+  - build
+  - deploy
+
+Dev_Build:
+  stage: build
+  environment: development
+  variables:
+    NODE_OPTIONS: --max-old-space-size=4096
+  script:
+    - pnpm install
+    - pnpm run build
+  artifacts:
+    name: "fic-dev"
+    paths:
+      - .output/public
+  tags: [build]
+
+# Prod_Build:
+#   stage: build
+#   only:
+#     - "main"
+#   # when: manual
+#   environment: production
+#   variables:
+#     NODE_OPTIONS: --max-old-space-size=4096
+#   script:
+#     - npm cache clean --force
+#     - npm install
+#     - npm run build
+#   artifacts:
+#     name: "jamgarma-prod"
+#     paths:
+#       - dist/
+
+#   tags: [build]
+
+Dev Deploy:
+  stage: deploy
+  needs: [Dev_Build]
+  when: manual
+  environment: Production
+  before_script:
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$DEV_SSH_KEY")
+    - mkdir -p ~/.ssh
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh-keyscan -H $DEPLOY_SERVER >> ~/.ssh/known_hosts
+  script:
+    - rsync -arv --cvs-exclude --delete $TARGET_DIR_ON_LOCAL $DEV_SSH_USER@$DEPLOY_SERVER:$DEV_TARGET_DIR_ON_HOST
+  tags: [deploy]
+
+# Prod Deploy:
+#   stage: deploy
+#   needs: [Prod_Build]
+#   when: manual
+#   environment: Production
+#   before_script:
+#     - eval $(ssh-agent -s)
+#     - ssh-add <(echo "$PROD_SSH_KEY")
+#     - mkdir -p ~/.ssh
+#     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+#     - ssh-keyscan -H $DEPLOY_SERVER_PROD >> ~/.ssh/known_hosts
+#   script:
+#     - rsync -arv --cvs-exclude --delete $TARGET_DIR_ON_LOCAL $PROD_SSH_USER@$DEPLOY_SERVER_PROD:$PROD_TARGET_DIR_ON_HOST
+#   tags: [deploy]
+
+
+# DEV_SSH_KEY
+# DEPLOY_SERVER
+# DEV_SSH_USER
+# DEV_TARGET_DIR_ON_HOST
+
+# TARGET_DIR_ON_LOCAL

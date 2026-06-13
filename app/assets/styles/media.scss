@@ -1,0 +1,119 @@
+@media screen and (max-height: 640px) {
+  .fInvestorsSectionWrap{
+    #fInvestorsSection{
+      .fInvestors{
+        max-width: 1340px;
+        margin: 0 auto;
+        height: auto;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1400px), screen and (max-height: 640px) {
+  #mainBanner{
+    background-size: cover;
+    height: 100vh;
+  }
+  .fInvestorsSectionWrap{
+    position: relative;
+  }
+  .fInvestorsSectionWrap{
+    #fInvestorsSection{
+      padding: 100px 15px 0;
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      display: block;
+      .fInvestors{
+        .fInvestorsCenterLi{
+          flex: none;
+        }
+        ul{
+          justify-content: normal!important;
+        }
+      }
+      .d-hide{
+        display: block;
+      }
+      .fInvestorItemImg{
+        width: 300px;
+        height: 450px;
+        border: none;
+        background-size: cover!important;
+      }
+    }
+  }
+
+}
+@media screen and (max-width: 1300px) {
+  .fInvestorsSectionWrap{
+    #fInvestorsSection{
+      .fInvestors{
+        margin: 0 -15px;
+        padding: 0 15px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 1100px) {
+}
+@media screen and (max-width: 1000px) {
+}
+@media screen and (max-width: 900px) {
+  .MBCol2 {
+    display: none;
+  }
+  .MBCol1{
+    flex: auto;
+    max-width: 100%;
+    margin-bottom: 70px;
+  }
+  #mainBanner{
+    height: auto;
+    .mainContainer{
+      max-width: 1390px;
+    }
+    align-items: flex-start;
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+  .bannerDeco{
+    display: block;
+  }
+  // .mainBannerTxt{
+  //   flex-direction: column;
+  // }
+  #mainBanner{
+    .text-\[4vw\]{
+      font-size: 32px;
+    }
+    .text-\[1\.5vw\],
+    .text-\[1\.6vw\]{
+      font-size: 14px;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+}
+@media screen and (max-width: 700px) {
+  #mainBanner{
+    background-image: var(--mainBannerMob)!important;
+    background-position: bottom center;
+    .newMBCol2{
+      max-width: 100%;
+      top: -95px;
+      // left: 25px;
+    }
+    .mainBannerTxt {
+      justify-items: left;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+}
+@media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 400px) {
+}
