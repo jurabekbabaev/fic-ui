@@ -801,7 +801,7 @@
   "Проект постановления Президента о резервировании земельных участков": "Yer uchastkalarini zaxiraga olish to‘g‘risidagi Prezident qarori loyihasi",
   "Проект постановления о системе финансового учёта по международным стандартам": "Xalqaro standartlar bo‘yicha moliyaviy hisob tizimi to‘g‘risidagi qaror loyihasi",
   "рабочая группа": "ishchi guruh",
-  "Девять задач Совета": "Kengashning to‘qqiz vazifasi",
+  "Девять задач Совета": "Kengash vazifalari",
   "Ключевые направления деятельности Совета": "Kengash faoliyatining asosiy yo‘nalishlari",
   "задач": "vazifa",
   "консультирование Правительства": "Hukumatga maslahat berish",
@@ -819,5 +819,17 @@
   "Стран": "Davlatlar",
   "Рабочих групп": "Ishchi guruhlar",
   "Инициатив": "Tashabbuslar",
-  "Batafsil": "Batafsil"
+  "Batafsil": "Batafsil",
+  "Председатель Совета — Президент Республики Узбекистан": "Kengash raisi — O‘zbekiston Respublikasi Prezidenti",
+  "Сопредседатель Совета — Президент ЕБРР": "Kengash hamraisi — YTTB Prezidenti",
+  "Председатель Исполкома": "Ijroiya qo‘mitasi raisi",
+  "Глава Ассоциации": "Uyushma rahbari",
+  "Член (ЕБРР)": "A’zo (TTRB)",
+  "Член (АБР)": "A’zo (OsTB)",
+  "Член (МФК)": "A’zo (XMK)",
+  "Министр инвестиций, промышленности и торговли РУз, Председатель Исполнительного комитета. Руководит инвестиционной политикой, промышленным развитием и внешней торговлей страны.": "O‘zbekiston Respublikasi investitsiyalar, sanoat va savdo vaziri, Ijroiya qo‘mitasi raisi. Mamlakatning investitsiya siyosati, sanoat rivoji va tashqi savdosiga rahbarlik qiladi.",
+  "Глава Ассоциации и Руководитель Секретариата Совета. Топ-менеджер с более чем 20-летним опытом в корпоративном управлении, управлении рисками и инвестиционной политике.": "Uyushma rahbari va Kengash Kotibiyati boshlig‘i. Korporativ boshqaruv, risklarni boshqarish va investitsiya siyosati sohalarida 20 yildan ortiq tajribaga ega top-menejer.",
+  "Директор, Глава представительства ЕБРР в Узбекистане. Более 25 лет опыта в банковской сфере; расширил инвестиции ЕБРР в энергетику, инфраструктуру и частный сектор Узбекистана.": "Direktor, TTRBning O‘zbekistondagi vakolatxonasi rahbari. Bank sohasida 25 yildan ortiq tajribaga ega; TTRBning O‘zbekiston energetikasi, infratuzilmasi va xususiy sektoriga investitsiyalarini kengaytirgan.",
+  "Страновой директор АБР в Узбекистане. Более 25 лет опыта в области развития и экономической политики.": "OsTBning O‘zbekiston bo‘yicha mamlakat direktori. Rivojlanish va iqtisodiy siyosat sohasida 25 yildan ortiq tajribaga ega.",
+  "Директор офиса МФК по Узбекистану и Туркменистану. Руководит операциями МФК по развитию частного сектора.": "XMKning O‘zbekiston va Turkmaniston bo‘yicha ofisi direktori. XMKning xususiy sektorni rivojlantirish bo‘yicha operatsiyalariga rahbarlik qiladi."
 }

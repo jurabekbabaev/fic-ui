@@ -74,7 +74,9 @@
                         >
                           {{ hero.name }}
                         </h2>
-                        <h3 class="lg:text-base text-[13px] font-normal text-white/70">
+                        <h3
+                          class="lg:text-base text-[13px] font-normal text-white/70"
+                        >
                           {{ hero.position }}
                         </h3>
                       </div>
@@ -99,13 +101,15 @@
 
                       <div class="w-10 h-[2px] bg-white/50 mb-4 lg:ml-auto" />
 
-                      <div
-                        class="introHeroIdentity introHeroIdentity--right"
-                      >
-                        <h2 class="lg:text-2xl text-[17px] font-bold mb-1 text-white">
+                      <div class="introHeroIdentity introHeroIdentity--right">
+                        <h2
+                          class="lg:text-2xl text-[17px] font-bold mb-1 text-white"
+                        >
                           {{ hero.name }}
                         </h2>
-                        <h3 class="lg:text-base text-[13px] font-normal text-white/70">
+                        <h3
+                          class="lg:text-base text-[13px] font-normal text-white/70"
+                        >
                           {{ hero.position }}
                         </h3>
                       </div>
@@ -173,7 +177,12 @@
                       {{ leader.fullname }}
                     </h3>
                     <p class="introCouncilCard__role">
-                      {{ leader.position }}
+                      <span
+                        v-for="(line, lineIdx) in leader.position.split('—')"
+                        :key="lineIdx"
+                        class="introCouncilCard__roleLine"
+                        >{{ line.trim() }}</span
+                      >
                     </p>
                   </div>
                 </article>
@@ -263,7 +272,7 @@ const leaders = computed(() => [
     logoClass: "introCouncilCard__logoImage--sm",
     image: Management2,
     fullname: t("Шавкат Миромонович Мирзиёев"),
-    position: t("Председатель совета"),
+    position: t("Председатель Совета — Президент Республики Узбекистан"),
   },
   {
     id: 2,
@@ -272,7 +281,7 @@ const leaders = computed(() => [
     logoClass: "introCouncilCard__logoImage--ebrd",
     image: Management1,
     fullname: t("Одиль Рено-Бассо"),
-    position: t("Сопредседатель совета"),
+    position: t("Сопредседатель Совета — Президент ЕБРР"),
   },
 ]);
 
@@ -349,7 +358,9 @@ const investorRevealProgress = computed(() =>
   )
 );
 
-const isInvestorsRevealed = computed(() => !isMobile.value && investorRevealProgress.value > 0.02);
+const isInvestorsRevealed = computed(
+  () => !isMobile.value && investorRevealProgress.value > 0.02
+);
 
 const investorSectionStyle = computed(() => ({
   opacity: "1",

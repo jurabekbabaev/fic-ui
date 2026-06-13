@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
+import PageHero from "~/components/shared/PageHero.vue";
 const { t } = useI18n();
 import Main from "@/assets/images/main-info.png";
 
@@ -168,12 +169,8 @@ onBeforeUnmount(() => {
 <template>
   <div>
     <client-only>
+      <PageHero title="История СИИ" />
       <div class="container">
-        <h1
-          class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[100px] mb-14"
-        >
-          {{ t("История СИИ") }}
-        </h1>
         <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-10 lg:gap-20 items-center">
           <div>
             <p class="text-base text-[#505A63] font-normal pb-5">
