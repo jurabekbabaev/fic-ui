@@ -1,214 +1,383 @@
-  <template>
-    <div class="w-full bg-white mt-[100px]">
-      <!-- Title -->
-      <h1 class="lg:text-[64px] text-[32px] font-extrabold mb-12 text-black">{{ t('timeline_main_events') }}</h1>
-      
-      <!-- Timeline Container -->
-      <div class="relative">
-        <!-- Scrollable area -->
-        <div class="overflow-x-auto no-scrollbar">
-          <!-- Wide content wrapper -->
-          <div class="relative min-w-max pr-6">
-            <!-- Timeline Line (sits behind items) -->
-            <div class="absolute top-[80px] left-0 right-0 h-0.5 bg-gray-900"></div>
+<template>
+  <div class="w-full bg-white mt-[100px]">
+    <!-- Title -->
+    <h1 class="lg:text-[64px] text-[32px] font-extrabold mb-12 text-black">
+      {{ t('timeline_main_events') }}
+    </h1>
 
-            <!-- Timeline Points and Content -->
-            <div class="flex items-start gap-16 ml-[2px]">
-              <div
-                v-for="(event, idx) in events"
-                :key="idx"
-                class="flex flex-col items-start relative z-10 lg:min-w-[270px] min-w-[200px]"
+    <section class="evFlow">
+      <!-- coverflow stage -->
+      <div class="evFlow__stage">
+        <article
+          v-for="(event, index) in events"
+          :key="index"
+          class="evFlow__card"
+          :class="{ 'is-active': index === active }"
+          :style="cardStyle(index)"
+          @click="select(index)"
+        >
+          <div class="evFlow__cardBody">
+            <span class="evFlow__accent" aria-hidden="true"></span>
+            <span class="evFlow__month">{{ event.month }}</span>
+            <span class="evFlow__year">{{ event.year }}</span>
+            <p class="evFlow__event">{{ eventTitle(event) }}</p>
+            <div
+              v-if="event.links && event.links.length"
+              class="evFlow__links"
+            >
+              <a
+                v-for="(link, j) in event.links"
+                :key="j"
+                :href="link.href || '#'"
+                class="evFlow__link"
+                @click.stop.prevent="handleTimelineLink(link)"
               >
-                <div class="font-bold mb-6">
-                  <div
-                    class="text-[#191C1F] font-medium text-[28px] leading-[1]"
-                    :class="event.dimmed ? 'opacity-50' : ''"
-                  >
-                    {{ event.year }}
-                  </div>
-                  <div
-                    class="text-[#191C1F] text-sm font-normal"
-                    :class="event.dimmed ? 'opacity-50' : ''"
-                  >
-                    {{ event.month }}
-                  </div>
-                </div>
-
-                <!-- Marker -->
-                <div
-                  class="rounded-[4px] grayLine"
-                  :class="[
-                    event.filled
-                      ? 'w-[19px] h-[19px] bg-gray-900'
-                      : 'w-[15px] h-[15px] border-2 border-gray-900 bg-white'
-                  ]"
-                ></div>
-
-                <!-- Content -->
-                <div class="mt-8">
-                  <template v-if="event.lines && event.lines.length">
-                    <p
-                      v-for="(line, i) in event.lines"
-                      :key="i"
-                      class="text-xl font-medium"
-                      :class="event.dimmed ? 'text-[#191C1F] opacity-50' : 'text-gray-900'"
-                    >
-                      {{ line }}
-                    </p>
-                  </template>
-                  <template v-if="event.links && event.links.length">
-                    <div class="mt-1">
-                      <a
-                        v-for="(link, j) in event.links"
-                        :key="j"
-                        :href="link.href || '#'"
-                        class="text-sm font-normal cursor-pointer hover:opacity-90 block"
-                        :class="event.dimmed ? 'text-[#191C1F] opacity-50' : 'text-[#191C1F]'"
-                        @click.prevent="handleTimelineLink(link)"
-                      >
-                        {{ link.label }} ↗
-                      </a>
-                    </div>
-                  </template>
-                </div>
-              </div>
+                <span>{{ link.label }}</span>
+                <i class="icon-move-right"></i>
+              </a>
             </div>
           </div>
-        </div>
+        </article>
       </div>
-    </div>
-  </template>
-  
-  <script setup>
-  import { computed } from 'vue'
-  import { useI18n } from 'vue-i18n'
 
-  const { t } = useI18n()
-  const localePath = useLocalePath()
+      <!-- nav buttons -->
+      <div class="evFlow__nav">
+        <button
+          type="button"
+          class="evFlow__navBtn"
+          @click="prev"
+          aria-label="prev"
+        >
+          <i class="icon-move-right" style="transform: rotate(180deg)"></i>
+        </button>
+        <button
+          type="button"
+          class="evFlow__navBtn"
+          @click="next"
+          aria-label="next"
+        >
+          <i class="icon-move-right"></i>
+        </button>
+      </div>
+    </section>
+  </div>
+</template>
 
-  function handleTimelineLink(link) {
-    if (link?.href) {
-      if (typeof window !== 'undefined') {
-        window.open(link.href, '_blank', 'noopener,noreferrer')
-      }
-      return
+<script setup>
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+const localePath = useLocalePath()
+
+const eventTitle = (event) =>
+  (event.lines || [])
+    .map((l) => (l || '').replace(/‎/g, '').trim())
+    .filter(Boolean)
+    .join(' ')
+
+function handleTimelineLink(link) {
+  if (link?.href) {
+    if (typeof window !== 'undefined') {
+      window.open(link.href, '_blank', 'noopener,noreferrer')
     }
-
-    if (!link?.target) return
-
-    const to = localePath({
-      path: '/plenarysessions',
-      query: { target: link.target }
-    })
-
-    navigateTo(to)
+    return
   }
 
-  const events = computed(() => [
-    {
-      year: '2026',
-      month: t('timeline_month_june'),
-      filled: true,
-      dimmed: true,
-      lines: ['IV', t('timeline_plenary_session')],
-      links: [
-        { label: t('timeline_learn_more'), target: 'plenary-2026' },
-        { label: t('timeline_posts'), target: 'plenary-2026' }
-      ]
-    },
-    {
-      year: t('timeline_year_2025'),
-      month: t('timeline_month_november'),
-      filled: false,
-      dimmed: true,
-      lines: [t('‎ '), t('timeline_intermediate_session')],
-      links: [
-        { label: t('timeline_learn_more'), target: 'plenary-2025' },
-        { label: t('timeline_posts'), target: 'plenary-2025' }
-      ]
-    },
-    {
-      year: t('timeline_year_2025'),
-      month: t('timeline_month_november'),
-      filled: true,
-      dimmed: true,
-      lines: [t('‎ '), t('timeline_association')],
-      links: [
-        { label: t('timeline_pp_226'), href: 'https://www.lex.uz/ru/docs/-7637571' },
-        { label: t('timeline_posts'), target: 'plenary-2025' }
-      ]
-    },
-    {
-      year: t('timeline_year_2025'),
-      month: t('timeline_month_june'),
-      filled: true,
-      dimmed: true,
-      lines: [t('timeline_roman_iii'), t('timeline_plenary_session')],
-      links: [{ label: t('timeline_pp_226') }, { label: t('timeline_posts'), target: 'plenary-2025' }]
-    },
-    {
-      year: t('timeline_year_2024'),
-      month: t('timeline_month_november'),
-      filled: false,
-      dimmed: true,
-      lines: [t('‎ '), t('timeline_intermediate_session')],
-      links: [
-        { label: t('timeline_learn_more'), target: 'plenary-2024' },
-        { label: t('timeline_posts'), target: 'plenary-2024' }
-      ]
-    },
-    {
-      year: t('timeline_year_2024'),
-      month: t('timeline_month_may'),
-      filled: true,
-      dimmed: true,
-      lines: [t('timeline_roman_ii'), t('timeline_plenary_session')],
-      links: [{ label: t('timeline_pp_170') }]
-    },
-    {
-      year: t('timeline_year_2023'),
-      month: t('timeline_month_august'),
-      filled: false,
-      dimmed: true,
-      lines: [t('‎ '), t('timeline_intermediate_session')],
-      links: [{ label: t('timeline_learn_more'), target: 'plenary-2024' }]
-    },
-    {
-      year: t('timeline_year_2022'),
-      month: t('timeline_month_november'),
-      filled: true,
-      dimmed: true,
-      lines: [t('timeline_roman_i'), t('timeline_plenary_session')],
-      links: [{ label: t('timeline_pp_170') }]
-    },
-    {
-      year: t('timeline_year_2019'),
-      month: t('timeline_month_november'),
-      filled: false,
-      dimmed: true,
-      lines: [t('‎ '), t('timeline_intermediate_session')],
-      links: [{ label: t('timeline_learn_more'), target: 'plenary-2022' }]
-    },
-    {
-      year: t('timeline_year_2019'),
-      month: t('timeline_month_november'),
-      filled: false,
-      dimmed: true,
-      lines: [t('‎ '), t('timeline_fic_established')],
-      links: [{ label: t('timeline_learn_more'), href: 'https://lex.uz/docs/4593913' }]
-    },
-  ].reverse())
-  </script>
-  <style scoped>
-  .grayLine {
-    transform: rotate(45deg);
+  if (!link?.target) return
+
+  const to = localePath({
+    path: '/plenarysessions',
+    query: { target: link.target }
+  })
+
+  navigateTo(to)
+}
+
+const events = computed(() => [
+  {
+    year: t('timeline_year_2019'),
+    month: t('timeline_month_november'),
+    filled: false,
+    lines: [t('‎ '), t('timeline_fic_established')],
+    links: [{ label: t('timeline_learn_more'), href: 'https://lex.uz/docs/4593913' }]
+  },
+  {
+    year: t('timeline_year_2019'),
+    month: t('timeline_month_november'),
+    filled: false,
+    lines: [t('‎ '), t('timeline_intermediate_session')],
+    links: [{ label: t('timeline_learn_more'), target: 'plenary-2022' }]
+  },
+  {
+    year: t('timeline_year_2022'),
+    month: t('timeline_month_november'),
+    filled: true,
+    lines: [t('timeline_roman_i'), t('timeline_plenary_session')],
+    links: [{ label: t('timeline_pp_170') }]
+  },
+  {
+    year: t('timeline_year_2023'),
+    month: t('timeline_month_august'),
+    filled: false,
+    lines: [t('‎ '), t('timeline_intermediate_session')],
+    links: [{ label: t('timeline_learn_more'), target: 'plenary-2024' }]
+  },
+  {
+    year: t('timeline_year_2024'),
+    month: t('timeline_month_may'),
+    filled: true,
+    lines: [t('timeline_roman_ii'), t('timeline_plenary_session')],
+    links: [{ label: t('timeline_pp_170') }]
+  },
+  {
+    year: t('timeline_year_2024'),
+    month: t('timeline_month_november'),
+    filled: false,
+    lines: [t('‎ '), t('timeline_intermediate_session')],
+    links: [
+      { label: t('timeline_learn_more'), target: 'plenary-2024' },
+      { label: t('timeline_posts'), target: 'plenary-2024' }
+    ]
+  },
+  {
+    year: t('timeline_year_2025'),
+    month: t('timeline_month_june'),
+    filled: true,
+    lines: [t('timeline_roman_iii'), t('timeline_plenary_session')],
+    links: [{ label: t('timeline_pp_226') }, { label: t('timeline_posts'), target: 'plenary-2025' }]
+  },
+  {
+    year: t('timeline_year_2025'),
+    month: t('timeline_month_november'),
+    filled: true,
+    lines: [t('‎ '), t('timeline_association')],
+    links: [
+      { label: t('timeline_pp_226'), href: 'https://www.lex.uz/ru/docs/-7637571' },
+      { label: t('timeline_posts'), target: 'plenary-2025' }
+    ]
+  },
+  {
+    year: t('timeline_year_2025'),
+    month: t('timeline_month_november'),
+    filled: false,
+    lines: [t('‎ '), t('timeline_intermediate_session')],
+    links: [
+      { label: t('timeline_learn_more'), target: 'plenary-2025' },
+      { label: t('timeline_posts'), target: 'plenary-2025' }
+    ]
+  },
+  {
+    year: '2026',
+    month: t('timeline_month_june'),
+    filled: true,
+    lines: ['IV', t('timeline_plenary_session')],
+    links: [
+      { label: t('timeline_learn_more'), target: 'plenary-2026' },
+      { label: t('timeline_posts'), target: 'plenary-2026' }
+    ]
   }
-  /* hide horizontal scrollbar while keeping scroll */
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+])
+
+const active = ref(2)
+const count = computed(() => events.value.length)
+
+const select = (i) => {
+  active.value = i
+}
+const prev = () => {
+  active.value = (active.value - 1 + count.value) % count.value
+}
+const next = () => {
+  active.value = (active.value + 1) % count.value
+}
+
+const cardStyle = (i) => {
+  const offset = i - active.value
+  const abs = Math.abs(offset)
+  const hidden = abs > 2
+  const scale = abs === 0 ? 1 : Math.max(0.78, 1 - abs * 0.1)
+  return {
+    transform: `translateX(${offset * 72}%) translateZ(${-abs * 140}px) rotateY(${offset * -5}deg) scale(${scale})`,
+    zIndex: String(100 - abs),
+    opacity: hidden ? '0' : '1',
+    pointerEvents: hidden ? 'none' : 'auto'
   }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+}
+</script>
+
+<style scoped>
+.evFlow {
+  margin-top: 24px;
+  text-align: center;
+}
+
+/* ---- coverflow stage ---- */
+.evFlow__stage {
+  position: relative;
+  height: 380px;
+  margin-bottom: 36px;
+  perspective: 1800px;
+  transform-style: preserve-3d;
+}
+
+.evFlow__card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 360px;
+  margin: -180px 0 0 -160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 36px 30px;
+  text-align: left;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid rgba(25, 28, 31, 0.08);
+  color: #191c1f;
+  box-shadow: 0 30px 70px -34px rgba(25, 28, 31, 0.35);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.55s ease,
+    box-shadow 0.55s ease,
+    filter 0.55s ease;
+}
+
+.evFlow__card.is-active {
+  border-color: rgba(25, 28, 31, 0.12);
+  box-shadow: 0 45px 90px -30px rgba(25, 28, 31, 0.4);
+  cursor: default;
+}
+
+/* dim the side cards so the center one stands out */
+.evFlow__card:not(.is-active) {
+  filter: brightness(0.96) saturate(0.95);
+}
+
+.evFlow__cardBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.evFlow__accent {
+  width: 36px;
+  height: 4px;
+  margin-bottom: 22px;
+  border-radius: 999px;
+  background: rgba(25, 28, 31, 0.16);
+  transition: background-color 0.4s ease, width 0.4s ease;
+}
+
+.evFlow__card.is-active .evFlow__accent {
+  width: 52px;
+  background: #191c1f;
+}
+
+.evFlow__month {
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9499a0;
+}
+
+.evFlow__year {
+  margin-bottom: 14px;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #191c1f;
+}
+
+.evFlow__event {
+  margin: 0;
+  color: #505a63;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.evFlow__links {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.evFlow__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #191c1f;
+  cursor: pointer;
+  transition: gap 0.25s ease, opacity 0.25s ease;
+}
+
+.evFlow__link i {
+  font-size: 13px;
+}
+
+.evFlow__link:hover {
+  gap: 10px;
+  opacity: 0.75;
+}
+
+/* ---- nav buttons ---- */
+.evFlow__nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.evFlow__navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(25, 28, 31, 0.2);
+  background: #fff;
+  color: #191c1f;
+  font-size: 18px;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.evFlow__navBtn:hover {
+  background: #191c1f;
+  border-color: #191c1f;
+  color: #fff;
+}
+
+.evFlow__navBtn:active {
+  transform: scale(0.94);
+}
+
+.evFlow__navBtn i {
+  display: inline-flex;
+}
+
+@media (max-width: 768px) {
+  .evFlow__stage {
+    height: 340px;
   }
-  </style>
+
+  .evFlow__card {
+    width: 260px;
+    height: 320px;
+    margin: -160px 0 0 -130px;
+    padding: 24px;
+  }
+}
+</style>
