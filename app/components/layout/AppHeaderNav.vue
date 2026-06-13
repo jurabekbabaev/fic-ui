@@ -5,32 +5,34 @@ const props = defineProps({
     default: false
   }
 })
-import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 import WLocaleLink from "~/components/shared/WLocaleLink.vue";
 import { mainMenuSections } from "~/constants/mainMenu";
 
-const route = useRoute();
 const { t } = useI18n();
+
+const activeIndex = ref(-1);
 </script>
 
 <template>
-  <nav class="headerNav font-medium">
+  <nav class="headerNav font-medium" @mouseleave="activeIndex = -1">
     <ul
       class="headerNavList flex items-center text-[15px] text-[#191C1F]"
     >
       <li
-        v-for="section in mainMenuSections"
+        v-for="(section, i) in mainMenuSections"
         :key="section.title"
         class="headerNavItem"
+        :class="{ 'is-open': activeIndex === i }"
+        @mouseenter="activeIndex = i"
       >
-        <WLocaleLink :to="section.items[0].to" class="headerNavLink">
+        <WLocaleLink :to="section.items[0].to" class="headerNavLink" @click="activeIndex = -1">
           {{ t(section.title) }}
         </WLocaleLink>
         <div class="headerNavDropdown">
           <ul>
             <li v-for="item in section.items" :key="item.label">
-              <WLocaleLink :to="item.to" class="headerNavDropdownLink">
+              <WLocaleLink :to="item.to" class="headerNavDropdownLink" @click="activeIndex = -1">
                 {{ t(item.label) }}
               </WLocaleLink>
             </li>
@@ -75,8 +77,7 @@ const { t } = useI18n();
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.headerNavItem:hover .headerNavLink::after,
-.headerNavItem:focus-within .headerNavLink::after {
+.headerNavItem.is-open .headerNavLink::after {
   opacity: 1;
   transform: scaleX(1);
 }
@@ -119,8 +120,7 @@ const { t } = useI18n();
   height: 14px;
 }
 
-.headerNavItem:hover .headerNavDropdown,
-.headerNavItem:focus-within .headerNavDropdown {
+.headerNavItem.is-open .headerNavDropdown {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, 0) scale(1);
