@@ -873,6 +873,17 @@ const categoryStartIndex = computed(() => {
                       : "Рабочие группы"
                   }}
                 </th>
+                <th
+                  class="text-center text-xs font-semibold uppercase tracking-widest px-6 py-4 w-[130px]"
+                >
+                  {{
+                    locale.startsWith("uz")
+                      ? "Tashabbuslar"
+                      : locale.startsWith("en")
+                      ? "Initiatives"
+                      : "Инициативы"
+                  }}
+                </th>
               </tr>
             </thead>
             <tbody class="bg-white">
@@ -904,6 +915,9 @@ const categoryStartIndex = computed(() => {
                       : "Первые тематические направления"
                   }}
                 </td>
+                <td class="px-6 py-5 align-middle text-center">
+                  <span class="text-2xl font-black text-[#1a1a1a]">0</span>
+                </td>
               </tr>
               <tr class="border-b border-[#E5E5E5]">
                 <td class="px-6 py-5 align-top">
@@ -933,6 +947,9 @@ const categoryStartIndex = computed(() => {
                       : "Четыре группы: рынок капитала и МФЦ · ответственное ведение бизнеса · альтернативные инвестиции · цифровизация работы с инвесторами"
                   }}
                 </td>
+                <td class="px-6 py-5 align-middle text-center">
+                  <span class="text-2xl font-black text-[#1a1a1a]">14</span>
+                </td>
               </tr>
               <tr>
                 <td class="px-6 py-5 align-top">
@@ -961,6 +978,9 @@ const categoryStartIndex = computed(() => {
                       ? "Interdepartmental groups; total number brought to 16"
                       : "Межведомственные группы; общее число доведено до 16"
                   }}
+                </td>
+                <td class="px-6 py-5 align-middle text-center">
+                  <span class="text-2xl font-black text-[#1a1a1a]">22</span>
                 </td>
               </tr>
             </tbody>
