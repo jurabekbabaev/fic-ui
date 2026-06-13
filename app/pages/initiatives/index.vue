@@ -834,7 +834,164 @@ const categoryStartIndex = computed(() => {
             )
           }}</span
         >
-
+        <div
+          class="w-full overflow-x-auto mb-10 rounded-2xl border border-[#E5E5E5] shadow-sm"
+        >
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="bg-[#F7F7F7] text-[#1a1a1a] font-bold">
+                <th
+                  class="text-left text-xs font-semibold uppercase tracking-widest px-6 py-4 w-[180px] lg:w-[220px]"
+                >
+                  {{
+                    locale.startsWith("uz")
+                      ? "Sessiya"
+                      : locale.startsWith("en")
+                      ? "Session"
+                      : "Сессия"
+                  }}
+                </th>
+                <th
+                  class="text-left text-xs font-semibold uppercase tracking-widest px-6 py-4 w-[120px] lg:w-[140px]"
+                >
+                  {{
+                    locale.startsWith("uz")
+                      ? "Hujjat"
+                      : locale.startsWith("en")
+                      ? "Document"
+                      : "Документ"
+                  }}
+                </th>
+                <th
+                  class="text-left text-xs font-semibold uppercase tracking-widest px-6 py-4"
+                >
+                  {{
+                    locale.startsWith("uz")
+                      ? "Ishchi guruhlar"
+                      : locale.startsWith("en")
+                      ? "Working Groups"
+                      : "Рабочие группы"
+                  }}
+                </th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr class="border-b border-[#E5E5E5]">
+                <td class="px-6 py-5 align-top">
+                  <span class="font-bold text-sm lg:text-base text-[#1a1a1a]">
+                    {{
+                      locale.startsWith("uz")
+                        ? "I Plenar (2022)"
+                        : locale.startsWith("en")
+                        ? "I Plenary (2022)"
+                        : "I Пленарная (2022)"
+                    }}
+                  </span>
+                </td>
+                <td
+                  class="px-6 py-5 align-top text-sm lg:text-base text-[#505A63]"
+                >
+                  —
+                </td>
+                <td
+                  class="px-6 py-5 align-top text-sm lg:text-base text-[#1a1a1a] leading-relaxed"
+                >
+                  {{
+                    locale.startsWith("uz")
+                      ? "Birinchi tematik yo'nalishlar"
+                      : locale.startsWith("en")
+                      ? "First thematic directions"
+                      : "Первые тематические направления"
+                  }}
+                </td>
+              </tr>
+              <tr class="border-b border-[#E5E5E5]">
+                <td class="px-6 py-5 align-top">
+                  <span class="font-bold text-sm lg:text-base text-[#1a1a1a]">
+                    {{
+                      locale.startsWith("uz")
+                        ? "II Plenar (2024)"
+                        : locale.startsWith("en")
+                        ? "II Plenary (2024)"
+                        : "II Пленарная (2024)"
+                    }}
+                  </span>
+                </td>
+                <td
+                  class="px-6 py-5 align-top text-sm lg:text-base text-[#505A63] font-medium"
+                >
+                  ПП-179
+                </td>
+                <td
+                  class="px-6 py-5 align-top text-sm lg:text-base text-[#1a1a1a] leading-relaxed"
+                >
+                  {{
+                    locale.startsWith("uz")
+                      ? "To'rtta guruh: kapital bozori va XMM · mas'uliyatli biznes yuritish · muqobil investitsiyalar · investorlar bilan ishlashni raqamlashtirish"
+                      : locale.startsWith("en")
+                      ? "Four groups: capital market and IFC · responsible business conduct · alternative investments · digitalization of investor relations"
+                      : "Четыре группы: рынок капитала и МФЦ · ответственное ведение бизнеса · альтернативные инвестиции · цифровизация работы с инвесторами"
+                  }}
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-5 align-top">
+                  <span class="font-bold text-sm lg:text-base text-[#1a1a1a]">
+                    {{
+                      locale.startsWith("uz")
+                        ? "III Plenar (2025)"
+                        : locale.startsWith("en")
+                        ? "III Plenary (2025)"
+                        : "III Пленарная (2025)"
+                    }}
+                  </span>
+                </td>
+                <td
+                  class="px-6 py-5 align-top text-sm lg:text-base text-[#505A63] font-medium"
+                >
+                  ПП-226
+                </td>
+                <td
+                  class="px-6 py-5 align-top text-sm lg:text-base text-[#1a1a1a] leading-relaxed"
+                >
+                  {{
+                    locale.startsWith("uz")
+                      ? "Idoralararo guruhlar; umumiy soni 16 ga yetkazildi"
+                      : locale.startsWith("en")
+                      ? "Interdepartmental groups; total number brought to 16"
+                      : "Межведомственные группы; общее число доведено до 16"
+                  }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          class="bg-[#F7F7F7] rounded-2xl p-6 lg:p-8 mb-10 border-l-4 border-[#1a1a1a]"
+        >
+          <p
+            class="lg:text-sm text-xs font-bold text-[#1a1a1a] uppercase tracking-widest mb-3"
+          >
+            {{
+              locale.startsWith("uz")
+                ? "Strategik tashabbus"
+                : locale.startsWith("en")
+                ? "Strategic Initiative"
+                : "Стратегическая инициатива"
+            }}
+          </p>
+          <p
+            class="lg:text-lg text-base font-normal text-[#1a1a1a] leading-relaxed"
+          >
+            {{
+              locale.startsWith("uz")
+                ? "Raqobatbardosh investitsiya muhitini shakllantirish va chegaralararo muvofiqlashtirish uchun Markaziy Osiyo va Kavkaz Mintaqaviy Investitsiya Kengashlari Alyansini (RAIC-CAC) tashkil etish."
+                : locale.startsWith("en")
+                ? "Creation of the Regional Alliance of Investment Councils of Central Asia and the Caucasus (RAIC-CAC) to form a competitive investment environment and cross-border coordination."
+                : "Cоздание Регионального альянса инвестиционных советов Центральной Азии и Кавказа (RAIC-CAC) для формирования конкурентоспособной инвестиционной среды и трансграничной координации."
+            }}
+          </p>
+        </div>
         <div class="w-full mb-10">
           <p class="lg:text-xl text-base font-normal">
             <span class="text-[#505A63]">
