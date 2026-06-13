@@ -25,21 +25,25 @@ onMounted(() => {
         >
           {{ t('Узбекская сторона') }}
         </h1>
-        <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-[50px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10 lg:gap-[50px]">
           <div
-            class="lg:flex sm:block items-center gap-6"
+            class="lg:flex items-center gap-6"
             v-for="(item, i) in models"
             :key="i"
           >
-            <img :src="item.image_path" :alt="item.fullname" class="lg:w-[260px] w-screen lg:h-[320px] h-full rounded-xl object-cover" />
-            <div class="block lg:mb-0 mb-12">
-              <span class="block text-lg font-medium text-[#505A63] mt-3">{{
+            <img
+              :src="item.image_path"
+              :alt="item.fullname"
+              class="shrink-0 w-full lg:w-[260px] h-[360px] sm:h-[440px] md:h-[300px] lg:h-[320px] rounded-xl object-cover object-top lg:object-center mb-4 lg:mb-0"
+            />
+            <div class="block">
+              <span class="block text-base lg:text-lg font-medium text-[#505A63] mt-3">{{
                 getLocalizedField(item, 'position')
               }}</span>
-              <div class="lg:text-[32px] text-2xl font-medium text-[#191C1F] uppercase">
+              <div class="text-2xl lg:text-[32px] font-medium text-[#191C1F] uppercase">
                 {{ getLocalizedField(item, 'full_name') }}
               </div>
-              <span class="block lg:text-base text-sm font-normal text-[#505A63] mt-6">{{
+              <span class="block text-sm lg:text-base font-normal text-[#505A63] mt-6">{{
                 getLocalizedField(item, 'about')
               }}</span>
             </div>

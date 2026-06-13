@@ -84,40 +84,40 @@ onBeforeUnmount(() => observer?.disconnect());
           <div
             v-for="(card, i) in expertCards"
             :key="i"
-            class="bg-[#F7F7F7] rounded-2xl p-6 lg:p-7 flex items-center justify-between gap-6"
+            class="bg-[#F7F7F7] rounded-2xl p-5 sm:p-6 lg:p-7 flex items-center justify-between gap-4 sm:gap-6"
           >
             <div class="flex-1 min-w-0">
-              <h2 class="text-lg lg:text-xl uppercase font-black text-[#191C1F]">
+              <h2 class="text-base sm:text-lg lg:text-xl uppercase font-black text-[#191C1F]">
                 {{ t(card.title) }}
               </h2>
-              <p class="mt-4 text-base text-[#505A63] font-normal leading-relaxed">
+              <p class="mt-3 sm:mt-4 text-sm sm:text-base text-[#505A63] font-normal leading-relaxed">
                 {{ t(card.text) }}
               </p>
             </div>
             <div
               :ref="(el) => (counterRefs[i] = el)"
-              class="shrink-0 w-[80px] lg:w-[120px] text-right text-[52px] lg:text-[72px] font-bold leading-none text-[#191C1F]"
+              class="shrink-0 w-[56px] sm:w-[80px] lg:w-[120px] text-right text-[40px] sm:text-[52px] lg:text-[72px] font-bold leading-none text-[#191C1F]"
             >0</div>
           </div>
         </div>
 
-        <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-[50px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10 lg:gap-[50px]">
           <div
-            class="lg:flex sm:block items-center gap-6"
+            class="lg:flex items-center gap-6"
             v-for="(item, i) in models"
             :key="i"
           >
             <img
               :src="item.photo_path"
               :alt="item.fullname"
-              class="lg:w-[260px] w-screen lg:h-[320px] h-full rounded-xl object-cover"
+              class="shrink-0 w-full lg:w-[260px] h-[360px] sm:h-[440px] md:h-[300px] lg:h-[320px] rounded-xl object-cover object-top lg:object-center mb-4 lg:mb-0"
             />
-            <div class="block lg:mb-0 mb-12">
-              <span class="block text-lg font-medium text-[#505A63] mt-3">{{
+            <div class="block">
+              <span class="block text-base lg:text-lg font-medium text-[#505A63] mt-3">{{
                 getLocalizedField(item, "position")
               }}</span>
               <div
-                class="lg:text-[32px] text-2xl font-medium text-[#191C1F] uppercase"
+                class="text-2xl lg:text-[32px] font-medium text-[#191C1F] uppercase"
               >
                 {{ getLocalizedField(item, "full_name") }}
               </div>
