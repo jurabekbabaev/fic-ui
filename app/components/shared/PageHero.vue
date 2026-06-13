@@ -3,16 +3,18 @@ import { useI18n } from 'vue-i18n'
 import HeroImage from '@/assets/images/plenarysessions/plenary2025/STU_8900_.jpg'
 import HeroImage2 from '@/assets/images/plenarysessions/plenary2025/ATM_9764.JPG'
 
-defineProps({
+const props = defineProps({
   title: { type: String, required: true },
+  image: { type: String, default: '' },
 })
 
 const { t } = useI18n()
+const heroSrc = computed(() => props.image || HeroImage)
 </script>
 
 <template>
   <section class="pageHero">
-    <img :src="HeroImage" alt="" class="pageHero__img" />
+    <img :src="heroSrc" alt="" class="pageHero__img" />
     <div class="pageHero__overlay"></div>
     <div class="container pageHero__inner">
       <h1 class="pageHero__title">{{ t(title) }}</h1>
