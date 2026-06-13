@@ -9,7 +9,7 @@
     <div>
       <div class="mainContainer mb-[60px] pb-[40px]">
         <h2
-          class="title-64 pt-[100px] text-center mb-8 text-[32px] lg:mb-10 lg:text-[64px]"
+          class="title-64 pt-[40px] lg:pt-[100px] text-center mb-8 text-[32px] lg:mb-10 lg:text-[64px]"
         >
           {{ t("Показатели") }}
         </h2>

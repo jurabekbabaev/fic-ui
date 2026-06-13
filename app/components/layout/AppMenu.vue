@@ -24,7 +24,7 @@ onMounted(() => {
     const handleResize = () => {
       isMobile.value = window.innerWidth <= 768;
     };
-    
+
     handleResize();
     window.addEventListener("resize", handleResize);
 
@@ -43,11 +43,13 @@ onMounted(() => {
     <div v-if="opened" class="appMenuMask" @click="toggle"></div>
     <div v-if="opened" class="appMenuDialog">
       <div class="appMenuDialogClose">
-        <button class="btn btn-primary navBtn z-10" @click="toggle">
+        <button class="btn btn-primary navBtn" @click="toggle">
           <i class="icon-x-white"></i>
         </button>
       </div>
-      <div class="appMenuNavs flex gap-20" v-if="!isMobile">
+
+      <!-- iPad: two-column nav -->
+      <div class="appMenuNavs flex gap-8 xl:gap-20" v-if="!isMobile">
         <div v-for="(column, columnIndex) in menuColumns" :key="columnIndex">
           <div
             v-for="section in column"
@@ -55,7 +57,7 @@ onMounted(() => {
             class="appMenuNav"
           >
             <div class="appMenuNavH">
-              <span class="text-[32px] font-bold">{{ t(section.title) }}</span>
+              <span class="text-[20px] xl:text-[32px] font-bold">{{ t(section.title) }}</span>
             </div>
             <div class="appMenuNavL">
               <ul>
@@ -69,7 +71,9 @@ onMounted(() => {
           </div>
         </div>
       </div>
-      <div v-if="isMobile" class="mt-[60px]">
+
+      <!-- Mobile: accordion nav -->
+      <div v-if="isMobile" class="mt-4">
         <el-menu
           default-active="2"
           class="el-menu-vertical-demo"
@@ -81,7 +85,7 @@ onMounted(() => {
             :index="String(sectionIndex + 1)"
           >
             <template #title>
-              <span class="text-2xl text-[#191C1F] font-normal">{{
+              <span class="text-xl text-[#191C1F] font-normal">{{
                 t(section.title)
               }}</span>
             </template>
@@ -92,7 +96,7 @@ onMounted(() => {
             >
               <WLocaleLink
                 :to="item.to"
-                class="text-base text-[#191C1F80] font-normal mb-4"
+                class="text-sm text-[#191C1F80] font-normal"
               >
                 {{ t(item.label) }}
               </WLocaleLink>
@@ -105,10 +109,20 @@ onMounted(() => {
 </template>
 
 <style scoped>
-::deep(.el-menu) {
+:deep(.el-menu) {
   border-right: none;
 }
-::deep(.el-sub-menu) {
-  margin: 15px 0;
+:deep(.el-sub-menu) {
+  margin: 10px 0;
+}
+:deep(.el-sub-menu__title) {
+  padding-left: 0 !important;
+}
+:deep(.el-menu-item) {
+  padding-left: 0 !important;
+  height: auto;
+  line-height: 1.5;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 </style>

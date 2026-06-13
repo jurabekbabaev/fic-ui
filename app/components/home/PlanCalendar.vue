@@ -60,6 +60,7 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
+import type { CSSProperties } from "vue";
 import { useI18n } from "vue-i18n";
 import WLocaleLink from "~/components/shared/WLocaleLink.vue";
 const { t } = useI18n();
@@ -100,6 +101,8 @@ const data = ref<IType[]>([
 
 const active = ref(2);
 
+const windowWidth = ref(typeof window !== "undefined" ? window.innerWidth : 1024);
+
 const select = (i: number) => {
   active.value = i;
 };
@@ -110,9 +113,32 @@ const next = () => {
   active.value = (active.value + 1) % data.value.length;
 };
 
-const cardStyle = (i: number) => {
+const cardStyle = (i: number): CSSProperties => {
   const offset = i - active.value;
   const abs = Math.abs(offset);
+
+  if (windowWidth.value <= 640) {
+    const hidden = offset !== 0;
+    return {
+      transform: `translateX(${offset * 110}%)`,
+      zIndex: String(hidden ? 0 : 10),
+      opacity: hidden ? "0" : "1",
+      pointerEvents: hidden ? "none" : "auto",
+      transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease",
+    };
+  }
+
+  if (windowWidth.value <= 1023) {
+    const hidden = abs > 1;
+    const scale = abs === 0 ? 1 : 0.84;
+    return {
+      transform: `translateX(${offset * 88}%) scale(${scale})`,
+      zIndex: String(100 - abs),
+      opacity: hidden ? "0" : abs === 0 ? "1" : "0.55",
+      pointerEvents: hidden ? "none" : "auto",
+    };
+  }
+
   const hidden = abs > 2;
   const scale = abs === 0 ? 1 : Math.max(0.78, 1 - abs * 0.1);
   return {
@@ -122,6 +148,12 @@ const cardStyle = (i: number) => {
     pointerEvents: hidden ? "none" : "auto",
   };
 };
+
+onMounted(() => {
+  const onResize = () => { windowWidth.value = window.innerWidth; };
+  window.addEventListener("resize", onResize);
+  onBeforeUnmount(() => window.removeEventListener("resize", onResize));
+});
 </script>
 
 <style scoped>
@@ -252,7 +284,7 @@ const cardStyle = (i: number) => {
   display: inline-flex;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) and (min-width: 641px) {
   .evFlow__stage {
     height: 340px;
   }
@@ -262,6 +294,19 @@ const cardStyle = (i: number) => {
     height: 320px;
     margin: -160px 0 0 -130px;
     padding: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .evFlow__stage {
+    height: 300px;
+  }
+
+  .evFlow__card {
+    width: 288px;
+    height: 280px;
+    margin: -140px 0 0 -144px;
+    padding: 24px 20px;
   }
 }
 </style>

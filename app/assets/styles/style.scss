@@ -1,3 +1,6 @@
+html, body{
+  overflow-x: hidden;
+}
 body{
   font-family: 'Onest';
 }
@@ -186,7 +189,7 @@ img{
 @keyframes fadeInRight {
 	0% {
 		opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(100vw);
 	}
 	100% {
 		opacity: 1;
@@ -207,12 +210,16 @@ img{
   width: 1000px;
   max-width: 100%;
   position: fixed;
-  top: -2px;
+  top: 0;
   right: 0;
   background: #fff;
   height: 100vh;
+  height: 100dvh;
   padding: 40px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 200;
+  box-sizing: border-box;
 
   animation-name: fadeInRight;
 	animation-timing-function: ease-in;
@@ -250,13 +257,16 @@ img{
   top: 0;
   position: fixed;
   backdrop-filter: blur(10.5px);
+  z-index: 199;
 
   animation-name: fadeIn;
 	animation-timing-function: ease-in;
 	animation-duration: 0.2s;
 }
 .appMenuDialogClose{
-  float: right;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
 }
 .appMenuNavL{
   li{

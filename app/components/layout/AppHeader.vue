@@ -1,5 +1,4 @@
 <script setup>
-// const { t } = useI18n();
 const props = defineProps({
   isHome: {
     type: Boolean,
@@ -18,12 +17,12 @@ import WLocaleLink from "~/components/shared/WLocaleLink.vue";
 const route = useRoute();
 const { t } = useI18n();
 
-const isMobile = ref(false);
+const isTabletOrMobile = ref(false);
 
 onMounted(() => {
   if (process.client) {
     const handleResize = () => {
-      isMobile.value = window.innerWidth <= 768;
+      isTabletOrMobile.value = window.innerWidth <= 1024;
     };
 
     handleResize();
@@ -46,22 +45,22 @@ onMounted(() => {
         <div class="w-full flex justify-between items-center">
           <div>
             <WLocaleLink to="/">
-              <img :src="LogoWhite" v-if="props.isHome" class="w-[200px]" />
-              <img :src="LogoBlack" v-else class="w-[200px]" />
+              <img :src="LogoWhite" v-if="props.isHome" class="w-[160px] lg:w-[200px]" />
+              <img :src="LogoBlack" v-else class="w-[160px] lg:w-[200px]" />
             </WLocaleLink>
           </div>
-          <div class="flex-1 flex justify-center" v-if="!isMobile">
+          <div class="flex-1 flex justify-center" v-if="!isTabletOrMobile">
             <AppHeaderNav :isHome="props.isHome" />
           </div>
           <div class="flex items-center gap-3.5">
-            <LanguageSwitcher v-if="!isMobile" />
+            <LanguageSwitcher v-if="!isTabletOrMobile" />
             <WLocaleLink
               to="/contacts"
               class="btn btn-primary"
-              v-if="!isMobile"
+              v-if="!isTabletOrMobile"
               >{{ t("Связаться") }}</WLocaleLink
             >
-            <AppMenu v-if="isMobile" />
+            <AppMenu v-if="isTabletOrMobile" />
           </div>
         </div>
       </div>
