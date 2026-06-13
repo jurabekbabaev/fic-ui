@@ -174,7 +174,7 @@ onBeforeUnmount(() => {
         >
           {{ t("История СИИ") }}
         </h1>
-        <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-20">
+        <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-10 lg:gap-20 items-center">
           <div>
             <p class="text-base text-[#505A63] font-normal pb-5">
               {{
