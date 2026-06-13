@@ -8,14 +8,44 @@ useHead({
   title: "Инвестиции в Узбекистан | FIC",
 });
 
-const stats = [
-  { target: 137, prefix: "$", suffix: "B+", decimals: 0, label: "ВВП 2025 (МВФ)" },
-  { target: 7.6, prefix: "", suffix: "%", decimals: 1, label: "Рост ВВП 2025" },
-  { target: 37.7, prefix: "", suffix: "M", decimals: 1, label: "Население" },
-  { target: 43, prefix: "$", suffix: "B+", decimals: 0, label: "Иностр. инвестиции 2025 *" },
+const intro = [
+  "С 2017 года Узбекистан осуществил одну из самых масштабных экономических трансформаций в Евразии. Либерализация валютного рынка, налоговая и судебная реформы, открытие рынков капитала и приватизация превратили прежде закрытую экономику в одно из наиболее динамичных инвестиционных направлений региона. Сегодня это крупнейший по населению рынок Центральной Азии — около 37,7 млн человек — с устойчиво растущим внутренним спросом.",
+  "2025 год подтвердил эту траекторию. Рост ВВП достиг 7,7% — выше большинства прогнозов; инфляция снизилась до 7,3%, безработица — до 4,8%. Fitch впервые за семь лет повысил суверенный рейтинг до BB, S&P подтвердил уровень BB, Moody's сохранил Ba3 с улучшением прогноза до «позитивного». Завершается процесс вступления во Всемирную торговую организацию — крупнейшее структурное открытие экономики со времён валютной либерализации 2017 года.",
 ];
 
-const displayValues = ref(stats.map(() => "0"));
+type Stat = {
+  value?: number;
+  raw?: string;
+  prefix?: string;
+  suffix?: string;
+  decimals?: number;
+  label: string;
+  accent: "light" | "dark";
+};
+
+const stats: Stat[] = [
+  { value: 135, prefix: ">$", suffix: " млрд", decimals: 0, label: "ВВП (цель 2026 — >$150 млрд)", accent: "light" },
+  { value: 7.7, prefix: "", suffix: "%", decimals: 1, label: "рост ВВП (МВФ, 2025)", accent: "dark" },
+  { value: 42, prefix: "~$", suffix: " млрд", decimals: 0, label: "приток иностранных инвестиций", accent: "light" },
+  { raw: "BB", label: "рейтинг Fitch и S&P; Moody's Ba3 (прогноз позитивный)", accent: "light" },
+  { value: 55, prefix: "$", suffix: " млрд", decimals: 0, label: "золотовалютные резервы (+35%)", accent: "dark" },
+  { value: 7.3, prefix: "", suffix: "%", decimals: 1, label: "инфляция (с 9,8% годом ранее)", accent: "light" },
+  { value: 23, prefix: "+", suffix: "%", decimals: 0, label: "рост экспорта (~$32 млрд)", accent: "light" },
+  { value: 31.9, prefix: "", suffix: "%", decimals: 1, label: "совокупные инвестиции к ВВП", accent: "light" },
+  { value: 4.8, prefix: "", suffix: "%", decimals: 1, label: "безработица (минимум)", accent: "light" },
+];
+
+function formatStat(stat: Stat, currentVal: number): string {
+  const decimals = stat.decimals ?? 0;
+  const formatted = decimals > 0
+    ? currentVal.toFixed(decimals).replace(".", ",")
+    : Math.floor(currentVal).toString();
+  return `${stat.prefix ?? ""}${formatted}${stat.suffix ?? ""}`;
+}
+
+const displayValues = ref(
+  stats.map((stat) => (stat.raw !== undefined ? stat.raw : formatStat(stat, 0)))
+);
 const statsContainer = ref<HTMLElement | null>(null);
 const hasAnimated = ref(false);
 let observer: IntersectionObserver | null = null;
@@ -37,11 +67,9 @@ function animateCountUp() {
     const easedProgress = easeOutCubic(progress);
 
     stats.forEach((stat, index) => {
-      const currentVal = easedProgress * stat.target;
-      const formatted = stat.decimals > 0
-        ? currentVal.toFixed(stat.decimals)
-        : Math.floor(currentVal).toString();
-      displayValues.value[index] = `${stat.prefix}${formatted}${stat.suffix}`;
+      if (stat.raw !== undefined) return;
+      const currentVal = easedProgress * (stat.value ?? 0);
+      displayValues.value[index] = formatStat(stat, currentVal);
     });
 
     if (progress < 1) {
@@ -75,31 +103,102 @@ onBeforeUnmount(() => {
   }
 });
 
-const paragraphs = [
-  "С 2016 года мы наблюдали, как Узбекистан трансформировался из преимущественно закрытой экономики в один из самых динамичных инвестиционных направлений Евразии. Программа реформ, начавшаяся в 2017 году, перестроила правовую базу, открыла рынки капитала и сделала Узбекистан подлинным приоритетом для международного капитала.",
-  "2025 год стал явной точкой перелома. Fitch и S&P повысили суверенный рейтинг Узбекистана до BB — первое повышение с 2018 года — сигнализируя институциональным инвесторам об устойчивом улучшении макрофундаментов. МВФ подтвердил рост ВВП выше 7% в первых трёх кварталах 2025 года. Всемирный банк относит Узбекистан к тройке самых быстрорастущих развивающихся экономик Европы и Центральной Азии в 2026 году. Вступление в ВТО, запланированное на начало 2026 года, станет крупнейшим структурным открытием экономики со времён либерализации валюты в 2017 году.",
+const guarantees = [
+  {
+    term: "Правовые гарантии.",
+    text: "Закон «Об инвестициях и инвестиционной деятельности» гарантирует свободный перевод средств за пределы страны и защиту инвестиций от национализации.",
+  },
+  {
+    term: "Налоговая стабильность.",
+    text: "Базовые ставки налогов для бизнеса не изменятся до 2028 года.",
+  },
+  {
+    term: "Прямой диалог.",
+    text: "Совет иностранных инвесторов при Президенте — институциональный канал решения вопросов инвесторов на высшем уровне.",
+  },
+  {
+    term: "Разрешение споров.",
+    text: "Ташкентский международный арбитражный центр; Ташкентский международный коммерческий суд.",
+  },
+  {
+    term: "Льготы для членов Совета.",
+    text: "Безвизовый въезд для членов Совета и членов их семей.",
+  },
 ];
 
-const callout = {
-  lead: "Чего не отражают данные: неформальные знания, определяющие успех проекта — связи, тайминг, правильная подача нужному чиновнику, понимание того, когда давить, а когда ждать.",
-  highlight: "Эти знания приходят только от присутствия здесь.",
-};
-
-const highlights = [
-  "Комплексная правовая реформа с 2017 года — инвестиционный кодекс, закон о ГЧП, реформа налогового кодекса",
-  "Приоритетные секторы: возобновляемая энергетика, агробизнес, производство, IT, логистика, туризм",
-  "Твёрдая государственная приверженность привлечению международного капитала и экспертизы",
-  "Стратегические ворота: граничит с Китаем, Афганистаном, Казахстаном, Кыргызстаном, Таджикистаном, Туркменистаном",
-  "Повышение суверенного рейтинга: Fitch и S&P повысили до BB в 2025 году — первое повышение с 2018 года. Moody's пересмотрело прогноз на «позитивный»",
-  "Всемирный банк: Узбекистан входит в тройку самых быстрорастущих развивающихся экономик в регионе Европа и Центральная Азия в 2026 году. Прогноз роста ВВП 6%+ до 2027 года",
-  "Вступление в ВТО намечено на 2026 год — заключительный этап переговоров. Расширит доступ на рынки, стандартизирует торговые правила и откроет экономику для международного капитала",
+const sectors = [
+  {
+    title: "Зелёная энергетика",
+    points: [
+      "ACWA Power, Masdar, TotalEnergies, EDF, Voltalia",
+      "свыше $8 млрд инвестиций в ВИЭ",
+      "солнце, ветер, водород, накопление энергии",
+    ],
+  },
+  {
+    title: "Цифровая инфраструктура и ИИ",
+    points: [
+      "DataVolt — крупнейший «зелёный» дата-центр региона",
+      "VEON — суперприложение на базе ИИ",
+      "Yandex — карты и цифровые сервисы",
+    ],
+  },
+  {
+    title: "Инфраструктура и ГЧП",
+    points: [
+      "$4,5 млрд проектов ГЧП в 2025",
+      "дороги, транспорт, водоснабжение, ирригация",
+      "смешанное финансирование с МФИ",
+    ],
+  },
+  {
+    title: "Финансовые услуги",
+    points: [
+      "Ташкентский международный финансовый центр",
+      "исламские финансы (Green Sukuk, Takaful)",
+      "дебютные суверенные облигации в сумах",
+    ],
+  },
+  {
+    title: "Обрабатывающая промышленность",
+    points: [
+      "химия и удобрения (Indorama)",
+      "текстиль, стройматериалы (Knauf)",
+      "экспортно-ориентированное производство",
+    ],
+  },
+  {
+    title: "Критические минералы и горнодобыча",
+    points: [
+      "значительная сырьевая база",
+      "проекты переработки с добавленной стоимостью",
+      "международные стандарты ESG",
+    ],
+  },
 ];
 
-const footnote =
-  "* Иностранные инвестиции (2025): invest.gov.uz / МИПТ. Включает ПИИ, кредиты и проектное финансирование. ВВП (2025): МВФ. Рост (2025): миссия МВФ, ноябрь 2025. Прогноз 2026: Всемирный банк.";
-
-const partnersNote =
-  "Международные финансовые организации, активные в Узбекистане, с которыми Asar Advisory имеет рабочие отношения.";
+const timeline = [
+  {
+    year: "2017.",
+    text: "Либерализация валютного рынка, старт системных реформ; ВВП около $56 млрд.",
+  },
+  {
+    year: "2019.",
+    text: "Учреждение Совета иностранных инвесторов при Президенте — институциональная площадка диалога с инвесторами.",
+  },
+  {
+    year: "2024.",
+    text: "Энергетические реформы; рекордные вложения международных компаний в зелёную экономику.",
+  },
+  {
+    year: "2025.",
+    text: "Повышение рейтингов Fitch и S&P до BB; приток иностранных инвестиций ~$42 млрд; рост ВВП 7,7%.",
+  },
+  {
+    year: "2026.",
+    text: "Завершение вступления в ВТО; создание Ташкентского международного финансового центра; цель — ВВП свыше $150 млрд. За девять лет привлечено около $125 млрд иностранных инвестиций против ~$4,5 млрд в 2017 году.",
+  },
+];
 </script>
 
 <template>
@@ -109,78 +208,127 @@ const partnersNote =
         {{ t("Инвестиции в Узбекистан") }}
       </h2>
 
-      <div ref="statsContainer" class="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+      <div class="rounded-2xl bg-[#F7F7F7] p-6 lg:p-10">
+        <div class="space-y-5 text-base leading-8 text-grey lg:space-y-6 lg:text-lg">
+          <p v-for="(paragraph, index) in intro" :key="`invest-intro-${index}`">
+            {{ t(paragraph) }}
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-14 lg:mt-20">
+        <span
+          class="inline-flex rounded-lg bg-[#F7F7F7] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-[#191C1F] lg:text-sm"
+        >
+          {{ t("Ключевые показатели 2025") }}
+        </span>
+
         <div
-          v-for="(stat, index) in stats"
-          :key="stat.label"
-          class="card-item p-5 lg:p-7"
+          ref="statsContainer"
+          class="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:mt-8 lg:grid-cols-3"
         >
           <div
-            class="text-[28px] font-bold leading-none text-[#191C1F] lg:text-[40px]"
+            v-for="(stat, index) in stats"
+            :key="stat.label"
+            class="flex min-h-[140px] flex-col rounded-2xl p-5 lg:min-h-[168px] lg:p-7"
+            :class="stat.accent === 'dark' ? 'bg-[#191C1F]' : 'bg-[#F7F7F7]'"
           >
-            {{ displayValues[index] }}
-          </div>
-          <div class="mt-2 text-sm text-grey lg:text-base">
-            {{ t(stat.label) }}
+            <div
+              class="text-[26px] font-bold leading-tight lg:text-[40px]"
+              :class="stat.accent === 'dark' ? 'text-white' : 'text-[#191C1F]'"
+            >
+              {{ displayValues[index] }}
+            </div>
+            <div
+              class="mt-auto pt-6 text-xs leading-snug lg:text-sm"
+              :class="stat.accent === 'dark' ? 'text-white/70' : 'text-[#191C1F]/70'"
+            >
+              {{ t(stat.label) }}
+            </div>
           </div>
         </div>
       </div>
 
-      <p class="mt-4 text-sm italic text-grey">
-        {{ t(partnersNote) }}
-      </p>
+      <div class="mt-14 lg:mt-20">
+        <span
+          class="inline-flex rounded-lg bg-[#F7F7F7] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-[#191C1F] lg:text-sm"
+        >
+          {{ t("Гарантии и защита инвесторов") }}
+        </span>
 
-      <div class="mx-auto mt-12 max-w-[920px] lg:mt-16">
-        <div class="space-y-5 text-base leading-8 text-grey lg:space-y-6 lg:text-lg">
-          <p v-for="(paragraph, index) in paragraphs" :key="`invest-p-${index}`">
-            {{ t(paragraph) }}
-          </p>
-        </div>
-
-        <div class="mt-8 border-t border-[#191C1F14] pt-8 lg:mt-10">
-          <p class="text-base leading-8 text-grey lg:text-lg">
-            {{ t(callout.lead) }}
-            <span class="font-semibold text-[#191C1F]">{{ t(callout.highlight) }}</span>
-          </p>
-        </div>
-
-        <ul class="mt-10 space-y-3 lg:mt-12">
+        <ul class="mt-6 lg:mt-8">
           <li
-            v-for="(item, index) in highlights"
-            :key="`invest-highlight-${index}`"
-            class="flex gap-3 text-base leading-7 text-[#191C1F] lg:text-[17px]"
+            v-for="(item, index) in guarantees"
+            :key="`invest-guarantee-${index}`"
+            class="flex gap-3 border-b border-[#191C1F14] py-5 first:pt-0 last:border-0 last:pb-0"
           >
             <span
               aria-hidden="true"
               class="mt-[10px] h-[6px] w-[6px] flex-none rounded-full bg-[#191C1F]"
             ></span>
-            <span>{{ t(item) }}</span>
+            <p class="text-base leading-7 text-grey lg:text-[17px]">
+              <span class="font-semibold text-[#191C1F]">{{ t(item.term) }}</span>
+              {{ t(item.text) }}
+            </p>
           </li>
         </ul>
+      </div>
 
-        <p class="mt-10 text-xs leading-6 text-[#8C8C8C] lg:text-sm">
-          {{ t(footnote) }}
-        </p>
-
-        <div
-          class="mt-10 flex flex-col gap-3 border-t border-[#191C1F14] pt-8 sm:flex-row sm:flex-wrap lg:mt-12"
+      <div class="mt-14 lg:mt-20">
+        <span
+          class="inline-flex rounded-lg bg-[#F7F7F7] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-[#191C1F] lg:text-sm"
         >
-          <a
-            href="https://fics.uz"
-            target="_blank"
-            rel="noreferrer"
-            class="btn btn-primary"
+          {{ t("Секторы возможностей") }}
+        </span>
+
+        <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:mt-8">
+          <div
+            v-for="(sector, index) in sectors"
+            :key="`invest-sector-${index}`"
+            class="rounded-2xl bg-[#F7F7F7] p-6 lg:p-8"
           >
-            link
-          </a>
-          <a
-            href="/documents/AR_2023_finalized.pdf"
-            download="plenary-session-2022-materials.pdf"
-            class="btn btn-secondary"
-          >
-            doc
-          </a>
+            <h3
+              class="text-base font-bold uppercase tracking-wide text-[#191C1F] lg:text-lg"
+            >
+              {{ t(sector.title) }}
+            </h3>
+            <ul class="mt-5 space-y-3">
+              <li
+                v-for="(point, pIndex) in sector.points"
+                :key="`invest-sector-${index}-point-${pIndex}`"
+                class="flex gap-2.5 text-base leading-7 text-grey lg:text-[17px]"
+              >
+                <span aria-hidden="true" class="flex-none text-[#191C1F]/40">—</span>
+                <span>{{ t(point) }}</span>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
+
+      <div class="mt-14 lg:mt-20">
+        <span
+          class="inline-flex rounded-lg bg-[#F7F7F7] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-[#191C1F] lg:text-sm"
+        >
+          {{ t("Траектория реформ") }}
+        </span>
+
+        <ul class="mt-6 lg:mt-8">
+          <li
+            v-for="(item, index) in timeline"
+            :key="`invest-timeline-${index}`"
+            class="flex gap-3 border-b border-[#191C1F14] py-5 first:pt-0 last:border-0 last:pb-0"
+          >
+            <span
+              aria-hidden="true"
+              class="mt-[10px] h-[6px] w-[6px] flex-none rounded-full bg-[#191C1F]"
+            ></span>
+            <p class="text-base leading-7 text-grey lg:text-[17px]">
+              <span class="font-semibold text-[#191C1F]">{{ t(item.year) }}</span>
+              {{ t(item.text) }}
+            </p>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
