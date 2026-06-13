@@ -140,7 +140,11 @@
 
         <div class="m-pagination mt-6">
           <div class="w-full flex justify-center">
-            <el-pagination background layout="prev, pager, next" :total="1000" />
+            <el-pagination
+              background
+              layout="prev, pager, next"
+              :total="1000"
+            />
           </div>
         </div>
       </div>
@@ -348,31 +352,30 @@ onUnmounted(() => {
 :deep(.el-select__caret) {
   color: #505a63;
 }
-
-
 </style>
 <style>
 .el-pagination .el-pager li {
   background: white !important;
 }
 
-.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev {
-  border: 1px solid #595D62 !important;
+.el-pagination.is-background .btn-next,
+.el-pagination.is-background .btn-prev {
+  border: 1px solid #595d62 !important;
   background: white !important;
   border-radius: 8px !important;
 }
 
 .el-pager li:hover {
-  color: #191C1F !important;
+  color: #191c1f !important;
 }
 
 .el-pager li.is-active {
-  background: #191C1F !important;
+  background: #191c1f !important;
   border-radius: 8px !important;
 }
 
-.el-pagination.is-background .btn-next:hover, .el-pagination.is-background .btn-prev:hover {
-  color: #191C1F !important;
+.el-pagination.is-background .btn-next:hover,
+.el-pagination.is-background .btn-prev:hover {
+  color: #191c1f !important;
 }
-
 </style>

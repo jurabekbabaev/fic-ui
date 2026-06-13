@@ -11,10 +11,8 @@ import AppMenu from "./AppMenu.vue";
 import LanguageSwitcher from "../widgets/LanguageSwitcher.vue";
 import LogoWhite from "/images/logo-white.svg";
 import LogoBlack from "/images/ba12d8ddde154e568c101e56e4a917883a60b20a.png";
-import { useRoute } from "vue-router";
 import WLocaleLink from "~/components/shared/WLocaleLink.vue";
 
-const route = useRoute();
 const { t } = useI18n();
 
 const isTabletOrMobile = ref(false);
@@ -39,13 +37,13 @@ onMounted(() => {
   <client-only>
     <div
       class="sticky py-2 top-0 left-0 w-full md:right-0 md:left-0 z-[99]"
-      :class="props.isHome ? '' : 'bg-white border-b border-b-gray-200'"
+      :class="(props.isHome && !isTabletOrMobile) ? '' : 'bg-white border-b border-b-gray-200'"
     >
       <div class="mainContainer">
         <div class="w-full flex justify-between items-center">
           <div>
             <WLocaleLink to="/">
-              <img :src="LogoWhite" v-if="props.isHome" class="w-[160px] lg:w-[200px]" />
+              <img :src="LogoWhite" v-if="props.isHome && !isTabletOrMobile" class="w-[160px] lg:w-[200px]" />
               <img :src="LogoBlack" v-else class="w-[160px] lg:w-[200px]" />
             </WLocaleLink>
           </div>
