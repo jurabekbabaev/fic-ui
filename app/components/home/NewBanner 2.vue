@@ -9,6 +9,9 @@
         <div class="introTextOverlay__backdrop" />
         <div class="introTextOverlay__glow" />
         <div class="introTextOverlay__body">
+          <div class="introTextOverlay__logo" :style="textOverlayStyleLogo">
+            <img src="/images/logo-white.svg" alt="FIC" class="introTextOverlay__logoImg" />
+          </div>
           <div class="introTextOverlay__main" :style="textOverlayStyle">
             {{ t("Совет поддерживается") }}
           </div>
@@ -416,6 +419,7 @@ function computeTextStyle(p, delay = 0) {
 
 const textOverlayStyle = computed(() => computeTextStyle(textOverlayProgress.value, 0));
 const textOverlayStyleAccent = computed(() => computeTextStyle(textOverlayProgress.value, 0.12));
+const textOverlayStyleLogo = computed(() => computeTextStyle(textOverlayProgress.value, 0));
 
 function playTextOverlay() {
   return new Promise((resolve) => {
@@ -959,6 +963,21 @@ onUnmounted(() => {
   align-items: center;
   text-align: center;
   gap: 0;
+}
+
+.introTextOverlay__logo {
+  margin-bottom: clamp(16px, 3vw, 32px);
+  will-change: transform, opacity, filter;
+  transform-origin: 50% 50%;
+  backface-visibility: hidden;
+}
+
+.introTextOverlay__logoImg {
+  width: clamp(120px, 16vw, 200px);
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
 }
 
 .introTextOverlay__main {

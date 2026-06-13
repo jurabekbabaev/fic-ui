@@ -76,7 +76,9 @@
       <div v-if="isLoading" class="grid lg:grid-cols-3 sm:grid-cols-1 gap-4">
         <div class="mb-4" v-for="n in 6" :key="n">
           <div class="card-item">
-            <div class="card-item-image lg:h-[260px] h-[180px] bg-gray-200 animate-pulse"></div>
+            <div
+              class="card-item-image lg:h-[260px] h-[180px] bg-gray-200 animate-pulse"
+            ></div>
             <div class="card-item-body">
               <div class="h-4 bg-gray-200 animate-pulse rounded mb-2"></div>
               <div class="h-6 bg-gray-200 animate-pulse rounded mb-2"></div>
@@ -89,13 +91,18 @@
 
       <!-- Actual content -->
       <div v-else class="grid lg:grid-cols-3 sm:grid-cols-1 gap-4">
-        <div class="mb-4 rounded-bl-xl rounded-br-xl" v-for="(item, i) in data" :key="i" style="background: rgb(247, 247, 247);">
+        <div
+          class="mb-4 rounded-bl-xl rounded-br-xl"
+          v-for="(item, i) in data"
+          :key="i"
+          style="background: rgb(247, 247, 247)"
+        >
           <div class="card-item cursor-pointer" @click="View(item)">
             <div
               class="card-item-image"
               :style="{ backgroundImage: `url(${item.image_path})` }"
             ></div>
-            <div class="card-item-body">
+            <!-- <div class="card-item-body">
               <div class="font-medium text-grey mb-1">
                 {{ getLocalizedField(item.subject, "name") }}
               </div>
@@ -105,7 +112,7 @@
                 {{ getLocalizedField(item, "title") }}
               </div>
               <div>{{ date(item.date, "DD.MM.YYYY") }}</div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
