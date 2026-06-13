@@ -45,9 +45,10 @@ const openSessionDetail = async (path: string) => {
 <template>
   <section class="pb-18 pt-12 lg:pb-24 lg:pt-16">
     <client-only>
-      <!-- Sessions over the years -->
       <div>
-        <h2 class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]">
+        <h2
+          class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]"
+        >
           {{ t("За прошедшие годы") }}
         </h2>
 
@@ -82,10 +83,10 @@ const openSessionDetail = async (path: string) => {
           </article>
         </div>
       </div>
-
-      <!-- Plenary sessions in numbers -->
       <div class="mt-16 lg:mt-24">
-        <h2 class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]">
+        <h2
+          class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]"
+        >
           {{ t("Пленарные сессии в цифрах") }}
         </h2>
 
