@@ -98,7 +98,7 @@ function ViewReadMore(item: IType) {
 <template>
   <div>
     <div class="" id="mwg">
-      <h1 class="lg:text-[112px] text-[32px] uppercase font-black">
+      <h1 class="lg:text-[72px] text-[32px] uppercase font-black">
         {{ t("Рабочие группы") }}
       </h1>
       <h1 class="lg:text-[54px] text-[32px] uppercase font-black mt-4">
