@@ -2,8 +2,8 @@
 import { useI18n } from 'vue-i18n'
 import {
   getLocalizedField,
-  getLocalizedTitle,
   t as tHelper,
+  date,
 } from "~/composables/helpers";
 const { t } = useI18n()
 import { useBlogsStore } from "@/stores/blogs";
@@ -13,7 +13,7 @@ const filter = ref({
   year: null,
   page: 1
 });
-const models = ref([]);
+const allModels = ref([]);
 const isTestSubject = (item) => {
   const names = [
     item?.name,
@@ -32,6 +32,17 @@ const subjects = computed(() => {
 const pagination = computed(() => {
   return store.pagination;
 });
+// Backend filterlarni qo'llab-quvvatlamaydi, shuning uchun frontendda filtrlaymiz
+const models = computed(() => {
+  return allModels.value.filter((item) => {
+    const matchSubject =
+      !filter.value.subject_id || item.subject_id === filter.value.subject_id;
+    const matchYear =
+      !filter.value.year ||
+      String(item.date || '').slice(0, 4) === String(filter.value.year);
+    return matchSubject && matchYear;
+  });
+});
 onMounted(() => {
   store.getSubjects()
   getModels();
@@ -39,9 +50,9 @@ onMounted(() => {
 const getModels = (params) => {
   store.getList(filter.value).then(_ => {
     if(params?.isFilter){
-      models.value = store.list;
+      allModels.value = store.list;
     }else{
-      models.value = models.value.concat(store.list);
+      allModels.value = allModels.value.concat(store.list);
     }
   })
 }
@@ -53,10 +64,6 @@ const View = (item) => {
 const toNextPage = () => {
   filter.value.page++;
   getModels();
-}
-const submitFilter = () => {
-  filter.value.page = 1;
-  getModels({isFilter: true});
 }
 </script>
 <template>
@@ -74,7 +81,6 @@ const submitFilter = () => {
             clearable
             v-model="filter.subject_id"
             :placeholder="t('Все темы')"
-            @change="submitFilter"
           >
             <el-option
               v-for="item in subjects"
@@ -85,18 +91,17 @@ const submitFilter = () => {
           </el-select>
         </div>
         <div class="filter-field">
-          <el-select 
-            clearable 
-            v-model="filter.year" 
+          <el-select
+            clearable
+            v-model="filter.year"
             :placeholder="t('Все годы')"
-            @change="submitFilter"
             >
-            <el-option label="2025" value="2025" />
-            <el-option label="2024" value="2024" />
+            <el-option label="2025" :value="2025" />
+            <el-option label="2024" :value="2024" />
           </el-select>
         </div>
       </div>
-      
+
       <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-4">
         <div class="mb-4 rounded-bl-xl rounded-br-xl" v-for="(item, i) in models" :key="i" style="background: rgb(247, 247, 247);">
           <div class="card-item cursor-pointer" @click="View(item)">
@@ -122,7 +127,7 @@ const submitFilter = () => {
       <div class="text-center" v-if="pagination?.last_page > filter.page">
         <button class="btn btn-secondary" @click="toNextPage">{{$t('Посмотреть больше')}}</button>
       </div>
-      
+
     </div>
   </div>
 </template>
