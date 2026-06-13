@@ -1,9 +1,26 @@
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
+
+type ContactType = "phone" | "email" | "location" | "hours";
+
+interface ContactItem {
+  type: ContactType;
+  value: string;
+  href?: string;
+}
+
+interface SecretariatMember {
+  image: string;
+  fullname: string;
+  position: string;
+  description: string;
+  biography: string;
+  contacts: ContactItem[];
+}
+
 interface Props {
   open: boolean;
-  title: string;
-  memberName: string;
-  content: string;
+  member: SecretariatMember | null;
 }
 
 const props = defineProps<Props>();
@@ -12,11 +29,13 @@ const emit = defineEmits<{
   close: [];
 }>();
 
+const { t } = useI18n();
+
 const previousOverflow = ref("");
 const previousPaddingRight = ref("");
 
 const paragraphs = computed(() =>
-  props.content
+  (props.member?.biography ?? "")
     .split(/\n\s*\n/)
     .map((paragraph) => paragraph.trim())
     .filter(Boolean)
@@ -79,22 +98,22 @@ onBeforeUnmount(() => {
 
 <template>
   <Teleport to="body">
-    <Transition name="secretariat-modal">
+    <Transition name="sec-modal">
       <div
-        v-if="open"
-        class="secretariat-modal-overlay"
+        v-if="open && member"
+        class="sec-modal-overlay"
         @click.self="handleClose"
       >
         <div
-          class="secretariat-modal-dialog"
+          class="sec-modal"
           role="dialog"
           aria-modal="true"
-          :aria-label="title"
+          :aria-label="member.fullname"
         >
           <button
             type="button"
-            class="secretariat-modal-close"
-            aria-label="Close modal"
+            class="sec-modal__close"
+            aria-label="Close"
             @click="handleClose"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -109,19 +128,22 @@ onBeforeUnmount(() => {
             </svg>
           </button>
 
-          <div class="secretariat-modal-heading">
-            <span></span>
-            <h3>{{ title }}</h3>
-            <span></span>
-          </div>
+          <header class="sec-modal__header">
+            <div class="sec-modal__avatar">
+              <img :src="member.image" :alt="member.fullname" />
+            </div>
+            <div class="sec-modal__id">
+              <p class="sec-modal__position">{{ member.position }}</p>
+              <h3 class="sec-modal__name">{{ member.fullname }}</h3>
+            </div>
+          </header>
 
-          <p class="secretariat-modal-member">{{ memberName }}</p>
-
-          <div class="secretariat-modal-body">
+          <div class="sec-modal__body">
+            <p class="sec-modal__eyebrow">{{ t("Биография") }}</p>
             <p
-              v-for="paragraph in paragraphs"
-              :key="paragraph"
-              class="secretariat-modal-paragraph"
+              v-for="(paragraph, i) in paragraphs"
+              :key="i"
+              class="sec-modal__paragraph"
             >
               {{ paragraph }}
             </p>
@@ -133,7 +155,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.secretariat-modal-overlay {
+.sec-modal-overlay {
   position: fixed;
   inset: 0;
   z-index: 1000;
@@ -141,154 +163,174 @@ onBeforeUnmount(() => {
   align-items: center;
   justify-content: center;
   padding: 16px;
-  background: rgba(12, 18, 32, 0.2);
-  backdrop-filter: blur(5px);
+  background: rgba(12, 14, 16, 0.42);
+  backdrop-filter: blur(6px);
 }
 
-.secretariat-modal-dialog {
+.sec-modal {
   position: relative;
-  width: min(760px, 100%);
-  max-height: min(80vh, 760px);
+  display: flex;
+  flex-direction: column;
+  width: min(680px, 100%);
+  max-height: min(86vh, 800px);
   overflow: hidden;
-  border: 1px solid rgba(48, 78, 196, 0.1);
-  border-radius: 20px;
+  border: 1px solid rgba(25, 28, 31, 0.08);
+  border-radius: 28px;
   background: #ffffff;
-  box-shadow: 0 16px 40px rgba(12, 18, 32, 0.12);
-  padding: 18px 20px;
+  box-shadow: 0 30px 80px rgba(12, 14, 16, 0.22);
 }
 
-.secretariat-modal-close {
+.sec-modal__close {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(48, 78, 196, 0.45);
-  border-radius: 10px;
-  background: #ffffff;
-  color: #3555d5;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(25, 28, 31, 0.06);
+  color: #191c1f;
   transition: background-color 0.24s ease, color 0.24s ease,
-    border-color 0.24s ease, transform 0.24s ease;
+    transform 0.24s ease;
 }
 
-.secretariat-modal-close:hover {
-  background: #3555d5;
+.sec-modal__close:hover {
+  background: #191c1f;
   color: #ffffff;
-  border-color: #3555d5;
-  transform: translateY(-1px);
+  transform: rotate(90deg);
 }
 
-.secretariat-modal-close svg {
-  width: 16px;
-  height: 16px;
+.sec-modal__close svg {
+  width: 18px;
+  height: 18px;
 }
 
-.secretariat-modal-heading {
-  margin-bottom: 10px;
+.sec-modal__header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 28px 30px 22px;
+  border-bottom: 1px solid rgba(25, 28, 31, 0.07);
+}
+
+.sec-modal__avatar {
+  flex: 0 0 76px;
+  width: 76px;
+  height: 76px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #eef0f3;
+}
+
+.sec-modal__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.sec-modal__id {
+  min-width: 0;
   padding-right: 44px;
 }
 
-.secretariat-modal-heading h3 {
-  font-size: 22px;
-  line-height: 1.2;
+.sec-modal__position {
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #909aa6;
+}
+
+.sec-modal__name {
+  font-size: clamp(20px, 3vw, 26px);
+  line-height: 1.1;
   font-weight: 800;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: #353a45;
+  color: #191c1f;
 }
 
-.secretariat-modal-member {
-  margin-bottom: 12px;
-  text-align: left;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 600;
-  color: #4b5870;
-}
-
-.secretariat-modal-body {
-  max-height: calc(min(80vh, 760px) - 96px);
+.sec-modal__body {
+  flex: 1;
+  min-height: 0;
   overflow-y: auto;
-  padding-right: 4px;
+  padding: 24px 30px 30px;
 }
 
-.secretariat-modal-paragraph {
-  margin-bottom: 10px;
-  font-size: 14px;
-  line-height: 1.5;
+.sec-modal__eyebrow {
+  margin-bottom: 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c2c8d0;
+}
+
+.sec-modal__paragraph {
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.7;
   white-space: pre-line;
-  color: #5d6674;
+  color: #505a63;
 }
 
-.secretariat-modal-paragraph:last-child {
+.sec-modal__paragraph:last-child {
   margin-bottom: 0;
 }
 
-.secretariat-modal-enter-active,
-.secretariat-modal-leave-active {
-  transition: opacity 0.24s ease-in-out;
+/* overlay + dialog transition */
+.sec-modal-enter-active,
+.sec-modal-leave-active {
+  transition: opacity 0.26s ease;
 }
 
-.secretariat-modal-enter-active .secretariat-modal-dialog,
-.secretariat-modal-leave-active .secretariat-modal-dialog {
-  transition: transform 0.24s ease-in-out, opacity 0.24s ease-in-out;
+.sec-modal-enter-active .sec-modal,
+.sec-modal-leave-active .sec-modal {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.26s ease;
 }
 
-.secretariat-modal-enter-from,
-.secretariat-modal-leave-to {
+.sec-modal-enter-from,
+.sec-modal-leave-to {
   opacity: 0;
 }
 
-.secretariat-modal-enter-from .secretariat-modal-dialog,
-.secretariat-modal-leave-to .secretariat-modal-dialog {
+.sec-modal-enter-from .sec-modal,
+.sec-modal-leave-to .sec-modal {
   opacity: 0;
-  transform: translateY(14px) scale(0.97);
+  transform: translateY(24px) scale(0.96);
 }
 
 @media (max-width: 767px) {
-  .secretariat-modal-overlay {
-    align-items: flex-start;
-    padding: 12px;
+  .sec-modal-overlay {
+    align-items: flex-end;
+    padding: 0;
   }
 
-  .secretariat-modal-dialog {
-    max-height: calc(100vh - 24px);
-    border-radius: 18px;
-    padding: 18px 16px;
+  .sec-modal {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: 24px 24px 0 0;
   }
 
-  .secretariat-modal-close {
-    top: 12px;
-    right: 12px;
+  .sec-modal__header {
+    padding: 24px 20px 18px;
+    gap: 14px;
   }
 
-  .secretariat-modal-heading {
-    margin-top: 8px;
-    margin-bottom: 10px;
-    padding-right: 44px;
+  .sec-modal__avatar {
+    flex-basis: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
   }
 
-  .secretariat-modal-heading h3 {
-    font-size: 18px;
-    letter-spacing: -0.02em;
-  }
-
-  .secretariat-modal-member {
-    font-size: 14px;
-    margin-bottom: 12px;
-  }
-
-  .secretariat-modal-body {
-    max-height: calc(100vh - 116px);
-    padding-right: 4px;
-  }
-
-  .secretariat-modal-paragraph {
-    font-size: 14px;
-    line-height: 1.5;
+  .sec-modal__body {
+    padding: 20px 20px 26px;
   }
 }
 </style>
