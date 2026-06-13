@@ -102,7 +102,7 @@ function ViewReadMore(item: IType) {
         {{ t("Рабочие группы") }}
       </h1>
       <h1 class="lg:text-[54px] text-[32px] uppercase font-black mt-4">
-        {{ t("Основные рабочие группы") }}
+        {{ t("Основные рабочие группы (РГ)") }}
       </h1>
 
       <div class="grid lg:grid-cols-3 grid-cols-1 gap-3 mt-8">
@@ -116,7 +116,7 @@ function ViewReadMore(item: IType) {
               :class="item.icon"
               class="lg:text-5xl text-[44px] text-[#505A63]"
             ></i>
-            <h4 class="font-medium lg:text-2xl text-[#191C1F] text-xl mt-2">
+            <h4 class="font-medium lg:text-2xl text-[#191C1F] text-xl mt-2 uppercase">
               {{ item.content }}
             </h4>
           </div>
