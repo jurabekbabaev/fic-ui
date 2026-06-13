@@ -7,6 +7,7 @@ import interimImage4 from "@/assets/images/plenarysessions/ps_4.png";
 import interimImage5 from "@/assets/images/plenarysessions/ps_5.png";
 
 const { t } = useI18n();
+const localePath = useLocalePath();
 
 interface IResult {
   icon: string;
@@ -15,31 +16,39 @@ interface IResult {
   content: string;
 }
 
+interface ISession {
+  id: string;
+  image: string;
+  fullname: string;
+  link?: string;
+}
+
 const interimSessionTitles = [
   "Первое промежуточное заседание Совета иностранных инвесторов, 16 апреля 2019 г.",
   "Второе промежуточное заседание Совета иностранных инвесторов, 20 ноября 2019 г.",
   "Первое промежуточное заседание Совета иностранных инвесторов, 29 августа 2023 г.",
 ];
 
-const data = ref(
-  plenarySessionCards.map((item, index) => ({
-    ...item,
+// All interim sessions in one flat list: the first three reuse the plenary
+// session cards (with interim titles), the last two are interim-only entries.
+const sessions = ref<ISession[]>([
+  ...plenarySessionCards.map((item, index) => ({
+    id: item.targetId,
+    image: item.image,
     fullname: interimSessionTitles[index],
-  }))
-);
-
-const additionalBlocks = ref([
+    link: item.link,
+  })),
   {
     id: "interim-2024",
     image: interimImage4,
-    fullname: "Второе промежуточное заседание Совета иностранных инвесторов, 10 октября 2024 г.",
-    position: "Подробно",
+    fullname:
+      "Второе промежуточное заседание Совета иностранных инвесторов, 10 октября 2024 г.",
   },
   {
     id: "interim-2025",
     image: interimImage5,
-    fullname: "Третье промежуточное заседание Совета иностранных инвесторов, 19 ноября 2025 г.",
-    position: "Подробно",
+    fullname:
+      "Третье промежуточное заседание Совета иностранных инвесторов, 19 ноября 2025 г.",
   },
 ]);
 
@@ -52,7 +61,7 @@ const resultList = ref<IResult[]>([
   },
   {
     icon: "icon-user-briefcase",
-    count: "1 ",
+    count: "1",
     counttext: t("рабочая группа"),
     content: t("в 2024 году"),
   },
@@ -64,117 +73,82 @@ const resultList = ref<IResult[]>([
   },
 ]);
 
-const openSessionDetail = async (path: string) => {
-  const localizedPath = localePath(path);
-  await navigateTo(localizedPath);
+const openSessionDetail = async (path?: string) => {
+  if (!path) return;
+  await navigateTo(localePath(path));
 };
 </script>
 
 <template>
-  <section>
+  <section class="pb-18 pt-12 lg:pb-24 lg:pt-16">
     <client-only>
-      
+      <!-- Sessions over the years -->
       <div>
-        <h1 class="mb-65 mt-0 text-center text-[28px] font-black uppercase lg:text-[64px]">
+        <h2 class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]">
           {{ t("За прошедшие годы") }}
-        </h1>
+        </h2>
 
-        <div
-          class="m-auto mb-0 mt-[240px] flex w-full justify-center rounded-[32px] bg-[#0000000D] lg:w-[1014px] relative"
-        >
-          <div
-            class="absolute top-[-217px] z-10 grid w-full grid-cols-1 gap-5 p-3 lg:w-[1390px] lg:grid-cols-3"
-          >
-            <article
-              v-for="item in data"
-              :key="item.year"
-              :id="item.targetId"
-              class="relative rounded-[24px] border border-[#00000014] bg-white p-4 shadow-[0_18px_48px_rgba(25,28,31,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_60px_rgba(25,28,31,0.12)]"
-            >
-              <img
-                :src="item.image"
-                :alt="item.fullname"
-                class="h-[140px] w-full rounded-2xl object-cover object-center lg:h-[324px]"
-              />
-
-              <div class="mt-4 flex min-h-[132px] flex-col justify-between gap-4">
-                <span class="block text-base font-medium tracking-[-0.02em] text-[#000000] lg:text-lg">
-                  {{ t(item.fullname) }}
-                </span>
-
-                <button
-                  type="button"
-                  class="btn btn-secondary btn-sm relative z-20 w-fit"
-                  @click="openSessionDetail(item.link)"
-                >
-                  {{ t(item.position) }}
-                </button>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- 2 additional blocks below, aligned under the left 2 columns -->
-        <div
-          class="m-auto mt-[320px] grid w-full grid-cols-1 gap-5 p-3 lg:w-[1390px] lg:grid-cols-3"
-        >
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <article
-            v-for="item in additionalBlocks"
+            v-for="item in sessions"
             :key="item.id"
             :id="item.id"
-            class="relative rounded-[24px] border border-[#00000014] bg-white p-4 shadow-[0_18px_48px_rgba(25,28,31,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_60px_rgba(25,28,31,0.12)]"
+            class="flex flex-col rounded-[24px] border border-[#00000014] bg-white p-4 shadow-[0_18px_48px_rgba(25,28,31,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_60px_rgba(25,28,31,0.12)]"
           >
             <img
               :src="item.image"
               :alt="item.fullname"
-              class="h-[140px] w-full rounded-2xl object-cover object-center lg:h-[324px]"
+              class="h-[200px] w-full rounded-2xl object-cover object-center lg:h-[280px]"
             />
 
-            <div class="mt-4 flex min-h-[132px] flex-col justify-between gap-4">
-              <span class="block text-base font-medium tracking-[-0.02em] text-[#000000] lg:text-lg">
+            <div class="mt-4 flex flex-1 flex-col justify-between gap-4">
+              <span
+                class="block text-base font-medium tracking-[-0.02em] text-[#191C1F] lg:text-lg"
+              >
                 {{ t(item.fullname) }}
               </span>
 
               <button
+                v-if="item.link"
                 type="button"
-                class="btn btn-secondary btn-sm relative z-20 w-fit"
+                class="btn btn-secondary btn-sm w-fit"
+                @click="openSessionDetail(item.link)"
               >
-                {{ t(item.position) }}
+                {{ t("Подробно") }}
               </button>
             </div>
           </article>
         </div>
       </div>
 
-      <div class="mt-16">
-        <h1 class="lg:text-[64px] text-[32px] uppercase font-black">
-          {{t('Промежуточная сессия в цифрах')}}
-        </h1>
-        <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-10 mt-8">
+      <!-- Interim session in numbers -->
+      <div class="mt-16 lg:mt-24">
+        <h2 class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]">
+          {{ t("Промежуточная сессия в цифрах") }}
+        </h2>
+
+        <div class="grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <div
-            class="bg-[#F7F7F7] p-4 rounded-xl"
             v-for="(item, index) in resultList"
             :key="index"
+            class="card-item p-5 lg:p-7"
           >
             <i
               :class="item.icon"
-              class="lg:text-5xl text-[44px] text-[#505A63]"
+              class="text-[44px] text-[#505A63] lg:text-5xl"
             ></i>
-            <div class="flex items-baseline gap-1">
-              <h3 class="font-black lg:text-[44px] text-[32px]">
+            <div class="mt-3 flex items-baseline gap-1">
+              <h3 class="text-[32px] font-black leading-none lg:text-[44px]">
                 {{ item.count }}
               </h3>
-              <h4 class="lg:text-2xl font-black">{{ item.counttext }}</h4>
+              <h4 class="text-2xl font-black">{{ item.counttext }}</h4>
             </div>
-            <h5 class="font-normal lg:text-lg text-[#505A63] text-base">{{
-              item.content
-            }}</h5>
+            <h5 class="mt-2 text-base font-normal text-[#505A63] lg:text-lg">
+              {{ item.content }}
+            </h5>
           </div>
         </div>
       </div>
     </client-only>
   </section>
 </template>
-
-<style></style>
-
