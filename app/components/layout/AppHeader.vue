@@ -3,15 +3,15 @@
 const props = defineProps({
   isHome: {
     type: Boolean,
-    default: false
-  }
-})
+    default: false,
+  },
+});
 import { useI18n } from "vue-i18n";
 import AppHeaderNav from "./AppHeaderNav.vue";
 import AppMenu from "./AppMenu.vue";
 import LanguageSwitcher from "../widgets/LanguageSwitcher.vue";
-import LogoWhite from '/images/logo-white.svg'
-import LogoBlack from '/images/ba12d8ddde154e568c101e56e4a917883a60b20a.png'
+import LogoWhite from "/images/logo-white.svg";
+import LogoBlack from "/images/ba12d8ddde154e568c101e56e4a917883a60b20a.png";
 import { useRoute } from "vue-router";
 import WLocaleLink from "~/components/shared/WLocaleLink.vue";
 
@@ -57,8 +57,13 @@ onMounted(() => {
             </div>
           </div>
           <div class="flex gap-3.5">
-            <WLocaleLink to="/contacts" class="btn btn-primary" v-if="!isMobile">{{ t('Связаться') }}</WLocaleLink>
-            <AppMenu />
+            <WLocaleLink
+              to="/contacts"
+              class="btn btn-primary"
+              v-if="!isMobile"
+              >{{ t("Связаться") }}</WLocaleLink
+            >
+            <AppMenu v-if="isMobile" />
           </div>
         </div>
       </div>

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.vue$\")",
+      "Bash(grep -n \"рабочие группы\\\\|working group\\\\|межведомственные\" /Users/amirbekolimov/Desktop/fic-front-main/app/pages/advice/[id].vue)",
+      "Bash(node --input-type=module)"
+    ]
+  }
+}

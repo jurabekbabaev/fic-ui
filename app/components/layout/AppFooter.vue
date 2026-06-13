@@ -1,66 +1,74 @@
 <script setup>
 import { useI18n } from "vue-i18n";
-const { t } = useI18n();
 import WLocaleLink from "~/components/shared/WLocaleLink.vue";
+import { mainMenuSections } from "~/constants/mainMenu";
+
+const { t } = useI18n();
 </script>
 
 <template>
-  <footer class="bg-[#191C1F] lg:h-[350px] sm:h-full pt-12 pb-4 mt-24">
+  <footer class="bg-[#191C1F] pt-12 pb-8 mt-24">
     <div class="container">
-      <div class="lg:flex sm:block justify-between">
-        <div>
-          <img src="/images/logo-white.svg" alt="" class="w-[200px]">
-          <div class="mb-4 flex gap-2 mt-4">
-              <a href="https://t.me/fic_uz" target="_blank" class="size-12 flex justify-center items-center rounded-[50%] bg-white cursor-pointer hover:bg-gray-200">
+      <div class="lg:flex sm:block items-start gap-12">
+        <!-- Left: Logo + Socials + Copyright -->
+        <div
+          class="lg:w-[40%] shrink-0 mb-10 lg:mb-0 flex flex-col justify-between"
+        >
+          <div>
+            <img src="/images/logo-white.svg" alt="FIC" class="w-[200px]" />
+            <div class="flex gap-2 mt-5 mb-6">
+              <a
+                href="https://t.me/fic_uz"
+                target="_blank"
+                class="size-10 flex justify-center items-center rounded-full bg-white cursor-pointer hover:bg-gray-200 transition-colors"
+              >
                 <i class="icon-telegram text-[#191C1F]"></i>
               </a>
-              <a href="https://www.facebook.com/fics.uz" target="_blank" class="size-12 flex justify-center items-center rounded-[50%] bg-white cursor-pointer hover:bg-gray-200">
+              <a
+                href="https://www.facebook.com/fics.uz"
+                target="_blank"
+                class="size-10 flex justify-center items-center rounded-full bg-white cursor-pointer hover:bg-gray-200 transition-colors"
+              >
                 <i class="icon-facebook text-[#191C1F]"></i>
               </a>
-              <a href="https://www.linkedin.com/company/ficsuz" target="_blank" class="size-12 flex justify-center items-center rounded-[50%] bg-white cursor-pointer hover:bg-gray-200">
+              <a
+                href="https://www.linkedin.com/company/ficsuz"
+                target="_blank"
+                class="size-10 flex justify-center items-center rounded-full bg-white cursor-pointer hover:bg-gray-200 transition-colors"
+              >
                 <i class="icon-linkedin text-[#191C1F]"></i>
               </a>
             </div>
-            <p class="text-xs font-normal text-[#FFFFFF80] mt-[100px] w-2/3">{{ t('© 2024 – Совет иностранных инвесторов при Президенте Республики Узбекистан') }}</p>
+          </div>
+          <p class="text-xs font-normal text-[#FFFFFF80] mt-8 lg:mt-auto">
+            {{
+              t(
+                "©2019-2026 – Совет иностранных инвесторов при Президенте Республики Узбекистан"
+              )
+            }}
+          </p>
         </div>
-        <div>
-          <h4 class="text-white text-sm font-normal mb-5">{{ t('О СИИ') }}</h4>
-          <div class="block">
-            <!-- <WLocaleLink to="/" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Мисси') }}</WLocaleLink> -->
-            <WLocaleLink to="/secretariat" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Ассоциация') }}</WLocaleLink>
-            <!-- <router-link to="" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Исполнительный комитет') }}</router-link> -->
-            <WLocaleLink to="/maininfo" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('История СИИ') }}</WLocaleLink>
-            <WLocaleLink to="/blog" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Статьи') }}</WLocaleLink>
-            <WLocaleLink to="/reports" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Отчеты') }}</WLocaleLink>
-            <WLocaleLink to="/contacts" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Контакты') }}</WLocaleLink>
-          </div>
-        </div>
-        <div>
-          <h4 class="text-white text-sm font-normal mb-5">{{ t('Членство') }}</h4>
-          <div class="block">
-            <WLocaleLink to="/becomemember" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('О членах') }}</WLocaleLink>
-            <WLocaleLink to="/becomemember?target=membership-form" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Стать членом СИИ') }}</WLocaleLink>
-            <WLocaleLink to="/experts" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Эксперты') }}</WLocaleLink>
-          </div>
-          <h4 class="text-white text-sm font-normal mb-5 mt-5">{{ t('События') }}</h4>
-          <div class="block">
-            <WLocaleLink to="/calendarplan" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Календарный план') }}</WLocaleLink>
-            <WLocaleLink to="/plenarysessions" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Пленарные сессии') }}</WLocaleLink>
-            <WLocaleLink to="/interimsession" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Промежуточная сессия') }}</WLocaleLink>
-            <WLocaleLink to="/weeklyevents" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Еженедельные события') }}</WLocaleLink>
-            <!-- <WLocaleLink to="/weeklyevents" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Промежуточные события') }}</WLocaleLink> -->
-          </div>
-        </div>
-        <div>
-          <h4 class="text-white text-sm font-normal mb-5">{{ t('Рабочие группы') }}</h4>
-          <div class="block">
-            <WLocaleLink to="/advice" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Основные рабочие группы') }}</WLocaleLink>
-            <WLocaleLink to="/advice/1?year=2025" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Межведомственные рабочие группы') }}</WLocaleLink>
-          </div>
-          <h4 class="text-white text-sm font-normal mb-5 mt-5">{{ t('Медиа') }}</h4>
-          <div class="block">
-            <WLocaleLink to="/news" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Новости') }}</WLocaleLink>
-            <WLocaleLink to="/publications" class="text-sm font-normal text-[#FFFFFF80] mb-2 block">{{ t('Публикации') }}</WLocaleLink>
+
+        <!-- Right: All menu sections in a 3-column grid -->
+        <div
+          class="lg:w-[60%] grid grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-8"
+        >
+          <div v-for="section in mainMenuSections" :key="section.title">
+            <h4
+              class="text-white text-sm font-semibold mb-3 uppercase tracking-wide opacity-90"
+            >
+              {{ t(section.title) }}
+            </h4>
+            <ul class="space-y-1.5">
+              <li v-for="item in section.items" :key="item.label">
+                <WLocaleLink
+                  :to="item.to"
+                  class="text-sm font-normal text-[#FFFFFF66] hover:text-white transition-colors duration-200 block leading-snug"
+                >
+                  {{ t(item.label) }}
+                </WLocaleLink>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -68,7 +76,4 @@ import WLocaleLink from "~/components/shared/WLocaleLink.vue";
   </footer>
 </template>
 
-
-<style>
-
-</style>
+<style></style>

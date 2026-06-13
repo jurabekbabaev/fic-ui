@@ -65,7 +65,7 @@ import AdBank from "@/assets/images/brands/ad-bank.png";
 import EBank from "@/assets/images/brands/e-bank.png";
 import IfcBank from "@/assets/images/brands/ifc2.png";
 import FICLogo from "../../../public/images/ba12d8ddde154e568c101e56e4a917883a60b20a.png";
-import Logo from "../../../public/images/logo.png";
+import Logo from "../../../app/assets/images/brands/ministry-iit.png";
 
 const { t } = useI18n();
 

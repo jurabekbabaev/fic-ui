@@ -9,7 +9,8 @@
     <WorkingGroups />
     <Blog id="blog" />
     <!-- <Almanac /> -->
-    <News class="mt-[100px]" />
+    <InvestmentStats class="mt-[100px] mb-[60px]" />
+    <News />
     <AboutUs />
   </div>
 </template>
@@ -26,7 +27,7 @@ import VideoSection from '@/components/home/VideoSection.vue'
 import PlanCalendar from '@/components/home/PlanCalendar.vue'
 import WorkingGroups from '@/components/home/WorkingGroups.vue'
 import Blog from '@/components/home/Blog.vue'
-import Almanac from '@/components/home/Almanac.vue'
+import InvestmentStats from '@/components/home/InvestmentStats.vue'
 import News from '@/components/home/News.vue'
 import AboutUs from '@/components/home/AboutUs.vue'
 </script>
