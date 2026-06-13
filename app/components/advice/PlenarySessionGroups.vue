@@ -64,7 +64,9 @@ const data = ref<IType[]>([
   {
     id: 2,
     icon: "icon-book-info",
-    content: t("МРГ по совершенствованию процедур выделения земельных участков"),
+    content: t(
+      "МРГ по совершенствованию процедур выделения земельных участков"
+    ),
     users: [
       {
         image: Image3,
@@ -95,14 +97,18 @@ const data = ref<IType[]>([
         image: Image6,
         position: t("Сопредседатель"),
         fullname: t("Ерлан Досымбеков"),
-        direction: t("EY, управляющий партнер EY по Кавказу и Центральной Азии"),
+        direction: t(
+          "EY, управляющий партнер EY по Кавказу и Центральной Азии"
+        ),
       },
     ],
   },
   {
     id: 4,
     icon: "icon-users-message",
-    content: t("МРГ по улучшению корпоративного управления в местных компаниях"),
+    content: t(
+      "МРГ по улучшению корпоративного управления в местных компаниях"
+    ),
     users: [
       {
         image: Image7,
@@ -114,14 +120,18 @@ const data = ref<IType[]>([
         image: Image8,
         position: t("Сопредседатель"),
         fullname: t("Мариус дан"),
-        direction: t("генеральный директор Franklin Templeton по Центральной Азии"),
+        direction: t(
+          "генеральный директор Franklin Templeton по Центральной Азии"
+        ),
       },
     ],
   },
   {
     id: 5,
     icon: "icon-user-briefcase",
-    content: t("МРГ по подготовке профессиональных кадров для иностранных компаний"),
+    content: t(
+      "МРГ по подготовке профессиональных кадров для иностранных компаний"
+    ),
     users: [
       {
         image: Image9,
@@ -178,7 +188,9 @@ const data = ref<IType[]>([
   {
     id: 8,
     icon: "icon-chart-dollar",
-    content: t("МРГ по разработке законопроекта Об альтернативных инвестиционных фондах"),
+    content: t(
+      "МРГ по разработке законопроекта Об альтернативных инвестиционных фондах"
+    ),
     users: [
       {
         image: Image11,
@@ -191,7 +203,7 @@ const data = ref<IType[]>([
         position: t("Сопредседатель"),
         fullname: t("Казбек бассиев"),
         direction: t(
-          "Старший вице-президент Vision Invest и глава представительства в Узбекистане",
+          "Старший вице-президент Vision Invest и глава представительства в Узбекистане"
         ),
       },
     ],
@@ -205,7 +217,9 @@ const data = ref<IType[]>([
         image: Image17,
         position: t("Председатель"),
         fullname: t("Азиз Абдухакимов"),
-        direction: t("Председатель Национального комитета по экологии и изменению климата"),
+        direction: t(
+          "Председатель Национального комитета по экологии и изменению климата"
+        ),
       },
       {
         image: Image18,
@@ -230,7 +244,9 @@ const data = ref<IType[]>([
         image: Image6,
         position: t("Сопредседатель"),
         fullname: t("Ерлан Досымбеков"),
-        direction: t("Управляющий партнер ЕС для ЕС, Кавказа и Центральной Азии"),
+        direction: t(
+          "Управляющий партнер ЕС для ЕС, Кавказа и Центральной Азии"
+        ),
       },
     ],
   },
@@ -240,7 +256,7 @@ const blockOrder = [8, 7, 6, 5, 4, 3, 2, 1, 9, 10];
 const orderedData = computed(() =>
   blockOrder
     .map((id) => data.value.find((item) => item.id === id))
-    .filter((item): item is IType => Boolean(item)),
+    .filter((item): item is IType => Boolean(item))
 );
 
 function readMore(item: IType) {
@@ -254,49 +270,62 @@ function readMore(item: IType) {
 <template>
   <div :id="sectionId">
     <client-only>
-      <h1 class="lg:text-[54px] text-[32px] uppercase font-black mb-12 mt-24">
+      <h1 class="lg:text-[48px] text-[32px] uppercase font-black mb-12 mt-24">
         {{ t("межведомственные рабочие группы (МРГ)") }}
       </h1>
-      <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 mt-8">
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-3 mt-8">
         <div
           v-for="(item, index) in orderedData"
           :key="index"
-          class="bg-[#F7F7F7] p-4 rounded-xl flex flex-col justify-between lg:min-h-[200px] sm:min-h-[148px]"
+          @click="readMore(item)"
+          class="group bg-[#F7F7F7] hover:bg-[#EFEFEF] transition-colors duration-200 rounded-2xl p-6 lg:p-7 flex flex-col cursor-pointer"
         >
-          <div>
-            <i :class="item.icon" class="lg:text-5xl text-[44px] text-[#505A63]"></i>
-            <div class="font-medium lg:text-2xl uppercase text-[#191C1F] text-xl mt-2">
+          <!-- Top: icon + title -->
+          <div class="flex items-center gap-3 flex-1">
+            <i
+              :class="item.icon"
+              class="text-2xl text-[#505A63] mt-0.5 shrink-0"
+            ></i>
+            <h4
+              class="text-sm font-semibold text-[#191C1F] uppercase leading-snug"
+            >
               {{ item.content }}
-            </div>
+            </h4>
           </div>
-          <div class="mt-[80px] mb-5">
-            <div v-for="(child, i) in item.users" :key="i" class="flex gap-5">
-              <div class="flex flex-col sm:flex-row items-center justify-left gap-6">
-                <div class="diamond-wrapper">
+
+          <!-- Divider -->
+          <div class="border-t border-[#0000000D] mt-6 mb-5"></div>
+
+          <!-- Bottom: 2 users + arrow -->
+          <div class="flex items-end justify-between gap-3">
+            <div class="flex flex-col gap-3 min-w-0">
+              <div
+                v-for="(child, i) in item.users"
+                :key="i"
+                class="flex items-center gap-3"
+              >
+                <div class="diamond-wrapper w-[95px] h-[95px] shrink-0">
                   <div
                     class="diamond-inner-advice bg-white"
                     :style="{ backgroundImage: `url(${child.image})` }"
                   ></div>
                 </div>
-              </div>
-
-              <div>
-                <span class="text-xs text-[#000]">{{ child.position }}</span>
-                <div class="text-sm font-bold uppercase leading-[120%] text-[#191C1F] mb-1">
-                  {{ child.fullname }}
+                <div class="min-w-0">
+                  <div class="text-[12px] text-[#505A63] leading-tight">
+                    {{ child.position }}
+                  </div>
+                  <div
+                    class="text-[14px] font-bold uppercase leading-tight text-[#191C1F] truncate"
+                  >
+                    {{ child.fullname }}
+                  </div>
                 </div>
-                <span class="text-xs text-[#505A63]">{{ child.direction }}</span>
               </div>
             </div>
-          </div>
-          <div>
-            <span
-              class="text-sm font-medium text-[#191C1F] flex items-center gap-2.5 hover:decoration-solid hover:decoration-1 cursor-pointer mt-2"
-              @click="readMore(item)"
-            >
-              <span>{{ t("Подробнее") }}</span>
-              <i class="icon-move-right"></i>
-            </span>
+            <!-- Arrow -->
+            <i
+              class="icon-move-right text-lg text-[#505A63] shrink-0 group-hover:translate-x-1 transition-transform duration-200"
+            ></i>
           </div>
         </div>
       </div>
@@ -306,10 +335,10 @@ function readMore(item: IType) {
 
 <style scoped>
 .diamond-wrapper {
-  width: 70px;
-  height: 70px;
+  width: 75px;
+  height: 75px;
   transform: rotate(45deg);
-  border-radius: 18px;
+  border-radius: 22px;
   overflow: hidden;
   background: white;
   border: 1.23px solid #0000001a;

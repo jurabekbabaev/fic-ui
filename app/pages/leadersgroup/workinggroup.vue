@@ -11,7 +11,7 @@ import Ipoteka from "@/assets/images/brands/ipoteka.png";
 import Uzum from "@/assets/images/brands/uzum.png";
 import Acdf from "@/assets/images/brands/acdf-uz.png";
 import Ey from "@/assets/images/brands/ey.png";
-import Image10 from '@/assets/images/leaders/sandro.png'
+import Image10 from "@/assets/images/leaders/sandro.png";
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
@@ -51,9 +51,7 @@ const data = ref<IType[]>([
     content: t("РГ по привлечению талантов и развитию человеческого капитала"),
     image: Image10,
     fullname: t("Сандро Ртвеладзе"),
-    position: t(
-      "Генеральный директор Ipoteka Bank OTP Group"
-    ),
+    position: t("Генеральный директор Ipoteka Bank OTP Group"),
     company_image: Ipoteka,
   },
   {
@@ -101,66 +99,69 @@ function ViewReadMore(item: IType) {
       <h1 class="lg:text-[72px] text-[32px] uppercase font-black">
         {{ t("Рабочие группы") }}
       </h1>
-      <h1 class="lg:text-[54px] text-[32px] uppercase font-black mt-4">
+      <h1 class="lg:text-[48px] text-[32px] uppercase font-black mt-4">
         {{ t("Основные рабочие группы (РГ)") }}
       </h1>
 
       <div class="grid lg:grid-cols-3 grid-cols-1 gap-3 mt-8">
         <div
-          class="bg-[#F7F7F7] p-4 rounded-xl flex flex-col justify-between lg:min-h-[200px] sm:min-h-[148px]"
           v-for="(item, index) in data"
           :key="index"
+          @click="ViewReadMore(item)"
+          class="group bg-[#F7F7F7] hover:bg-[#EFEFEF] transition-colors duration-200 rounded-2xl p-6 lg:p-7 flex flex-col cursor-pointer"
         >
-          <div>
+          <!-- Top: icon + title -->
+          <div class="flex items-center gap-3 flex-1">
             <i
               :class="item.icon"
-              class="lg:text-5xl text-[44px] text-[#505A63]"
+              class="text-2xl text-[#505A63] mt-0.5 shrink-0"
             ></i>
-            <h4 class="font-medium lg:text-2xl text-[#191C1F] text-xl mt-2 uppercase">
+            <h4
+              class="text-sm font-semibold text-[#191C1F] uppercase leading-snug"
+            >
               {{ item.content }}
             </h4>
           </div>
 
-          <div>
-            <div class="lg:flex block gap-3 lg:mt-[50px] mt-[32px] mb-5">
-              <div
-                class="flex lg:items-center items-start justify-left gap-6 sm:mb-4"
-              >
-                <div class="diamond-wrapper lg:w-[70px] w-[44px] lg:h-[70px] h-[44px]">
+          <!-- Divider -->
+          <div class="border-t border-[#0000000D] mt-6 mb-5"></div>
+
+          <!-- Bottom: avatars + name/position + arrow -->
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <!-- Avatars -->
+              <div class="flex items-center">
+                <div class="diamond-wrapper w-[44px] h-[44px]">
                   <div
                     class="diamond-inner-old bg-white"
                     :style="{ backgroundImage: `url(${item.company_image})` }"
                   ></div>
                 </div>
-                <div class="diamond-wrapper !relative !-left-6 lg:w-[70px] w-[44px] lg:h-[70px] h-[44px]">
+                <div class="diamond-wrapper w-[44px] h-[44px] -ml-4">
                   <div
                     class="diamond-inner"
-                    :style="{
-                      backgroundImage: `url(${item.image})`,
-                    }"
+                    :style="{ backgroundImage: `url(${item.image})` }"
                   ></div>
                 </div>
               </div>
-
-              <div class="mt-10">
+              <!-- Name + position -->
+              <div class="min-w-0">
                 <div
-                  class="text-sm font-bold uppercase leading-[120%] text-[#191C1F] mb-1"
+                  class="text-xs font-bold uppercase leading-tight text-[#191C1F] truncate"
                 >
                   {{ item.fullname }}
                 </div>
-                <span class="text-xs text-[#505A63] leading-[140%]">{{ item.position }}</span>
+                <div
+                  class="text-[11px] text-[#505A63] leading-snug mt-0.5 line-clamp-2"
+                >
+                  {{ item.position }}
+                </div>
               </div>
             </div>
-          </div>
-
-          <div>
-            <span
-              @click="ViewReadMore(item)"
-              class="text-sm font-normal text-[#505A63] flex items-center gap-2.5 hover:decoration-solid hover:decoration-1 cursor-pointer mt-2"
-            >
-              <span>{{ t("Подробнее") }}</span>
-              <i class="icon-move-right"></i>
-            </span>
+            <!-- Arrow -->
+            <i
+              class="icon-move-right text-lg text-[#505A63] shrink-0 group-hover:translate-x-1 transition-transform duration-200"
+            ></i>
           </div>
         </div>
       </div>
