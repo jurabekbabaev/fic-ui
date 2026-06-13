@@ -313,23 +313,277 @@ const timeline = [
           {{ t("Траектория реформ") }}
         </span>
 
-        <ul class="mt-6 lg:mt-8">
+        <ol class="reformTimeline">
           <li
             v-for="(item, index) in timeline"
             :key="`invest-timeline-${index}`"
-            class="flex gap-3 border-b border-[#191C1F14] py-5 first:pt-0 last:border-0 last:pb-0"
+            class="reformTimeline__item"
           >
-            <span
-              aria-hidden="true"
-              class="mt-[10px] h-[6px] w-[6px] flex-none rounded-full bg-[#191C1F]"
-            ></span>
-            <p class="text-base leading-7 text-grey lg:text-[17px]">
-              <span class="font-semibold text-[#191C1F]">{{ t(item.year) }}</span>
-              {{ t(item.text) }}
-            </p>
+            <!-- Year detail card -->
+            <div class="reformTimeline__card">
+              <div class="reformTimeline__cardHead">
+                <span class="reformTimeline__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M4 15l5-5 4 4 7-7"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15 7h5v5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="reformTimeline__yearTag">
+                  {{ t(item.year).replace(".", "") }}
+                </span>
+              </div>
+              <p class="text-base leading-7 text-grey lg:text-[17px]">
+                {{ t(item.text) }}
+              </p>
+            </div>
+
+            <!-- Center node -->
+            <span class="reformTimeline__node" aria-hidden="true"></span>
+
+            <!-- Big faded year on the opposite side (desktop) -->
+            <span class="reformTimeline__bigYear" aria-hidden="true">
+              {{ t(item.year).replace(".", "") }}
+            </span>
           </li>
-        </ul>
+
+          <!-- Downward arrow closing the trajectory -->
+          <li class="reformTimeline__end" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 4v15M6 13l6 6 6-6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+/* "Траектория реформ" — centred alternating timeline.
+   Mobile: single rail on the left. Desktop (>=1024px): cards alternate either
+   side of a central dashed spine, with the year echoed large and faded on the
+   opposite side. */
+.reformTimeline {
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .reformTimeline {
+    margin-top: 3.5rem;
+  }
+}
+
+/* Dashed vertical spine */
+.reformTimeline::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 2.5rem;
+  left: 11px;
+  border-left: 1px dashed rgba(25, 28, 31, 0.2);
+}
+
+@media (min-width: 1024px) {
+  .reformTimeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.reformTimeline__item {
+  position: relative;
+  padding-left: 44px;
+  padding-bottom: 1.75rem;
+}
+
+.reformTimeline__item:last-of-type {
+  padding-bottom: 0;
+}
+
+@media (min-width: 1024px) {
+  .reformTimeline__item {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    column-gap: 2.5rem;
+    padding-left: 0;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* Node on the spine */
+.reformTimeline__node {
+  position: absolute;
+  top: 8px;
+  left: 11px;
+  width: 18px;
+  height: 18px;
+  transform: translateX(-50%);
+  border: 2px solid rgba(25, 28, 31, 0.22);
+  border-radius: 9999px;
+  background: #fff;
+  box-shadow: 0 0 0 5px #fff; /* gap in the dashed line around the node */
+}
+
+.reformTimeline__node::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 6px;
+  height: 6px;
+  margin: auto;
+  border-radius: 9999px;
+  background: #191c1f;
+}
+
+@media (min-width: 1024px) {
+  .reformTimeline__node {
+    position: static;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    transform: none;
+  }
+}
+
+/* Floating card */
+.reformTimeline__card {
+  padding: 20px;
+  border: 1px solid rgba(25, 28, 31, 0.06);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(25, 28, 31, 0.07);
+}
+
+@media (min-width: 1024px) {
+  .reformTimeline__card {
+    grid-row: 1;
+    max-width: 430px;
+    padding: 26px 28px;
+  }
+
+  .reformTimeline__item:nth-child(odd) .reformTimeline__card {
+    grid-column: 1;
+    justify-self: end;
+  }
+
+  .reformTimeline__item:nth-child(even) .reformTimeline__card {
+    grid-column: 3;
+    justify-self: start;
+  }
+}
+
+.reformTimeline__cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.reformTimeline__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(25, 28, 31, 0.05);
+  color: #191c1f;
+}
+
+.reformTimeline__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Year pill — shown inside the card on mobile, replaced by the big faded
+   number on desktop. */
+.reformTimeline__yearTag {
+  flex: none;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: #191c1f;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 1024px) {
+  .reformTimeline__yearTag {
+    display: none;
+  }
+}
+
+/* Big faded year on the opposite side (desktop only) */
+.reformTimeline__bigYear {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .reformTimeline__bigYear {
+    display: block;
+    grid-row: 1;
+    font-size: clamp(40px, 4vw, 62px);
+    font-weight: 800;
+    line-height: 1;
+    color: rgba(25, 28, 31, 0.12);
+  }
+
+  .reformTimeline__item:nth-child(odd) .reformTimeline__bigYear {
+    grid-column: 3;
+    justify-self: start;
+    padding-left: 8px;
+    text-align: left;
+  }
+
+  .reformTimeline__item:nth-child(even) .reformTimeline__bigYear {
+    grid-column: 1;
+    justify-self: end;
+    padding-right: 8px;
+    text-align: right;
+  }
+}
+
+/* Closing downward arrow */
+.reformTimeline__end {
+  position: relative;
+  height: 2.5rem;
+}
+
+.reformTimeline__end svg {
+  position: absolute;
+  top: 2px;
+  left: 11px;
+  width: 22px;
+  height: 22px;
+  transform: translateX(-50%);
+  color: rgba(25, 28, 31, 0.4);
+}
+
+@media (min-width: 1024px) {
+  .reformTimeline__end svg {
+    left: 50%;
+  }
+}
+</style>
