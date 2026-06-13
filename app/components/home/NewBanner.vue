@@ -34,13 +34,11 @@
           v-for="(hero, index) in heroSlides"
           :key="hero.id"
           class="introHeroPanel"
+          :class="`introHeroPanel--${hero.id}`"
           :style="getHeroPanelStyle(index)"
           :aria-hidden="index !== activeHeroIndex"
         >
-          <div
-            class="introHeroPanel__bg"
-            :style="getHeroBackgroundStyle(index)"
-          />
+          <div class="introHeroPanel__bg" />
 
           <div class="mainContainer introHeroPanel__shell">
             <div
@@ -178,11 +176,10 @@ import Management2 from "@/assets/images/management/image12.png";
 import EBank from "@/assets/images/brands/e-bank.png";
 import EbrdLogo from "@/assets/images/brands/ebrd.png";
 
-const desktopImg = "/images/60f66bb43e415a780b96ef1fc99600ee027b94c4.png";
-const mobileImg = "/images/banner-img-mobile.png";
-const secondHeroImg = "/images/l2.png";
 const ficLogo = "/images/pr.png";
 const presidentLink = "https://president.uz/en/lists/view/7194";
+// Hero background images live in CSS (.introHeroPanel--<id>) so the framing can
+// be tuned responsively per breakpoint without an isMobile round-trip.
 
 /* ── Tuning ─────────────────────────────────────────────────────────────── */
 const MOBILE_BREAKPOINT = 1023; // at or below this width: native scroll, no jacking
@@ -220,9 +217,6 @@ const heroSlides = computed(() => [
     quote: t("Мы создадим все условия"),
     name: t("Шавкат Миромонович Мирзиёев"),
     position: t("Президент Республики Узбекистан"),
-    image: isMobile.value ? mobileImg : desktopImg,
-    imagePosition: isMobile.value ? "center bottom" : "center 58%",
-    imageSize: "cover",
     layout: "quote-left",
     link: presidentLink,
   },
@@ -233,9 +227,6 @@ const heroSlides = computed(() => [
     ),
     name: t("Одил Рено-Бассо"),
     position: t("Президент Европейского банка реконструкции и развития"),
-    image: secondHeroImg,
-    imagePosition: "center center",
-    imageSize: "cover",
     layout: "identity-left",
     link: null,
   },
@@ -278,15 +269,6 @@ const getHeroPanelStyle = (index) => {
     opacity: isActive ? 1 : 0,
     pointerEvents: isActive ? "auto" : "none",
     zIndex: isActive ? 2 : 1,
-  };
-};
-
-const getHeroBackgroundStyle = (index) => {
-  const hero = heroSlides.value[index];
-  return {
-    backgroundImage: `url('${hero.image}')`,
-    backgroundPosition: hero.imagePosition,
-    backgroundSize: hero.imageSize,
   };
 };
 
@@ -640,10 +622,29 @@ onUnmounted(() => {
 .introHeroPanel__bg {
   position: absolute;
   inset: 0;
+  background-color: #8a8f9e; /* neutral studio grey — avoids a white flash on load */
   background-repeat: no-repeat;
+  background-size: cover;
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
+}
+
+/* President — landscape studio shot; subject sits centre-right, text is on the
+   left, so a centred crop keeps the face clear. */
+.introHeroPanel--president .introHeroPanel__bg {
+  background-color: #c9cace;
+  background-image: url("/images/60f66bb43e415a780b96ef1fc99600ee027b94c4.png");
+  background-position: center 58%;
+}
+
+/* EBRD President — wide shot, subject sits left-of-centre and the text is on
+   the right. Anchor the focal point on the face so it stays framed on every
+   aspect ratio (it would otherwise be cropped out on narrow/portrait screens). */
+.introHeroPanel--ebrd .introHeroPanel__bg {
+  background-color: #8b91a3;
+  background-image: url("/images/l2.png");
+  background-position: 37% 40%;
 }
 
 .introHeroPanel__bg::after {
@@ -825,6 +826,13 @@ onUnmounted(() => {
     opacity: 1 !important;
     pointer-events: auto !important;
     transition: none;
+  }
+
+  /* Phone/tablet: swap in the portrait-framed president shot */
+  .introHeroPanel--president .introHeroPanel__bg {
+    background-color: #8a8da6;
+    background-image: url("/images/banner-img-mobile.png");
+    background-position: center bottom;
   }
 
   .introHeroPanel__bg::after {
