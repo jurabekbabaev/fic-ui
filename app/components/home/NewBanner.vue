@@ -160,7 +160,11 @@
                       {{ leader.fullname }}
                     </h3>
                     <p class="introCouncilCard__role">
-                      {{ leader.position }}
+                      <span
+                        v-for="(line, lineIdx) in leader.position.split('—')"
+                        :key="lineIdx"
+                        class="introCouncilCard__roleLine"
+                      >{{ line.trim() }}</span>
                     </p>
                   </div>
                 </article>
@@ -251,7 +255,7 @@ const leaders = computed(() => [
     logoClass: "introCouncilCard__logoImage--sm",
     image: Management2,
     fullname: t("Шавкат Миромонович Мирзиёев"),
-    position: t("Председатель совета"),
+    position: t("Председатель Совета — Президент Республики Узбекистан"),
   },
   {
     id: 2,
@@ -260,7 +264,7 @@ const leaders = computed(() => [
     logoClass: "introCouncilCard__logoImage--ebrd",
     image: Management1,
     fullname: t("Одиль Рено-Бассо"),
-    position: t("Сопредседатель совета"),
+    position: t("Сопредседатель Совета — Президент ЕБРР"),
   },
 ]);
 
@@ -1068,6 +1072,10 @@ onUnmounted(() => {
   color: #505a63;
   font-size: 14px;
   line-height: 1.35;
+}
+
+.introCouncilCard__roleLine {
+  display: block;
 }
 
 @media (max-width: 768px) {

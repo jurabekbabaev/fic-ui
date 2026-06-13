@@ -39,7 +39,11 @@
                   {{ item.fullname }}
                 </h3>
                 <p class="investor-profile-role investor-profile-role--leader">
-                  {{ item.position }}
+                  <span
+                    v-for="(line, lineIdx) in item.position.split('—')"
+                    :key="lineIdx"
+                    class="investor-profile-role-line"
+                  >{{ line.trim() }}</span>
                 </p>
               </div>
             </article>
@@ -229,6 +233,13 @@ const leaders = ref([
 .investor-profile-role--leader {
   font-size: 14px;
   min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.investor-profile-role-line {
+  display: block;
 }
 
 @media (min-width: 640px) {
