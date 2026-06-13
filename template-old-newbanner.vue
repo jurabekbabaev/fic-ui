@@ -27,10 +27,7 @@
         <div
           id="newmainBanner"
           class="flex items-center introHeroBanner"
-          :class="{
-            'scroll-down': isInvestorsRevealed,
-            'introHeroBanner--revealed': isInvestorsRevealed,
-          }"
+          :class="{ 'scroll-down': isInvestorsRevealed, 'introHeroBanner--revealed': isInvestorsRevealed }"
         >
           <div class="introHeroScene">
             <article
@@ -67,9 +64,7 @@
                       </a>
 
                       <div class="introHeroIdentity lg:max-w-none mt-0">
-                        <h2
-                          class="lg:text-2xl text-base font-bold mb-1 lg:whitespace-nowrap"
-                        >
+                        <h2 class="lg:text-2xl text-base font-bold mb-1 lg:whitespace-nowrap">
                           {{ hero.name }}
                         </h2>
                         <h3 class="lg:text-base text-sm font-normal">
@@ -95,9 +90,7 @@
                         </h1>
                       </a>
 
-                      <div
-                        class="introHeroIdentity introHeroIdentity--right mt-5"
-                      >
+                      <div class="introHeroIdentity introHeroIdentity--right mt-5">
                         <h2 class="lg:text-2xl text-base font-bold mb-1">
                           {{ hero.name }}
                         </h2>
@@ -136,9 +129,7 @@
                 </div>
               </div>
 
-              <h2
-                class="introCouncilLeadersTitle text-center uppercase font-black text-[#191C1F] lg:text-[32px] text-2xl mb-6"
-              >
+              <h2 class="introCouncilLeadersTitle text-center uppercase font-black text-[#191C1F] lg:text-[32px] text-2xl mb-6">
                 {{ t("Руководство") }}
               </h2>
 
@@ -173,8 +164,7 @@
                         v-for="(line, lineIdx) in leader.position.split('—')"
                         :key="lineIdx"
                         class="introCouncilCard__roleLine"
-                        >{{ line.trim() }}</span
-                      >
+                      >{{ line.trim() }}</span>
                     </p>
                   </div>
                 </article>
@@ -182,6 +172,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -246,9 +237,7 @@ const heroSlides = computed(() => [
   },
   {
     id: "second",
-    quote: t(
-      "Мы готовы внести свой вклад везде, где наш опыт и инвестиции могут принести дополнительную ценность."
-    ),
+    quote: t("Мы готовы внести свой вклад везде, где наш опыт и инвестиции могут принести дополнительную ценность."),
     name: t("Одил Рено-Бассо"),
     position: t("Президент Европейского банка реконструкции и развития"),
     image: secondHeroImg,
@@ -290,7 +279,9 @@ const heroSwitchProgress = computed(() =>
 );
 
 const easeInOutCubic = (value) =>
-  value < 0.5 ? 4 * value * value * value : 1 - Math.pow(-2 * value + 2, 3) / 2;
+  value < 0.5
+    ? 4 * value * value * value
+    : 1 - Math.pow(-2 * value + 2, 3) / 2;
 
 const easeOutInQuart = (value) => {
   if (value < 0.5) {
@@ -315,9 +306,7 @@ const textOverlayStyle = computed(() => {
   const blur = (1 - shape) * 5;
 
   return {
-    transform: `translate3d(0, ${y.toFixed(3)}vh, 0) scale(${scale.toFixed(
-      3
-    )})`,
+    transform: `translate3d(0, ${y.toFixed(3)}vh, 0) scale(${scale.toFixed(3)})`,
     opacity: opacity.toFixed(4),
     filter: `blur(${blur.toFixed(2)}px)`,
   };
@@ -371,7 +360,9 @@ const easedInvestorRevealProgress = computed(() => {
   return easeInOutCubic(investorRevealProgress.value);
 });
 
-const isInvestorsRevealed = computed(() => investorRevealProgress.value > 0.02);
+const isInvestorsRevealed = computed(
+  () => investorRevealProgress.value > 0.02
+);
 
 const investorSectionStyle = computed(() => {
   if (isMobile.value) {
@@ -409,7 +400,8 @@ const investorSectionStyle = computed(() => {
   };
 });
 
-const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
+const clamp = (value, min = 0, max = 1) =>
+  Math.min(max, Math.max(min, value));
 
 const normalizeProgress = (value, start, end) => {
   if (end <= start) return value >= end ? 1 : 0;
@@ -451,9 +443,6 @@ const getHeroMotion = (index) => {
 };
 
 const getHeroPanelStyle = (index) => {
-  if (isMobile.value) {
-    return { opacity: 1, visibility: "visible", pointerEvents: "auto", zIndex: 1 };
-  }
   const motion = getHeroMotion(index);
 
   return {
@@ -465,15 +454,8 @@ const getHeroPanelStyle = (index) => {
 };
 
 const getHeroBackgroundStyle = (index) => {
-  const hero = heroSlides.value[index];
-  if (isMobile.value) {
-    return {
-      backgroundImage: `url('${hero.image}')`,
-      backgroundPosition: hero.imagePosition,
-      backgroundSize: hero.imageSize,
-    };
-  }
   const motion = getHeroMotion(index);
+  const hero = heroSlides.value[index];
 
   return {
     backgroundImage: `url('${hero.image}')`,
@@ -484,7 +466,6 @@ const getHeroBackgroundStyle = (index) => {
 };
 
 const getHeroContentStyle = (index) => {
-  if (isMobile.value) return {};
   const motion = getHeroMotion(index);
 
   return {
@@ -497,7 +478,7 @@ const isHeroVisible = (index) => getHeroMotion(index).opacity > 0.001;
 
 const updateViewportMode = () => {
   if (typeof window === "undefined") return;
-  isMobile.value = window.innerWidth <= 1023;
+  isMobile.value = window.innerWidth <= 768;
 };
 
 const updateScrollProgress = () => {
@@ -568,7 +549,8 @@ function isWithinIntroFlow() {
   if (!metrics) return false;
 
   return (
-    window.scrollY >= metrics.startY - 1 && window.scrollY <= metrics.endY + 1
+    window.scrollY >= metrics.startY - 1 &&
+    window.scrollY <= metrics.endY + 1
   );
 }
 
@@ -596,6 +578,17 @@ function cancelStageTransition() {
   window.cancelAnimationFrame(stageAnimationFrameId);
   stageAnimationFrameId = 0;
   isStageTransitionLocked.value = false;
+}
+
+function queueWheelGestureReset() {
+  if (wheelGestureResetTimer) {
+    window.clearTimeout(wheelGestureResetTimer);
+  }
+
+  wheelGestureResetTimer = window.setTimeout(() => {
+    isWheelGestureActive.value = false;
+    wheelGestureResetTimer = 0;
+  }, WHEEL_GESTURE_IDLE_MS);
 }
 
 function resetWheelGesture() {
@@ -635,8 +628,7 @@ function runStageScrollAnimation(targetStage) {
 
   const startY = window.scrollY;
   const targetY =
-    metrics.startY +
-    getStageTargetProgress(targetStage) * metrics.maxScrollable;
+    metrics.startY + getStageTargetProgress(targetStage) * metrics.maxScrollable;
   const deltaY = targetY - startY;
 
   if (Math.abs(deltaY) < 1) {
@@ -682,11 +674,7 @@ function runStageScrollAnimation(targetStage) {
 function transitionToStage(targetStage) {
   if (typeof window === "undefined") return;
   if (isStageTransitionLocked.value) return;
-  if (
-    targetStage === currentStageIndex.value ||
-    targetStage < 0 ||
-    targetStage > 2
-  )
+  if (targetStage === currentStageIndex.value || targetStage < 0 || targetStage > 2)
     return;
 
   if (currentStageIndex.value === 1 && targetStage === 2) {
@@ -779,7 +767,8 @@ const handleResize = () => {
 onMounted(async () => {
   updateViewportMode();
   await nextTick();
-  lastWindowScrollY.value = typeof window !== "undefined" ? window.scrollY : 0;
+  lastWindowScrollY.value =
+    typeof window !== "undefined" ? window.scrollY : 0;
   updateScrollProgress();
 
   window.addEventListener("wheel", handleWheel, { passive: false });
@@ -839,21 +828,10 @@ onUnmounted(() => {
 .introTextOverlay__glow {
   position: absolute;
   inset: -10%;
-  background: radial-gradient(
-      50% 40% at 50% 50%,
-      rgba(180, 205, 245, 0.28) 0%,
-      rgba(180, 205, 245, 0) 70%
-    ),
-    radial-gradient(
-      30% 25% at 18% 30%,
-      rgba(140, 170, 230, 0.18) 0%,
-      rgba(140, 170, 230, 0) 70%
-    ),
-    radial-gradient(
-      28% 24% at 82% 72%,
-      rgba(120, 150, 210, 0.14) 0%,
-      rgba(120, 150, 210, 0) 70%
-    );
+  background:
+    radial-gradient(50% 40% at 50% 50%, rgba(180, 205, 245, 0.28) 0%, rgba(180, 205, 245, 0) 70%),
+    radial-gradient(30% 25% at 18% 30%, rgba(140, 170, 230, 0.18) 0%, rgba(140, 170, 230, 0) 70%),
+    radial-gradient(28% 24% at 82% 72%, rgba(120, 150, 210, 0.14) 0%, rgba(120, 150, 210, 0) 70%);
   filter: blur(30px);
   pointer-events: none;
 }
@@ -874,12 +852,12 @@ onUnmounted(() => {
   max-width: 90vw;
   padding: 0 5vw;
   text-align: center;
-  font-family: "Onest", sans-serif;
+  font-family: 'Onest', sans-serif;
   font-weight: 400;
   font-size: clamp(30px, 6.4vw, 104px);
   line-height: 1.04;
   letter-spacing: -0.015em;
-  color: #191c1f;
+  color: #191C1F;
   text-shadow: 0 8px 40px rgba(25, 28, 31, 0.08);
 }
 
@@ -919,7 +897,6 @@ onUnmounted(() => {
 }
 
 .introHeroBanner {
-  height: 100svh;
   overflow: hidden;
   background-color: transparent;
 }
@@ -952,11 +929,7 @@ onUnmounted(() => {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(25, 28, 31, 0.12) 0%,
-    rgba(25, 28, 31, 0.04) 100%
-  );
+  background: linear-gradient(90deg, rgba(25, 28, 31, 0.12) 0%, rgba(25, 28, 31, 0.04) 100%);
 }
 
 .introHeroPanel__shell {
@@ -994,10 +967,7 @@ onUnmounted(() => {
 }
 
 .introHeroOverlay {
-  position: absolute;
-  inset: 0;
   z-index: 11;
-  overflow-y: auto;
   pointer-events: none;
 }
 
@@ -1108,7 +1078,10 @@ onUnmounted(() => {
   display: block;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
+  /* Mobile: scroll-jacking is disabled — render hero + leaders as plain
+     stacked sections so the leaders reveal no longer overflows the sticky
+     and bleeds into the following sections. */
   .introHeroTrack {
     height: auto !important;
   }
@@ -1132,18 +1105,8 @@ onUnmounted(() => {
     min-height: 560px;
   }
 
-  /* hide the second (EBRD) hero panel on mobile/tablet */
-  .introHeroPanel:not(:first-child) {
-    display: none;
-  }
-
-  /* push content down so it clears the sticky header */
-  .introHeroPanel__shell {
-    align-items: flex-start;
-    padding-top: 120px;
-  }
-
-  /* stronger top→bottom scrim for readability */
+  /* stronger top→bottom scrim so the white headline stays readable over the
+     light photo on phones */
   .introHeroPanel__bg::after {
     background: linear-gradient(
       180deg,
