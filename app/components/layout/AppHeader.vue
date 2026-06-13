@@ -50,13 +50,11 @@ onMounted(() => {
               <img :src="LogoBlack" v-else class="w-[200px]" />
             </WLocaleLink>
           </div>
-          <div class="flex items-center gap-10" v-if="!isMobile">
+          <div class="flex-1 flex justify-center" v-if="!isMobile">
             <AppHeaderNav :isHome="props.isHome" />
-            <div>
-              <LanguageSwitcher />
-            </div>
           </div>
-          <div class="flex gap-3.5">
+          <div class="flex items-center gap-3.5">
+            <LanguageSwitcher v-if="!isMobile" />
             <WLocaleLink
               to="/contacts"
               class="btn btn-primary"

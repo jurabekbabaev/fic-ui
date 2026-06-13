@@ -1,10 +1,10 @@
 <template>
 <div class="inline-block">
     <ul class="lang-switch  rounded-full p-1 flex items-center gap-2">
-        <li v-for="item in localesList" :key="item.code" :class="!isHome ? 'text-[#191C1F]' : 'text-white'">
+        <li v-for="item in localesList" :key="item.code">
             <button
-                class="px-3 rounded-full text-sm transition-colors duration-200 cursor-pointer"
-                :class="[item.code === currentLocale ? 'bg-[#191C1F] text-white' : 'text-[#191C1F] bg-transparent', isHome ? 'text-white': 'text-[#191C1F]']"
+                class="w-8 h-8 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer flex items-center justify-center"
+                :class="item.code === currentLocale ? 'bg-[#191C1F] text-white' : 'text-[#191C1F] bg-transparent hover:bg-black/10'"
                 @click="onChangeLocale(item.code)"
             >
                 {{ item.label }}
@@ -20,8 +20,6 @@ import { computed, unref, nextTick, watch } from 'vue';
 import { locales, localeCodes, DEFAULT_LOCALE } from '../../config';
 const router = useRouter();
 const route = useRoute();
-
-const isHome = computed(() => route.path === "/");
 
 const nuxtApp = useNuxtApp();
 const i18n = (nuxtApp as any).$i18n;

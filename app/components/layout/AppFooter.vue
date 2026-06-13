@@ -9,7 +9,7 @@ const { t } = useI18n();
 <template>
   <footer class="bg-[#191C1F] pt-12 pb-8 mt-24">
     <div class="container">
-      <div class="lg:flex sm:block items-start gap-12">
+      <div class="lg:flex sm:block items-stretch gap-12">
         <!-- Left: Logo + Socials + Copyright -->
         <div
           class="lg:w-[40%] shrink-0 mb-10 lg:mb-0 flex flex-col justify-between"

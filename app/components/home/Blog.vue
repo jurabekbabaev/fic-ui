@@ -142,7 +142,7 @@ const year = ref("");
 
 const localePath = useLocalePath();
 function View(item) {
-  const to = localePath(`/blog/${item.id}`);
+  const to = localePath(`/blog/`);
   navigateTo(to);
 }
 

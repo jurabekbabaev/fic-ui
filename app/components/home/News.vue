@@ -28,7 +28,7 @@ onMounted(() => {
         <h1 class="lg:text-[64px] text-[32px] font-black text-white leading-1">
           {{ t('Новости') }}
         </h1>
-        <WLocaleLink to="/news" class="text-white text-sm font-normal">
+        <WLocaleLink to="/news" class="bg-white text-[#191C1F] text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gray-100 transition-colors">
           {{ t('Все новости') }}
         </WLocaleLink>
       </div>

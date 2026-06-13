@@ -17,8 +17,7 @@ const { t } = useI18n();
 <template>
   <nav class="headerNav font-medium">
     <ul
-      class="headerNavList flex items-center text-[15px]"
-      :class="props.isHome ? 'text-white' : 'text-[#191C1F]'"
+      class="headerNavList flex items-center text-[15px] text-[#191C1F]"
     >
       <li
         v-for="section in mainMenuSections"
