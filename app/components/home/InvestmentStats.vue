@@ -115,7 +115,7 @@ onBeforeUnmount(() => observer?.disconnect());
       </div>
 
       <div class="flex justify-center mt-10">
-        <NuxtLink :to="localePath('/investmen')" class="btn btn-primary">
+        <NuxtLink :to="localePath('/investmen')" class="btn btn-secondary">
           {{ t("Batafsil") }}
         </NuxtLink>
       </div>

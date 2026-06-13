@@ -50,7 +50,7 @@ useHead(() => ({
       <div class="mx-auto mt-10 max-w-[880px] lg:mt-14">
         <WLocaleLink
           to="/plenarysessions"
-          class="inline-flex items-center rounded-md border border-[#191C1F14] bg-white px-4 py-2 text-sm font-medium text-[#191C1F] transition hover:border-[#191C1F33] hover:bg-[#191C1F08]"
+          class="btn btn-secondary btn-sm"
         >
           {{ t("Все пленарные сессии") }}
         </WLocaleLink>
@@ -72,14 +72,14 @@ useHead(() => ({
             :href="session.externalLink.href"
             target="_blank"
             rel="noreferrer"
-            class="btn btn-primary"
+            class="btn btn-secondary"
           >
             {{ t(session.externalLink.label) }}
           </a>
           <a
             :href="session.downloadFile.href"
             :download="session.downloadFile.fileName || true"
-            class="btn btn-secondary"
+            class="btn btn-outline-secondary"
           >
             {{ session.downloadFile.label }}
           </a>

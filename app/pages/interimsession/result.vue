@@ -104,7 +104,7 @@ const openSessionDetail = async (path: string) => {
 
                 <button
                   type="button"
-                  class="relative z-20 inline-flex w-fit cursor-pointer items-center rounded-md bg-[#191C1F0F] px-4 py-2 text-sm font-medium text-[#191C1F] transition hover:bg-[#191C1F] hover:text-white"
+                  class="btn btn-secondary btn-sm relative z-20 w-fit"
                   @click="openSessionDetail(item.link)"
                 >
                   {{ t(item.position) }}
@@ -137,7 +137,7 @@ const openSessionDetail = async (path: string) => {
 
               <button
                 type="button"
-                class="relative z-20 inline-flex w-fit cursor-pointer items-center rounded-md bg-[#191C1F0F] px-4 py-2 text-sm font-medium text-[#191C1F] transition hover:bg-[#191C1F] hover:text-white"
+                class="btn btn-secondary btn-sm relative z-20 w-fit"
               >
                 {{ t(item.position) }}
               </button>
