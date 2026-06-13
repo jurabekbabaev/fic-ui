@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, watch, onBeforeUnmount } from "vue";
+import PageHero from "~/components/shared/PageHero.vue";
 
 const { t } = useI18n();
 
@@ -24,8 +25,8 @@ type Stat = {
 };
 
 const stats: Stat[] = [
-  { value: 135, prefix: ">$", suffix: " млрд", decimals: 0, label: "ВВП (цель 2026 — >$150 млрд)", accent: "light" },
-  { value: 7.7, prefix: "", suffix: "%", decimals: 1, label: "рост ВВП (МВФ, 2025)", accent: "dark" },
+  { value: 135, prefix: ">$", suffix: " млрд", decimals: 0, label: "ВВП (цель 2026 — >$150 млрд)", accent: "dark" },
+  { value: 7.7, prefix: "", suffix: "%", decimals: 1, label: "рост ВВП (МВФ, 2025)", accent: "light" },
   { value: 42, prefix: "~$", suffix: " млрд", decimals: 0, label: "приток иностранных инвестиций", accent: "light" },
   { raw: "BB", label: "рейтинг Fitch и S&P; Moody's Ba3 (прогноз позитивный)", accent: "light" },
   { value: 55, prefix: "$", suffix: " млрд", decimals: 0, label: "золотовалютные резервы (+35%)", accent: "dark" },
@@ -47,6 +48,7 @@ const displayValues = ref(
   stats.map((stat) => (stat.raw !== undefined ? stat.raw : formatStat(stat, 0)))
 );
 const statsContainer = ref<HTMLElement | null>(null);
+const statsVisible = ref(false);
 const hasAnimated = ref(false);
 let observer: IntersectionObserver | null = null;
 
@@ -57,6 +59,7 @@ function easeOutCubic(t: number): number {
 function animateCountUp() {
   if (hasAnimated.value) return;
   hasAnimated.value = true;
+  statsVisible.value = true;
 
   const duration = 2000;
   const startTime = performance.now();
@@ -80,47 +83,61 @@ function animateCountUp() {
   requestAnimationFrame(update);
 }
 
-onMounted(() => {
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCountUp();
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
+// The page renders inside <client-only>, so the template ref only resolves
+// after the slot hydrates on the client. Attach the observer the moment the
+// element exists rather than relying on the parent's onMounted timing.
+watch(
+  statsContainer,
+  (el) => {
+    if (!el || hasAnimated.value) return;
 
-  if (statsContainer.value) {
-    observer.observe(statsContainer.value);
-  }
-});
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      animateCountUp();
+      return;
+    }
+
+    observer?.disconnect();
+    observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          animateCountUp();
+          observer?.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+  },
+  { immediate: true }
+);
 
 onBeforeUnmount(() => {
-  if (observer) {
-    observer.disconnect();
-  }
+  observer?.disconnect();
 });
 
 const guarantees = [
   {
+    icon: ["M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z", "M9 12l2 2 4-4"],
     term: "Правовые гарантии.",
     text: "Закон «Об инвестициях и инвестиционной деятельности» гарантирует свободный перевод средств за пределы страны и защиту инвестиций от национализации.",
   },
   {
+    icon: ["M19 5L5 19", "M7.5 5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z", "M16.5 14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"],
     term: "Налоговая стабильность.",
     text: "Базовые ставки налогов для бизнеса не изменятся до 2028 года.",
   },
   {
+    icon: ["M5 5h13a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H10l-4 3v-3H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z", "M8 9h7M8 12h4"],
     term: "Прямой диалог.",
     text: "Совет иностранных инвесторов при Президенте — институциональный канал решения вопросов инвесторов на высшем уровне.",
   },
   {
+    icon: ["M12 4v15", "M6 19h12", "M5 8h14", "M5 8l-2.5 5a2.5 2.5 0 0 0 5 0z", "M19 8l-2.5 5a2.5 2.5 0 0 0 5 0z"],
     term: "Разрешение споров.",
     text: "Ташкентский международный арбитражный центр; Ташкентский международный коммерческий суд.",
   },
   {
+    icon: ["M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z", "M3.5 9h17M3.5 15h17", "M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"],
     term: "Льготы для членов Совета.",
     text: "Безвизовый въезд для членов Совета и членов их семей.",
   },
@@ -128,6 +145,7 @@ const guarantees = [
 
 const sectors = [
   {
+    icon: ["M13 2L4 14h7l-1 8 9-12h-7z"],
     title: "Зелёная энергетика",
     points: [
       "ACWA Power, Masdar, TotalEnergies, EDF, Voltalia",
@@ -136,6 +154,7 @@ const sectors = [
     ],
   },
   {
+    icon: ["M7 7h10v10H7z", "M10 10h4v4h-4z", "M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"],
     title: "Цифровая инфраструктура и ИИ",
     points: [
       "DataVolt — крупнейший «зелёный» дата-центр региона",
@@ -144,6 +163,7 @@ const sectors = [
     ],
   },
   {
+    icon: ["M3 21h18", "M5 21V5l8-2v18", "M13 21V9l6 2v10", "M8 8h2M8 12h2M8 16h2"],
     title: "Инфраструктура и ГЧП",
     points: [
       "$4,5 млрд проектов ГЧП в 2025",
@@ -152,6 +172,7 @@ const sectors = [
     ],
   },
   {
+    icon: ["M3 10l9-6 9 6", "M5 10v8M9 10v8M15 10v8M19 10v8", "M3 21h18"],
     title: "Финансовые услуги",
     points: [
       "Ташкентский международный финансовый центр",
@@ -160,6 +181,7 @@ const sectors = [
     ],
   },
   {
+    icon: ["M3 21V10l6 4V10l6 4V7l6 4v10z", "M3 21h18"],
     title: "Обрабатывающая промышленность",
     points: [
       "химия и удобрения (Indorama)",
@@ -168,6 +190,7 @@ const sectors = [
     ],
   },
   {
+    icon: ["M6 3h12l3 6-9 12L3 9z", "M3 9h18M9 3l-3 6 6 12M15 3l3 6-6 12"],
     title: "Критические минералы и горнодобыча",
     points: [
       "значительная сырьевая база",
@@ -202,183 +225,532 @@ const timeline = [
 </script>
 
 <template>
-  <section class="container pb-18 lg:pb-24" style="padding-top: 60px;">
-    <div class="mx-auto max-w-[1200px]">
-      <h2 class="title-64 mb-8 text-[32px] lg:mb-12 lg:text-[64px]">
-        {{ t("Инвестиции в Узбекистан") }}
-      </h2>
+  <div>
+    <client-only>
+      <PageHero title="Инвестиции в Узбекистан" />
 
-      <div class="rounded-2xl bg-[#F7F7F7] p-6 lg:p-10">
-        <div class="space-y-5 text-base leading-8 text-grey lg:space-y-6 lg:text-lg">
-          <p v-for="(paragraph, index) in intro" :key="`invest-intro-${index}`">
-            {{ t(paragraph) }}
-          </p>
-        </div>
-      </div>
-
-      <div class="mt-14 lg:mt-20">
-        <span
-          class="inline-flex rounded-lg bg-[#F7F7F7] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-[#191C1F] lg:text-sm"
-        >
-          {{ t("Ключевые показатели 2025") }}
-        </span>
-
-        <div
-          ref="statsContainer"
-          class="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:mt-8 lg:grid-cols-3"
-        >
-          <div
-            v-for="(stat, index) in stats"
-            :key="stat.label"
-            class="flex min-h-[140px] flex-col rounded-2xl p-5 lg:min-h-[168px] lg:p-7"
-            :class="stat.accent === 'dark' ? 'bg-[#191C1F]' : 'bg-[#F7F7F7]'"
-          >
-            <div
-              class="text-[26px] font-bold leading-tight lg:text-[40px]"
-              :class="stat.accent === 'dark' ? 'text-white' : 'text-[#191C1F]'"
-            >
-              {{ displayValues[index] }}
-            </div>
-            <div
-              class="mt-auto pt-6 text-xs leading-snug lg:text-sm"
-              :class="stat.accent === 'dark' ? 'text-white/70' : 'text-[#191C1F]/70'"
-            >
-              {{ t(stat.label) }}
-            </div>
+      <div class="container pb-20 lg:pb-28">
+        <!-- Intro / overview -->
+        <section class="invest-intro">
+          <div class="invest-intro__aside">
+            <span class="invest-eyebrow">{{ t("Обзор") }}</span>
+            <h2 class="invest-intro__heading">
+              {{ t("Одна из самых динамичных экономик Евразии") }}
+            </h2>
           </div>
-        </div>
-      </div>
-
-      <div class="mt-14 lg:mt-20">
-        <span
-          class="inline-flex rounded-lg bg-[#F7F7F7] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-[#191C1F] lg:text-sm"
-        >
-          {{ t("Гарантии и защита инвесторов") }}
-        </span>
-
-        <ul class="mt-6 lg:mt-8">
-          <li
-            v-for="(item, index) in guarantees"
-            :key="`invest-guarantee-${index}`"
-            class="flex gap-3 border-b border-[#191C1F14] py-5 first:pt-0 last:border-0 last:pb-0"
-          >
-            <span
-              aria-hidden="true"
-              class="mt-[10px] h-[6px] w-[6px] flex-none rounded-full bg-[#191C1F]"
-            ></span>
-            <p class="text-base leading-7 text-grey lg:text-[17px]">
-              <span class="font-semibold text-[#191C1F]">{{ t(item.term) }}</span>
-              {{ t(item.text) }}
+          <div class="invest-intro__body">
+            <p v-for="(paragraph, index) in intro" :key="`invest-intro-${index}`">
+              {{ t(paragraph) }}
             </p>
-          </li>
-        </ul>
-      </div>
-
-      <div class="mt-14 lg:mt-20">
-        <span
-          class="inline-flex rounded-lg bg-[#F7F7F7] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-[#191C1F] lg:text-sm"
-        >
-          {{ t("Секторы возможностей") }}
-        </span>
-
-        <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:mt-8">
-          <div
-            v-for="(sector, index) in sectors"
-            :key="`invest-sector-${index}`"
-            class="rounded-2xl bg-[#F7F7F7] p-6 lg:p-8"
-          >
-            <h3
-              class="text-base font-bold uppercase tracking-wide text-[#191C1F] lg:text-lg"
-            >
-              {{ t(sector.title) }}
-            </h3>
-            <ul class="mt-5 space-y-3">
-              <li
-                v-for="(point, pIndex) in sector.points"
-                :key="`invest-sector-${index}-point-${pIndex}`"
-                class="flex gap-2.5 text-base leading-7 text-grey lg:text-[17px]"
-              >
-                <span aria-hidden="true" class="flex-none text-[#191C1F]/40">—</span>
-                <span>{{ t(point) }}</span>
-              </li>
-            </ul>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <div class="mt-14 lg:mt-20">
-        <span
-          class="inline-flex rounded-lg bg-[#F7F7F7] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-[#191C1F] lg:text-sm"
-        >
-          {{ t("Траектория реформ") }}
-        </span>
+        <!-- Key indicators -->
+        <section class="invest-section">
+          <div class="invest-head">
+            <span class="invest-eyebrow">{{ t("Макроэкономика") }}</span>
+            <h2 class="invest-title">{{ t("Ключевые показатели") }}</h2>
+            <p class="invest-sub">{{ t("Итоги 2025 года") }}</p>
+          </div>
 
-        <ol class="reformTimeline">
-          <li
-            v-for="(item, index) in timeline"
-            :key="`invest-timeline-${index}`"
-            class="reformTimeline__item"
+          <div
+            ref="statsContainer"
+            class="invest-stats"
+            :class="{ 'is-visible': statsVisible }"
           >
-            <!-- Year detail card -->
-            <div class="reformTimeline__card">
-              <div class="reformTimeline__cardHead">
-                <span class="reformTimeline__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
+            <div
+              v-for="(stat, index) in stats"
+              :key="stat.label"
+              class="invest-stat"
+              :class="{ 'invest-stat--dark': stat.accent === 'dark' }"
+              :style="{ '--delay': `${index * 60}ms` }"
+            >
+              <div class="invest-stat__value">{{ displayValues[index] }}</div>
+              <div class="invest-stat__label">{{ t(stat.label) }}</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Guarantees -->
+        <section class="invest-section">
+          <div class="invest-head">
+            <span class="invest-eyebrow">{{ t("Защита") }}</span>
+            <h2 class="invest-title">{{ t("Гарантии для инвесторов") }}</h2>
+            <p class="invest-sub">
+              {{ t("Правовая и институциональная защита капитала") }}
+            </p>
+          </div>
+
+          <div class="invest-guarantees">
+            <article
+              v-for="(item, index) in guarantees"
+              :key="`invest-guarantee-${index}`"
+              class="invest-guarantee"
+            >
+              <span class="invest-iconBox" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    v-for="(d, di) in item.icon"
+                    :key="di"
+                    :d="d"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <p class="invest-guarantee__text">
+                <span class="invest-guarantee__term">{{ t(item.term) }}</span>
+                {{ t(item.text) }}
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Sectors -->
+        <section class="invest-section">
+          <div class="invest-head">
+            <span class="invest-eyebrow">{{ t("Возможности") }}</span>
+            <h2 class="invest-title">{{ t("Секторы для инвестиций") }}</h2>
+            <p class="invest-sub">
+              {{ t("Приоритетные направления с поддержкой государства") }}
+            </p>
+          </div>
+
+          <div class="invest-sectors">
+            <article
+              v-for="(sector, index) in sectors"
+              :key="`invest-sector-${index}`"
+              class="invest-sector"
+            >
+              <div class="invest-sector__head">
+                <span class="invest-iconBox" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
                     <path
-                      d="M4 15l5-5 4 4 7-7"
+                      v-for="(d, di) in sector.icon"
+                      :key="di"
+                      :d="d"
+                      fill="none"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M15 7h5v5"
-                      stroke="currentColor"
-                      stroke-width="2"
+                      stroke-width="1.6"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                   </svg>
                 </span>
-                <span class="reformTimeline__yearTag">
-                  {{ t(item.year).replace(".", "") }}
-                </span>
+                <h3 class="invest-sector__title">{{ t(sector.title) }}</h3>
               </div>
-              <p class="text-base leading-7 text-grey lg:text-[17px]">
-                {{ t(item.text) }}
-              </p>
-            </div>
+              <ul class="invest-sector__list">
+                <li
+                  v-for="(point, pIndex) in sector.points"
+                  :key="`invest-sector-${index}-point-${pIndex}`"
+                >
+                  {{ t(point) }}
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
 
-            <!-- Center node -->
-            <span class="reformTimeline__node" aria-hidden="true"></span>
+        <!-- Reform trajectory timeline -->
+        <section class="invest-section">
+          <div class="invest-head">
+            <span class="invest-eyebrow">{{ t("Девять лет реформ") }}</span>
+            <h2 class="invest-title">{{ t("Траектория реформ") }}</h2>
+            <p class="invest-sub">{{ t("От открытия экономики к рынку капитала") }}</p>
+          </div>
 
-            <!-- Big faded year on the opposite side (desktop) -->
-            <span class="reformTimeline__bigYear" aria-hidden="true">
-              {{ t(item.year).replace(".", "") }}
-            </span>
-          </li>
+          <ol class="reformTimeline">
+            <li
+              v-for="(item, index) in timeline"
+              :key="`invest-timeline-${index}`"
+              class="reformTimeline__item"
+            >
+              <!-- Year detail card -->
+              <div class="reformTimeline__card">
+                <div class="reformTimeline__cardHead">
+                  <span class="reformTimeline__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M4 15l5-5 4 4 7-7"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M15 7h5v5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="reformTimeline__yearTag">
+                    {{ t(item.year).replace(".", "") }}
+                  </span>
+                </div>
+                <p class="text-base leading-7 text-grey lg:text-[17px]">
+                  {{ t(item.text) }}
+                </p>
+              </div>
 
-          <!-- Downward arrow closing the trajectory -->
-          <li class="reformTimeline__end" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path
-                d="M12 4v15M6 13l6 6 6-6"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </li>
-        </ol>
+              <!-- Center node -->
+              <span class="reformTimeline__node" aria-hidden="true"></span>
+
+              <!-- Big faded year on the opposite side (desktop) -->
+              <span class="reformTimeline__bigYear" aria-hidden="true">
+                {{ t(item.year).replace(".", "") }}
+              </span>
+            </li>
+
+            <!-- Downward arrow closing the trajectory -->
+            <li class="reformTimeline__end" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 4v15M6 13l6 6 6-6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </li>
+          </ol>
+        </section>
       </div>
-    </div>
-  </section>
+    </client-only>
+  </div>
 </template>
 
 <style scoped>
-/* "Траектория реформ" — centred alternating timeline.
-   Mobile: single rail on the left. Desktop (>=1024px): cards alternate either
+/* ===== Shared section scaffolding ===== */
+.invest-section {
+  margin-top: 72px;
+}
+
+@media (min-width: 1024px) {
+  .invest-section {
+    margin-top: 110px;
+  }
+}
+
+.invest-eyebrow {
+  display: inline-block;
+  color: #191c1f;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.invest-head {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.invest-title {
+  margin-top: 12px;
+  font-family: "Aeonik Pro", "Onest", sans-serif;
+  font-size: clamp(26px, 4vw, 44px);
+  line-height: 1.05;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #191c1f;
+}
+
+.invest-sub {
+  margin: 12px auto 0;
+  max-width: 560px;
+  color: #505a63;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Reusable icon chip (guarantees + sectors) */
+.invest-iconBox {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid rgba(25, 28, 31, 0.08);
+  background: #f4f5f7;
+  color: #191c1f;
+  transition:
+    background-color 0.28s ease,
+    color 0.28s ease,
+    transform 0.28s ease;
+}
+
+.invest-iconBox svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ===== Intro ===== */
+.invest-intro {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.invest-intro__heading {
+  margin-top: 14px;
+  font-family: "Aeonik Pro", "Onest", sans-serif;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.12;
+  font-weight: 800;
+  color: #191c1f;
+}
+
+.invest-intro__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #505a63;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+@media (min-width: 1024px) {
+  .invest-intro {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 56px;
+    align-items: start;
+  }
+
+  .invest-intro__body {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+}
+
+/* ===== Key indicators ===== */
+.invest-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (min-width: 1024px) {
+  .invest-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+.invest-stat {
+  display: flex;
+  flex-direction: column;
+  min-height: 148px;
+  padding: 22px;
+  border-radius: 20px;
+  border: 1px solid rgba(25, 28, 31, 0.08);
+  background: #fff;
+  box-shadow: 0 16px 40px -28px rgba(25, 28, 31, 0.3);
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.invest-stats.is-visible .invest-stat {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: var(--delay, 0ms), var(--delay, 0ms), 0s, 0s;
+}
+
+.invest-stat:hover {
+  box-shadow: 0 26px 54px -28px rgba(25, 28, 31, 0.4);
+  border-color: rgba(25, 28, 31, 0.16);
+}
+
+.invest-stat--dark {
+  background: #191c1f;
+  border-color: #191c1f;
+}
+
+.invest-stat__value {
+  font-family: "Aeonik Pro", "Onest", sans-serif;
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: #191c1f;
+}
+
+.invest-stat--dark .invest-stat__value {
+  color: #fff;
+}
+
+.invest-stat__label {
+  margin-top: auto;
+  padding-top: 18px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #505a63;
+}
+
+@media (min-width: 1024px) {
+  .invest-stat {
+    min-height: 170px;
+    padding: 28px;
+  }
+
+  .invest-stat__label {
+    font-size: 14px;
+  }
+}
+
+/* ===== Guarantees ===== */
+.invest-guarantees {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 700px) {
+  .invest-guarantees {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.invest-guarantee {
+  display: flex;
+  gap: 18px;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(25, 28, 31, 0.08);
+  background: #fff;
+  box-shadow: 0 16px 40px -30px rgba(25, 28, 31, 0.28);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.invest-guarantee:hover {
+  transform: translateY(-3px);
+  border-color: rgba(25, 28, 31, 0.14);
+  box-shadow: 0 26px 54px -30px rgba(25, 28, 31, 0.38);
+}
+
+.invest-guarantee:hover .invest-iconBox {
+  background: #191c1f;
+  color: #fff;
+}
+
+.invest-guarantee__text {
+  color: #505a63;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.invest-guarantee__term {
+  display: block;
+  margin-bottom: 4px;
+  color: #191c1f;
+  font-weight: 700;
+}
+
+/* ===== Sectors ===== */
+.invest-sectors {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .invest-sectors {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .invest-sectors {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+.invest-sector {
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+  border-radius: 22px;
+  border: 1px solid rgba(25, 28, 31, 0.08);
+  background: #fff;
+  box-shadow: 0 16px 40px -30px rgba(25, 28, 31, 0.28);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.invest-sector:hover {
+  transform: translateY(-4px);
+  border-color: rgba(25, 28, 31, 0.14);
+  box-shadow: 0 28px 58px -30px rgba(25, 28, 31, 0.4);
+}
+
+.invest-sector:hover .invest-iconBox {
+  background: #191c1f;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.invest-sector__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.invest-sector__title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #191c1f;
+}
+
+.invest-sector__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.invest-sector__list li {
+  position: relative;
+  padding-left: 20px;
+  color: #505a63;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.invest-sector__list li::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 8px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(25, 28, 31, 0.35);
+}
+
+/* ===== "Траектория реформ" — centred alternating timeline ===== */
+/* Mobile: single rail on the left. Desktop (>=1024px): cards alternate either
    side of a central dashed spine, with the year echoed large and faded on the
    opposite side. */
 .reformTimeline {
@@ -544,6 +916,7 @@ const timeline = [
   .reformTimeline__bigYear {
     display: block;
     grid-row: 1;
+    font-family: "Aeonik Pro", "Onest", sans-serif;
     font-size: clamp(40px, 4vw, 62px);
     font-weight: 800;
     line-height: 1;
