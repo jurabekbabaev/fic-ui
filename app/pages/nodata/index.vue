@@ -6,7 +6,7 @@
           <div class="flex justify-center">
             <p class="w-[436px] text-base font-normal text-[#505A63] mt-5">Ведутся работы по обновлению и наполнению контента. Пожалуйста, посетите данный раздел позднее</p>
           </div>
-          <router-link to="/" class="btn btn-primary mt-4"> Вернуться на главную</router-link>
+          <router-link to="/" class="btn btn-secondary mt-4"> Вернуться на главную</router-link>
       </div>
     </div>
   </template>

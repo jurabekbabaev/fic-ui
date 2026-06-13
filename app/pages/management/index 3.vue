@@ -232,7 +232,7 @@ const secretariatdata = ref([
               </div>
             </div>
             <div class="flex w-full justify-center mt-6">
-              <router-link to="/foreigninvestors" class="btn btn-primary"
+              <router-link to="/foreigninvestors" class="btn btn-secondary"
                 >{{ t("Подробнее") }}</router-link
               >
             </div>
@@ -272,7 +272,7 @@ const secretariatdata = ref([
               </div>
             </div>
             <div class="flex w-full justify-center mt-6">
-              <router-link to="/secretariat" class="btn btn-primary"
+              <router-link to="/secretariat" class="btn btn-secondary"
                 >{{ t("Подробнее (секретариат)") }}</router-link
               >
             </div>

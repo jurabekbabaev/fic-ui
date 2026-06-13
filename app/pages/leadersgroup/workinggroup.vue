@@ -154,6 +154,11 @@ function ViewReadMore(item: IType) {
               <!-- Name + position -->
               <div class="min-w-0">
                 <div
+                  class="text-[11px] text-[#000000] font-normal leading-tight mb-0.5"
+                >
+                  {{ item.role }}
+                </div>
+                <div
                   class="text-xs font-bold uppercase leading-tight text-[#191C1F] truncate"
                 >
                   {{ item.fullname }}

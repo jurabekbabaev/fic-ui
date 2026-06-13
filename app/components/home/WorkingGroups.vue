@@ -8,7 +8,7 @@
         <div class="lg:text-xl text-base mb-4">
           {{ $t("Вместе мы создаём результат, которым можно гордиться.") }}
         </div>
-        <WLocaleLink to="/advice" class="btn btn-primary">
+        <WLocaleLink to="/advice" class="btn btn-secondary">
           {{ $t("Рабочие группы") }}
         </WLocaleLink>
       </div>

@@ -85,6 +85,7 @@ interface ILeaderGroup {
   fullname: string;
   position: string;
   direction: string;
+  directiondesc: string;
   directionid: number;
   company_image: string;
   text: string;
@@ -98,6 +99,9 @@ const leaderList = ref<ILeaderGroup[]>([
     fullname: t("Спартак Тетрашвили"),
     position: t("Председатель правления TBC Bank Uzbekistan"),
     direction: t("РГ по финансовому сектору и банковской деятельности"),
+    directiondesc: t(
+      "Финансовый сектор и банковская деятельность. Развитие финансового и банковского сектора, расширение инструментов финансирования инвестиционных проектов и укрепление доверия инвесторов к финансовой системе страны."
+    ),
     directionid: 2,
     company_image: TbcBank,
     text: t(
@@ -125,6 +129,9 @@ const leaderList = ref<ILeaderGroup[]>([
     position: t("Генеральный директор Ipoteka Bank OTP Group"),
     direction: t(
       "РГ по привлечению талантов и развитию человеческого капитала"
+    ),
+    directiondesc: t(
+      "Привлечение талантов и человеческий капитал. Подготовка квалифицированных кадров для иностранных компаний: программы непрерывного образования, международная профессиональная сертификация и сотрудничество университетов с бизнесом."
     ),
     directionid: 3,
     company_image: Ipoteka,
@@ -186,6 +193,9 @@ const leaderList = ref<ILeaderGroup[]>([
     fullname: t("Сергей Саликов"),
     position: t("Uzum, генеральный юрисконсульт"),
     direction: t("РГ по цифровизации и ИКТ"),
+    directiondesc: t(
+      "Цифровизация и ИКТ. Цифровая трансформация взаимодействия инвесторов с государством, развитие электронных платформ оказания услуг и современной цифровой инфраструктуры."
+    ),
     directionid: 4,
     company_image: Uzum,
     text: t(
@@ -217,6 +227,9 @@ const leaderList = ref<ILeaderGroup[]>([
       "Председатель Фонда развития культуры и искусства Узбекистана при Кабинете Министров Республики Узбекистан"
     ),
     direction: t("РГ по креативным индустриям"),
+    directiondesc: t(
+      "Креативные индустрии. Преобразование креативных отраслей в инвестиционно- и экспортно-ориентированный сектор экономики в течение ближайших пяти лет."
+    ),
     directionid: 5,
     company_image: AcdfUz,
     text: t(
@@ -239,6 +252,9 @@ const leaderList = ref<ILeaderGroup[]>([
     fullname: t("Ерлан Досымбеков"),
     position: t("EY, управляющий партнер EY по Кавказу и Центральной Азии"),
     direction: t("РГ по инвестиционному климату"),
+    directiondesc: t(
+      "Инвестиционный климат. Системное совершенствование инвестиционного климата: устранение административных барьеров, повышение прозрачности и предсказуемости регулирования."
+    ),
     directionid: 6,
     company_image: EyBrand,
     text: t(
@@ -270,6 +286,9 @@ const leaderList = ref<ILeaderGroup[]>([
     fullname: t("Джон Заиди"),
     position: t("CEO Acwa в Узбекистане"),
     direction: t("РГ по энергетическому сектору"),
+    directiondesc: t(
+      "Энергетический сектор. Содействие привлечению частных инвестиций в генерацию, передачу и распределение электроэнергии, развитие возобновляемых источников и механизмов смешанного финансирования энергетических проектов."
+    ),
     directionid: 1,
     company_image: AcwaPower,
     text: t(
@@ -346,9 +365,12 @@ function goBack() {
           </button>
         </div>
         <div v-if="currentLeader" class="">
-          <h1 class="text-4xl text-left font-bold mx-auto pb-10">
+          <h1 class="text-4xl text-left font-bold mx-auto pb-4">
             {{ currentLeader.direction }}
           </h1>
+          <p class="lg:text-base text-sm text-[#505A63] pb-10">
+            {{ currentLeader.directiondesc }}
+          </p>
         </div>
         <div v-if="currentLeader" class="">
           <div>

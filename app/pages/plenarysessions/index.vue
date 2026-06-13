@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import { nextTick, watch } from 'vue'
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
-import BgImage from "@/assets/images/plenarysessions/image 4.png";
-import BgImageMobile from "@/assets/images/plenarysessions/Без имени-1 1.png";
+import { nextTick, watch } from "vue";
+import PageHero from "~/components/shared/PageHero.vue";
 import ResultSection from "./result.vue";
+import HeroImage from "@/assets/images/plenarysessions/image 4.png";
 
 const route = useRoute();
-const isMobile = ref(false);
 
 const normalizedTargetMap: Record<string, string> = {
   "plenary-2023": "plenary-2022",
@@ -27,8 +24,7 @@ const scrollToTarget = async () => {
 
   setTimeout(() => {
     const offset = 110;
-    const top =
-      element.getBoundingClientRect().top + window.scrollY - offset;
+    const top = element.getBoundingClientRect().top + window.scrollY - offset;
 
     window.scrollTo({
       top,
@@ -38,19 +34,6 @@ const scrollToTarget = async () => {
 };
 
 onMounted(() => {
-  if (typeof window !== 'undefined') {
-    const handleResize = () => {
-      isMobile.value = window.innerWidth <= 768;
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    onUnmounted(() => {
-      window.removeEventListener("resize", handleResize);
-    });
-  }
-
   scrollToTarget();
 });
 
@@ -65,45 +48,10 @@ watch(
 <template>
   <client-only>
     <div>
-      <div class="w-full h-[800px]">
-        <img
-          :src="BgImage"
-          alt=""
-          class="w-screen h-[800px] absolute top-0 -z-1 object-cover object-top"
-          v-if="!isMobile"
-        />
-        <img
-          :src="BgImageMobile"
-          alt=""
-          class="w-screen h-full absolute top-0 -z-1"
-          v-else
-          
-        />
-        <div class="container">
-          <div
-            class="absolute uppercase text-white lg:text-[64px] text-[32px] lg:w-[736px] w-[260px] font-black"
-            :class="[isMobile ? 'title-mobile' : 'title']"
-          >
-            {{ t('Результаты пленарных сессий') }}
-          </div>
-        </div>
-      </div>
+      <PageHero title="Результаты пленарных сессий" :image="HeroImage" />
       <div class="container">
-        <!-- 1-section -->
-        <div>
-          <ResultSection />
-        </div>
+        <ResultSection />
       </div>
     </div>
   </client-only>
 </template>
-
-<style scoped>
-:deep(.title) {
-  transform: translate(0%, 460px);
-}
-
-:deep(.title-mobile) {
-  transform: translate(0%, 380px);
-}
-</style>

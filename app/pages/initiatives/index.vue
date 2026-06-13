@@ -877,17 +877,6 @@ const categoryStartIndex = computed(() => {
                           : "Инициатива"
                       }}
                     </th>
-                    <th
-                      class="text-left lg:text-sm text-xs font-semibold px-4 py-3 w-48 rounded-tr-xl"
-                    >
-                      {{
-                        locale.startsWith("uz")
-                          ? "Spiker (Kompaniya)"
-                          : locale.startsWith("en")
-                          ? "Speaker (Company)"
-                          : "Спикер (Компания)"
-                      }}
-                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -906,13 +895,13 @@ const categoryStartIndex = computed(() => {
                     >
                       {{ getText(item) }}
                     </td>
-                    <td class="px-4 py-4 align-top">
+                    <!-- <td class="px-4 py-4 align-top">
                       <span
                         class="inline-block font-bold bg-transparent rounded-[30px] px-4 py-1 text-[#1a1a1a] lg:text-xs text-[11px] whitespace-nowrap"
                       >
                         {{ item.speaker }}
                       </span>
-                    </td>
+                    </td> -->
                   </tr>
                 </tbody>
               </table>

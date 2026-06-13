@@ -51,7 +51,7 @@ const toNextPage = () => {
         </div>
       </div>
       <div class="text-center" v-if="pagination && pagination.last_page > page">
-        <button class="btn btn-primary" @click="toNextPage">{{$t('Посмотреть больше')}}</button>
+        <button class="btn btn-secondary" @click="toNextPage">{{$t('Посмотреть больше')}}</button>
       </div>
     </div>
   </div>

@@ -15,7 +15,7 @@
             {{ $t("Диалог государства и инвесторов, где обсуждаются реформы, принимаются ключевые решения и создаётся инвестиционное будущее Узбекистана") }}
           </p>
         </div>
-        <WLocaleLink to="/plenarysessions" class="btn btn-primary mt-6">{{
+        <WLocaleLink to="/plenarysessions" class="btn btn-secondary mt-6">{{
           $t("Узнать пробронее")
         }}</WLocaleLink>
       </div>

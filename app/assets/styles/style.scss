@@ -54,10 +54,49 @@ img{
   background: #000;
 }
 .btn-secondary{
-  background: rgba(25, 28, 31, 0.1);
+  background: rgba(25, 28, 31, 0.06);
+  color: #191C1F;
   &:hover{
-    background: #000;
+    background: #191C1F;
     color: #fff;
+  }
+}
+.btn-outline-secondary{
+  background: transparent;
+  color: #191C1F;
+  border: 1px solid rgba(25, 28, 31, 0.2);
+  &:hover{
+    background: #191C1F;
+    color: #fff;
+    border-color: #191C1F;
+  }
+}
+.btn-social-icon{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #191C1F;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover{
+    background: #191C1F;
+    color: #fff;
+  }
+  &--dark{
+    background: #191C1F;
+    color: #fff;
+    &:hover{
+      background: #000;
+      color: #fff;
+    }
+  }
+  &--lg{
+    width: 48px;
+    height: 48px;
   }
 }
 .btn-sm{

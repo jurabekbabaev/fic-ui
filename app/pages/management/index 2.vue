@@ -233,7 +233,7 @@ const secretariatdata = ref([
               </div>
             </div>
             <div class="flex w-full justify-center mt-6">
-              <WLocaleLink to="/foreigninvestors" class="btn btn-primary"
+              <WLocaleLink to="/foreigninvestors" class="btn btn-secondary"
                 >{{ t("Подробнее") }}</WLocaleLink
               >
             </div>
@@ -273,7 +273,7 @@ const secretariatdata = ref([
               </div>
             </div>
             <div class="flex w-full justify-center mt-6">
-              <WLocaleLink to="/secretariat" class="btn btn-primary"
+              <WLocaleLink to="/secretariat" class="btn btn-secondary"
                 >{{ t("Подробнее (секретариат)") }}</WLocaleLink
               >
             </div>

@@ -303,9 +303,9 @@ a.sec-contact:hover .sec-contact__text {
   padding: 12px 26px;
   font-size: 14px;
   font-weight: 600;
-  background: #191c1f;
-  color: #ffffff;
-  transition: background-color 0.24s ease, transform 0.24s ease,
+  background: rgba(25, 28, 31, 0.06);
+  color: #191c1f;
+  transition: background-color 0.24s ease, color 0.24s ease, transform 0.24s ease,
     box-shadow 0.24s ease;
 }
 
@@ -316,7 +316,8 @@ a.sec-contact:hover .sec-contact__text {
 }
 
 .sec-btn:hover {
-  background: #000000;
+  background: #191c1f;
+  color: #ffffff;
   transform: translateY(-1px);
   box-shadow: 0 10px 24px rgba(25, 28, 31, 0.18);
 }

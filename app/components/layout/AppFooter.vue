@@ -58,23 +58,23 @@ const { t } = useI18n();
               <a
                 href="https://t.me/fic_uz"
                 target="_blank"
-                class="size-10 flex justify-center items-center rounded-full bg-white cursor-pointer hover:bg-gray-200 transition-colors"
+                class="btn-social-icon"
               >
-                <i class="icon-telegram text-[#191C1F]"></i>
+                <i class="icon-telegram"></i>
               </a>
               <a
                 href="https://www.facebook.com/fics.uz"
                 target="_blank"
-                class="size-10 flex justify-center items-center rounded-full bg-white cursor-pointer hover:bg-gray-200 transition-colors"
+                class="btn-social-icon"
               >
-                <i class="icon-facebook text-[#191C1F]"></i>
+                <i class="icon-facebook"></i>
               </a>
               <a
                 href="https://www.linkedin.com/company/ficsuz"
                 target="_blank"
-                class="size-10 flex justify-center items-center rounded-full bg-white cursor-pointer hover:bg-gray-200 transition-colors"
+                class="btn-social-icon"
               >
-                <i class="icon-linkedin text-[#191C1F]"></i>
+                <i class="icon-linkedin"></i>
               </a>
             </div>
           </div>

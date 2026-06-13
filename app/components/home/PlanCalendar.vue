@@ -49,7 +49,7 @@
         </section>
 
         <div class="text-center mt-[40px]">
-          <WLocaleLink to="/calendarplan" class="btn btn-primary">
+          <WLocaleLink to="/calendarplan" class="btn btn-secondary">
             {{ t("Все мероприятия") }}
           </WLocaleLink>
         </div>

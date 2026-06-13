@@ -136,14 +136,14 @@ async function sendForm() {
               <div class="lg:text-2xl text-2xl text-[#191C1F] font-normal">BoMI Finance Center, 100135, Tashkent</div>
             </div>
             <div class="mb-4 flex gap-2">
-              <a href="https://t.me/fic_uz" target="_blank" class="size-12 flex justify-center items-center rounded-[50%] bg-[#191C1F] cursor-pointer hover:bg-gray-950">
-                <i class="icon-telegram text-white"></i>
+              <a href="https://t.me/fic_uz" target="_blank" class="btn-social-icon btn-social-icon--dark btn-social-icon--lg">
+                <i class="icon-telegram"></i>
               </a>
-              <a href="https://www.facebook.com/fics.uz" target="_blank" class="size-12 flex justify-center items-center rounded-[50%] bg-[#191C1F] cursor-pointer hover:bg-gray-950">
-                <i class="icon-facebook text-white"></i>
+              <a href="https://www.facebook.com/fics.uz" target="_blank" class="btn-social-icon btn-social-icon--dark btn-social-icon--lg">
+                <i class="icon-facebook"></i>
               </a>
-              <a href="https://www.linkedin.com/company/ficsuz" target="_blank" class="size-12 flex justify-center items-center rounded-[50%] bg-[#191C1F] cursor-pointer hover:bg-gray-950">
-                <i class="icon-linkedin text-white"></i>
+              <a href="https://www.linkedin.com/company/ficsuz" target="_blank" class="btn-social-icon btn-social-icon--dark btn-social-icon--lg">
+                <i class="icon-linkedin"></i>
               </a>
             </div>
             <div class="mb-4">

@@ -191,7 +191,7 @@ onBeforeUnmount(() => {
               href="https://lex.uz/docs/4593913"
               target="_blank"
               rel="noreferrer"
-              class="btn btn-primary mt-2"
+              class="btn btn-secondary mt-2"
             >
               {{ t("Подробно") }}
             </a>

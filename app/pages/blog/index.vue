@@ -120,7 +120,7 @@ const submitFilter = () => {
       </div>
 
       <div class="text-center" v-if="pagination?.last_page > filter.page">
-        <button class="btn btn-primary" @click="toNextPage">{{$t('Посмотреть больше')}}</button>
+        <button class="btn btn-secondary" @click="toNextPage">{{$t('Посмотреть больше')}}</button>
       </div>
       
     </div>
