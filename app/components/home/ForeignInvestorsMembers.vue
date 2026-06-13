@@ -7,11 +7,16 @@
     "
   >
     <div>
-      <div class="mainContainer mb-[60px]">
-        <h2 class="title-64 text-center mb-8 text-[32px] lg:mb-10 lg:text-[64px]">
+      <div class="mainContainer mb-[60px] pb-[40px]">
+        <h2
+          class="title-64 pt-[100px] text-center mb-8 text-[32px] lg:mb-10 lg:text-[64px]"
+        >
           {{ t("Показатели") }}
         </h2>
-        <div ref="statsRef" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+        <div
+          ref="statsRef"
+          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3"
+        >
           <div
             v-for="(stat, i) in councilStats"
             :key="stat.label"
@@ -121,10 +126,10 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 
 const councilStats = [
-  { target: 41,  label: "Членов совета" },
-  { target: 85,  label: "Активных компаний" },
-  { target: 19,  label: "Стран" },
-  { target: 16,  label: "Рабочих групп" },
+  { target: 41, label: "Членов совета" },
+  { target: 85, label: "Активных компаний" },
+  { target: 19, label: "Стран" },
+  { target: 16, label: "Рабочих групп" },
   { target: 120, label: "Инициатив" },
 ];
 
@@ -132,7 +137,9 @@ const statDisplayValues = ref(councilStats.map(() => "0"));
 const statsRef = ref(null);
 let statsObserver = null;
 
-function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+function easeOutCubic(t) {
+  return 1 - Math.pow(1 - t, 3);
+}
 
 function animateStats() {
   const duration = 1800;
