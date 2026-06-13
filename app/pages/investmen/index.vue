@@ -3,10 +3,10 @@ import { useI18n } from "vue-i18n";
 import { ref, watch, onBeforeUnmount } from "vue";
 import PageHero from "~/components/shared/PageHero.vue";
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 useHead({
-  title: "Инвестиции в Узбекистан | FIC",
+  title: `${t("Инвестиции в Узбекистан")} | FIC`,
 });
 
 const intro = [
@@ -21,31 +21,97 @@ type Stat = {
   suffix?: string;
   decimals?: number;
   label: string;
-  accent: "light" | "dark";
+  accent: "light";
 };
 
 const stats: Stat[] = [
-  { value: 135, prefix: ">$", suffix: " млрд", decimals: 0, label: "ВВП (цель 2026 — >$150 млрд)", accent: "dark" },
-  { value: 7.7, prefix: "", suffix: "%", decimals: 1, label: "рост ВВП (МВФ, 2025)", accent: "light" },
-  { value: 42, prefix: "~$", suffix: " млрд", decimals: 0, label: "приток иностранных инвестиций", accent: "light" },
-  { raw: "BB", label: "рейтинг Fitch и S&P; Moody's Ba3 (прогноз позитивный)", accent: "light" },
-  { value: 55, prefix: "$", suffix: " млрд", decimals: 0, label: "золотовалютные резервы (+35%)", accent: "dark" },
-  { value: 7.3, prefix: "", suffix: "%", decimals: 1, label: "инфляция (с 9,8% годом ранее)", accent: "light" },
-  { value: 23, prefix: "+", suffix: "%", decimals: 0, label: "рост экспорта (~$32 млрд)", accent: "light" },
-  { value: 31.9, prefix: "", suffix: "%", decimals: 1, label: "совокупные инвестиции к ВВП", accent: "light" },
-  { value: 4.8, prefix: "", suffix: "%", decimals: 1, label: "безработица (минимум)", accent: "light" },
+  {
+    value: 135,
+    prefix: ">$",
+    suffix: " млрд",
+    decimals: 0,
+    label: "ВВП (цель 2026 — >$150 млрд)",
+    accent: "light",
+  },
+  {
+    value: 7.7,
+    prefix: "",
+    suffix: "%",
+    decimals: 1,
+    label: "рост ВВП (МВФ, 2025)",
+    accent: "light",
+  },
+  {
+    value: 42,
+    prefix: "~$",
+    suffix: " млрд",
+    decimals: 0,
+    label: "приток иностранных инвестиций",
+    accent: "light",
+  },
+  {
+    raw: "BB",
+    label: "рейтинг Fitch и S&P; Moody's Ba3 (прогноз позитивный)",
+    accent: "light",
+  },
+  {
+    value: 55,
+    prefix: "$",
+    suffix: " млрд",
+    decimals: 0,
+    label: "золотовалютные резервы (+35%)",
+    accent: "light",
+  },
+  {
+    value: 7.3,
+    prefix: "",
+    suffix: "%",
+    decimals: 1,
+    label: "инфляция (с 9,8% годом ранее)",
+    accent: "light",
+  },
+  {
+    value: 23,
+    prefix: "+",
+    suffix: "%",
+    decimals: 0,
+    label: "рост экспорта (~$32 млрд)",
+    accent: "light",
+  },
+  {
+    value: 31.9,
+    prefix: "",
+    suffix: "%",
+    decimals: 1,
+    label: "совокупные инвестиции к ВВП",
+    accent: "light",
+  },
+  {
+    value: 4.8,
+    prefix: "",
+    suffix: "%",
+    decimals: 1,
+    label: "безработица (минимум)",
+    accent: "light",
+  },
 ];
 
 function formatStat(stat: Stat, currentVal: number): string {
   const decimals = stat.decimals ?? 0;
-  const formatted = decimals > 0
-    ? currentVal.toFixed(decimals).replace(".", ",")
-    : Math.floor(currentVal).toString();
-  return `${stat.prefix ?? ""}${formatted}${stat.suffix ?? ""}`;
+  // English uses a decimal point (7.7%); ru/uz use a comma (7,7%).
+  const sep = locale.value === "en" ? "." : ",";
+  const formatted =
+    decimals > 0
+      ? currentVal.toFixed(decimals).replace(".", sep)
+      : Math.floor(currentVal).toString();
+  const suffix = stat.suffix ? t(stat.suffix) : "";
+  return `${stat.prefix ?? ""}${formatted}${suffix}`;
 }
 
 const displayValues = ref(
-  stats.map((stat) => (stat.raw !== undefined ? stat.raw : formatStat(stat, 0)))
+  stats.map((stat) =>
+    stat.raw !== undefined ? stat.raw : formatStat(stat, 0),
+  ),
 );
 const statsContainer = ref<HTMLElement | null>(null);
 const statsVisible = ref(false);
@@ -104,11 +170,11 @@ watch(
           observer?.disconnect();
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.25 },
     );
     observer.observe(el);
   },
-  { immediate: true }
+  { immediate: true },
 );
 
 onBeforeUnmount(() => {
@@ -122,22 +188,39 @@ const guarantees = [
     text: "Закон «Об инвестициях и инвестиционной деятельности» гарантирует свободный перевод средств за пределы страны и защиту инвестиций от национализации.",
   },
   {
-    icon: ["M19 5L5 19", "M7.5 5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z", "M16.5 14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"],
+    icon: [
+      "M19 5L5 19",
+      "M7.5 5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z",
+      "M16.5 14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z",
+    ],
     term: "Налоговая стабильность.",
     text: "Базовые ставки налогов для бизнеса не изменятся до 2028 года.",
   },
   {
-    icon: ["M5 5h13a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H10l-4 3v-3H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z", "M8 9h7M8 12h4"],
+    icon: [
+      "M5 5h13a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H10l-4 3v-3H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z",
+      "M8 9h7M8 12h4",
+    ],
     term: "Прямой диалог.",
     text: "Совет иностранных инвесторов при Президенте — институциональный канал решения вопросов инвесторов на высшем уровне.",
   },
   {
-    icon: ["M12 4v15", "M6 19h12", "M5 8h14", "M5 8l-2.5 5a2.5 2.5 0 0 0 5 0z", "M19 8l-2.5 5a2.5 2.5 0 0 0 5 0z"],
+    icon: [
+      "M12 4v15",
+      "M6 19h12",
+      "M5 8h14",
+      "M5 8l-2.5 5a2.5 2.5 0 0 0 5 0z",
+      "M19 8l-2.5 5a2.5 2.5 0 0 0 5 0z",
+    ],
     term: "Разрешение споров.",
     text: "Ташкентский международный арбитражный центр; Ташкентский международный коммерческий суд.",
   },
   {
-    icon: ["M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z", "M3.5 9h17M3.5 15h17", "M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"],
+    icon: [
+      "M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z",
+      "M3.5 9h17M3.5 15h17",
+      "M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18",
+    ],
     term: "Льготы для членов Совета.",
     text: "Безвизовый въезд для членов Совета и членов их семей.",
   },
@@ -154,7 +237,11 @@ const sectors = [
     ],
   },
   {
-    icon: ["M7 7h10v10H7z", "M10 10h4v4h-4z", "M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"],
+    icon: [
+      "M7 7h10v10H7z",
+      "M10 10h4v4h-4z",
+      "M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3",
+    ],
     title: "Цифровая инфраструктура и ИИ",
     points: [
       "DataVolt — крупнейший «зелёный» дата-центр региона",
@@ -163,7 +250,12 @@ const sectors = [
     ],
   },
   {
-    icon: ["M3 21h18", "M5 21V5l8-2v18", "M13 21V9l6 2v10", "M8 8h2M8 12h2M8 16h2"],
+    icon: [
+      "M3 21h18",
+      "M5 21V5l8-2v18",
+      "M13 21V9l6 2v10",
+      "M8 8h2M8 12h2M8 16h2",
+    ],
     title: "Инфраструктура и ГЧП",
     points: [
       "$4,5 млрд проектов ГЧП в 2025",
@@ -239,7 +331,10 @@ const timeline = [
             </h2>
           </div>
           <div class="invest-intro__body">
-            <p v-for="(paragraph, index) in intro" :key="`invest-intro-${index}`">
+            <p
+              v-for="(paragraph, index) in intro"
+              :key="`invest-intro-${index}`"
+            >
               {{ t(paragraph) }}
             </p>
           </div>
@@ -262,7 +357,6 @@ const timeline = [
               v-for="(stat, index) in stats"
               :key="stat.label"
               class="invest-stat"
-              :class="{ 'invest-stat--dark': stat.accent === 'dark' }"
               :style="{ '--delay': `${index * 60}ms` }"
             >
               <div class="invest-stat__value">{{ displayValues[index] }}</div>
@@ -359,7 +453,9 @@ const timeline = [
           <div class="invest-head">
             <span class="invest-eyebrow">{{ t("Девять лет реформ") }}</span>
             <h2 class="invest-title">{{ t("Траектория реформ") }}</h2>
-            <p class="invest-sub">{{ t("От открытия экономики к рынку капитала") }}</p>
+            <p class="invest-sub">
+              {{ t("От открытия экономики к рынку капитала") }}
+            </p>
           </div>
 
           <ol class="reformTimeline">
@@ -575,11 +671,6 @@ const timeline = [
   border-color: rgba(25, 28, 31, 0.16);
 }
 
-.invest-stat--dark {
-  background: #191c1f;
-  border-color: #191c1f;
-}
-
 .invest-stat__value {
   font-family: "Aeonik Pro", "Onest", sans-serif;
   font-size: clamp(26px, 3.2vw, 40px);
@@ -587,10 +678,6 @@ const timeline = [
   line-height: 1.04;
   letter-spacing: -0.02em;
   color: #191c1f;
-}
-
-.invest-stat--dark .invest-stat__value {
-  color: #fff;
 }
 
 .invest-stat__label {
@@ -813,7 +900,7 @@ const timeline = [
   border: 2px solid rgba(25, 28, 31, 0.22);
   border-radius: 9999px;
   background: #fff;
-  box-shadow: 0 0 0 5px #fff; /* gap in the dashed line around the node */
+  box-shadow: 0 0 0 5px #fff;
 }
 
 .reformTimeline__node::after {
@@ -920,7 +1007,6 @@ const timeline = [
     font-size: clamp(40px, 4vw, 62px);
     font-weight: 800;
     line-height: 1;
-    color: rgba(25, 28, 31, 0.12);
   }
 
   .reformTimeline__item:nth-child(odd) .reformTimeline__bigYear {

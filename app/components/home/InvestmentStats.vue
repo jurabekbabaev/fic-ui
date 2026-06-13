@@ -112,7 +112,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
       <div class="flex justify-center mt-10">
-        <NuxtLink :to="localePath('/investmenuzbekistan')" class="btn btn-primary">
+        <NuxtLink :to="localePath('/investmen')" class="btn btn-primary">
           {{ t("Batafsil") }}
         </NuxtLink>
       </div>
