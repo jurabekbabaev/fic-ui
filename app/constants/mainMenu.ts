@@ -5,7 +5,7 @@ export const mainMenuSections = [
       { label: "Главная", to: "/" },
       { label: "История СИИ", to: "/maininfo" },
       { label: "Ассоциация", to: "/association" },
-      { label: "Руководство", to: "/management" },
+      { label: "Руководство", to: "/foreigninvestors" },
       { label: "Секретариат", to: "/secretariat" },
     ],
   },
@@ -25,9 +25,15 @@ export const mainMenuSections = [
       { label: "РГ Совета", to: { path: "/advice", query: { target: "mwg" } } },
       {
         label: "Межведомственные",
-        to: { path: "/advice", query: { target: "advice-plenary-working-groups" } },
+        to: {
+          path: "/advice",
+          query: { target: "advice-plenary-working-groups" },
+        },
       },
-      { label: "По итогам сессий", to: { path: "/advice", query: { target: "rops" } } },
+      {
+        label: "По итогам сессий",
+        to: { path: "/advice", query: { target: "rops" } },
+      },
     ],
   },
   {

@@ -38,7 +38,7 @@
         </div>
 
         <div class="investor-profile-copy">
-          <p class="investor-profile-quote">
+          <p v-if="showQuote" class="investor-profile-quote">
             {{ person.quote }}
           </p>
           <h3 class="investor-profile-name">
@@ -47,6 +47,12 @@
           <p class="investor-profile-role">
             {{ person.position }}
           </p>
+          <div v-if="!showQuote" class="investor-bio-wrap">
+            <button class="investor-bio-btn">
+              <span>{{ t("Биография") }}</span>
+            </button>
+            <p class="investor-bio-hint">{{ t("Читать биографию") }}</p>
+          </div>
         </div>
       </article>
     </div>
@@ -56,6 +62,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
+import { useRoute } from "vue-router";
 import LazizImage from "@/assets/images/experts/foreign1.png";
 import AndiImage from "@/assets/images/experts/foreign2.png";
 import KanokpanImage from "@/assets/images/experts/foreign3.png";
@@ -65,9 +72,11 @@ import AdBank from "@/assets/images/brands/ad-bank.png";
 import EBank from "@/assets/images/brands/e-bank.png";
 import IfcBank from "@/assets/images/brands/ifc2.png";
 import FICLogo from "../../../public/images/ba12d8ddde154e568c101e56e4a917883a60b20a.png";
-import Logo from "../../../app/assets/images/brands/ministry-iit.png";
+import Logo from "../../../app/assets/images/brands/miit.png";
 
 const { t } = useI18n();
+const route = useRoute();
+const showQuote = computed(() => !route.path.includes("foreigninvestors"));
 
 interface InvestorCard {
   logo: string;
@@ -76,6 +85,7 @@ interface InvestorCard {
   image: string;
   name: string;
   position: string;
+  quote: string;
 }
 
 const investorCards = computed<InvestorCard[]>(() => [
@@ -85,8 +95,12 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoClass: "investor-profile-logo-image--sm",
     image: LazizImage,
     name: t("Лазиз Кудратов"),
-    position: t("Министр инвестиций, промышленности и торговли Республики Узбекистан"),
-    quote: t("“Узбекистан демонстрирует устойчивый рост инвестиционной активности благодаря проводимым реформам, созданию благоприятных условий для иностранных инвесторов.”"),
+    position: t(
+      "Министр инвестиций, промышленности и торговли Республики Узбекистан"
+    ),
+    quote: t(
+      "“Узбекистан демонстрирует устойчивый рост инвестиционной активности благодаря проводимым реформам, созданию благоприятных условий для иностранных инвесторов.”"
+    ),
   },
   {
     logo: EBank,
@@ -96,7 +110,9 @@ const investorCards = computed<InvestorCard[]>(() => [
     position: t(
       "Глава представительства Европейского банка реконструкции и развития в Узбекистане"
     ),
-    quote: t("“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”"),
+    quote: t(
+      "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”"
+    ),
   },
   {
     logo: AdBank,
@@ -104,7 +120,9 @@ const investorCards = computed<InvestorCard[]>(() => [
     image: KanokpanImage,
     name: t("Канокпан Лао-Арая"),
     position: t("Председатель Совета управляющих Азиатского банка развития"),
-    quote: t("“Правительство демонстрирует сильную приверженность реформам и стремится вовлекать все заинтересованные стороны страны, включая частный сектор, в процесс развития.”"),
+    quote: t(
+      "“Правительство демонстрирует сильную приверженность реформам и стремится вовлекать все заинтересованные стороны страны, включая частный сектор, в процесс развития.”"
+    ),
   },
   {
     logo: IfcBank,
@@ -114,7 +132,9 @@ const investorCards = computed<InvestorCard[]>(() => [
     position: t(
       "Директор офиса Международной финансовой корпорации по Узбекистану и Туркменистану"
     ),
-    quote: t("“Ключевые конкурентные преимущества Узбекистана — крупнейшее население в Центральной Азии и наиболее диверсифицированная экономика.”"),
+    quote: t(
+      "“Ключевые конкурентные преимущества Узбекистана — крупнейшее население в Центральной Азии и наиболее диверсифицированная экономика.”"
+    ),
   },
   {
     logo: FICLogo,
@@ -123,7 +143,9 @@ const investorCards = computed<InvestorCard[]>(() => [
     image: AzizImage,
     name: t("Азиз Гафуров"),
     position: t("Глава ассоциации СИИ"),
-    quote: t("“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”"),
+    quote: t(
+      "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”"
+    ),
   },
 ]);
 </script>
@@ -208,10 +230,12 @@ const investorCards = computed<InvestorCard[]>(() => [
 
 .investor-profile-copy {
   width: 100%;
-  display: grid;
-  grid-template-rows: minmax(120px, auto) auto auto;
-  row-gap: 10px;
-  align-items: start;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
 }
 
 .investor-profile-name {
@@ -236,18 +260,85 @@ const investorCards = computed<InvestorCard[]>(() => [
   margin-bottom: 0;
 }
 
+.investor-bio-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.investor-bio-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 7px 18px;
+  border: 1px solid rgba(25, 28, 31, 0.25);
+  border-radius: 999px;
+  background: transparent;
+  color: #191c1f;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.35s ease, border-color 0.35s ease;
+}
+
+.investor-bio-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #191c1f;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.investor-bio-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.investor-bio-btn:hover {
+  color: #fff;
+  border-color: #191c1f;
+}
+
+.investor-bio-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.investor-bio-hint {
+  position: absolute;
+  top: calc(100% - 16px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  white-space: nowrap;
+  font-size: 11px;
+  color: #505a63;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.investor-bio-wrap:hover .investor-bio-hint {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 .investor-profile-quote {
   color: #002342;
   font-size: 15px;
   line-height: 1.35;
   font-style: italic;
   margin: 0;
-  padding-bottom:20px;
+  padding-bottom: 20px;
   border-bottom: 1px solid rgba(25, 28, 31, 0.1);
 }
 @media (min-width: 640px) {
   .investor-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
@@ -268,10 +359,6 @@ const investorCards = computed<InvestorCard[]>(() => [
 
   .investor-profile-image-wrap {
     height: 240px;
-  }
-
-  .investor-profile-copy {
-    grid-template-rows: minmax(170px, auto) auto auto;
   }
 
   .investor-profile-name {
