@@ -14,6 +14,7 @@ const CENTER_IDX = Math.floor(VISIBLE_COUNT / 2); // = 2
 
 const currentSlide = ref(0);
 const isMobile = ref(false);
+const showAll = ref(false);
 const autoplayInterval = ref<number | null>(null);
 const isAutoplayPaused = ref(false);
 const autoplayDelay = 7000; // 7s
@@ -183,6 +184,19 @@ const closeVideo = () => {
   resumeAutoplay();
 };
 
+const expandAll = () => {
+  closeVideo();
+  showAll.value = true;
+  stopAutoplay();
+};
+
+const collapseAll = () => {
+  closeVideo();
+  showAll.value = false;
+  currentSlide.value = 0;
+  startAutoplay();
+};
+
 const getEmbedUrl = (urlArg?: string) => {
   const url: string = urlArg || "";
   if (!url) return "";
@@ -230,6 +244,7 @@ onUnmounted(() => {
         </h1>
       </div>
       <div
+        v-if="!showAll"
         class="relative lg:w-full w-full select-none"
         :class="{ 'cursor-grab': !isDragging, 'cursor-grabbing': isDragging }"
         @touchstart="onTouchStart"
@@ -317,6 +332,84 @@ onUnmounted(() => {
           ></button>
         </div>
       </div>
+
+      <!-- Expanded grid — all blitz interviews at once -->
+      <div
+        v-else
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 px-2"
+      >
+        <div
+          v-for="(slide, i) in slides"
+          :key="slide?.id || slide?.video_source || slide?.caption_path || slide?.image || `grid-slide-${i}`"
+          class="weekly-grid-item cursor-pointer"
+        >
+          <div
+            class="weekly-feedback-card bg-white rounded-xl shadow-lg overflow-hidden relative"
+          >
+            <img
+              :src="slide?.caption_path || slide?.image"
+              alt=""
+              class="w-full h-full object-cover object-center rounded-xl"
+            />
+            <!-- Play button -->
+            <div class="absolute top-3 right-3 z-10">
+              <div
+                v-if="selectedVideo !== slide"
+                class="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                @click.stop="OpenYoutube(slide)"
+              >
+                <svg class="w-6 h-6 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+            <!-- Video overlay -->
+            <div
+              v-if="selectedVideo === slide && selectedVideoLink === slide?.video_source"
+              class="absolute inset-0 z-50 bg-black rounded-xl w-full h-full"
+            >
+              <iframe
+                :src="getEmbedUrl(slide?.video_source)"
+                class="w-full h-full rounded-xl"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <button
+                class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow cursor-pointer z-50"
+                @click.stop="closeVideo"
+              >
+                <svg
+                  class="w-5 h-5 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Show more / Close button -->
+      <div class="w-full flex justify-center mt-8" v-if="slides.length > 0">
+        <button
+          v-if="!showAll"
+          class="btn btn-secondary"
+          @click="expandAll"
+        >
+          {{ t('Посмотреть еще') }}
+        </button>
+        <button
+          v-else
+          class="btn btn-secondary"
+          @click="collapseAll"
+        >
+          {{ t('Yopish') }}
+        </button>
+      </div>
     </div>
   </client-only>
 </template>
@@ -341,6 +434,22 @@ onUnmounted(() => {
 .weekly-feedback-item--inactive {
   opacity: 0.62;
   transform: scale(0.95);
+}
+
+.weekly-grid-item {
+  width: 100%;
+  animation: weekly-grid-fade-in 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes weekly-grid-fade-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .weekly-feedback-card {
