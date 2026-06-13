@@ -649,6 +649,33 @@ Competencies and Languages:
 const getMadinaBiography = () =>
   madinaBiographies[locale.value] ?? madinaBiographies.ru;
 
+const azizBiographies: Record<string, string> = {
+  uz: `Iqtisodiyot fanlari doktori, korporativ boshqaruv, investitsiya siyosati va strategik konsalting sohalarida 20 yildan ortiq tajribaga ega. U xalqaro investorlar, rivojlanish banklari va davlat tuzilmalari bilan ishlash bo‘yicha keng tajribaga ega. Investorlar bilan aloqalarni rivojlantirish, siyosatni muvofiqlashtirish va institutsional rivojlanishga rahbarlik qiladi.`,
+  ru: `Доктор экономических наук, более 20 лет опыта в сферах корпоративного управления, инвестиционной политики и стратегического консалтинга. Обладает обширным опытом работы с международными инвесторами, банками развития и государственными структурами. Руководит развитием отношений с инвесторами, координацией политики и институциональным развитием.`,
+  en: `Doctor of Economic Sciences with over 20 years of experience in corporate governance, investment policy, and strategic consulting. He has extensive experience working with international investors, development banks, and government institutions. He leads the development of investor relations, policy coordination, and institutional development.`,
+};
+
+const getAzizBiography = () =>
+  azizBiographies[locale.value] ?? azizBiographies.ru;
+
+const avazbekBiographies: Record<string, string> = {
+  uz: `Tashqi iqtisodiy aloqalar, investitsiyalar va energetika sohalarida 15 yildan ortiq kasbiy tajribaga ega. Yirik investitsiya loyihalarini muvofiqlashtirish va xalqaro hamkorlikni rivojlantirish bo‘yicha keng amaliyotga ega. Xorijiy investorlar kengashi Kotibiyatida dasturlarni muvofiqlashtirish va loyihalar ijrosini ta’minlash uchun mas’ul.`,
+  ru: `Более 15 лет профессионального опыта в области внешнеэкономических связей, инвестиций и энергетики. Обладает обширной практикой координации крупных инвестиционных проектов и развития международного сотрудничества. В Секретариате Совета иностранных инвесторов отвечает за координацию программ и обеспечение реализации проектов.`,
+  en: `Over 15 years of professional experience in foreign economic relations, investment, and energy. He has extensive practice in coordinating major investment projects and developing international cooperation. At the Secretariat of the Foreign Investors Council, he is responsible for program coordination and ensuring project implementation.`,
+};
+
+const getAvazbekBiography = () =>
+  avazbekBiographies[locale.value] ?? avazbekBiographies.ru;
+
+const hakimniyazBiographies: Record<string, string> = {
+  uz: `MGIMO (Moskva) bakalavriat va magistraturasini xalqaro huquq yo‘nalishi bo‘yicha imtiyozli diplom bilan tamomlagan. O‘zbekiston Tashqi ishlar vazirligida hamda xalqaro yuridik firmada ishlash tajribasiga ega. Xorijiy investorlar kengashi Kotibiyatida huquqiy masalalar va dasturlarni muvofiqlashtirish bilan shug‘ullanadi.`,
+  ru: `С отличием окончил бакалавриат и магистратуру МГИМО (Москва) по международному праву. Имеет опыт работы в МИД Узбекистана, а также в международной юридической фирме. В Секретариате Совета иностранных инвесторов занимается правовыми вопросами и координацией программ.`,
+  en: `Graduated with honors from MGIMO (Moscow) with bachelor's and master's degrees in international law. He has experience working at the Ministry of Foreign Affairs of Uzbekistan and at an international law firm. At the Secretariat of the Foreign Investors Council, he handles legal matters and program coordination.`,
+};
+
+const getHakimniyazBiography = () =>
+  hakimniyazBiographies[locale.value] ?? hakimniyazBiographies.ru;
+
 const createContacts = (phone: string, email: string) => [
   {
     type: "phone" as const,
@@ -674,8 +701,7 @@ const members = computed(() => [
     description: t(
       "Азиз Гафуров – топ-менеджер с более чем 20-летним опытом в сфере корпоративного управления, управления рисками, инвестиционной политики и стратегического консалтинга."
     ),
-    duties: buildDuties(t("Азиз Гафуров"), t("Руководитель секретариата")),
-    biography: buildBiography(t("Азиз Гафуров"), t("Руковodитель секретариата")),
+    biography: getAzizBiography(),
     contacts: createContacts("+998 88 099 88 88", "head@fics.uz"),
   },
   {
@@ -685,11 +711,7 @@ const members = computed(() => [
     description: t(
       "Авазбек имеет более чем 15-летний профессиональный опыт в области внешнеэкономических связей, инвестиций и энергетики."
     ),
-    duties: getVladislavDuties(),
-    biography: buildBiography(
-      t("Авазбек Муллажонов"),
-      t("Программный координатор")
-    ),
+    biography: getAvazbekBiography(),
     contacts: createContacts("+998 88 099 88 88", "coord1@fics.uz"),
   },
   {
@@ -699,11 +721,7 @@ const members = computed(() => [
     description: t(
       "Хакимнияз Каипбергенов с отличием окончил бакалавриат и магистратуру МГИМО в Москве по международному праву. Имеет опыт работы в МИД Узбекистана, а также в международной юридической фирме."
     ),
-    duties: getVladislavDuties(),
-    biography: buildBiography(
-      t("Хакимнияз Каипбергенов"),
-      t("Программный координатор")
-    ),
+    biography: getHakimniyazBiography(),
     contacts: createContacts("+998 88 099 88 88", "coord2@fics.uz"),
   },
   {
@@ -712,7 +730,6 @@ const members = computed(() => [
     position: t("Программный координатор"),
     description:
       "Окончил филиал Международного университета Вестминстера в Ташкенте по направлению «Бизнес-менеджмент и финансы» и свободно владеет тремя языками. Также владеет практическими навыками эффективной работы с клиентами, проведения переговоров и решения комплексных задач.",
-    duties: getVladislavDuties(),
     biography: getVladislavBiography(),
     contacts: createContacts("+998 88 099 88 88", "coord3@fics.uz"),
   },
@@ -723,7 +740,6 @@ const members = computed(() => [
     description: t(
       "Журабек Бабаев — маркетолог нового поколения, соединяющий стратегическое мышление с глубоким пониманием бизнес-ландшафта Узбекистана"
     ),
-    duties: getJurabekDuties(),
     biography: getJurabekBiography(),
     contacts: createContacts("+998 88 099 88 88", "marketing@fics.uz"),
   },
@@ -734,7 +750,6 @@ const members = computed(() => [
     description: t(
       "До присоединения к Секретариату СИИ Мадинахон работала менеджером в Ассоциации частных туристических организаций Узбекистана"
     ),
-    duties: getMadinaDuties(),
     biography: getMadinaBiography(),
     contacts: createContacts("+998 88 099 88 88", "admin@fics.uz"),
   },
@@ -776,7 +791,7 @@ const members = computed(() => [
 }
 
 .secretariat-page__container {
-  max-width: 960px;
+  max-width: 1240px;
 }
 
 .secretariat-page__title {
@@ -790,13 +805,22 @@ const members = computed(() => [
 }
 
 .secretariat-page__intro {
-  margin-bottom: 48px;
+  max-width: 860px;
+  margin: 0 auto 56px;
+  text-align: center;
 }
 
 .secretariat-page__list {
   display: grid;
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 24px;
   justify-items: stretch;
+}
+
+@media (min-width: 1024px) {
+  .secretariat-page__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 767px) {
