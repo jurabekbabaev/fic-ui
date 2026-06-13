@@ -45,7 +45,7 @@ const comitetdata = ref([
     id: 3,
     image: User2,
     fullname: t("Азиз Гафуров"),
-    position: t("Глава ассоциации СИИ"),
+    position: t("Глава ассоциации Совета иностранных инвесторов"),
   },
   {
     id: 4,
