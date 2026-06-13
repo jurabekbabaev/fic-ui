@@ -1,31 +1,19 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import { ref, onMounted, onBeforeUnmount } from "vue";
-// import WLocaleLink from "~/components/shared/WLocaleLink.vue";
 
 const { t } = useI18n();
 
 const stats = [
-  {
-    target: 137,
-    prefix: "$",
-    suffix: "B+",
-    decimals: 0,
-    label: "ВВП 2025 (МВФ)",
-  },
-  { target: 7.6, prefix: "", suffix: "%", decimals: 1, label: "Рост ВВП 2025" },
-  { target: 37.7, prefix: "", suffix: "M", decimals: 1, label: "Население" },
-  {
-    target: 43,
-    prefix: "$",
-    suffix: "B+",
-    decimals: 0,
-    label: "Иностр. инвестиции 2025 *",
-  },
+  { target: 41, suffix: "", decimals: 0, label: "Членов совета" },
+  { target: 85, suffix: "", decimals: 0, label: "Активных компаний" },
+  { target: 19, suffix: "", decimals: 0, label: "Стран" },
+  { target: 16, suffix: "", decimals: 0, label: "Рабочих групп" },
+  { target: 120, suffix: "", decimals: 0, label: "Инициатив" },
 ];
 
 const displayValues = ref(stats.map(() => "0"));
-const statsContainer = ref<HTMLElement | null>(null);
+const containerRef = ref<HTMLElement | null>(null);
 const hasAnimated = ref(false);
 let observer: IntersectionObserver | null = null;
 
@@ -37,7 +25,7 @@ function animateCountUp() {
   if (hasAnimated.value) return;
   hasAnimated.value = true;
 
-  const duration = 2000;
+  const duration = 1800;
   const startTime = performance.now();
 
   function update(currentTime: number) {
@@ -51,12 +39,10 @@ function animateCountUp() {
         stat.decimals > 0
           ? currentVal.toFixed(stat.decimals)
           : Math.floor(currentVal).toString();
-      displayValues.value[index] = `${stat.prefix}${formatted}${stat.suffix}`;
+      displayValues.value[index] = `${formatted}${stat.suffix}`;
     });
 
-    if (progress < 1) {
-      requestAnimationFrame(update);
-    }
+    if (progress < 1) requestAnimationFrame(update);
   }
 
   requestAnimationFrame(update);
@@ -66,47 +52,40 @@ onMounted(() => {
   observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCountUp();
-        }
+        if (entry.isIntersecting) animateCountUp();
       });
     },
     { threshold: 0.3 }
   );
-
-  if (statsContainer.value) {
-    observer.observe(statsContainer.value);
-  }
+  if (containerRef.value) observer.observe(containerRef.value);
 });
 
 onBeforeUnmount(() => {
-  if (observer) {
-    observer.disconnect();
-  }
+  observer?.disconnect();
 });
 </script>
 
 <template>
-  <div class="bg-white py-[80px]">
+  <div class="relative z-[20] bg-white pt-[100px]">
     <div class="container">
       <h2 class="title-64 text-center mb-8 text-[32px] lg:mb-12 lg:text-[64px]">
-        {{ t("Инвестиции в Узбекистан") }}
+        {{ t("Показатели") }}
       </h2>
       <div
-        ref="statsContainer"
-        class="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4"
+        ref="containerRef"
+        class="grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-3 lg:grid-cols-5"
       >
         <div
           v-for="(stat, index) in stats"
           :key="stat.label"
-          class="card-item p-5 lg:p-7"
+          class="card-item p-5 lg:p-7 flex flex-col justify-between min-h-[130px]"
         >
           <div
-            class="text-[28px] font-bold leading-none text-[#191C1F] lg:text-[40px]"
+            class="text-[36px] font-bold leading-none text-[#191C1F] lg:text-[52px]"
           >
             {{ displayValues[index] }}
           </div>
-          <div class="mt-2 text-sm text-grey lg:text-base">
+          <div class="mt-3 text-sm text-grey lg:text-base">
             {{ t(stat.label) }}
           </div>
         </div>
