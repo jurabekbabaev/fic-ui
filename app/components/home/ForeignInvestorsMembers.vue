@@ -126,11 +126,11 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 
 const councilStats = [
-  { target: 41, label: "Членов совета" },
+  { target: 43, label: "Членов совета" },
   { target: 85, label: "Активных компаний" },
   { target: 19, label: "Стран" },
   { target: 16, label: "Рабочих групп" },
-  { target: 120, label: "Инициатив" },
+  { target: 120, label: "Инициатив до IV Пленарной Сесии", suffix: "+" },
 ];
 
 const statDisplayValues = ref(councilStats.map(() => "0"));
@@ -148,7 +148,7 @@ function animateStats() {
     const progress = Math.min((now - start) / duration, 1);
     const eased = easeOutCubic(progress);
     councilStats.forEach((s, i) => {
-      statDisplayValues.value[i] = Math.floor(eased * s.target).toString();
+      statDisplayValues.value[i] = Math.floor(eased * s.target).toString() + (s.suffix ?? "");
     });
     if (progress < 1) requestAnimationFrame(update);
   }

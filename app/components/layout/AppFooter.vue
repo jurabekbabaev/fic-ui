@@ -39,6 +39,9 @@ const { t } = useI18n();
                 <i class="icon-linkedin text-[#191C1F]"></i>
               </a>
             </div>
+            <WLocaleLink to="/contacts" class="inline-flex items-center gap-2 bg-white text-[#191C1F] text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gray-100 transition-colors">
+              {{ t("Связаться") }}
+            </WLocaleLink>
           </div>
           <p class="text-xs font-normal text-[#FFFFFF80] mt-8 lg:mt-auto">
             {{

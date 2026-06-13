@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import { ref, onMounted, onBeforeUnmount } from "vue";
-// import WLocaleLink from "~/components/shared/WLocaleLink.vue";
 
 const { t } = useI18n();
+const localePath = useLocalePath();
 
 const stats = [
   {
@@ -110,6 +110,11 @@ onBeforeUnmount(() => {
             {{ t(stat.label) }}
           </div>
         </div>
+      </div>
+      <div class="flex justify-center mt-10">
+        <NuxtLink :to="localePath('/investmenuzbekistan')" class="btn btn-primary">
+          {{ t("Batafsil") }}
+        </NuxtLink>
       </div>
     </div>
   </div>

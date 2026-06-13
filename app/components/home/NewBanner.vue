@@ -973,6 +973,7 @@ onUnmounted(() => {
 .introCouncilShell {
   width: min(100%, 900px);
   margin: 0 auto;
+  padding-top: 80px;
 }
 
 .introCouncilLeaders {

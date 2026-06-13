@@ -5,7 +5,7 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 const { t } = useI18n();
 
 const stats = [
-  { target: 41, suffix: "", decimals: 0, label: "Членов совета" },
+  { target: 43, suffix: "", decimals: 0, label: "Членов совета" },
   { target: 85, suffix: "", decimals: 0, label: "Активных компаний" },
   { target: 19, suffix: "", decimals: 0, label: "Стран" },
   { target: 16, suffix: "", decimals: 0, label: "Рабочих групп" },
