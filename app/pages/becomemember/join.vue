@@ -1,10 +1,7 @@
 <script setup>
 import { useI18n } from "vue-i18n";
-import { ref } from "vue";
 
 const { t } = useI18n();
-
-const uploadModalOpen = ref(false);
 
 const admissionSteps = [
   {
@@ -337,41 +334,8 @@ const eligibilityFullMembers = [
             </div>
           </div>
         </section>
-
-        <!-- Application form download -->
-        <div>
-          <h3 class="lg:text-[32px] text-2xl font-black mt-[50px] lg:w-[625px]">
-            {{
-              t(
-                "Пожалуйста, скачайте форму заявки с руководством по ее заполнению",
-              )
-            }}
-          </h3>
-          <div class="lg:flex sm:block gap-4 mt-6 w-full items-center">
-            <a
-              href="/documents/fic-membership-documents.zip"
-              class="btn btn-primary flex! items-center mb-3"
-              download
-            >
-              <span class="ml-1">{{ t("Форма заявки") }}</span>
-            </a>
-            <a
-              href="#"
-              class="btn btn-secondary flex! items-center mb-3"
-              @click.prevent="uploadModalOpen = true"
-            >
-              <i class="icon-book-info text-2xl"> </i>
-              <span class="ml-1">{{ t("Руководство по подача заявки") }}</span>
-            </a>
-          </div>
-        </div>
       </div>
     </client-only>
-
-    <ModalUploadDocuments
-      v-if="uploadModalOpen"
-      @close="uploadModalOpen = false"
-    />
   </div>
 </template>
 
