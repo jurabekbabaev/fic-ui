@@ -28,7 +28,7 @@ onMounted(() => {
         <h1 class="lg:text-[64px] text-[32px] font-black text-white leading-1">
           {{ t('Новости') }}
         </h1>
-        <WLocaleLink to="/news" class="btn btn-secondary btn-sm">
+        <WLocaleLink to="/news" class="btn btn-secondary btn-sm !bg-white !text-[#191C1F] hover:!bg-[#F7F7F7] hover:!text-[#191C1F]">
           {{ t('Все новости') }}
         </WLocaleLink>
       </div>
