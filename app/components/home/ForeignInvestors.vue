@@ -38,10 +38,11 @@
             />
           </div>
 
-          <div class="investor-profile-copy">
-            <p class="investor-profile-quote">
-              {{ person.quote }}
-            </p>
+          <p class="investor-profile-quote">
+            {{ person.quote }}
+          </p>
+          <div class="investor-profile-bottom">
+            <hr class="investor-profile-divider" />
             <h3 class="investor-profile-name">
               {{ person.name }}
             </h3>
@@ -150,8 +151,6 @@ const investorCards = computed(() => [
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 390px;
-  height: 100%;
   padding: 24px 20px 28px;
   border: 1px solid rgba(25, 28, 31, 0.1);
   border-radius: 24px;
@@ -201,12 +200,17 @@ const investorCards = computed(() => [
   transform-origin: center top;
 }
 
-.investor-profile-copy {
+.investor-profile-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.investor-profile-divider {
+  border: none;
+  border-top: 1px solid rgba(25, 28, 31, 0.1);
+  margin: 0;
   width: 100%;
-  display: grid;
-  grid-template-rows: minmax(120px, auto) auto auto;
-  row-gap: 10px;
-  align-items: start;
 }
 
 .investor-profile-name {
@@ -238,12 +242,21 @@ const investorCards = computed(() => [
   font-style: italic;
   margin: 0;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(25, 28, 31, 0.1);
+  width: 100%;
 }
 
 @media (min-width: 640px) {
   .investor-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+  }
+
+  .investor-profile-card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    align-items: start;
+    justify-items: center;
   }
 }
 
@@ -254,7 +267,6 @@ const investorCards = computed(() => [
   }
 
   .investor-profile-card {
-    min-height: 420px;
     padding: 28px 18px 30px;
   }
 
@@ -264,10 +276,6 @@ const investorCards = computed(() => [
 
   .investor-profile-image-wrap {
     height: 240px;
-  }
-
-  .investor-profile-copy {
-    grid-template-rows: minmax(170px, auto) auto auto;
   }
 
   .investor-profile-name {
