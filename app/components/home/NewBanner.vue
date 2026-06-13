@@ -1,5 +1,6 @@
 <template>
-  <div class="relative introHeroFlow">
+  <div class="introHeroFlow">
+    <!-- Transition overlay shown while moving from the EBRD hero to the council -->
     <Transition name="introTextOverlayFade">
       <div
         v-if="isTextOverlayActive"
@@ -22,176 +23,151 @@
       </div>
     </Transition>
 
-    <div ref="introTrackRef" class="introHeroTrack" :style="introTrackStyle">
-      <div class="introHeroSticky">
-        <div
-          id="newmainBanner"
-          class="flex items-center introHeroBanner"
-          :class="{
-            'scroll-down': isInvestorsRevealed,
-            'introHeroBanner--revealed': isInvestorsRevealed,
-          }"
+    <!-- Pinned hero viewport. On desktop the page is held here while the
+         wheel/touch steps between stages; the hero images crossfade and the
+         council reveals via CSS transitions. On mobile (<=1023px) everything
+         stacks and scrolls natively (see the media query in <style>). -->
+    <section ref="introRef" class="introHero">
+      <!-- Crossfading hero slides -->
+      <div class="introHeroScene">
+        <article
+          v-for="(hero, index) in heroSlides"
+          :key="hero.id"
+          class="introHeroPanel"
+          :style="getHeroPanelStyle(index)"
+          :aria-hidden="index !== activeHeroIndex"
         >
-          <div class="introHeroScene">
-            <article
-              v-for="(hero, index) in heroSlides"
-              :key="hero.id"
-              class="introHeroPanel"
-              :style="getHeroPanelStyle(index)"
-              :aria-hidden="!isHeroVisible(index)"
+          <div
+            class="introHeroPanel__bg"
+            :style="getHeroBackgroundStyle(index)"
+          />
+
+          <div class="mainContainer introHeroPanel__shell">
+            <div
+              class="mainBannerTxt flex flex-col justify-start pt-[100px] px-5 lg:flex-row lg:justify-start lg:items-center lg:pt-0 lg:px-0 leading-normal w-full lg:pl-[8%]"
             >
+              <!-- President of Uzbekistan: quote aligned left -->
               <div
-                class="introHeroPanel__bg"
-                :style="getHeroBackgroundStyle(index)"
-              />
-
-              <div class="mainContainer introHeroPanel__shell">
-                <div
-                  class="mainBannerTxt flex flex-col justify-start pt-[100px] px-5 lg:flex-row lg:justify-start lg:items-center lg:pt-0 lg:px-0 leading-normal w-full lg:pl-[8%]"
-                  :style="getHeroContentStyle(index)"
+                v-if="hero.layout === 'quote-left'"
+                class="newMBCol1 lg:mt-[80px]"
+              >
+                <a
+                  v-if="hero.link"
+                  :href="hero.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  @click.stop
+                  class="block relative z-20 lg:w-[78%] text-white transition-opacity hover:opacity-85 cursor-pointer"
                 >
-                  <template v-if="hero.layout === 'quote-left'">
-                    <div class="newMBCol1 lg:mt-[80px]">
-                      <a
-                        :href="hero.link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        @click.stop
-                        class="block relative z-20 lg:w-[78%] text-white transition-opacity hover:opacity-85 cursor-pointer"
-                      >
-                        <h1
-                          class="font-black lg:text-[28px] text-[20px] uppercase mb-3 leading-[1.25]"
-                        >
-                          {{ hero.quote }}
-                        </h1>
-                      </a>
+                  <h1
+                    class="font-black lg:text-[28px] text-[20px] uppercase mb-3 leading-[1.25]"
+                  >
+                    {{ hero.quote }}
+                  </h1>
+                </a>
 
-                      <div class="w-10 h-[2px] bg-white/50 mb-4" />
+                <div class="w-10 h-[2px] bg-white/50 mb-4" />
 
-                      <div class="introHeroIdentity lg:max-w-none">
-                        <h2
-                          class="lg:text-2xl text-[17px] font-bold mb-1 lg:whitespace-nowrap text-white"
-                        >
-                          {{ hero.name }}
-                        </h2>
-                        <h3
-                          class="lg:text-base text-[13px] font-normal text-white/70"
-                        >
-                          {{ hero.position }}
-                        </h3>
-                      </div>
-                    </div>
-                  </template>
-
-                  <template v-else>
-                    <div class="newMBCol1 introHeroQuoteRight">
-                      <a
-                        :href="hero.link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        @click.stop
-                        class="block relative z-20 lg:-top-[98px] text-white transition-opacity hover:opacity-85 cursor-pointer"
-                      >
-                        <h1
-                          class="font-black lg:text-[44px] text-[20px] uppercase mb-3 leading-[1.25]"
-                        >
-                          {{ hero.quote }}
-                        </h1>
-                      </a>
-
-                      <div class="w-10 h-[2px] bg-white/50 mb-4 lg:ml-auto" />
-
-                      <div class="introHeroIdentity introHeroIdentity--right">
-                        <h2
-                          class="lg:text-2xl text-[17px] font-bold mb-1 text-white"
-                        >
-                          {{ hero.name }}
-                        </h2>
-                        <h3
-                          class="lg:text-base text-[13px] font-normal text-white/70"
-                        >
-                          {{ hero.position }}
-                        </h3>
-                      </div>
-                    </div>
-                  </template>
+                <div class="introHeroIdentity lg:max-w-none">
+                  <h2
+                    class="lg:text-2xl text-[17px] font-bold mb-1 lg:whitespace-nowrap text-white"
+                  >
+                    {{ hero.name }}
+                  </h2>
+                  <h3 class="lg:text-base text-[13px] font-normal text-white/70">
+                    {{ hero.position }}
+                  </h3>
                 </div>
+              </div>
+
+              <!-- EBRD President: quote aligned right -->
+              <div v-else class="newMBCol1 introHeroQuoteRight">
+                <h1
+                  class="block relative z-20 lg:-top-[98px] font-black lg:text-[44px] text-[20px] uppercase mb-3 leading-[1.25] text-white"
+                >
+                  {{ hero.quote }}
+                </h1>
+
+                <div class="w-10 h-[2px] bg-white/50 mb-4 lg:ml-auto" />
+
+                <div class="introHeroIdentity introHeroIdentity--right">
+                  <h2 class="lg:text-2xl text-[17px] font-bold mb-1 text-white">
+                    {{ hero.name }}
+                  </h2>
+                  <h3 class="lg:text-base text-[13px] font-normal text-white/70">
+                    {{ hero.position }}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Council leadership, revealed at the final stage -->
+      <div class="introHeroOverlay" :style="councilOverlayStyle">
+        <div class="introCouncilShell">
+          <div class="text-center mb-[36px] d-hide">
+            <h2 class="title-64 mb-3 lg:text-[64px] text-[32px]">
+              {{ t("Совет Иностранных Инвесторов") }}
+            </h2>
+            <div class="w-full flex justify-center">
+              <div class="lg:text-[20px] text-base lg:w-3/5">
+                {{
+                  t(
+                    "barqaror rivojlanish va iqtisodiy islohotlarni qo‘llab-quvvatlash maqsadidagi tashkilotlarni birlashtiradi."
+                  )
+                }}
+              </div>
+            </div>
+          </div>
+
+          <h2
+            class="introCouncilLeadersTitle text-center uppercase font-black text-[#191C1F] lg:text-[32px] text-2xl mb-6"
+          >
+            {{ t("Руководство") }}
+          </h2>
+
+          <div class="introCouncilLeaders">
+            <article
+              v-for="leader in leaders"
+              :key="leader.id"
+              class="introCouncilCard"
+            >
+              <div class="introCouncilCard__logo">
+                <img
+                  :src="leader.logo"
+                  :alt="leader.logoAlt"
+                  :class="['introCouncilCard__logoImage', leader.logoClass]"
+                />
+              </div>
+
+              <div class="introCouncilCard__imageWrap">
+                <img
+                  :src="leader.image"
+                  :alt="leader.fullname"
+                  class="introCouncilCard__image"
+                />
+              </div>
+
+              <div class="introCouncilCard__copy">
+                <h3 class="introCouncilCard__name">
+                  {{ leader.fullname }}
+                </h3>
+                <p class="introCouncilCard__role">
+                  <span
+                    v-for="(line, lineIdx) in leader.position.split('—')"
+                    :key="lineIdx"
+                    class="introCouncilCard__roleLine"
+                    >{{ line.trim() }}</span
+                  >
+                </p>
               </div>
             </article>
           </div>
         </div>
-
-        <div class="fInvestorsSectionWrap introHeroOverlay">
-          <div
-            class="section"
-            id="newfInvestorsSection"
-            :class="{ 'scroll-show': isInvestorsRevealed }"
-            :style="investorSectionStyle"
-          >
-            <div class="introCouncilShell">
-              <div class="text-center mb-[36px] d-hide">
-                <h2 class="title-64 mb-3 lg:text-[64px] text-[32px]">
-                  {{ t("Совет Иностранных Инвесторов") }}
-                </h2>
-                <div class="w-full flex justify-center">
-                  <div class="lg:text-[20px] text-base lg:w-3/5">
-                    {{
-                      t(
-                        "barqaror rivojlanish va iqtisodiy islohotlarni qo‘llab-quvvatlash maqsadidagi tashkilotlarni birlashtiradi."
-                      )
-                    }}
-                  </div>
-                </div>
-              </div>
-
-              <h2
-                class="introCouncilLeadersTitle text-center uppercase font-black text-[#191C1F] lg:text-[32px] text-2xl mb-6"
-              >
-                {{ t("Руководство") }}
-              </h2>
-
-              <div class="introCouncilLeaders">
-                <article
-                  v-for="leader in leaders"
-                  :key="leader.id"
-                  class="introCouncilCard"
-                >
-                  <div class="introCouncilCard__logo">
-                    <img
-                      :src="leader.logo"
-                      :alt="leader.logoAlt"
-                      :class="['introCouncilCard__logoImage', leader.logoClass]"
-                    />
-                  </div>
-
-                  <div class="introCouncilCard__imageWrap">
-                    <img
-                      :src="leader.image"
-                      :alt="leader.fullname"
-                      class="introCouncilCard__image"
-                    />
-                  </div>
-
-                  <div class="introCouncilCard__copy">
-                    <h3 class="introCouncilCard__name">
-                      {{ leader.fullname }}
-                    </h3>
-                    <p class="introCouncilCard__role">
-                      <span
-                        v-for="(line, lineIdx) in leader.position.split('—')"
-                        :key="lineIdx"
-                        class="introCouncilCard__roleLine"
-                        >{{ line.trim() }}</span
-                      >
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -208,39 +184,39 @@ const secondHeroImg = "/images/l2.png";
 const ficLogo = "/images/pr.png";
 const presidentLink = "https://president.uz/en/lists/view/7194";
 
-const SECOND_HERO_STAGE_PROGRESS = 0.34;
-const INVESTOR_REVEAL_START = 0.38;
-const INVESTOR_REVEAL_END = 0.72;
-const MENU_STAGE_PROGRESS = 0.76;
-const HERO_STAGE_SETTLE_EPSILON = 0.01;
-const HERO_SCROLL_TRIGGER_THRESHOLD = 10;
-const HERO_SWITCH_SCROLL_DURATION = 1150;
-const MENU_REVEAL_SCROLL_DURATION = 1;
-const WHEEL_GESTURE_IDLE_MS = 140;
-const TEXT_OVERLAY_DURATION = 1300;
+/* ── Tuning ─────────────────────────────────────────────────────────────── */
+const MOBILE_BREAKPOINT = 1023; // at or below this width: native scroll, no jacking
+const STAGE_MIN = 0;
+const STAGE_MAX = 2; // 0: president hero, 1: EBRD hero, 2: council reveal
+const HERO_SWITCH_DURATION = 900; // hero ↔ hero crossfade (ms, matches CSS)
+const COUNCIL_REVEAL_DURATION = 850; // hero ↔ council reveal (ms, matches CSS)
+const TEXT_OVERLAY_DURATION = 1300; // intro text overlay animation (ms)
+const WHEEL_GESTURE_IDLE_MS = 160; // collapse one wheel "fling" into one step
+const TOUCH_TRIGGER_THRESHOLD = 12; // px a finger must travel to switch stage
+const INTRO_COVER_TOLERANCE = 4; // px slack when checking the hero fills the viewport
 
+/* ── State ──────────────────────────────────────────────────────────────── */
 const { t } = useI18n();
-const introTrackRef = ref(null);
+const introRef = ref(null);
 const isMobile = ref(false);
-const scrollProgress = ref(0);
-const scrollDirection = ref(1);
-const lastWindowScrollY = ref(0);
-const currentStageIndex = ref(0);
-const isStageTransitionLocked = ref(false);
+const currentStageIndex = ref(STAGE_MIN);
+const isStageLocked = ref(false); // a transition is currently playing
+const isWheelGestureActive = ref(false); // a wheel gesture is in progress
+
 const touchStartY = ref(null);
-const hasTouchGestureTriggeredStage = ref(false);
-const isWheelGestureActive = ref(false);
+const isTouchGestureHandled = ref(false);
+
 const isTextOverlayActive = ref(false);
 const textOverlayProgress = ref(0);
 
-let frameId = 0;
-let stageAnimationFrameId = 0;
-let wheelGestureResetTimer = 0;
+let stageUnlockTimer = 0;
+let wheelIdleTimer = 0;
 let textOverlayFrameId = 0;
 
+/* ── Content ────────────────────────────────────────────────────────────── */
 const heroSlides = computed(() => [
   {
-    id: "first",
+    id: "president",
     quote: t("Мы создадим все условия"),
     name: t("Шавкат Миромонович Мирзиёев"),
     position: t("Президент Республики Узбекистан"),
@@ -251,16 +227,17 @@ const heroSlides = computed(() => [
     link: presidentLink,
   },
   {
-    id: "second",
+    id: "ebrd",
     quote: t(
       "Мы готовы внести свой вклад везде, где наш опыт и инвестиции могут принести дополнительную ценность."
     ),
     name: t("Одил Рено-Бассо"),
     position: t("Президент Европейского банка реконструкции и развития"),
     image: secondHeroImg,
-    imagePosition: isMobile.value ? "center center" : "center center",
+    imagePosition: "center center",
     imageSize: "cover",
     layout: "identity-left",
+    link: null,
   },
 ]);
 
@@ -285,8 +262,41 @@ const leaders = computed(() => [
   },
 ]);
 
-const introTrackStyle = computed(() => ({ height: "auto" }));
+/* ── Derived visuals ────────────────────────────────────────────────────── */
+// Stage 0 shows the president, stages 1+ show the EBRD president. CSS supplies
+// the crossfade/reveal animation; here we only flip the target values.
+const activeHeroIndex = computed(() =>
+  currentStageIndex.value === 0 ? 0 : 1
+);
+const isCouncilRevealed = computed(() => currentStageIndex.value === STAGE_MAX);
 
+// Inline styles drive the desktop crossfade/reveal; the mobile media query
+// overrides them with !important so the stacked layout is correct even before JS.
+const getHeroPanelStyle = (index) => {
+  const isActive = index === activeHeroIndex.value;
+  return {
+    opacity: isActive ? 1 : 0,
+    pointerEvents: isActive ? "auto" : "none",
+    zIndex: isActive ? 2 : 1,
+  };
+};
+
+const getHeroBackgroundStyle = (index) => {
+  const hero = heroSlides.value[index];
+  return {
+    backgroundImage: `url('${hero.image}')`,
+    backgroundPosition: hero.imagePosition,
+    backgroundSize: hero.imageSize,
+  };
+};
+
+const councilOverlayStyle = computed(() => ({
+  opacity: isCouncilRevealed.value ? 1 : 0,
+  transform: isCouncilRevealed.value ? "translateY(0)" : "translateY(24px)",
+  pointerEvents: isCouncilRevealed.value ? "auto" : "none",
+}));
+
+/* ── Intro text overlay animation ───────────────────────────────────────── */
 const easeOutInQuart = (value) => {
   if (value < 0.5) {
     const u = 2 * value;
@@ -297,8 +307,7 @@ const easeOutInQuart = (value) => {
 };
 
 const textOverlayStyle = computed(() => {
-  const p = textOverlayProgress.value;
-  const eased = easeOutInQuart(p);
+  const eased = easeOutInQuart(textOverlayProgress.value);
   const y = (0.5 - eased) * 110;
   const shape = Math.sin(eased * Math.PI);
   const scale = 0.45 + 0.55 * shape;
@@ -306,9 +315,7 @@ const textOverlayStyle = computed(() => {
   const blur = (1 - shape) * 5;
 
   return {
-    transform: `translate3d(0, ${y.toFixed(3)}vh, 0) scale(${scale.toFixed(
-      3
-    )})`,
+    transform: `translate3d(0, ${y.toFixed(3)}vh, 0) scale(${scale.toFixed(3)})`,
     opacity: opacity.toFixed(4),
     filter: `blur(${blur.toFixed(2)}px)`,
   };
@@ -331,8 +338,7 @@ function playTextOverlay() {
     const startTime = performance.now();
 
     const step = (now) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / TEXT_OVERLAY_DURATION, 1);
+      const progress = Math.min((now - startTime) / TEXT_OVERLAY_DURATION, 1);
       textOverlayProgress.value = progress;
 
       if (progress < 1) {
@@ -350,380 +356,163 @@ function playTextOverlay() {
   });
 }
 
-const investorRevealProgress = computed(() =>
-  normalizeProgress(
-    scrollProgress.value,
-    INVESTOR_REVEAL_START,
-    INVESTOR_REVEAL_END
-  )
-);
-
-const isInvestorsRevealed = computed(
-  () => !isMobile.value && investorRevealProgress.value > 0.02
-);
-
-const investorSectionStyle = computed(() => ({
-  opacity: "1",
-  transform: "none",
-  width: "100%",
-  paddingTop: "80px",
-  paddingBottom: "60px",
-  overflow: "visible",
-  pointerEvents: "auto",
-}));
-
-const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
-
-const normalizeProgress = (value, start, end) => {
-  if (end <= start) return value >= end ? 1 : 0;
-  return clamp((value - start) / (end - start));
-};
-
-const getHeroPanelStyle = (index) => ({
-  opacity: index === 0 ? "1" : "0",
-  visibility: index === 0 ? "visible" : "hidden",
-  pointerEvents: index === 0 ? "auto" : "none",
-  zIndex: index === 0 ? 2 : 1,
-});
-
-const getHeroBackgroundStyle = (index) => {
-  const hero = heroSlides.value[index];
-  return {
-    backgroundImage: `url('${hero.image}')`,
-    backgroundPosition: hero.imagePosition,
-    backgroundSize: hero.imageSize,
-  };
-};
-
-const getHeroContentStyle = () => ({});
-
-const isHeroVisible = (index) => index === 0;
-
-const updateViewportMode = () => {
-  if (typeof window === "undefined") return;
-  isMobile.value = window.innerWidth <= 1023;
-};
-
-const updateScrollProgress = () => {
-  frameId = 0;
-
-  if (typeof window === "undefined" || !introTrackRef.value) return;
-
-  const currentScrollY = window.scrollY;
-  scrollDirection.value = currentScrollY >= lastWindowScrollY.value ? 1 : -1;
-  lastWindowScrollY.value = currentScrollY;
-
-  const maxScrollable = Math.max(
-    introTrackRef.value.offsetHeight - window.innerHeight,
-    1
-  );
-  const top = introTrackRef.value.getBoundingClientRect().top;
-  const travelled = clamp(-top, 0, maxScrollable);
-  scrollProgress.value = travelled / maxScrollable;
-
-  if (!isStageTransitionLocked.value && !isMobile.value) {
-    syncCurrentStage();
-  }
-};
-
-const queueScrollProgress = () => {
-  if (frameId) return;
-  frameId = window.requestAnimationFrame(updateScrollProgress);
-};
-
-function getIntroMetrics() {
-  if (typeof window === "undefined" || !introTrackRef.value) return null;
-
-  const startY =
-    window.scrollY + introTrackRef.value.getBoundingClientRect().top;
-  const maxScrollable = Math.max(
-    introTrackRef.value.offsetHeight - window.innerHeight,
-    1
-  );
-
-  return {
-    startY,
-    endY: startY + maxScrollable,
-    maxScrollable,
-  };
+/* ── Stage navigation ───────────────────────────────────────────────────── */
+function scheduleStageUnlock(duration) {
+  if (stageUnlockTimer) window.clearTimeout(stageUnlockTimer);
+  stageUnlockTimer = window.setTimeout(() => {
+    isStageLocked.value = false;
+    stageUnlockTimer = 0;
+  }, duration);
 }
 
-function syncCurrentStage() {
-  if (scrollProgress.value >= MENU_STAGE_PROGRESS - HERO_STAGE_SETTLE_EPSILON) {
-    currentStageIndex.value = 2;
-    return;
-  }
-
+function goToStage(targetStage) {
+  const fromStage = currentStageIndex.value;
   if (
-    scrollProgress.value >=
-    SECOND_HERO_STAGE_PROGRESS - HERO_STAGE_SETTLE_EPSILON
+    targetStage === fromStage ||
+    targetStage < STAGE_MIN ||
+    targetStage > STAGE_MAX
   ) {
-    currentStageIndex.value = 1;
     return;
   }
 
-  currentStageIndex.value = 0;
-}
+  isStageLocked.value = true;
 
-function isWithinIntroFlow() {
-  if (typeof window === "undefined") return false;
-
-  const metrics = getIntroMetrics();
-  if (!metrics) return false;
-
-  return (
-    window.scrollY >= metrics.startY - 1 && window.scrollY <= metrics.endY + 1
-  );
-}
-
-function getStageTargetProgress(targetStage) {
-  if (targetStage <= 0) return 0;
-  if (targetStage === 1) return SECOND_HERO_STAGE_PROGRESS;
-  return MENU_STAGE_PROGRESS;
-}
-
-function getStageTargetForDirection(direction) {
-  if (direction > 0 && currentStageIndex.value < 2) {
-    return currentStageIndex.value + 1;
-  }
-
-  if (direction < 0 && currentStageIndex.value > 0) {
-    return currentStageIndex.value - 1;
-  }
-
-  return null;
-}
-
-function cancelStageTransition() {
-  if (!stageAnimationFrameId) return;
-
-  window.cancelAnimationFrame(stageAnimationFrameId);
-  stageAnimationFrameId = 0;
-  isStageTransitionLocked.value = false;
-}
-
-function queueWheelGestureReset() {
-  if (wheelGestureResetTimer) {
-    window.clearTimeout(wheelGestureResetTimer);
-  }
-
-  wheelGestureResetTimer = window.setTimeout(() => {
-    isWheelGestureActive.value = false;
-    wheelGestureResetTimer = 0;
-  }, WHEEL_GESTURE_IDLE_MS);
-}
-
-function resetWheelGesture() {
-  if (wheelGestureResetTimer) {
-    window.clearTimeout(wheelGestureResetTimer);
-    wheelGestureResetTimer = 0;
-  }
-
-  isWheelGestureActive.value = false;
-}
-
-function finishStageTransition(targetStage, targetY) {
-  window.scrollTo({ top: targetY, left: 0, behavior: "instant" });
-  currentStageIndex.value = targetStage;
-  isStageTransitionLocked.value = false;
-  stageAnimationFrameId = 0;
-  lastWindowScrollY.value = targetY;
-  updateScrollProgress();
-
-  if (wheelGestureResetTimer) {
-    window.clearTimeout(wheelGestureResetTimer);
-  }
-  wheelGestureResetTimer = window.setTimeout(() => {
-    isWheelGestureActive.value = false;
-    wheelGestureResetTimer = 0;
-  }, 60);
-}
-
-function runStageScrollAnimation(targetStage) {
-  if (typeof window === "undefined") return;
-
-  const metrics = getIntroMetrics();
-  if (!metrics) {
-    isStageTransitionLocked.value = false;
-    return;
-  }
-
-  const startY = window.scrollY;
-  const targetY =
-    metrics.startY +
-    getStageTargetProgress(targetStage) * metrics.maxScrollable;
-  const deltaY = targetY - startY;
-
-  if (Math.abs(deltaY) < 1) {
-    finishStageTransition(targetStage, targetY);
-    return;
-  }
-
-  isStageTransitionLocked.value = true;
-  scrollDirection.value = deltaY >= 0 ? 1 : -1;
-
-  if (stageAnimationFrameId) {
-    window.cancelAnimationFrame(stageAnimationFrameId);
-  }
-
-  const duration =
-    targetStage === 2 || currentStageIndex.value === 2
-      ? MENU_REVEAL_SCROLL_DURATION
-      : HERO_SWITCH_SCROLL_DURATION;
-  let startTime = 0;
-
-  const animate = (timestamp) => {
-    if (!startTime) startTime = timestamp;
-
-    const elapsed = timestamp - startTime;
-    const animationProgress = clamp(elapsed / duration);
-    const easedProgress = easeInOutCubic(animationProgress);
-    const nextY = startY + deltaY * easedProgress;
-
-    window.scrollTo({ top: nextY, left: 0, behavior: "instant" });
-    updateScrollProgress();
-
-    if (animationProgress < 1) {
-      stageAnimationFrameId = window.requestAnimationFrame(animate);
-      return;
-    }
-
-    finishStageTransition(targetStage, targetY);
-  };
-
-  stageAnimationFrameId = window.requestAnimationFrame(animate);
-}
-
-function transitionToStage(targetStage) {
-  if (typeof window === "undefined") return;
-  if (isStageTransitionLocked.value) return;
-  if (
-    targetStage === currentStageIndex.value ||
-    targetStage < 0 ||
-    targetStage > 2
-  )
-    return;
-
-  if (currentStageIndex.value === 1 && targetStage === 2) {
-    isStageTransitionLocked.value = true;
-    scrollDirection.value = 1;
-
+  // Moving from the EBRD hero into the council plays the text overlay first.
+  if (fromStage === 1 && targetStage === 2) {
     playTextOverlay().then(() => {
-      isStageTransitionLocked.value = false;
-      runStageScrollAnimation(targetStage);
+      currentStageIndex.value = 2;
+      scheduleStageUnlock(COUNCIL_REVEAL_DURATION);
     });
     return;
   }
 
-  runStageScrollAnimation(targetStage);
+  currentStageIndex.value = targetStage;
+  const touchesCouncil = fromStage === STAGE_MAX || targetStage === STAGE_MAX;
+  scheduleStageUnlock(
+    touchesCouncil ? COUNCIL_REVEAL_DURATION : HERO_SWITCH_DURATION
+  );
+}
+
+/* ── Gesture handling (desktop only) ────────────────────────────────────── */
+// The intro is "engaged" only while the hero fully covers the viewport. The
+// page is held here (gestures are prevented), so once engaged it stays engaged;
+// at the first/last stage the boundary scroll passes through to the rest of the
+// page. This needs no sticky positioning, so it is robust against the
+// `overflow-x: hidden` on <html>/<body> that would otherwise break sticky.
+function isIntroEngaged() {
+  if (typeof window === "undefined" || !introRef.value) return false;
+  const rect = introRef.value.getBoundingClientRect();
+  return (
+    rect.top <= INTRO_COVER_TOLERANCE &&
+    rect.bottom >= window.innerHeight - INTRO_COVER_TOLERANCE
+  );
+}
+
+function queueWheelGestureReset() {
+  if (wheelIdleTimer) window.clearTimeout(wheelIdleTimer);
+  wheelIdleTimer = window.setTimeout(() => {
+    isWheelGestureActive.value = false;
+    wheelIdleTimer = 0;
+  }, WHEEL_GESTURE_IDLE_MS);
 }
 
 function handleWheel(event) {
-  if (isMobile.value) return;
-  if (!isWithinIntroFlow()) return;
+  if (isMobile.value || !isIntroEngaged()) return;
 
-  if (isStageTransitionLocked.value) {
+  // While locked or mid-gesture, swallow scrolling so the page stays put.
+  if (isStageLocked.value || isWheelGestureActive.value) {
     event.preventDefault();
+    queueWheelGestureReset();
     return;
   }
 
   const direction = Math.sign(event.deltaY);
   if (!direction) return;
 
-  if (isWheelGestureActive.value) {
-    event.preventDefault();
-    return;
-  }
-
-  const targetStage = getStageTargetForDirection(direction);
-  if (targetStage === null) return;
+  const targetStage = currentStageIndex.value + direction;
+  // At a boundary (above the first stage / below the last) let the page scroll.
+  if (targetStage < STAGE_MIN || targetStage > STAGE_MAX) return;
 
   event.preventDefault();
   isWheelGestureActive.value = true;
-  transitionToStage(targetStage);
+  queueWheelGestureReset();
+  goToStage(targetStage);
 }
 
 function handleTouchStart(event) {
   if (isMobile.value) return;
   touchStartY.value = event.touches[0]?.clientY ?? null;
-  hasTouchGestureTriggeredStage.value = false;
+  isTouchGestureHandled.value = false;
 }
 
 function handleTouchMove(event) {
-  if (isMobile.value) return;
-  if (!isWithinIntroFlow()) return;
+  if (isMobile.value || !isIntroEngaged()) return;
 
-  if (isStageTransitionLocked.value) {
+  if (isStageLocked.value) {
     event.preventDefault();
     return;
   }
 
-  const currentTouchY = event.touches[0]?.clientY;
-  if (currentTouchY == null || touchStartY.value == null) return;
+  const currentY = event.touches[0]?.clientY;
+  if (currentY == null || touchStartY.value == null) return;
 
-  const deltaY = touchStartY.value - currentTouchY;
-  if (Math.abs(deltaY) < HERO_SCROLL_TRIGGER_THRESHOLD) return;
+  const deltaY = touchStartY.value - currentY; // swipe up => positive
+  if (Math.abs(deltaY) < TOUCH_TRIGGER_THRESHOLD) return;
 
-  if (hasTouchGestureTriggeredStage.value) {
+  if (isTouchGestureHandled.value) {
     event.preventDefault();
     return;
   }
 
-  const targetStage = getStageTargetForDirection(Math.sign(deltaY));
-  if (targetStage === null) return;
+  const targetStage = currentStageIndex.value + Math.sign(deltaY);
+  if (targetStage < STAGE_MIN || targetStage > STAGE_MAX) return;
 
   event.preventDefault();
-  hasTouchGestureTriggeredStage.value = true;
-  touchStartY.value = currentTouchY;
-  transitionToStage(targetStage);
+  isTouchGestureHandled.value = true;
+  touchStartY.value = currentY;
+  goToStage(targetStage);
 }
 
 function resetTouchGesture() {
   touchStartY.value = null;
-  hasTouchGestureTriggeredStage.value = false;
+  isTouchGestureHandled.value = false;
 }
 
-const handleResize = () => {
-  cancelStageTransition();
-  resetWheelGesture();
-  resetTouchGesture();
-  updateViewportMode();
-  updateScrollProgress();
-};
+/* ── Viewport + lifecycle ───────────────────────────────────────────────── */
+function updateViewportMode() {
+  if (typeof window === "undefined") return;
+  isMobile.value = window.innerWidth <= MOBILE_BREAKPOINT;
+}
 
-onMounted(async () => {
+function handleResize() {
   updateViewportMode();
-  await nextTick();
-  lastWindowScrollY.value = typeof window !== "undefined" ? window.scrollY : 0;
-  updateScrollProgress();
+  if (stageUnlockTimer) window.clearTimeout(stageUnlockTimer);
+  if (wheelIdleTimer) window.clearTimeout(wheelIdleTimer);
+  isStageLocked.value = false;
+  isWheelGestureActive.value = false;
+  resetTouchGesture();
+}
+
+onMounted(() => {
+  updateViewportMode();
 
   window.addEventListener("wheel", handleWheel, { passive: false });
   window.addEventListener("touchstart", handleTouchStart, { passive: true });
   window.addEventListener("touchmove", handleTouchMove, { passive: false });
   window.addEventListener("touchend", resetTouchGesture, { passive: true });
-  window.addEventListener("scroll", queueScrollProgress, { passive: true });
   window.addEventListener("resize", handleResize);
 });
 
 onUnmounted(() => {
-  if (frameId) {
-    window.cancelAnimationFrame(frameId);
-  }
-
-  if (textOverlayFrameId) {
-    window.cancelAnimationFrame(textOverlayFrameId);
-    textOverlayFrameId = 0;
-  }
+  if (textOverlayFrameId) window.cancelAnimationFrame(textOverlayFrameId);
+  if (stageUnlockTimer) window.clearTimeout(stageUnlockTimer);
+  if (wheelIdleTimer) window.clearTimeout(wheelIdleTimer);
   isTextOverlayActive.value = false;
 
-  cancelStageTransition();
-  resetWheelGesture();
-  resetTouchGesture();
   window.removeEventListener("wheel", handleWheel);
   window.removeEventListener("touchstart", handleTouchStart);
   window.removeEventListener("touchmove", handleTouchMove);
   window.removeEventListener("touchend", resetTouchGesture);
-  window.removeEventListener("scroll", queueScrollProgress);
   window.removeEventListener("resize", handleResize);
 });
 </script>
@@ -733,6 +522,7 @@ onUnmounted(() => {
   background: #fff;
 }
 
+/* ── Intro text overlay ───────────────────────────────────────────────── */
 .introTextOverlay {
   position: fixed;
   inset: 0;
@@ -822,31 +612,26 @@ onUnmounted(() => {
   opacity: 0;
 }
 
-.introHeroTrack {
+/* ── Pinned hero viewport ─────────────────────────────────────────────── */
+/* -76px tucks the hero up behind the (transparent) home header for a
+   full-bleed look; keep in sync with #header's height. */
+.introHero {
   position: relative;
-}
-
-.introHeroSticky {
-  position: sticky;
-  top: 0;
   height: 100svh;
-  overflow: visible;
-}
-
-.introHeroBanner {
+  margin-top: -76px;
   overflow: hidden;
-  background-color: transparent;
+  background: #fff;
 }
 
 .introHeroScene {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
 }
 
 .introHeroPanel {
   position: absolute;
   inset: 0;
+  transition: opacity 900ms ease;
   will-change: opacity;
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -856,7 +641,6 @@ onUnmounted(() => {
   position: absolute;
   inset: 0;
   background-repeat: no-repeat;
-  background-color: transparent;
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -893,7 +677,7 @@ onUnmounted(() => {
   text-align: right;
 }
 
-.introHeroQuoteRight a {
+.introHeroQuoteRight h1 {
   margin-left: auto;
   width: 78%;
 }
@@ -907,23 +691,24 @@ onUnmounted(() => {
   text-align: right;
 }
 
+/* ── Council reveal overlay ───────────────────────────────────────────── */
 .introHeroOverlay {
+  position: absolute;
+  inset: 0;
   z-index: 11;
-  pointer-events: none;
+  display: flex;
+  overflow-y: auto;
+  background: #fff;
+  transition: opacity 850ms ease, transform 850ms ease;
+  will-change: opacity, transform;
 }
 
-.introHeroOverlay :deep(#newfInvestorsSection) {
-  pointer-events: auto;
-}
-
-.introHeroOverlay :deep(#newfInvestorsSection.scroll-show) {
-  overflow: visible;
-}
-
+/* margin:auto keeps the block centred while still allowing scroll on short
+   viewports (flex centring would otherwise clip the top). */
 .introCouncilShell {
   width: min(100%, 900px);
-  margin: 0 auto;
-  padding-top: 80px;
+  margin: auto;
+  padding: 48px 16px;
 }
 
 .introCouncilLeaders {
@@ -1015,30 +800,31 @@ onUnmounted(() => {
   line-height: 1.35;
 }
 
-@media (max-width: 1023px) {
-  /* Mobile + tablet: scroll-jacking disabled — render hero + leaders as plain
-     stacked sections. */
-  .introHeroTrack {
-    height: auto !important;
-  }
+.introCouncilCard__roleLine {
+  display: block;
+}
 
-  .introHeroSticky {
-    position: static;
+/* ── Mobile + tablet: scroll-jacking off, plain stacked sections ───────── */
+@media (max-width: 1023px) {
+  .introHero {
     height: auto;
+    margin-top: 0;
     overflow: visible;
   }
 
-  .introHeroBanner,
-  :deep(#newmainBanner) {
-    height: 100dvh;
-    min-height: 560px;
-    margin-top: 0;
-    overflow: hidden;
+  .introHeroScene {
+    position: static;
+    height: auto;
   }
 
-  .introHeroScene {
+  .introHeroPanel {
+    position: relative !important;
+    inset: auto;
     height: 100dvh;
     min-height: 560px;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transition: none;
   }
 
   .introHeroPanel__bg::after {
@@ -1051,18 +837,6 @@ onUnmounted(() => {
     );
   }
 
-  .introHeroOverlay {
-    position: static;
-    z-index: 1;
-    background: #fff;
-  }
-
-  .introHeroOverlay :deep(#newfInvestorsSection) {
-    position: static;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-
   .introHeroPanel :deep(.mainBannerTxt) {
     min-height: 100dvh;
   }
@@ -1072,8 +846,9 @@ onUnmounted(() => {
     text-align: left;
   }
 
-  .introHeroQuoteRight a {
+  .introHeroQuoteRight h1 {
     width: 100%;
+    margin-left: 0;
   }
 
   .introHeroIdentity {
@@ -1081,19 +856,26 @@ onUnmounted(() => {
   }
 
   .introHeroIdentity--right {
+    margin-left: 0;
     text-align: left;
+  }
+
+  .introHeroOverlay {
+    position: static !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto;
+    overflow: visible;
+    transition: none;
   }
 
   .introCouncilShell {
     width: 100%;
-    padding-top: 60px;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 40px;
+    margin: 0 auto;
+    padding: 60px 16px 40px;
   }
 
   .introCouncilLeaders {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
 
