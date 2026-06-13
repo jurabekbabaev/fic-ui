@@ -35,7 +35,6 @@ const membershipTiers = [
       "Стратегическая роль в управлении",
       "Решающий голос по изменениям Устава, реорганизации и ликвидации",
     ],
-    fee: null,
     cap: null,
   },
   {
@@ -48,7 +47,6 @@ const membershipTiers = [
       "Участие в пленарных сессиях с Президентом Узбекистана",
       "Участие в официальном протоколе и закрытых рабочих форматах",
     ],
-    fee: "305 млн сум",
     cap: "до 40 членов",
   },
   {
@@ -60,7 +58,6 @@ const membershipTiers = [
       "Участие в пленарных сессиях СИИ",
       "Участие в открытых сессиях, обсуждениях и экспертных форматах",
     ],
-    fee: "183 млн сум",
     cap: "до 60 членов",
   },
 ];
@@ -213,48 +210,35 @@ const eligibilityFullMembers = [
               </ul>
 
               <div
-                v-if="tier.fee"
+                v-if="tier.cap"
                 :class="[
-                  'mt-6 pt-5 grid grid-cols-2 gap-3 border-t',
+                  'mt-6 pt-5 border-t',
                   tier.featured ? 'border-white/15' : 'border-[#0000001A]',
                 ]"
               >
-                <div>
-                  <p
-                    :class="[
-                      'text-xs uppercase tracking-wide font-semibold',
-                      tier.featured ? 'text-white/55' : 'text-[#9AA3AC]',
-                    ]"
-                  >
-                    {{ t("Годовой взнос") }}
-                  </p>
-                  <p
-                    :class="[
-                      'mt-1 text-lg lg:text-xl font-black',
-                      tier.featured ? 'text-white' : 'text-[#191C1F]',
-                    ]"
-                  >
-                    {{ t(tier.fee) }}
-                  </p>
-                </div>
-                <div>
-                  <p
+                <span
+                  :class="[
+                    'inline-flex items-center gap-2 rounded-full px-4 py-2',
+                    tier.featured ? 'bg-white/10' : 'bg-[#191C1F]/5',
+                  ]"
+                >
+                  <span
                     :class="[
                       'text-xs uppercase tracking-wide font-semibold',
                       tier.featured ? 'text-white/55' : 'text-[#9AA3AC]',
                     ]"
                   >
                     {{ t("Лимит мест") }}
-                  </p>
-                  <p
+                  </span>
+                  <span
                     :class="[
-                      'mt-1 text-lg lg:text-xl font-black',
+                      'text-sm lg:text-base font-black',
                       tier.featured ? 'text-white' : 'text-[#191C1F]',
                     ]"
                   >
                     {{ t(tier.cap) }}
-                  </p>
-                </div>
+                  </span>
+                </span>
               </div>
             </div>
           </div>

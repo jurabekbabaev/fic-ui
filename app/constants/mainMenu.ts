@@ -41,7 +41,7 @@ export const mainMenuSections = [
     items: [
       { label: "Результаты Совета", to: "/result" },
       { label: "Инициативы", to: "/initiatives" },
-      { label: "Инвестиции", to: "/investmenuzbekistan" },
+      { label: "Инвестиции", to: "/investmen" },
       { label: "Документы", to: "/reports" },
     ],
   },
