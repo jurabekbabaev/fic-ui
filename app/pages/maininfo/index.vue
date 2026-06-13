@@ -54,7 +54,7 @@ const cardStyle = (i) => {
   const hidden = abs > 2;
   const scale = abs === 0 ? 1 : Math.max(0.78, 1 - abs * 0.1);
   return {
-    transform: `translateX(${offset * 50}%) translateZ(${-abs * 180}px) rotateY(${offset * -6}deg) scale(${scale})`,
+    transform: `translateX(${offset * 72}%) translateZ(${-abs * 140}px) rotateY(${offset * -5}deg) scale(${scale})`,
     zIndex: String(100 - abs),
     opacity: hidden ? "0" : "1",
     pointerEvents: hidden ? "none" : "auto",
