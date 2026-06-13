@@ -49,7 +49,7 @@ const data = ref<IType[]>([
     users: [
       {
         image: Image1,
-        position: t("Председатель"),
+        position: t("Председатель рабочей группы."),
         fullname: t("Мирзамахмудов Джурабек"),
         direction: t("Министр энергетики Республики Узбекистан"),
       },
@@ -70,7 +70,7 @@ const data = ref<IType[]>([
     users: [
       {
         image: Image3,
-        position: t("Председатель"),
+        position: t("Председатель рабочей группы."),
         fullname: t("Фаррух пулатов"),
         direction: t("Директор Кадастрового Агентства"),
       },
@@ -89,7 +89,7 @@ const data = ref<IType[]>([
     users: [
       {
         image: Image5,
-        position: t("Председатель"),
+        position: t("Председатель рабочей группы."),
         fullname: t("Ахадбек хайдаров"),
         direction: t("Заместитель Министра Экономики и Финансов"),
       },
@@ -112,7 +112,7 @@ const data = ref<IType[]>([
     users: [
       {
         image: Image7,
-        position: t("Председатель"),
+        position: t("Председатель рабочей группы."),
         fullname: t("Илхом норкулов"),
         direction: t("заместитель министра экономики и финансов"),
       },
@@ -135,7 +135,7 @@ const data = ref<IType[]>([
     users: [
       {
         image: Image9,
-        position: t("Председатель"),
+        position: t("Председатель рабочей группы."),
         fullname: t("Конгратбай Шарипов"),
         direction: t("министр высшего образования, науки и инноваций"),
       },
@@ -154,7 +154,7 @@ const data = ref<IType[]>([
     users: [
       {
         image: Image11,
-        position: t("Председатель"),
+        position: t("Председатель рабочей группы."),
         fullname: t("Лазиз кудратов"),
         direction: t("Министр Инвестиций, Промышленности и Торговли"),
       },
@@ -173,7 +173,7 @@ const data = ref<IType[]>([
     users: [
       {
         image: Image13,
-        position: t("Председатель"),
+        position: t("Председатель рабочей группы."),
         fullname: t("Тимур ишметов"),
         direction: t("Председатель Центрального банка"),
       },
@@ -194,7 +194,7 @@ const data = ref<IType[]>([
     users: [
       {
         image: Image11,
-        position: t("Председатель"),
+        position: t("Председатель рабочей группы."),
         fullname: t("Лазиз кудратов"),
         direction: t("Министр Инвестиций, Промышленности и Торговли"),
       },
@@ -215,7 +215,7 @@ const data = ref<IType[]>([
     users: [
       {
         image: Image17,
-        position: t("Председатель"),
+        position: t("Председатель рабочей группы."),
         fullname: t("Азиз Абдухакимов"),
         direction: t(
           "Председатель Национального комитета по экологии и изменению климата"
@@ -236,7 +236,7 @@ const data = ref<IType[]>([
     users: [
       {
         image: Image16,
-        position: t("Председатель"),
+        position: t("Председатель рабочей группы."),
         fullname: t("Олимжон Умаров"),
         direction: t("Заместитель министра цифровых технологий"),
       },
