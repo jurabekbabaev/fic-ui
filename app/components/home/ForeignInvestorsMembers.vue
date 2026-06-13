@@ -2,10 +2,32 @@
   <div
     id="foreignInvestorsMembers"
     ref="rootEl"
-    :class="embedded ? 'foreign-members-embedded' : 'section foreign-members-reveal'"
+    :class="
+      embedded ? 'foreign-members-embedded' : 'section foreign-members-reveal'
+    "
   >
     <div>
-      <div class="mainContainer"><div
+      <div class="mainContainer mb-[60px]">
+        <h2 class="title-64 text-center mb-8 text-[32px] lg:mb-10 lg:text-[64px]">
+          {{ t("Показатели") }}
+        </h2>
+        <div ref="statsRef" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          <div
+            v-for="(stat, i) in councilStats"
+            :key="stat.label"
+            class="flex flex-col gap-3 p-5 lg:p-6 rounded-2xl bg-[#F7F7F7] text-[#191C1F]"
+          >
+            <div class="text-[32px] lg:text-[40px] font-bold leading-none">
+              {{ statDisplayValues[i] }}
+            </div>
+            <div class="text-base text-[#191C1F]/70 leading-snug font-medium">
+              {{ t(stat.label) }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mainContainer">
+        <div
           v-if="!embedded"
           class="lg:text-center text-left mb-[20px] mt-[100px] flex justify-center"
         >
@@ -17,7 +39,9 @@
           v-if="!embedded"
           class="lg:text-center text-left mb-[50px] flex justify-center"
         >
-          <h2 class="title-16 lg:text-2xl text-1xl mb-3 lg:w-[698px] w-full text-[#191C1F] uppercase">
+          <h2
+            class="title-16 lg:text-2xl text-1xl mb-3 lg:w-[698px] w-full text-[#191C1F] uppercase"
+          >
             {{ t("Зарубежные участники Совета Иностранных Инвесторов") }}
           </h2>
         </div>
@@ -78,7 +102,7 @@
         </div>
       </div>
       <div class="mainContainer">
-        <hr v-if="!embedded" class="text-gray-200 mt-[100px]">
+        <hr v-if="!embedded" class="text-gray-200 mt-[100px]" />
       </div>
     </div>
   </div>
@@ -90,11 +114,39 @@ import {
   getCompanyLogoSrc,
   getCompanyName,
   getCompanyTargetId,
-} from '@/constants/becomeMemberCompanies'
-import { useDesktopMarquee } from './useDesktopMarquee'
+} from "@/constants/becomeMemberCompanies";
+import { useDesktopMarquee } from "./useDesktopMarquee";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
+
+const councilStats = [
+  { target: 41,  label: "Членов совета" },
+  { target: 85,  label: "Активных компаний" },
+  { target: 19,  label: "Стран" },
+  { target: 16,  label: "Рабочих групп" },
+  { target: 120, label: "Инициатив" },
+];
+
+const statDisplayValues = ref(councilStats.map(() => "0"));
+const statsRef = ref(null);
+let statsObserver = null;
+
+function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+function animateStats() {
+  const duration = 1800;
+  const start = performance.now();
+  function update(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = easeOutCubic(progress);
+    councilStats.forEach((s, i) => {
+      statDisplayValues.value[i] = Math.floor(eased * s.target).toString();
+    });
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
 const props = defineProps({
   embedded: {
     type: Boolean,
@@ -110,7 +162,7 @@ const {
   onMouseMove,
   onMouseUp,
   preventDragClick,
-} = useDesktopMarquee()
+} = useDesktopMarquee();
 const logos = companyLogoFiles.map((fileName) => ({
   src: getCompanyLogoSrc(fileName),
   alt: getCompanyName(fileName).replace(/-/g, " "),
@@ -118,7 +170,7 @@ const logos = companyLogoFiles.map((fileName) => ({
 }));
 
 function goToCompany(event, targetId) {
-  if (preventDragClick(event)) return
+  if (preventDragClick(event)) return;
 
   const to = localePath({
     path: "/becomemember",
@@ -128,22 +180,37 @@ function goToCompany(event, targetId) {
 }
 
 onMounted(() => {
-  if (props.embedded) return;
   if (!("IntersectionObserver" in window)) return;
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const entry = entries[0];
-      if (entry && entry.isIntersecting) {
-        const el = rootEl.value;
-        if (el && el.classList) {
-          el.classList.add("is-visible");
+
+  if (!props.embedded) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry && entry.isIntersecting) {
+          const el = rootEl.value;
+          if (el && el.classList) el.classList.add("is-visible");
+          revealObserver.disconnect();
         }
-        observer.disconnect();
+      },
+      { threshold: 0.12 }
+    );
+    if (rootEl.value) revealObserver.observe(rootEl.value);
+  }
+
+  statsObserver = new IntersectionObserver(
+    (entries) => {
+      if (entries[0]?.isIntersecting) {
+        animateStats();
+        statsObserver.disconnect();
       }
     },
-    { threshold: 0.12 }
+    { threshold: 0.3 }
   );
-  if (rootEl.value) observer.observe(rootEl.value);
+  if (statsRef.value) statsObserver.observe(statsRef.value);
+});
+
+onBeforeUnmount(() => {
+  statsObserver?.disconnect();
 });
 </script>
 
