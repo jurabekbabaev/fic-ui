@@ -88,7 +88,7 @@ interface ILeaderGroup {
   directionid: number;
   company_image: string;
   text: string;
-  brands: string[]
+  brands: string[];
 }
 
 const leaderList = ref<ILeaderGroup[]>([
@@ -100,19 +100,85 @@ const leaderList = ref<ILeaderGroup[]>([
     direction: t("РГ по финансовому сектору и банковской деятельности"),
     directionid: 2,
     company_image: TbcBank,
-    text: t("Председатель правления TBC Bank Uzbekistan, вступивший в должность в декабре 2020 года. В Узбекистане у Тетрашвили нетривиальная и амбициозная задача: наладить работу открытого несколько месяцев назад TBC Bank Uzbekistan, первого полностью цифрового банка в Узбекистане, в котором нет ни одного процесса, за которым стоит человек, а все услуги можно получить через приложение — так же, как в платежных системах. Спартак считает, что философия бренда TBC заключается в создании прозрачных доступных и смелых решений. Это же определяет стиль работы управленцев и каждого сотрудника. «Я с TBC вместе уже 7 лет. Если говорить о стиле работы, то в TBC мы одна команда. Мы работаем без официоза и разделения по должностным категориям. Каждый член команды может проявить инициативу и подойти с вопросом, идеей, предложением и я готов выслушать мнение каждого.. Не ставить барьеры – вот что важно», — говорит Тетрашвили."),
-    brands: [AdBank, IdBank, WbGroup, MiCor, Cola, Visa, Halyk, MitCo, TbcBank, JpMorgan, EBank, AwPart]
+    text: t(
+      "Председатель правления TBC Bank Uzbekistan, вступивший в должность в декабре 2020 года. В Узбекистане у Тетрашвили нетривиальная и амбициозная задача: наладить работу открытого несколько месяцев назад TBC Bank Uzbekistan, первого полностью цифрового банка в Узбекистане, в котором нет ни одного процесса, за которым стоит человек, а все услуги можно получить через приложение — так же, как в платежных системах. Спартак считает, что философия бренда TBC заключается в создании прозрачных доступных и смелых решений. Это же определяет стиль работы управленцев и каждого сотрудника. «Я с TBC вместе уже 7 лет. Если говорить о стиле работы, то в TBC мы одна команда. Мы работаем без официоза и разделения по должностным категориям. Каждый член команды может проявить инициативу и подойти с вопросом, идеей, предложением и я готов выслушать мнение каждого.. Не ставить барьеры – вот что важно», — говорит Тетрашвили."
+    ),
+    brands: [
+      AdBank,
+      IdBank,
+      WbGroup,
+      MiCor,
+      Cola,
+      Visa,
+      Halyk,
+      MitCo,
+      TbcBank,
+      JpMorgan,
+      EBank,
+      AwPart,
+    ],
   },
   {
     id: 2,
     image: sandro,
     fullname: t("Сандро Ртвеладзе"),
     position: t("Генеральный директор Ipoteka Bank OTP Group"),
-    direction: t("РГ по привлечению талантов и развитию человеческого капитала"),
+    direction: t(
+      "РГ по привлечению талантов и развитию человеческого капитала"
+    ),
     directionid: 3,
     company_image: Ipoteka,
-    text: t("Сандро Ртвеладзе занимает должность заместителя председателя Рабочей группы и является генеральным директором Ipoteka Bank OTP Group. Он имеет более 15 лет международного опыта в секторе банковских и финансовых технологий, в том числе на руководящих должностях в TBC Bank в Узбекистане и OTP Bank в России. Под его руководством Ipoteka Bank реализует стратегию цифровой трансформации, оптимизации бизнес-процессов и повышения качества обслуживания клиентов. Основное внимание уделяется инновационным банковским услугам и укреплению позиций банка на рынке для создания дополнительной ценности для клиентов и партнеров."),
-    brands: [OtpBank, HenleyPart, Sojitz, GloboGate, Knauf, UzCarls, Pwc, CentLaw, KostaLegal, TbcBank, AirProd, Epam, Kpmg, EyBrand, Bdo, Yandeks, Crowe, Veon, ChalikHolding, Suez, Edf, MiCor, IdBank, ChinaSpg, Halyk, Masdar, BatBetter, Te, EnergyChina, AcwaPower, AdBank, Ifc, Cafa, Amcham, ZiraatBank, Orano, Visa, Itfc, MitCo, AlvarezMar, Mastercard, Cola, Aksa, Hudson, Ozguven, MinistryIit ]
+    text: t(
+      "Сандро Ртвеладзе занимает должность заместителя председателя Рабочей группы и является генеральным директором Ipoteka Bank OTP Group. Он имеет более 15 лет международного опыта в секторе банковских и финансовых технологий, в том числе на руководящих должностях в TBC Bank в Узбекистане и OTP Bank в России. Под его руководством Ipoteka Bank реализует стратегию цифровой трансформации, оптимизации бизнес-процессов и повышения качества обслуживания клиентов. Основное внимание уделяется инновационным банковским услугам и укреплению позиций банка на рынке для создания дополнительной ценности для клиентов и партнеров."
+    ),
+    brands: [
+      OtpBank,
+      HenleyPart,
+      Sojitz,
+      GloboGate,
+      Knauf,
+      UzCarls,
+      Pwc,
+      CentLaw,
+      KostaLegal,
+      TbcBank,
+      AirProd,
+      Epam,
+      Kpmg,
+      EyBrand,
+      Bdo,
+      Yandeks,
+      Crowe,
+      Veon,
+      ChalikHolding,
+      Suez,
+      Edf,
+      MiCor,
+      IdBank,
+      ChinaSpg,
+      Halyk,
+      Masdar,
+      BatBetter,
+      Te,
+      EnergyChina,
+      AcwaPower,
+      AdBank,
+      Ifc,
+      Cafa,
+      Amcham,
+      ZiraatBank,
+      Orano,
+      Visa,
+      Itfc,
+      MitCo,
+      AlvarezMar,
+      Mastercard,
+      Cola,
+      Aksa,
+      Hudson,
+      Ozguven,
+      MinistryIit,
+    ],
   },
   {
     id: 3,
@@ -122,19 +188,50 @@ const leaderList = ref<ILeaderGroup[]>([
     direction: t("РГ по цифровизации и ИКТ"),
     directionid: 4,
     company_image: Uzum,
-    text: t("Сергей Саликов - Uzum, Главный юрисконсульт. Имеет более чем 12-летний опыт поддержки инвестиционных соглашений, создания фондов и холдингов в различных юрисдикциях. Он руководил юридическим блоком в Российском фонде прямых инвестиций и был в числе тех, кто поддерживал проекты M&A в Газпромбанке"),
-    brands: [Siemens, AdBank, WbGroup, Cola, Halyk, EBank, SilverLeafe, Suez, TbcBank, ChalikHolding, Pwc, WhiteCase, Dentos, Fintech, YandeksUz ]
+    text: t(
+      "Сергей Саликов - Uzum, Главный юрисконсульт. Имеет более чем 12-летний опыт поддержки инвестиционных соглашений, создания фондов и холдингов в различных юрисдикциях. Он руководил юридическим блоком в Российском фонде прямых инвестиций и был в числе тех, кто поддерживал проекты M&A в Газпромбанке"
+    ),
+    brands: [
+      Siemens,
+      AdBank,
+      WbGroup,
+      Cola,
+      Halyk,
+      EBank,
+      SilverLeafe,
+      Suez,
+      TbcBank,
+      ChalikHolding,
+      Pwc,
+      WhiteCase,
+      Dentos,
+      Fintech,
+      YandeksUz,
+    ],
   },
   {
     id: 4,
     image: LeaderImage4,
     fullname: t("Гаянэ Умерова"),
-    position: t("Председатель Фонда развития культуры и искусства Узбекистана при Кабинете Министров Республики Узбекистан"),
+    position: t(
+      "Председатель Фонда развития культуры и искусства Узбекистана при Кабинете Министров Республики Узбекистан"
+    ),
     direction: t("РГ по креативным индустриям"),
     directionid: 5,
     company_image: AcdfUz,
-    text: t("Председатель Фонда развития культуры и искусства Узбекистана при Кабинете Министров Республики Узбекистан. Генеральный секретарь Национальной комиссии Узбекистана по делам ЮНЕСКО при Кабинете министров. В 2004 году окончила школу искусств School of Integrated Arts (Западный Йоркшир), в 2008 году — Международный Вестминстерский университет по специальности «Бизнес управление», в 2009 году — Центральный колледж искусств Central Saint MartinsCollege, (Лондон, Великобритания) по специальности «Культура, критика и кураторство». Имеет степень магистра в областях «Современное искусство» и «Арт-бизнес» Манчестерского Университета, (Манчестер, Великобритания, 2012 г.) и Института искусств при аукционном доме Sotheby's, (Лондон, Великобритания, 2011 г.). С 2017 года является соискателем кафедры «Политические исследования и международные отношения» Оксфордского Университета (Великобритания), по направлению «Культурная дипломатия, внешняя культурная политика»."),
-    brands: [WbGroup, AcwaPower, TbcBank, UzumMarket, AcdfUz, EyBrand, Halyk, Lekhim]
+    text: t(
+      "Председатель Фонда развития культуры и искусства Узбекистана при Кабинете Министров Республики Узбекистан. Генеральный секретарь Национальной комиссии Узбекистана по делам ЮНЕСКО при Кабинете министров. В 2004 году окончила школу искусств School of Integrated Arts (Западный Йоркшир), в 2008 году — Международный Вестминстерский университет по специальности «Бизнес управление», в 2009 году — Центральный колледж искусств Central Saint MartinsCollege, (Лондон, Великобритания) по специальности «Культура, критика и кураторство». Имеет степень магистра в областях «Современное искусство» и «Арт-бизнес» Манчестерского Университета, (Манчестер, Великобритания, 2012 г.) и Института искусств при аукционном доме Sotheby's, (Лондон, Великобритания, 2011 г.). С 2017 года является соискателем кафедры «Политические исследования и международные отношения» Оксфордского Университета (Великобритания), по направлению «Культурная дипломатия, внешняя культурная политика»."
+    ),
+    brands: [
+      WbGroup,
+      AcwaPower,
+      TbcBank,
+      UzumMarket,
+      AcdfUz,
+      EyBrand,
+      Halyk,
+      Lekhim,
+    ],
   },
   {
     id: 5,
@@ -144,8 +241,28 @@ const leaderList = ref<ILeaderGroup[]>([
     direction: t("РГ по инвестиционному климату"),
     directionid: 6,
     company_image: EyBrand,
-    text: t("У Ерлана более 25 лет опыта работы в области локального и международного налогообложения, налоговой эффективности, налоговых споров и управления налоговыми рисками. Ерлан активно участвует в проектах по улучшению делового климата и инвестиционной привлекательности, курирует проекты по развитию институциональной среды, инфраструктуры, декарбонизации и чистых технологий. Удостоен государственной награды – ордена «Курмет» за вклад в экономическое развитие и улучшение инвестиционного климата в Казахстане, а также награжден медалями к 25-летию Конституции и к 30-летию Независимости Казахстана. Ерлан является председателем правления Ассоциации «Казахстанский Совет иностранных инвесторов» и Европейской Ассоциации Бизнеса в Казахстане, сопредседателем рабочей группы по реализации инвестиционной политики Совета иностранных инвесторов, членом Совета по улучшению инвестиционного климата под председательством Премьер-министра при Американской торговой палате (AmCham). Ерлан регулярно выступает на деловых форумах, заседаниях рабочей группы EY для клиентов нефтегазовой промышленности в Хьюстоне (США), а также консультирует корпоративных клиентов EY в Каспийском регионе по вопросам налогообложения сделок и международного структурирования."),
-    brands: [AiiBank, Indoorama, Avesta, BatBetter, Deloitte, Suez, SasaIntern, Azizov, Amcham, Pwc, UzCarls, AdBank, Masdar, MiCor, EyBrand, Cola, Mastercard]
+    text: t(
+      "У Ерлана более 25 лет опыта работы в области локального и международного налогообложения, налоговой эффективности, налоговых споров и управления налоговыми рисками. Ерлан активно участвует в проектах по улучшению делового климата и инвестиционной привлекательности, курирует проекты по развитию институциональной среды, инфраструктуры, декарбонизации и чистых технологий. Удостоен государственной награды – ордена «Курмет» за вклад в экономическое развитие и улучшение инвестиционного климата в Казахстане, а также награжден медалями к 25-летию Конституции и к 30-летию Независимости Казахстана. Ерлан является председателем правления Ассоциации «Казахстанский Совет иностранных инвесторов» и Европейской Ассоциации Бизнеса в Казахстане, сопредседателем рабочей группы по реализации инвестиционной политики Совета иностранных инвесторов, членом Совета по улучшению инвестиционного климата под председательством Премьер-министра при Американской торговой палате (AmCham). Ерлан регулярно выступает на деловых форумах, заседаниях рабочей группы EY для клиентов нефтегазовой промышленности в Хьюстоне (США), а также консультирует корпоративных клиентов EY в Каспийском регионе по вопросам налогообложения сделок и международного структурирования."
+    ),
+    brands: [
+      AiiBank,
+      Indoorama,
+      Avesta,
+      BatBetter,
+      Deloitte,
+      Suez,
+      SasaIntern,
+      Azizov,
+      Amcham,
+      Pwc,
+      UzCarls,
+      AdBank,
+      Masdar,
+      MiCor,
+      EyBrand,
+      Cola,
+      Mastercard,
+    ],
   },
   {
     id: 6,
@@ -155,8 +272,26 @@ const leaderList = ref<ILeaderGroup[]>([
     direction: t("РГ по энергетическому сектору"),
     directionid: 1,
     company_image: AcwaPower,
-    text: t("Джон Заиди обладает более чем 25-летним опытом работы в области налогообложения, развития энергетики и инвестиционной инфраструктуры. Он активно участвует в продвижении энергетических проектов, внедрении новых технологий и укреплении энергетического сектора Узбекистана. Он является членом Ассоциации Совета иностранных инвесторов Казахстана и представляет Acwa в Европейской ассоциации энергетических компаний. Ранее он работал в ведущих международных энергетических корпорациях, включая проекты в США и Европе."),
-    brands: [AdBank, AcwaPower, Masdar, Edf, Te, EyBrand, Bdo, KostaLegal, Amcham, Dentos, Azizov, AirProd, Siemens, MinaretRen, Enhol]
+    text: t(
+      "Джон Заиди обладает более чем 25-летним опытом работы в области налогообложения, развития энергетики и инвестиционной инфраструктуры. Он активно участвует в продвижении энергетических проектов, внедрении новых технологий и укреплении энергетического сектора Узбекистана. Он является членом Ассоциации Совета иностранных инвесторов Казахстана и представляет Acwa в Европейской ассоциации энергетических компаний. Ранее он работал в ведущих международных энергетических корпорациях, включая проекты в США и Европе."
+    ),
+    brands: [
+      AdBank,
+      AcwaPower,
+      Masdar,
+      Edf,
+      Te,
+      EyBrand,
+      Bdo,
+      KostaLegal,
+      Amcham,
+      Dentos,
+      Azizov,
+      AirProd,
+      Siemens,
+      MinaretRen,
+      Enhol,
+    ],
   },
 ]);
 
@@ -186,102 +321,114 @@ function goBack() {
 <template>
   <div>
     <client-only>
-    <div class="container">
-      <div class="mt-10 mb-12">
-        <button
-          @click="goBack"
-          class="flex items-center gap-2 text-[#505A63] hover:text-[#191C1F] transition-colors mb-8 cursor-pointer"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+      <div class="container">
+        <div class="mt-10 mb-12">
+          <button
+            @click="goBack"
+            class="flex items-center gap-2 text-[#505A63] hover:text-[#191C1F] transition-colors mb-8 cursor-pointer"
           >
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          {{ t('Назад к списку лидеров') }}
-        </button>
-      </div>
-
-      <div v-if="currentLeader" class="">
-        <div>
-          <!-- <h1
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 18L9 12L15 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            {{ t("Назад к списку лидеров") }}
+          </button>
+        </div>
+        <div v-if="currentLeader" class="">
+          <h1 class="text-4xl text-left font-bold mx-auto pb-10">
+            {{ currentLeader.direction }}
+          </h1>
+        </div>
+        <div v-if="currentLeader" class="">
+          <div>
+            <!-- <h1
             class="lg:text-[64px] text-[32px] uppercase font-black mb-12 mt-10"
           >
             {{ currentLeader.direction }}
           </h1> -->
-        </div>
-        <div class="flex flex-col lg:flex-row gap-5 items-start">
-          <div class="lg:w-1/2 sm:w-screen lg:flex block">
-            <div class="">
-              <img
-                :src="currentLeader.image"
-                :alt="currentLeader.fullname"
-                class="lg:w-[324px] w-screen sm:object-cover"
-              />
-            </div>
-            <div class="ml-5 lg:mt-0 mt-5">
-              <div>
-                <p class="text-sm text-[#000000] mb-0.5 font-normal">
-                  {{ currentLeader.direction }}
-                </p>
-              </div>
-              <h1
-                class="lg:text-[32px] text-2xl font-extrabold text-[#191C1F] mb-1 uppercase"
-              >
-                {{ currentLeader.fullname }}
-              </h1>
-              <p class="text-xs font-normal text-[#505A63]">{{ currentLeader.position }}</p>
-            </div>
           </div>
-
-          <div class="lg:w-1/2 sm:w-full ">
-
-            <div class="mt-1">
-              <div>
-                <p class="lg:text-base text-sm text-[#505A63]">
-                  {{ currentLeader.text }}
+          <div class="flex flex-col lg:flex-row gap-5 items-start">
+            <div class="lg:w-1/2 sm:w-screen lg:flex block">
+              <div class="">
+                <img
+                  :src="currentLeader.image"
+                  :alt="currentLeader.fullname"
+                  class="lg:w-[324px] w-screen sm:object-cover"
+                />
+              </div>
+              <div class="ml-5 lg:mt-0 mt-5">
+                <div>
+                  <p class="text-sm text-[#000000] mb-0.5 font-normal">
+                    {{ t("Руководитель рабочей группы.") }}
+                  </p>
+                </div>
+                <h1
+                  class="lg:text-[32px] text-2xl font-extrabold text-[#191C1F] mb-1 uppercase"
+                >
+                  {{ currentLeader.fullname }}
+                </h1>
+                <p class="text-xs font-normal text-[#505A63]">
+                  {{ currentLeader.position }}
                 </p>
               </div>
             </div>
+
+            <div class="lg:w-1/2 sm:w-full">
+              <div class="mt-1">
+                <div>
+                  <p class="lg:text-base text-sm text-[#505A63]">
+                    {{ currentLeader.text }}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div v-else class="text-center mt-[100px]">
-        <h2 class="text-2xl font-bold text-[#191C1F] mb-4">{{ t('Лидер не найден') }}</h2>
-        <p class="text-[#505A63] mb-8">{{ t('Запрашиваемый лидер не существует') }}</p>
-        <button
-          @click="goBack"
-          class="bg-[#191C1F] text-white px-6 py-3 rounded-lg hover:bg-[#2a2f33] transition-colors"
-        >
-          {{ t('Вернуться к списку') }}
-        </button>
-      </div>
-      <div>
-        <h1
+        <div v-else class="text-center mt-[100px]">
+          <h2 class="text-2xl font-bold text-[#191C1F] mb-4">
+            {{ t("Лидер не найден") }}
+          </h2>
+          <p class="text-[#505A63] mb-8">
+            {{ t("Запрашиваемый лидер не существует") }}
+          </p>
+          <button
+            @click="goBack"
+            class="bg-[#191C1F] text-white px-6 py-3 rounded-lg hover:bg-[#2a2f33] transition-colors"
+          >
+            {{ t("Вернуться к списку") }}
+          </button>
+        </div>
+        <div>
+          <h1
             class="text-center lg:text-[32px] text-2xl text-[#191C1F] font-extrabold mb-12 mt-16 uppercase"
           >
-          {{ t('Участники рабочей группы') }}
+            {{ t("Участники рабочей группы") }}
           </h1>
-        <div class="grid lg:grid-cols-4 sm:grid-cols-1 gap-5">
-          <div v-for="(item, index) in currentLeader?.brands" :key="index" class="border border-solid border-gray-500 rounded-xl bg-white flex items-center justify-center h-[162px]">
-            <img :src="item" alt="">
+          <div class="grid lg:grid-cols-4 sm:grid-cols-1 gap-5">
+            <div
+              v-for="(item, index) in currentLeader?.brands"
+              :key="index"
+              class="border border-solid border-gray-500 rounded-xl bg-white flex items-center justify-center h-[162px]"
+            >
+              <img :src="item" alt="" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </client-only>
+    </client-only>
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

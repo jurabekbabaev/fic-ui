@@ -171,11 +171,7 @@ function goBack() {
               v-for="(user, i) in currentLeader?.users"
               :key="i"
             >
-              <img
-                :src="user.image"
-                alt=""
-                class="user-image"
-              />
+              <img :src="user.image" alt="" class="user-image" />
               <p class="mt-2 text-[20px] font-bold leading-[120%]">
                 {{ user.fullname }}
               </p>

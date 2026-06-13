@@ -23,6 +23,7 @@ interface IType {
   fullname: string;
   position: string;
   company_image: string;
+  role: string;
 }
 const data = ref<IType[]>([
   {
@@ -33,6 +34,7 @@ const data = ref<IType[]>([
     fullname: t("Джон Заиди"),
     position: t("Acwa, глава страны – Узбекистан"),
     company_image: AcwaPower,
+    role: t("Руководитель рабочей группы."),
   },
   {
     id: 2,
@@ -44,6 +46,7 @@ const data = ref<IType[]>([
       "TBC Bank, генеральный. Подбор талантов и управление человеческим капиталом"
     ),
     company_image: TbcBank,
+    role: t("Руководитель рабочей группы."),
   },
   {
     id: 3,
@@ -53,6 +56,7 @@ const data = ref<IType[]>([
     fullname: t("Сандро Ртвеладзе"),
     position: t("Генеральный директор Ipoteka Bank OTP Group"),
     company_image: Ipoteka,
+    role: t("Руководитель рабочей группы."),
   },
   {
     id: 4,
@@ -62,6 +66,7 @@ const data = ref<IType[]>([
     fullname: t("Сергей Саликов"),
     position: t("Uzum, генеральный юрисконсульт"),
     company_image: Uzum,
+    role: t("Руководитель рабочей группы."),
   },
   {
     id: 5,
@@ -71,6 +76,7 @@ const data = ref<IType[]>([
     fullname: t("Гаянэ Умерова"),
     position: t("ACDF, председатель"),
     company_image: Acdf,
+    role: t("Руководитель рабочей группы."),
   },
   {
     id: 6,
@@ -80,6 +86,7 @@ const data = ref<IType[]>([
     fullname: t("Ерлан Досымбеков"),
     position: t("EY, управляющий партнер EY по Кавказу и Центральной Азии"),
     company_image: Ey,
+    role: t("Руководитель рабочей группы."),
   },
 ]);
 
@@ -100,7 +107,7 @@ function ViewReadMore(item: IType) {
         {{ t("Рабочие группы") }}
       </h1>
       <h1 class="lg:text-[48px] text-[32px] uppercase font-black mt-4">
-        {{ t("Основные рабочие группы (РГ)") }}
+        {{ t("Рабочие группы (РГ)") }}
       </h1>
 
       <div class="grid lg:grid-cols-3 grid-cols-1 gap-3 mt-8">
@@ -151,6 +158,7 @@ function ViewReadMore(item: IType) {
                 >
                   {{ item.fullname }}
                 </div>
+
                 <div
                   class="text-[11px] text-[#505A63] leading-snug mt-0.5 line-clamp-2"
                 >
