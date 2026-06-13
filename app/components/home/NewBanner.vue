@@ -129,6 +129,10 @@
                 </div>
               </div>
 
+              <h2 class="introCouncilLeadersTitle text-center uppercase font-black text-[#191C1F] lg:text-[32px] text-2xl mb-6">
+                {{ t("Руководство") }}
+              </h2>
+
               <div class="introCouncilLeaders">
                 <article
                   v-for="leader in leaders"
