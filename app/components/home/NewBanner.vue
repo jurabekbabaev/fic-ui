@@ -8,8 +8,16 @@
       >
         <div class="introTextOverlay__backdrop" />
         <div class="introTextOverlay__glow" />
-        <div class="introTextOverlay__text" :style="textOverlayStyle">
-          {{ t("Совет поддерживается ЕБРР!") }}
+        <div class="introTextOverlay__content" :style="textOverlayStyle">
+          <div class="introTextOverlay__text">
+            {{ t("Совет поддерживается ЕБРР!") }}
+          </div>
+          <img
+            :src="EbrdLogo"
+            alt="EBRD"
+            class="introTextOverlay__logo"
+            draggable="false"
+          />
         </div>
       </div>
     </Transition>
@@ -167,6 +175,7 @@ import { useI18n } from "vue-i18n";
 import Management1 from "@/assets/images/management/image11.png";
 import Management2 from "@/assets/images/management/image12.png";
 import EBank from "@/assets/images/brands/e-bank.png";
+import EbrdLogo from "@/assets/images/brands/ebrd.png";
 
 const desktopImg = "/images/60f66bb43e415a780b96ef1fc99600ee027b94c4.png";
 const mobileImg = "/images/banner-img-mobile.png";
@@ -814,9 +823,19 @@ onUnmounted(() => {
   pointer-events: none;
 }
 
-.introTextOverlay__text {
+.introTextOverlay__content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, 3.2vw, 48px);
+  will-change: transform, opacity, filter;
+  transform-origin: 50% 50%;
+  backface-visibility: hidden;
+}
+
+.introTextOverlay__text {
   max-width: 90vw;
   padding: 0 5vw;
   text-align: center;
@@ -827,9 +846,20 @@ onUnmounted(() => {
   letter-spacing: -0.015em;
   color: #191C1F;
   text-shadow: 0 8px 40px rgba(25, 28, 31, 0.08);
-  will-change: transform, opacity, filter;
-  transform-origin: 50% 50%;
-  backface-visibility: hidden;
+}
+
+.introTextOverlay__logo {
+  width: clamp(160px, 22vw, 340px);
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .introTextOverlay__logo {
+    width: clamp(140px, 46vw, 240px);
+  }
 }
 
 .introTextOverlayFade-enter-active,
