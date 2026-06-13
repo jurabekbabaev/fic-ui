@@ -22,9 +22,9 @@ export const mainMenuSections = [
     title: "Рабочие группы",
     items: [
       { label: "Обзор", to: "/advice" },
-      { label: "РГ Совета", to: { path: "/advice", query: { target: "mwg" } } },
+      { label: "Рабочие группы Совета", to: { path: "/advice", query: { target: "mwg" } } },
       {
-        label: "Межведомственные",
+        label: "Межведомственные рабочие группы",
         to: {
           path: "/advice",
           query: { target: "advice-plenary-working-groups" },
