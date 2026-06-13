@@ -65,7 +65,7 @@ const submitFilter = () => {
       <h1
         class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[100px] mb-14"
       >
-        {{ t('Статьи') }}
+        {{ t('Аналитика и статьи') }}
       </h1>
 
       <div class="filters justify-center mb-5">
