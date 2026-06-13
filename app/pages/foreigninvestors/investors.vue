@@ -44,6 +44,9 @@
           <h3 class="investor-profile-name">
             {{ person.name }}
           </h3>
+          <span v-if="person.role" class="investor-profile-badge">
+            {{ person.role }}
+          </span>
           <p class="investor-profile-role">
             {{ person.position }}
           </p>
@@ -51,7 +54,9 @@
             <button class="investor-bio-btn">
               <span>{{ t("Биография") }}</span>
             </button>
-            <p class="investor-bio-hint">{{ t("Читать биографию") }}</p>
+            <div class="investor-bio-popover" role="tooltip">
+              <p class="investor-bio-text">{{ person.bio }}</p>
+            </div>
           </div>
         </div>
       </article>
@@ -84,8 +89,10 @@ interface InvestorCard {
   logoClass?: string;
   image: string;
   name: string;
+  role: string;
   position: string;
   quote: string;
+  bio: string;
 }
 
 const investorCards = computed<InvestorCard[]>(() => [
@@ -95,11 +102,15 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoClass: "investor-profile-logo-image--sm",
     image: LazizImage,
     name: t("Лазиз Кудратов"),
+    role: t("Председатель Исполкома"),
     position: t(
       "Министр инвестиций, промышленности и торговли Республики Узбекистан"
     ),
     quote: t(
       "“Узбекистан демонстрирует устойчивый рост инвестиционной активности благодаря проводимым реформам, созданию благоприятных условий для иностранных инвесторов.”"
+    ),
+    bio: t(
+      "Министр инвестиций, промышленности и торговли РУз, Председатель Исполнительного комитета. Руководит инвестиционной политикой, промышленным развитием и внешней торговлей страны."
     ),
   },
   {
@@ -107,11 +118,15 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoAlt: "EBRD",
     image: AndiImage,
     name: t("Анди Аранитаси"),
+    role: t("Член (ЕБРР)"),
     position: t(
       "Глава представительства Европейского банка реконструкции и развития в Узбекистане"
     ),
     quote: t(
       "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”"
+    ),
+    bio: t(
+      "Директор, Глава представительства ЕБРР в Узбекистане. Более 25 лет опыта в банковской сфере; расширил инвестиции ЕБРР в энергетику, инфраструктуру и частный сектор Узбекистана."
     ),
   },
   {
@@ -119,9 +134,13 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoAlt: "ADB",
     image: KanokpanImage,
     name: t("Канокпан Лао-Арая"),
+    role: t("Член (АБР)"),
     position: t("Председатель Совета управляющих Азиатского банка развития"),
     quote: t(
       "“Правительство демонстрирует сильную приверженность реформам и стремится вовлекать все заинтересованные стороны страны, включая частный сектор, в процесс развития.”"
+    ),
+    bio: t(
+      "Страновой директор АБР в Узбекистане. Более 25 лет опыта в области развития и экономической политики."
     ),
   },
   {
@@ -129,11 +148,15 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoAlt: "IFC",
     image: NeilImage,
     name: t("Нил Маккейн"),
+    role: t("Член (МФК)"),
     position: t(
       "Директор офиса Международной финансовой корпорации по Узбекистану и Туркменистану"
     ),
     quote: t(
       "“Ключевые конкурентные преимущества Узбекистана — крупнейшее население в Центральной Азии и наиболее диверсифицированная экономика.”"
+    ),
+    bio: t(
+      "Директор офиса МФК по Узбекистану и Туркменистану. Руководит операциями МФК по развитию частного сектора."
     ),
   },
   {
@@ -142,9 +165,13 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoClass: "investor-profile-logo-image--sm",
     image: AzizImage,
     name: t("Азиз Гафуров"),
+    role: t("Глава Ассоциации"),
     position: t("Глава ассоциации СИИ"),
     quote: t(
       "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”"
+    ),
+    bio: t(
+      "Глава Ассоциации и Руководитель Секретариата Совета. Топ-менеджер с более чем 20-летним опытом в корпоративном управлении, управлении рисками и инвестиционной политике."
     ),
   },
 ]);
@@ -249,6 +276,19 @@ const investorCards = computed<InvestorCard[]>(() => [
   margin-bottom: 0;
 }
 
+.investor-profile-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  max-width: 100%;
+  color: #2d4cc5;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
 .investor-profile-role {
   color: #505a63;
   font-size: 15px;
@@ -309,21 +349,50 @@ const investorCards = computed<InvestorCard[]>(() => [
   z-index: 1;
 }
 
-.investor-bio-hint {
+.investor-bio-popover {
   position: absolute;
-  top: calc(100% - 16px);
+  top: calc(100% + 12px);
   left: 50%;
-  transform: translateX(-50%) translateY(4px);
-  white-space: nowrap;
-  font-size: 11px;
-  color: #505a63;
+  width: 280px;
+  max-width: 80vw;
+  padding: 16px 18px;
+  transform: translateX(-50%) translateY(-8px);
+  border-radius: 16px;
+  border: 1px solid rgba(25, 28, 31, 0.1);
+  background: #fff;
+  color: #191c1f;
+  box-shadow: 0 18px 40px rgba(25, 28, 31, 0.12);
   opacity: 0;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  visibility: hidden;
+  transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s;
   pointer-events: none;
+  z-index: 5;
 }
 
-.investor-bio-wrap:hover .investor-bio-hint {
+.investor-bio-popover::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-left: 1px solid rgba(25, 28, 31, 0.1);
+  border-top: 1px solid rgba(25, 28, 31, 0.1);
+  transform: translate(-50%, 50%) rotate(45deg);
+  border-radius: 3px 0 0 0;
+}
+
+.investor-bio-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.investor-bio-wrap:hover .investor-bio-popover {
   opacity: 1;
+  visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
 
