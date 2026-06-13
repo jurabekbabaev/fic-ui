@@ -46,7 +46,9 @@ const openSessionDetail = async (path: string) => {
   <section>
     <client-only>
       <div>
-        <h1 class="mb-65 mt-0 text-center text-[28px] font-black uppercase lg:text-[64px]">
+        <h1
+          class="mb-65 mt-0 text-center text-[28px] font-black uppercase lg:text-[64px]"
+        >
           {{ t("За прошедшие годы") }}
         </h1>
 
@@ -68,8 +70,12 @@ const openSessionDetail = async (path: string) => {
                 class="h-[140px] w-full rounded-2xl object-cover object-center lg:h-[324px]"
               />
 
-              <div class="mt-4 flex min-h-[132px] flex-col justify-between gap-4">
-                <span class="block text-base font-medium tracking-[-0.02em] text-[#000000] lg:text-lg">
+              <div
+                class="mt-4 flex min-h-[132px] flex-col justify-between gap-4"
+              >
+                <span
+                  class="block text-base font-medium tracking-[-0.02em] text-[#000000] lg:text-lg"
+                >
                   {{ t(item.fullname) }}
                 </span>
 
@@ -87,7 +93,7 @@ const openSessionDetail = async (path: string) => {
       </div>
 
       <div class="mt-75">
-        <h1 class="text-[32px] font-black uppercase lg:text-[64px]">
+        <h1 class="text-[32px] pt-10 font-black uppercase lg:text-[64px]">
           {{ t("Пленарные сессии в цыфрах") }}
         </h1>
 
@@ -97,7 +103,10 @@ const openSessionDetail = async (path: string) => {
             :key="index"
             class="rounded-xl bg-[#F7F7F7] p-4"
           >
-            <i :class="item.icon" class="text-[44px] text-[#505A63] lg:text-5xl"></i>
+            <i
+              :class="item.icon"
+              class="text-[44px] text-[#505A63] lg:text-5xl"
+            ></i>
             <div class="flex items-baseline gap-1">
               <h3 class="text-[32px] font-black lg:text-[44px]">
                 {{ item.count }}

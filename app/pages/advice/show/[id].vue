@@ -10,7 +10,7 @@ const leaderList = ref<ILeaderGroup[]>(getLeaderList(t));
 const route = useRoute();
 const leaderId = computed(() => parseInt(route.params.id as string));
 const isuser = computed(
-  () => route.query.isuser === "true" || route.query.isuser === true
+  () => route.query.isuser === "true" || route.query.isuser === (true as any)
 );
 
 const currentLeader = computed(() => {
@@ -23,7 +23,7 @@ const currentLeader = computed(() => {
 
 function goBack() {
   const localePath = useLocalePath();
-  const to = localePath("/advice/1?year=2025");
+  const to = localePath("/advice");
   navigateTo(to);
 }
 </script>

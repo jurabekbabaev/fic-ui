@@ -95,39 +95,36 @@ function ViewReadMore(item: IType) {
         <h2 class="lg:text-[54px] text-[32px] uppercase font-black mb-12 mt-24" section-id="rops">
           {{ t("Межведомственные рабочие группы, созданные по итогам пленарных заседаний") }}
         </h2>
-        <div>
-          <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-5">
+        <div class="flex flex-col gap-5">
+          <div
+            class="bg-[#F7F7F7] flex flex-col sm:flex-row rounded-xl overflow-hidden"
+            v-for="(item, index) in [...data].reverse()"
+            :key="index"
+          >
+            <!-- Left: session badge -->
             <div
-              class="bg-[#F7F7F7] flex flex-col h-full rounded-xl overflow-hidden"
-              v-for="(item, index) in data"
-              :key="index"
+              class="sm:w-[220px] shrink-0 flex flex-col justify-center items-center py-8 px-6 uppercase"
+              :class="[item.bgcolor, item.txtcolor]"
             >
-              <div
-                class="w-full uppercase h-[240px] flex justify-center items-center rounded-tl-xl rounded-tr-xl"
-                :class="[item.bgcolor, item.txtcolor]"
+              <div class="font-black text-[80px] leading-none text-center">
+                {{ item.sessionid }}
+              </div>
+              <p class="text-sm font-medium mt-2 text-center">{{ t(item.sessionTitleKey) }}</p>
+              <p class="text-xs font-normal mt-1 text-center opacity-80">{{ t(item.yearKey) }}</p>
+            </div>
+
+            <!-- Right: content -->
+            <div class="flex-1 p-5 flex flex-col">
+              <ul class="list-disc pl-5 text-[#505A63] font-normal text-base flex-1">
+                <li v-for="(list, i) in item.groups" :key="i" class="mb-1">{{ list }}</li>
+              </ul>
+              <span
+                @click="ViewReadMore(item)"
+                class="text-sm font-normal text-[#191C1F] flex justify-end items-center gap-2.5 hover:underline cursor-pointer mt-4 pt-4 border-t border-[#0000001A]"
               >
-                <div>
-                  <div class="font-black text-[100px] w-full text-center h-[125px]">
-                    {{ item.sessionid }}
-                  </div>
-                  <p class="text-sm font-medium">{{ t(item.sessionTitleKey) }}</p>
-                </div>
-              </div>
-              <div class="p-5 flex flex-col flex-1">
-                <span class="uppercase font-normal text-sm text-[#191C1F]">{{
-                  t(item.yearKey)
-                }}</span>
-                <ul class="list-disc p-5 text-[#505A63] font-normal text-base flex-1">
-                  <li v-for="(list, i) in item.groups" :key="i">{{ list }}</li>
-                </ul>
-                <span
-                  @click="ViewReadMore(item)"
-                  class="text-sm font-normal text-[#191C1F] flex justify-end items-center gap-2.5 hover:decoration-solid hover:decoration-1 cursor-pointer mt-auto pt-4"
-                >
-                  <span>{{ t("Посмотреть") }}</span>
-                  <i class="icon-move-right"></i>
-                </span>
-              </div>
+                <span>{{ t("Посмотреть") }}</span>
+                <i class="icon-move-right"></i>
+              </span>
             </div>
           </div>
         </div>
