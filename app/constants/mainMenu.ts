@@ -15,7 +15,7 @@ export const mainMenuSections = [
       { label: "Члены Совета", to: "/becomemember" },
       { label: "Узбекская сторона", to: "/uzbekside" },
       { label: "Эксперты", to: "/experts" },
-      { label: "Стать членом", to: "/becomemember?target=membership-form" },
+      { label: "Стать членом", to: "/becomemember/join" },
     ],
   },
   {
