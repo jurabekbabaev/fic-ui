@@ -70,6 +70,9 @@ function goBack() {
           >
             {{ currentLeader.direction }}
           </h1>
+          <p class="lg:text-base text-sm text-[#505A63] mt-4">
+            {{ currentLeader.directiondesc }}
+          </p>
           <div class="flex flex-col lg:flex-row gap-5 items-start mt-[30px]">
             <div class="w-full lg:w-1/2 flex">
               <div class="leader-image-frame shrink-0">
