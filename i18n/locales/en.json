@@ -1038,5 +1038,10 @@
   },
   "publications": {
     "title": "Publications"
+  },
+  "advice": {
+    "hero": {
+      "title": "Strong allies moving forward with us"
+    }
   }
 }

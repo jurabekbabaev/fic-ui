@@ -1,5 +1,6 @@
 <script setup>
 import { nextTick, watch } from "vue";
+import { useI18n } from "vue-i18n";
 import PageHero from "~/components/shared/PageHero3.vue";
 import MainGroup from "./maingroup.vue";
 import InterWorkingGroup from "./interworkinggroup.vue";
@@ -7,6 +8,7 @@ import LeadersGroup from '../leadersgroup/index.vue'
 import PlenarySessionGroups from "@/components/advice/PlenarySessionGroups.vue";
 
 const route = useRoute();
+const { t } = useI18n();
 
 const scrollToTarget = async () => {
   if (typeof window === "undefined") return;
@@ -45,7 +47,7 @@ watch(
 <template>
   <div>
     <client-only>
-      <PageHero title="Сильные рядом, которые идут с нами вперёд" />
+      <PageHero :title="t('advice.hero.title')" />
       <div class="container">
         <LeadersGroup />
         <PlenarySessionGroups section-id="advice-plenary-working-groups" />

@@ -1043,5 +1043,10 @@
   },
   "publications": {
     "title": "Nashriyotlar"
+  },
+  "advice": {
+    "hero": {
+      "title": "Bizning bilan oldinga boruvchi kuchli sekodchilar"
+    }
   }
 }
