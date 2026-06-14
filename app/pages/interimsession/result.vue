@@ -38,19 +38,19 @@ const interimRows = ref<IInterimRow[]>([
     no: "ИС-5",
     date: "19 ноября 2025",
     note: "Протокол № 1 (утв. 23.01.2026). Дорожная карта — 21 инициатива по 8 рабочим группам; учреждены новые группы (циркулярная экономика, ИИ, акселератор креативных индустрий) и альянс RAIC-CAC",
-    link: "/reports",
+    link: "/interimsession/session-v",
   },
   {
     no: "ИС-6",
     date: "18 мая 2026",
     note: "Впервые под председательством вице-премьера Ж. Ходжаева. Презентовано и принято 116 инициатив",
-    link: "/reports",
+    link: "/interimsession/session-v",
   },
 ]);
 
 const openDocument = async (path?: string) => {
   if (!path) return;
-  await navigateTo(localePath(path));
+  await navigateTo({ path: localePath(path), query: { source: "interim" } });
 };
 </script>
 
