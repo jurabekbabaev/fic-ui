@@ -20,7 +20,7 @@ const models = ref([
       <h1
         class="lg:text-[64px] text-[32px] uppercase font-black text-center mt-[100px] mb-[40px]"
       >
-        {{ t("Публикации") }}
+        {{ t("publications.title") }}
       </h1>
 
       <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-5 mt-[60px]">
