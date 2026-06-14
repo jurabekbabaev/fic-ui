@@ -121,14 +121,6 @@ const plenarySession2024Roadmap: Record<PlenarySessionLocale, PlenarySessionRoad
           "цифровизация системы работы с инвесторами — электронная платформа",
         ],
       },
-      {
-        title: "Статус исполнения",
-        items: [
-          "дорожная карта закреплена Приложением № 3 к ПП-179",
-          "ответственные исполнители — МИПТ, МЭФ, АСР, Минцифры",
-          "на странице показывать инициативы со статусом реализации",
-        ],
-      },
     ],
   },
   uz: {
@@ -165,14 +157,6 @@ const plenarySession2024Roadmap: Record<PlenarySessionLocale, PlenarySessionRoad
           "investorlar bilan ishlash tizimini raqamlashtirish — elektron platforma",
         ],
       },
-      {
-        title: "Bajarilish holati",
-        items: [
-          "yo'l xaritasi PP-179ning 3-ilovasi bilan mustahkamlangan",
-          "mas'ul ijrochilar — IPTV, IMV, TUA, Raqamli rivojlanish vazirligi",
-          "sahifada tashabbuslar amalga oshirilish holati bilan ko'rsatilsin",
-        ],
-      },
     ],
   },
   en: {
@@ -207,14 +191,6 @@ const plenarySession2024Roadmap: Record<PlenarySessionLocale, PlenarySessionRoad
           "responsible business conduct (OECD principles)",
           "alternative (venture) investments — drafting the bill",
           "digitalizing the investor relations system — electronic platform",
-        ],
-      },
-      {
-        title: "Implementation status",
-        items: [
-          "the roadmap is enshrined in Annex No. 3 to PP-179",
-          "responsible implementers — MIIT, MEF, ARS, Ministry of Digital Technologies",
-          "show initiatives with their implementation status on the page",
         ],
       },
     ],

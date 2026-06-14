@@ -120,7 +120,7 @@ useHead(() => ({
 
           <div
             v-if="localizedRoadmap.columns.length"
-            class="mt-8 grid grid-cols-1 gap-4 lg:mt-10 lg:grid-cols-2 lg:gap-6"
+            class="mt-8 grid grid-cols-1 gap-4 lg:mt-10 lg:gap-6"
           >
             <div
               v-for="(column, index) in localizedRoadmap.columns"
