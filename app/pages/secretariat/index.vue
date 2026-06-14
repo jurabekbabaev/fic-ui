@@ -697,60 +697,49 @@ const createContacts = (phone: string, email: string) => [
 const members = computed(() => [
   {
     image: Aziz,
-    fullname: t("Азиз Гафуров"),
-    position: t("Руководитель секретариата"),
-    description: t(
-      "Азиз Гафуров – топ-менеджер с более чем 20-летним опытом в сфере корпоративного управления, управления рисками, инвестиционной политики и стратегического консалтинга."
-    ),
+    fullname: t("secretariat.members.aziz.fullname"),
+    position: t("secretariat.members.aziz.position"),
+    description: t("secretariat.members.aziz.description"),
     biography: getAzizBiography(),
     contacts: createContacts("+998 88 099 88 88", "head@fics.uz"),
   },
   {
     image: Avaz,
-    fullname: t("Авазбек Муллажонов"),
-    position: t("Программный координатор"),
-    description: t(
-      "Авазбек имеет более чем 15-летний профессиональный опыт в области внешнеэкономических связей, инвестиций и энергетики."
-    ),
+    fullname: t("secretariat.members.avazbek.fullname"),
+    position: t("secretariat.members.avazbek.position"),
+    description: t("secretariat.members.avazbek.description"),
     biography: getAvazbekBiography(),
     contacts: createContacts("+998 88 099 88 88", "coord1@fics.uz"),
   },
   {
     image: Hakimniyaz,
-    fullname: t("Хакимнияз Каипбергенов"),
-    position: t("Программный координатор"),
-    description: t(
-      "Хакимнияз Каипбергенов с отличием окончил бакалавриат и магистратуру МГИМО в Москве по международному праву. Имеет опыт работы в МИД Узбекистана, а также в международной юридической фирме."
-    ),
+    fullname: t("secretariat.members.hakimniyaz.fullname"),
+    position: t("secretariat.members.hakimniyaz.position"),
+    description: t("secretariat.members.hakimniyaz.description"),
     biography: getHakimniyazBiography(),
     contacts: createContacts("+998 88 099 88 88", "coord2@fics.uz"),
   },
   {
     image: Vladislav,
-    fullname: t("Владислав Ли"),
-    position: t("Программный координатор"),
-    description:
-      "Окончил филиал Международного университета Вестминстера в Ташкенте по направлению «Бизнес-менеджмент и финансы» и свободно владеет тремя языками. Также владеет практическими навыками эффективной работы с клиентами, проведения переговоров и решения комплексных задач.",
+    fullname: t("secretariat.members.vladislav.fullname"),
+    position: t("secretariat.members.vladislav.position"),
+    description: t("secretariat.members.vladislav.description"),
     biography: getVladislavBiography(),
     contacts: createContacts("+998 88 099 88 88", "coord3@fics.uz"),
   },
   {
     image: Jurabek,
-    fullname: t("Журабек Бабаев"),
-    position: t("ПР & Эксперт по маркетингу"),
-    description: t(
-      "Журабек Бабаев — маркетолог нового поколения, соединяющий стратегическое мышление с глубоким пониманием бизнес-ландшафта Узбекистана"
-    ),
+    fullname: t("secretariat.members.jurabek.fullname"),
+    position: t("secretariat.members.jurabek.position"),
+    description: t("secretariat.members.jurabek.description"),
     biography: getJurabekBiography(),
     contacts: createContacts("+998 88 099 88 88", "marketing@fics.uz"),
   },
   {
     image: Madina,
-    fullname: t("Мадинахон Абидова"),
-    position: t("Административный ассистент"),
-    description: t(
-      "До присоединения к Секретариату СИИ Мадинахон работала менеджером в Ассоциации частных туристических организаций Узбекистана"
-    ),
+    fullname: t("secretariat.members.madina.fullname"),
+    position: t("secretariat.members.madina.position"),
+    description: t("secretariat.members.madina.description"),
     biography: getMadinaBiography(),
     contacts: createContacts("+998 88 099 88 88", "admin@fics.uz"),
   },
@@ -760,14 +749,14 @@ const members = computed(() => [
 <template>
   <div class="secretariat-page">
     <client-only>
-      <PageHero title="Секретариат" />
+      <PageHero :title="t('secretariat.hero.title')" />
       <section class="container secretariat-page__container">
         <div class="secretariat-page__intro w-full">
           <p class="text-base lg:text-lg text-[#505A63] font-normal leading-[170%] pb-5">
-            {{ t("Секретариат Совета иностранных инвесторов — постоянно действующий операционный орган, обеспечивающий преемственность и системность работы Совета между сессиями. Секретариат организует пленарные и промежуточные заседания, координирует деятельность шестнадцати рабочих групп, ведёт ежедневный диалог с членами Совета и иностранными инвесторами, собирает и анализирует инициативы по улучшению инвестиционного климата и обеспечивает их продвижение в профильную государственную политику.") }}
+            {{ t("secretariat.intro.p1") }}
           </p>
           <p class="text-base lg:text-lg text-[#505A63] font-normal leading-[170%]">
-            {{ t("С обретением статуса юридического лица Секретариат получил необходимую институциональную самостоятельность для эффективного выполнения своего мандата и взаимодействия с международными финансовыми институтами.") }}
+            {{ t("secretariat.intro.p2") }}
           </p>
         </div>
 

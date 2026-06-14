@@ -1,7 +1,7 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
-import { getLocalizedField } from "~/composables/helpers";
+import { getLocalizedField, date } from "~/composables/helpers";
 import { useNewsStore } from "@/stores/news";
 const models = computed(() => {
   return store.list;

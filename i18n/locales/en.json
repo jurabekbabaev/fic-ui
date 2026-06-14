@@ -904,6 +904,9 @@
   "Пленарные сессии в цифрах": "Plenary sessions in numbers",
   "Все пленарные сессии": "All plenary sessions",
   "investments": {
+    "meta": {
+      "titleSuffix": "FIC"
+    },
     "hero": {
       "title": "Investments in Uzbekistan"
     },
@@ -1032,10 +1035,83 @@
       }
     }
   },
+  "plenarySessions": {
+    "hero": {
+      "title": "Results of plenary sessions"
+    },
+    "overTheYears": "Over the years",
+    "inNumbers": "Plenary sessions in numbers",
+    "viewDetails": "Learn more",
+    "backToAll": "All plenary sessions",
+    "stats": {
+      "workingGroups": "Working groups",
+      "in2022": "In 2022",
+      "in2024": "In 2024",
+      "in2025": "In 2025"
+    }
+  },
   "nodata": {
     "title": "Page is under development",
     "description": "We are working on updating and filling the content. Please visit this section later",
     "backButton": "Back to home"
+  },
+  "management": {
+    "hero": {
+      "title": "Management"
+    },
+    "heading": "Council Leadership",
+    "leaders": [
+      {
+        "fullname": "Shavkat Miromonovich Mirziyoyev",
+        "position": "Chairman of the Council — President of the Republic of Uzbekistan"
+      },
+      {
+        "fullname": "Odil Reno-Basso",
+        "position": "Co-Chairman of the Council — President of the EBRD"
+      }
+    ],
+    "executiveCommittee": {
+      "title": "Executive Committee",
+      "subtitle": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "bioLabel": "Biography",
+      "members": [
+        {
+          "name": "Laziz Kudratov",
+          "role": "Chairman of the Executive Committee",
+          "position": "Head of the representative office of MIIT",
+          "quote": "“Узбекистан демонстрирует устойчивый рост инвестиционной активности благодаря проводимым реформам, созданию благоприятных условий для иностранных инвесторов.”",
+          "bio": "Minister of Investments, Industry and Trade of the Republic of Uzbekistan, Chairman of the Executive Committee. Leads the country's investment policy, industrial development and foreign trade."
+        },
+        {
+          "name": "Andy Aranitasi",
+          "role": "Member (EBRD)",
+          "position": "Head of the EBRD in Uzbekistan",
+          "quote": "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”",
+          "bio": "Director, Head of the EBRD Representative Office in Uzbekistan. Over 25 years of experience in banking; expanded EBRD investments in energy, infrastructure and the private sector of Uzbekistan."
+        },
+        {
+          "name": "Kanokpan Lao-Araya",
+          "role": "Member (ADB)",
+          "position": "Country Director of the Asian Development Bank",
+          "quote": "“Правительство демонстрирует сильную приверженность реформам и стремится вовлекать все заинтересованные стороны страны, включая частный сектор, в процесс развития.”",
+          "bio": "ADB Country Director for Uzbekistan. Over 25 years of experience in development and economic policy."
+        },
+        {
+          "name": "Neil McCain",
+          "role": "Member (IFC)",
+          "position": "Director of the IFC Office for Uzbekistan and Turkmenistan",
+          "quote": "“Ключевые конкурентные преимущества Узбекистана — крупнейшее население в Центральной Азии и наиболее диверсифицированная экономика.”",
+          "bio": "Director of the IFC office for Uzbekistan and Turkmenistan. Leads IFC operations for private sector development."
+        },
+        {
+          "name": "Aziz Gafurov",
+          "role": "Head of the Association",
+          "position": "Head of the FIC Secretariat",
+          "quote": "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”",
+          "bio": "Head of the Association and Head of the Council Secretariat. A top manager with over 20 years of experience in corporate governance, risk management and investment policy."
+        }
+      ]
+    }
   },
   "publications": {
     "title": "Publications",
@@ -1509,6 +1585,140 @@
     },
     "meetings": {
       "title": "MEETINGS"
+    },
+    "becomemember": {
+      "hero": {
+        "title": "Council Members"
+      },
+      "members": {
+        "intro": "The members of the Foreign Investors Council are leading international companies, banks and financial institutions making strategic investments in the economy of Uzbekistan. Membership reflects a long-term commitment to the country’s development and provides a direct channel of dialogue with the Government on investment policy matters. The Council brings together 41 members from 19 countries, representing 23 sectors of the economy.",
+        "tabs": {
+          "executive": "Members of the Executive Board",
+          "founders": "Founding Members of the Association",
+          "full": "Full Members",
+          "observers": "Observer Members"
+        }
+      },
+      "join": {
+        "title": "Become a Member",
+        "subtitle": "Categories, Influence and Admission Procedure",
+        "lead": "The FIC is the principal institutional platform for structured dialogue between foreign investors and the Government of Uzbekistan.",
+        "admission": {
+          "heading": "Admission Procedure",
+          "note": "Admission and participation formats are determined in accordance with the Charter, the Membership Regulations and applicable protocol rules.",
+          "steps": {
+            "application": {
+              "title": "Application and Documents",
+              "text": "Submission of a written application together with a complete set of required supporting documents, specifying the requested membership category"
+            },
+            "review": {
+              "title": "Review",
+              "text": "Assessment, including verification of documents and compliance with requirements"
+            },
+            "decision": {
+              "title": "Decision",
+              "text": "Consideration and decision by the Executive Committee"
+            },
+            "formalization": {
+              "title": "Formalization",
+              "text": "Signing of the membership agreement and payment of membership fees"
+            }
+          }
+        },
+        "tiers": {
+          "heading": "Membership Categories and Level of Influence",
+          "capLabel": "Seat Limit",
+          "items": {
+            "exec": {
+              "title": "Executive Committee / Founders (IFIs)",
+              "points": [
+                "Strategic role in governance",
+                "Decisive vote on amendments to the Charter, reorganization and liquidation"
+              ]
+            },
+            "full": {
+              "title": "Full Members",
+              "cap": "up to 40 members",
+              "points": [
+                "Key and active investors",
+                "Decisive voting right",
+                "Participation in plenary sessions with the President of Uzbekistan",
+                "Participation in the official protocol and closed working formats"
+              ]
+            },
+            "observer": {
+              "title": "Observers",
+              "cap": "up to 60 members",
+              "points": [
+                "Advisory role (without decisive voting right)",
+                "Participation in FIC plenary sessions",
+                "Participation in open sessions, discussions and expert formats"
+              ]
+            }
+          }
+        },
+        "participation": {
+          "heading": "Principles of Participation",
+          "items": [
+            "FIC plenary sessions are open to members and observers",
+            "Official protocol formats are conducted within the framework of membership",
+            "Decision-making and voting are reserved for members only"
+          ]
+        },
+        "eligibility": {
+          "heading": "Key Eligibility Criteria",
+          "general": [
+            "Alignment with FIC objectives and a positive business reputation",
+            "Active or planned investment activity in Uzbekistan"
+          ],
+          "fullMembersLabel": "For full members:",
+          "fullMembers": [
+            "Investments or projects amounting to ≥ 50 million USD",
+            "For IFIs: financing / guarantees / technical assistance ≥ 500 million USD"
+          ]
+        }
+      }
+    },
+    "secretariat": {
+      "hero": {
+        "title": "Secretariat"
+      },
+      "intro": {
+        "p1": "The Secretariat of the Foreign Investors Council is a permanently functioning operational body that ensures the continuity and consistency of the Council's work between sessions. The Secretariat organizes plenary and interim meetings, coordinates the activities of the sixteen working groups, maintains a daily dialogue with Council members and foreign investors, collects and analyzes initiatives to improve the investment climate, and ensures their advancement into the relevant state policy.",
+        "p2": "With the acquisition of legal entity status, the Secretariat gained the institutional autonomy necessary to effectively fulfil its mandate and to engage with international financial institutions."
+      },
+      "members": {
+        "aziz": {
+          "fullname": "Aziz Gafurov",
+          "position": "Head of the Secretariat",
+          "description": "Doctor of Economic Sciences with over 20 years of experience in corporate governance, investment policy, and strategic consulting. He has extensive experience working with international investors, development banks, and government institutions. He leads the development of investor relations, policy coordination, and institutional development."
+        },
+        "avazbek": {
+          "fullname": "Avazbek Mullajonov",
+          "position": "Program Coordinator",
+          "description": "Avazbek Mullajonov is a specialist with more than 15 years of experience in the field of foreign economic relations, investments, and energy. He worked as Deputy Head of the Investment Climate Department and Head of the Cooperation Department with the Republic of Turkey at the Ministry of Investments and Foreign Trade of Uzbekistan. He holds a master's degree in International Business from Ajou University and a degree in Management from Tashkent State University of Economics."
+        },
+        "hakimniyaz": {
+          "fullname": "Hakimniyaz Kaipbergenov",
+          "position": "Program Coordinator",
+          "description": "Hakimniyaz Kaipbergenov graduated with honors from MGIMO in Moscow with bachelor's and master's degrees in international law. He has experience working at the Ministry of Foreign Affairs of Uzbekistan as well as at an international law firm."
+        },
+        "vladislav": {
+          "fullname": "Vladislav Li",
+          "position": "Program Coordinator",
+          "description": "Graduated from the Tashkent branch of the University of Westminster in \"Business Management and Finance\" and speaks three languages fluently. He also has practical skills in effectively working with clients, conducting negotiations, building trust-based relationships, and efficiently solving problems."
+        },
+        "jurabek": {
+          "fullname": "Jurabek Babaev",
+          "position": "PR & Marketing Expert",
+          "description": "Jurabek Babaev is a specialist with experience in marketing, PR, and international business. He currently heads PR and communications at the Foreign Investors Council under the President of Uzbekistan. Throughout his career, he worked in business development, international trade, and the textile industry, and also worked as a lecturer at the Tashkent State University of Economics."
+        },
+        "madina": {
+          "fullname": "Madinakhon Abidova",
+          "position": "Administrative Assistant",
+          "description": "Madinakhon holds a Bachelor's degree in Business and Economics and a Master's degree in Agribusiness and Investment Activities. She has worked as a manager at the Association of Private Tourism Organizations of Uzbekistan, where she coordinated events aimed at the development of national and international tourism."
+        }
+      }
     }
   }
 }

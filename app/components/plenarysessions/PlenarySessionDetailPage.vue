@@ -52,7 +52,7 @@ useHead(() => ({
           to="/plenarysessions"
           class="btn btn-secondary btn-sm"
         >
-          {{ t("Все пленарные сессии") }}
+          {{ t("plenarySessions.backToAll") }}
         </WLocaleLink>
 
         <p class="mt-6 text-base leading-7 text-[#505A63] lg:text-lg lg:leading-8">
@@ -74,7 +74,7 @@ useHead(() => ({
             rel="noreferrer"
             class="btn btn-secondary"
           >
-            {{ t(session.externalLink.label) }}
+            {{ t("plenarySessions.viewDetails") }}
           </a>
           <a
             :href="session.downloadFile.href"

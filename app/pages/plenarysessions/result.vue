@@ -1,40 +1,31 @@
 <script lang="ts" setup>
-import { ref } from "vue";
+import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import { plenarySessionCards } from "@/constants/plenarySessionDetails";
+import { plenarySessionCards, type PlenarySessionLocale } from "@/constants/plenarySessionDetails";
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const localePath = useLocalePath();
 
-interface IResult {
+interface IStatItem {
   icon: string;
   count: string;
-  counttext: string;
-  content: string;
+  counttextKey: string;
+  contentKey: string;
 }
 
-const data = ref(plenarySessionCards);
+const data = plenarySessionCards;
 
-const resultList = ref<IResult[]>([
-  {
-    icon: "icon-user-briefcase",
-    count: "6",
-    counttext: t("рабочих групп"),
-    content: t("в 2022 году"),
-  },
-  {
-    icon: "icon-user-briefcase",
-    count: "1",
-    counttext: t("рабочих групп"),
-    content: t("в 2024 году"),
-  },
-  {
-    icon: "icon-user-briefcase",
-    count: "8",
-    counttext: t("рабочих групп"),
-    content: t("в 2025 году"),
-  },
-]);
+const currentLocale = computed<PlenarySessionLocale>(() =>
+  (["uz", "ru", "en"] as PlenarySessionLocale[]).includes(locale.value as PlenarySessionLocale)
+    ? (locale.value as PlenarySessionLocale)
+    : "ru"
+);
+
+const statItems: IStatItem[] = [
+  { icon: "icon-user-briefcase", count: "6", counttextKey: "plenarySessions.stats.workingGroups", contentKey: "plenarySessions.stats.in2022" },
+  { icon: "icon-user-briefcase", count: "1", counttextKey: "plenarySessions.stats.workingGroups", contentKey: "plenarySessions.stats.in2024" },
+  { icon: "icon-user-briefcase", count: "8", counttextKey: "plenarySessions.stats.workingGroups", contentKey: "plenarySessions.stats.in2025" },
+];
 
 const openSessionDetail = async (path: string) => {
   const localizedPath = localePath(path);
@@ -49,7 +40,7 @@ const openSessionDetail = async (path: string) => {
         <h2
           class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]"
         >
-          {{ t("За прошедшие годы") }}
+          {{ t("plenarySessions.overTheYears") }}
         </h2>
 
         <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -61,7 +52,7 @@ const openSessionDetail = async (path: string) => {
           >
             <img
               :src="item.image"
-              :alt="item.fullname"
+              :alt="item.localizedMeta?.[currentLocale]?.cardTitle ?? ''"
               class="h-[200px] w-full rounded-2xl object-cover object-center lg:h-[280px]"
             />
 
@@ -69,7 +60,7 @@ const openSessionDetail = async (path: string) => {
               <span
                 class="block text-base font-medium tracking-[-0.02em] text-[#191C1F] lg:text-lg"
               >
-                {{ t(item.fullname) }}
+                {{ item.localizedMeta?.[currentLocale]?.cardTitle }}
               </span>
 
               <button
@@ -87,12 +78,12 @@ const openSessionDetail = async (path: string) => {
         <h2
           class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]"
         >
-          {{ t("Пленарные сессии в цифрах") }}
+          {{ t("plenarySessions.inNumbers") }}
         </h2>
 
         <div class="grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <div
-            v-for="(item, index) in resultList"
+            v-for="(item, index) in statItems"
             :key="index"
             class="card-item p-5 lg:p-7"
           >
@@ -105,11 +96,11 @@ const openSessionDetail = async (path: string) => {
                 {{ item.count }}
               </h3>
               <h4 class="text-2xl font-black">
-                {{ item.counttext }}
+                {{ t(item.counttextKey) }}
               </h4>
             </div>
             <h5 class="mt-2 text-base font-normal text-[#505A63] lg:text-lg">
-              {{ item.content }}
+              {{ t(item.contentKey) }}
             </h5>
           </div>
         </div>
