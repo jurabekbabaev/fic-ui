@@ -18,10 +18,16 @@ const models = ref([
   <div>
     <div class="container">
       <h1
-        class="lg:text-[64px] text-[32px] uppercase font-black text-center mt-[100px] mb-[40px]"
+        class="lg:text-[64px] text-[32px] uppercase font-black text-center mt-[100px] mb-[24px]"
       >
         {{ t("Публикации") }}
       </h1>
+
+      <p
+        class="mx-w-[560px] text-center text-[#505A63] font-normal text-base leading-[155%] mb-[60px] mx-auto"
+      >
+        {{ t("publications_quote") }}
+      </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-[60px]">
         <div class="h-[200px] sm:h-[260px] rounded-xl" v-for="(item, i) in models" :key="i">
