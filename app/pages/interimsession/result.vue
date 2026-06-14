@@ -1,79 +1,54 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
-import { plenarySessionCards } from "@/constants/plenarySessionDetails";
-
-import interimImage4 from "@/assets/images/plenarysessions/ps_4.png";
-import interimImage5 from "@/assets/images/plenarysessions/ps_5.png";
 
 const { t } = useI18n();
 const localePath = useLocalePath();
 
-interface IResult {
-  icon: string;
-  count: string;
-  counttext: string;
-  content: string;
-}
-
-interface ISession {
-  id: string;
-  image: string;
-  fullname: string;
+interface IInterimRow {
+  no: string;
+  date: string;
+  note: string;
   link?: string;
 }
 
-const interimSessionTitles = [
-  "Первое промежуточное заседание Совета иностранных инвесторов, 16 апреля 2019 г.",
-  "Второе промежуточное заседание Совета иностранных инвесторов, 20 ноября 2019 г.",
-  "Первое промежуточное заседание Совета иностранных инвесторов, 29 августа 2023 г.",
-];
-
-// All interim sessions in one flat list: the first three reuse the plenary
-// session cards (with interim titles), the last two are interim-only entries.
-const sessions = ref<ISession[]>([
-  ...plenarySessionCards.map((item, index) => ({
-    id: item.targetId,
-    image: item.image,
-    fullname: interimSessionTitles[index],
-    link: item.link,
-  })),
+// Data from the official interim-sessions register.
+const interimRows = ref<IInterimRow[]>([
   {
-    id: "interim-2024",
-    image: interimImage4,
-    fullname:
-      "Второе промежуточное заседание Совета иностранных инвесторов, 10 октября 2024 г.",
+    no: "ИС-1",
+    date: "20 ноября 2019",
+    note: "Первая сессия после учреждения Совета",
   },
   {
-    id: "interim-2025",
-    image: interimImage5,
-    fullname:
-      "Третье промежуточное заседание Совета иностранных инвесторов, 19 ноября 2025 г.",
-  },
-]);
-
-const resultList = ref<IResult[]>([
-  {
-    icon: "icon-user-briefcase",
-    count: "6",
-    counttext: t("рабочих групп"),
-    content: t("в 2022 году"),
+    no: "ИС-2",
+    date: "2022 год",
+    note: "—",
   },
   {
-    icon: "icon-user-briefcase",
-    count: "1",
-    counttext: t("рабочая группа"),
-    content: t("в 2024 году"),
+    no: "ИС-3",
+    date: "29 августа 2023",
+    note: "—",
   },
   {
-    icon: "icon-user-briefcase",
-    count: "8",
-    counttext: t("рабочих групп"),
-    content: t("в 2025 году"),
+    no: "ИС-4",
+    date: "8 ноября 2024",
+    note: "—",
+  },
+  {
+    no: "ИС-5",
+    date: "19 ноября 2025",
+    note: "Протокол № 1 (утв. 23.01.2026). Дорожная карта — 21 инициатива по 8 рабочим группам; учреждены новые группы (циркулярная экономика, ИИ, акселератор креативных индустрий) и альянс RAIC-CAC",
+    link: "/reports",
+  },
+  {
+    no: "ИС-6",
+    date: "18 мая 2026",
+    note: "Впервые под председательством вице-премьера Ж. Ходжаева. Презентовано и принято 116 инициатив",
+    link: "/reports",
   },
 ]);
 
-const openSessionDetail = async (path?: string) => {
+const openDocument = async (path?: string) => {
   if (!path) return;
   await navigateTo(localePath(path));
 };
@@ -82,71 +57,79 @@ const openSessionDetail = async (path?: string) => {
 <template>
   <section class="pb-18 pt-12 lg:pb-24 lg:pt-16">
     <client-only>
-      <!-- Sessions over the years -->
+      <!-- Interim sessions -->
       <div>
         <h2 class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]">
           {{ t("За прошедшие годы") }}
         </h2>
 
-        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <article
-            v-for="item in sessions"
-            :key="item.id"
-            :id="item.id"
-            class="flex flex-col rounded-[24px] border border-[#00000014] bg-white p-4 shadow-[0_18px_48px_rgba(25,28,31,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_60px_rgba(25,28,31,0.12)]"
-          >
-            <img
-              :src="item.image"
-              :alt="item.fullname"
-              class="h-[200px] w-full rounded-2xl object-cover object-center lg:h-[280px]"
-            />
+        <h3
+          class="mb-6 pb-3 text-lg font-black uppercase text-[#1a1a1a] border-b-2 border-[#1a1a1a] lg:text-xl"
+        >
+          {{ t("Хронология") }}
+        </h3>
 
-            <div class="mt-4 flex flex-1 flex-col justify-between gap-4">
-              <span
-                class="block text-base font-medium tracking-[-0.02em] text-[#191C1F] lg:text-lg"
+        <div
+          class="w-full overflow-x-auto rounded-2xl border border-[#E5E5E5] shadow-sm"
+        >
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="bg-[#F7F7F7] text-[#1a1a1a] font-bold">
+                <th
+                  class="text-left text-xs font-semibold uppercase tracking-widest px-6 py-4 w-[80px] lg:w-[100px]"
+                >
+                  {{ t("interim_table_no") }}
+                </th>
+                <th
+                  class="text-left text-xs font-semibold uppercase tracking-widest px-6 py-4 w-[140px] lg:w-[180px]"
+                >
+                  {{ t("interim_table_date") }}
+                </th>
+                <th
+                  class="text-left text-xs font-semibold uppercase tracking-widest px-6 py-4"
+                >
+                  {{ t("interim_table_note") }}
+                </th>
+                <th
+                  class="px-6 py-4 w-[120px] lg:w-[150px]"
+                  aria-hidden="true"
+                ></th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr
+                v-for="row in interimRows"
+                :key="row.no"
+                class="border-b border-[#E5E5E5] last:border-b-0"
               >
-                {{ t(item.fullname) }}
-              </span>
-
-              <button
-                v-if="item.link"
-                type="button"
-                class="btn btn-secondary btn-sm w-fit"
-                @click="openSessionDetail(item.link)"
-              >
-                {{ t("Подробно") }}
-              </button>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- Interim session in numbers -->
-      <div class="mt-16 lg:mt-24">
-        <h2 class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]">
-          {{ t("Промежуточная сессия в цифрах") }}
-        </h2>
-
-        <div class="grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <div
-            v-for="(item, index) in resultList"
-            :key="index"
-            class="card-item p-5 lg:p-7"
-          >
-            <i
-              :class="item.icon"
-              class="text-[44px] text-[#505A63] lg:text-5xl"
-            ></i>
-            <div class="mt-3 flex items-baseline gap-1">
-              <h3 class="text-[32px] font-black leading-none lg:text-[44px]">
-                {{ item.count }}
-              </h3>
-              <h4 class="text-2xl font-black">{{ item.counttext }}</h4>
-            </div>
-            <h5 class="mt-2 text-base font-normal text-[#505A63] lg:text-lg">
-              {{ item.content }}
-            </h5>
-          </div>
+                <td class="px-6 py-5 align-top">
+                  <span class="font-bold text-sm lg:text-base text-[#1a1a1a]">
+                    {{ row.no }}
+                  </span>
+                </td>
+                <td
+                  class="px-6 py-5 align-top text-sm lg:text-base text-[#191C1F] whitespace-nowrap"
+                >
+                  {{ t(row.date) }}
+                </td>
+                <td
+                  class="px-6 py-5 align-top text-sm lg:text-base text-[#505A63] leading-relaxed"
+                >
+                  {{ t(row.note) }}
+                </td>
+                <td class="px-6 py-5 align-top text-right whitespace-nowrap">
+                  <button
+                    v-if="row.link"
+                    type="button"
+                    class="btn btn-secondary btn-sm w-fit"
+                    @click="openDocument(row.link)"
+                  >
+                    {{ t("Подробнее") }}
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </client-only>
