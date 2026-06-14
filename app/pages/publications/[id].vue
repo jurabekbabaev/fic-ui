@@ -64,10 +64,10 @@ onMounted(() => {
           <div v-else class="w-auto flex flex-col items-center mt-24">
             <div class="text-center">
               <h4 class="text-[32px] font-black text-[#191C1F] mb-4">
-                {{ t("Ma'lumot topilmadi") }}
+                {{ t("publications.notFound") }}
               </h4>
               <p class="text-base font-normal text-[#505A63]">
-                {{ t("Kechirasiz, bu blog mavjud emas yoki o'chirilgan.") }}
+                {{ t("publications.notFoundDesc") }}
               </p>
             </div>
           </div>

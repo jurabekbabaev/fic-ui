@@ -56,11 +56,11 @@ function View(item) {
       <h1
         class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[100px] mb-14"
       >
-        {{ t('еженедельные события') }}
+        {{ t('weeklyEvents.index.title') }}
       </h1>
       <div class="mt-12">
         <h3 class="lg:text-[32px] text-xl font-black text-[#191C1F] mb-8 uppercase lg:text-center sm:text-left">
-          {{ t('Итоги недели Совета Иностранных Инвесторов') }}
+          {{ t('weeklyEvents.index.subtitle') }}
         </h3>
         <!-- Loading Skeletons (initial load: no items yet) -->
         <div v-if="loading && models.length === 0" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
@@ -83,7 +83,7 @@ function View(item) {
               @click="View(item)"
             >
               <p class="text-[#505A63] text-base font-medium">
-                {{ t("Итоги недели") }}
+                {{ t("weeklyEvents.index.card.label") }}
               </p>
               <p class="text-[#191C1F] text-base font-medium pt-2 content">
                 {{ getLocalizedField(item, 'title') }}
@@ -114,14 +114,14 @@ function View(item) {
             class="btn btn-secondary"
             @click="toNextPage"
           >
-            {{ t('Посмотреть еще') }}
+            {{ t('weeklyEvents.index.viewMore') }}
           </button>
           <button
             v-else-if="models.length > 5"
             class="btn btn-outline-secondary"
             @click="closeList"
           >
-            {{ t('Yopish') }}
+            {{ t('weeklyEvents.index.close') }}
           </button>
         </div>
       </div>

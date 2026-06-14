@@ -11,13 +11,13 @@ onMounted(() => store.getList());
 
 const expertCards = [
   {
-    title: "Международные эксперты",
-    text: "Представители ведущих консалтинговых, юридических и финансовых организаций, участвующие в разработке законодательных инициатив и адаптации международных стандартов.",
+    title: "experts.cards.international.title",
+    text: "experts.cards.international.text",
     count: 10,
   },
   {
-    title: "Локальные эксперты",
-    text: "Национальные специалисты в области инвестиционной политики, корпоративного управления и отраслевого регулирования, связывающие международную практику с условиями Узбекистана.",
+    title: "experts.cards.local.title",
+    text: "experts.cards.local.text",
     count: 15,
   },
 ];
@@ -66,17 +66,13 @@ onBeforeUnmount(() => observer?.disconnect());
 <template>
   <div>
     <client-only>
-      <PageHero title="Эксперты" />
+      <PageHero :title="t('experts.hero.title')" />
       <div class="container">
         <div class="lg:max-w-[900px] w-full mb-10">
           <p
             class="text-base lg:text-lg text-[#505A63] font-normal leading-[170%]"
           >
-            {{
-              t(
-                "Эксперты Совета — признанные международные и локальные специалисты, оказывающие экспертную поддержку рабочим группам и инициативам Совета иностранных инвесторов. Совет высоко ценит их вклад в развитие инвестиционной политики Узбекистана и отмечает их профессиональную компетентность."
-              )
-            }}
+            {{ t("experts.intro.text") }}
           </p>
         </div>
 

@@ -2,80 +2,85 @@
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
-interface IType {
+
+interface ISession {
   id: number;
   sessionid: string;
+  sessionKey: string;
   yearKey: string;
-  sessionTitleKey: string;
+  titleKey: string;
   bgcolor: string;
   txtcolor: string;
-  groups: string[];
-  isView: boolean
-};
+  groupKeys: string[];
+  isView: boolean;
+}
 
-const data = ref<IType[]>([
+const data = ref<ISession[]>([
   {
     id: 1,
-    yearKey: "11 июня - 2025 год",
-    sessionTitleKey: "Пленарная сессия",
     sessionid: "III",
+    sessionKey: "s3",
+    yearKey: "advice.interworkingGroups.sessions.s3.year",
+    titleKey: "advice.interworkingGroups.sessions.s3.title",
     bgcolor: "bg-[#2D4CC5]",
     txtcolor: "text-white",
     isView: true,
-    groups: [
-      t("МРГ по разработке законопроекта Об альтернативных инвестиционных фондах"),
-      t("МРГ по совершенствованию залогового законодательства"),
-      t("МРГ по внедрению принципов ответственного ведения бизнеса"),
-      t("МРГ по подготовке профессиональных кадров для иностранных компаний"),
-      t("МРГ по улучшению корпоративного управления в местных компаниях"),
-      t("МРГ по совершенствованию налогового администрирования"),
-      t("МРГ по совершенствованию процедур выделения земельных участков"),
-      t("МРГ по вопросам энергетики"),
-      t("МРГ по циркулярной экономике"),
-      t("МРГ по развитию искусственного интеллекта"),
+    groupKeys: [
+      "advice.interworkingGroups.groups.s3.g1",
+      "advice.interworkingGroups.groups.s3.g2",
+      "advice.interworkingGroups.groups.s3.g3",
+      "advice.interworkingGroups.groups.s3.g4",
+      "advice.interworkingGroups.groups.s3.g5",
+      "advice.interworkingGroups.groups.s3.g6",
+      "advice.interworkingGroups.groups.s3.g7",
+      "advice.interworkingGroups.groups.s3.g8",
+      "advice.interworkingGroups.groups.s3.g9",
+      "advice.interworkingGroups.groups.s3.g10",
     ],
   },
   {
     id: 2,
-    yearKey: "3 мая - 2024 год",
-    sessionTitleKey: "Пленарное заседание",
     sessionid: "II",
+    sessionKey: "s2",
+    yearKey: "advice.interworkingGroups.sessions.s2.year",
+    titleKey: "advice.interworkingGroups.sessions.s2.title",
     bgcolor: "bg-[#D5DAEB]",
     txtcolor: "text-[#040C2A]",
     isView: false,
-    groups: [
-      t("Цифровизации ИКТ"),
-      t("Финансовый сектор и банковское дело"),
-      t("Зеленая экономика и энергетика"),
-      t("Инвестирование через границы"),
-      t("Приватизации и ГЧП"),
-      t("Альтернативные инвестиционные фонды"),
-      t("Развития рынка и капитала"),
-      t("Введение бизнеса"),
+    groupKeys: [
+      "advice.interworkingGroups.groups.s2.g1",
+      "advice.interworkingGroups.groups.s2.g2",
+      "advice.interworkingGroups.groups.s2.g3",
+      "advice.interworkingGroups.groups.s2.g4",
+      "advice.interworkingGroups.groups.s2.g5",
+      "advice.interworkingGroups.groups.s2.g6",
+      "advice.interworkingGroups.groups.s2.g7",
+      "advice.interworkingGroups.groups.s2.g8",
     ],
   },
   {
     id: 3,
-    yearKey: "16 ноября - 2022 год",
-    sessionTitleKey: "Пленарная сессия",
     sessionid: "I",
+    sessionKey: "s1",
+    yearKey: "advice.interworkingGroups.sessions.s1.year",
+    titleKey: "advice.interworkingGroups.sessions.s1.title",
     bgcolor: "bg-[#D5DAEB]",
     txtcolor: "text-[#040C2A]",
     isView: false,
-    groups: [
-      t("Цифровизации ИКТ"),
-      t("Финансовый сектор и банковское дело"),
-      t("Зеленая экономика и энергетика"),
-      t("Инвестирование через границы"),
-      t("Приоритетные отрасли"),
-      t("Приватизации и ГЧП"),
-      t("Залоговое законодательство"),
+    groupKeys: [
+      "advice.interworkingGroups.groups.s1.g1",
+      "advice.interworkingGroups.groups.s1.g2",
+      "advice.interworkingGroups.groups.s1.g3",
+      "advice.interworkingGroups.groups.s1.g4",
+      "advice.interworkingGroups.groups.s1.g5",
+      "advice.interworkingGroups.groups.s1.g6",
+      "advice.interworkingGroups.groups.s1.g7",
     ],
   },
 ]);
 
 const localePath = useLocalePath();
-function ViewReadMore(item: IType) {
+function ViewReadMore(item: ISession) {
   const sectionMap: Record<number, string> = {
     1: "plenary-2025",
     2: "plenary-2024",
@@ -93,7 +98,7 @@ function ViewReadMore(item: IType) {
     <client-only>
       <div class="mb-12" id="rops">
         <h2 class="lg:text-[54px] text-[32px] uppercase font-black mb-12 mt-24" section-id="rops">
-          {{ t("Межведомственные рабочие группы, созданные по итогам пленарных заседаний") }}
+          {{ t("advice.interworkingGroups.sectionTitle") }}
         </h2>
         <div class="flex flex-col gap-5">
           <div
@@ -109,20 +114,20 @@ function ViewReadMore(item: IType) {
               <div class="font-black text-[40px] sm:text-[60px] lg:text-[80px] leading-none text-center">
                 {{ item.sessionid }}
               </div>
-              <p class="text-sm font-medium mt-2 text-center">{{ t(item.sessionTitleKey) }}</p>
+              <p class="text-sm font-medium mt-2 text-center">{{ t(item.titleKey) }}</p>
               <p class="text-xs font-normal mt-1 text-center opacity-80">{{ t(item.yearKey) }}</p>
             </div>
 
             <!-- Right: content -->
             <div class="flex-1 p-5 flex flex-col">
               <ul class="list-disc pl-5 text-[#505A63] font-normal text-base flex-1">
-                <li v-for="(list, i) in item.groups" :key="i" class="mb-1">{{ list }}</li>
+                <li v-for="(groupKey, i) in item.groupKeys" :key="i" class="mb-1">{{ t(groupKey) }}</li>
               </ul>
               <span
                 @click="ViewReadMore(item)"
                 class="text-sm font-normal text-[#191C1F] flex justify-end items-center gap-2.5 hover:underline cursor-pointer mt-4 pt-4 border-t border-[#0000001A]"
               >
-                <span>{{ t("Посмотреть") }}</span>
+                <span>{{ t("advice.interworkingGroups.viewMore") }}</span>
                 <i class="icon-move-right"></i>
               </span>
             </div>

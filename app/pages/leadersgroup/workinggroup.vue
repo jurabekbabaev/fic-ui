@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import LeaderImage1 from "@/assets/images/leaders/leader1.png";
-import LeaderImage2 from "@/assets/images/leaders/leader2.png";
 import LeaderImage3 from "@/assets/images/leaders/leader3.png";
 import LeaderImage4 from "@/assets/images/leaders/leader4.png";
 import LeaderImage5 from "@/assets/images/leaders/leader5.png";
@@ -18,75 +17,66 @@ const { t } = useI18n();
 interface IType {
   id: number;
   icon: string;
-  content: string;
+  contentKey: string;
   image: string;
-  fullname: string;
-  position: string;
+  fullnameKey: string;
+  positionKey: string;
   company_image: string;
-  role: string;
 }
 const data = ref<IType[]>([
   {
     id: 1,
     icon: "icon-reload-zap",
-    content: t("РГ по энергетическому сектору"),
+    contentKey: "leadersgroup.groups.energy.content",
     image: LeaderImage6,
-    fullname: t("Джон Заиди"),
-    position: t("Acwa, глава страны – Узбекистан"),
+    fullnameKey: "leadersgroup.groups.energy.fullname",
+    positionKey: "leadersgroup.groups.energy.position",
     company_image: AcwaPower,
-    role: t("Руководитель рабочей группы."),
   },
   {
     id: 2,
     icon: "icon-database-dollar",
-    content: t("РГ по финансовому сектору и банковской деятельности"),
+    contentKey: "leadersgroup.groups.finance.content",
     image: LeaderImage1,
-    fullname: t("Спартак Тетрашвили"),
-    position: t(
-      "TBC Bank, генеральный. Подбор талантов и управление человеческим капиталом"
-    ),
+    fullnameKey: "leadersgroup.groups.finance.fullname",
+    positionKey: "leadersgroup.groups.finance.position",
     company_image: TbcBank,
-    role: t("Руководитель рабочей группы."),
   },
   {
     id: 3,
     icon: "icon-users-dollar",
-    content: t("РГ по привлечению талантов и развитию человеческого капитала"),
+    contentKey: "leadersgroup.groups.talent.content",
     image: Image10,
-    fullname: t("Сандро Ртвеладзе"),
-    position: t("Генеральный директор Ipoteka Bank OTP Group"),
+    fullnameKey: "leadersgroup.groups.talent.fullname",
+    positionKey: "leadersgroup.groups.talent.position",
     company_image: Ipoteka,
-    role: t("Руководитель рабочей группы."),
   },
   {
     id: 4,
     icon: "icon-settings-nout",
-    content: t("РГ по цифровизации и ИКТ"),
+    contentKey: "leadersgroup.groups.digital.content",
     image: LeaderImage3,
-    fullname: t("Сергей Саликов"),
-    position: t("Uzum, генеральный юрисконсульт"),
+    fullnameKey: "leadersgroup.groups.digital.fullname",
+    positionKey: "leadersgroup.groups.digital.position",
     company_image: Uzum,
-    role: t("Руководитель рабочей группы."),
   },
   {
     id: 5,
     icon: "icon-board",
-    content: t("РГ по креативным индустриям"),
+    contentKey: "leadersgroup.groups.creative.content",
     image: LeaderImage4,
-    fullname: t("Гаянэ Умерова"),
-    position: t("ACDF, председатель"),
+    fullnameKey: "leadersgroup.groups.creative.fullname",
+    positionKey: "leadersgroup.groups.creative.position",
     company_image: Acdf,
-    role: t("Руководитель рабочей группы."),
   },
   {
     id: 6,
     icon: "icon-chart-dollar",
-    content: t("РГ по инвестиционному климату"),
+    contentKey: "leadersgroup.groups.investment.content",
     image: LeaderImage5,
-    fullname: t("Ерлан Досымбеков"),
-    position: t("EY, управляющий партнер EY по Кавказу и Центральной Азии"),
+    fullnameKey: "leadersgroup.groups.investment.fullname",
+    positionKey: "leadersgroup.groups.investment.position",
     company_image: Ey,
-    role: t("Руководитель рабочей группы."),
   },
 ]);
 
@@ -104,10 +94,10 @@ function ViewReadMore(item: IType) {
   <div>
     <div class="" id="mwg">
       <h1 class="lg:text-[72px] text-[32px] uppercase font-black">
-        {{ t("Рабочие группы") }}
+        {{ t("leadersgroup.workingGroups.title") }}
       </h1>
       <h1 class="lg:text-[48px] text-[32px] uppercase font-black mt-4">
-        {{ t("Рабочие группы (РГ)") }}
+        {{ t("leadersgroup.workingGroups.subtitle") }}
       </h1>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-8">
@@ -126,7 +116,7 @@ function ViewReadMore(item: IType) {
             <h4
               class="text-sm font-semibold text-[#191C1F] uppercase leading-snug"
             >
-              {{ item.content }}
+              {{ t(item.contentKey) }}
             </h4>
           </div>
 
@@ -156,18 +146,18 @@ function ViewReadMore(item: IType) {
                 <div
                   class="text-[11px] text-[#000000] font-normal leading-tight mb-0.5"
                 >
-                  {{ item.role }}
+                  {{ t("leadersgroup.role") }}
                 </div>
                 <div
                   class="text-xs font-bold uppercase leading-tight text-[#191C1F] truncate"
                 >
-                  {{ item.fullname }}
+                  {{ t(item.fullnameKey) }}
                 </div>
 
                 <div
                   class="text-[11px] text-[#505A63] leading-snug mt-0.5 line-clamp-2"
                 >
-                  {{ item.position }}
+                  {{ t(item.positionKey) }}
                 </div>
               </div>
             </div>

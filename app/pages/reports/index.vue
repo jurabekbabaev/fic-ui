@@ -4,53 +4,45 @@ import { ref, computed } from 'vue'
 const { t } = useI18n()
 
 const tabs = [
-  { key: 'annual', label: 'Годовые отчёты' },
-  { key: 'workgroup', label: 'Протоколы рабочих групп' },
-  { key: 'decrees', label: 'Постановления Президента' },
-  { key: 'council', label: 'Протоколы Совета' },
-  { key: 'founding', label: 'Учредительные документы' },
+  { key: 'annual',    labelKey: 'reports.tabs.annual' },
+  { key: 'workgroup', labelKey: 'reports.tabs.workgroup' },
+  { key: 'decrees',   labelKey: 'reports.tabs.decrees' },
+  { key: 'council',   labelKey: 'reports.tabs.council' },
+  { key: 'founding',  labelKey: 'reports.tabs.founding' },
 ]
 const activeTab = ref('annual')
 
-// Все разделы используют единую структуру карточки.
-// file — ссылка на скачивание, url — ссылка «Подробнее».
 const sections = {
-  // Годовые отчёты Секретариата — 2023, 2024, 2025
   annual: [
-    { titleKey: 'Годовой отчёт Секретариата', suffix: '2023', file: '', url: '' },
-    { titleKey: 'Годовой отчёт Секретариата', suffix: '2024', file: '', url: '' },
-    { titleKey: 'Годовой отчёт Секретариата', suffix: '2025', file: '', url: '' },
+    { titleKey: 'reports.cards.annualReport', suffix: '2023', file: '', url: '' },
+    { titleKey: 'reports.cards.annualReport', suffix: '2024', file: '', url: '' },
+    { titleKey: 'reports.cards.annualReport', suffix: '2025', file: '', url: '' },
   ],
-  // Протоколы заседаний рабочих групп (50+)
   workgroup: Array.from({ length: 6 }, () => ({
-    titleKey: 'Протокол заседания рабочей группы',
+    titleKey: 'reports.cards.workgroupMinutes',
     meta: '',
     file: '',
     url: '',
   })),
-  // Постановления Президента (lex.uz)
   decrees: [
-    { titleKey: 'Постановление Президента Республики Узбекистан', suffix: 'ПП-4519', meta: '13.11.2019 · lex.uz', file: '', url: '' },
-    { titleKey: 'Постановление Президента Республики Узбекистан', suffix: 'ПП-179', meta: 'lex.uz', file: '', url: '' },
-    { titleKey: 'Постановление Президента Республики Узбекистан', suffix: 'ПП-226', meta: '18.07.2025 · lex.uz', file: '', url: '' },
+    { titleKey: 'reports.cards.presidentialDecree', suffix: 'ПП-4519', meta: '13.11.2019 · lex.uz', file: '', url: '' },
+    { titleKey: 'reports.cards.presidentialDecree', suffix: 'ПП-179',  meta: 'lex.uz',              file: '', url: '' },
+    { titleKey: 'reports.cards.presidentialDecree', suffix: 'ПП-226',  meta: '18.07.2025 · lex.uz', file: '', url: '' },
   ],
-  // Протоколы Совета, подписанные вице-премьером
   council: Array.from({ length: 3 }, () => ({
-    titleKey: 'Протокол заседания Совета',
-    tagKey: 'Подписан вице-премьером',
+    titleKey: 'reports.cards.councilMinutes',
+    tagKey: 'reports.cards.signedByDeputyPM',
     file: '',
     url: '',
   })),
-  // Учредительные документы
   founding: [
-    { titleKey: 'Устав', meta: 'RU / EN', file: '', url: '' },
-    { titleKey: 'Свидетельство о регистрации', meta: 'RU / EN', file: '', url: '' },
+    { titleKey: 'reports.cards.charter',          meta: 'RU / EN', file: '', url: '' },
+    { titleKey: 'reports.cards.registrationCert', meta: 'RU / EN', file: '', url: '' },
   ],
 }
 
 const currentItems = computed(() => sections[activeTab.value] || [])
 
-// Inline icons
 const fileIcon =
   '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>'
 const downloadIcon =
@@ -66,15 +58,15 @@ const arrowIcon =
         <!-- Hero -->
         <div class="w-full text-center mt-24">
           <h1 class="lg:text-[64px] text-[32px] uppercase font-black">
-            {{ t('Документы') }}
+            {{ t('reports.hero.title') }}
           </h1>
           <p
             class="lg:text-lg text-sm font-normal text-[#505A63] mt-4 max-w-[760px] mx-auto"
           >
-            {{ t('Единый источник официальных документов Совета: годовые отчёты, протоколы заседаний, постановления Президента и учредительные материалы.') }}
+            {{ t('reports.hero.subtitle') }}
           </p>
           <p class="text-sm text-[#9AA4AE] mt-3 max-w-[680px] mx-auto">
-            {{ t('Аналитические доклады и материалы по лидерству мнений размещены в разделе «Публикации».') }}
+            {{ t('reports.hero.hint') }}
           </p>
         </div>
 
@@ -93,12 +85,12 @@ const arrowIcon =
               "
               @click="activeTab = tab.key"
             >
-              {{ t(tab.label) }}
+              {{ t(tab.labelKey) }}
             </button>
           </div>
         </div>
 
-        <!-- Documents — единый дизайн для всех разделов -->
+        <!-- Documents -->
         <div class="mt-10 lg:mb-24 mb-16 flex flex-col gap-4">
           <div
             v-for="(item, i) in currentItems"
@@ -134,13 +126,13 @@ const arrowIcon =
                 class="dl-btn dl-btn--primary sm:w-auto w-full justify-center"
               >
                 <span v-html="downloadIcon" class="dl-icon" />
-                {{ t('Скачать') }}
+                {{ t('reports.actions.download') }}
               </a>
               <a
                 :href="item.url || '#'"
                 class="dl-btn dl-btn--ghost sm:w-auto w-full justify-center"
               >
-                {{ t('Batafsil') }}
+                {{ t('reports.actions.details') }}
                 <span v-html="arrowIcon" class="dl-icon" />
               </a>
             </div>

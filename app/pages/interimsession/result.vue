@@ -23,10 +23,10 @@ interface ISession {
   link?: string;
 }
 
-const interimSessionTitles = [
-  "Первое промежуточное заседание Совета иностранных инвесторов, 16 апреля 2019 г.",
-  "Второе промежуточное заседание Совета иностранных инвесторов, 20 ноября 2019 г.",
-  "Первое промежуточное заседание Совета иностранных инвесторов, 29 августа 2023 г.",
+const interimSessionTitleKeys = [
+  "interimSession.sessions.items.s2019a",
+  "interimSession.sessions.items.s2019b",
+  "interimSession.sessions.items.s2023",
 ];
 
 // All interim sessions in one flat list: the first three reuse the plenary
@@ -35,20 +35,18 @@ const sessions = ref<ISession[]>([
   ...plenarySessionCards.map((item, index) => ({
     id: item.targetId,
     image: item.image,
-    fullname: interimSessionTitles[index],
+    fullname: interimSessionTitleKeys[index],
     link: item.link,
   })),
   {
     id: "interim-2024",
     image: interimImage4,
-    fullname:
-      "Второе промежуточное заседание Совета иностранных инвесторов, 10 октября 2024 г.",
+    fullname: "interimSession.sessions.items.s2024",
   },
   {
     id: "interim-2025",
     image: interimImage5,
-    fullname:
-      "Третье промежуточное заседание Совета иностранных инвесторов, 19 ноября 2025 г.",
+    fullname: "interimSession.sessions.items.s2025",
   },
 ]);
 
@@ -56,20 +54,20 @@ const resultList = ref<IResult[]>([
   {
     icon: "icon-user-briefcase",
     count: "6",
-    counttext: t("рабочих групп"),
-    content: t("в 2022 году"),
+    counttext: "interimSession.stats.workingGroups",
+    content: "interimSession.stats.in2022",
   },
   {
     icon: "icon-user-briefcase",
     count: "1",
-    counttext: t("рабочая группа"),
-    content: t("в 2024 году"),
+    counttext: "interimSession.stats.workingGroup",
+    content: "interimSession.stats.in2024",
   },
   {
     icon: "icon-user-briefcase",
     count: "8",
-    counttext: t("рабочих групп"),
-    content: t("в 2025 году"),
+    counttext: "interimSession.stats.workingGroups",
+    content: "interimSession.stats.in2025",
   },
 ]);
 
@@ -85,7 +83,7 @@ const openSessionDetail = async (path?: string) => {
       <!-- Sessions over the years -->
       <div>
         <h2 class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]">
-          {{ t("За прошедшие годы") }}
+          {{ t("interimSession.sessions.overTheYears") }}
         </h2>
 
         <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -114,7 +112,7 @@ const openSessionDetail = async (path?: string) => {
                 class="btn btn-secondary btn-sm w-fit"
                 @click="openSessionDetail(item.link)"
               >
-                {{ t("Подробно") }}
+                {{ t("interimSession.sessions.learnMore") }}
               </button>
             </div>
           </article>
@@ -124,7 +122,7 @@ const openSessionDetail = async (path?: string) => {
       <!-- Interim session in numbers -->
       <div class="mt-16 lg:mt-24">
         <h2 class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]">
-          {{ t("Промежуточная сессия в цифрах") }}
+          {{ t("interimSession.stats.title") }}
         </h2>
 
         <div class="grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">

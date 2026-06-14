@@ -52,7 +52,7 @@ function goBack() {
                 stroke-linejoin="round"
               />
             </svg>
-            {{ t("Назад к списку лидеров") }}
+            {{ t("advice.show.backToList") }}
           </button>
         </div>
 
@@ -62,7 +62,7 @@ function goBack() {
             style="width: fit-content"
           >
             <span class="text-sm font-normal text-[#191C1F]">{{
-              t("Состав межведомственной рабочей группы")
+              t("advice.show.groupComposition")
             }}</span>
           </div>
           <h1
@@ -146,16 +146,16 @@ function goBack() {
 
         <div v-else class="text-center mt-[100px]">
           <h2 class="text-2xl font-bold text-[#191C1F] mb-4">
-            {{ t("Лидер не найден") }}
+            {{ t("advice.show.notFound.title") }}
           </h2>
           <p class="text-[#505A63] mb-8">
-            {{ t("Запрашиваемый лидер не существует") }}
+            {{ t("advice.show.notFound.description") }}
           </p>
           <button
             @click="goBack"
             class="bg-[#191C1F] text-white px-6 py-3 rounded-lg hover:bg-[#2a2f33] transition-colors"
           >
-            {{ t("Вернуться к списку") }}
+            {{ t("advice.show.notFound.backButton") }}
           </button>
         </div>
         <!-- Назначенные руководители -->
@@ -163,7 +163,7 @@ function goBack() {
           <h1
             class="text-left lg:text-[64px] text-[32px] text-[#191C1F] uppercase font-extrabold mb-12 mt-[100px]"
           >
-            {{ t("Со стороны государства") }}
+            {{ t("advice.show.byState") }}
           </h1>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <div
@@ -188,7 +188,7 @@ function goBack() {
           <h1
             class="text-left lg:text-[64px] text-[32px] text-[#191C1F] uppercase font-extrabold mb-12 mt-[100px]"
           >
-            {{ t("со стороны совета") }}
+            {{ t("advice.show.byCouncil") }}
           </h1>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <div

@@ -7,7 +7,7 @@
         <h1
           class="lg:text-[64px] text-[32px] uppercase font-black text-left mt-[100px]"
         >
-          {{ t("календарный план") }}
+          {{ t("calendarplan.heading") }}
         </h1>
 
         <div>
@@ -18,7 +18,7 @@
               value-key="id"
               class="lg:w-full w-1/2"
               size="large"
-              :placeholder="t('за 7 дней')"
+              :placeholder="t('calendarplan.filters.period.placeholder')"
             >
               <el-option
                 v-for="item in periodList"
@@ -33,7 +33,7 @@
               value-key="id"
               class="lg:w-full w-1/2"
               size="large"
-              :placeholder="t('Отрасль')"
+              :placeholder="t('calendarplan.filters.industry.placeholder')"
             >
               <el-option
                 v-for="item in industryList"
@@ -107,7 +107,7 @@
                     <span
                       class="text-sm font-normal text-[#505A63] flex items-center gap-2.5 cursor-pointer mt-2"
                     >
-                      <span>{{ t("Подробнее (календарь)") }}</span>
+                      <span>{{ t("calendarplan.learnMore") }}</span>
                       <i class="icon-move-right"></i>
                     </span>
                   </div>
@@ -153,7 +153,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from "vue";
+import { ref, computed, onMounted, onUnmounted, nextTick } from "vue";
 import Timeline from "./timeline.vue";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
@@ -161,43 +161,47 @@ const { t } = useI18n();
 const periodid = ref();
 const industryid = ref();
 
-const periodList = ref([
-  { id: 0, name: t("за 7 дней") },
-  { id: 1, name: t("за 3 дней") },
-  { id: 2, name: t("за 2 дней") },
+const periodList = computed(() => [
+  { id: 0, name: t("calendarplan.filters.period.days7") },
+  { id: 1, name: t("calendarplan.filters.period.days3") },
+  { id: 2, name: t("calendarplan.filters.period.days2") },
 ]);
-const industryList = ref([
-  { id: 0, name: t("Отрасль") },
-  { id: 1, name: t("Отрасль 1") },
-  { id: 2, name: t("Отрасль 2") },
+const industryList = computed(() => [
+  { id: 0, name: t("calendarplan.filters.industry.placeholder") },
+  { id: 1, name: t("calendarplan.filters.industry.industry1") },
+  { id: 2, name: t("calendarplan.filters.industry.industry2") },
 ]);
 
-const data = ref([
+const data = computed(() => [
   {
     id: 1,
-    date: t("Июль - Ноябрь 2025"),
-    content: t("Разработка утвержденных инициатив"),
+    date: t("calendarplan.items.item1.date"),
+    content: t("calendarplan.items.item1.content"),
   },
   {
     id: 2,
-    date: t("Ноябрь 2025"),
-    content: t("Привлечение креативных инвестиций в узбекистан"),
+    date: t("calendarplan.items.item2.date"),
+    content: t("calendarplan.items.item2.content"),
   },
   {
     id: 3,
-    date: t("Ноябрь 2025 - Апрель 2026"),
-    content: t("Коллекция новых инициатив к пленарной сессии 2026 года"),
+    date: t("calendarplan.items.item3.date"),
+    content: t("calendarplan.items.item3.content"),
   },
-  { id: 4, date: t("Апрель 2026"), content: t("Определение новых инициатив") },
+  {
+    id: 4,
+    date: t("calendarplan.items.item4.date"),
+    content: t("calendarplan.items.item4.content"),
+  },
   {
     id: 5,
-    date: t("Апрель - Июнь 2026"),
-    content: t("Разработка утвержденных инициатив"),
+    date: t("calendarplan.items.item5.date"),
+    content: t("calendarplan.items.item5.content"),
   },
   {
     id: 6,
-    date: t("Июнь 2026"),
-    content: t("Отчет рабочих групп и секретариата на пленарном заседании"),
+    date: t("calendarplan.items.item6.date"),
+    content: t("calendarplan.items.item6.content"),
   },
 ]);
 

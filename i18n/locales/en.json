@@ -1,4 +1,20 @@
 {
+  "management": {
+    "hero": {
+      "title": "Management"
+    },
+    "heading": "Council Leadership",
+    "leaders": [
+      {
+        "fullname": "Shavkat Miromonovich Mirziyoyev",
+        "position": "Chairman of the Council — President of the Republic of Uzbekistan"
+      },
+      {
+        "fullname": "Odil Reno-Basso",
+        "position": "Co-Chairman of the Council — President of the EBRD"
+      }
+    ]
+  },
   "fullname": "Name",
   "welcome": "Welcome",
   "leaders": "Leaders",
@@ -1021,28 +1037,76 @@
     "description": "We are working on updating and filling the content. Please visit this section later",
     "backButton": "Back to home"
   },
-  "management": {
-    "hero": {
-      "title": "Management"
-    },
-    "heading": "Council Leadership",
-    "leaders": [
-      {
-        "fullname": "Shavkat Miromonovich Mirziyoyev",
-        "position": "Chairman of the Council — President of the Republic of Uzbekistan"
-      },
-      {
-        "fullname": "Odil Reno-Basso",
-        "position": "Co-Chairman of the Council — President of the EBRD"
-      }
-    ]
-  },
   "publications": {
-    "title": "Publications"
+    "title": "Publications",
+    "notFound": "Data not found",
+    "notFoundDesc": "Sorry, this publication does not exist or has been removed."
   },
   "advice": {
     "hero": {
       "title": "Strong allies moving forward with us"
+    },
+    "interworkingGroups": {
+      "sectionTitle": "Interagency working groups created following the results of the plenary session",
+      "viewMore": "View",
+      "sessions": {
+        "s3": {
+          "year": "11 June - 2025",
+          "title": "Plenary Session"
+        },
+        "s2": {
+          "year": "3 May - 2024",
+          "title": "Plenary Session"
+        },
+        "s1": {
+          "year": "16 November - 2022",
+          "title": "Plenary Session"
+        }
+      },
+      "groups": {
+        "s3": {
+          "g1": "IWG for Drafting the Law on Alternative Investment Funds",
+          "g2": "IWG on the Improvement of Pledge Legislation",
+          "g3": "IWG on the Implementation of Responsible Business Conduct Principles",
+          "g4": "IWG on the Training of Professional Personnel for Foreign Companies",
+          "g5": "IWG on the Enhancement of Corporate Governance in Local Companies",
+          "g6": "IWG on the Improvement of Tax Administration",
+          "g7": "IWG on the Improvement of Land Allocation Procedures",
+          "g8": "IWG on Energy-Related Issues",
+          "g9": "IWG on Circular Economy",
+          "g10": "IWG on Artificial Intelligence Development"
+        },
+        "s2": {
+          "g1": "Digitalization and ICT",
+          "g2": "Financial Sector and Banking",
+          "g3": "Green Economy and Energy",
+          "g4": "Cross-Border Investment",
+          "g5": "Privatization and PPP",
+          "g6": "Alternative Investment Funds",
+          "g7": "Capital Market Development",
+          "g8": "Doing Business"
+        },
+        "s1": {
+          "g1": "Digitalization and ICT",
+          "g2": "Financial Sector and Banking",
+          "g3": "Green Economy and Energy",
+          "g4": "Cross-Border Investment",
+          "g5": "Priority Sectors",
+          "g6": "Privatization and PPP",
+          "g7": "Pledge Legislation"
+        }
+      }
+    },
+    "show": {
+      "backToList": "Back to leaders list",
+      "groupComposition": "Membership of the interagency Working Group",
+      "byState": "By the state",
+      "byCouncil": "By the council",
+      "notFound": {
+        "title": "Leader not found",
+        "description": "The requested leader does not exist",
+        "backButton": "Return to list"
+      }
     }
   },
   "workingGroups": {
@@ -1094,7 +1158,8 @@
       "qualityStandards": "Quality Standards",
       "legalReforms": "Legal Reforms",
       "internationalImage": "International Image"
-    }
+    },
+    "learnMore": "Learn more"
   },
   "association": {
     "hero": {
@@ -1160,6 +1225,290 @@
         "name": "Odil Reno-Basso",
         "position": "Co-Chairman of the Council - President of the EBRD"
       }
+    }
+  },
+  "blog": {
+    "index": {
+      "title": "Analytics and Articles",
+      "filters": {
+        "allTopics": "All topics",
+        "allYears": "All years"
+      },
+      "loadMore": "View more"
+    },
+    "detail": {
+      "notFound": {
+        "title": "Data not found",
+        "description": "Sorry, this blog does not exist or has been deleted."
+      }
+    }
+  },
+  "calendarplan": {
+    "meta": {
+      "title": "Calendar Plan"
+    },
+    "heading": "Calendar Plan",
+    "filters": {
+      "period": {
+        "placeholder": "In 7 days",
+        "days7": "In 7 days",
+        "days3": "In 3 days",
+        "days2": "In 2 days"
+      },
+      "industry": {
+        "placeholder": "Branch",
+        "industry1": "Industry 1",
+        "industry2": "More details"
+      }
+    },
+    "learnMore": "Learn more",
+    "items": {
+      "item1": {
+        "date": "July - November 2025",
+        "content": "Development of approved initiatives"
+      },
+      "item2": {
+        "date": "November 2025",
+        "content": "Attraction of creative investments in Uzbekistan"
+      },
+      "item3": {
+        "date": "November 2025 - April 2026",
+        "content": "Collection of new initiatives for the 2026 plenary session"
+      },
+      "item4": {
+        "date": "April 2026",
+        "content": "Identification of new initiatives"
+      },
+      "item5": {
+        "date": "April - June 2026",
+        "content": "Development of approved initiatives"
+      },
+      "item6": {
+        "date": "June 2026",
+        "content": "Report of the working groups and the secretariat at the plenary session"
+      }
+    }
+  },
+  "experts": {
+    "hero": {
+      "title": "Experts"
+    },
+    "intro": {
+      "text": "The Council's experts are recognized international and local specialists who provide expert support to the working groups and initiatives of the Foreign Investors Council. The Council highly values their contribution to the development of Uzbekistan's investment policy and recognizes their professional competence."
+    },
+    "cards": {
+      "international": {
+        "title": "International experts",
+        "text": "Representatives of leading consulting, legal and financial organizations involved in developing legislative initiatives and adapting international standards."
+      },
+      "local": {
+        "title": "Local experts",
+        "text": "National specialists in the field of investment policy, corporate governance and sectoral regulation, linking international practice with the conditions of Uzbekistan."
+      }
+    }
+  },
+  "foreignparty": {
+    "title": "Foreign Side",
+    "membersCount": "40 members"
+  },
+  "interimSession": {
+    "hero": {
+      "title": "Interim session results"
+    },
+    "sessions": {
+      "overTheYears": "Over the years",
+      "learnMore": "Learn more",
+      "items": {
+        "s2019a": "The First Interim Session of the Foreign Investors Council, April 16, 2019",
+        "s2019b": "The Second Interim Session of the Foreign Investors Council, November 20, 2019",
+        "s2023": "The First Interim Session of the Foreign Investors Council, August 29, 2023",
+        "s2024": "The Second Interim Session of the Foreign Investors Council, October 10, 2024",
+        "s2025": "The Third Interim Session of the Foreign Investors Council, November 19, 2025"
+      }
+    },
+    "stats": {
+      "title": "Interim session in numbers",
+      "workingGroups": "Working groups",
+      "workingGroup": "Working group",
+      "in2022": "In 2022",
+      "in2024": "In 2024",
+      "in2025": "In 2025"
+    }
+  },
+  "leadersgroup": {
+    "pageTitle": "Leaders of Council Working Groups",
+    "workingGroups": {
+      "title": "Working Groups",
+      "subtitle": "Working Groups (WG)"
+    },
+    "role": "Working group leader.",
+    "groups": {
+      "energy": {
+        "content": "WG on Energy Sector",
+        "fullname": "John Zaidi",
+        "position": "Acwa, Country Head – Uzbekistan"
+      },
+      "finance": {
+        "content": "WG on Financial Sector and Banking",
+        "fullname": "Spartak Tetrashvili",
+        "position": "TBC Bank, General. Talent acquisition and human capital management"
+      },
+      "talent": {
+        "content": "WG on Talent Acquisition and Human Capital Development",
+        "fullname": "Sandro Rtveladze",
+        "position": "General Director of Ipoteka Bank OTP Group"
+      },
+      "digital": {
+        "content": "WG on Digitalization and ICT",
+        "fullname": "Sergey Salikov",
+        "position": "Uzum, Chief Legal Counsel"
+      },
+      "creative": {
+        "content": "WG on Creative Industries",
+        "fullname": "Gayane Umerova",
+        "position": "ACDF, Chairman"
+      },
+      "investment": {
+        "content": "WG on Investment Climate",
+        "fullname": "Erlan Dosimbekov",
+        "position": "EY, Managing Partner EY for the Caucasus and Central Asia"
+      }
+    },
+    "leaders": {
+      "tetrashvili": {
+        "fullname": "Spartak Tetrashvili",
+        "position": "TBC Bank, General. Talent acquisition and human capital management",
+        "direction": "Financial sector and banking"
+      },
+      "rukavishnikov": {
+        "fullname": "Alexander Rukavishnikov",
+        "position": "Ipoteka Bank OTP Group, Director of Marketing and Communications Directorate",
+        "direction": "Talent attraction and human capital development"
+      },
+      "salikov": {
+        "fullname": "Sergey Salikov",
+        "position": "Uzum, Chief Legal Counsel",
+        "direction": "Digitalization and ICT"
+      },
+      "umerova": {
+        "fullname": "Gayane Umerova",
+        "position": "ACDF, Chairman",
+        "direction": "Creative industries"
+      },
+      "dosimbekov": {
+        "fullname": "Erlan Dosimbekov",
+        "position": "EY, Managing Partner EY for the Caucasus and Central Asia",
+        "direction": "Investment climate"
+      },
+      "zaidi": {
+        "fullname": "John Zaidi",
+        "position": "Acwa, Country Head – Uzbekistan",
+        "direction": "Energy sector"
+      }
+    }
+  },
+  "reports": {
+    "hero": {
+      "title": "Documents",
+      "subtitle": "A single source of official Council documents: annual reports, meeting minutes, Presidential decrees, and founding materials.",
+      "hint": "Analytical reports and thought-leadership materials are available in the Publications section."
+    },
+    "tabs": {
+      "annual": "Annual Reports",
+      "workgroup": "Working Group Minutes",
+      "decrees": "Presidential Decrees",
+      "council": "Council Minutes",
+      "founding": "Founding Documents"
+    },
+    "cards": {
+      "annualReport": "Secretariat Annual Report",
+      "workgroupMinutes": "Working Group Meeting Minutes",
+      "presidentialDecree": "Decree of the President of the Republic of Uzbekistan",
+      "councilMinutes": "Council Meeting Minutes",
+      "charter": "Charter",
+      "registrationCert": "Certificate of Registration",
+      "signedByDeputyPM": "Signed by the Deputy Prime Minister"
+    },
+    "actions": {
+      "download": "Download",
+      "details": "Learn more"
+    },
+    "detail": {
+      "notFound": "Data not found",
+      "notFoundDesc": "Sorry, this document does not exist or has been removed."
+    }
+  },
+  "result": {
+    "hero": {
+      "title": "Council Results"
+    },
+    "intro": {
+      "description": "Over the reporting period, the Foreign Investors Council significantly strengthened its role as a key platform for interaction between the state and foreign investors and as an instrument for the development of Uzbekistan's investment policy."
+    },
+    "platform": {
+      "title": "Platform For Investors",
+      "stats": {
+        "companyEngagement": "Growth In Company Engagement",
+        "activeCompanies": "Active Participating Companies",
+        "councilMembers": "Companies — Members Of The Council",
+        "countries": "Participating Countries",
+        "internationalInstitutions": "International Institutions (3 On The Executive Committee)",
+        "economicSectors": "Sectors Of The Economy"
+      }
+    },
+    "environment": {
+      "title": "Development Of The Investment Environment",
+      "stats": {
+        "workingGroupsGrowth": "Growth In The Number Of Working Groups",
+        "workingGroupMeetings": "Working Group Meetings",
+        "initiatives": "Initiatives (Threefold Growth)",
+        "legalActs": "Legal Acts Developed With The Council's Participation",
+        "strategicInitiatives": "Strategic Initiatives",
+        "socialInitiatives": "Social Initiatives"
+      }
+    },
+    "npa": {
+      "title": "Eight Legal Acts Developed With The Council's Participation",
+      "items": {
+        "alternativeInvestmentFunds": "Draft Law On Alternative Investment Funds",
+        "responsibleBusiness": "Draft Presidential Resolution On The Principles Of Responsible Business Conduct",
+        "taxCode": "Draft Law On Amendments To The Tax Code",
+        "electricPower": "Draft Law On Amendments To The Law On Electric Power",
+        "electricityGas": "Draft Cabinet Of Ministers Resolution On The Rules For The Use Of Electricity And Natural Gas",
+        "ppp": "Draft Law On Amendments To The Law \"On Public-Private Partnership\"",
+        "landPlots": "Draft Presidential Resolution On The Reservation Of Land Plots",
+        "financialAccounting": "Draft Resolution On A Financial Accounting System Based On International Standards"
+      }
+    }
+  },
+  "uzbekside": {
+    "hero": {
+      "title": "UZBEK SIDE"
+    },
+    "footer": {
+      "text1": "Official Composition Of The Government Side Of The Council.",
+      "text2": "Presidential Resolution No. PP-226, Appendix No. 2.",
+      "learnMore": "LEARN MORE"
+    }
+  },
+  "weeklyEvents": {
+    "index": {
+      "title": "WEEKLY EVENTS",
+      "subtitle": "RESULTS OF THE WEEK OF THE FOREIGN INVESTORS COUNCIL",
+      "card": {
+        "label": "WEEKLY RESULTS"
+      },
+      "viewMore": "VIEW MORE",
+      "close": "SHOW LESS"
+    },
+    "blitzInterview": {
+      "title": "BLITZ INTERVIEW",
+      "description": "A series of short video interviews with the heads of companies — members of the Council. Participants answer four questions: what is their business in Uzbekistan; what is the country's key competitive advantage; their success story; the main challenge for development.",
+      "viewMore": "VIEW MORE",
+      "close": "SHOW LESS"
+    },
+    "meetings": {
+      "title": "MEETINGS"
     }
   }
 }

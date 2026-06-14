@@ -72,7 +72,7 @@ const toNextPage = () => {
       <h1
         class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[100px] mb-14"
       >
-        {{ t('Аналитика и статьи') }}
+        {{ t('blog.index.title') }}
       </h1>
 
       <div class="filters justify-center mb-5">
@@ -80,7 +80,7 @@ const toNextPage = () => {
           <el-select
             clearable
             v-model="filter.subject_id"
-            :placeholder="t('Все темы')"
+            :placeholder="t('blog.index.filters.allTopics')"
           >
             <el-option
               v-for="item in subjects"
@@ -94,7 +94,7 @@ const toNextPage = () => {
           <el-select
             clearable
             v-model="filter.year"
-            :placeholder="t('Все годы')"
+            :placeholder="t('blog.index.filters.allYears')"
             >
             <el-option label="2025" :value="2025" />
             <el-option label="2024" :value="2024" />
@@ -125,7 +125,7 @@ const toNextPage = () => {
       </div>
 
       <div class="text-center" v-if="pagination?.last_page > filter.page">
-        <button class="btn btn-secondary" @click="toNextPage">{{$t('Посмотреть больше')}}</button>
+        <button class="btn btn-secondary" @click="toNextPage">{{ t('blog.index.loadMore') }}</button>
       </div>
 
     </div>

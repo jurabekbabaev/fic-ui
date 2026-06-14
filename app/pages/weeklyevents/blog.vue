@@ -42,7 +42,7 @@ const model = {
         <h1
           class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[100px] mb-14"
         >
-          {{ t("Встречи") }}
+          {{ t("weeklyEvents.meetings.title") }}
         </h1>
 
         <!-- TODO: cards will be rendered here from API data -->

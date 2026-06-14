@@ -15,44 +15,44 @@ const leaderList = ref([
   {
     id: 1,
     image: LeaderImage1,
-    fullname: t("Спартак Тетрашвили"),
-    position: t("TBC Bank, генеральный. Подбор талантов и управление человеческим капиталом"),
-    direction: t("Финансовый сектор и банковское дело"),
+    fullnameKey: "leadersgroup.leaders.tetrashvili.fullname",
+    positionKey: "leadersgroup.leaders.tetrashvili.position",
+    directionKey: "leadersgroup.leaders.tetrashvili.direction",
   },
   {
     id: 2,
     image: LeaderImage2,
-    fullname: t("Александр Рукавишников"),
-    position: t("Ipoteka Bank OTP Group, Директор дирекции маркетинга и коммуникаций"),
-    direction: t("Привлечение талантов и развитие человеческого капитала"),
+    fullnameKey: "leadersgroup.leaders.rukavishnikov.fullname",
+    positionKey: "leadersgroup.leaders.rukavishnikov.position",
+    directionKey: "leadersgroup.leaders.rukavishnikov.direction",
   },
   {
     id: 3,
     image: LeaderImage3,
-    fullname: t("Сергей Саликов"),
-    position: t("Uzum, генеральный юрисконсульт"),
-    direction: t("Цифровизация и ИКТ"),
+    fullnameKey: "leadersgroup.leaders.salikov.fullname",
+    positionKey: "leadersgroup.leaders.salikov.position",
+    directionKey: "leadersgroup.leaders.salikov.direction",
   },
   {
     id: 4,
     image: LeaderImage4,
-    fullname: t("Гаянэ Умерова"),
-    position: t("ACDF, председатель"),
-    direction: t("Креативные индустрии"),
+    fullnameKey: "leadersgroup.leaders.umerova.fullname",
+    positionKey: "leadersgroup.leaders.umerova.position",
+    directionKey: "leadersgroup.leaders.umerova.direction",
   },
   {
     id: 5,
     image: LeaderImage5,
-    fullname: t("Ерлан Досымбеков"),
-    position: t("EY, управляющий партнер EY по Кавказу и Центральной Азии"),
-    direction: t("Инвестиционный климат"),
+    fullnameKey: "leadersgroup.leaders.dosimbekov.fullname",
+    positionKey: "leadersgroup.leaders.dosimbekov.position",
+    directionKey: "leadersgroup.leaders.dosimbekov.direction",
   },
   {
     id: 6,
     image: LeaderImage6,
-    fullname: t("Джон Заиди"),
-    position: t("Acwa, глава страны – Узбекистан"),
-    direction: t("Энергетический сектор"),
+    fullnameKey: "leadersgroup.leaders.zaidi.fullname",
+    positionKey: "leadersgroup.leaders.zaidi.position",
+    directionKey: "leadersgroup.leaders.zaidi.direction",
   },
 ]);
 
@@ -72,7 +72,7 @@ function View(item) {
           <h1
             class="lg:text-[64px] text-[32px] uppercase font-black mb-12 mt-[100px]"
           >
-            {{ t('лидеры основных рабочих групп') }}
+            {{ t('leadersgroup.pageTitle') }}
           </h1>
         </div>
         <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-x-32 gap-y-14">
@@ -82,17 +82,17 @@ function View(item) {
               <div>
                 <span
                   class="block lg:text-2xl text-sm text-[#191C1F] font-medium"
-                  >{{ item.direction }}</span
+                  >{{ t(item.directionKey) }}</span
                 >
                 <span @click="View(item)" class="cursor-pointer">
                   <h4
                     class="block lg:text-[28px] text-lg text-[#191C1F] font-medium uppercase mt-2.5"
-                    >{{ item.fullname }}</h4
+                    >{{ t(item.fullnameKey) }}</h4
                   >
                 </span>
                 <span
                   class="block lg:text-base text-xs text-[#505A63] font-normal"
-                  >{{ item.position }}</span
+                  >{{ t(item.positionKey) }}</span
                 >
               </div>
             </div>

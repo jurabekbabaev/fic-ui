@@ -181,7 +181,7 @@ onBeforeUnmount(() => {
               rel="noreferrer"
               class="btn btn-secondary mt-2"
             >
-              {{ t("Подробно") }}
+              {{ t("maininfo.learnMore") }}
             </a>
           </div>
           <div>

@@ -19,7 +19,7 @@ onMounted(() => {
     <client-only>
       <div class="container">
         <h1 class="lg:text-[64px] text-[32px] uppercase font-black mb-10 mt-12">
-          {{ t("Узбекская сторона") }}
+          {{ t("uzbekside.hero.title") }}
         </h1>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-[50px]">
           <div
@@ -50,17 +50,17 @@ onMounted(() => {
         </div>
         <div class="uzb-members-footer-copy">
           <div class="uzb-members-footer-text !mb-0">
-            {{ t(`Официальный состав правительственной стороны Совета.`) }}
+            {{ t("uzbekside.footer.text1") }}
           </div>
           <div class="uzb-members-footer-text">
-            {{ t(`Постановление Президента № ПП-226, Приложение № 2.`) }}
+            {{ t("uzbekside.footer.text2") }}
           </div>
           <a
             href="https://lex.uz/ru/docs/7637571"
             class="uzb-members-footer-link"
             target="_blank"
           >
-            {{ t("Узнать больше") }}
+            {{ t("uzbekside.footer.learnMore") }}
           </a>
         </div>
       </div>

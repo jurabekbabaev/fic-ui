@@ -1,4 +1,20 @@
 {
+  "management": {
+    "hero": {
+      "title": "Rahbariyat"
+    },
+    "heading": "Kengash rahbarligi",
+    "leaders": [
+      {
+        "fullname": "Shavkat Miromonovich Mirziyoyev",
+        "position": "Kengash raisi — O'zbekiston Respublikasi Prezidenti"
+      },
+      {
+        "fullname": "Odil Reno-Basso",
+        "position": "Kengash hamraisi — Yevropa tiklanish va taraqqiyot banki Prezidenti"
+      }
+    ]
+  },
   "Мы создадим все условия": "Bizning asosiy maqsadimiz – O‘zbekistonni xorijiy investorlar uchun ishonchli va uzoq muddatli hamkorga aylantirishdir",
   "чтобы в Новом Узбекистане инвесторы чувствовали себя свободными": "Shunda Yangi O‘zbekistonda investorlar o‘zlarini erkin his qilishadi.",
   "Шавкат Миромонович Мирзиёев": "Shavkat Miromonovich Mirziyoyev",
@@ -1026,28 +1042,76 @@
     "description": "Kontentni yangilash va to'ldirish bo'yicha ishlaryuritilmoqda. Iltimos, ushbu bo'limni keyinroq ziyorat qiling",
     "backButton": "Bosh sahifaga qaytish"
   },
-  "management": {
-    "hero": {
-      "title": "Rahbariyat"
-    },
-    "heading": "Kengash rahbarligi",
-    "leaders": [
-      {
-        "fullname": "Shavkat Miromonovich Mirziyoyev",
-        "position": "Kengash raisi — O'zbekiston Respublikasi Prezidenti"
-      },
-      {
-        "fullname": "Odil Reno-Basso",
-        "position": "Kengash hamraisi — Yevropa tiklanish va taraqqiyot banki Prezidenti"
-      }
-    ]
-  },
   "publications": {
-    "title": "Nashriyotlar"
+    "title": "Nashriyotlar",
+    "notFound": "Ma'lumot topilmadi",
+    "notFoundDesc": "Kechirasiz, bu nashr mavjud emas yoki o'chirilgan."
   },
   "advice": {
     "hero": {
       "title": "Bizning bilan oldinga boruvchi kuchli sekodchilar"
+    },
+    "interworkingGroups": {
+      "sectionTitle": "Yalpi majlis yakunlari bo'yicha tuzilgan idoralararo ishchi guruhlar",
+      "viewMore": "Ko'rish",
+      "sessions": {
+        "s3": {
+          "year": "11 iyun - 2025 yil",
+          "title": "Yalpi majlis"
+        },
+        "s2": {
+          "year": "3 may - 2024 yil",
+          "title": "Yalpi majlis"
+        },
+        "s1": {
+          "year": "16 noyabr - 2022 yil",
+          "title": "Yalpi majlis"
+        }
+      },
+      "groups": {
+        "s3": {
+          "g1": "Muqobil investitsiya jamg'armalari to'g'risidagi qonun loyihasini tayyorlash bo'yicha IIG",
+          "g2": "Garov to'g'risidagi qonunchilikni takomillashtirish bo'yicha IIG",
+          "g3": "Mas'uliyatli biznes yuritish qoidalarini joriy etish bo'yicha IIG",
+          "g4": "Xorijiy kompaniyalar uchun professional kadrlar tayyorlash bo'yicha IIG",
+          "g5": "Mahalliy kompaniyalarda korporativ boshqaruvni takomillashtirish bo'yicha IIG",
+          "g6": "Soliq ma'murchiligini takomillashtirish bo'yicha IIG",
+          "g7": "Yer ajratish tartibini takomillashtirish bo'yicha IIG",
+          "g8": "Energetika masalalari bo'yicha IIG",
+          "g9": "Aylanma iqtisodiyot bo'yicha IIG",
+          "g10": "Sun'iy intellektni rivojlantirish bo'yicha IIG"
+        },
+        "s2": {
+          "g1": "Raqamlashtirish va AKT",
+          "g2": "Moliya sektori va bank ishi",
+          "g3": "Yashil iqtisodiyot va energetika",
+          "g4": "Chegara orqali investitsiya",
+          "g5": "Xususiylashtirishva YShI",
+          "g6": "Muqobil investitsiya jamg'armalari",
+          "g7": "Kapital bozori rivojlantirish",
+          "g8": "Biznes yuritish"
+        },
+        "s1": {
+          "g1": "Raqamlashtirish va AKT",
+          "g2": "Moliya sektori va bank ishi",
+          "g3": "Yashil iqtisodiyot va energetika",
+          "g4": "Chegara orqali investitsiya",
+          "g5": "Ustuvor tarmoqlar",
+          "g6": "Xususiylashtirishva YShI",
+          "g7": "Garov qonunchiligi"
+        }
+      }
+    },
+    "show": {
+      "backToList": "Rahbarlar ro'yxatiga qaytish",
+      "groupComposition": "Idoralararo ishchi guruh tarkibi",
+      "byState": "Davlat tomonidan",
+      "byCouncil": "Kengash tomonidan",
+      "notFound": {
+        "title": "Rahbar topilmadi",
+        "description": "So'ralgan rahbar mavjud emas",
+        "backButton": "Ro'yxatga qaytish"
+      }
     }
   },
   "workingGroups": {
@@ -1099,7 +1163,8 @@
       "qualityStandards": "Sifat standartlari",
       "legalReforms": "Huquqiy islohotlar",
       "internationalImage": "Xalqaro imidj"
-    }
+    },
+    "learnMore": "Batafsil"
   },
   "homePage": {
     "aboutUs": {
@@ -1165,6 +1230,290 @@
     },
     "buttons": {
       "documents": "Hujjatlar"
+    }
+  },
+  "blog": {
+    "index": {
+      "title": "Tahlil va maqolalar",
+      "filters": {
+        "allTopics": "Barcha mavzular",
+        "allYears": "Barcha yillar"
+      },
+      "loadMore": "Ko'proq ko'rish"
+    },
+    "detail": {
+      "notFound": {
+        "title": "Ma'lumot topilmadi",
+        "description": "Kechirasiz, bu blog mavjud emas yoki o'chirilgan."
+      }
+    }
+  },
+  "calendarplan": {
+    "meta": {
+      "title": "Taqvim"
+    },
+    "heading": "Taqvim",
+    "filters": {
+      "period": {
+        "placeholder": "7 Kun oldin",
+        "days7": "7 Kun oldin",
+        "days3": "3 Kun oldin",
+        "days2": "2 Kunda"
+      },
+      "industry": {
+        "placeholder": "Soha",
+        "industry1": "1-Tarmoq",
+        "industry2": "2-Tarmoq"
+      }
+    },
+    "learnMore": "Batafsil",
+    "items": {
+      "item1": {
+        "date": "2025-Yil iyul - noyabr",
+        "content": "Tasdiqlangan tashabbuslarni ishlab chiqish"
+      },
+      "item2": {
+        "date": "2025-Yil noyabr",
+        "content": "O'zbekistonga kreativ investitsiyalarni jalb qilish"
+      },
+      "item3": {
+        "date": "2025-Yil noyabr - 2026-yil aprel",
+        "content": "2026-Yilgi Yalpi majlis uchun yangi tashabbuslar to'plami"
+      },
+      "item4": {
+        "date": "2026-Yil aprel",
+        "content": "Yangi tashabbuslarni aniqlash"
+      },
+      "item5": {
+        "date": "2026-Yil aprel - iyun",
+        "content": "Tasdiqlangan tashabbuslarni ishlab chiqish"
+      },
+      "item6": {
+        "date": "2026-Yil iyun",
+        "content": "Ishchi guruhlar va kotibiyatning yalpi majlisdagi hisoboti"
+      }
+    }
+  },
+  "experts": {
+    "hero": {
+      "title": "Mutaxassislar"
+    },
+    "intro": {
+      "text": "Kengash ekspertlari — Xorijiy investorlar kengashining ishchi guruhlari va tashabbuslariga ekspert yordamini ko'rsatuvchi e'tirof etilgan xalqaro va mahalliy mutaxassislardir. Kengash ularning O'zbekiston investitsiya siyosatini rivojlantirishga qo'shgan hissasini yuqori baholaydi va professional malakasini e'tirof etadi."
+    },
+    "cards": {
+      "international": {
+        "title": "Xalqaro ekspertlar",
+        "text": "Yetakchi konsalting, yuridik va moliyaviy tashkilotlar vakillari bo'lib, qonunchilik tashabbuslarini ishlab chiqish va xalqaro standartlarni moslashtirish jarayonida ishtirok etadilar."
+      },
+      "local": {
+        "title": "Mahalliy ekspertlar",
+        "text": "Investitsiya siyosati, korporativ boshqaruv va tarmoq tartibga solish sohasidagi milliy mutaxassislar bo'lib, xalqaro amaliyotni O'zbekiston sharoitlari bilan bog'laydilar."
+      }
+    }
+  },
+  "foreignparty": {
+    "title": "Xorijiy tomon",
+    "membersCount": "40 ishtirokchi"
+  },
+  "interimSession": {
+    "hero": {
+      "title": "Oraliq majlis natijalari"
+    },
+    "sessions": {
+      "overTheYears": "O'tgan yillar davomida",
+      "learnMore": "Batafsil",
+      "items": {
+        "s2019a": "Xorijiy investorlar kengashining birinchi oraliq majlisi, 2019-yil 16-aprel",
+        "s2019b": "Xorijiy investorlar kengashining ikkinchi oraliq majlisi, 2019-yil 20-noyabr",
+        "s2023": "Xorijiy investorlar kengashining birinchi oraliq majlisi, 2023-yil 29-avgust",
+        "s2024": "Xorijiy investorlar kengashining ikkinchi oraliq majlisi, 2024-yil 10-oktyabr",
+        "s2025": "Xorijiy investorlar kengashining uchinchi oraliq majlisi, 2025-yil 19-noyabr"
+      }
+    },
+    "stats": {
+      "title": "Oraliq majlis raqamlarda",
+      "workingGroups": "Ishchi guruhlar",
+      "workingGroup": "Ishchi guruh",
+      "in2022": "2022-Yilda",
+      "in2024": "2024-Yilda",
+      "in2025": "2025-Yilda"
+    }
+  },
+  "leadersgroup": {
+    "pageTitle": "Ishchi guruhlar rahbarlari",
+    "workingGroups": {
+      "title": "Ishchi guruhlar",
+      "subtitle": "Ishchi guruhlar (IG)"
+    },
+    "role": "Ishchi guruh rahbari.",
+    "groups": {
+      "energy": {
+        "content": "Energetika sektori bo'yicha IG",
+        "fullname": "Jon Zaidi",
+        "position": "Acwa, O'zbekiston bo'yicha mamlakat rahbari"
+      },
+      "finance": {
+        "content": "Moliya sektori va bank faoliyati bo'yicha IG",
+        "fullname": "Spartak Tetrashvili",
+        "position": "TBC Bank, bosh. Iste'dodlarni jalb qilish va inson kapitalini boshqarish"
+      },
+      "talent": {
+        "content": "Istedodlarni jalb qilish va inson kapitalini rivojlantirish bo'yicha IG",
+        "fullname": "Sandro Rtveladze",
+        "position": "Ipoteka Bank OTP Group bosh direktori"
+      },
+      "digital": {
+        "content": "Raqamlashtirish va AKT bo'yicha IG",
+        "fullname": "Sergey Salikov",
+        "position": "Uzum, bosh yuriskonsult"
+      },
+      "creative": {
+        "content": "Ijodiy sanoat bo'yicha IG",
+        "fullname": "Gayané Umerova",
+        "position": "ACDF, rais"
+      },
+      "investment": {
+        "content": "Investitsiya muhiti bo'yicha IG",
+        "fullname": "Yerlan Dosimbekov",
+        "position": "EY, Kavkaz va Markaziy Osiyo bo'yicha EY boshqaruvchi hamkori"
+      }
+    },
+    "leaders": {
+      "tetrashvili": {
+        "fullname": "Spartak Tetrashvili",
+        "position": "TBC Bank, bosh. Iste'dodlarni jalb qilish va inson kapitalini boshqarish",
+        "direction": "Moliya sektori va bank ishi"
+      },
+      "rukavishnikov": {
+        "fullname": "Aleksandr Rukavishnikov",
+        "position": "Ipoteka Bank OTP Group, Marketing va kommunikatsiyalar direksiyasi direktori",
+        "direction": "Iste'dodlarni jalb qilish va inson kapitalini rivojlantirish"
+      },
+      "salikov": {
+        "fullname": "Sergey Salikov",
+        "position": "Uzum, bosh yuriskonsult",
+        "direction": "Raqamlashtirish va AKT"
+      },
+      "umerova": {
+        "fullname": "Gayané Umerova",
+        "position": "ACDF, rais",
+        "direction": "Ijodiy sanoatlar"
+      },
+      "dosimbekov": {
+        "fullname": "Yerlan Dosimbekov",
+        "position": "EY, Kavkaz va Markaziy Osiyo bo'yicha EY boshqaruvchi hamkori",
+        "direction": "Investitsiya muhiti"
+      },
+      "zaidi": {
+        "fullname": "Jon Zaidi",
+        "position": "Acwa, O'zbekiston bo'yicha mamlakat rahbari",
+        "direction": "Energetika sektori"
+      }
+    }
+  },
+  "reports": {
+    "hero": {
+      "title": "Hujjatlar",
+      "subtitle": "Kengashning rasmiy hujjatlari yagona manbai: yillik hisobotlar, majlis bayyonnomalari, Prezident qarorlari va ta'sis materiallari.",
+      "hint": "Tahliliy hisobotlar va fikr yetakchiligi materiallari «Nashrlar» bo'limida joylashgan."
+    },
+    "tabs": {
+      "annual": "Yillik hisobotlar",
+      "workgroup": "Ishchi guruh bayyonnomalari",
+      "decrees": "Prezident qarorlari",
+      "council": "Kengash bayyonnomalari",
+      "founding": "Ta'sis hujjatlari"
+    },
+    "cards": {
+      "annualReport": "Kotibiyat yillik hisoboti",
+      "workgroupMinutes": "Ishchi guruh majlisi bayyonnomasi",
+      "presidentialDecree": "O'zbekiston Respublikasi Prezidentining qarori",
+      "councilMinutes": "Kengash majlisi bayyonnomasi",
+      "charter": "Ustav",
+      "registrationCert": "Ro'yxatdan o'tish guvohnomasi",
+      "signedByDeputyPM": "Bosh vazir o'rinbosari tomonidan imzolangan"
+    },
+    "actions": {
+      "download": "Yuklab olish",
+      "details": "Batafsil"
+    },
+    "detail": {
+      "notFound": "Ma'lumot topilmadi",
+      "notFoundDesc": "Kechirasiz, bu hujjat mavjud emas yoki o'chirilgan."
+    }
+  },
+  "result": {
+    "hero": {
+      "title": "Kengash Natijalari"
+    },
+    "intro": {
+      "description": "Hisobot davrida Xorijiy investorlar kengashi davlat va xorijiy investorlar o'rtasidagi o'zaro hamkorlikning asosiy platformasi hamda O'zbekiston investitsiya siyosatini rivojlantirish vositasi sifatidagi rolini sezilarli darajada kuchaytirdi."
+    },
+    "platform": {
+      "title": "Investorlar Uchun Platforma",
+      "stats": {
+        "companyEngagement": "Kompaniyalar Jalb Etilishining O'sishi",
+        "activeCompanies": "Faol Ishtirokchi Kompaniyalar",
+        "councilMembers": "Kompaniya — Kengash A'zolari",
+        "countries": "Ishtirokchi Davlatlar",
+        "internationalInstitutions": "Xalqaro Institut (3 Tasi Ijroiya Qo'mitasida)",
+        "economicSectors": "Iqtisodiyot Tarmoqlari"
+      }
+    },
+    "environment": {
+      "title": "Investitsiya Muhitining Rivojlanishi",
+      "stats": {
+        "workingGroupsGrowth": "Ishchi Guruhlar Sonining O'sishi",
+        "workingGroupMeetings": "Ishchi Guruhlar Majlislari",
+        "initiatives": "Tashabbus (Uch Baravar O'sish)",
+        "legalActs": "Normativ-Huquqiy Hujjat Kengash Ishtirokida Ishlab Chiqilgan",
+        "strategicInitiatives": "Strategik Tashabbuslar",
+        "socialInitiatives": "Ijtimoiy Tashabbuslar"
+      }
+    },
+    "npa": {
+      "title": "Kengash Ishtirokida Ishlab Chiqilgan Sakkizta Normativ-Huquqiy Hujjat",
+      "items": {
+        "alternativeInvestmentFunds": "Muqobil Investitsiya Fondlari To'g'risidagi Qonun Loyihasi",
+        "responsibleBusiness": "Mas'uliyatli Biznes Yuritish Tamoyillari To'g'risidagi Prezident Qarori Loyihasi",
+        "taxCode": "Soliq Kodeksiga O'zgartirishlar Kiritish To'g'risidagi Qonun Loyihasi",
+        "electricPower": "Elektr Energetikasi To'g'risidagi Qonunga O'zgartirishlar Kiritish To'g'risidagi Qonun Loyihasi",
+        "electricityGas": "Elektr Energiyasi Va Tabiiy Gazdan Foydalanish Qoidalari To'g'risidagi Vazirlar Mahkamasi Qarori Loyihasi",
+        "ppp": "\"Davlat-Xususiy Sheriklik To'g'risida\"gi Qonunga O'zgartirishlar Kiritish To'g'risidagi Qonun Loyihasi",
+        "landPlots": "Yer Uchastkalarini Zaxiraga Olish To'g'risidagi Prezident Qarori Loyihasi",
+        "financialAccounting": "Xalqaro Standartlar Bo'yicha Moliyaviy Hisob Tizimi To'g'risidagi Qaror Loyihasi"
+      }
+    }
+  },
+  "uzbekside": {
+    "hero": {
+      "title": "O'ZBEK VAKILLARI"
+    },
+    "footer": {
+      "text1": "Kengashning Hukumat Tomonining Rasmiy Tarkibi.",
+      "text2": "Prezidentning PQ-226-Son Qarori, 2-Ilova.",
+      "learnMore": "KO'PROQ BILISH"
+    }
+  },
+  "weeklyEvents": {
+    "index": {
+      "title": "HAFTALIK VOQEALAR",
+      "subtitle": "XORIJIY INVESTORLAR KENGASHINING HAFTALIK NATIJALARI",
+      "card": {
+        "label": "HAFTA YAKUNLARI"
+      },
+      "viewMore": "YANA KO'RISH",
+      "close": "YOPISH"
+    },
+    "blitzInterview": {
+      "title": "BLITZ INTERVYU",
+      "description": "Kengash a'zosi bo'lgan kompaniyalar rahbarlari bilan qisqa video intervyular seriyasi. Ishtirokchilar to'rtta savolga javob beradilar: O'zbekistondagi faoliyatlari haqida; mamlakatning asosiy raqobat ustunligi; muvaffaqiyat tarixi; rivojlanishdagi asosiy muammo.",
+      "viewMore": "YANA KO'RISH",
+      "close": "YOPISH"
+    },
+    "meetings": {
+      "title": "UCHRASHUVLAR"
     }
   }
 }

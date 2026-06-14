@@ -240,8 +240,8 @@ onUnmounted(() => {
     <client-only>
       <div class="container">
         <section class="blitzInterview__head">
-          <h1 class="blitzInterview__title">{{ t("Блиц-интервью") }}</h1>
-          <p class="blitzInterview__text">{{ t("blitzInterview.description") }}</p>
+          <h1 class="blitzInterview__title">{{ t("weeklyEvents.blitzInterview.title") }}</h1>
+          <p class="blitzInterview__text">{{ t("weeklyEvents.blitzInterview.description") }}</p>
         </section>
       </div>
       <div class="mt-6">
@@ -402,14 +402,14 @@ onUnmounted(() => {
           class="btn btn-secondary"
           @click="expandAll"
         >
-          {{ t('Посмотреть еще') }}
+          {{ t('weeklyEvents.blitzInterview.viewMore') }}
         </button>
         <button
           v-else
           class="btn btn-secondary"
           @click="collapseAll"
         >
-          {{ t('Yopish') }}
+          {{ t('weeklyEvents.blitzInterview.close') }}
         </button>
         </div>
       </div>
