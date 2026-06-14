@@ -426,7 +426,7 @@ export const getCompanyName = (filename: string) =>
   filename.replace(/\.[^.]+$/, '')
 
 export const getCompanyLogoSrc = (filename: string) =>
-  encodeURI(`/logo m a/${filename}`)
+  `/brands/${filename}`
 
 export const getCompanyTargetId = (filename: string) =>
   `company-${getCompanyKey(filename)}`
