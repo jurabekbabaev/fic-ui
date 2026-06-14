@@ -1,7 +1,7 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-import HeroImage from '@/assets/images/plenarysessions/plenary2025/STU_8900_.jpg'
-import HeroImage2 from '@/assets/images/plenarysessions/plenary2025/ATM_9764.JPG'
+const HeroImage = img('plenarysessions/STU_8900_.jpg')
+const HeroImage2 = img('plenarysessions/ATM_9764.JPG')
 
 const props = defineProps({
   title: { type: String, required: true },

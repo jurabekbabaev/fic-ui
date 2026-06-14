@@ -287,3 +287,22 @@ export function fullPath(path) {
   const prefix = config.public.NUXT_API_BASE_URL_ASSETS
   return prefix+path;
 }
+
+// Resolve a static image to a full URL served from the images host (cPanel /images).
+// Usage: img('management/image11.png') -> `${imageBaseUrl}/images/management/image11.png`
+// Images live ONLY on cPanel under public_html/<domain>/images/ (uploaded manually),
+// they are NOT bundled at build time. Base comes from runtimeConfig.public.imageBaseUrl
+// (.env NUXT_PUBLIC_IMAGE_BASE_URL, falls back to siteUrl). Kept separate from siteUrl
+// so the API/site domain and the image-hosting domain can differ.
+export function img(path) {
+  const clean = String(path || '').replace(/^\/+/, '')
+  let base = ''
+  try {
+    const cfg = useRuntimeConfig().public
+    base = cfg.imageBaseUrl || cfg.siteUrl || ''
+  } catch (e) {
+    base = ''
+  }
+  base = base.replace(/\/+$/, '')
+  return `${base}/images/${clean}`
+}

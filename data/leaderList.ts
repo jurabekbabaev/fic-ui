@@ -1,134 +1,95 @@
-import LeaderImage1 from "@/assets/images/leaders/jurabek2.png";
-import PartnerImage1 from "@/assets/images/leaders/leader6.png";
-import LeaderImage2 from "@/assets/images/leaders/farrux2.png";
-import PartnerImage2 from "@/assets/images/leaders/aziz2.png";
-import LeaderImage3 from "@/assets/images/leaders/axadbek2.png";
-import PartnerImage3 from "@/assets/images/leaders/erlan2.png";
-import LeaderImage4 from "@/assets/images/leaders/ilhom2.png";
-import PartnerImage4 from "@/assets/images/leaders/marius2.png";
-import LeaderImage5 from "@/assets/images/leaders/kongratbay2.png";
-import PartnerImage5 from "@/assets/images/leaders/sandro2.png";
-import LeaderImage6 from "@/assets/images/leaders/laziz2.png";
-import PartnerImage6 from "@/assets/images/leaders/vera2.png";
-import LeaderImage7 from "@/assets/images/leaders/timur2.png";
-import aziz from "@/assets/images/leaders/aziz-a.png";
-import LeaderImage8 from "@/assets/images/leaders/timur3.png";
-import TimurMainImage from "@/assets/images/leaders/timur.png";
-import PartnerImage7 from "@/assets/images/leaders/davron2.png";
-import mukae from "@/assets/images/leaders/mukae.png";
-import PartnerImage8 from "@/assets/images/leaders/kazbek2.png";
-import maxmud from "@/assets/images/leaders/maxmud.png";
-import olimjon from "@/assets/images/leaders/olimjon2.png";
-
-// import LeaderImage3 from "@/assets/images/leaders/leader3.png";
-import Erlan from "@/assets/images/leaders/leader5.png";
-// import LeaderImage6 from "@/assets/images/leaders/jurabek2.png";
-import AdBank from "@/assets/images/brands/ad-bank.png";
-import IdBank from "@/assets/images/brands/id-bank.png";
-import WbGroup from "@/assets/images/brands/wb-group.png";
-import MiCor from "@/assets/images/brands/mi-cor.png";
-import BDO from "@/assets/images/brands/bdo.png";
-import Cola from "@/assets/images/brands/cola.png";
-import Wildberries from "@/assets/images/brands/wildberries.png";
-import Visa from "@/assets/images/brands/visa.png";
-import Halyk from "@/assets/images/brands/halyk.png";
-import HalykB from "@/assets/images/brands/halyk-bank.png";
-import MitCo from "@/assets/images/brands/mit-co.png";
-import TbcBank from "@/assets/images/brands/tbc-bank.png";
-import JpMorgan from "@/assets/images/brands/jp-morgan.png";
-import EBank from "@/assets/images/brands/e-bank.png";
-import AwPart from "@/assets/images/brands/aw-part.png";
-import AcdfUz from "@/assets/images/brands/acdf-uz.png";
-import AcwaPower from "@/assets/images/brands/acwa-power.png";
-import AiiBank from "@/assets/images/brands/aii-bank.png";
-import AirProd from "@/assets/images/brands/air-prod.png";
-import Aksa from "@/assets/images/brands/aksa.png";
-import AlvarezMar from "@/assets/images/brands/alvarez-mar.png";
-import Amcham from "@/assets/images/brands/amcham.png";
-import Avesta from "@/assets/images/brands/avesta.png";
-import Azizov from "@/assets/images/brands/azizov.png";
-import BatBetter from "@/assets/images/brands/bat-better.png";
-import Bdo from "@/assets/images/brands/bdo.png";
-import Cafa from "@/assets/images/brands/cafa.png";
-import CentLaw from "@/assets/images/brands/cent-law.png";
-import ChalikHolding from "@/assets/images/brands/chalik-holding.png";
-import ChinaSpg from "@/assets/images/brands/china-spg.png";
-import Crowe from "@/assets/images/brands/crowe.png";
-import Deloitte from "@/assets/images/brands/deloitte.png";
-import Dentos from "@/assets/images/brands/dentos.png";
-import Edf from "@/assets/images/brands/edf.png";
-import EnergyChina from "@/assets/images/brands/energy-china.png";
-import Enhol from "@/assets/images/brands/enhol.png";
-import Epam from "@/assets/images/brands/epam.png";
-import EyBrand from "@/assets/images/brands/ey.png";
-import Fintech from "@/assets/images/brands/fintech.png";
-import GloboGate from "@/assets/images/brands/globo-gate.png";
-import HenleyPart from "@/assets/images/brands/henley-part.png";
-import Hudson from "@/assets/images/brands/hudson.png";
-import Ifc from "@/assets/images/brands/ifc.png";
-import Indoorama from "@/assets/images/brands/indoorama.png";
-import Itfc from "@/assets/images/brands/itfc.png";
-import Knauf from "@/assets/images/brands/knauf.png";
-import KostaLegal from "@/assets/images/brands/kosta-legal.png";
-import Kpmg from "@/assets/images/brands/kpmg.png";
-import Lekhim from "@/assets/images/brands/lekhim.png";
-import Masdar from "@/assets/images/brands/masdar.png";
-import Mastercard from "@/assets/images/brands/mastercard.png";
-import MinaretRen from "@/assets/images/brands/minaret-ren.png";
-import MinistryIit from "@/assets/images/brands/ministry-iit.png";
-import Orano from "@/assets/images/brands/orano.png";
-import OtpBank from "@/assets/images/brands/otp-bank.png";
-import Ozguven from "@/assets/images/brands/ozguven.png";
-import Pwc from "@/assets/images/brands/pwc.png";
-import SasaIntern from "@/assets/images/brands/sasa-intern.png";
-import Siemens from "@/assets/images/brands/siemens.png";
-import SilverLeafe from "@/assets/images/brands/silver-leafe.png";
-import Sojitz from "@/assets/images/brands/sojitz.png";
-import Suez from "@/assets/images/brands/suez.png";
-import Te from "@/assets/images/brands/te.png";
-import UzCarls from "@/assets/images/brands/uz-carls.png";
-import UzumMarket from "@/assets/images/brands/uzum-market.png";
-import uzum from "@/assets/images/brands/uzum.png";
-import Veon from "@/assets/images/brands/veon.png";
-import WhiteCase from "@/assets/images/brands/white-case.png";
-import YandeksUz from "@/assets/images/brands/yandeks-uz.png";
-import Yandeks from "@/assets/images/brands/yandeks.png";
-import ZiraatBank from "@/assets/images/brands/ziraat-bank.png";
-import Ipoteka from "@/assets/images/brands/ipoteka.png";
-import Voltalia from "@/assets/images/brands/voltalia.png";
-
-
-import XurshidMustafaev from "@/assets/images/users/xurshid.png"
-import Asrarjon from "@/assets/images/users/asrar.png"
-import Jaxongir from "@/assets/images/users/jaxongir.png"
-import Maxmud from "@/assets/images/users/maxmud.png"
-import Axadbek from "@/assets/images/users/axadbek.png"
-import Farrux from "@/assets/images/leaders/farrux2.png"
-import Pak from "@/assets/images/users/pak.png"
-import Nodirbek from "@/assets/images/users/nodirbek.png"
-import Georgiy from "@/assets/images/users/georgiy.png"
-import Botir from "@/assets/images/users/botir.png"
-import Bexzod from "@/assets/images/users/bexzod.png"
-import Davron from "@/assets/images/users/davron.png"
-import Ilxom from "@/assets/images/users/ilxom.png"
-import Feruza from "@/assets/images/users/feruza.png"
-import Marat from "@/assets/images/users/marat.png"
-import UserFarrux from "@/assets/images/users/farrux.png"
-import Agzam from "@/assets/images/users/agzam.png"
-import Mubin from "@/assets/images/users/mubin.png"
-import Obidjon from "@/assets/images/users/obidjon.png"
-import JaxongirAbdiyev from "@/assets/images/users/jaxongirabdiyev.png"
-import Sherzod from "@/assets/images/users/sherzod.png"
-import Shuxrat from "@/assets/images/users/shuxrat.png"
-import Askar from "@/assets/images/users/Askar.png"
-import Askar2 from "@/assets/images/users/askar2.png"
-import Akbar from "@/assets/images/users/akbar.png"
-
-import NoImage from "@/assets/images/users/noimage.png"
-
+import { img } from "@/composables/helpers";
 import type { ILeaderGroup } from "~/types/leaders";
 
 export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
+  const LeaderImage1 = img("leaders/jurabek2.png");
+  const PartnerImage1 = img("leaders/leader6.png");
+  const LeaderImage2 = img("leaders/farrux2.png");
+  const PartnerImage2 = img("leaders/aziz2.png");
+  const LeaderImage3 = img("leaders/axadbek2.png");
+  const PartnerImage3 = img("leaders/erlan2.png");
+  const LeaderImage4 = img("leaders/ilhom2.png");
+  const PartnerImage4 = img("leaders/marius2.png");
+  const LeaderImage5 = img("leaders/kongratbay2.png");
+  const PartnerImage5 = img("leaders/sandro2.png");
+  const LeaderImage6 = img("leaders/laziz2.png");
+  const PartnerImage6 = img("leaders/vera2.png");
+  const LeaderImage7 = img("leaders/timur2.png");
+  const aziz = img("leaders/aziz-a.png");
+  const LeaderImage8 = img("leaders/timur3.png");
+  const TimurMainImage = img("leaders/timur.png");
+  const PartnerImage7 = img("leaders/davron2.png");
+  const mukae = img("leaders/mukae.png");
+  const PartnerImage8 = img("leaders/kazbek2.png");
+  const maxmud = img("leaders/maxmud.png");
+  const olimjon = img("leaders/olimjon2.png");
+
+  const Erlan = img("leaders/leader5.png");
+  const AdBank = img("brands/ad-bank.png");
+  const MiCor = img("brands/mi-cor.png");
+  const BDO = img("brands/bdo.png");
+  const Cola = img("brands/cola.png");
+  const Wildberries = img("brands/wildberries.png");
+  const HalykB = img("brands/halyk-bank.png");
+  const MitCo = img("brands/mit-co.png");
+  const TbcBank = img("brands/tbc-bank.png");
+  const EBank = img("brands/e-bank.png");
+  const AcwaPower = img("brands/acwa-power.png");
+  const Avesta = img("brands/avesta.png");
+  const Azizov = img("brands/azizov.png");
+  const BatBetter = img("brands/bat-better.png");
+  const Bdo = img("brands/bdo.png");
+  const Cafa = img("brands/cafa.png");
+  const CentLaw = img("brands/cent-law.png");
+  const Crowe = img("brands/crowe.png");
+  const Deloitte = img("brands/deloitte.png");
+  const Dentos = img("brands/dentos.png");
+  const Edf = img("brands/edf.png");
+  const EnergyChina = img("brands/energy-china.png");
+  const EyBrand = img("brands/ey.png");
+  const Ifc = img("brands/ifc.png");
+  const Indoorama = img("brands/indoorama.png");
+  const KostaLegal = img("brands/kosta-legal.png");
+  const Masdar = img("brands/masdar.png");
+  const Mastercard = img("brands/mastercard.png");
+  const Pwc = img("brands/pwc.png");
+  const Siemens = img("brands/siemens.png");
+  const Suez = img("brands/suez.png");
+  const Te = img("brands/te.png");
+  const UzCarls = img("brands/uz-carls.png");
+  const uzum = img("brands/uzum.png");
+  const Veon = img("brands/veon.png");
+  const Yandeks = img("brands/yandeks.png");
+  const ZiraatBank = img("brands/ziraat-bank.png");
+  const Ipoteka = img("brands/ipoteka.png");
+  const Voltalia = img("brands/voltalia.png");
+
+  const XurshidMustafaev = img("users/xurshid.png");
+  const Asrarjon = img("users/asrar.png");
+  const Jaxongir = img("users/jaxongir.png");
+  const Maxmud = img("users/maxmud.png");
+  const Axadbek = img("users/axadbek.png");
+  const Farrux = img("leaders/farrux2.png");
+  const Pak = img("users/pak.png");
+  const Nodirbek = img("users/nodirbek.png");
+  const Georgiy = img("users/georgiy.png");
+  const Botir = img("users/botir.png");
+  const Bexzod = img("users/bexzod.png");
+  const Davron = img("users/davron.png");
+  const Ilxom = img("users/ilxom.png");
+  const Feruza = img("users/feruza.png");
+  const Marat = img("users/marat.png");
+  const UserFarrux = img("users/farrux.png");
+  const Agzam = img("users/agzam.png");
+  const Mubin = img("users/mubin.png");
+  const Obidjon = img("users/obidjon.png");
+  const JaxongirAbdiyev = img("users/jaxongirabdiyev.png");
+  const Sherzod = img("users/sherzod.png");
+  const Shuxrat = img("users/shuxrat.png");
+  const Askar2 = img("users/askar2.png");
+  const Akbar = img("users/akbar.png");
+  const NoImage = img("users/noimage.png");
+
   return [
     {
       id: 1,

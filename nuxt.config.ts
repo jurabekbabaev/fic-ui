@@ -29,6 +29,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl,
+      // Base URL where static images are served from (cPanel /images).
+      // Falls back to siteUrl if not set. Used by img() helper.
+      imageBaseUrl: process.env.NUXT_PUBLIC_IMAGE_BASE_URL || siteUrl,
       NUXT_API_BASE_URL: process.env.NUXT_API_BASE_URL,
       NUXT_API_BASE_URL_ASSETS: process.env.NUXT_API_BASE_URL_ASSETS,
       NUXT_DOCUMENT_UPLOAD_URL: process.env.NUXT_DOCUMENT_UPLOAD_URL,

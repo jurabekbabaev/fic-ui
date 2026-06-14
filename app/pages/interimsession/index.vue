@@ -5,7 +5,7 @@ import PageHero from "~/components/shared/PageHero.vue";
 
 const { t } = useI18n();
 import ResultSection from "./result.vue";
-import HeroImage from "@/assets/images/plenarysessions/image 4.png";
+const HeroImage = img("plenarysessions/image 4.png");
 
 const route = useRoute();
 

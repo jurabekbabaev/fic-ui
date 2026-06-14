@@ -1,6 +1,6 @@
 <script setup>
 import { useI18n } from "vue-i18n";
-import FicImage from "@/assets/images/news/FIC+-1.jpg";
+const FicImage = img("news/FIC+-1.jpg");
 const { t, locale } = useI18n();
 const localePath = useLocalePath();
 

@@ -132,16 +132,16 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from "vue";
-import Image1 from "@/assets/images/about/Primkulov Akmal.png";
-import Image2 from "@/assets/images/about/Jon Zaidi.png";
-import Image3 from "@/assets/images/about/Azizbek Akhmadjonov.png";
-import Image4 from "@/assets/images/about/Andrey Pyatakhin1.png";
-import Image5 from "@/assets/images/about/Vaclav Harant.png";
-import Image6 from "@/assets/images/about/selchuk.png";
-import Image7 from "@/assets/images/about/Nika Kurdianini.png";
-import Image8 from "@/assets/images/about/Alex Wang.png";
-import Image9 from "@/assets/images/about/Marius Dan.png";
-import Image10 from "@/assets/images/about/fic.png";
+const Image1 = img("about/Primkulov Akmal.png");
+const Image2 = img("about/Jon Zaidi.png");
+const Image3 = img("about/Azizbek Akhmadjonov.png");
+const Image4 = img("about/Andrey Pyatakhin1.png");
+const Image5 = img("about/Vaclav Harant.png");
+const Image6 = img("about/selchuk.png");
+const Image7 = img("about/Nika Kurdianini.png");
+const Image8 = img("about/Alex Wang.png");
+const Image9 = img("about/Marius Dan.png");
+const Image10 = img("about/fic.png");
 import { useI18n } from "vue-i18n";
 import { useExpertFeedbacksStore } from '@/stores/expertFeedbacks'
 const store = useExpertFeedbacksStore();

@@ -1,6 +1,6 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-import HeroImage from '@/assets/images/plenarysessions/plenary2025/XPI_2417.JPG'
+const HeroImage = img('plenarysessions/XPI_2417.JPG')
 
 defineProps({
   title: { type: String, required: true },

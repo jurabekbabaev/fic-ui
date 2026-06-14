@@ -1,0 +1,66 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches: [main, feat/cpanel-deploy-runtime-images]
+  workflow_dispatch: {}
+
+# Bir vaqtda faqat bitta deploy ishlasin; yangisi kelsa eskisi to'xtaydi
+concurrency:
+  group: deploy-cpanel
+  cancel-in-progress: true
+
+# Maxfiy bo'lmagan sozlamalar shu yerda ochiq turadi.
+# YAGONA secret: CPANEL_SSH_KEY (private SSH key).
+env:
+  CPANEL_HOST: fics.uz
+  CPANEL_USER: l9n7wqq6cx22
+  CPANEL_SSH_PORT: "22"
+  CPANEL_TARGET_DIR: /home/l9n7wqq6cx22/public_html/fics.uz/
+  NUXT_PUBLIC_SITE_URL: https://fic.uniplatforms.uz
+  NUXT_PUBLIC_IMAGE_BASE_URL: https://fics.uz
+  NUXT_API_BASE_URL: https://fic.uniplatforms.uz/api/api/v1
+  NUXT_API_BASE_URL_ASSETS: https://fic.uniplatforms.uz/api/
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Rasmlar git'da YO'Q va build'da kerak emas — kod ularni runtime'da
+      # ${NUXT_PUBLIC_IMAGE_BASE_URL}/images/... dan oladi. Build rasmsiz o'tadi.
+      - name: Build static site
+        run: npm run deploy:build
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.CPANEL_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$CPANEL_SSH_PORT" -H "$CPANEL_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+      # rsync --delete eski kod fayllarini tozalaydi, LEKIN --exclude bilan
+      # cPanel'dagi qo'lda yuklangan rasm/hujjatlarga TEGMAYDI.
+      - name: Deploy via rsync
+        run: |
+          rsync -avz --delete \
+            --exclude '/images/' \
+            --exclude '/documents/' \
+            -e "ssh -i ~/.ssh/deploy_key -p $CPANEL_SSH_PORT" \
+            .output/public/ \
+            "$CPANEL_USER@$CPANEL_HOST:$CPANEL_TARGET_DIR"
+
+      - name: Cleanup SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key

@@ -65,4 +65,11 @@ ErrorDocument 404 /404.html
   AddType image/svg+xml .svg
   AddType font/woff2 .woff2
   AddType application/json .json .webmanifest
+
+  # Images — declare both lower and UPPER case extensions so files like
+  # ATM_9764.JPG are served as image/jpeg, not text/x-generic.
+  AddType image/jpeg .jpg .jpeg .JPG .JPEG
+  AddType image/png .png .PNG
+  AddType image/gif .gif .GIF
+  AddType image/webp .webp .WEBP
 </IfModule>

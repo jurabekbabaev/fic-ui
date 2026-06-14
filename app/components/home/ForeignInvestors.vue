@@ -56,16 +56,16 @@
 <script setup>
 import WLocaleLink from "../shared/WLocaleLink.vue";
 import { useI18n } from "vue-i18n";
-import LazizImage from "@/assets/images/experts/foreign1.png";
-import AndiImage from "@/assets/images/experts/foreign2.png";
-import KanokpanImage from "@/assets/images/experts/foreign3.png";
-import NeilImage from "@/assets/images/experts/foreign4.png";
-import AzizImage from "@/assets/images/experts/aziz2.png";
-import AdBank from "@/assets/images/brands/ad-bank.png";
-import EBank from "@/assets/images/brands/e-bank.png";
-import IfcBank from "@/assets/images/brands/ifc2.png";
-import FICLogo from "@/assets/images/ba12d8ddde154e568c101e56e4a917883a60b20a.png";
-import Logo from "@/assets/images/brands/miit.png";
+const LazizImage = img("experts/foreign1.png");
+const AndiImage = img("experts/foreign2.png");
+const KanokpanImage = img("experts/foreign3.png");
+const NeilImage = img("experts/foreign4.png");
+const AzizImage = img("experts/aziz2.png");
+const AdBank = img("brands/ad-bank.png");
+const EBank = img("brands/e-bank.png");
+const IfcBank = img("brands/ifc2.png");
+const FICLogo = img("ba12d8ddde154e568c101e56e4a917883a60b20a.png");
+const Logo = img("brands/miit.png");
 
 const { t } = useI18n();
 

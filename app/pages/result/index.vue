@@ -2,7 +2,7 @@
 import { useI18n } from "vue-i18n";
 import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 import PageHero from "~/components/shared/PageHero5.vue";
-import FicImage from "@/assets/images/news/FIC+-1.jpg";
+const FicImage = img("news/FIC+-1.jpg");
 const { t, locale } = useI18n();
 const localePath = useLocalePath();
 
