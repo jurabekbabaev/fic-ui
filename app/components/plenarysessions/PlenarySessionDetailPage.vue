@@ -77,21 +77,21 @@ useHead(() => ({
             <div
               v-for="(stat, index) in localizedRoadmap.stats"
               :key="`${session.year}-stat-${index}`"
-              class="rounded-2xl px-5 py-5 lg:px-6 lg:py-6"
+              class="flex min-h-[120px] flex-col justify-between rounded-2xl px-5 py-5 lg:px-6 lg:py-6"
               :class="index === 1 ? 'bg-[#191C1F]' : 'bg-[#F7F7F7]'"
             >
-              <div
-                class="text-2xl font-black leading-none lg:text-3xl"
-                :class="index === 1 ? 'text-white' : 'text-[#191C1F]'"
-              >
-                {{ stat.value }}
-              </div>
               <p
-                class="mt-2.5 text-xs leading-5 lg:text-sm"
+                class="stat-label text-xs leading-5 lg:text-sm"
                 :class="index === 1 ? 'text-white' : 'text-[#505A63]'"
               >
                 {{ stat.label }}
               </p>
+              <div
+                class="mt-4 text-2xl font-black leading-none lg:text-3xl"
+                :class="index === 1 ? 'text-white' : 'text-[#191C1F]'"
+              >
+                {{ stat.value }}
+              </div>
             </div>
           </div>
 
@@ -178,3 +178,9 @@ useHead(() => ({
     </div>
   </section>
 </template>
+
+<style scoped>
+.stat-label::first-letter {
+  text-transform: uppercase;
+}
+</style>
