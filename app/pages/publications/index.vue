@@ -89,9 +89,9 @@ const analyticsReports = [
               alt=""
               class="w-full rounded-lg"
             />
-            <p class="text-[#00000080] text-sm font-normal mt-3">
+            <!-- <p class="text-[#00000080] text-sm font-normal mt-3">
               14 июня 2026
-            </p>
+            </p> -->
             <p
               class="text-base mb-4 font-medium mt-2 text-[#191C1F] leading-snug"
             >
