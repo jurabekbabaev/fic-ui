@@ -5,35 +5,25 @@ import WLocaleLink from '~/components/shared/WLocaleLink.vue'
 const { t } = useI18n()
 
 const mainParagraphs = [
-  'Совет иностранных инвесторов при Президенте Республики Узбекистан учреждён Постановлением Президента № ПП-4519 от 13 ноября 2019 года как консультативно-совещательный орган для прямого диалога между иностранными инвесторами, международными финансовыми институтами и Правительством Республики Узбекистан.',
-  'По мере расширения деятельности Совета возникла необходимость в постоянно действующем операционном органе. Постановлением Президента № ПП-226 от 18 июля 2025 года поддержано предложение членов Совета и международных финансовых институтов об образовании Секретариата Совета в форме негосударственной некоммерческой организации.',
-  'Во исполнение данного постановления 4 ноября 2025 года зарегистрировано Объединение юридических лиц (Ассоциация, Союз) «Foreign Investors Council», ИНН 312 551 219, — юридическое лицо, выполняющее функции Секретариата Совета.',
+  'association.sections.legalBasis.paragraphs.0',
+  'association.sections.legalBasis.paragraphs.1',
+  'association.sections.legalBasis.paragraphs.2',
 ]
 
-const functions = [
-  'организация пленарных и промежуточных сессий',
-  'координация деятельности 16 рабочих групп',
-  'ежедневное взаимодействие с инвесторами',
-  'сбор и продвижение инициатив',
-  'аналитическое сопровождение Совета',
-]
+const functions = [0, 1, 2, 3, 4]
 
-const structure = [
-  'Общее собрание учредителей — высший орган',
-  'Исполнительный комитет — коллегиальный орган',
-  'Глава Ассоциации / Руководитель Секретариата',
-]
+const structure = [0, 1, 2]
 </script>
 
 <template>
   <div>
     <client-only>
-      <PageHero title="Ассоциация" />
+      <PageHero :title="t('association.hero.title')" />
 
       <div class="container">
         <div class="lg:max-w-[900px] w-full">
           <h1 class="lg:text-[44px] text-[28px] uppercase font-black text-[#191C1F] mb-6">
-            {{ t('Правовая основа и институциональный статус') }}
+            {{ t('association.sections.legalBasis.heading') }}
           </h1>
           <p
             v-for="(paragraph, i) in mainParagraphs"
@@ -44,7 +34,7 @@ const structure = [
           </p>
 
           <WLocaleLink to="/reports" class="btn btn-secondary mt-2">
-            {{ t('Документы') }}
+            {{ t('association.buttons.documents') }}
           </WLocaleLink>
         </div>
 
@@ -53,19 +43,19 @@ const structure = [
         >
           <div class="bg-[#F7F7F7] rounded-2xl p-6 lg:p-7">
             <h2 class="text-lg lg:text-xl uppercase font-black text-[#191C1F]">
-              {{ t('Функции Секретариата') }}
+              {{ t('association.sections.functions.heading') }}
             </h2>
             <ul class="list-disc pl-5 mt-4 text-[#505A63] font-normal text-base flex flex-col gap-2">
-              <li v-for="(item, i) in functions" :key="i">{{ t(item) }}</li>
+              <li v-for="(item, i) in functions" :key="i">{{ t(`association.sections.functions.items.${i}`) }}</li>
             </ul>
           </div>
 
           <div class="bg-[#F7F7F7] rounded-2xl p-6 lg:p-7">
             <h2 class="text-lg lg:text-xl uppercase font-black text-[#191C1F]">
-              {{ t('Структура управления') }}
+              {{ t('association.sections.structure.heading') }}
             </h2>
             <ul class="list-disc pl-5 mt-4 text-[#505A63] font-normal text-base flex flex-col gap-2">
-              <li v-for="(item, i) in structure" :key="i">{{ t(item) }}</li>
+              <li v-for="(item, i) in structure" :key="i">{{ t(`association.sections.structure.items.${i}`) }}</li>
             </ul>
           </div>
         </div>

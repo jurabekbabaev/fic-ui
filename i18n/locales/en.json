@@ -1094,5 +1094,47 @@
       "legalReforms": "Legal Reforms",
       "internationalImage": "International Image"
     }
+  },
+  "association": {
+    "hero": {
+      "title": "Association"
+    },
+    "sections": {
+      "legalBasis": {
+        "heading": "Legal Basis and Institutional Status",
+        "paragraphs": [
+          "The Foreign Investors' Council under the President of the Republic of Uzbekistan was established by Presidential Resolution No. PP-4519 dated November 13, 2019 as a consultative and advisory body for direct dialogue between foreign investors, international financial institutions and the Government of the Republic of Uzbekistan.",
+          "As the Council's activities expanded, the need arose for a permanently functioning operational body. By Presidential Resolution No. PP-226 dated July 18, 2025, the proposal of the Council members and international financial institutions to establish the Secretariat of the Council in the form of a non-governmental non-profit organization was supported.",
+          "In execution of this resolution, on November 4, 2025, the Association of Legal Entities (Association, Union) \"Foreign Investors Council\", TIN 312 551 219, was registered — a legal entity performing the functions of the Secretariat of the Council."
+        ]
+      },
+      "functions": {
+        "heading": "Functions of the Secretariat",
+        "items": [
+          "Organization of plenary and interim sessions",
+          "Coordination of 16 working groups",
+          "Daily interaction with investors",
+          "Collection and promotion of initiatives",
+          "Analytical support of the Council"
+        ]
+      },
+      "structure": {
+        "heading": "Governance Structure",
+        "items": [
+          "General Assembly of Founders — supreme body",
+          "Executive Committee — collegial body",
+          "Head of the Association / Secretary of the Secretariat"
+        ]
+      }
+    },
+    "buttons": {
+      "documents": "Documents"
+    }
+  },
+  "homePage": {
+    "aboutUs": {
+      "heading": "About Us",
+      "description": "Representatives of international organizations shared their impressions and results of participating in the Foreign Investors Council."
+    }
   }
 }

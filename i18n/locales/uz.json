@@ -1099,5 +1099,47 @@
       "legalReforms": "Huquqiy islohotlar",
       "internationalImage": "Xalqaro imidj"
     }
+  },
+  "homePage": {
+    "aboutUs": {
+      "heading": "Biz haqida",
+      "description": "Xalqaro tashkilotlarning rahbarlari Chet el investorlari Kengashida ishtirok etishning taassurotlari va natijalarini baham koshishdi."
+    }
+  },
+  "association": {
+    "hero": {
+      "title": "Assotsiatsiya"
+    },
+    "sections": {
+      "legalBasis": {
+        "heading": "Huquqiy asosi va institutsional status",
+        "paragraphs": [
+          "O'zbekiston Respublikasining Prezidenti huzuridagi Chet el investorlari Kengashi 2019-yil 13-noyabr sanasidagi Prezidentning PP-4519-sonli farmoniga asosan chet el investorlari, xalqaro moliyaviy institutlar va O'zbekiston Respublikasining Hukumati o'rtasida bevosita muloqot qilish uchun maslahatchan-maslahatchi organ sifatida tashkil etilgan.",
+          "Kengash faoliyati kengayib borgani sayin, doimiy faoliyat olib boradigan operatsion organ zaruriyati paydo bo'ldi. 2025-yil 18-iyul sanasidagi Prezidentning PP-226-sonli farmoniga asosan Kengash a'zolari va xalqaro moliyaviy institutlarning Kengash Sekretariatini davlat bo'lmagan notijorat tashkiloti shaklida tashkil etish taklifi qo'llab-quvvatlandi.",
+          "Shu farmonni bajarilishida 2025-yil 4-noyabr sanasida O'zbekiston Respublikasining Prezidenti huzuridagi Chet el investorlari Kengashi Sekretariatining funktsiyalarini bajaradigan huquqiy shahsi «Foreign Investors Council», INN 312 551 219 tashkil etilgan."
+        ]
+      },
+      "functions": {
+        "heading": "Sekretariatning funktsiyalari",
+        "items": [
+          "Plenalar va vaqtincha sessiyalarni tashkil etish",
+          "16 ta ishchi guruhlarning faoliyatini koordinatsiya qilish",
+          "Investorlar bilan kundalik o'zaro muloqot",
+          "Iniciativalarni to'plash va rivojlantirish",
+          "Kengashning analitik qo'llab-quvvatlash"
+        ]
+      },
+      "structure": {
+        "heading": "Boshqaruv tuzilmasi",
+        "items": [
+          "Tashabbuskorlar umumiy yig'ilishi — eng yuqori organ",
+          "Ijroiya komiteti — kollektiv organ",
+          "Assotsiatsiya Rahbari / Sekretariatning Boshqaruvchisi"
+        ]
+      }
+    },
+    "buttons": {
+      "documents": "Hujjatlar"
+    }
   }
 }
