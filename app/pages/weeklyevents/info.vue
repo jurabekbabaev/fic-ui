@@ -236,15 +236,17 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <client-only>
-    <div class="mt-6">
-      <div class="mb-6">
-        <h1 class="text-[32px] lg:text-[72px] font-extrabold uppercase text-[#191C1F] text-center">
-          {{ t("Блиц-интервью") }}
-        </h1>
+  <div>
+    <client-only>
+      <div class="container">
+        <section class="blitzInterview__head">
+          <h1 class="blitzInterview__title">{{ t("Блиц-интервью") }}</h1>
+          <p class="blitzInterview__text">{{ t("blitzInterview.description") }}</p>
+        </section>
       </div>
-      <div
-        v-if="!showAll"
+      <div class="mt-6">
+        <div
+          v-if="!showAll"
         class="relative lg:w-full w-full select-none"
         :class="{ 'cursor-grab': !isDragging, 'cursor-grabbing': isDragging }"
         @touchstart="onTouchStart"
@@ -409,9 +411,10 @@ onUnmounted(() => {
         >
           {{ t('Yopish') }}
         </button>
+        </div>
       </div>
-    </div>
-  </client-only>
+    </client-only>
+  </div>
 </template>
 
 <style scoped>
@@ -512,5 +515,27 @@ onUnmounted(() => {
     transform: none;
     opacity: 1;
   }
+}
+
+.blitzInterview__head {
+  text-align: center;
+  margin-top: 64px;
+  margin-bottom: 48px;
+}
+
+.blitzInterview__title {
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #191c1f;
+  line-height: 1.05;
+}
+
+.blitzInterview__text {
+  margin: 12px auto 0;
+  max-width: 560px;
+  color: #505a63;
+  font-size: 16px;
+  line-height: 1.55;
 }
 </style>
