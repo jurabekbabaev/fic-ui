@@ -3,7 +3,6 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 import { getLocalizedField } from "~/composables/helpers";
 import { useNewsStore } from "@/stores/news";
-import PageHero from "~/components/shared/PageHero4.vue";
 const models = computed(() => {
   return store.list;
 });
@@ -25,8 +24,12 @@ const toNextPage = () => {
 </script>
 <template>
   <div>
-    <PageHero :title="t('Новости')" />
     <div class="container">
+      <h1
+        class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[100px] mb-14"
+      >
+        {{ t('Новости') }}
+      </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <div
           class="p-4 rounded-xl bg-[#F7F7F7]"
