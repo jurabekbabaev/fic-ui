@@ -33,6 +33,10 @@ const localizedMeta = computed(() => {
   };
 });
 
+const localizedRoadmap = computed(() => {
+  return props.session.roadmap?.[currentLocale.value] ?? props.session.roadmap?.ru;
+});
+
 useHead(() => ({
   title: `${localizedMeta.value.title} | FIC`,
 }));
@@ -48,12 +52,9 @@ useHead(() => ({
       />
 
       <div class="mx-auto mt-10 max-w-[880px] lg:mt-14">
-        <WLocaleLink
-          to="/plenarysessions"
-          class="btn btn-secondary btn-sm"
-        >
-          {{ t("Все пленарные сессии") }}
-        </WLocaleLink>
+        <p v-if="session.sessionNote" class="text-sm leading-6 text-[#505A63]">
+          {{ session.sessionNote }}
+        </p>
 
         <p class="mt-6 text-base leading-7 text-[#505A63] lg:text-lg lg:leading-8">
           {{ localizedText.summary }}
@@ -63,6 +64,86 @@ useHead(() => ({
           <p v-for="(paragraph, index) in localizedText.content" :key="`${session.year}-paragraph-${index}`">
             {{ paragraph }}
           </p>
+        </div>
+
+        <div v-if="localizedRoadmap" class="mt-14 lg:mt-20">
+          <h1
+            class="text-2xl font-black uppercase leading-tight text-[#191C1F] lg:text-[34px] lg:leading-[1.15]"
+          >
+            {{ localizedRoadmap.title }}
+          </h1>
+
+          <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 lg:mt-10">
+            <div
+              v-for="(stat, index) in localizedRoadmap.stats"
+              :key="`${session.year}-stat-${index}`"
+              class="rounded-2xl px-5 py-5 lg:px-6 lg:py-6"
+              :class="index === 1 ? 'bg-[#191C1F]' : 'bg-[#F7F7F7]'"
+            >
+              <div
+                class="text-2xl font-black leading-none lg:text-3xl"
+                :class="index === 1 ? 'text-white' : 'text-[#191C1F]'"
+              >
+                {{ stat.value }}
+              </div>
+              <p
+                class="mt-2.5 text-xs leading-5 lg:text-sm"
+                :class="index === 1 ? 'text-white' : 'text-[#505A63]'"
+              >
+                {{ stat.label }}
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 overflow-hidden rounded-2xl border border-[#E5E5E5] lg:mt-10">
+            <table class="w-full border-collapse">
+              <tbody>
+                <tr
+                  v-for="(initiative, index) in localizedRoadmap.initiatives"
+                  :key="`${session.year}-initiative-${index}`"
+                  class="border-b border-[#E5E5E5] transition-colors last:border-b-0 hover:bg-[#F7F7F7]"
+                >
+                  <td
+                    class="w-10 px-4 py-4 align-top text-lg leading-relaxed text-[#191C1F] lg:px-5"
+                  >
+                    •
+                  </td>
+                  <td
+                    class="px-4 py-4 align-top text-sm leading-relaxed text-[#191C1F] lg:px-5 lg:text-base"
+                  >
+                    {{ initiative }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            v-if="localizedRoadmap.columns.length"
+            class="mt-8 grid grid-cols-1 gap-4 lg:mt-10 lg:grid-cols-2 lg:gap-6"
+          >
+            <div
+              v-for="(column, index) in localizedRoadmap.columns"
+              :key="`${session.year}-column-${index}`"
+              class="rounded-2xl bg-[#F7F7F7] p-6 lg:p-8"
+            >
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-[#191C1F] lg:text-sm"
+              >
+                {{ column.title }}
+              </p>
+              <ul class="mt-5 space-y-4">
+                <li
+                  v-for="(item, itemIndex) in column.items"
+                  :key="`${session.year}-column-${index}-item-${itemIndex}`"
+                  class="flex gap-3 text-sm leading-relaxed text-[#505A63] lg:text-base"
+                >
+                  <span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#191C1F]"></span>
+                  <span>{{ item }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div
@@ -75,6 +156,15 @@ useHead(() => ({
             class="btn btn-secondary"
           >
             {{ t(session.externalLink.label) }}
+          </a>
+          <a
+            v-if="session.externalLink2"
+            :href="session.externalLink2.href"
+            target="_blank"
+            rel="noreferrer"
+            class="btn btn-secondary"
+          >
+            {{ t(session.externalLink2.label) }}
           </a>
           <a
             :href="session.downloadFile.href"
