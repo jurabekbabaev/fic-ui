@@ -53,7 +53,7 @@ useHead(() => ({
 
       <div class="mx-auto mt-10 max-w-[880px] lg:mt-14">
         <p v-if="session.sessionNote" class="text-sm leading-6 text-[#505A63]">
-          {{ session.sessionNote }}
+          {{ t(session.sessionNote) }}
         </p>
 
         <p class="mt-6 text-base leading-7 text-[#505A63] lg:text-lg lg:leading-8">
