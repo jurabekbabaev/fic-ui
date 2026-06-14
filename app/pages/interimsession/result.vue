@@ -44,7 +44,7 @@ const interimRows = ref<IInterimRow[]>([
     no: "ИС-6",
     date: "18 мая 2026",
     note: "Впервые под председательством вице-премьера Ж. Ходжаева. Презентовано и принято 116 инициатив",
-    link: "/interimsession/session-v",
+    link: "/interimsession/session-vi",
   },
 ]);
 

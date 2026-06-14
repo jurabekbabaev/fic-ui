@@ -65,6 +65,9 @@ const localePath = useLocalePath();
 const goBack = async () => {
   await navigateTo(localePath("/interimsession"));
 };
+const openDocuments = async () => {
+  await navigateTo(localePath("/reports"));
+};
 </script>
 
 <template>
@@ -151,6 +154,34 @@ const goBack = async () => {
             </li>
           </ul>
         </section>
+
+        <!-- Legal basis -->
+        <div
+          class="flex items-center gap-3 mt-12 lg:mt-16 px-4 py-3 rounded-xl bg-[#F7F7F7] border border-[#0000000D]"
+        >
+          <i class="icon-file-text text-[#505A63] text-lg shrink-0 mt-0.5"></i>
+          <div class="flex-1 min-w-0">
+            <span
+              class="block text-xs font-semibold text-[#191C1F] uppercase tracking-wide mb-0.5"
+            >
+              {{ t("Правовая основа") }}
+            </span>
+            <span class="text-sm text-[#505A63] font-normal leading-relaxed">
+              {{
+                t(
+                  "По Итогам Постановление Президента от 18.07.2025 (вступила в силу 21.07.2025) - ПП-226"
+                )
+              }}
+            </span>
+          </div>
+          <button
+            @click.stop="openDocuments"
+            class="shrink-0 cursor-pointer flex items-center gap-1 text-sm font-medium text-[#191C1F] hover:opacity-70 transition-opacity whitespace-nowrap"
+          >
+            {{ t("Подробнее") }}
+            <i class="icon-move-right text-base"></i>
+          </button>
+        </div>
       </div>
     </client-only>
   </div>
