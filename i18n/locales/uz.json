@@ -1125,12 +1125,26 @@
     "alt_funds_desc": "Muqobil investitsiya fondlari. Alternativ (venchur) investitsiyalar bo‘yicha qonunchilikni ishlab chiqish va O‘zbekistonni xususiy hamda venchur kapitalni jalb qilish bo‘yicha mintaqaviy markazga aylantirish.",
     "body_before_1": "120 ta tashabbus ishlab chiqildi. Tematik bloklar Kengash a’zolari tomonidan mamlakat investitsiya muhitini rivojlantirishning keyingi bosqichi uchun muhim deb belgilangan ustuvor yo‘nalishlarni qamrab oldi — regulyator va ma’muriy islohotlardan tortib tarmoq va transchegaraviy masalalargacha.",
     "body_before_2": "Har bir blok ishchi guruh rahbarlarining takliflari bilan ochildi, so‘ngra hukumat tomoni javobi va ishtirokchilar bilan ochiq muhokama o‘tkazildi.",
+    "circular_economy_desc": "Aylanma iqtisodiyot. Investitsiya faoliyatining ekologik ta’sirini boshqarish bo’yicha ilg’or xalqaro tajribalarni tahlil qilish va moslashtirish; Kengashning «Circular Economy» mukofotini joriy etish.",
+    "ai_desc": "Sun’iy intellektni rivojlantirish. O’zbekiston iqtisodiyotining ustuvor yo’nalishlari uchun sun’iy intellekt sohasidagi jahon amaliyotlarini o’rganish va moslashtirish.",
     "year_2025": "<strong>2025</strong> yil ushbu yo‘nalishning to‘g‘riligini yana bir bor tasdiqladi. <strong>YAIM</strong> o‘sishi <strong>7,7%</strong> ga yetib, aksariyat prognozlardan yuqori bo‘ldi; inflyatsiya <strong>7,3%</strong> gacha pasaydi, ishsizlik darajasi esa <strong>4,8%</strong> ni tashkil etdi. <strong>Fitch</strong> yetti yil ichida ilk bor suveren reytingni <strong>BB</strong> darajasiga oshirdi, <strong>S&P</strong> <strong>BB</strong> reytingini tasdiqladi, <strong>Moody's</strong> esa <strong>Ba3</strong> reytingini saqlab qolib, prognozni «ijobiy»ga yaxshiladi. Jahon Savdo Tashkilotiga a'zo bo‘lish jarayoni yakunlanish arafasida bo‘lib, bu <strong>2017</strong> yilgi valyuta liberallashuvidan buyon iqtisodiyotning eng muhim tarkibiy ochilishidir."
   },
   "uzb": {
     "footer": {
       "government_composition": "Kengashning hukumat tomonidan rasmiy tarkibi.",
       "presidential_decree": "Prezidentning PP-226-son qarori, 2-ilova."
+    }
+  },
+  "leader": {
+    "sandro_rtveladze": {
+      "text": "Sandro Rtveladze Ishchi guruh raisi o‘rinbosari va Ipoteka Bank OTP Group bosh direktori lavozimida faoliyat yuritadi. U bank va moliyaviy texnologiyalar sohasida 15 yildan ortiq xalqaro tajribaga ega bo‘lib, jumladan TBC Bank (O‘zbekiston) va OTP Bank (Rossiya)da rahbarlik lavozimlarida ishlagan. Uning rahbarligida Ipoteka Bank raqamli transformatsiya, biznes jarayonlarini optimallashtirish va mijozlarga xizmat sifatini oshirish strategiyasini amalga oshirmoqda. Asosiy e’tibor innovatsion bank xizmatlari va bozordagi pozitsiyani mustahkamlash orqali mijozlar va hamkorlar uchun qo‘shimcha qiymat yaratishga qaratilgan."
+    }
+  },
+  "members": {
+    "cadastre": {
+      "fullname": "Lavozim bo’yicha",
+      "position": "Kadastr agentligining mas’ul vakili, Ishchi guruh kotibi",
+      "mift_position": "Investitsiyalar, sanoat va savdo vazirligi mas’ul vakili"
     }
   }
 }

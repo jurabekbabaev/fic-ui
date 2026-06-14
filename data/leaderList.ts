@@ -208,10 +208,8 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         },
         {
           image: NoImage,
-          fullname: t("По должности"),
-          position: t(
-            "Ответственное лицо Кадастрового агенства, секретарь Рабочей группы"
-          ),
+          fullname: t("members.cadastre.fullname"),
+          position: t("members.cadastre.position"),
         },
       ],
     },
@@ -258,16 +256,16 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         },
         {
           image: NoImage,
-          fullname: t("По должности"),
+          fullname: t("members.cadastre.fullname"),
           position: t(
-            "Ответственное лицо Министерства инвестиций, промышленности и торговли"
+            "members.cadastre.mift_position"
           ),
         },
         {
           image: NoImage,
-          fullname: t("По должности"),
+          fullname: t("members.cadastre.fullname"),
           position: t(
-            "Ответственное лицо Кадастрового агенства, секретарь Рабочей группы"
+            "members.cadastre.position"
           ),
         },
       ],
@@ -336,16 +334,16 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         },
         {
           image: NoImage,
-          fullname: t("По должности"),
+          fullname: t("members.cadastre.fullname"),
           position: t(
-            "Ответственное лицо Министерства инвестиций, промышленности и торговли"
+            "members.cadastre.mift_position"
           ),
         },
         {
           image: NoImage,
-          fullname: t("По должности"),
+          fullname: t("members.cadastre.fullname"),
           position: t(
-            "Ответственное лицо Кадастрового агенства, секретарь Рабочей группы"
+            "members.cadastre.position"
           ),
         },
       ],
@@ -402,16 +400,16 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         },
         {
           image: NoImage,
-          fullname: t("По должности"),
+          fullname: t("members.cadastre.fullname"),
           position: t(
-            "Ответственное лицо Министерства инвестиций, промышленности и торговли"
+            "members.cadastre.mift_position"
           ),
         },
         {
           image: NoImage,
-          fullname: t("По должности"),
+          fullname: t("members.cadastre.fullname"),
           position: t(
-            "Ответственное лицо Кадастрового агенства, секретарь Рабочей группы"
+            "members.cadastre.position"
           ),
         },
       ],
@@ -499,16 +497,16 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         },
         {
           image: NoImage,
-          fullname: t("По должности"),
+          fullname: t("members.cadastre.fullname"),
           position: t(
-            "Ответственное лицо Министерства инвестиций, промышленности и торговли"
+            "members.cadastre.mift_position"
           ),
         },
         {
           image: NoImage,
-          fullname: t("По должности"),
+          fullname: t("members.cadastre.fullname"),
           position: t(
-            "Ответственное лицо Кадастрового агенства, секретарь Рабочей группы"
+            "members.cadastre.position"
           ),
         },
       ],
@@ -627,9 +625,9 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         },
         {
           image: NoImage,
-          fullname: t("По должности"),
+          fullname: t("members.cadastre.fullname"),
           position: t(
-            "Ответственное лицо Кадастрового агенства, секретарь Рабочей группы"
+            "members.cadastre.position"
           ),
         },
       ],
@@ -642,9 +640,7 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         "Председатель Национального комитета по экологии и изменению климата"
       ),
       direction: t("МРГ по циркулярной экономике"),
-      directiondesc: t(
-        "Циркулярная экономика. Анализ и адаптация передовых международных практик управления экологическим воздействием инвестиционной деятельности; учреждение премии Совета «Circular Economy»."
-      ),
+      directiondesc: t("invest.circular_economy_desc"),
       directionid: 9,
       partner_image: mukae,
       partner_name: t("Казумаса Мукае"),
@@ -693,16 +689,16 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         },
         {
           image: NoImage,
-          fullname: t("По должности"),
+          fullname: t("members.cadastre.fullname"),
           position: t(
-            "Ответственное лицо Министерства инвестиций, промышленности и торговли"
+            "members.cadastre.mift_position"
           ),
         },
         {
           image: NoImage,
-          fullname: t("По должности"),
+          fullname: t("members.cadastre.fullname"),
           position: t(
-            "Ответственное лицо Кадастрового агенства, секретарь Рабочей группы"
+            "members.cadastre.position"
           ),
         },
       ],
@@ -713,9 +709,7 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
       fullname: t("Олимжон Умаров"),
       position: t("Заместитель министра цифровых технологий"),
       direction: t("МРГ по развитию искусственного интеллекта"),
-      directiondesc: t(
-        "Развитие искусственного интеллекта. Изучение и адаптация мировых практик в области искусственного интеллекта для приоритетных направлений экономики Узбекистана."
-      ),
+      directiondesc: t("invest.ai_desc"),
       directionid: 10,
       partner_image: Erlan,
       partner_name: t("Ерлан Досымбеков"),
@@ -780,9 +774,9 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         },
         {
           image: NoImage,
-          fullname: t("По должности"),
+          fullname: t("members.cadastre.fullname"),
           position: t(
-            "Ответственное лицо Кадастрового агенства, секретарь Рабочей группы"
+            "members.cadastre.position"
           ),
         },
       ],

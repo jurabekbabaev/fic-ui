@@ -10,42 +10,58 @@ import WLocaleLink from "~/components/shared/WLocaleLink.vue";
 import { useNewsStore } from "@/stores/news";
 const models = computed(() => {
   return store.list;
-})
-const store = useNewsStore()
+});
+const store = useNewsStore();
 const getModels = () => {
-  store.getList({per_page: 6})
-}
+  store.getList({ per_page: 6 });
+};
 onMounted(() => {
   getModels();
-})
+});
 </script>
 
 <template>
   <div class="bg-[#191C1F] py-[40px] md:py-[80px]">
     <div class="container">
       <!-- Header -->
-      <div class="mb-[30px] md:mb-[50px] flex flex-wrap justify-between items-center gap-3">
+      <div
+        class="mb-[30px] md:mb-[50px] flex flex-wrap justify-between items-center gap-3"
+      >
         <h1 class="lg:text-[64px] text-[32px] font-black text-white leading-1">
-          {{ t('Новости') }}
+          {{ t("Новости") }}
         </h1>
-        <WLocaleLink to="/news" class="btn btn-secondary btn-sm !bg-white !text-[#191C1F] hover:!bg-[#F7F7F7] hover:!text-[#191C1F]">
-          {{ t('Все новости') }}
+        <WLocaleLink
+          to="/news"
+          class="btn btn-secondary btn-sm !bg-white !text-[#191C1F] hover:!bg-[#F7F7F7] hover:!text-[#191C1F]"
+        >
+          {{ t("Все новости") }}
         </WLocaleLink>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div class="rounded-xl bg-[#F7F7F7] overflow-hidden" v-for="(model,index) in models" :key="index">
-          <img :src="model.image_path" alt="" class="w-full h-[200px] object-cover" />
+        <div
+          class="rounded-xl bg-[#F7F7F7] overflow-hidden"
+          v-for="(model, index) in models"
+          :key="index"
+        >
+          <img :src="model.image_path" alt="" class="object-cover" />
           <div class="p-4">
-          <div class="flex justify-between mt-1">
-            <p class="text-[#00000080] text-sm font-normal">{{ date(model.date, 'MONTH DAY, YYYY') }}</p>
-            <a :href="model.other_link" target="_blank" class="text-[#191C1F] text-sm font-normal flex items-center">
-              <span>{{$t('Подробнее')}}</span> <i class="icon-move-right ml-1"></i>
-            </a>
-          </div>
-          <p class="text-base font-medium mt-3 text-[#191C1F]">
-            {{ getLocalizedField(model, "title") }}
-          </p>
+            <div class="flex justify-between mt-1">
+              <p class="text-[#00000080] text-sm font-normal">
+                {{ date(model.date, "MONTH DAY, YYYY") }}
+              </p>
+              <a
+                :href="model.other_link"
+                target="_blank"
+                class="text-[#191C1F] text-sm font-normal flex items-center"
+              >
+                <span>{{ $t("Подробнее") }}</span>
+                <i class="icon-move-right ml-1"></i>
+              </a>
+            </div>
+            <p class="text-base font-medium mt-3 text-[#191C1F]">
+              {{ getLocalizedField(model, "title") }}
+            </p>
           </div>
         </div>
       </div>
