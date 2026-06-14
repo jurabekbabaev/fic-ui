@@ -169,7 +169,7 @@ onBeforeUnmount(() => {
 <template>
   <div>
     <client-only>
-      <PageHero title="История СИИ" />
+      <PageHero title="История Совета" />
       <div class="container">
         <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-10 lg:gap-20 items-center">
           <div>
