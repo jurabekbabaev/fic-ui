@@ -9,10 +9,7 @@ useHead({
   title: `${t("Инвестиции в Узбекистан")} | FIC`,
 });
 
-const intro = [
-  "С <strong>2017</strong> года Узбекистан осуществил одну из самых масштабных экономических трансформаций в Евразии. Либерализация валютного рынка, налоговая и судебная реформы, открытие рынков капитала и приватизация превратили прежде закрытую экономику в одно из наиболее динамичных инвестиционных направлений региона. Сегодня это крупнейший по населению рынок Центральной Азии — около <strong>37,7 млн</strong> человек — с устойчиво растущим внутренним спросом.",
-  "<strong>2025</strong> год подтвердил эту траекторию. Рост <strong>ВВП</strong> достиг <strong>7,7%</strong> — выше большинства прогнозов; инфляция снизилась до <strong>7,3%</strong>, безработица — до <strong>4,8%</strong>. <strong>Fitch</strong> впервые за семь лет повысил суверенный рейтинг до <strong>BB</strong>, <strong>S&amp;P</strong> подтвердил уровень <strong>BB</strong>, <strong>Moody's</strong> сохранил <strong>Ba3</strong> с улучшением прогноза до «позитивного». Завершается процесс вступления во Всемирную торговую организацию — крупнейшее структурное открытие экономики со времён валютной либерализации <strong>2017</strong> года.",
-];
+const intro = ["invest.since_2017", "invest.year_2025"];
 
 type Stat = {
   value?: number;
@@ -330,9 +327,9 @@ const timeline = [
           </div>
           <div class="invest-intro__body">
             <p
-              v-for="(paragraph, index) in intro"
+              v-for="(key, index) in intro"
               :key="`invest-intro-${index}`"
-              v-html="paragraph"
+              v-html="t(key)"
             ></p>
           </div>
         </section>
@@ -523,11 +520,7 @@ const timeline = [
               {{ t("Источники данных") }}
             </span>
             <span class="text-sm text-[#505A63] font-normal leading-relaxed">
-              {{
-                t(
-                  "МВФ (Article IV, 2026), Всемирный банк, ЕБРР; Fitch, S&P, Moody's; обращение Президента по итогам 2025 года; invest.gov.uz / МИПТ; Руководство инвестора PwC."
-                )
-              }}
+              {{ t("invest.sources") }}
             </span>
           </div>
           <button
