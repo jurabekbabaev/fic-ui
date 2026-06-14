@@ -298,14 +298,7 @@ function ViewReadMore(item: IType) {
 }
 
 .wg-stat-tab--active {
-  background: #191c1f;
-  border-color: #191c1f;
-  box-shadow: 0 12px 32px rgba(25, 28, 31, 0.2);
   transform: translateY(-2px);
-}
-
-.wg-stat-tab--active:hover {
-  border-color: #191c1f;
 }
 
 .wg-stat-tab__count {
@@ -315,19 +308,11 @@ function ViewReadMore(item: IType) {
   color: #191c1f;
 }
 
-.wg-stat-tab--active .wg-stat-tab__count {
-  color: #fff;
-}
-
 .wg-stat-tab__label {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.4;
   color: #505a63;
-}
-
-.wg-stat-tab--active .wg-stat-tab__label {
-  color: rgba(255, 255, 255, 0.75);
 }
 
 .diamond {
