@@ -12,9 +12,51 @@ import Uzum from "@/assets/images/brands/uzum.png";
 import Acdf from "@/assets/images/brands/acdf-uz.png";
 import Ey from "@/assets/images/brands/ey.png";
 import Image10 from "@/assets/images/leaders/sandro.png";
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
+
+const ANIM_DURATION = 1500;
+const statsTargets = [6, 10];
+const statsDisplay = ref([0, 0]);
+const statsRef = ref<HTMLElement | null>(null);
+const observers: IntersectionObserver[] = [];
+
+function easeOutCubic(x: number) {
+  return 1 - Math.pow(1 - x, 3);
+}
+
+function animateStats() {
+  const start = performance.now();
+  const step = (now: number) => {
+    const progress = Math.min((now - start) / ANIM_DURATION, 1);
+    const eased = easeOutCubic(progress);
+    statsDisplay.value = statsTargets.map((target) => Math.floor(eased * target));
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+onMounted(async () => {
+  await nextTick();
+  if (!statsRef.value) return;
+  let done = false;
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting && !done) {
+          done = true;
+          animateStats();
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+  obs.observe(statsRef.value);
+  observers.push(obs);
+});
+
+onBeforeUnmount(() => observers.forEach((o) => o.disconnect()));
 interface IType {
   id: number;
   icon: string;
@@ -106,10 +148,20 @@ function ViewReadMore(item: IType) {
       <h1 class="lg:text-[72px] text-[32px] uppercase font-black">
         {{ t("Рабочие группы") }}
       </h1>
-      <h1 class="lg:text-[48px] text-[32px] uppercase font-black mt-4">
+      <div ref="statsRef" class="wg-stat-tabs mt-8">
+        <div class="wg-stat-tab wg-stat-tab--active">
+          <span class="wg-stat-tab__count">{{ statsDisplay[0] }}</span>
+          <span class="wg-stat-tab__label">{{ t("Рабочие группы Совета") }}</span>
+        </div>
+        <div class="wg-stat-tab">
+          <span class="wg-stat-tab__count">{{ statsDisplay[1] }}</span>
+          <span class="wg-stat-tab__label">{{ t("Межведомственные рабочие группы") }}</span>
+        </div>
+      </div>
+
+      <h1 class="lg:text-[48px] text-[32px] uppercase font-black mt-10">
         {{ t("Рабочие группы (РГ)") }}
       </h1>
-
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-8">
         <div
           v-for="(item, index) in data"
@@ -177,11 +229,76 @@ function ViewReadMore(item: IType) {
             ></i>
           </div>
         </div>
-      </div>
+        </div>
+
     </div>
   </div>
 </template>
 <style>
+.wg-stat-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 480px) {
+  .wg-stat-tabs {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wg-stat-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 24px 28px;
+  border-radius: 20px;
+  border: 1.5px solid rgba(25, 28, 31, 0.1);
+  background: #fff;
+  text-align: left;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.wg-stat-tab:hover {
+  border-color: rgba(25, 28, 31, 0.25);
+  box-shadow: 0 8px 24px rgba(25, 28, 31, 0.07);
+  transform: translateY(-2px);
+}
+
+.wg-stat-tab--active {
+  background: #191c1f;
+  border-color: #191c1f;
+  box-shadow: 0 12px 32px rgba(25, 28, 31, 0.2);
+  transform: translateY(-2px);
+}
+
+.wg-stat-tab--active:hover {
+  border-color: #191c1f;
+}
+
+.wg-stat-tab__count {
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 700;
+  line-height: 1;
+  color: #191c1f;
+}
+
+.wg-stat-tab--active .wg-stat-tab__count {
+  color: #fff;
+}
+
+.wg-stat-tab__label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #505a63;
+}
+
+.wg-stat-tab--active .wg-stat-tab__label {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 .diamond {
   width: 70px;
   height: 70px;
