@@ -1024,5 +1024,21 @@
     "title": "Sahifa ishlab chiqilmoqda",
     "description": "Kontentni yangilash va to'ldirish bo'yicha ishlaryuritilmoqda. Iltimos, ushbu bo'limni keyinroq ziyorat qiling",
     "backButton": "Bosh sahifaga qaytish"
+  },
+  "management": {
+    "hero": {
+      "title": "Rahbariyat"
+    },
+    "heading": "Kengash rahbarligi",
+    "leaders": [
+      {
+        "fullname": "Shavkat Miromonovich Mirziyoyev",
+        "position": "Kengash raisi — O'zbekiston Respublikasi Prezidenti"
+      },
+      {
+        "fullname": "Odil Reno-Basso",
+        "position": "Kengash hamraisi — Yevropa tiklanish va taraqqiyot banki Prezidenti"
+      }
+    ]
   }
 }

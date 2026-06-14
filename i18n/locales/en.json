@@ -1019,5 +1019,21 @@
     "title": "Page is under development",
     "description": "We are working on updating and filling the content. Please visit this section later",
     "backButton": "Back to home"
+  },
+  "management": {
+    "hero": {
+      "title": "Management"
+    },
+    "heading": "Council Leadership",
+    "leaders": [
+      {
+        "fullname": "Shavkat Miromonovich Mirziyoyev",
+        "position": "Chairman of the Council — President of the Republic of Uzbekistan"
+      },
+      {
+        "fullname": "Odil Reno-Basso",
+        "position": "Co-Chairman of the Council — President of the EBRD"
+      }
+    ]
   }
 }

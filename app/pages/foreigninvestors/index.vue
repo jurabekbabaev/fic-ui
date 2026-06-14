@@ -3,12 +3,12 @@
     <client-only>
       <!-- <ForeignInvestors /> -->
 
-      <PageHero title="Руководство" />
+      <PageHero :title="t('management.hero.title')" />
       <div class="container">
         <div>
           <div class="text-center mb-[28px] fade-in-down fade-in-down--soft">
             <h6 class="lg:text-[64px] text-[32px] font-bold mb-4 text-gray-900 uppercase">
-              {{ t("Руководство Совета") }}
+              {{ t("management.heading") }}
             </h6>
           </div>
 
@@ -86,8 +86,8 @@ const leaders = ref([
     logoAlt: "FIC",
     logoClass: "investor-profile-logo-image--sm",
     image: Management2,
-    fullname: t("Шавкат Миромонович Мирзиёев"),
-    position: t("Председатель Совета — Президент Республики Узбекистан"),
+    fullname: t("management.leaders.0.fullname"),
+    position: t("management.leaders.0.position"),
   },
   {
     id: 2,
@@ -95,8 +95,8 @@ const leaders = ref([
     logoAlt: "EBRD",
     logoClass: "investor-profile-logo-image--ebrd",
     image: Management1,
-    fullname: t("Одиль Рено-Бассо"),
-    position: t("Сопредседатель Совета — Президент ЕБРР"),
+    fullname: t("management.leaders.1.fullname"),
+    position: t("management.leaders.1.position"),
   },
 ]);
 </script>
