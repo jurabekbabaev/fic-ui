@@ -3,19 +3,6 @@ import { useI18n } from "vue-i18n";
 import PageHero from "~/components/shared/PageHero.vue";
 import HeroImage from "@/assets/images/plenarysessions/ps_5.png";
 
-// Reachable only through the "Подробнее" button on the interim sessions table
-// (ИС-6). Opening it directly redirects back.
-definePageMeta({
-  middleware: [
-    (to) => {
-      if (to.query.source !== "interim") {
-        const localePath = useLocalePath();
-        return navigateTo(localePath("/interimsession"));
-      }
-    },
-  ],
-});
-
 const { t } = useI18n();
 
 // Lead paragraph (rendered in the intro card).

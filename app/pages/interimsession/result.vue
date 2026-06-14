@@ -50,7 +50,7 @@ const interimRows = ref<IInterimRow[]>([
 
 const openDocument = async (path?: string) => {
   if (!path) return;
-  await navigateTo({ path: localePath(path), query: { source: "interim" } });
+  await navigateTo(localePath(path));
 };
 </script>
 
