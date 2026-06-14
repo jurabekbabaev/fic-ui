@@ -39,18 +39,17 @@ Natijada cPanel'da `/images/leaders/`, `/images/brands/`, `/images/users/`,
 > `public/documents/` (PDF'lar) ham xuddi shunday `public_html/fics.uz/documents/`
 > ga qo'lda yuklanadi.
 
-### 1b. GitHub Secrets (Settings → Secrets and variables → Actions)
+### 1b. GitHub Secret (faqat BITTA)
 
-| Secret | Qiymat (namuna) |
-|--------|-----------------|
-| `CPANEL_HOST` | `fics.uz` yoki server IP |
-| `CPANEL_USER` | cPanel SSH username (masalan `l9n7wqq6cx22`) |
-| `CPANEL_SSH_PORT` | SSH port (cPanel'da ko'pincha `22` emas — tekshiring) |
-| `CPANEL_SSH_KEY` | Private SSH key (to'liq matn, BEGIN...END bilan) |
-| `CPANEL_TARGET_DIR` | `/home/<user>/public_html/fics.uz/` |
-| `NUXT_PUBLIC_SITE_URL` | `https://fics.uz` |
-| `NUXT_API_BASE_URL` | `https://fics.uz/api/api/v1` |
-| `NUXT_API_BASE_URL_ASSETS` | `https://fics.uz/api/` |
+Maxfiy bo'lmagan sozlamalar (host, user, port, target dir, URL'lar)
+to'g'ridan-to'g'ri [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
+ichidagi `env:` blokda turadi. O'zgartirish kerak bo'lsa o'sha faylni tahrirlang.
+
+Yagona secret (Settings → Secrets and variables → Actions → New repository secret):
+
+| Secret | Qiymat |
+|--------|--------|
+| `CPANEL_SSH_KEY` | Private SSH key (to'liq matn, `-----BEGIN ... END-----` bilan) |
 
 > **SSH key:** cPanel → SSH Access → Manage SSH Keys → Generate yoki Import.
 > Public key **Authorized** bo'lishi kerak. Private key'ni `CPANEL_SSH_KEY`
