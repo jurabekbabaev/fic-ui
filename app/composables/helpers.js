@@ -195,9 +195,9 @@ export function monthToYears(monthCount){
 
 export function getResponseText(n){
   const i18n = useI18n({ useScope: 'global' })
-  let str1 = i18n.t('n отклик');
-  let str2 = i18n.t('n отклика');
-  let str5 = i18n.t('n откликов');
+  let str1 = i18n.t('plural.response.one');
+  let str2 = i18n.t('plural.response.few');
+  let str5 = i18n.t('plural.response.many');
   return ((((n%10)==1)&&((n%100)!=11))?(str1):(((((n%10)>=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(str2):(str5)))
 }
 export function getYear(n){
@@ -209,9 +209,9 @@ export function getYear(n){
 }
 export function getAge(n){
   const i18n = useI18n({ useScope: 'global' })
-  let str1 = i18n.t('age год');
-  let str2 = i18n.t('age года');
-  let str5 = i18n.t('age лет');
+  let str1 = i18n.t('plural.age.one');
+  let str2 = i18n.t('plural.age.few');
+  let str5 = i18n.t('plural.age.many');
   return ((((n%10)==1)&&((n%100)!=11))?(str1):(((((n%10)>=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(str2):(str5)))
 }
 export function getMonthRu(n){
