@@ -51,6 +51,23 @@ export interface PlenarySessionAction {
   fileName?: string;
 }
 
+export interface PlenarySessionRoadmapStat {
+  value: string;
+  label: string;
+}
+
+export interface PlenarySessionRoadmapColumn {
+  title: string;
+  items: string[];
+}
+
+export interface PlenarySessionRoadmap {
+  title: string;
+  stats: PlenarySessionRoadmapStat[];
+  initiatives: string[];
+  columns: PlenarySessionRoadmapColumn[];
+}
+
 export interface PlenarySessionDetail {
   year: PlenarySessionYear;
   cardTitle: string;
@@ -63,8 +80,209 @@ export interface PlenarySessionDetail {
   localizedMeta?: Record<PlenarySessionLocale, PlenarySessionLocalizedMeta>;
   localizedText?: Record<PlenarySessionLocale, PlenarySessionLocalizedText>;
   externalLink: PlenarySessionAction;
+  externalLink2?: PlenarySessionAction;
   downloadFile: PlenarySessionAction;
+  sessionNote?: string;
+  roadmap?: Record<PlenarySessionLocale, PlenarySessionRoadmap>;
 }
+
+const plenarySession2024Roadmap: Record<PlenarySessionLocale, PlenarySessionRoadmap> = {
+  ru: {
+    title:
+      "Дорожная карта II Пленарной сессии — 14 инициатив (ПП-179, Приложение № 3)",
+    stats: [
+      { value: "14", label: "инициатив в дорожной карте" },
+      { value: "4", label: "рабочие группы (инициатива № 8)" },
+      { value: "ПП-179", label: "от 16 мая 2024 года" },
+    ],
+    initiatives: [
+      "Разработка Закона «Об инвестициях и инвестиционной деятельности» (новая редакция) в соответствии с правилами ВТО",
+      "Разработка Закона «О специальных экономических зонах» (новая редакция)",
+      "Разработка Закона «Об альтернативных (венчурных) инвестициях» для стартапов и инновационных проектов",
+      "Организация Ташкентского международного коммерческого суда при Международном центре цифровых технологий",
+      "Реализация проекта ОЭСР «Анализ инвестиционной политики»",
+      "Изучение отмены налогообложения курсовой разницы при формировании уставного фонда",
+      "Изучение механизма сохранения неизменных налоговых ставок для проектов свыше 100 млн долларов",
+      "Создание четырёх рабочих групп в рамках Совета (см. блок ниже)",
+      "Внедрение информационной системы «Единая инвестиционная платформа»",
+      "Стратегия развития искусственного интеллекта и обновления цифровых карт (с Яндекс)",
+      "Ускорение генеральных планов территорий и временный механизм резервирования земель",
+      "Совершенствование порядка налогообложения дивидендов инвесторов",
+      "Современные механизмы регулирования договорных отношений (корпоративный договор, warranty, indemnity)",
+      "Законодательная база для филиалов иностранных компаний без статуса юридического лица",
+    ],
+    columns: [
+      {
+        title: "Четыре рабочие группы (ПП-179)",
+        items: [
+          "развитие рынка капитала и преобразование в международный финансовый центр",
+          "ответственное ведение бизнеса (принципы ОЭСР)",
+          "альтернативные (венчурные) инвестиции — разработка законопроекта",
+          "цифровизация системы работы с инвесторами — электронная платформа",
+        ],
+      },
+      {
+        title: "Статус исполнения",
+        items: [
+          "дорожная карта закреплена Приложением № 3 к ПП-179",
+          "ответственные исполнители — МИПТ, МЭФ, АСР, Минцифры",
+          "на странице показывать инициативы со статусом реализации",
+        ],
+      },
+    ],
+  },
+  uz: {
+    title:
+      "II Yalpi majlisning yo'l xaritasi — 14 ta tashabbus (PP-179, 3-ilova)",
+    stats: [
+      { value: "14", label: "yo'l xaritasidagi tashabbuslar" },
+      { value: "4", label: "ishchi guruhlar (8-tashabbus)" },
+      { value: "PP-179", label: "2024-yil 16-may" },
+    ],
+    initiatives: [
+      "«Investitsiyalar va investitsiya faoliyati to'g'risida»gi Qonunni (yangi tahrir) JST qoidalariga muvofiq ishlab chiqish",
+      "«Maxsus iqtisodiy zonalar to'g'risida»gi Qonunni (yangi tahrir) ishlab chiqish",
+      "Startaplar va innovatsion loyihalar uchun «Muqobil (venchur) investitsiyalar to'g'risida»gi Qonunni ishlab chiqish",
+      "Raqamli texnologiyalar xalqaro markazi huzurida Toshkent xalqaro tijorat sudini tashkil etish",
+      "OECDning «Investitsiya siyosatini tahlil qilish» loyihasini amalga oshirish",
+      "Ustav fondini shakllantirishda kurs farqini soliqqa tortishni bekor qilishni o'rganish",
+      "100 mln dollardan ortiq loyihalar uchun o'zgarmas soliq stavkalarini saqlash mexanizmini o'rganish",
+      "Kengash doirasida to'rtta ishchi guruhini tashkil etish (quyidagi blokka qarang)",
+      "«Yagona investitsiya platformasi» axborot tizimini joriy etish",
+      "Sun'iy intellektni rivojlantirish va raqamli xaritalarni yangilash strategiyasi (Yandex bilan)",
+      "Hududlarning bosh rejalarini tezlashtirish va yerlarni vaqtinchalik zaxiralash mexanizmi",
+      "Investorlar dividendlarini soliqqa tortish tartibini takomillashtirish",
+      "Shartnoma munosabatlarini tartibga solishning zamonaviy mexanizmlari (korporativ shartnoma, warranty, indemnity)",
+      "Yuridik shaxs maqomiga ega bo'lmagan xorijiy kompaniyalar filiallari uchun qonunchilik bazasi",
+    ],
+    columns: [
+      {
+        title: "To'rtta ishchi guruh (PP-179)",
+        items: [
+          "kapital bozorini rivojlantirish va xalqaro moliya markaziga aylantirish",
+          "mas'uliyatli biznes yuritish (OECD tamoyillari)",
+          "muqobil (venchur) investitsiyalar — qonun loyihasini ishlab chiqish",
+          "investorlar bilan ishlash tizimini raqamlashtirish — elektron platforma",
+        ],
+      },
+      {
+        title: "Bajarilish holati",
+        items: [
+          "yo'l xaritasi PP-179ning 3-ilovasi bilan mustahkamlangan",
+          "mas'ul ijrochilar — IPTV, IMV, TUA, Raqamli rivojlanish vazirligi",
+          "sahifada tashabbuslar amalga oshirilish holati bilan ko'rsatilsin",
+        ],
+      },
+    ],
+  },
+  en: {
+    title:
+      "Roadmap of the II Plenary Session — 14 initiatives (PP-179, Annex No. 3)",
+    stats: [
+      { value: "14", label: "initiatives in the roadmap" },
+      { value: "4", label: "working groups (initiative No. 8)" },
+      { value: "PP-179", label: "of May 16, 2024" },
+    ],
+    initiatives: [
+      "Drafting the Law «On Investments and Investment Activity» (new edition) in line with WTO rules",
+      "Drafting the Law «On Special Economic Zones» (new edition)",
+      "Drafting the Law «On Alternative (Venture) Investments» for startups and innovative projects",
+      "Establishing the Tashkent International Commercial Court at the International Center for Digital Technologies",
+      "Implementing the OECD «Investment Policy Review» project",
+      "Studying the abolition of taxation of exchange-rate differences when forming the charter capital",
+      "Studying a mechanism to keep tax rates unchanged for projects exceeding $100 million",
+      "Creating four working groups within the Council (see the block below)",
+      "Implementing the «Unified Investment Platform» information system",
+      "Strategy for developing artificial intelligence and updating digital maps (with Yandex)",
+      "Accelerating territorial master plans and a temporary land reservation mechanism",
+      "Improving the procedure for taxing investor dividends",
+      "Modern mechanisms for regulating contractual relations (corporate agreement, warranty, indemnity)",
+      "Legal framework for branches of foreign companies without legal-entity status",
+    ],
+    columns: [
+      {
+        title: "Four working groups (PP-179)",
+        items: [
+          "developing the capital market and transforming it into an international financial center",
+          "responsible business conduct (OECD principles)",
+          "alternative (venture) investments — drafting the bill",
+          "digitalizing the investor relations system — electronic platform",
+        ],
+      },
+      {
+        title: "Implementation status",
+        items: [
+          "the roadmap is enshrined in Annex No. 3 to PP-179",
+          "responsible implementers — MIIT, MEF, ARS, Ministry of Digital Technologies",
+          "show initiatives with their implementation status on the page",
+        ],
+      },
+    ],
+  },
+};
+
+const plenarySession2025Roadmap: Record<PlenarySessionLocale, PlenarySessionRoadmap> = {
+  ru: {
+    title: "Что закреплено постановлением ПП-226",
+    stats: [
+      { value: "40+", label: "инициатив отобрано к сессии" },
+      { value: "2028", label: "базовые ставки налогов заморожены до" },
+      { value: "16 000", label: "предприятий с иностранным капиталом" },
+      { value: "$4,5 млрд", label: "проектов ГЧП запущено" },
+      { value: "$8 млрд", label: "инвестиций в «зелёную» экономику" },
+      { value: "~$1 млрд", label: "рекордные инвестиции ЕБРР за год" },
+    ],
+    initiatives: [
+      "Утверждён План действий по реализации предложений и инициатив III пленарной сессии (Приложение № 1)",
+      "Утверждён обновлённый состав узбекской стороны Совета (Приложение № 2)",
+      "Совету предоставлено право создавать рабочие группы по направлениям с привлечением руководителей и работников министерств и ведомств",
+      "Секретариат Совета образован как негосударственная некоммерческая организация с участием международных финансовых институтов (новая редакция пунктов 29–31 ПП-4519); руководитель назначается по согласованию с Исполнительным комитетом",
+      "Внедрение информационной системы «Единая инвестиционная платформа» (ответственный — заместитель Премьер-министра Ж. Ходжаев)",
+      "Контроль за исполнением — Премьер-министр А. Н. Арипов",
+    ],
+    columns: [],
+  },
+  uz: {
+    title: "PP-226 qarori bilan nima mustahkamlangan",
+    stats: [
+      { value: "40+", label: "sessiyaga tanlangan tashabbuslar" },
+      { value: "2028", label: "asosiy soliq stavkalari muzlatilgan" },
+      { value: "16 000", label: "xorijiy kapitalli korxonalar" },
+      { value: "$4,5 mlrd", label: "ishga tushirilgan DXSh loyihalari" },
+      { value: "$8 mlrd", label: "«yashil» iqtisodiyotga investitsiyalar" },
+      { value: "~$1 mlrd", label: "EBRRning bir yildagi rekord investitsiyasi" },
+    ],
+    initiatives: [
+      "III yalpi majlis takliflari va tashabbuslarini amalga oshirish bo'yicha Harakatlar rejasi tasdiqlandi (1-ilova)",
+      "Kengashning o'zbek tomoni yangilangan tarkibi tasdiqlandi (2-ilova)",
+      "Kengashga vazirliklar va idoralar rahbarlari hamda xodimlarini jalb qilgan holda yo'nalishlar bo'yicha ishchi guruhlar tuzish huquqi berildi",
+      "Kengash Kotibiyati xalqaro moliya institutlari ishtirokida nodavlat notijorat tashkiloti sifatida tashkil etildi (PP-4519ning 29–31-bandlari yangi tahriri); rahbar Ijroiya qo'mitasi bilan kelishilgan holda tayinlanadi",
+      "«Yagona investitsiya platformasi» axborot tizimini joriy etish (mas'ul — Bosh vazir o'rinbosari J. Xo'jayev)",
+      "Ijro ustidan nazorat — Bosh vazir A. N. Aripov",
+    ],
+    columns: [],
+  },
+  en: {
+    title: "What was enshrined by Decree PP-226",
+    stats: [
+      { value: "40+", label: "initiatives selected for the session" },
+      { value: "2028", label: "basic tax rates frozen until" },
+      { value: "16,000", label: "enterprises with foreign capital" },
+      { value: "$4.5 bn", label: "PPP projects launched" },
+      { value: "$8 bn", label: "investments in the «green» economy" },
+      { value: "~$1 bn", label: "record EBRD investment for the year" },
+    ],
+    initiatives: [
+      "An Action Plan for implementing the proposals and initiatives of the III plenary session was approved (Annex No. 1)",
+      "An updated composition of the Uzbek side of the Council was approved (Annex No. 2)",
+      "The Council was granted the right to create working groups by area, involving heads and staff of ministries and agencies",
+      "The Council Secretariat was established as a non-governmental non-profit organization with the participation of international financial institutions (new edition of paragraphs 29–31 of PP-4519); the head is appointed in coordination with the Executive Committee",
+      "Implementation of the «Unified Investment Platform» information system (responsible — Deputy Prime Minister J. Khodjaev)",
+      "Oversight of execution — Prime Minister A. N. Aripov",
+    ],
+    columns: [],
+  },
+};
 
 const plenarySession2022Text: Record<PlenarySessionLocale, PlenarySessionLocalizedText> = {
   uz: {
@@ -192,9 +410,16 @@ export const plenarySessionDetails: Record<PlenarySessionYear, PlenarySessionDet
     ],
     content: plenarySession2025Text.ru.content,
     localizedText: plenarySession2025Text,
+    sessionNote:
+      "Международный конгресс-центр, под председательством Президента и при участии Президента ЕБРР. Отобрано свыше 40 инициатив; базовые ставки налогов для бизнеса не изменятся до 2028 года. По итогам — ПП-226 от 18.07.2025 (вступило в силу 21.07.2025).",
+    roadmap: plenarySession2025Roadmap,
     externalLink: {
-      label: "Подробно",
+      label: "president.uz",
       href: "https://president.uz/oz/lists/view/8212",
+    },
+    externalLink2: {
+      label: "lex.uz",
+      href: "https://lex.uz/docs/7637571",
     },
     downloadFile: {
       label: "doc",
@@ -238,8 +463,11 @@ export const plenarySessionDetails: Record<PlenarySessionYear, PlenarySessionDet
     ],
     content: plenarySession2024Text.ru.content,
     localizedText: plenarySession2024Text,
+    sessionNote:
+      "Состоялась в рамках III ТМИФ под председательством Президента. По итогам — ПП-179 с дорожной картой из 14 инициатив, включая создание четырёх рабочих групп.",
+    roadmap: plenarySession2024Roadmap,
     externalLink: {
-      label: "Подробно",
+      label: "lex.uz",
       href: "https://lex.uz/docs/-6927600",
     },
     downloadFile: {
@@ -284,8 +512,10 @@ export const plenarySessionDetails: Record<PlenarySessionYear, PlenarySessionDet
     ],
     content: plenarySession2022Text.ru.content,
     localizedText: plenarySession2022Text,
+    sessionNote:
+      "Резиденция «Куксарой». Более 150 участников, свыше 40 предложений. Приоритеты: деловая среда, налоговая стабильность, ГЧП, зелёная экономика, цифровизация.",
     externalLink: {
-      label: "Подробно",
+      label: "president.uz",
       href: "https://president.uz/oz/lists/view/5704",
     },
     downloadFile: {
