@@ -74,7 +74,7 @@ import AdBank from "@/assets/images/brands/ad-bank.png";
 import EBank from "@/assets/images/brands/e-bank.png";
 import IfcBank from "@/assets/images/brands/ifc2.png";
 import FICLogo from "../../../public/images/ba12d8ddde154e568c101e56e4a917883a60b20a.png";
-import Logo from "../app/assets/images/brands/miit.png";
+import Logo from "@/assets/images/brands/miit.png";
 
 const { t } = useI18n();
 
@@ -260,7 +260,13 @@ const investorCards = computed(() => [
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+  .investor-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
   .investor-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 16px;

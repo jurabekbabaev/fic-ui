@@ -51,7 +51,7 @@ onMounted(() => {
             <AppHeaderNav :isHome="props.isHome" />
           </div>
           <div class="flex items-center gap-3.5">
-            <LanguageSwitcher v-if="!isTabletOrMobile" />
+            <LanguageSwitcher />
             <WLocaleLink
               to="/contacts"
               class="btn btn-primary"
