@@ -1709,5 +1709,98 @@
         }
       }
     }
+  },
+  "becomemember": {
+    "hero": {
+      "title": "Kengash a'zolari"
+    },
+    "members": {
+      "intro": "Xorijiy investorlar kengashi a’zolari — O‘zbekiston iqtisodiyotiga strategik investitsiya kiritayotgan yetakchi xalqaro kompaniyalar, banklar va moliya institutlaridir. A’zolik mamlakat taraqqiyotiga uzoq muddatli sodiqlikni aks ettiradi va investitsiya siyosati masalalari bo‘yicha Hukumat bilan to‘g‘ridan-to‘g‘ri muloqot kanalini taqdim etadi. Kengash 23 ta iqtisodiyot tarmog‘ini ifodalovchi 19 ta davlatdan 41 a’zoni birlashtiradi.",
+      "tabs": {
+        "executive": "Ijroiya qo'mitasi a'zolari",
+        "founders": "Assotsiatsiya ta'sischi a'zolari",
+        "full": "To'laqonli a'zolar",
+        "observers": "Kuzatuvchi a'zolar"
+      }
+    },
+    "join": {
+      "title": "A'zo bo'lish",
+      "subtitle": "Toifalar, ta'sir va qabul qilish tartibi",
+      "lead": "XIK — xorijiy investorlar va O‘zbekiston Hukumati o‘rtasidagi tizimli muloqot uchun asosiy institutsional platforma.",
+      "admission": {
+        "heading": "A'zolikka kirish tartibi",
+        "note": "Qabul qilish va ishtirok etish shakllari Ustav, A'zolik to'g'risidagi nizom hamda amaldagi protokol qoidalariga muvofiq belgilanadi.",
+        "steps": {
+          "application": {
+            "title": "Ariza va hujjatlar",
+            "text": "So'ralayotgan a'zolik toifasini ko'rsatgan holda yozma ariza hamda zarur tasdiqlovchi hujjatlarning to'liq to'plamini taqdim etish"
+          },
+          "review": {
+            "title": "Ko'rib chiqish",
+            "text": "Hujjatlarni tekshirish va talablarga muvofiqligini baholashni o'z ichiga olgan baholash"
+          },
+          "decision": {
+            "title": "Qaror",
+            "text": "Ijroiya qo'mitasi tomonidan ko'rib chiqilishi va qaror qabul qilinishi"
+          },
+          "formalization": {
+            "title": "Rasmiylashtirish",
+            "text": "A'zolik to'g'risidagi shartnomani imzolash va a'zolik badallarini to'lash"
+          }
+        }
+      },
+      "tiers": {
+        "heading": "A'zolik toifalari va ta'sir darajasi",
+        "capLabel": "O'rinlar chegarasi",
+        "items": {
+          "exec": {
+            "title": "Ijroiya qo'mitasi / Ta'sischilar (XMI)",
+            "points": [
+              "Boshqaruvdagi strategik rol",
+              "Ustavga o'zgartirishlar, qayta tashkil etish va tugatish bo'yicha hal qiluvchi ovoz"
+            ]
+          },
+          "full": {
+            "title": "To'laqonli a'zolar",
+            "cap": "40 nafargacha a'zo",
+            "points": [
+              "Asosiy va faol investorlar",
+              "Hal qiluvchi ovoz huquqi",
+              "O'zbekiston Prezidenti ishtirokidagi plenar sessiyalarda qatnashish",
+              "Rasmiy protokol va yopiq ishchi formatlarda qatnashish"
+            ]
+          },
+          "observer": {
+            "title": "Kuzatuvchilar",
+            "cap": "60 nafargacha a'zo",
+            "points": [
+              "Maslahat (hal qiluvchi ovoz huquqisiz) roli",
+              "XIK plenar sessiyalarida qatnashish",
+              "Ochiq sessiyalar, muhokamalar va ekspert formatlarida qatnashish"
+            ]
+          }
+        }
+      },
+      "participation": {
+        "heading": "Ishtirok etish tamoyillari",
+        "items": [
+          "XIK plenar sessiyalari a'zolar va kuzatuvchilar uchun ochiq",
+          "Rasmiy protokol formatlari a'zolik doirasida o'tkaziladi",
+          "Qaror qabul qilish va ovoz berish faqat a'zolarga biriktirilgan"
+        ]
+      },
+      "eligibility": {
+        "heading": "Muvofiqlikning asosiy mezonlari",
+        "general": [
+          "XIK maqsadlariga muvofiqlik va ijobiy ishbilarmonlik obro'si",
+          "O'zbekistonda faol yoki rejalashtirilgan investitsiya faoliyati"
+        ],
+        "fullMembersLabel": "To'laqonli a'zolar uchun:",
+        "fullMembers": [
+          "≥ 50 mln USD miqdoridagi investitsiyalar yoki loyihalar",
+          "XMI uchun: moliyalashtirish / kafolatlar / texnik yordam ≥ 500 mln USD"
+        ]
+      }
+    }
   }
 }

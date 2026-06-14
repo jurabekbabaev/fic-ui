@@ -1974,12 +1974,91 @@
       "title": "Council Members"
     },
     "members": {
-      "intro": "The members of the Foreign Investors Council are leading international companies, banks and financial institutions making strategic investments in the economy of Uzbekistan. Membership reflects a long-term commitment to the country's development and provides a direct channel of dialogue with the Government on investment policy issues. The Council unites 41 members from 19 countries, representing 23 sectors of the economy.",
+      "intro": "The members of the Foreign Investors Council are leading international companies, banks and financial institutions making strategic investments in the economy of Uzbekistan. Membership reflects a long-term commitment to the country’s development and provides a direct channel of dialogue with the Government on investment policy matters. The Council brings together 41 members from 19 countries, representing 23 sectors of the economy.",
       "tabs": {
         "executive": "Members of the Executive Board",
         "founders": "Founding Members of the Association",
         "full": "Full Members",
         "observers": "Observer Members"
+      }
+    },
+    "join": {
+      "title": "Become a Member",
+      "subtitle": "Categories, Influence and Admission Procedure",
+      "lead": "The FIC is the principal institutional platform for structured dialogue between foreign investors and the Government of Uzbekistan.",
+      "admission": {
+        "heading": "Admission Procedure",
+        "note": "Admission and participation formats are determined in accordance with the Charter, the Membership Regulations and applicable protocol rules.",
+        "steps": {
+          "application": {
+            "title": "Application and Documents",
+            "text": "Submission of a written application together with a complete set of required supporting documents, specifying the requested membership category"
+          },
+          "review": {
+            "title": "Review",
+            "text": "Assessment, including verification of documents and compliance with requirements"
+          },
+          "decision": {
+            "title": "Decision",
+            "text": "Consideration and decision by the Executive Committee"
+          },
+          "formalization": {
+            "title": "Formalization",
+            "text": "Signing of the membership agreement and payment of membership fees"
+          }
+        }
+      },
+      "tiers": {
+        "heading": "Membership Categories and Level of Influence",
+        "capLabel": "Seat Limit",
+        "items": {
+          "exec": {
+            "title": "Executive Committee / Founders (IFIs)",
+            "points": [
+              "Strategic role in governance",
+              "Decisive vote on amendments to the Charter, reorganization and liquidation"
+            ]
+          },
+          "full": {
+            "title": "Full Members",
+            "cap": "up to 40 members",
+            "points": [
+              "Key and active investors",
+              "Decisive voting right",
+              "Participation in plenary sessions with the President of Uzbekistan",
+              "Participation in the official protocol and closed working formats"
+            ]
+          },
+          "observer": {
+            "title": "Observers",
+            "cap": "up to 60 members",
+            "points": [
+              "Advisory role (without decisive voting right)",
+              "Participation in FIC plenary sessions",
+              "Participation in open sessions, discussions and expert formats"
+            ]
+          }
+        }
+      },
+      "participation": {
+        "heading": "Principles of Participation",
+        "items": [
+          "FIC plenary sessions are open to members and observers",
+          "Official protocol formats are conducted within the framework of membership",
+          "Decision-making and voting are reserved for members only"
+        ]
+      },
+      "eligibility": {
+        "heading": "Key Eligibility Criteria",
+        "general": [
+          "Alignment with FIC objectives and a positive business reputation",
+          "Active or planned investment activity in Uzbekistan"
+        ],
+        "fullMembersLabel": "For full members:",
+        "fullMembers": [
+          "Investments or projects amounting to ≥ 50 million USD",
+          "For IFIs: financing / guarantees / technical assistance ≥ 500 million USD"
+        ]
       }
     }
   }
