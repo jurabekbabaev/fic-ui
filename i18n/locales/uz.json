@@ -1058,5 +1058,46 @@
     "title": "Yangiliklar",
     "moreLabel": "Batafsil",
     "loadMoreButton": "Ko'proq ko'rish"
+  },
+  "maininfo": {
+    "hero": {
+      "title": "XIK tarixi"
+    },
+    "intro": {
+      "para1": "O'zbekiston Respublikasi Prezidenti huzuridagi Xorijiy investorlar kengashi — davlat va xorijiy investorlar o'rtasidagi to'g'ri muloqot platformasi bo'lib, mamlakatda faoliyat yuritayotgan investorlar bilan davlatning o'zaro muloqotining institutsional platforma. 2019 yil 13 noyabrda O'zbekiston Respublikasi Prezidentining ПП-4519 raqamli qaror bilan tashkil etilgan.",
+      "para2": "Kengashning faoliyati investitsiyalarni jalb qilishga asosiy to'siqlarni aniqlash, davlat organlari bilan birgalikda ularni bartaraf etish bo'yicha echimlarni ishlab chiqish va qulaylashtirilgan investitsion muhitni ta'minlashga qaratilgan. Kengash raisi — O'zbekiston Respublikasi Prezidenti; hamraisi — EBRD Prezidenti."
+    },
+    "chronology": "Xronologiya",
+    "keyMilestones": "Kengashning taraqqiyot ko'rsatkichlarining asosiy bosqichlari",
+    "periods": {
+      "nov2019": "2019 yil noyabr",
+      "nov2022": "2022 yil noyabr",
+      "may2024": "2024 yil may",
+      "jun2025": "2025 yil iyun",
+      "nov2025": "2025 yil noyabr",
+      "jun2026": "2026 yil iyun"
+    },
+    "events": {
+      "nov2019": "Kengashning tashkil etilishi (ПП-4519). Birinchi oraliq sessiya — 20 noyabr",
+      "nov2022": "I Plenar sessiya — 16 noyabr",
+      "may2024": "II Plenar sessiya — 3 may, III TMIФ doirasida. ПП-179 — to'rt ishchi guruhning tashkil etilishi",
+      "jun2025": "III Plenar sessiya — 11 iyun. ПП-226 — ishchi guruhlari tarkibini kengaytirish",
+      "nov2025": "Assotsiatsiyani ro'yxatdan o'tkazish — 4 noyabr. Oraliq sessiya — 19 noyabr",
+      "jun2026": "IV Plenar sessiya — 18 iyun, V TMIФ doirasida"
+    },
+    "councilTasks": "Kengashning to'qqiz vazifasi",
+    "keyActivities": "Kengashning faoliyatining asosiy yo'nalishlari",
+    "tasks": "Vazifalar",
+    "taskItems": {
+      "advising": "Hukumatni maslahat berish",
+      "investmentClimate": "Investitsion muhitni yaxshilash",
+      "businessDialogue": "Biznes bilan muloqot",
+      "barriers": "To'siqlarni aniqlash",
+      "recommendations": "Tavsiyalar ishlab chiqish",
+      "exportDevelopment": "Eksportni rivojlantirish",
+      "qualityStandards": "Sifat standartlari",
+      "legalReforms": "Huquqiy islohotlar",
+      "internationalImage": "Xalqaro imidj"
+    }
   }
 }

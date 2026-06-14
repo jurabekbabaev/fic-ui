@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch, onBeforeUnmount } from "vue";
 import { useI18n } from "vue-i18n";
 import PageHero from "~/components/shared/PageHero.vue";
 const { t } = useI18n();
@@ -7,32 +7,28 @@ import Main from "@/assets/images/main-info.png";
 
 const chronologyRows = [
   {
-    period: "Ноябрь 2019",
-    event:
-      "Учреждение Совета (ПП-4519). Первая промежуточная сессия — 20 ноября",
+    periodKey: "maininfo.periods.nov2019",
+    eventKey: "maininfo.events.nov2019",
   },
   {
-    period: "Ноябрь 2022",
-    event: "I Пленарная сессия — 16 ноября",
+    periodKey: "maininfo.periods.nov2022",
+    eventKey: "maininfo.events.nov2022",
   },
   {
-    period: "Май 2024",
-    event:
-      "II Пленарная сессия — 3 мая, в рамках III ТМИФ. ПП-179 — создание четырёх рабочих групп",
+    periodKey: "maininfo.periods.may2024",
+    eventKey: "maininfo.events.may2024",
   },
   {
-    period: "Июнь 2025",
-    event:
-      "III Пленарная сессия — 11 июня. ПП-226 — расширение состава рабочих групп",
+    periodKey: "maininfo.periods.jun2025",
+    eventKey: "maininfo.events.jun2025",
   },
   {
-    period: "Ноябрь 2025",
-    event:
-      "Регистрация Ассоциации — 4 ноября. Промежуточная сессия — 19 ноября",
+    periodKey: "maininfo.periods.nov2025",
+    eventKey: "maininfo.events.nov2025",
   },
   {
-    period: "Июнь 2026",
-    event: "IV Пленарная сессия — 18 июня, в рамках V ТМИФ",
+    periodKey: "maininfo.periods.jun2026",
+    eventKey: "maininfo.events.jun2026",
   },
 ];
 
@@ -64,26 +60,26 @@ const cardStyle = (i) => {
 
 const taskItems = [
   {
-    key: "консультирование Правительства",
+    labelKey: "maininfo.taskItems.advising",
     iconPaths: ["M3 9l9-5 9 5", "M5 10v8M9 10v8M15 10v8M19 10v8", "M3 20h18"],
   },
   {
-    key: "улучшение инвестклимата",
+    labelKey: "maininfo.taskItems.investmentClimate",
     iconPaths: ["M4 4v16h16", "M7 14l3-3 3 2 5-6", "M17 7h3v3"],
   },
   {
-    key: "диалог с бизнесом",
+    labelKey: "maininfo.taskItems.businessDialogue",
     iconPaths: [
       "M5 5h13a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H10l-4 3v-3H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z",
       "M8 9h7M8 12h4",
     ],
   },
   {
-    key: "выявление барьеров",
+    labelKey: "maininfo.taskItems.barriers",
     iconPaths: ["M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14z", "M20 20l-4.2-4.2"],
   },
   {
-    key: "разработка рекомендаций",
+    labelKey: "maininfo.taskItems.recommendations",
     iconPaths: [
       "M13 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V8z",
       "M13 3v5h5",
@@ -91,7 +87,7 @@ const taskItems = [
     ],
   },
   {
-    key: "развитие экспорта",
+    labelKey: "maininfo.taskItems.exportDevelopment",
     iconPaths: [
       "M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z",
       "M3.5 9h17M3.5 15h17",
@@ -99,11 +95,11 @@ const taskItems = [
     ],
   },
   {
-    key: "стандарты качества",
+    labelKey: "maininfo.taskItems.qualityStandards",
     iconPaths: ["M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z", "M9 12l2 2 4-4"],
   },
   {
-    key: "правовые реформы",
+    labelKey: "maininfo.taskItems.legalReforms",
     iconPaths: [
       "M12 4v15",
       "M6 19h12",
@@ -113,7 +109,7 @@ const taskItems = [
     ],
   },
   {
-    key: "международный имидж",
+    labelKey: "maininfo.taskItems.internationalImage",
     iconPaths: [
       "M12 4l2.3 5 5.2.4-3.9 3.4 1.2 5L12 18.8 7.2 21.2l1.2-5L4.5 12.8 9.7 12.4z",
     ],
@@ -169,23 +165,15 @@ onBeforeUnmount(() => {
 <template>
   <div>
     <client-only>
-      <PageHero title="История СИИ" />
+      <PageHero :title="t('maininfo.hero.title')" />
       <div class="container">
         <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-10 lg:gap-20 items-center">
           <div>
             <p class="text-base text-[#505A63] font-normal pb-5">
-              {{
-                t(
-                  "Совет иностранных инвесторов при Президенте Республики Узбекистан — институциональная площадка для прямого диалога между Правительством Узбекистана и инвесторами, осуществляющими деятельность в стране. Учреждён Постановлением Президента № ПП-4519 от 13 ноября 2019 года.",
-                )
-              }}
+              {{ t("maininfo.intro.para1") }}
             </p>
             <p class="text-base text-[#505A63] font-normal pb-5">
-              {{
-                t(
-                  "Деятельность Совета направлена на выявление ключевых препятствий для привлечения инвестиций, разработку совместно с государственными органами решений по их устранению и обеспечение благоприятного инвестиционного климата. Председатель Совета — Президент Республики Узбекистан; сопредседатель — Президент ЕБРР.",
-                )
-              }}
+              {{ t("maininfo.intro.para2") }}
             </p>
             <a
               href="https://lex.uz/docs/4593913"
@@ -203,29 +191,29 @@ onBeforeUnmount(() => {
 
         <section class="historyFlow">
           <div class="historyFlow__head">
-            <span class="historyFlow__kicker">{{ t("Хронология") }}</span>
+            <span class="historyFlow__kicker">{{ t("maininfo.chronology") }}</span>
             <p class="historyFlow__sub">
-              {{ t("Ключевые этапы развития Совета") }}
+              {{ t("maininfo.keyMilestones") }}
             </p>
           </div>
 
           <div class="historyFlow__pills">
             <button
               v-for="(row, index) in chronologyRows"
-              :key="row.period"
+              :key="row.periodKey"
               type="button"
               class="historyFlow__pill"
               :class="{ 'is-active': index === active }"
               @click="select(index)"
             >
-              {{ t(row.period) }}
+              {{ t(row.periodKey) }}
             </button>
           </div>
 
           <div class="historyFlow__stage">
             <article
               v-for="(row, index) in chronologyRows"
-              :key="row.period"
+              :key="row.periodKey"
               class="historyFlow__card"
               :class="{ 'is-active': index === active }"
               :style="cardStyle(index)"
@@ -235,8 +223,8 @@ onBeforeUnmount(() => {
                 String(index + 1).padStart(2, "0")
               }}</span>
               <div class="historyFlow__cardBody">
-                <span class="historyFlow__period">{{ t(row.period) }}</span>
-                <p class="historyFlow__event">{{ t(row.event) }}</p>
+                <span class="historyFlow__period">{{ t(row.periodKey) }}</span>
+                <p class="historyFlow__event">{{ t(row.eventKey) }}</p>
               </div>
             </article>
           </div>
@@ -267,9 +255,9 @@ onBeforeUnmount(() => {
           :class="{ 'is-visible': tasksVisible }"
         >
           <div class="councilTasks__head">
-            <h2 class="councilTasks__title">{{ t("Девять задач Совета") }}</h2>
+            <h2 class="councilTasks__title">{{ t("maininfo.councilTasks") }}</h2>
             <p class="councilTasks__sub">
-              {{ t("Ключевые направления деятельности Совета") }}
+              {{ t("maininfo.keyActivities") }}
             </p>
           </div>
 
@@ -280,12 +268,12 @@ onBeforeUnmount(() => {
 
               <div class="councilTasks__hub">
                 <span class="councilTasks__hubNum">9</span>
-                <span class="councilTasks__hubLabel">{{ t("задач") }}</span>
+                <span class="councilTasks__hubLabel">{{ t("maininfo.tasks") }}</span>
               </div>
 
               <div
                 v-for="(item, i) in taskItems"
-                :key="item.key"
+                :key="item.labelKey"
                 class="councilTasks__node"
                 :style="orbitStyle(i)"
               >
@@ -303,7 +291,7 @@ onBeforeUnmount(() => {
                     />
                   </svg>
                 </span>
-                <span class="councilTasks__label">{{ t(item.key) }}</span>
+                <span class="councilTasks__label">{{ t(item.labelKey) }}</span>
               </div>
             </div>
 
@@ -311,7 +299,7 @@ onBeforeUnmount(() => {
             <div class="councilTasks__grid">
               <div
                 v-for="item in taskItems"
-                :key="`g-${item.key}`"
+                :key="`g-${item.labelKey}`"
                 class="councilTasks__cell"
               >
                 <span class="councilTasks__icon" aria-hidden="true">
@@ -328,7 +316,7 @@ onBeforeUnmount(() => {
                     />
                   </svg>
                 </span>
-                <span class="councilTasks__label">{{ t(item.key) }}</span>
+                <span class="councilTasks__label">{{ t(item.labelKey) }}</span>
               </div>
             </div>
           </div>

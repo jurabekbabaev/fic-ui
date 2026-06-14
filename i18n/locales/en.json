@@ -1053,5 +1053,46 @@
     "title": "News",
     "moreLabel": "Learn more",
     "loadMoreButton": "View more"
+  },
+  "maininfo": {
+    "hero": {
+      "title": "FIC History"
+    },
+    "intro": {
+      "para1": "The Foreign Investors' Council under the President of the Republic of Uzbekistan is an institutional platform for direct dialogue between the Government of Uzbekistan and investors operating in the country. Established by Presidential Resolution No. PP-4519 dated November 13, 2019.",
+      "para2": "The Council's activities are aimed at identifying key barriers to attracting investments, developing solutions jointly with government agencies to eliminate them, and ensuring a favorable investment climate. The Chair of the Council is the President of the Republic of Uzbekistan; the Co-Chair is the President of the EBRD."
+    },
+    "chronology": "Chronology",
+    "keyMilestones": "Key Milestones of the Council",
+    "periods": {
+      "nov2019": "November 2019",
+      "nov2022": "November 2022",
+      "may2024": "May 2024",
+      "jun2025": "June 2025",
+      "nov2025": "November 2025",
+      "jun2026": "June 2026"
+    },
+    "events": {
+      "nov2019": "Establishment of the Council (PP-4519). First interim session — November 20",
+      "nov2022": "I Plenary session — November 16",
+      "may2024": "II Plenary session — May 3, within the framework of III TIIF. PP-179 — creation of four working groups",
+      "jun2025": "III Plenary session — June 11. PP-226 — expansion of working groups composition",
+      "nov2025": "Registration of the Association — November 4. Interim session — November 19",
+      "jun2026": "IV Plenary session — June 18, within the framework of V TIIF"
+    },
+    "councilTasks": "Nine Tasks of the Council",
+    "keyActivities": "Key Areas of the Council's Activities",
+    "tasks": "Tasks",
+    "taskItems": {
+      "advising": "Advising the Government",
+      "investmentClimate": "Improving the Investment Climate",
+      "businessDialogue": "Dialogue with Business",
+      "barriers": "Identification of Barriers",
+      "recommendations": "Development of Recommendations",
+      "exportDevelopment": "Export Development",
+      "qualityStandards": "Quality Standards",
+      "legalReforms": "Legal Reforms",
+      "internationalImage": "International Image"
+    }
   }
 }
