@@ -13,7 +13,49 @@
         "fullname": "Odil Reno-Basso",
         "position": "Kengash hamraisi — Yevropa tiklanish va taraqqiyot banki Prezidenti"
       }
-    ]
+    ],
+    "executiveCommittee": {
+      "title": "Ijroiya qo'mita",
+      "subtitle": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "bioLabel": "Biografiya",
+      "members": [
+        {
+          "name": "Laziz Qudratov",
+          "role": "Ijroiya qo‘mitasi raisi",
+          "position": "Investitsiyalar, Savdo va Sanoat Vaziri",
+          "quote": "“Узбекистан демонстрирует устойчивый рост инвестиционной активности благодаря проводимым реформам, созданию благоприятных условий для иностранных инвесторов.”",
+          "bio": "O‘zbekiston Respublikasi investitsiyalar, sanoat va savdo vaziri, Ijroiya qo‘mitasi raisi. Mamlakatning investitsiya siyosati, sanoat rivoji va tashqi savdosiga rahbarlik qiladi."
+        },
+        {
+          "name": "Andi Aranitasi",
+          "role": "A’zo (TTRB)",
+          "position": "YTTBning O'zbekistondagi rahbari",
+          "quote": "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”",
+          "bio": "Direktor, TTRBning O‘zbekistondagi vakolatxonasi rahbari. Bank sohasida 25 yildan ortiq tajribaga ega; TTRBning O‘zbekiston energetikasi, infratuzilmasi va xususiy sektoriga investitsiyalarini kengaytirgan."
+        },
+        {
+          "name": "Kanokpan Lao-Araya",
+          "role": "A’zo (OsTB)",
+          "position": "Osiyo Taraqqiyot Banki mamlakat direktori",
+          "quote": "“Правительство демонстрирует сильную приверженность реформам и стремится вовлекать все заинтересованные стороны страны, включая частный сектор, в процесс развития.”",
+          "bio": "OsTBning O‘zbekiston bo‘yicha mamlakat direktori. Rivojlanish va iqtisodiy siyosat sohasida 25 yildan ortiq tajribaga ega."
+        },
+        {
+          "name": "Neil McCain",
+          "role": "A’zo (XMK)",
+          "position": "XMKning O‘zbekiston va Turkmaniston bo‘yicha ofisi direktori",
+          "quote": "“Ключевые конкурентные преимущества Узбекистана — крупнейшее население в Центральной Азии и наиболее диверсифицированная экономика.”",
+          "bio": "XMKning O‘zbekiston va Turkmaniston bo‘yicha ofisi direktori. XMKning xususiy sektorni rivojlantirish bo‘yicha operatsiyalariga rahbarlik qiladi."
+        },
+        {
+          "name": "Aziz Gafurov",
+          "role": "Uyushma rahbari",
+          "position": "XIK Kotibiyati boshlig‘i",
+          "quote": "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”",
+          "bio": "Uyushma rahbari va Kengash Kotibiyati boshlig‘i. Korporativ boshqaruv, risklarni boshqarish va investitsiya siyosati sohalarida 20 yildan ortiq tajribaga ega top-menejer."
+        }
+      ]
+    }
   },
   "Мы создадим все условия": "Bizning asosiy maqsadimiz – O‘zbekistonni xorijiy investorlar uchun ishonchli va uzoq muddatli hamkorga aylantirishdir",
   "чтобы в Новом Узбекистане инвесторы чувствовали себя свободными": "Shunda Yangi O‘zbekistonda investorlar o‘zlarini erkin his qilishadi.",
@@ -1059,64 +1101,6 @@
     "title": "Sahifa ishlab chiqilmoqda",
     "description": "Kontentni yangilash va to'ldirish bo'yicha ishlaryuritilmoqda. Iltimos, ushbu bo'limni keyinroq ziyorat qiling",
     "backButton": "Bosh sahifaga qaytish"
-  },
-  "management": {
-    "hero": {
-      "title": "Rahbariyat"
-    },
-    "heading": "Kengash rahbarligi",
-    "leaders": [
-      {
-        "fullname": "Shavkat Miromonovich Mirziyoyev",
-        "position": "Kengash raisi — O'zbekiston Respublikasi Prezidenti"
-      },
-      {
-        "fullname": "Odil Reno-Basso",
-        "position": "Kengash hamraisi — Yevropa tiklanish va taraqqiyot banki Prezidenti"
-      }
-    ],
-    "executiveCommittee": {
-      "title": "Ijroiya qo'mita",
-      "subtitle": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "bioLabel": "Biografiya",
-      "members": [
-        {
-          "name": "Laziz Qudratov",
-          "role": "Ijroiya qo‘mitasi raisi",
-          "position": "Investitsiyalar, Savdo va Sanoat Vaziri",
-          "quote": "“Узбекистан демонстрирует устойчивый рост инвестиционной активности благодаря проводимым реформам, созданию благоприятных условий для иностранных инвесторов.”",
-          "bio": "O‘zbekiston Respublikasi investitsiyalar, sanoat va savdo vaziri, Ijroiya qo‘mitasi raisi. Mamlakatning investitsiya siyosati, sanoat rivoji va tashqi savdosiga rahbarlik qiladi."
-        },
-        {
-          "name": "Andi Aranitasi",
-          "role": "A’zo (TTRB)",
-          "position": "YTTBning O'zbekistondagi rahbari",
-          "quote": "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”",
-          "bio": "Direktor, TTRBning O‘zbekistondagi vakolatxonasi rahbari. Bank sohasida 25 yildan ortiq tajribaga ega; TTRBning O‘zbekiston energetikasi, infratuzilmasi va xususiy sektoriga investitsiyalarini kengaytirgan."
-        },
-        {
-          "name": "Kanokpan Lao-Araya",
-          "role": "A’zo (OsTB)",
-          "position": "Osiyo Taraqqiyot Banki mamlakat direktori",
-          "quote": "“Правительство демонстрирует сильную приверженность реформам и стремится вовлекать все заинтересованные стороны страны, включая частный сектор, в процесс развития.”",
-          "bio": "OsTBning O‘zbekiston bo‘yicha mamlakat direktori. Rivojlanish va iqtisodiy siyosat sohasida 25 yildan ortiq tajribaga ega."
-        },
-        {
-          "name": "Neil McCain",
-          "role": "A’zo (XMK)",
-          "position": "XMKning O‘zbekiston va Turkmaniston bo‘yicha ofisi direktori",
-          "quote": "“Ключевые конкурентные преимущества Узбекистана — крупнейшее население в Центральной Азии и наиболее диверсифицированная экономика.”",
-          "bio": "XMKning O‘zbekiston va Turkmaniston bo‘yicha ofisi direktori. XMKning xususiy sektorni rivojlantirish bo‘yicha operatsiyalariga rahbarlik qiladi."
-        },
-        {
-          "name": "Aziz Gafurov",
-          "role": "Uyushma rahbari",
-          "position": "XIK Kotibiyati boshlig‘i",
-          "quote": "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”",
-          "bio": "Uyushma rahbari va Kengash Kotibiyati boshlig‘i. Korporativ boshqaruv, risklarni boshqarish va investitsiya siyosati sohalarida 20 yildan ortiq tajribaga ega top-menejer."
-        }
-      ]
-    }
   },
   "publications": {
     "title": "Nashriyotlar",

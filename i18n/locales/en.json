@@ -13,7 +13,49 @@
         "fullname": "Odil Reno-Basso",
         "position": "Co-Chairman of the Council — President of the EBRD"
       }
-    ]
+    ],
+    "executiveCommittee": {
+      "title": "Executive Committee",
+      "subtitle": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "bioLabel": "Biography",
+      "members": [
+        {
+          "name": "Laziz Kudratov",
+          "role": "Chairman of the Executive Committee",
+          "position": "Head of the representative office of MIIT",
+          "quote": "“Узбекистан демонстрирует устойчивый рост инвестиционной активности благодаря проводимым реформам, созданию благоприятных условий для иностранных инвесторов.”",
+          "bio": "Minister of Investments, Industry and Trade of the Republic of Uzbekistan, Chairman of the Executive Committee. Leads the country's investment policy, industrial development and foreign trade."
+        },
+        {
+          "name": "Andy Aranitasi",
+          "role": "Member (EBRD)",
+          "position": "Head of the EBRD in Uzbekistan",
+          "quote": "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”",
+          "bio": "Director, Head of the EBRD Representative Office in Uzbekistan. Over 25 years of experience in banking; expanded EBRD investments in energy, infrastructure and the private sector of Uzbekistan."
+        },
+        {
+          "name": "Kanokpan Lao-Araya",
+          "role": "Member (ADB)",
+          "position": "Country Director of the Asian Development Bank",
+          "quote": "“Правительство демонстрирует сильную приверженность реформам и стремится вовлекать все заинтересованные стороны страны, включая частный сектор, в процесс развития.”",
+          "bio": "ADB Country Director for Uzbekistan. Over 25 years of experience in development and economic policy."
+        },
+        {
+          "name": "Neil McCain",
+          "role": "Member (IFC)",
+          "position": "Director of the IFC Office for Uzbekistan and Turkmenistan",
+          "quote": "“Ключевые конкурентные преимущества Узбекистана — крупнейшее население в Центральной Азии и наиболее диверсифицированная экономика.”",
+          "bio": "Director of the IFC office for Uzbekistan and Turkmenistan. Leads IFC operations for private sector development."
+        },
+        {
+          "name": "Aziz Gafurov",
+          "role": "Head of the Association",
+          "position": "Head of the FIC Secretariat",
+          "quote": "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”",
+          "bio": "Head of the Association and Head of the Council Secretariat. A top manager with over 20 years of experience in corporate governance, risk management and investment policy."
+        }
+      ]
+    }
   },
   "fullname": "Name",
   "welcome": "Welcome",
@@ -1055,64 +1097,6 @@
     "description": "We are working on updating and filling the content. Please visit this section later",
     "backButton": "Back to home"
   },
-  "management": {
-    "hero": {
-      "title": "Management"
-    },
-    "heading": "Council Leadership",
-    "leaders": [
-      {
-        "fullname": "Shavkat Miromonovich Mirziyoyev",
-        "position": "Chairman of the Council — President of the Republic of Uzbekistan"
-      },
-      {
-        "fullname": "Odil Reno-Basso",
-        "position": "Co-Chairman of the Council — President of the EBRD"
-      }
-    ],
-    "executiveCommittee": {
-      "title": "Executive Committee",
-      "subtitle": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "bioLabel": "Biography",
-      "members": [
-        {
-          "name": "Laziz Kudratov",
-          "role": "Chairman of the Executive Committee",
-          "position": "Head of the representative office of MIIT",
-          "quote": "“Узбекистан демонстрирует устойчивый рост инвестиционной активности благодаря проводимым реформам, созданию благоприятных условий для иностранных инвесторов.”",
-          "bio": "Minister of Investments, Industry and Trade of the Republic of Uzbekistan, Chairman of the Executive Committee. Leads the country's investment policy, industrial development and foreign trade."
-        },
-        {
-          "name": "Andy Aranitasi",
-          "role": "Member (EBRD)",
-          "position": "Head of the EBRD in Uzbekistan",
-          "quote": "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”",
-          "bio": "Director, Head of the EBRD Representative Office in Uzbekistan. Over 25 years of experience in banking; expanded EBRD investments in energy, infrastructure and the private sector of Uzbekistan."
-        },
-        {
-          "name": "Kanokpan Lao-Araya",
-          "role": "Member (ADB)",
-          "position": "Country Director of the Asian Development Bank",
-          "quote": "“Правительство демонстрирует сильную приверженность реформам и стремится вовлекать все заинтересованные стороны страны, включая частный сектор, в процесс развития.”",
-          "bio": "ADB Country Director for Uzbekistan. Over 25 years of experience in development and economic policy."
-        },
-        {
-          "name": "Neil McCain",
-          "role": "Member (IFC)",
-          "position": "Director of the IFC Office for Uzbekistan and Turkmenistan",
-          "quote": "“Ключевые конкурентные преимущества Узбекистана — крупнейшее население в Центральной Азии и наиболее диверсифицированная экономика.”",
-          "bio": "Director of the IFC office for Uzbekistan and Turkmenistan. Leads IFC operations for private sector development."
-        },
-        {
-          "name": "Aziz Gafurov",
-          "role": "Head of the Association",
-          "position": "Head of the FIC Secretariat",
-          "quote": "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”",
-          "bio": "Head of the Association and Head of the Council Secretariat. A top manager with over 20 years of experience in corporate governance, risk management and investment policy."
-        }
-      ]
-    }
-  },
   "publications": {
     "title": "Publications",
     "notFound": "Data not found",
@@ -1718,6 +1702,284 @@
           "position": "Administrative Assistant",
           "description": "Madinakhon holds a Bachelor's degree in Business and Economics and a Master's degree in Agribusiness and Investment Activities. She has worked as a manager at the Association of Private Tourism Organizations of Uzbekistan, where she coordinated events aimed at the development of national and international tourism."
         }
+      }
+    }
+  },
+  "initiatives": {
+    "hero": {
+      "title": "Initiatives"
+    },
+    "page": {
+      "heading": "Initiatives to improve the investment climate",
+      "subheading": "Each initiative is aimed at reforms in taxation, energy, investments, employment and corporate governance"
+    },
+    "table": {
+      "session": "Session",
+      "document": "Document",
+      "workingGroups": "Working Groups",
+      "initiatives": "Initiatives"
+    },
+    "sessions": {
+      "plenary1": {
+        "label": "I Plenary (2022)",
+        "groups": "First thematic directions"
+      },
+      "plenary2": {
+        "label": "II Plenary (2024)",
+        "groups": "Four groups: capital market and IFC · responsible business conduct · alternative investments · digitalization of investor relations"
+      },
+      "plenary3": {
+        "label": "III Plenary (2025)",
+        "groups": "Interdepartmental groups; total number brought to 16"
+      }
+    },
+    "strategicBanner": {
+      "label": "Strategic Initiative",
+      "text": "Creation of the Regional Alliance of Investment Councils of Central Asia and the Caucasus (RAIC-CAC) to form a competitive investment environment and cross-border coordination."
+    },
+    "count": {
+      "label": "Number of initiatives:"
+    },
+    "tableItem": {
+      "initiative": "Initiative"
+    },
+    "categories": {
+      "strategic": {
+        "title": "STRATEGIC INITIATIVES",
+        "items": {
+          "i0": "Establishment of the Regional Alliance of Investment Councils of Central Asia and the Caucasus and holding annual Council forums",
+          "i1": "Creation of a legislatively established Project Office for coordinating the implementation of priority investment initiatives",
+          "i2": "Creation of a public digital platform for comprehensive investment activity assessment «FIC Investment Dashboard»"
+        }
+      },
+      "energy": {
+        "title": "ENERGY SECTOR",
+        "items": {
+          "i0": "Admission of the private sector to electricity distribution activities (amendments to legislation)",
+          "i1": "Exemption of projects with foreign financing from domestic reinsurance requirements",
+          "i2": "Development and publication of the national Master Plan for energy sector development (generation, transmission, distribution)",
+          "i3": "Establishment and regular revision of license fee rates for electricity generation",
+          "i4": "Reform of the electricity generation licensing procedure: phased document submission and timeline coordination"
+        }
+      },
+      "finance": {
+        "title": "FINANCIAL SECTOR AND BANKING",
+        "items": {
+          "i0": "Introduction of risk-based flexibility in remote access rules for banks",
+          "i1": "Building capacity of domestic financial institutions and developing capital market infrastructure",
+          "i2": "Expanding blended finance instruments and deepening cooperation with international financial institutions",
+          "i3": "Aligning banking reforms with infrastructure financing needs in the energy sector",
+          "i4": "Introduction of a legal framework for the flexible purchase and sale of credit portfolios",
+          "i5": "Introduction of Islamic insurance legislation (takaful)",
+          "i6": "Granting the right to use previously acquired foreign currency and prepaid import advances",
+          "i7": "Reducing the tax burden on foreign capital: withholding tax and capital gains tax",
+          "i8": "Introduction of instruments to incentivize local investor participation in the capital market (tax benefits for individuals and institutions)",
+          "i9": "Introduction of a legal framework ensuring flexible purchase and sale of credit portfolios",
+          "i10": "Introduction of a regulatory framework for mortgage loans secured by real estate",
+          "i11": "Creation of a regulatory framework ensuring the sale of non-performing loan portfolios (NPL)"
+        }
+      },
+      "taxes": {
+        "title": "TAXES AND TAX ADMINISTRATION",
+        "items": {
+          "i0": "Development of tax provisions for public-private partnership (PPP) agreements",
+          "i1": "Clarification of land tax and property tax exemptions for energy storage system projects",
+          "i2": "Elimination of the requirement to register a permanent establishment in each region of presence (amendment to Art. 36 of the Tax Code)",
+          "i3": "Improvement of the mechanism for making payments for land plots",
+          "i4": "Introduction of a VAT exemption mechanism for the import of equipment not produced in Uzbekistan",
+          "i5": "Introduction of separate VAT thresholds for offline and online trade (individual entrepreneurs and self-employed)",
+          "i6": "Revision of the procedure for granting land tax benefits during the construction period",
+          "i7": "Revision of the mechanism for applying a coefficient of 0.3 to land tax for rainfed and pasture zones",
+          "i8": "Application of land tax exemption for RES projects to the entire area of the land allocation",
+          "i9": "Introduction of a tax deduction for expenditures on corporate social responsibility (CSR) projects"
+        }
+      },
+      "climate": {
+        "title": "IMPROVEMENT OF THE INVESTMENT CLIMATE",
+        "items": {
+          "i0": "Simplification of visa procedures for foreign investors when replacing a passport",
+          "i1": "Reduction of customs duties on raw materials for tobacco production",
+          "i2": "Extension of the implementation period for the updated design of excise stamps on tobacco products",
+          "i3": "Introduction of a legal stability guarantee mechanism for foreign investments",
+          "i4": "Legislative consolidation of the principle of legislative stability for investment and PPP projects",
+          "i5": "Regulation of accounting for share premium contributions",
+          "i6": "Establishment of mandatory deadlines for adopting secondary legislation to investment laws",
+          "i7": "Improvement of the mechanism for supporting the implementation of PPP projects",
+          "i8": "Optimization of the procedure for reviewing and signing PPP projects",
+          "i9": "Formation of an Interdepartmental Expert Committee for analyzing environmental standards in urban planning",
+          "i10": "Consider the possibility of implementing international standards for green infrastructure and buildings",
+          "i11": "Development and adoption of the Presidential Decree «On transitional provisions for the application of PD-46»"
+        }
+      },
+      "corporate": {
+        "title": "CORPORATE GOVERNANCE",
+        "items": {
+          "i0": "Preparation of a new edition of the Corporate Governance Code",
+          "i1": "Establishing a minimum gender standard on the boards of directors of public companies",
+          "i2": "Transformation of corporate governance in State Enterprises and banks through the introduction of RBC",
+          "i3": "Ensuring convenience of participation in the general meeting of shareholders and exercise of related shareholder rights",
+          "i4": "Creation of fully functional supervisory boards",
+          "i5": "Ensuring the obligation of management bodies and controlling persons of a joint-stock company to act in good faith and reasonably in the interests of the joint-stock company",
+          "i6": "Strengthening regulation of transactions with affiliated persons and major transactions",
+          "i7": "Protection of shareholders from dilution of their stakes and rights",
+          "i8": "Development of regulation of corporate agreements (shareholders' agreements) in joint-stock companies",
+          "i9": "Improvement of the rules for announcing an offer to remaining shareholders to sell shares upon acquisition of a major stake",
+          "i10": "Continuation of increasing transparency of joint-stock companies whose shares are publicly traded",
+          "i11": "Issues of information disclosure and transparency in the field of sustainable development",
+          "i12": "Ensuring law enforcement that protects the interests of minority shareholders"
+        }
+      },
+      "ai": {
+        "title": "ARTIFICIAL INTELLIGENCE AND DIGITAL ECONOMY",
+        "items": {
+          "i0": "Development and adoption of the Law of the Republic of Uzbekistan «On Artificial Intelligence»",
+          "i1": "Establishment of an Interdepartmental Working Group on AI within the Foreign Investors' Council",
+          "i2": "Development of a regulatory framework for processing citizens' personal data using AI",
+          "i3": "Digitalization and development of the cadastral system to improve the availability and accuracy of land data",
+          "i4": "Introduction of an AI system for digital age verification of buyers at points of sale of age-restricted goods",
+          "i5": "Creation of a legal mechanism for secure data exchange within corporate groups",
+          "i6": "Approval of national ethical principles in the field of AI and creation of an AI Ethics Council",
+          "i7": "Creation of a system for training and retraining personnel in the field of AI",
+          "i8": "Development of a regulatory framework for regulatory sandboxes in the field of AI",
+          "i9": "Amendments to public procurement legislation to incentivize the implementation of AI solutions",
+          "i10": "Assignment of the status of information intermediary to marketplaces and differentiation of platform and seller liability",
+          "i11": "Improvement of antitrust regulation of digital platform operators",
+          "i12": "State program for the development of logistics infrastructure for e-commerce",
+          "i13": "Strengthening mechanisms for protecting consumer rights in e-commerce",
+          "i14": "Formation of the national open online educational platform «Skills of the Future»",
+          "i15": "Development of the Uzbekistan Management Competencies Barometer and a roadmap for transforming management education",
+          "i16": "Program «Digital Skills for e-commerce»: training of the population and SMEs",
+          "i17": "Formation of the National Big Data and Artificial Intelligence Management Platform",
+          "i18": "Development of an AI-based civil defense risk management platform",
+          "i19": "Creation of a unified digital platform for trade and certification of agricultural products (AgriTrade Platform)"
+        }
+      },
+      "land": {
+        "title": "LAND ISSUES",
+        "items": {
+          "i0": "Development of a single regulatory act establishing a comprehensive procedure for providing land plots to investors",
+          "i1": "Introduction of mandatory pre-tender confirmation of the feasibility of land recategorization",
+          "i2": "Establishment of a unified legal procedure for the preparation and acquisition of land plots",
+          "i3": "Consolidation of the investor's right to finance costs associated with the preparation of a land plot",
+          "i4": "Establishment of the legal regime for the fate of objects erected by a tenant on a leased land plot",
+          "i5": "Introduction of a simplified mechanism for providing the investor with temporary access to a land plot",
+          "i6": "Differentiation of registration of real estate transactions and registration of rights to real property",
+          "i7": "Consolidation of the procedure for converting the right of permanent use into a lease for foreign investors",
+          "i8": "Involvement of non-governmental farmers' associations in the development of land policy",
+          "i9": "Creation of the institution of a land ombudsman to protect investors' rights",
+          "i10": "Creation of the institution of appeal commissions for pre-trial settlement of land disputes",
+          "i11": "Ensuring investors' access to agricultural land plots",
+          "i12": "Improvement of mechanisms for access to agricultural land for actual producers",
+          "i13": "Prevention of excessive fragmentation of land use",
+          "i14": "Prevention of excessive concentration of agricultural land",
+          "i15": "Improvement of procedures for assessing agricultural land",
+          "i16": "Improvement of environmental and water policy in the field of land use",
+          "i17": "Improvement of guarantees and protection of land users' rights upon termination of land rights",
+          "i18": "Ensuring access of vulnerable categories of land users to justice in land disputes",
+          "i19": "Ensuring equality of parties in land disputes between tenants and state structures",
+          "i20": "Ensuring fair compensation to tenants upon early termination of land use rights",
+          "i21": "Development of lending mechanisms secured by agricultural land use rights"
+        }
+      },
+      "alternative": {
+        "title": "ALTERNATIVE INVESTMENTS",
+        "items": {
+          "i0": "Development of a roadmap for transforming Uzbekistan into a regional PE/VC hub",
+          "i1": "Introduction of a special regulatory and tax regime for alternative investment funds (AIF) and their investors",
+          "i2": "Holding an annual international summit on alternative investments in Uzbekistan",
+          "i3": "Development of local management companies and investment funds"
+        }
+      },
+      "sustainable": {
+        "title": "SUSTAINABLE DEVELOPMENT",
+        "items": {
+          "i0": "Establishment of an Interdepartmental Working Group on circular economy issues and an annual specialized ESG award within the Council",
+          "i1": "Introduction of the national decision-making quality standard (Tayanch Uzbekistan)",
+          "i2": "Introduction of the national regulatory impact assessment system (RIA) and mandatory ex-post review",
+          "i3": "Introduction of the national Pre-Mortem and After-Action Review (AAR) system for mega-projects (RBC Strategic Review System)",
+          "i4": "Formation of the national KPI, accountability and «attention architecture» system in the context of RBC (Uzbekistan–2030)",
+          "i5": "Introduction of the national supplier qualification standard based on RBC principles",
+          "i6": "Development of the national RBC policy and complaints review mechanism (based on the NCP model)",
+          "i7": "Creation of a national system for reviewing complaints and resolving disputes on RBC principles (RBC Grievance Mechanism)",
+          "i8": "Introduction of uniform ESG information disclosure standards for companies",
+          "i9": "Establishment of criteria for including organizations in the Register of Responsible Business Conduct",
+          "i10": "Introduction of requirements for climate planning and climate risk management at the company level",
+          "i11": "Creation of the legal and institutional framework for issuing «green sukuk»",
+          "i12": "Development of national labeling standards and methodology for «green» loans",
+          "i13": "Development of prudential incentive measures for green and sustainable lending",
+          "i14": "Development of a comprehensive register of green and sustainable projects («Green Projects Book»)",
+          "i15": "Development of the National Sustainable Finance Strategy of the Republic of Uzbekistan",
+          "i16": "Development of ESG ratings of state enterprises and public issuers at global agencies",
+          "i17": "Modernization of environmental and social standards in the energy sector taking into account international experience",
+          "i18": "Granting the investor ownership rights to environmental attributes"
+        }
+      }
+    }
+  },
+  "secretariat": {
+    "meta": {
+      "titleSuffix": "FIC"
+    },
+    "hero": {
+      "title": "Secretariat"
+    },
+    "intro": {
+      "p1": "The Secretariat of the Foreign Investors Council is a permanently functioning operational body that ensures the continuity and consistency of the Council's work between sessions. The Secretariat organizes plenary and interim meetings, coordinates the activities of the sixteen working groups, maintains a daily dialogue with Council members and foreign investors, collects and analyzes initiatives to improve the investment climate, and ensures their advancement into the relevant state policy.",
+      "p2": "With the acquisition of legal entity status, the Secretariat gained the institutional autonomy necessary to effectively fulfil its mandate and to engage with international financial institutions."
+    },
+    "members": {
+      "aziz": {
+        "fullname": "Aziz Gafurov",
+        "position": "Head Of The Secretariat",
+        "description": "Doctor of Economic Sciences with over 20 years of experience in corporate governance, investment policy, and strategic consulting. He has extensive experience working with international investors, development banks, and government institutions. He leads the development of investor relations, policy coordination, and institutional development.",
+        "biography": "Doctor Of Economic Sciences, With Over 20 Years Of Experience In Corporate Governance, Investment Policy, And Strategic Consulting. He Has Extensive Experience Working With International Investors, Development Banks, And Government Institutions. He Leads The Development Of Investor Relations, Policy Coordination, And Institutional Development."
+      },
+      "avazbek": {
+        "fullname": "Avazbek Mullajonov",
+        "position": "Program Coordinator",
+        "description": "Over 15 years of professional experience in foreign economic relations, investment, and energy. He has extensive practice in coordinating major investment projects and developing international cooperation. At the Secretariat of the Foreign Investors Council, he is responsible for program coordination and ensuring project implementation.",
+        "biography": "Over 15 Years Of Professional Experience In Foreign Economic Relations, Investment, And Energy. He Has Extensive Practice In Coordinating Major Investment Projects And Developing International Cooperation. At The Secretariat Of The Foreign Investors Council, He Is Responsible For Program Coordination And Ensuring Project Implementation."
+      },
+      "hakimniyaz": {
+        "fullname": "Hakimniyaz Kaipbergenov",
+        "position": "Program Coordinator",
+        "description": "Graduated with honors from MGIMO (Moscow) with bachelor's and master's degrees in international law. He has experience working at the Ministry of Foreign Affairs of Uzbekistan and at an international law firm. At the Secretariat of the Foreign Investors Council, he handles legal matters and program coordination.",
+        "biography": "Graduated With Honors From MGIMO (Moscow) With Bachelor's And Master's Degrees In International Law. He Has Experience Working At The Ministry Of Foreign Affairs Of Uzbekistan And At An International Law Firm. At The Secretariat Of The Foreign Investors Council, He Handles Legal Matters And Program Coordination."
+      },
+      "vladislav": {
+        "fullname": "Vladislav Li",
+        "position": "Program Coordinator",
+        "description": "Program Coordinator of the Secretariat of the Foreign Investors Council under the President of the Republic of Uzbekistan. Vladislav Li is a specialist in process coordination, stakeholder engagement, and ensuring effective communication. He possesses practical skills in client relations, event organization, and project support.",
+        "biography": "Program Coordinator Of The Secretariat Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan.\n\nVladislav Li Is A Specialist In Process Coordination, Stakeholder Engagement, And Ensuring Effective Communication. He Possesses Practical Skills In Client Relations, Event Organization, And Project Support. He Is Distinguished By High Adaptability, Responsibility, And The Ability To Work In Dynamic Environments.\n\nEducation:\n• Westminster International University In Tashkent — Bachelor Of Arts In Business Management And Finance, 2021–2025\n\nProfessional Experience:\n• FIC Secretariat — Program Coordinator (Current Position)\n  • Coordinating Projects And Internal Processes;\n  • Interacting With Participants And Partners;\n  • Organizing Workflows And Monitoring Task Execution.\n• Tashagrochem LLC — Logistics Manager, 2024–2025\n  • Organizing And Supervising Freight Transportation;\n  • Monitoring Supplies And Resolving Operational Issues;\n  • Liaising With Clients And Drivers.\n• Tashagrochem LLC — Sales Specialist, 2023–2025\n  • Conducting Negotiations And Client Management;\n  • Building Long-Term Professional Relationships;\n  • Providing After-Sales Support.\n• Scholastic Academy Group — English Teacher Assistant, 2021–2023\n  • Organizing The Educational Process;\n  • Monitoring Student Performance;\n  • Assisting Teachers And Conducting Lessons.\n\nCompetencies And Languages:\n• Languages: Russian, English, And Uzbek — Fluent.\n• Professional Skills: Project Coordination, Communication And Client Relations, Negotiations And Presentations, Logistics And Operational Management, Teamwork, Stress Tolerance, And Result Orientation.",
+        "duties": "Program Coordinator\nSecretariat Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan\n\nAbout The Position\nThe Program Coordinator Is Responsible For Organizing, Coordinating, And Monitoring The Projects And Initiatives Of The Foreign Investors Council, Ensuring Effective Cooperation Between Government Agencies, International Partners, And The Business Community. This Role Involves Overseeing Program Implementation, Supporting Operational Processes, And Ensuring The Timely Execution Of Tasks Within The Scope Of The Secretariat's Activities.\n\nKey Responsibilities:\n\nProject And Program Coordination\n• Planning And Monitoring FIC Projects At All Stages Of Implementation.\n• Monitoring The Execution Of Tasks, Deadlines, And Key Milestones (Control Points).\n• Facilitating Interaction Between Internal And External Project Participants.\n• Supporting The Preparation And Management Of Events, Meetings, And Working Groups.\n\nOperational Activities\n• Organizing The Daily Workflows Of The Secretariat.\n• Preparing Meeting Materials, Agendas, And Minutes.\n• Ensuring Effective Document Flow And Monitoring The Implementation Of Assignments.\n• Coordinating Interaction Between Departments And Stakeholders.\n\nCommunication And Collaboration\n• Maintaining Constant Communication With Foreign Investors And Partners.\n• Ensuring The Prompt Exchange Of Information Between All Parties.\n• Preparing Official Correspondence And Working Materials In Multiple Languages.\n• Assisting In The Development Of Sustainable Professional Relationships.\n\nAnalytics And Reporting\n• Collecting And Systematizing Information Regarding Projects And Initiatives.\n• Preparing Regular Progress Reports On The Status Of Task Execution.\n• Monitoring Progress And Identifying Potential Risks.\n\nEvent Organization\n• Coordinating FIC Business Events, Forums, And High-Level Meetings.\n• Supporting Logistics And Administrative Processes.\n• Overseeing The Preparation Of Participants And Relevant Materials.\n\nCore Principles\n• High Professionalism And Precision In Task Execution.\n• Maintaining An Official And Diplomatic Tone In All Communications.\n• Strict Adherence To Confidentiality And Ethical Standards."
+      },
+      "jurabek": {
+        "fullname": "Jurabek Babaev",
+        "position": "PR & Marketing Expert",
+        "description": "Jurabek Babaev is a specialist in strategic communications, PR, and management with many years of international experience. He is responsible for developing the digital presence and international image of the Foreign Investors Council under the President of the Republic of Uzbekistan, as well as establishing cooperation with foreign investors and international partners.",
+        "biography": "Strategic Communications Advisor Of The Secretariat Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan\n\nJurabek Babaev Is A Specialist In Strategic Communications, PR, And Management With Many Years Of International Experience. He Is Responsible For Developing The Digital Presence And International Image Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan, As Well As Establishing Cooperation With Foreign Investors And International Partners.\n\nEducation:\n• Uzbek-Japanese Center — Professional Management Program, Tashkent, 2018\n• Tashkent State University Of Economics — PhD In International Tourism Management, 2017–2019\n• Tashkent State University Of Economics — Master's Degree, International Tourism Management, 2015–2017\n• Bukhara State University — Bachelor's Degree, Faculty Of Socio-Economics, Tourism And Hotel Management, 2011–2015\n• International Center Of Modern Education — Prague, Czech Republic, 2009–2011\n• Karlov College — ABE Program \"Travel, Tourism And Hospitality Business\", Prague, Czech Republic, 2007–2009\n\nProfessional Development And Certificates:\n• Vienna University Of Economics And Business, 2013\n• Oerlikon GmbH, Nuremberg, Germany, 2013\n• Banking Association Of Uzbekistan, Bukhara, 2003–2006\n\nProfessional Experience\n• Babaev Services LLC — Director, Tashkent (From September 2019 To Present)\n• Tashkent State University Of Economics — Lecturer, Department Of Tourism And Service, 2017–2021\n• Meridian Service Bukhara LLC — Foreign Economic Activity And Logistics Manager, Bukhara, 2015–2017\n• \"Bukhara Gilam\" JV LLC — Foreign Economic Activity And Logistics Specialist, Bukhara, 2011–2014\n• Hotel Karlo IV (Boscolo, 5★) — Assistant F&B Manager, Prague, Czech Republic, 2010\n• Hotel Inturprag (3★) — Administrator, Prague, Czech Republic, 2009–2010\n\nPublic Activities\n• Volunteer Of The United Nations Development Programme (UNDP) For Tourism Projects In Bukhara, 2013–2015\n• Volunteer Trainer At The \"Kelajak Ovozi\" School Of Young Entrepreneurs, 2012–2013\n• Leader And Volunteer Of The Kamolot Youth Social Movement, 2011–2015\n\nCompetencies And Languages\n• Languages: Uzbek — Native; Russian And English — Fluent; Czech And Turkish — Beginner Level\n• Professional Skills: PR, Marketing, Strategic Management, Working With Artificial Intelligence Tools, Microsoft Office Programs.",
+        "duties": "Strategic Communications Expert\nSecretariat Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan\n\nAbout The Position\nThe Advisor Is Responsible For Strengthening The International Image And Public Visibility Of The Foreign Investors Council (FIC), Developing Its Digital Presence, And Managing Strategic Communications With Foreign Investors, International Financial Institutions, And A Broad Audience In Uzbek, Russian, And English.\n\nKey Responsibilities:\n\nStrategy And Analytics\n•  Conducting A Digital Presence Audit Of The FIC Secretariat.\n•  Developing And Implementing An International SMM Strategy Aligned With The FIC's Objectives And Target Audience.\n•  Selecting And Justifying The Optimal Platforms (LinkedIn, Telegram, Instagram, Facebook).\n\nContent Development And Publication\n•  Preparing Monthly Multilingual Content: Analytical Posts, Expert Commentary, Infographics, Visual Storytelling, And Event Announcements.\n•  Producing Short Videos (Interviews, Event Coverage, Initiative Digests) And Animated Clips Regarding Reforms And Key Updates.\n•  Establishing And Maintaining A Unified Visual Identity Across The FIC's Digital Platforms.\n\nPromotion And Account Management\n•  Daily Management Of The FIC's Social Media: Planning, Posting, Moderating Discussions, And Responding To Comments In A Diplomatic Tone.\n•  Launching And Optimizing Paid Advertising Campaigns.\n•  Weekly Monitoring Of Performance And Tactical Adjustment Of Communications.\n\nReporting And Analytics\n•  Monthly Analytical Reports On Reach, Engagement, And Post Effectiveness.\n•  Developing Strategic Recommendations For The Growth Of Digital Communication Channels.\n•  Technical Support For Key Online Events And Live Broadcasts.\n\nCore Principles\n•  Compliance With International Standards Of Strategic Digital Communication.\n•  Official And Diplomatic Tone Of Communication.\n•  Strict Adherence To Confidentiality And Ethical Standards."
+      },
+      "madina": {
+        "fullname": "Madinaxon Abidova",
+        "position": "Administrative Officer",
+        "description": "Madinaxon Abidova is a professional with extensive experience in project management, international event organization, and tourism development. Throughout her career in international organizations, government structures, and the non-profit sector, she has effectively combined deep academic knowledge with practical experience. Currently, she is responsible for coordinating administrative processes of the Foreign Investors Council and ensuring liaison with investors.",
+        "biography": "Administrative Officer Of The Secretariat Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan\n\nMadinaxon Abidova Is A Professional With Extensive Experience In Project Management, International Event Organization, And Tourism Development. Throughout Her Career In International Organizations, Government Structures, And The Non-Profit Sector, She Has Effectively Combined Deep Academic Knowledge With Practical Experience. Currently, She Is Responsible For Coordinating Administrative Processes Of The Foreign Investors Council And Ensuring Liaison With Investors.\n\nEducation:\n• International Agriculture University / Royal Agricultural University — Master's In Agribusiness Management, 2023–2025\n• Management Development Institute Of Singapore In Tashkent — Bachelor's In Business And Economics, 2015–2020\n• Academic Lyceum Under Tashkent State University Of Economics — 2012–2015\n\nProfessional Experience:\n• FIC Secretariat — Administrative Officer (June 2025 – Present)\n  • Managing All Document Flow And Clerical Processes Of The Secretariat.\n  • Organizing Working Group Meetings, Investor Sessions, And Official Events.\n  • Coordinating Interaction Between Investors And Relevant State Authorities.\n• FIC Secretariat — Intern (February – June 2025)\n• Association Of Private Tourism Agencies Of Uzbekistan (APTA) — Manager, 2016–2024\n  • Coordinating More Than 15 National And International Events (B2B, Road-Shows).\n  • Participating In European Union (EU) And USAID Projects As A Project Assistant And Liaison Officer.\n  • Organizer Of The \"Tashkent Travel Mart\" B2B Exhibition And International Conferences Supported By The EU.\n• Denova Agro — Event Organizer (Vienna, Austria), 2019\n• WEST CAMP — English Teacher And Youth Program Leader, 2017\n\nPublic And Volunteer Activities:\n• Iteca-Exhibitions — Volunteer For International Exhibitions, 2017–2018\n\nCompetencies And Languages:\n• Languages: Uzbek — Native; Russian And English — Fluent.\n• Professional Skills: Event Management, International Logistics, B2B Communication, Strategic Planning, Project Monitoring, And Reporting Based On EU/USAID Standards.",
+        "duties": "Administrative Officer Of The Secretariat Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan\n\nProfessional Experience And Key Responsibilities:\n\nDocument Flow And Clerical Work\n• Managing Incoming And Outgoing Correspondence Of The Secretariat In Uzbek, Russian, And English.\n• Registration, Systematization, And Archiving Of Documents In Accordance With Established Regulations.\n• Preparation Of Official Letters, Certificates, Minutes, And Internal Memos.\n• Monitoring The Timely Execution Of Assignments And Compliance With Document Processing Deadlines.\n• Ensuring The Confidentiality And Security Of Official Information.\n\nOrganization Of Events And Meetings\n• Planning And Organizational Support For Working Group Meetings, Plenary Sessions, And Bilateral Meetings.\n• Managing Event Logistics: Hall Bookings, Preparation Of Materials, And Technical Support.\n• Drafting Agendas, Taking Minutes Of Meetings, And Monitoring The Implementation Of Decisions.\n• Liaising With Foreign Delegations And Ensuring Protocol Support For Official Visits.\n\nCoordination And Analysis\n• Ensuring Prompt Communication Between Investors And Ministries, Receiving And Monitoring The Processing Of Investor Inquiries.\n• Preparing Regular Administrative Reports On Secretariat Activities And Presentation Materials For Management.\n• Technical Support For Online Events And Video Conferences.\n\nCompetencies And Languages:\n• Languages: Uzbek And Russian — Fluent; English — Professional.\n• Professional Skills: State Clerical Standards, Strategic And Diplomatic Communication, Professional Proficiency In MS Office Programs.\n• Personal Qualities: Multitasking, Stress Tolerance, Result-Oriented, And Client-Focused Approach."
+      }
+    }
+  },
+  "becomemember": {
+    "hero": {
+      "title": "Council Members"
+    },
+    "members": {
+      "intro": "The members of the Foreign Investors Council are leading international companies, banks and financial institutions making strategic investments in the economy of Uzbekistan. Membership reflects a long-term commitment to the country's development and provides a direct channel of dialogue with the Government on investment policy issues. The Council unites 41 members from 19 countries, representing 23 sectors of the economy.",
+      "tabs": {
+        "executive": "Members of the Executive Board",
+        "founders": "Founding Members of the Association",
+        "full": "Full Members",
+        "observers": "Observer Members"
       }
     }
   }
