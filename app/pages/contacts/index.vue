@@ -52,7 +52,7 @@ async function sendForm() {
     <client-only>
       <div class="container">
         <h1
-          class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[100px] mb-14"
+          class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[50px] lg:mt-[100px] mb-8 lg:mb-14"
         >
           {{ t('Контакты') }}
         </h1>
@@ -103,10 +103,10 @@ async function sendForm() {
                 />
               </el-form-item>
               <div v-if="status === 'success'" class="mb-4 p-3 rounded-lg bg-green-50 text-green-700 text-sm">
-                {{ t('Xabaringiz yuborildi!') }}
+                {{ t('message_sent') }}
               </div>
               <div v-if="status === 'error'" class="mb-4 p-3 rounded-lg bg-red-50 text-red-700 text-sm">
-                {{ t('Xatolik yuz berdi. Qayta urinib ko\'ring.') }}
+                {{ t('error_try_again') }}
               </div>
               <div class="w-full">
                 <button

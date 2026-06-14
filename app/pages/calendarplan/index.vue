@@ -1,15 +1,15 @@
 <template>
   <div>
     <client-only>
-      <page-hero title="календарный план" />
+      <page-hero :title="t('календарный план')" />
       <div class="container">
         <timeline />
 
-        <h1
+        <!-- <h1
           class="lg:text-[64px] text-[32px] uppercase font-black text-left mt-[100px]"
         >
           {{ t("календарный план") }}
-        </h1>
+        </h1> -->
 
         <!-- <div>
           <div class="flex gap-2 mb-6 items-center lg:w-1/4 w-full mt-8">
@@ -201,12 +201,12 @@ const { t } = useI18n();
 const periodid = ref();
 const industryid = ref();
 
-const periodList = ref([
+const periodList = computed(() => [
   { id: 0, name: t("за 7 дней") },
   { id: 1, name: t("за 3 дней") },
   { id: 2, name: t("за 2 дней") },
 ]);
-const industryList = ref([
+const industryList = computed(() => [
   { id: 0, name: t("Отрасль") },
   { id: 1, name: t("Отрасль 1") },
   { id: 2, name: t("Отрасль 2") },

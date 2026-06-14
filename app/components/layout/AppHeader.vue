@@ -44,7 +44,7 @@ onMounted(() => {
             <WLocaleLink to="/" class="flex items-center gap-3 no-underline">
               <img :src="GroupLogo" class="w-10 h-10 shrink-0" alt="FIC" />
               <span
-                class="text-[11px] font-bold leading-tight max-w-[220px] uppercase"
+                class="text-[11px] font-bold leading-tight max-w-[140px] sm:max-w-[220px] uppercase"
                 :class="(props.isHome && !isTabletOrMobile) ? 'text-white' : 'text-[#191C1F]'"
                 style="font-family: 'Spline Sans', sans-serif; text-wrap: balance;"
               >

@@ -21,7 +21,7 @@ const interimRows = ref<IInterimRow[]>([
   },
   {
     no: "ИС-2",
-    date: "дата уточняется",
+    date: "2022 года",
     note: "Рассмотрены ход реализации одобренных инициатив и подготовка к очередной пленарной сессии",
   },
   {
@@ -59,7 +59,9 @@ const openDocument = async (path?: string) => {
     <client-only>
       <!-- Interim sessions -->
       <div>
-        <h2 class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]">
+        <h2
+          class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]"
+        >
           {{ t("За прошедшие годы") }}
         </h2>
 

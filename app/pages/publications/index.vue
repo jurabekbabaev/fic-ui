@@ -16,20 +16,6 @@ const downloadIcon =
 
 const analyticsReports = [
   {
-    icon: "icon-chart-pie",
-    title:
-      "Комплексная оценка социально-экономического воздействия инвестиций в Узбекистане",
-    image: FicImage,
-    file: "/documents/report-1.pdf",
-  },
-  {
-    icon: "icon-board",
-    title:
-      "Привлечение креативных инвестиций: мировой опыт и его адаптация в Узбекистане",
-    image: "/documents/report-2.jpg",
-    file: "/documents/report-2.pdf",
-  },
-  {
     icon: "icon-users-dollar",
     title:
       "Управленческие компетенции в Республике Узбекистан: интерес к цифровизации и уверенный рост",
@@ -39,18 +25,37 @@ const analyticsReports = [
       en: "/documents/report-3-en.pdf",
       uz: "/documents/report-3-uz.pdf",
     },
+    date: "19.11.2025",
+  },
+  {
+    icon: "icon-board",
+    title:
+      "Привлечение креативных инвестиций: мировой опыт и его адаптация в Узбекистане",
+    image: "/documents/report-2.jpg",
+    file: "/documents/report-2.pdf",
+    date: "26.11.2025",
+  },
+  {
+    icon: "icon-chart-pie",
+    title:
+      "Комплексная оценка социально-экономического воздействия инвестиций в Узбекистане",
+    image: FicImage,
+    file: "/documents/report-1.pdf",
+    date: "23.12.2025",
   },
   {
     icon: "icon-investment-dollar",
-    title: "Обзор инвестиционной среды Центральной Азии и Кавказа",
+    title: "Центральная Азия и Кавказ: инвестиционные приоритеты",
     image: FicImage,
     file: "/documents/report-4.pdf",
+    date: "15.06.2026",
   },
   {
     icon: "icon-reload-zap",
     title: "Циркулярная экономика",
     image: FicImage,
     file: "/documents/report-5.pdf",
+    date: "17.06.2026",
   },
 ];
 </script>
@@ -58,7 +63,7 @@ const analyticsReports = [
   <div>
     <div class="container">
       <h1
-        class="lg:text-[64px] text-[32px] uppercase font-black text-center mt-[100px] mb-[24px]"
+        class="lg:text-[64px] text-[32px] uppercase font-black text-center mt-[50px] lg:mt-[100px] mb-[24px]"
       >
         {{ t("Публикации") }}
       </h1>
@@ -89,9 +94,9 @@ const analyticsReports = [
               alt=""
               class="w-full rounded-lg"
             />
-            <!-- <p class="text-[#00000080] text-sm font-normal mt-3">
-              14 июня 2026
-            </p> -->
+            <p class="text-[#00000080] text-sm font-normal mt-3">
+              {{ report.date }}
+            </p>
             <p
               class="text-base mb-4 font-medium mt-2 text-[#191C1F] leading-snug"
             >

@@ -53,7 +53,7 @@ export default defineNuxtConfig({
       strategy: 'prefix',
       detectBrowserLanguage: {
         useCookie: true,
-        fallbackLocale: 'ru',
+        fallbackLocale: 'en',
         alwaysRedirect: false,
       },
       locales,

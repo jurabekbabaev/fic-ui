@@ -9,7 +9,7 @@
     <WorkingGroups />
     <Blog id="blog" />
     <!-- <Almanac /> -->
-    <InvestmentStats class="mt-[100px] mb-[60px]" />
+    <InvestmentStats class="mt-[50px] md:mt-[100px] mb-[30px] md:mb-[60px]" />
     <News />
     <AboutUs />
   </div>

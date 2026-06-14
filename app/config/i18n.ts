@@ -2,9 +2,8 @@
 
 export default defineI18nConfig(() => ({
     legacy: false,
-    locale: 'ru',
-    fallbackLocale: 'ru',
+    locale: 'en',
+    fallbackLocale: 'en',
     globalInjection: true,
     silentTranslationWarn: true,
-    messages: {}
 }));

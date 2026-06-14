@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 const LeaderImage1 = img("leaders/leader1.png");
@@ -92,7 +92,7 @@ interface ILeaderGroup {
   brands: string[];
 }
 
-const leaderList = ref<ILeaderGroup[]>([
+const leaderList = computed<ILeaderGroup[]>(() => [
   {
     id: 1,
     image: LeaderImage1,
@@ -418,7 +418,7 @@ function goBack() {
           </div>
         </div>
 
-        <div v-else class="text-center mt-[100px]">
+        <div v-else class="text-center mt-[50px] lg:mt-[100px]">
           <h2 class="text-2xl font-bold text-[#191C1F] mb-4">
             {{ t("Лидер не найден") }}
           </h2>
@@ -444,7 +444,11 @@ function goBack() {
               :key="index"
               class="border border-solid border-gray-500 rounded-xl bg-white flex items-center justify-center h-[162px]"
             >
-              <img :src="item" alt="" />
+              <img
+                :src="item"
+                alt=""
+                class="max-w-full max-h-full object-contain"
+              />
             </div>
           </div>
         </div>

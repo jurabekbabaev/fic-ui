@@ -86,7 +86,10 @@ export interface PlenarySessionDetail {
   roadmap?: Record<PlenarySessionLocale, PlenarySessionRoadmap>;
 }
 
-const plenarySession2024Roadmap: Record<PlenarySessionLocale, PlenarySessionRoadmap> = {
+const plenarySession2024Roadmap: Record<
+  PlenarySessionLocale,
+  PlenarySessionRoadmap
+> = {
   ru: {
     title:
       "Дорожная карта II Пленарной сессии — 14 инициатив (ПП-179, Приложение № 3)",
@@ -197,13 +200,16 @@ const plenarySession2024Roadmap: Record<PlenarySessionLocale, PlenarySessionRoad
   },
 };
 
-const plenarySession2025Roadmap: Record<PlenarySessionLocale, PlenarySessionRoadmap> = {
+const plenarySession2025Roadmap: Record<
+  PlenarySessionLocale,
+  PlenarySessionRoadmap
+> = {
   ru: {
     title: "Что закреплено постановлением ПП-226",
     stats: [
-      { value: "14", label: "инициатив в дорожной карте" },
-      { value: "4", label: "рабочие группы (инициатива № 8)" },
-      { value: "ПП-179", label: "от 16 мая 2024 года" },
+      { value: "22", label: "инициатив в дорожной карте" },
+      { value: "8", label: "рабочие группы" },
+      { value: "ПП-226", label: "от 18.07.2025 года " },
       { value: "40+", label: "инициатив отобрано к сессии" },
       { value: "2028", label: "базовые ставки налогов заморожены до" },
       { value: "16 000", label: "предприятий с иностранным капиталом" },
@@ -232,7 +238,10 @@ const plenarySession2025Roadmap: Record<PlenarySessionLocale, PlenarySessionRoad
       { value: "16 000", label: "xorijiy kapitalli korxonalar" },
       { value: "$4,5 mlrd", label: "ishga tushirilgan DXSh loyihalari" },
       { value: "$8 mlrd", label: "«yashil» iqtisodiyotga investitsiyalar" },
-      { value: "~$1 mlrd", label: "EBRRning bir yildagi rekord investitsiyasi" },
+      {
+        value: "~$1 mlrd",
+        label: "EBRRning bir yildagi rekord investitsiyasi",
+      },
     ],
     initiatives: [
       "III yalpi majlis takliflari va tashabbuslarini amalga oshirish bo'yicha Harakatlar rejasi tasdiqlandi (1-ilova)",
@@ -269,7 +278,10 @@ const plenarySession2025Roadmap: Record<PlenarySessionLocale, PlenarySessionRoad
   },
 };
 
-const plenarySession2022Text: Record<PlenarySessionLocale, PlenarySessionLocalizedText> = {
+const plenarySession2022Text: Record<
+  PlenarySessionLocale,
+  PlenarySessionLocalizedText
+> = {
   uz: {
     summary:
       "2022-yil 16-noyabr kuni Toshkent shahridagi «Ko’ksaroy» qarorgohida O’zbekiston Respublikasi Prezidenti raisligida Xorijiy investorlar kengashining birinchi yalpi majlisi bo’lib o’tdi. Mazkur majlis hukumat va xalqaro investorlar o’rtasidagi to’g’ridan-to’g’ri muloqotning institutsional formatini ochib berdi.",
@@ -299,7 +311,10 @@ const plenarySession2022Text: Record<PlenarySessionLocale, PlenarySessionLocaliz
   },
 };
 
-const plenarySession2024Text: Record<PlenarySessionLocale, PlenarySessionLocalizedText> = {
+const plenarySession2024Text: Record<
+  PlenarySessionLocale,
+  PlenarySessionLocalizedText
+> = {
   uz: {
     summary:
       "2024-yil 3-may kuni III Toshkent xalqaro investitsiya forumi doirasida O’zbekiston Respublikasi Prezidenti raisligida Xorijiy investorlar kengashining ikkinchi yalpi majlisi bo’lib o’tdi. Sessiya takliflar ishlab chiqishdan ularni tizimli amalga oshirishga o’tishni mustahkamladi.",
@@ -326,7 +341,10 @@ const plenarySession2024Text: Record<PlenarySessionLocale, PlenarySessionLocaliz
   },
 };
 
-const plenarySession2025Text: Record<PlenarySessionLocale, PlenarySessionLocalizedText> = {
+const plenarySession2025Text: Record<
+  PlenarySessionLocale,
+  PlenarySessionLocalizedText
+> = {
   uz: {
     summary:
       "2025-yil 11-iyun kuni Xalqaro kongress-markazida O’zbekiston Respublikasi Prezidenti va YeTTB prezidenti ishtirokida Xorijiy investorlar kengashining uchinchi yalpi majlisi bo’lib o’tdi. Majlisda Masdar, ACWA Power, Indorama, Vision Invest, DataVolt, VEON, Boeing, SpaceX, Meta, Franklin Templeton, TotalEnergies va boshqa kompaniyalar rahbarlari, shuningdek OECD, IFC, ADB va Islom taraqqiyot banki vakillari ishtirok etdi.",
@@ -356,28 +374,34 @@ const plenarySession2025Text: Record<PlenarySessionLocale, PlenarySessionLocaliz
   },
 };
 
-
 // Update only this object later to swap images, text, links, or downloadable files.
-export const plenarySessionDetails: Record<PlenarySessionYear, PlenarySessionDetail> = {
+export const plenarySessionDetails: Record<
+  PlenarySessionYear,
+  PlenarySessionDetail
+> = {
   "2025": {
     year: "2025",
-    cardTitle: "Третье пленарное заседание совета иностранных инвесторов, 11 июня 2025 г.",
+    cardTitle:
+      "Третье пленарное заседание совета иностранных инвесторов, 11 июня 2025 г.",
     cardImage: plenary2025Image1,
     eyebrow: "Пленарная сессия 2025",
     title: "Третье пленарное заседание совета иностранных инвесторов",
     localizedMeta: {
       uz: {
-        cardTitle: "Xorijiy investorlar kengashining uchinchi yalpi majlisi, 2025-yil 11-iyun",
+        cardTitle:
+          "Xorijiy investorlar kengashining uchinchi yalpi majlisi, 2025-yil 11-iyun",
         eyebrow: "Yalpi majlis 2025",
         title: "Xorijiy investorlar kengashining uchinchi yalpi majlisi",
       },
       ru: {
-        cardTitle: "Третье пленарное заседание совета иностранных инвесторов, 11 июня 2025 г.",
+        cardTitle:
+          "Третье пленарное заседание совета иностранных инвесторов, 11 июня 2025 г.",
         eyebrow: "Пленарная сессия 2025",
         title: "Третье пленарное заседание совета иностранных инвесторов",
       },
       en: {
-        cardTitle: "Third plenary session of the Foreign Investors Council, June 11, 2025",
+        cardTitle:
+          "Third plenary session of the Foreign Investors Council, June 11, 2025",
         eyebrow: "Plenary session 2025",
         title: "Third plenary session of the Foreign Investors Council",
       },
@@ -414,23 +438,27 @@ export const plenarySessionDetails: Record<PlenarySessionYear, PlenarySessionDet
   },
   "2024": {
     year: "2024",
-    cardTitle: "Второе пленарное заседание совета иностранных инвесторов, 3 мая 2024 г.",
+    cardTitle:
+      "Второе пленарное заседание совета иностранных инвесторов, 3 мая 2024 г.",
     cardImage: plenary2024Image1,
     eyebrow: "Пленарная сессия 2024",
     title: "Второе пленарное заседание совета иностранных инвесторов",
     localizedMeta: {
       uz: {
-        cardTitle: "Xorijiy investorlar kengashining ikkinchi yalpi majlisi, 2024-yil 3-may",
+        cardTitle:
+          "Xorijiy investorlar kengashining ikkinchi yalpi majlisi, 2024-yil 3-may",
         eyebrow: "Yalpi majlis 2024",
         title: "Xorijiy investorlar kengashining ikkinchi yalpi majlisi",
       },
       ru: {
-        cardTitle: "Второе пленарное заседание совета иностранных инвесторов, 3 мая 2024 г.",
+        cardTitle:
+          "Второе пленарное заседание совета иностранных инвесторов, 3 мая 2024 г.",
         eyebrow: "Пленарная сессия 2024",
         title: "Второе пленарное заседание совета иностранных инвесторов",
       },
       en: {
-        cardTitle: "Second plenary session of the Foreign Investors Council, May 3, 2024",
+        cardTitle:
+          "Second plenary session of the Foreign Investors Council, May 3, 2024",
         eyebrow: "Plenary session 2024",
         title: "Second plenary session of the Foreign Investors Council",
       },
@@ -463,23 +491,27 @@ export const plenarySessionDetails: Record<PlenarySessionYear, PlenarySessionDet
   },
   "2022": {
     year: "2022",
-    cardTitle: "Первое пленарное заседание совета иностранных инвесторов, 16 ноября 2022 г.",
+    cardTitle:
+      "Первое пленарное заседание совета иностранных инвесторов, 16 ноября 2022 г.",
     cardImage: plenary2023Image1,
     eyebrow: "Пленарная сессия 2022",
     title: "Первое пленарное заседание совета иностранных инвесторов",
     localizedMeta: {
       uz: {
-        cardTitle: "Xorijiy investorlar kengashining birinchi yalpi majlisi, 2022-yil 16-noyabr",
+        cardTitle:
+          "Xorijiy investorlar kengashining birinchi yalpi majlisi, 2022-yil 16-noyabr",
         eyebrow: "Yalpi majlis 2022",
         title: "Xorijiy investorlar kengashining birinchi yalpi majlisi",
       },
       ru: {
-        cardTitle: "Первое пленарное заседание совета иностранных инвесторов, 16 ноября 2022 г.",
+        cardTitle:
+          "Первое пленарное заседание совета иностранных инвесторов, 16 ноября 2022 г.",
         eyebrow: "Пленарная сессия 2022",
         title: "Первое пленарное заседание совета иностранных инвесторов",
       },
       en: {
-        cardTitle: "First plenary session of the Foreign Investors Council, November 16, 2022",
+        cardTitle:
+          "First plenary session of the Foreign Investors Council, November 16, 2022",
         eyebrow: "Plenary session 2022",
         title: "First plenary session of the Foreign Investors Council",
       },
@@ -511,13 +543,16 @@ export const plenarySessionDetails: Record<PlenarySessionYear, PlenarySessionDet
   },
 };
 
-export const plenarySessionCards = Object.values(plenarySessionDetails).map((session) => ({
-  year: session.year,
-  targetId: `plenary-${session.year}`,
-  image: session.cardImage,
-  fullname: session.cardTitle,
-  position: "Подробно",
-  link: `/plenarysessions/${session.year}`,
-}));
+export const plenarySessionCards = Object.values(plenarySessionDetails).map(
+  (session) => ({
+    year: session.year,
+    targetId: `plenary-${session.year}`,
+    image: session.cardImage,
+    fullname: session.cardTitle,
+    position: "Подробно",
+    link: `/plenarysessions/${session.year}`,
+  })
+);
 
-export const getPlenarySessionDetail = (year: PlenarySessionYear) => plenarySessionDetails[year];
+export const getPlenarySessionDetail = (year: PlenarySessionYear) =>
+  plenarySessionDetails[year];

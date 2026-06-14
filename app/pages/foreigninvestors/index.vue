@@ -3,7 +3,7 @@
     <client-only>
       <!-- <ForeignInvestors /> -->
 
-      <PageHero title="Руководство" />
+      <PageHero :title="t('Руководство')" />
       <div class="container">
         <div>
           <div class="text-center mb-[28px] fade-in-down fade-in-down--soft">
@@ -73,7 +73,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import Investors from "./investors.vue";
 import PageHero from "~/components/shared/PageHero.vue";
@@ -84,7 +84,7 @@ const FICLogo = img("pr.png");
 
 const { t } = useI18n();
 
-const leaders = ref([
+const leaders = computed(() => [
   {
     id: 1,
     logo: FICLogo,

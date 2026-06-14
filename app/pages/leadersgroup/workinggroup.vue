@@ -177,7 +177,7 @@ function ViewReadMore(item: IType) {
           <span class="text-sm text-[#505A63] font-normal leading-relaxed">
             {{
               t(
-                "По Итогам Постонавление Президента от 18.07.2025 (вступила в силу 21.07.2025) - ПП-226"
+                "По Итогам Постановление Президента от 18.07.2025 (вступила в силу 21.07.2025) - ПП-226"
               )
             }}
           </span>
@@ -349,8 +349,8 @@ function ViewReadMore(item: IType) {
 .diamond-inner-old {
   width: 100%;
   height: 100%;
-  transform: rotate(-45deg) scale(1);
-  background-size: cover;
+  transform: rotate(-45deg) scale(1.4);
+  background-size: 80%;
   background-position: center;
   background-repeat: no-repeat;
 }

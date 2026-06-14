@@ -382,7 +382,7 @@ onMounted(() => {
             <h1
               class="lg:text-[44px] text-[24px] uppercase font-black text-center mb-14"
             >
-              {{ t("Ассоциация ") }}
+              {{ t("Ассоциация") }}
             </h1>
             <div class="flex flex-wrap-reverse justify-center gap-5 w-full">
               <div

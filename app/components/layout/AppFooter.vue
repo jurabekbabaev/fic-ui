@@ -8,7 +8,7 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <footer class="bg-[#191C1F] pt-12 pb-8 mt-24">
+  <footer class="bg-[#191C1F] pt-10 pb-8 md:pt-12 mt-12 md:mt-24">
     <div class="container">
       <WLocaleLink to="/" class="flex items-center gap-3 no-underline mb-8">
         <img :src="GroupLogo" class="w-12 h-12 shrink-0" alt="FIC" />

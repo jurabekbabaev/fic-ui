@@ -28,7 +28,7 @@ const structure = [
 <template>
   <div>
     <client-only>
-      <PageHero title="Ассоциация" />
+      <PageHero :title="t('Ассоциация')" />
 
       <div class="container">
         <div class="lg:max-w-[900px] w-full">

@@ -23,9 +23,9 @@ onMounted(() => {
 <template>
   <div class="container">
     <client-only>
-      <div class="w-full mt-[100px]">
+      <div class="w-full mt-[50px] lg:mt-[100px]">
         <div class="w-auto flex flex-col items-center" v-if="model">
-          <img :src="model.image_path" alt="" />
+          <img :src="model.image_path" alt="" class="w-full h-auto rounded-xl" />
           <div class="lg:w-2/4 w-full">
             <h3 class="lg:text-[32px] text-[#191C1F] font-black mt-10 mb-5">
               {{ getLocalizedField(model, 'title') }}

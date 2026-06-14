@@ -26,16 +26,35 @@ const environmentStats = [
 
 const analyticsReports = [
   {
+    icon: "icon-users-dollar",
+    title: "Развитие управленческих компетенций",
+    image: "/documents/report-3.jpg",
+    date: "19.11.2025",
+  },
+  {
+    icon: "icon-board",
+    title: "Креативные инвестиции",
+    image: "/documents/report-2.jpg",
+    date: "26.11.2025",
+  },
+  {
     icon: "icon-chart-pie",
     title: "Комплексная оценка эффектов инвестиционной деятельности",
+    image: FicImage,
+    date: "23.12.2025",
   },
-  { icon: "icon-board", title: "Креативные инвестиции" },
-  { icon: "icon-users-dollar", title: "Развитие управленческих компетенций" },
   {
     icon: "icon-investment-dollar",
-    title: "Обзор инвестиционной среды Центральной Азии и Кавказа",
+    title: "Центральная Азия и Кавказ: инвестиционные приоритеты",
+    image: FicImage,
+    date: "15.06.2026",
   },
-  { icon: "icon-reload-zap", title: "Циркулярная экономика" },
+  {
+    icon: "icon-reload-zap",
+    title: "Циркулярная экономика",
+    image: FicImage,
+    date: "17.06.2026",
+  },
 ];
 
 const npaList = [
@@ -115,7 +134,7 @@ onBeforeUnmount(() => observers.forEach((o) => o.disconnect()));
 <template>
   <div>
     <client-only>
-      <PageHero title="Результаты Совета" />
+      <PageHero :title="t('Результаты Совета')" />
       <div class="container">
         <div class="bg-[#F7F7F7] rounded-2xl p-6 lg:p-8">
           <p
@@ -240,9 +259,9 @@ onBeforeUnmount(() => observers.forEach((o) => o.disconnect()));
               :key="i"
               class="reports-card p-4 rounded-xl bg-[#F7F7F7]"
             >
-              <img :src="FicImage" alt="" class="w-full rounded-lg" />
+              <img :src="report.image || FicImage" alt="" class="w-full rounded-lg" />
               <div class="flex justify-between items-center mt-3">
-                <p class="text-[#00000080] text-sm font-normal">14 июня 2026</p>
+                <p class="text-[#00000080] text-sm font-normal">{{ report.date }}</p>
                 <span
                   @click="navigateTo(localePath('/publications'))"
                   class="text-[#191C1F] text-sm font-normal flex items-center gap-1 cursor-pointer hover:opacity-70 transition-opacity"

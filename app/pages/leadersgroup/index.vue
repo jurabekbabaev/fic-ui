@@ -1,6 +1,6 @@
 <script setup>
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 import { ref } from "vue";
 const LeaderImage1 = img("leaders/leader1.png");
 const LeaderImage2 = img("leaders/leader2.png");
@@ -10,20 +10,23 @@ const LeaderImage5 = img("leaders/leader5.png");
 const LeaderImage6 = img("leaders/leader6.png");
 import WorkingGroup from "./workinggroup.vue";
 
-
-const leaderList = ref([
+const leaderList = computed(() => [
   {
     id: 1,
     image: LeaderImage1,
     fullname: t("Спартак Тетрашвили"),
-    position: t("TBC Bank, генеральный. Подбор талантов и управление человеческим капиталом"),
+    position: t(
+      "TBC Bank, генеральный. Подбор талантов и управление человеческим капиталом",
+    ),
     direction: t("Финансовый сектор и банковское дело"),
   },
   {
     id: 2,
     image: LeaderImage2,
     fullname: t("Александр Рукавишников"),
-    position: t("Ipoteka Bank OTP Group, Директор дирекции маркетинга и коммуникаций"),
+    position: t(
+      "Ipoteka Bank OTP Group, Директор дирекции маркетинга и коммуникаций",
+    ),
     direction: t("Привлечение талантов и развитие человеческого капитала"),
   },
   {
@@ -58,16 +61,19 @@ const leaderList = ref([
 
 const localePath = useLocalePath();
 function View(item) {
-  const to = localePath({ path: `/leadersgroup/${item.id}`, query: { isuser: 'true' } });
+  const to = localePath({
+    path: `/leadersgroup/${item.id}`,
+    query: { isuser: "true" },
+  });
   navigateTo(to);
 }
 </script>
 <template>
   <div>
     <client-only>
-    <div class="container">
-      <WorkingGroup />
-      <!-- <div>
+      <div class="container">
+        <WorkingGroup />
+        <!-- <div>
         <div>
           <h1
             class="lg:text-[64px] text-[32px] uppercase font-black mb-12 mt-[100px]"
@@ -99,7 +105,7 @@ function View(item) {
           </div>
         </div>
       </div> -->
-    </div>
+      </div>
     </client-only>
   </div>
 </template>

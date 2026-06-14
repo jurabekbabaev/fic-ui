@@ -60,7 +60,7 @@ const openDocuments = async () => {
 <template>
   <div class="pb-20 lg:pb-28">
     <client-only>
-      <PageHero title="V промежуточная сессия Совета" :image="HeroImage" />
+      <PageHero :title="t('V промежуточная сессия Совета')" :image="HeroImage" />
 
       <div class="container">
         <!-- Back link -->

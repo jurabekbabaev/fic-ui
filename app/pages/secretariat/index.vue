@@ -441,8 +441,9 @@ const members = computed(() => [
     image: Vladislav,
     fullname: t("Владислав Ли"),
     position: t("Программный координатор"),
-    description:
-      "Окончил филиал Международного университета Вестминстера в Ташкенте по направлению «Бизнес-менеджмент и финансы» и свободно владеет тремя языками. Также владеет практическими навыками эффективной работы с клиентами, проведения переговоров и решения комплексных задач.",
+    description: t(
+      "Окончил филиал Международного университета Вестминстера в Ташкенте по направлению «Бизнес-менеджмент и финансы» и свободно владеет тремя языками. Также владеет практическими навыками эффективной работы с клиентами, проведения переговоров и решения комплексных задач."
+    ),
     biography: getVladislavBiography(),
     contacts: createContacts("+998 88 099 88 88", "coord3@fics.uz"),
   },
@@ -466,17 +467,17 @@ const members = computed(() => [
     biography: getMadinaBiography(),
     contacts: createContacts("+998 88 099 88 88", "admin@fics.uz"),
   },
-]);
+]) as any;
 </script>
 
 <template>
   <div class="secretariat-page">
     <client-only>
-      <PageHero title="Секретариат" />
+      <PageHero :title="t('Секретариат')" />
       <section class="container secretariat-page__container">
-        <div class="secretariat-page__intro w-full">
+        <div class="w-full">
           <p
-            class="text-base lg:text-lg text-[#505A63] font-normal leading-[170%] pb-5"
+            class="text-base text-left lg:text-lg text-[#505A63] font-normal leading-[170%] pb-5"
           >
             {{
               t(
@@ -495,7 +496,7 @@ const members = computed(() => [
           </p>
         </div>
 
-        <div class="secretariat-page__list">
+        <div class="secretariat-page__list mt-10">
           <SecretariatProfileBlock
             v-for="member in members"
             :key="member.fullname"

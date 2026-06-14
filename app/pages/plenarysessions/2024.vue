@@ -6,5 +6,7 @@ const session = getPlenarySessionDetail("2024");
 </script>
 
 <template>
-  <PlenarySessionDetailPage :session="session" />
+  <div class="mt-8">
+    <PlenarySessionDetailPage :session="session" />
+  </div>
 </template>

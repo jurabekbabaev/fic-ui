@@ -101,7 +101,7 @@ const arrowIcon =
 <template>
   <div>
     <client-only>
-      <page-hero title="Документы" />
+      <page-hero :title="t('Документы')" />
       <div class="container">
         <!-- Hero -->
         <div class="w-full text-center mt-18">

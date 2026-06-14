@@ -1,5 +1,5 @@
 export const localeCodes = ['uz', 'ru', 'en'] as const;
-export const DEFAULT_LOCALE = localeCodes[1] as 'ru';
+export const DEFAULT_LOCALE = localeCodes[2] as 'en';
 
 export const locales = [
     {
