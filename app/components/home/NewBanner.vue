@@ -452,7 +452,12 @@ const getHeroMotion = (index) => {
 
 const getHeroPanelStyle = (index) => {
   if (isMobile.value) {
-    return { opacity: 1, visibility: "visible", pointerEvents: "auto", zIndex: 1 };
+    return {
+      opacity: 1,
+      visibility: "visible",
+      pointerEvents: "auto",
+      zIndex: 1,
+    };
   }
   const motion = getHeroMotion(index);
 
