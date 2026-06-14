@@ -7,7 +7,9 @@
       <div class="container">
         <div>
           <div class="text-center mb-[28px] fade-in-down fade-in-down--soft">
-            <h6 class="lg:text-[64px] text-[32px] font-bold mb-4 text-gray-900 uppercase">
+            <h6
+              class="lg:text-[64px] text-[32px] font-bold mb-4 text-gray-900 uppercase"
+            >
               {{ t("Руководство Совета") }}
             </h6>
           </div>
@@ -26,7 +28,9 @@
                 />
               </div>
 
-              <div class="investor-profile-image-wrap investor-profile-image-wrap--leader">
+              <div
+                class="investor-profile-image-wrap investor-profile-image-wrap--leader"
+              >
                 <img
                   :src="item.image"
                   :alt="item.fullname"
@@ -43,7 +47,8 @@
                     v-for="(line, lineIdx) in item.position.split('—')"
                     :key="lineIdx"
                     class="investor-profile-role-line"
-                  >{{ line.trim() }}</span>
+                    >{{ line.trim() }}</span
+                  >
                 </p>
               </div>
             </article>

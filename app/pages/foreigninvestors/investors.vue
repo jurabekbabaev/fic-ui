@@ -38,6 +38,9 @@
           <span v-if="person.role" class="investor-profile-badge">
             {{ person.role }}
           </span>
+          <span v-if="person.role2" class="investor-profile-badge">
+            {{ person.role2 }}
+          </span>
           <p class="investor-profile-role">
             {{ person.position }}
           </p>
@@ -81,6 +84,7 @@ interface InvestorCard {
   image: string;
   name: string;
   role: string;
+  role2: string;
   position: string;
   quote: string;
   bio: string;
@@ -93,7 +97,8 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoClass: "investor-profile-logo-image--sm",
     image: LazizImage,
     name: t("Лазиз Кудратов"),
-    role: t("Председатель Исполкома"),
+    role: t("Председатель "),
+    role2: t("Исполнительный комитет"),
     position: t(
       "Министр инвестиций, промышленности и торговли Республики Узбекистан"
     ),
@@ -109,7 +114,8 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoAlt: "EBRD",
     image: AndiImage,
     name: t("Анди Аранитаси"),
-    role: t("Член (ЕБРР)"),
+    role: t("Член "),
+    role2: t("Исполнительный комитет"),
     position: t(
       "Глава представительства Европейского банка реконструкции и развития в Узбекистане"
     ),
@@ -125,7 +131,8 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoAlt: "ADB",
     image: KanokpanImage,
     name: t("Канокпан Лао-Арая"),
-    role: t("Член (АБР)"),
+    role: t("Член"),
+    role2: t("Исполнительный комитет"),
     position: t("Председатель Совета управляющих Азиатского банка развития"),
     quote: t(
       "“Правительство демонстрирует сильную приверженность реформам и стремится вовлекать все заинтересованные стороны страны, включая частный сектор, в процесс развития.”"
@@ -139,7 +146,8 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoAlt: "IFC",
     image: NeilImage,
     name: t("Нил Маккейн"),
-    role: t("Член (МФК)"),
+    role: t("Член"),
+    role2: t("Исполнительный комитет"),
     position: t(
       "Директор офиса Международной финансовой корпорации по Узбекистану и Туркменистану"
     ),
@@ -156,8 +164,9 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoClass: "investor-profile-logo-image--sm",
     image: AzizImage,
     name: t("Азиз Гафуров"),
-    role: t("Глава Ассоциации"),
-    position: t("Глава ассоциации СИИ"),
+    role: t("Глава"),
+    role2: t("Исполнительный комитет"),
+    position: t("Глава ассоциации Совета"),
     quote: t(
       "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”"
     ),
@@ -265,6 +274,7 @@ const investorCards = computed<InvestorCard[]>(() => [
   justify-content: center;
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 20px !important;
 }
 
 .investor-profile-badge {
