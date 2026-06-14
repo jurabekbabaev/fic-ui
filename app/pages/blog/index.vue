@@ -102,7 +102,7 @@ const toNextPage = () => {
         </div>
       </div>
 
-      <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="mb-4 rounded-bl-xl rounded-br-xl" v-for="(item, i) in models" :key="i" style="background: rgb(247, 247, 247);">
           <div class="card-item cursor-pointer" @click="View(item)">
             <div

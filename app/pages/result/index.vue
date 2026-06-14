@@ -107,7 +107,7 @@ onBeforeUnmount(() => observers.forEach((o) => o.disconnect()))
         <h2 class="lg:text-[32px] text-[24px] uppercase font-black text-[#191C1F] mb-6">
           {{ t('Платформа для инвесторов') }}
         </h2>
-        <div ref="platformRef" class="grid lg:grid-cols-3 sm:grid-cols-1 gap-4 mt-5">
+        <div ref="platformRef" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
           <div
             v-for="(stat, i) in platformStats"
             :key="i"
@@ -134,7 +134,7 @@ onBeforeUnmount(() => observers.forEach((o) => o.disconnect()))
         <h2 class="lg:text-[32px] text-[24px] uppercase font-black text-[#191C1F] mb-6">
           {{ t('Развитие инвестиционной среды') }}
         </h2>
-        <div ref="environmentRef" class="grid lg:grid-cols-3 sm:grid-cols-1 gap-4 mt-5">
+        <div ref="environmentRef" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
           <div
             v-for="(stat, i) in environmentStats"
             :key="i"

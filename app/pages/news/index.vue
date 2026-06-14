@@ -27,7 +27,7 @@ const toNextPage = () => {
   <div>
     <PageHero :title="t('Новости')" />
     <div class="container">
-      <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <div
           class="p-4 rounded-xl bg-[#F7F7F7]"
           v-for="(model, index) in models"

@@ -23,8 +23,8 @@ const models = ref([
         {{ t("Публикации") }}
       </h1>
 
-      <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-5 mt-[60px]">
-        <div class="h-[260px] rounded-xl" v-for="(item, i) in models" :key="i">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-[60px]">
+        <div class="h-[200px] sm:h-[260px] rounded-xl" v-for="(item, i) in models" :key="i">
           <img :src="item" alt="" class="w-full h-full object-cover rounded-xl object-top hover:scale-105 transition-all duration-300 cursor-pointer" />
         </div>
       </div>

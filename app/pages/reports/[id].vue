@@ -34,8 +34,8 @@ onMounted(() => {
         <div class="w-full">
           <!-- Loading state -->
           <div v-if="isLoading" class="w-auto flex flex-col items-center">
-            <div class="lg:w-3/4 sm:w-full mt-24 h-64 bg-gray-200 animate-pulse rounded"></div>
-            <div class="mt-10 lg:w-2/3 sm:w-full">
+            <div class="w-full lg:w-3/4 mt-10 lg:mt-24 h-64 bg-gray-200 animate-pulse rounded"></div>
+            <div class="mt-10 w-full lg:w-2/3">
               <div class="h-8 bg-gray-200 animate-pulse rounded mb-4"></div>
               <div class="h-4 bg-gray-200 animate-pulse rounded mb-2"></div>
               <div class="h-4 bg-gray-200 animate-pulse rounded mb-2"></div>
@@ -44,8 +44,8 @@ onMounted(() => {
           
           <!-- Content when data is loaded -->
           <div v-else-if="blogData" class="w-auto flex flex-col items-center">
-            <img :src="blogData.image_path" alt="" class="lg:w-3/4 sm:w-full h-[460px] mt-24" />
-            <div class="mt-10 lg:w-2/3 sm:w-full">
+            <img :src="blogData.image_path" alt="" class="w-full lg:w-3/4 h-[240px] sm:h-[360px] lg:h-[460px] mt-10 lg:mt-24" />
+            <div class="mt-10 w-full lg:w-2/3">
               <h4 class="text-[32px] font-black text-[#191C1F]">
                 {{ getLocalizedField(blogData, 'title') }}
               </h4>

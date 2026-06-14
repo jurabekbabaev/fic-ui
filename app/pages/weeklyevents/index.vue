@@ -63,7 +63,7 @@ function View(item) {
           {{ t('Итоги недели Совета Иностранных Инвесторов') }}
         </h3>
         <!-- Loading Skeletons (initial load: no items yet) -->
-        <div v-if="loading && models.length === 0" class="grid lg:grid-cols-5 sm:grid-cols-2 gap-5">
+        <div v-if="loading && models.length === 0" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
           <div v-for="i in 5" :key="'sk-' + i" class="skeleton-card">
             <div class="skeleton-img"></div>
             <div class="skeleton-body">
@@ -75,9 +75,9 @@ function View(item) {
         </div>
 
         <!-- Actual cards -->
-        <div v-if="models.length > 0" class="grid lg:grid-cols-5 sm:grid-cols-2 gap-5">
+        <div v-if="models.length > 0" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
           <div v-for="(item, i) in models" :key="item.id || i">
-            <img :src="item.preview_image_path" class="w-full rounded-tl-xl rounded-tr-xl h-[320px] object-cover" />
+            <img :src="item.preview_image_path" class="w-full rounded-tl-xl rounded-tr-xl h-[180px] sm:h-[220px] lg:h-[320px] object-cover" />
             <div
               class="bg-[#F7F7F7] pt-5 pb-6 px-3 rounded-bl-xl rounded-br-xl cursor-pointer"
               @click="View(item)"

@@ -37,7 +37,7 @@ onMounted(() => {
             </span>
             <div class="text-[#505A63] text-base font-normal mt-8 page-content" v-html="getLocalizedField(model, 'content')"></div>
           </div>
-          <div class="grid lg:grid-cols-3 sm:grid-cols-1 mt-10 gap-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-5">
             <img v-for="(path,index) in model.gallery" :key="index" :src="fullPath(path)" alt="">
           </div>
         </div>

@@ -103,10 +103,10 @@ function ViewReadMore(item: IType) {
           >
             <!-- Left: session badge -->
             <div
-              class="sm:w-[220px] shrink-0 flex flex-col justify-center items-center py-8 px-6 uppercase"
+              class="w-full sm:w-[220px] shrink-0 flex flex-col justify-center items-center py-8 px-6 uppercase"
               :class="[item.bgcolor, item.txtcolor]"
             >
-              <div class="font-black text-[80px] leading-none text-center">
+              <div class="font-black text-[40px] sm:text-[60px] lg:text-[80px] leading-none text-center">
                 {{ item.sessionid }}
               </div>
               <p class="text-sm font-medium mt-2 text-center">{{ t(item.sessionTitleKey) }}</p>

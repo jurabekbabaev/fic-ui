@@ -7,13 +7,13 @@
         </h2>
       </div>
 
-      <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-[30px]">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
         <div>
           <div class="font-medium lg:text-[32px] text-xl mb-4">
             {{ t('Результаты по Инвесторам') }}
           </div>
           <div class="card-primary p-4">
-            <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div class="card-f7">
                 <div class="text-[48px] text-grey mb-2">
                   <i class="icon-users-dollar"></i>
@@ -75,7 +75,7 @@
             {{ t('Результаты по Совету') }}
           </div>
           <div class="card-primary p-4">
-            <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div class="card-f7">
                 <div class="text-[48px] text-grey mb-2">
                   <i class="icon-users-dollar"></i>

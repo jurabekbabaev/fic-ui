@@ -381,12 +381,12 @@ function goBack() {
           </h1> -->
           </div>
           <div class="flex flex-col lg:flex-row gap-5 items-start">
-            <div class="lg:w-1/2 sm:w-screen lg:flex block">
-              <div class="">
+            <div class="w-full lg:w-1/2 flex flex-col lg:flex-row">
+              <div class="shrink-0">
                 <img
                   :src="currentLeader.image"
                   :alt="currentLeader.fullname"
-                  class="lg:w-[324px] w-screen sm:object-cover"
+                  class="w-full lg:w-[324px] object-cover rounded-2xl"
                 />
               </div>
               <div class="ml-5 lg:mt-0 mt-5">
@@ -438,7 +438,7 @@ function goBack() {
           >
             {{ t("Участники рабочей группы") }}
           </h1>
-          <div class="grid lg:grid-cols-4 sm:grid-cols-1 gap-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <div
               v-for="(item, index) in currentLeader?.brands"
               :key="index"

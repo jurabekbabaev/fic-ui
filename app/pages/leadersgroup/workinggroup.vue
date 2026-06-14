@@ -110,7 +110,7 @@ function ViewReadMore(item: IType) {
         {{ t("Рабочие группы (РГ)") }}
       </h1>
 
-      <div class="grid lg:grid-cols-3 grid-cols-1 gap-3 mt-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-8">
         <div
           v-for="(item, index) in data"
           :key="index"
