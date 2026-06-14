@@ -74,7 +74,7 @@ const openSessionDetail = async (path: string) => {
 
               <button
                 type="button"
-                class="btn btn-secondary btn-sm w-fit"
+                class="btn btn-secondary btn-sm"
                 @click="openSessionDetail(item.link)"
               >
                 {{ t(item.position) }}

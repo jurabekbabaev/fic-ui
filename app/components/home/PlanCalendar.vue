@@ -2,51 +2,13 @@
   <div>
     <client-only>
       <div class="container">
-        <h1
+        <!-- <h1
           class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[100px]"
         >
           {{ t("календарный план") }}
-        </h1>
+        </h1> -->
 
-        <section class="evFlow">
-          <!-- coverflow stage -->
-          <div class="evFlow__stage">
-            <article
-              v-for="(item, index) in data"
-              :key="item.id"
-              class="evFlow__card"
-              :class="{ 'is-active': index === active }"
-              :style="cardStyle(index)"
-              @click="select(index)"
-            >
-              <div class="evFlow__cardBody">
-                <span class="evFlow__accent" aria-hidden="true"></span>
-                <span class="evFlow__date">{{ item.date }}</span>
-                <p class="evFlow__event">{{ item.content }}</p>
-              </div>
-            </article>
-          </div>
-
-          <!-- nav buttons -->
-          <div class="evFlow__nav">
-            <button
-              type="button"
-              class="evFlow__navBtn"
-              @click="prev"
-              aria-label="prev"
-            >
-              <i class="icon-move-right" style="transform: rotate(180deg)"></i>
-            </button>
-            <button
-              type="button"
-              class="evFlow__navBtn"
-              @click="next"
-              aria-label="next"
-            >
-              <i class="icon-move-right"></i>
-            </button>
-          </div>
-        </section>
+        <Timeline />
 
         <div class="text-center mt-[40px]">
           <WLocaleLink to="/calendarplan" class="btn btn-secondary">
@@ -59,6 +21,7 @@
 </template>
 
 <script lang="ts" setup>
+import Timeline from "@/pages/calendarplan/timeline.vue";
 import { ref } from "vue";
 import type { CSSProperties } from "vue";
 import { useI18n } from "vue-i18n";
@@ -101,7 +64,9 @@ const data = ref<IType[]>([
 
 const active = ref(2);
 
-const windowWidth = ref(typeof window !== "undefined" ? window.innerWidth : 1024);
+const windowWidth = ref(
+  typeof window !== "undefined" ? window.innerWidth : 1024
+);
 
 const select = (i: number) => {
   active.value = i;
@@ -124,7 +89,8 @@ const cardStyle = (i: number): CSSProperties => {
       zIndex: String(hidden ? 0 : 10),
       opacity: hidden ? "0" : "1",
       pointerEvents: hidden ? "none" : "auto",
-      transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease",
+      transition:
+        "transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease",
     };
   }
 
@@ -142,7 +108,9 @@ const cardStyle = (i: number): CSSProperties => {
   const hidden = abs > 2;
   const scale = abs === 0 ? 1 : Math.max(0.78, 1 - abs * 0.1);
   return {
-    transform: `translateX(${offset * 72}%) translateZ(${-abs * 140}px) rotateY(${offset * -5}deg) scale(${scale})`,
+    transform: `translateX(${offset * 72}%) translateZ(${
+      -abs * 140
+    }px) rotateY(${offset * -5}deg) scale(${scale})`,
     zIndex: String(100 - abs),
     opacity: hidden ? "0" : "1",
     pointerEvents: hidden ? "none" : "auto",
@@ -150,7 +118,9 @@ const cardStyle = (i: number): CSSProperties => {
 };
 
 onMounted(() => {
-  const onResize = () => { windowWidth.value = window.innerWidth; };
+  const onResize = () => {
+    windowWidth.value = window.innerWidth;
+  };
   window.addEventListener("resize", onResize);
   onBeforeUnmount(() => window.removeEventListener("resize", onResize));
 });
@@ -191,11 +161,8 @@ onMounted(() => {
   box-shadow: 0 30px 70px -34px rgba(25, 28, 31, 0.35);
   cursor: pointer;
   transform-style: preserve-3d;
-  transition:
-    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.55s ease,
-    box-shadow 0.55s ease,
-    filter 0.55s ease;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.55s ease,
+    box-shadow 0.55s ease, filter 0.55s ease;
 }
 
 .evFlow__card.is-active {
@@ -219,9 +186,7 @@ onMounted(() => {
   margin-bottom: 22px;
   border-radius: 999px;
   background: rgba(25, 28, 31, 0.16);
-  transition:
-    background-color 0.4s ease,
-    width 0.4s ease;
+  transition: background-color 0.4s ease, width 0.4s ease;
 }
 
 .evFlow__card.is-active .evFlow__accent {
@@ -263,11 +228,8 @@ onMounted(() => {
   color: #191c1f;
   font-size: 18px;
   cursor: pointer;
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.2s ease;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease, transform 0.2s ease;
 }
 
 .evFlow__navBtn:hover {

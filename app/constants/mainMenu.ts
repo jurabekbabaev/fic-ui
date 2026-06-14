@@ -22,7 +22,10 @@ export const mainMenuSections = [
     title: "Рабочие группы",
     items: [
       { label: "Обзор", to: "/advice" },
-      { label: "Рабочие группы Совета", to: { path: "/advice", query: { target: "mwg" } } },
+      {
+        label: "Рабочие группы Совета",
+        to: { path: "/advice", query: { target: "mwg" } },
+      },
       {
         label: "Межведомственные рабочие группы",
         to: {
@@ -50,7 +53,7 @@ export const mainMenuSections = [
     items: [
       { label: "Календарный план", to: "/calendarplan" },
       { label: "Пленарные сессии", to: "/plenarysessions" },
-      { label: "Промежуточные", to: "/interimsession" },
+      { label: "Промежуточные сессии", to: "/interimsession" },
       { label: "Встречи", to: "/weeklyevents/blog" },
       { label: "Итоги недели", to: "/weeklyevents" },
     ],

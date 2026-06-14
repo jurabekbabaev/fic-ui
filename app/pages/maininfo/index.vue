@@ -55,7 +55,9 @@ const cardStyle = (i) => {
   const hidden = abs > 2;
   const scale = abs === 0 ? 1 : Math.max(0.78, 1 - abs * 0.1);
   return {
-    transform: `translateX(${offset * 72}%) translateZ(${-abs * 140}px) rotateY(${offset * -5}deg) scale(${scale})`,
+    transform: `translateX(${offset * 72}%) translateZ(${
+      -abs * 140
+    }px) rotateY(${offset * -5}deg) scale(${scale})`,
     zIndex: String(100 - abs),
     opacity: hidden ? "0" : "1",
     pointerEvents: hidden ? "none" : "auto",
@@ -100,7 +102,10 @@ const taskItems = [
   },
   {
     key: "стандарты качества",
-    iconPaths: ["M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z", "M9 12l2 2 4-4"],
+    iconPaths: [
+      "M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z",
+      "M9 12l2 2 4-4",
+    ],
   },
   {
     key: "правовые реформы",
@@ -155,11 +160,11 @@ watch(
           tasksObserver?.disconnect();
         }
       },
-      { threshold: 0.15 },
+      { threshold: 0.15 }
     );
     tasksObserver.observe(el);
   },
-  { immediate: true },
+  { immediate: true }
 );
 
 onBeforeUnmount(() => {
@@ -171,19 +176,21 @@ onBeforeUnmount(() => {
     <client-only>
       <PageHero title="История Совета" />
       <div class="container">
-        <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-10 lg:gap-20 items-center">
+        <div
+          class="grid lg:grid-cols-2 sm:grid-cols-1 gap-10 lg:gap-20 items-center"
+        >
           <div>
             <p class="text-base text-[#505A63] font-normal pb-5">
               {{
                 t(
-                  "Совет иностранных инвесторов при Президенте Республики Узбекистан — институциональная площадка для прямого диалога между Правительством Узбекистана и инвесторами, осуществляющими деятельность в стране. Учреждён Постановлением Президента № ПП-4519 от 13 ноября 2019 года.",
+                  "Совет иностранных инвесторов при Президенте Республики Узбекистан — институциональная площадка для прямого диалога между Правительством Узбекистана и инвесторами, осуществляющими деятельность в стране. Учреждён Постановлением Президента № ПП-4519 от 13 ноября 2019 года."
                 )
               }}
             </p>
             <p class="text-base text-[#505A63] font-normal pb-5">
               {{
                 t(
-                  "Деятельность Совета направлена на выявление ключевых препятствий для привлечения инвестиций, разработку совместно с государственными органами решений по их устранению и обеспечение благоприятного инвестиционного климата. Председатель Совета — Президент Республики Узбекистан; сопредседатель — Президент ЕБРР.",
+                  "Деятельность Совета направлена на выявление ключевых препятствий для привлечения инвестиций, разработку совместно с государственными органами решений по их устранению и обеспечение благоприятного инвестиционного климата. Председатель Совета — Президент Республики Узбекистан; сопредседатель — Президент ЕБРР."
                 )
               }}
             </p>
@@ -203,7 +210,9 @@ onBeforeUnmount(() => {
 
         <section class="historyFlow">
           <div class="historyFlow__head">
-            <span class="historyFlow__kicker">{{ t("Хронология") }}</span>
+            <span class="historyFlow__kicker !text-2xl !font-bold">{{
+              t("Хронология")
+            }}</span>
             <p class="historyFlow__sub">
               {{ t("Ключевые этапы развития Совета") }}
             </p>
@@ -276,7 +285,10 @@ onBeforeUnmount(() => {
           <div class="councilTasks__panel">
             <!-- desktop: orbital diagram -->
             <div class="councilTasks__orbit">
-              <span class="councilTasks__ring councilTasks__ring--b" aria-hidden="true"></span>
+              <span
+                class="councilTasks__ring councilTasks__ring--b"
+                aria-hidden="true"
+              ></span>
 
               <div class="councilTasks__hub">
                 <span class="councilTasks__hubNum">9</span>
@@ -384,11 +396,8 @@ onBeforeUnmount(() => {
   font-weight: 500;
   white-space: nowrap;
   cursor: pointer;
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease, transform 0.25s ease;
 }
 
 .historyFlow__pill:hover {
@@ -430,11 +439,8 @@ onBeforeUnmount(() => {
   box-shadow: 0 30px 70px -34px rgba(25, 28, 31, 0.35);
   cursor: pointer;
   transform-style: preserve-3d;
-  transition:
-    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.55s ease,
-    box-shadow 0.55s ease,
-    filter 0.55s ease;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.55s ease,
+    box-shadow 0.55s ease, filter 0.55s ease;
 }
 
 .historyFlow__card.is-active {
@@ -500,11 +506,8 @@ onBeforeUnmount(() => {
   color: #191c1f;
   font-size: 18px;
   cursor: pointer;
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.2s ease;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease, transform 0.2s ease;
 }
 
 .historyFlow__navBtn:hover {
@@ -615,12 +618,9 @@ onBeforeUnmount(() => {
   height: 204px;
   border-radius: 50%;
   border: 1px solid rgba(25, 28, 31, 0.06);
-  background:
-    radial-gradient(100% 100% at 50% 22%, #ffffff 0%, #eef1f4 100%);
-  box-shadow:
-    0 0 0 14px rgba(25, 28, 31, 0.02),
-    0 0 0 30px rgba(25, 28, 31, 0.012),
-    0 24px 54px rgba(25, 28, 31, 0.12);
+  background: radial-gradient(100% 100% at 50% 22%, #ffffff 0%, #eef1f4 100%);
+  box-shadow: 0 0 0 14px rgba(25, 28, 31, 0.02),
+    0 0 0 30px rgba(25, 28, 31, 0.012), 0 24px 54px rgba(25, 28, 31, 0.12);
   transform: translate(-50%, -50%);
 }
 
@@ -709,11 +709,8 @@ onBeforeUnmount(() => {
   background: #ffffff;
   color: #191c1f;
   box-shadow: 0 8px 22px rgba(25, 28, 31, 0.07);
-  transition:
-    background-color 0.28s ease,
-    border-color 0.28s ease,
-    color 0.28s ease,
-    transform 0.28s ease;
+  transition: background-color 0.28s ease, border-color 0.28s ease,
+    color 0.28s ease, transform 0.28s ease;
 }
 
 .councilTasks__icon svg {

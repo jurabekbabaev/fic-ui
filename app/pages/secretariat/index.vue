@@ -474,9 +474,9 @@ const members = computed(() => [
     <client-only>
       <PageHero title="Секретариат" />
       <section class="container secretariat-page__container">
-        <div class="secretariat-page__intro w-full">
+        <div class="w-full">
           <p
-            class="text-base lg:text-lg text-[#505A63] font-normal leading-[170%] pb-5"
+            class="text-base text-left lg:text-lg text-[#505A63] font-normal leading-[170%] pb-5"
           >
             {{
               t(
@@ -495,7 +495,7 @@ const members = computed(() => [
           </p>
         </div>
 
-        <div class="secretariat-page__list">
+        <div class="secretariat-page__list mt-10">
           <SecretariatProfileBlock
             v-for="member in members"
             :key="member.fullname"

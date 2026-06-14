@@ -29,7 +29,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="eventSection">
+  <div v-if="false" class="eventSection">
     <div class="flex justify-center items-center gap-5">
       <div class="uppercase font-medium opacity-[70%]">{{t('Ближайшие события')}}</div>
       <div class="delimiter"></div>

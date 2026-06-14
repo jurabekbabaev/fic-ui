@@ -2,9 +2,9 @@
   <div class="w-full bg-white mt-[100px]">
     <!-- Title -->
     <h1
-      class="lg:text-[64px] text-center text-[32px] font-extrabold mb-12 text-black"
+      class="lg:text-[64px] uppercase text-center text-[32px] font-extrabold mb-12 text-black"
     >
-      Основные вехи
+      Календарь совета
     </h1>
 
     <section class="evFlow">
