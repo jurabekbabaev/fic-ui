@@ -1,33 +1,31 @@
 <script setup>
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
-import {
-  getLocalizedField,
-  getLocalizedTitle,
-  t as tHelper,
-} from "~/composables/helpers";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
+import { getLocalizedField } from "~/composables/helpers";
 import { useNewsStore } from "@/stores/news";
+import PageHero from "~/components/shared/PageHero4.vue";
 const models = computed(() => {
   return store.list;
-})
+});
 const store = useNewsStore();
 const page = ref(1);
 const getModels = () => {
-  store.getList({page: page.value})
-}
+  store.getList({ page: page.value });
+};
 const pagination = computed(() => {
   return store.pagination;
 });
 onMounted(() => {
   getModels();
-})
+});
 const toNextPage = () => {
   page.value++;
   getModels();
-}
+};
 </script>
 <template>
   <div>
+    <PageHero :title="t('Новости')" />
     <div class="container">
       <h1
         class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[100px] mb-14"
@@ -39,7 +37,7 @@ const toNextPage = () => {
           <img :src="model.image_path" alt="" />
           <div class="flex justify-between mt-3">
             <p class="text-[#00000080] text-sm font-normal">
-              {{ date(model.date, 'MONTH DAY, YYYY') }}
+              {{ date(model.date, "MONTH DAY, YYYY") }}
             </p>
             <a :href="model.other_link" target="_blank" class="text-[#191C1F] text-sm font-normal flex items-center">
               <span>{{ t('newsPage.moreLabel') }}</span> <i class="icon-move-right ml-1"></i>

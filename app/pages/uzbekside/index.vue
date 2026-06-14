@@ -21,16 +21,16 @@ onMounted(() => {
         <h1 class="lg:text-[64px] text-[32px] uppercase font-black mb-10 mt-12">
           {{ t("Узбекская сторона") }}
         </h1>
-        <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-[50px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[50px]">
           <div
-            class="lg:flex sm:block items-center gap-6"
+            class="flex flex-col lg:flex-row items-start lg:items-center gap-6"
             v-for="(item, i) in models"
             :key="i"
           >
             <img
               :src="item.image_path"
               :alt="item.fullname"
-              class="lg:w-[260px] w-screen lg:h-[320px] h-full rounded-xl object-cover"
+              class="w-full lg:w-[260px] h-auto lg:h-[320px] rounded-xl object-cover"
             />
             <div class="block lg:mb-0 mb-12">
               <span class="block text-lg font-medium text-[#505A63] mt-3">{{

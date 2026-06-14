@@ -9,13 +9,14 @@ const { t } = useI18n();
 <template>
   <footer class="bg-[#191C1F] pt-12 pb-8 mt-24">
     <div class="container">
-      <div class="lg:flex sm:block items-stretch gap-12">
-        <!-- Left: Logo + Socials + Copyright -->
+      <img src="/images/logo-white.svg" alt="FIC" class="w-[200px] mb-8" />
+
+      <div class="flex flex-col lg:flex-row items-stretch gap-12">
+        <!-- Left: Socials + Copyright -->
         <div
-          class="lg:w-[40%] shrink-0 mb-10 lg:mb-0 flex flex-col justify-between"
+          class="lg:w-[40%] shrink-0 mb-10 lg:mb-0 flex flex-col justify-between order-2 lg:order-1"
         >
           <div>
-            <img src="/images/logo-white.svg" alt="FIC" class="w-[200px]" />
             <ul class="mt-5 space-y-2.5">
               <li>
                 <p
@@ -89,7 +90,7 @@ const { t } = useI18n();
 
         <!-- Right: All menu sections in a 3-column grid -->
         <div
-          class="lg:w-[60%] grid grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-8"
+          class="lg:w-[60%] grid grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-8 order-1 lg:order-2"
         >
           <div v-for="section in mainMenuSections" :key="section.title">
             <h4

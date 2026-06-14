@@ -71,7 +71,7 @@ function goBack() {
             {{ currentLeader.direction }}
           </h1>
           <div class="flex flex-col lg:flex-row gap-5 items-start mt-[30px]">
-            <div class="lg:w-1/2 sm:w-screen flex">
+            <div class="w-full lg:w-1/2 flex">
               <div class="leader-image-frame shrink-0">
                 <img
                   :src="currentLeader.image"
@@ -107,7 +107,7 @@ function goBack() {
             </div>
           </div>
           <div class="flex flex-col lg:flex-row gap-5 items-start mt-[30px]">
-            <div class="lg:w-1/2 sm:w-screen flex">
+            <div class="w-full lg:w-1/2 flex">
               <div class="leader-image-frame shrink-0">
                 <img
                   :src="currentLeader.partner_image"
@@ -165,7 +165,7 @@ function goBack() {
           >
             {{ t("Со стороны государства") }}
           </h1>
-          <div class="grid lg:grid-cols-4 sm:grid-cols-1 gap-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <div
               class="min-h-[201px] border-1 border-[#00000066] rounded-xl p-4 text-center"
               v-for="(user, i) in currentLeader?.users"
@@ -190,7 +190,7 @@ function goBack() {
           >
             {{ t("со стороны совета") }}
           </h1>
-          <div class="grid lg:grid-cols-4 sm:grid-cols-1 gap-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <div
               v-for="(item, index) in currentLeader?.brands"
               :key="index"
@@ -233,6 +233,12 @@ function goBack() {
 @media (max-width: 1023px) {
   .leader-image-frame {
     width: 180px;
+  }
+}
+
+@media (max-width: 639px) {
+  .leader-image-frame {
+    width: 120px;
   }
 }
 </style>

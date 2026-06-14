@@ -82,10 +82,10 @@ const comitetdata = ref([
               {{ t("Деятельность Совета строится на модели совместного председательства, отражающей партнёрский характер диалога между государством и международными инвесторами. Совет возглавляет Президент Республики Узбекистан; сопредседателем выступает Президент Европейского банка реконструкции и развития. Оперативное руководство осуществляет Исполнительный комитет, в состав которого входят представители трёх международных финансовых институтов-учредителей — ЕБРР, АБР и МФК — наряду с профильным министром и Главой Ассоциации.") }}
             </p>
             <div
-              class="bg-white mb-[80px] border-[#0000001A] rounded-[32px] lg:w-[1014px] w-full m-auto relative flex justify-center mt-[241px]"
+              class="bg-white mb-[80px] border-[#0000001A] rounded-[32px] w-full max-w-[1014px] m-auto relative flex justify-center mt-[241px]"
             >
               <div
-                class="grid grid-cols-2 lg:w-[734px] w-full m-auto gap-5 absolute top-[-217px] p-3"
+                class="grid grid-cols-1 sm:grid-cols-2 w-full max-w-[734px] m-auto gap-5 absolute top-[-217px] p-3"
               >
                 <div
                   class="border-1 border-[#0000001A] p-4 rounded-2xl bg-white"
@@ -121,7 +121,7 @@ const comitetdata = ref([
 
           <!-- Исполнительный комитет -->
           <div
-            class="bg-[#0000000D] border-1 border-[#0000001A] rounded-[32px] lg:w-[1300px] w-full m-auto my-[80px] lg:px-[60px] py-[60px] px-3"
+            class="bg-[#0000000D] border-1 border-[#0000001A] rounded-[32px] w-full max-w-[1300px] m-auto my-[80px] lg:px-[60px] py-[60px] px-3"
           >
             <h1
               class="lg:text-[44px] text-[24px] uppercase font-black text-center mb-14"
