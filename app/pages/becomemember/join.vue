@@ -6,76 +6,76 @@ const { t } = useI18n();
 const admissionSteps = [
   {
     n: "01",
-    title: "Заявка и документы",
-    text: "Подача письменного заявления вместе с полным комплектом необходимых подтверждающих документов с указанием запрашиваемой категории членства",
+    title: "becomemember.join.admission.steps.application.title",
+    text: "becomemember.join.admission.steps.application.text",
   },
   {
     n: "02",
-    title: "Рассмотрение",
-    text: "Оценка, включая проверку документов и соответствия требованиям",
+    title: "becomemember.join.admission.steps.review.title",
+    text: "becomemember.join.admission.steps.review.text",
   },
   {
     n: "03",
-    title: "Решение",
-    text: "Рассмотрение и принятие решения Исполнительным комитетом",
+    title: "becomemember.join.admission.steps.decision.title",
+    text: "becomemember.join.admission.steps.decision.text",
   },
   {
     n: "04",
-    title: "Оформление",
-    text: "Подписание соглашения о членстве и оплата членских взносов",
+    title: "becomemember.join.admission.steps.formalization.title",
+    text: "becomemember.join.admission.steps.formalization.text",
   },
 ];
 
 const membershipTiers = [
   {
     key: "exec",
-    title: "Исполнительный комитет / Учредители (МФО)",
+    title: "becomemember.join.tiers.items.exec.title",
     featured: false,
     points: [
-      "Стратегическая роль в управлении",
-      "Решающий голос по изменениям Устава, реорганизации и ликвидации",
+      "becomemember.join.tiers.items.exec.points.0",
+      "becomemember.join.tiers.items.exec.points.1",
     ],
     cap: null,
   },
   {
     key: "full",
-    title: "Действительные члены",
+    title: "becomemember.join.tiers.items.full.title",
     featured: false,
     points: [
-      "Ключевые и активные инвесторы",
-      "Решающее право голоса",
-      "Участие в пленарных сессиях с Президентом Узбекистана",
-      "Участие в официальном протоколе и закрытых рабочих форматах",
+      "becomemember.join.tiers.items.full.points.0",
+      "becomemember.join.tiers.items.full.points.1",
+      "becomemember.join.tiers.items.full.points.2",
+      "becomemember.join.tiers.items.full.points.3",
     ],
-    cap: "до 40 членов",
+    cap: "becomemember.join.tiers.items.full.cap",
   },
   {
     key: "observer",
-    title: "Наблюдатели",
+    title: "becomemember.join.tiers.items.observer.title",
     featured: false,
     points: [
-      "Консультативная (без права решающего голоса) роль",
-      "Участие в пленарных сессиях СИИ",
-      "Участие в открытых сессиях, обсуждениях и экспертных форматах",
+      "becomemember.join.tiers.items.observer.points.0",
+      "becomemember.join.tiers.items.observer.points.1",
+      "becomemember.join.tiers.items.observer.points.2",
     ],
-    cap: "до 60 членов",
+    cap: "becomemember.join.tiers.items.observer.cap",
   },
 ];
 
 const participationPrinciples = [
-  "Пленарные сессии СИИ открыты для членов и наблюдателей",
-  "Официальные протокольные форматы проводятся в рамках членства",
-  "Принятие решений и голосование закреплены только за членами",
+  "becomemember.join.participation.items.0",
+  "becomemember.join.participation.items.1",
+  "becomemember.join.participation.items.2",
 ];
 
 const eligibilityGeneral = [
-  "Соответствие целям СИИ и положительная деловая репутация",
-  "Активная или планируемая инвестиционная деятельность в Узбекистане",
+  "becomemember.join.eligibility.general.0",
+  "becomemember.join.eligibility.general.1",
 ];
 
 const eligibilityFullMembers = [
-  "Инвестиции или проекты на сумму ≥ 50 млн USD",
-  "Для МФО: финансирование / гарантии / техническая помощь ≥ 500 млн USD",
+  "becomemember.join.eligibility.fullMembers.0",
+  "becomemember.join.eligibility.fullMembers.1",
 ];
 </script>
 
@@ -85,28 +85,24 @@ const eligibilityFullMembers = [
       <div id="membership-form" class="container">
         <div class="mt-12 lg:mt-20 mb-14 sm:text-left lg:text-center">
           <h1 class="lg:text-[64px] text-[32px] uppercase font-black">
-            {{ t("Стать членом") }}
+            {{ t("becomemember.join.title") }}
           </h1>
           <h2
             class="mt-4 text-2xl lg:text-4xl uppercase font-black text-[#191C1F]"
           >
-            {{ t("Категории, влияние и порядок приёма") }}
+            {{ t("becomemember.join.subtitle") }}
           </h2>
           <h3
             class="mt-5 lg:max-w-[920px] lg:mx-auto text-base lg:text-xl font-semibold leading-relaxed text-[#505A63]"
           >
-            {{
-              t(
-                "СИИ — основная институциональная платформа для структурированного диалога между иностранными инвесторами и Правительством Узбекистана.",
-              )
-            }}
+            {{ t("becomemember.join.lead") }}
           </h3>
         </div>
 
         <!-- Admission procedure -->
         <section class="mt-[50px]">
           <h3 class="lg:text-[32px] text-2xl font-black">
-            {{ t("Процедура вступления") }}
+            {{ t("becomemember.join.admission.heading") }}
           </h3>
 
           <ol
@@ -144,18 +140,14 @@ const eligibilityFullMembers = [
           <p
             class="mt-6 text-sm lg:text-base text-[#505A63] italic leading-relaxed"
           >
-            {{
-              t(
-                "Приём и форматы участия определяются в соответствии с Уставом, Положением о членстве и применимыми протокольными правилами.",
-              )
-            }}
+            {{ t("becomemember.join.admission.note") }}
           </p>
         </section>
 
         <!-- Membership categories & level of influence -->
         <section class="mt-[60px]">
           <h3 class="lg:text-[32px] text-2xl font-black">
-            {{ t("Категории членства и уровень влияния") }}
+            {{ t("becomemember.join.tiers.heading") }}
           </h3>
 
           <div
@@ -228,7 +220,7 @@ const eligibilityFullMembers = [
                       tier.featured ? 'text-white/55' : 'text-[#9AA3AC]',
                     ]"
                   >
-                    {{ t("Лимит мест") }}
+                    {{ t("becomemember.join.tiers.capLabel") }}
                   </span>
                   <span
                     :class="[
@@ -252,7 +244,7 @@ const eligibilityFullMembers = [
             class="bg-white border border-[#0000001A] rounded-2xl p-6 lg:p-8"
           >
             <h3 class="text-xl lg:text-2xl font-black text-[#191C1F]">
-              {{ t("Принципы участия") }}
+              {{ t("becomemember.join.participation.heading") }}
             </h3>
             <ul class="mt-6 space-y-4">
               <li
@@ -276,7 +268,7 @@ const eligibilityFullMembers = [
             class="bg-white border border-[#0000001A] rounded-2xl p-6 lg:p-8"
           >
             <h3 class="text-xl lg:text-2xl font-black text-[#191C1F]">
-              {{ t("Ключевые критерии соответствия") }}
+              {{ t("becomemember.join.eligibility.heading") }}
             </h3>
             <ul class="mt-6 space-y-4">
               <li
@@ -297,7 +289,7 @@ const eligibilityFullMembers = [
 
             <div class="mt-6 rounded-xl bg-[#191C1F]/5 p-5">
               <p class="text-sm lg:text-base font-bold text-[#191C1F]">
-                {{ t("Для действительных членов:") }}
+                {{ t("becomemember.join.eligibility.fullMembersLabel") }}
               </p>
               <ul class="mt-3 space-y-3">
                 <li

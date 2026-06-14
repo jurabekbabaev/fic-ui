@@ -6,7 +6,7 @@ import PageHero from "~/components/shared/PageHero.vue";
 const { t, locale } = useI18n();
 
 useHead({
-  title: `${t("investments.hero.title")} | FIC`,
+  title: `${t("investments.hero.title")} | ${t("investments.meta.titleSuffix")}`,
 });
 
 const intro = [

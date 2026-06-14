@@ -579,8 +579,8 @@ export const plenarySessionCards = Object.values(plenarySessionDetails).map((ses
   year: session.year,
   targetId: `plenary-${session.year}`,
   image: session.cardImage,
-  fullname: session.cardTitle,
-  position: "Подробно",
+  localizedMeta: session.localizedMeta,
+  position: "plenarySessions.viewDetails",
   link: `/plenarysessions/${session.year}`,
 }));
 

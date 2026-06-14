@@ -2,15 +2,11 @@
   <div class="container mx-auto px-4">
     <div class="text-center mb-12 fade-in-down mt-[100px]">
       <h2 class="lg:text-[64px] text-[32px] font-bold mb-4 text-gray-900">
-        {{ t("Исполнительный комитет") }}
+        {{ t("management.executiveCommittee.title") }}
       </h2>
       <div class="w-full flex justify-center">
         <div class="text-base lg:text-xl lg:w-1/2 text-gray-600">
-          {{
-            t(
-              "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            )
-          }}
+          {{ t("management.executiveCommittee.subtitle") }}
         </div>
       </div>
     </div>
@@ -32,30 +28,30 @@
         <div class="investor-profile-image-wrap">
           <img
             :src="person.image"
-            :alt="person.name"
+            :alt="t(person.name)"
             class="investor-profile-image"
           />
         </div>
 
         <div class="investor-profile-copy">
           <p v-if="showQuote" class="investor-profile-quote">
-            {{ person.quote }}
+            {{ t(person.quote) }}
           </p>
           <h3 class="investor-profile-name">
-            {{ person.name }}
+            {{ t(person.name) }}
           </h3>
           <span v-if="person.role" class="investor-profile-badge">
-            {{ person.role }}
+            {{ t(person.role) }}
           </span>
           <p class="investor-profile-role">
-            {{ person.position }}
+            {{ t(person.position) }}
           </p>
           <div v-if="!showQuote" class="investor-bio-wrap">
             <button class="investor-bio-btn">
-              <span>{{ t("Биография") }}</span>
+              <span>{{ t("management.executiveCommittee.bioLabel") }}</span>
             </button>
             <div class="investor-bio-popover" role="tooltip">
-              <p class="investor-bio-text">{{ person.bio }}</p>
+              <p class="investor-bio-text">{{ t(person.bio) }}</p>
             </div>
           </div>
         </div>
@@ -101,78 +97,52 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoAlt: "MIIT",
     logoClass: "investor-profile-logo-image--sm",
     image: LazizImage,
-    name: t("Лазиз Кудратов"),
-    role: t("Председатель Исполкома"),
-    position: t(
-      "Министр инвестиций, промышленности и торговли Республики Узбекистан"
-    ),
-    quote: t(
-      "“Узбекистан демонстрирует устойчивый рост инвестиционной активности благодаря проводимым реформам, созданию благоприятных условий для иностранных инвесторов.”"
-    ),
-    bio: t(
-      "Министр инвестиций, промышленности и торговли РУз, Председатель Исполнительного комитета. Руководит инвестиционной политикой, промышленным развитием и внешней торговлей страны."
-    ),
+    name: "management.executiveCommittee.members.0.name",
+    role: "management.executiveCommittee.members.0.role",
+    position: "management.executiveCommittee.members.0.position",
+    quote: "management.executiveCommittee.members.0.quote",
+    bio: "management.executiveCommittee.members.0.bio",
   },
   {
     logo: EBank,
     logoAlt: "EBRD",
     image: AndiImage,
-    name: t("Анди Аранитаси"),
-    role: t("Член (ЕБРР)"),
-    position: t(
-      "Глава представительства Европейского банка реконструкции и развития в Узбекистане"
-    ),
-    quote: t(
-      "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”"
-    ),
-    bio: t(
-      "Директор, Глава представительства ЕБРР в Узбекистане. Более 25 лет опыта в банковской сфере; расширил инвестиции ЕБРР в энергетику, инфраструктуру и частный сектор Узбекистана."
-    ),
+    name: "management.executiveCommittee.members.1.name",
+    role: "management.executiveCommittee.members.1.role",
+    position: "management.executiveCommittee.members.1.position",
+    quote: "management.executiveCommittee.members.1.quote",
+    bio: "management.executiveCommittee.members.1.bio",
   },
   {
     logo: AdBank,
     logoAlt: "ADB",
     image: KanokpanImage,
-    name: t("Канокпан Лао-Арая"),
-    role: t("Член (АБР)"),
-    position: t("Председатель Совета управляющих Азиатского банка развития"),
-    quote: t(
-      "“Правительство демонстрирует сильную приверженность реформам и стремится вовлекать все заинтересованные стороны страны, включая частный сектор, в процесс развития.”"
-    ),
-    bio: t(
-      "Страновой директор АБР в Узбекистане. Более 25 лет опыта в области развития и экономической политики."
-    ),
+    name: "management.executiveCommittee.members.2.name",
+    role: "management.executiveCommittee.members.2.role",
+    position: "management.executiveCommittee.members.2.position",
+    quote: "management.executiveCommittee.members.2.quote",
+    bio: "management.executiveCommittee.members.2.bio",
   },
   {
     logo: IfcBank,
     logoAlt: "IFC",
     image: NeilImage,
-    name: t("Нил Маккейн"),
-    role: t("Член (МФК)"),
-    position: t(
-      "Директор офиса Международной финансовой корпорации по Узбекистану и Туркменистану"
-    ),
-    quote: t(
-      "“Ключевые конкурентные преимущества Узбекистана — крупнейшее население в Центральной Азии и наиболее диверсифицированная экономика.”"
-    ),
-    bio: t(
-      "Директор офиса МФК по Узбекистану и Туркменистану. Руководит операциями МФК по развитию частного сектора."
-    ),
+    name: "management.executiveCommittee.members.3.name",
+    role: "management.executiveCommittee.members.3.role",
+    position: "management.executiveCommittee.members.3.position",
+    quote: "management.executiveCommittee.members.3.quote",
+    bio: "management.executiveCommittee.members.3.bio",
   },
   {
     logo: FICLogo,
     logoAlt: "FIC",
     logoClass: "investor-profile-logo-image--sm",
     image: AzizImage,
-    name: t("Азиз Гафуров"),
-    role: t("Глава Ассоциации"),
-    position: t("Глава ассоциации СИИ"),
-    quote: t(
-      "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”"
-    ),
-    bio: t(
-      "Глава Ассоциации и Руководитель Секретариата Совета. Топ-менеджер с более чем 20-летним опытом в корпоративном управлении, управлении рисками и инвестиционной политике."
-    ),
+    name: "management.executiveCommittee.members.4.name",
+    role: "management.executiveCommittee.members.4.role",
+    position: "management.executiveCommittee.members.4.position",
+    quote: "management.executiveCommittee.members.4.quote",
+    bio: "management.executiveCommittee.members.4.bio",
   },
 ]);
 </script>
