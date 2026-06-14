@@ -1002,7 +1002,7 @@ onUnmounted(() => {
   position: absolute;
   inset: 0;
   z-index: 11;
-  overflow-y: auto;
+  overflow: visible;
   pointer-events: none;
 }
 

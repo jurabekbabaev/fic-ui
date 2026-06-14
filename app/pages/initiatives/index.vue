@@ -1,7 +1,7 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 const { t, locale } = useI18n();
-import { computed } from "vue";
+import { computed, ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 import PageHero from "~/components/shared/PageHero4.vue";
 
 const getText = (item) => {
@@ -807,15 +807,49 @@ const totalCount = computed(() =>
   categories.reduce((sum, cat) => sum + cat.items.length, 0)
 );
 
-const categoryStartIndex = computed(() => {
-  const starts = [];
-  let counter = 1;
-  for (const cat of categories) {
-    starts.push(counter);
-    counter += cat.items.length;
-  }
-  return starts;
+const ANIM_DURATION = 1500;
+const categoryDisplay = ref(categories.map(() => 0));
+const statsCardsRef = ref(null);
+const catObservers = [];
+const activeTab = ref(0);
+
+function easeOutCubic(x) {
+  return 1 - Math.pow(1 - x, 3);
+}
+
+function animateCategories() {
+  const start = performance.now();
+  const targets = categories.map((cat) => cat.items.length);
+  const step = (now) => {
+    const progress = Math.min((now - start) / ANIM_DURATION, 1);
+    const eased = easeOutCubic(progress);
+    categoryDisplay.value = targets.map((t) => Math.floor(eased * t));
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+onMounted(async () => {
+  await nextTick();
+  if (!statsCardsRef.value) return;
+  let done = false;
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting && !done) {
+          done = true;
+          animateCategories();
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  obs.observe(statsCardsRef.value);
+  catObservers.push(obs);
 });
+
+onBeforeUnmount(() => catObservers.forEach((o) => o.disconnect()));
+
 </script>
 
 <template>
@@ -1001,8 +1035,32 @@ const categoryStartIndex = computed(() => {
           </p>
         </div>
 
-        <div class="space-y-14 pb-24">
-          <div v-for="(category, ci) in categories" :key="ci">
+        <div ref="statsCardsRef" class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+          <div
+            v-for="(category, ci) in categories"
+            :key="ci"
+            @click="activeTab = ci"
+            class="rounded-2xl p-6 flex flex-col justify-between min-h-[140px] cursor-pointer transition-all duration-200"
+            :class="activeTab === ci ? 'bg-[#191C1F]' : 'bg-[#F7F7F7] hover:bg-[#EFEFEF]'"
+          >
+            <div
+              class="text-[44px] lg:text-[52px] font-black leading-none tabular-nums"
+              :class="activeTab === ci ? 'text-white' : 'text-[#191C1F]'"
+            >
+              {{ categoryDisplay[ci] }}
+            </div>
+            <span
+              class="block mt-4 text-xs font-semibold uppercase tracking-wide leading-snug"
+              :class="activeTab === ci ? 'text-white/75' : 'text-[#505A63]'"
+            >
+              {{ getText(category) }}
+            </span>
+          </div>
+        </div>
+
+        <div class="pb-24">
+          <template v-for="(category, ci) in categories" :key="ci">
+          <div v-if="activeTab === ci">
             <h2
               class="lg:text-2xl text-lg font-black uppercase text-[#1a1a1a] mb-4 pb-3 border-b-2 border-[#1a1a1a]"
             >
@@ -1039,7 +1097,7 @@ const categoryStartIndex = computed(() => {
                     <td
                       class="px-4 py-4 lg:text-sm text-xs text-[#505A63] font-medium align-top"
                     >
-                      {{ categoryStartIndex[ci] + ii }}
+                      {{ ii + 1 }}
                     </td>
                     <td
                       class="px-4 py-4 lg:text-sm text-xs text-[#1a1a1a] leading-relaxed align-top"
@@ -1058,6 +1116,7 @@ const categoryStartIndex = computed(() => {
               </table>
             </div>
           </div>
+          </template>
         </div>
       </div>
     </client-only>

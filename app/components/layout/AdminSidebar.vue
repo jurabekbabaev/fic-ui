@@ -1,25 +1,19 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <div id="adminSidebar">
     <div class="mb-4">
       <NuxtLink to="/">
-        <img src="~/assets/images/logo-black.svg" alt="" class="w-[200px]">
+        <img src="~/assets/images/logo-black.svg" alt="" class="w-[200px]" />
       </NuxtLink>
     </div>
     <div class="sidebarNav">
       <ul>
         <li>
-          <NuxtLink to="/admin/blogs/list">
-            Статьии
-          </NuxtLink>
+          <NuxtLink to="/admin/blogs/list"> Статьии </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/admin/news/list">
-            Новости
-          </NuxtLink>
+          <NuxtLink to="/admin/news/list"> Новости </NuxtLink>
         </li>
         <li>
           <NuxtLink to="/admin/council-members/list">
@@ -27,9 +21,7 @@
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/admin/experts/list">
-            Эксперты
-          </NuxtLink>
+          <NuxtLink to="/admin/experts/list"> Эксперты </NuxtLink>
         </li>
         <li>
           <NuxtLink to="/admin/weekly-events/list">
