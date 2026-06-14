@@ -4,6 +4,7 @@ export interface ILeaderGroup {
   fullname: string;
   position: string;
   direction: string;
+  directiondesc: string;
   directionid: number;
   partner_image: string;
   text: string;

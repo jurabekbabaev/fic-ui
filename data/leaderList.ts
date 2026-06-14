@@ -136,6 +136,9 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
       fullname: t("Мирзамахмудов Джурабек"),
       position: t("Министр энергетики Республики Узбекистан"),
       direction: t("МРГ по вопросам энергетики"),
+      directiondesc: t(
+        "Привлечение частных инвестиций в распределение электроэнергии, разработка плана развития сетей и обеспечение стабильности правового и налогового режима."
+      ),
       directionid: 1,
       partner_image: PartnerImage1,
       partner_name: t("Джон Заиди"),
@@ -200,6 +203,9 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
       fullname: t("Фаррух пулатов"),
       position: t("Директор Кадастрового Агентства"),
       direction: t("МРГ по совершенствованию процедур выделения земельных участков"),
+      directiondesc: t(
+        "Упрощение и ускорение процедур выделения земли, формирование Стратегии использования земельных ресурсов."
+      ),
       directionid: 2,
       partner_image: PartnerImage2,
       partner_name: t("Азизбек Ахмаджонов"),
@@ -250,6 +256,9 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         "Заместитель Министра Экономики и Финансов"
       ),
       direction: t("МРГ по совершенствованию налогового администрирования"),
+      directiondesc: t(
+        "Упрощение налоговых процедур для инвесторов, совершенствование института налогового резидентства и налоговая определённость для проектов ГЧП."
+      ),
       directionid: 3,
       partner_image: PartnerImage3,
       partner_name: t("Ерлан Досымбеков"),
@@ -296,6 +305,9 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
       fullname: t("Илхом норкулов"),
       position: t("заместитель министра экономики и финансов"),
       direction: t("МРГ по улучшению корпоративного управления в местных компаниях"),
+      directiondesc: t(
+        "Повышение стандартов корпоративного управления в местных компаниях и развитие национального рынка капитала."
+      ),
       directionid: 4,
       partner_image: PartnerImage4,
       partner_name: t("Мариус дан"),
@@ -355,6 +367,9 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
       fullname: t("Конгратбай Шарипов"),
       position: t("министр высшего образования, науки и инноваций"),
       direction: t("МРГ по подготовке профессиональных кадров для иностранных компаний"),
+      directiondesc: t(
+        "Создание национального портала практик, открытой образовательной платформы и Фонда обязательных технических стажировок для иностранных компаний."
+      ),
       directionid: 5,
       partner_image: PartnerImage5,
       partner_name: t("Сандро Ртвеладзе"),
@@ -410,6 +425,9 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
       fullname: t("Лазиз кудратов"),
       position: t("Министр Инвестиций, Промышленности и Торговли"),
       direction: t("МРГ по внедрению принципов ответственного ведения бизнеса"),
+      directiondesc: t(
+        "Ответственное ведение бизнеса. Поэтапное внедрение принципов ОЭСР по ответственному ведению бизнеса для обеспечения стабильности, прозрачности и открытости экономики."
+      ),
       directionid: 6,
       partner_image: PartnerImage6,
       partner_name: t("Вера белл"),
@@ -492,6 +510,9 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
       fullname: t("Тимур ишметов"),
       position: t("Председатель Центрального банка"),
       direction: t("МРГ по совершенствованию залогового законодательства"),
+      directiondesc: t(
+        "Внедрение современных видов залога (банковские счета, ценные бумаги), развитие исламского финансирования и вторичного рынка долговых обязательств."
+      ),
       directionid: 7,
       partner_image: PartnerImage7,
       partner_name: t("Даврон Якубов"),
@@ -542,6 +563,9 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
       fullname: t("Лазиз Кудратов"),
       position: t("Министр Инвестиций, Промышленности и Торговли"),
       direction: t("МРГ по разработке законопроекта Об альтернативных инвестиционных фондах"),
+      directiondesc: t(
+        "Альтернативные инвестиционные фонды. Разработка законодательства об альтернативных (венчурных) инвестициях и преобразование Узбекистана в региональный центр привлечения частного и венчурного капитала."
+      ),
       directionid: 8,
       partner_image: PartnerImage8,
       partner_name: t("Казбек бассиев"),
@@ -605,6 +629,9 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
       fullname: t("Азиз Абдухакимов"),
       position: t("Председатель Национального комитета по экологии и изменению климата"),
       direction: t("МРГ по циркулярной экономике"),
+      directiondesc: t(
+        "Циркулярная экономика. Анализ и адаптация передовых международных практик управления экологическим воздействием инвестиционной деятельности; учреждение премии Совета «Circular Economy»."
+      ),
       directionid: 9,
       partner_image: mukae,
       partner_name: t("Казумаса Мукае"),
@@ -665,6 +692,9 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
       fullname: t("Олимжон Умаров"),
       position: t("Заместитель министра цифровых технологий"),
       direction: t("МРГ по развитию искусственного интеллекта"),
+      directiondesc: t(
+        "Развитие искусственного интеллекта. Изучение и адаптация мировых практик в области искусственного интеллекта для приоритетных направлений экономики Узбекистана."
+      ),
       directionid: 10,
       partner_image: Erlan,
       partner_name: t("Ерлан Досымбеков"),
