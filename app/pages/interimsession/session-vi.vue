@@ -124,15 +124,12 @@ const goBack = async () => {
   }
 }
 
-.prose-body {
-  max-width: 880px;
-}
-
 .prose-body__p {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.85;
   color: #505a63;
+  text-align: justify;
 }
 
 .prose-body__p + .prose-body__p {
