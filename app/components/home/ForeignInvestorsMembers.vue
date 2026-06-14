@@ -11,7 +11,7 @@
         <h2
           class="title-64 pt-[40px] lg:pt-[100px] text-center mb-8 text-[32px] lg:mb-10 lg:text-[64px]"
         >
-          {{ t("Показатели") }}
+          {{ t("homePage.councilStats.title") }}
         </h2>
         <div
           ref="statsRef"
@@ -37,7 +37,7 @@
           class="lg:text-center text-left mb-[20px] mt-[100px] flex justify-center"
         >
           <h2 class="title-64 mb-3 lg:text-[64px] text-[32px]">
-            {{ t("состав совета") }}
+            {{ t("homePage.foreignMembers.compositionTitle") }}
           </h2>
         </div>
         <div
@@ -47,7 +47,7 @@
           <h2
             class="title-16 lg:text-2xl text-1xl mb-3 lg:w-[698px] w-full text-[#191C1F] uppercase"
           >
-            {{ t("Зарубежные участники Совета Иностранных Инвесторов") }}
+            {{ t("homePage.foreignMembers.foreignTitle") }}
           </h2>
         </div>
       </div>
@@ -126,11 +126,11 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 
 const councilStats = [
-  { target: 43, label: "Членов совета" },
-  { target: 85, label: "Активных компаний" },
-  { target: 19, label: "Стран" },
-  { target: 16, label: "Рабочих групп" },
-  { target: 120, label: "Инициатив до IV Пленарной Сесии", suffix: "+" },
+  { target: 43, label: "homePage.councilStats.members" },
+  { target: 85, label: "homePage.councilStats.companies" },
+  { target: 19, label: "homePage.councilStats.countries" },
+  { target: 16, label: "homePage.councilStats.workingGroups" },
+  { target: 120, label: "homePage.councilStats.initiativesPlenary", suffix: "+" },
 ];
 
 const statDisplayValues = ref(councilStats.map(() => "0"));

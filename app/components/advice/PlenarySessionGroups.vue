@@ -29,15 +29,15 @@ const localePath = useLocalePath();
 
 interface IUser {
   image: string;
-  position: string;
-  fullname: string;
-  direction: string;
+  positionKey: string;
+  fullnameKey: string;
+  directionKey: string;
 }
 
 interface IType {
   id: number;
   icon: string;
-  content: string;
+  titleKey: string;
   users: IUser[];
 }
 
@@ -45,208 +45,190 @@ const data = ref<IType[]>([
   {
     id: 1,
     icon: "icon-reload-zap",
-    content: t("МРГ по вопросам энергетики"),
+    titleKey: "advice.plenaryGroups.groups.g1.title",
     users: [
       {
         image: Image1,
-        position: t("Председатель рабочей группы."),
-        fullname: t("Мирзамахмудов Джурабек"),
-        direction: t("Министр энергетики Республики Узбекистан"),
+        positionKey: "advice.plenaryGroups.chairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g1.chair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g1.chair.position",
       },
       {
         image: Image2,
-        position: t("Сопредседатель"),
-        fullname: t("Джон Заиди"),
-        direction: t("Генеральный директор Acwa в Узбекистане"),
+        positionKey: "advice.plenaryGroups.coChairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g1.cochair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g1.cochair.position",
       },
     ],
   },
   {
     id: 2,
     icon: "icon-book-info",
-    content: t(
-      "МРГ по совершенствованию процедур выделения земельных участков"
-    ),
+    titleKey: "advice.plenaryGroups.groups.g2.title",
     users: [
       {
         image: Image3,
-        position: t("Председатель рабочей группы."),
-        fullname: t("Фаррух пулатов"),
-        direction: t("Директор Кадастрового Агентства"),
+        positionKey: "advice.plenaryGroups.chairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g2.chair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g2.chair.position",
       },
       {
         image: Image4,
-        position: t("Сопредседатель"),
-        fullname: t("Азизбек Ахмаджонов"),
-        direction: t("Управляющий партнёр Kosta Legal"),
+        positionKey: "advice.plenaryGroups.coChairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g2.cochair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g2.cochair.position",
       },
     ],
   },
   {
     id: 3,
     icon: "icon-settings-nout",
-    content: t("МРГ по совершенствованию налогового администрирования"),
+    titleKey: "advice.plenaryGroups.groups.g3.title",
     users: [
       {
         image: Image5,
-        position: t("Председатель рабочей группы."),
-        fullname: t("Ахадбек хайдаров"),
-        direction: t("Заместитель Министра Экономики и Финансов"),
+        positionKey: "advice.plenaryGroups.chairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g3.chair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g3.chair.position",
       },
       {
         image: Image6,
-        position: t("Сопредседатель"),
-        fullname: t("Ерлан Досымбеков"),
-        direction: t(
-          "EY, управляющий партнер EY по Кавказу и Центральной Азии"
-        ),
+        positionKey: "advice.plenaryGroups.coChairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g3.cochair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g3.cochair.position",
       },
     ],
   },
   {
     id: 4,
     icon: "icon-users-message",
-    content: t(
-      "МРГ по улучшению корпоративного управления в местных компаниях"
-    ),
+    titleKey: "advice.plenaryGroups.groups.g4.title",
     users: [
       {
         image: Image7,
-        position: t("Председатель рабочей группы."),
-        fullname: t("Илхом норкулов"),
-        direction: t("заместитель министра экономики и финансов"),
+        positionKey: "advice.plenaryGroups.chairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g4.chair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g4.chair.position",
       },
       {
         image: Image8,
-        position: t("Сопредседатель"),
-        fullname: t("Мариус дан"),
-        direction: t(
-          "генеральный директор Franklin Templeton по Центральной Азии"
-        ),
+        positionKey: "advice.plenaryGroups.coChairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g4.cochair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g4.cochair.position",
       },
     ],
   },
   {
     id: 5,
     icon: "icon-user-briefcase",
-    content: t(
-      "МРГ по подготовке профессиональных кадров для иностранных компаний"
-    ),
+    titleKey: "advice.plenaryGroups.groups.g5.title",
     users: [
       {
         image: Image9,
-        position: t("Председатель рабочей группы."),
-        fullname: t("Конгратбай Шарипов"),
-        direction: t("министр высшего образования, науки и инноваций"),
+        positionKey: "advice.plenaryGroups.chairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g5.chair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g5.chair.position",
       },
       {
         image: Image10,
-        position: t("Сопредседатель"),
-        fullname: t("Сандро Ртвеладзе"),
-        direction: t("Генеральный директор Ipoteka Bank OTP Group"),
+        positionKey: "advice.plenaryGroups.coChairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g5.cochair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g5.cochair.position",
       },
     ],
   },
   {
     id: 6,
     icon: "icon-chart-line",
-    content: t("МРГ по внедрению принципов ответственного ведения бизнеса"),
+    titleKey: "advice.plenaryGroups.groups.g6.title",
     users: [
       {
         image: Image11,
-        position: t("Председатель рабочей группы."),
-        fullname: t("Лазиз кудратов"),
-        direction: t("Министр Инвестиций, Промышленности и Торговли"),
+        positionKey: "advice.plenaryGroups.chairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g6.chair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g6.chair.position",
       },
       {
         image: Image12,
-        position: t("Сопредседатель"),
-        fullname: t("Вера белл"),
-        direction: t("Управляющий партнёр Crowe Uzbekistan"),
+        positionKey: "advice.plenaryGroups.coChairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g6.cochair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g6.cochair.position",
       },
     ],
   },
   {
     id: 7,
     icon: "icon-database-dollar",
-    content: t("МРГ по совершенствованию залогового законодательства"),
+    titleKey: "advice.plenaryGroups.groups.g7.title",
     users: [
       {
         image: Image13,
-        position: t("Председатель рабочей группы."),
-        fullname: t("Тимур ишметов"),
-        direction: t("Председатель Центрального банка"),
+        positionKey: "advice.plenaryGroups.chairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g7.chair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g7.chair.position",
       },
       {
         image: Image14,
-        position: t("Сопредседатель"),
-        fullname: t("Даврон Якубов"),
-        direction: t("Управляющий партнёр BDO Uzbekistan"),
+        positionKey: "advice.plenaryGroups.coChairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g7.cochair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g7.cochair.position",
       },
     ],
   },
   {
     id: 8,
     icon: "icon-chart-dollar",
-    content: t(
-      "МРГ по разработке законопроекта Об альтернативных инвестиционных фондах"
-    ),
+    titleKey: "advice.plenaryGroups.groups.g8.title",
     users: [
       {
         image: Image11,
-        position: t("Председатель рабочей группы."),
-        fullname: t("Лазиз кудратов"),
-        direction: t("Министр Инвестиций, Промышленности и Торговли"),
+        positionKey: "advice.plenaryGroups.chairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g8.chair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g8.chair.position",
       },
       {
         image: Image15,
-        position: t("Сопредседатель"),
-        fullname: t("Казбек бассиев"),
-        direction: t(
-          "Старший вице-президент Vision Invest и глава представительства в Узбекистане"
-        ),
+        positionKey: "advice.plenaryGroups.coChairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g8.cochair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g8.cochair.position",
       },
     ],
   },
   {
     id: 9,
     icon: "icon-database-dollar",
-    content: t("МРГ по циркулярной экономике"),
+    titleKey: "advice.plenaryGroups.groups.g9.title",
     users: [
       {
         image: Image17,
-        position: t("Председатель рабочей группы."),
-        fullname: t("Азиз Абдухакимов"),
-        direction: t(
-          "Председатель Национального комитета по экологии и изменению климата"
-        ),
+        positionKey: "advice.plenaryGroups.chairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g9.chair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g9.chair.position",
       },
       {
         image: Image18,
-        position: t("Сопредседатель"),
-        fullname: t("Казумаса Мукае"),
-        direction: t("Главный менеджер Coca-Cola Узбекистан"),
+        positionKey: "advice.plenaryGroups.coChairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g9.cochair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g9.cochair.position",
       },
     ],
   },
   {
     id: 10,
     icon: "icon-chart-dollar",
-    content: t("МРГ по развитию искусственного интеллекта"),
+    titleKey: "advice.plenaryGroups.groups.g10.title",
     users: [
       {
         image: Image16,
-        position: t("Председатель рабочей группы."),
-        fullname: t("Олимжон Умаров"),
-        direction: t("Заместитель министра цифровых технологий"),
+        positionKey: "advice.plenaryGroups.chairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g10.chair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g10.chair.position",
       },
       {
         image: Image6,
-        position: t("Сопредседатель"),
-        fullname: t("Ерлан Досымбеков"),
-        direction: t(
-          "Управляющий партнер ЕС для ЕС, Кавказа и Центральной Азии"
-        ),
+        positionKey: "advice.plenaryGroups.coChairLabel",
+        fullnameKey: "advice.plenaryGroups.groups.g10.cochair.fullname",
+        directionKey: "advice.plenaryGroups.groups.g10.cochair.position",
       },
     ],
   },
@@ -256,7 +238,7 @@ const blockOrder = [8, 7, 6, 5, 4, 3, 2, 1, 9, 10];
 const orderedData = computed(() =>
   blockOrder
     .map((id) => data.value.find((item) => item.id === id))
-    .filter((item): item is IType => Boolean(item))
+    .filter((item): item is IType => Boolean(item)),
 );
 
 function readMore(item: IType) {
@@ -271,7 +253,7 @@ function readMore(item: IType) {
   <div :id="sectionId">
     <client-only>
       <h1 class="lg:text-[48px] text-[32px] uppercase font-black mb-12 mt-24">
-        {{ t("межведомственные рабочие группы (МРГ)") }}
+        {{ t("advice.plenaryGroups.sectionTitle") }}
       </h1>
       <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-3 mt-8">
         <div
@@ -289,7 +271,7 @@ function readMore(item: IType) {
             <h4
               class="text-sm font-semibold text-[#191C1F] uppercase leading-snug"
             >
-              {{ item.content }}
+              {{ t(item.titleKey) }}
             </h4>
           </div>
 
@@ -312,12 +294,12 @@ function readMore(item: IType) {
                 </div>
                 <div class="min-w-0">
                   <div class="text-[12px] text-[#505A63] leading-tight">
-                    {{ child.position }}
+                    {{ t(child.positionKey) }}
                   </div>
                   <div
                     class="text-[14px] font-bold uppercase leading-tight text-[#191C1F] truncate"
                   >
-                    {{ child.fullname }}
+                    {{ t(child.fullnameKey) }}
                   </div>
                 </div>
               </div>

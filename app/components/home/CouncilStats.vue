@@ -5,11 +5,11 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 const { t } = useI18n();
 
 const stats = [
-  { target: 43, suffix: "", decimals: 0, label: "Членов совета" },
-  { target: 85, suffix: "", decimals: 0, label: "Активных компаний" },
-  { target: 19, suffix: "", decimals: 0, label: "Стран" },
-  { target: 16, suffix: "", decimals: 0, label: "Рабочих групп" },
-  { target: 120, suffix: "", decimals: 0, label: "Инициатив" },
+  { target: 43, suffix: "", decimals: 0, label: "homePage.councilStats.members" },
+  { target: 85, suffix: "", decimals: 0, label: "homePage.councilStats.companies" },
+  { target: 19, suffix: "", decimals: 0, label: "homePage.councilStats.countries" },
+  { target: 16, suffix: "", decimals: 0, label: "homePage.councilStats.workingGroups" },
+  { target: 120, suffix: "", decimals: 0, label: "homePage.councilStats.initiatives" },
 ];
 
 const displayValues = ref(stats.map(() => "0"));
@@ -69,7 +69,7 @@ onBeforeUnmount(() => {
   <div class="relative z-[20] bg-white pt-[100px]">
     <div class="container">
       <h2 class="title-64 text-center mb-8 text-[32px] lg:mb-12 lg:text-[64px]">
-        {{ t("Показатели") }}
+        {{ t("homePage.councilStats.title") }}
       </h2>
       <div
         ref="containerRef"

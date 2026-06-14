@@ -6,15 +6,15 @@ const { t, locale } = useI18n();
 const localePath = useLocalePath();
 
 const stats = [
-  { value: 135, prefix: ">$", suffix: " млрд", decimals: 0, label: "ВВП (цель 2026 — >$150 млрд)" },
-  { value: 7.7,  prefix: "",   suffix: "%",      decimals: 1, label: "рост ВВП (МВФ, 2025)" },
-  { value: 42,   prefix: "~$", suffix: " млрд",  decimals: 0, label: "приток иностранных инвестиций" },
-  { raw: "BB",                                                 label: "рейтинг Fitch и S&P; Moody's Ba3 (прогноз позитивный)" },
-  { value: 55,   prefix: "$",  suffix: " млрд",  decimals: 0, label: "золотовалютные резервы (+35%)" },
-  { value: 7.3,  prefix: "",   suffix: "%",      decimals: 1, label: "инфляция (с 9,8% годом ранее)" },
-  { value: 23,   prefix: "+",  suffix: "%",      decimals: 0, label: "рост экспорта (~$32 млрд)" },
-  { value: 31.9, prefix: "",   suffix: "%",      decimals: 1, label: "совокупные инвестиции к ВВП" },
-  { value: 4.8,  prefix: "",   suffix: "%",      decimals: 1, label: "безработица (минимум)" },
+  { value: 135, prefix: ">$", suffix: "homePage.investmentStats.unitBln", decimals: 0, label: "homePage.investmentStats.gdp" },
+  { value: 7.7,  prefix: "",   suffix: "homePage.investmentStats.unitPct", decimals: 1, label: "homePage.investmentStats.gdpGrowth" },
+  { value: 42,   prefix: "~$", suffix: "homePage.investmentStats.unitBln", decimals: 0, label: "homePage.investmentStats.fdiInflow" },
+  { raw: "BB",                                                               label: "homePage.investmentStats.rating" },
+  { value: 55,   prefix: "$",  suffix: "homePage.investmentStats.unitBln", decimals: 0, label: "homePage.investmentStats.reserves" },
+  { value: 7.3,  prefix: "",   suffix: "homePage.investmentStats.unitPct", decimals: 1, label: "homePage.investmentStats.inflation" },
+  { value: 23,   prefix: "+",  suffix: "homePage.investmentStats.unitPct", decimals: 0, label: "homePage.investmentStats.exportGrowth" },
+  { value: 31.9, prefix: "",   suffix: "homePage.investmentStats.unitPct", decimals: 1, label: "homePage.investmentStats.totalInvestment" },
+  { value: 4.8,  prefix: "",   suffix: "homePage.investmentStats.unitPct", decimals: 1, label: "homePage.investmentStats.unemployment" },
 ];
 
 function formatStat(stat: typeof stats[number], currentVal: number): string {
@@ -95,7 +95,7 @@ onBeforeUnmount(() => observer?.disconnect());
   <div class="bg-white py-[80px]">
     <div class="container">
       <h2 class="title-64 text-center mb-8 text-[32px] lg:mb-12 lg:text-[64px]">
-        {{ t("Инвестиции в Узбекистан") }}
+        {{ t("homePage.investmentStats.title") }}
       </h2>
 
       <div
@@ -116,7 +116,7 @@ onBeforeUnmount(() => observer?.disconnect());
 
       <div class="flex justify-center mt-10">
         <NuxtLink :to="localePath('/investmen')" class="btn btn-secondary">
-          {{ t("Batafsil") }}
+          {{ t("homePage.investmentStats.learnMore") }}
         </NuxtLink>
       </div>
     </div>

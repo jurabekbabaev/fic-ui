@@ -31,20 +31,20 @@ onMounted(() => {
 <template>
   <div class="eventSection">
     <div class="flex justify-center items-center gap-5">
-      <div class="uppercase font-medium opacity-[70%]">{{t('Ближайшие события')}}</div>
+      <div class="uppercase font-medium opacity-[70%]">{{ t('homeEvent.upcomingEvents') }}</div>
       <div class="delimiter"></div>
       <div class="leading-none">
         <div class="uppercase font-medium">
-          {{ nextEventDate || t('18 июня') }}
+          {{ nextEventDate || t('homeEvent.defaultDate') }}
         </div>
         <div class="text-[14px]">
-          {{ nextEventTitle || t('Пленарная сессия') }}
+          {{ nextEventTitle || t('homeEvent.defaultTitle') }}
         </div>
       </div>
       <div>
         <WLocaleLink to="/weeklyevents" class="btn btn-secondary btn-sm">
           <span class="flex items-center">
-            {{t('Подробнее')}}
+            {{ t('homeEvent.learnMore') }}
             <i class="icon-move-right ms-2"></i>
           </span>
         </WLocaleLink>

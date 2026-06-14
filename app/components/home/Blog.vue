@@ -3,7 +3,7 @@
     <div class="mainContainer">
       <div class="lg:text-center sm:text-left mb-[50px]">
         <h2 class="title-64 lg:text-[64px] text-[32px] mb-3">
-          {{ t("Статьи") }}
+          {{ t("homePage.blog.title") }}
         </h2>
       </div>
 
@@ -118,7 +118,7 @@
       </div>
       <div class="text-center mt-[24px] mb-8">
         <WLocaleLink to="/blog" class="btn btn-secondary">{{
-          t("Узнать больше")
+          t("homePage.blog.learnMore")
         }}</WLocaleLink>
       </div>
     </div>

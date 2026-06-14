@@ -7,16 +7,16 @@
             class="title-64 lg:text-[64px] text-[32px] w-full max-w-[729px] font-extrabold mb-5"
             style="color: rgba(0, 0, 0, 1)"
           >
-            {{ $t("Пленарные сессии в объективе") }}
+            {{ $t("homePage.videoSection.title") }}
           </h2>
         </div>
         <div class="w-full flex justify-center">
           <p class="lg:text-xl text-base font-normal leading-[140%] lg:leading-[100%] w-full max-w-[596px]">
-            {{ $t("Диалог государства и инвесторов, где обсуждаются реформы, принимаются ключевые решения и создаётся инвестиционное будущее Узбекистана") }}
+            {{ $t("homePage.videoSection.description") }}
           </p>
         </div>
         <WLocaleLink to="/plenarysessions" class="btn btn-secondary mt-6">{{
-          $t("Узнать пробронее")
+          $t("homePage.videoSection.learnMore")
         }}</WLocaleLink>
       </div>
 

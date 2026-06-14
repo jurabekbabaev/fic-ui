@@ -4,14 +4,10 @@
       <!-- Header -->
       <div class="mb-8 mt-[100px]">
         <h1 class="lg:text-[64px] text-[32px] font-black text-[#191C1F] mb-4">
-          {{ t("ALMANAC") }}
+          {{ t("homePage.almanac.title") }}
         </h1>
         <p class="text-[#191C1F] lg:text-[32px] text-xl">
-          {{
-            t(
-              "Открытый каталог инициатив членов совета по развитию креативной экономики и поддержке малого и среднего бизнеса"
-            )
-          }}
+          {{ t("homePage.almanac.description") }}
         </p>
       </div>
 
@@ -27,9 +23,9 @@
           ]"
         >
           <span class="lg:block hidden">
-            {{ t("По направлениям креативной экономики") }}</span
+            {{ t("homePage.almanac.tabDirections") }}</span
           >
-          <span class="lg:hidden block"> {{ t("По направлениям") }}</span>
+          <span class="lg:hidden block"> {{ t("homePage.almanac.tabDirectionsMobile") }}</span>
         </button>
         <button
           @click="activeTab = 'members'"
@@ -40,7 +36,7 @@
               : 'bg-transparent text-gray-600 hover:text-gray-800',
           ]"
         >
-          {{ t("По членам совета") }}
+          {{ t("homePage.almanac.tabMembers") }}
         </button>
       </div>
 
@@ -56,7 +52,7 @@
               <div
                 class="text-sm font-bold text-center flex items-center w-[400px]"
               >
-                {{ t("Члены FIC") }}
+                {{ t("homePage.almanac.ficMembers") }}
               </div>
               <div class="text-left w-[136px]">
                 <img :src="IconFamily" alt="logo" class="w-auto" />
@@ -148,7 +144,7 @@
         </div>
 
         <div class="flex justify-center mt-6">
-          <button class="btn btn-secondary">{{ t("Все члены FIC") }}</button>
+          <button class="btn btn-secondary">{{ t("homePage.almanac.allFicMembers") }}</button>
         </div>
       </div>
 
@@ -164,7 +160,7 @@
             67
           </div>
           <div class="lg:text-lg font-normal text-[#505A63]">
-            {{ t("Инициатив по развитию спорта") }}1
+            {{ t("homePage.almanac.sportInitiatives") }}
           </div>
         </div>
 
@@ -175,7 +171,7 @@
             54
           </div>
           <div class="lg:text-lg font-normal text-[#505A63]">
-            {{ t("Инициативы по поддержке семьи") }}2
+            {{ t("homePage.almanac.familyInitiatives") }}
           </div>
         </div>
 
@@ -186,7 +182,7 @@
             32
           </div>
           <div class="lg:text-lg font-normal text-[#505A63]">
-            {{ t("Инициатив в киноиндустрии") }}3
+            {{ t("homePage.almanac.filmInitiatives") }}
           </div>
         </div>
 
@@ -197,7 +193,7 @@
             18
           </div>
           <div class="lg:text-lg font-normal text-[#505A63]">
-            {{ t("Инициатив в сфере развлечений") }}4
+            {{ t("homePage.almanac.entertainmentInitiatives") }}
           </div>
         </div>
 
@@ -207,7 +203,7 @@
             45
           </div>
           <div class="lg:text-lg font-normal text-[#505A63]">
-            {{ t("Инициатив в сельском хозяйстве") }}5
+            {{ t("homePage.almanac.agricultureInitiatives") }}
           </div>
         </div>
 
@@ -217,7 +213,7 @@
             23
           </div>
           <div class="lg:text-lg font-normal text-[#505A63]">
-            {{ t("Инициативы в сфере технологий") }}6
+            {{ t("homePage.almanac.techInitiatives") }}
           </div>
         </div>
 
@@ -227,7 +223,7 @@
             76
           </div>
           <div class="lg:text-lg font-normal text-[#505A63]">
-            {{ t("Инициатив по организации отдыха") }}7
+            {{ t("homePage.almanac.leisureInitiatives") }}
           </div>
         </div>
       </div>

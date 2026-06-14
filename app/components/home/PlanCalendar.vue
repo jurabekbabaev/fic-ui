@@ -5,7 +5,7 @@
         <h1
           class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[100px]"
         >
-          {{ t("календарный план") }}
+          {{ t("homePage.planCalendar.title") }}
         </h1>
 
         <section class="evFlow">
@@ -50,7 +50,7 @@
 
         <div class="text-center mt-[40px]">
           <WLocaleLink to="/calendarplan" class="btn btn-secondary">
-            {{ t("Все мероприятия") }}
+            {{ t("homePage.planCalendar.allEvents") }}
           </WLocaleLink>
         </div>
       </div>
@@ -74,28 +74,28 @@ interface IType {
 const data = ref<IType[]>([
   {
     id: 1,
-    date: t("Июль - Ноябрь 2025"),
-    content: t("Разработка утвержденных инициатив"),
+    date: t("homePage.planCalendar.items.item1.date"),
+    content: t("homePage.planCalendar.items.item1.content"),
   },
   {
     id: 2,
-    date: t("Ноябрь 2025"),
-    content: t("Привлечение креативных инвестиций в узбекистан"),
+    date: t("homePage.planCalendar.items.item2.date"),
+    content: t("homePage.planCalendar.items.item2.content"),
   },
   {
     id: 3,
-    date: t("Ноябрь 2025 - Апрель 2026"),
-    content: t("Коллекция новых инициатив к пленарной сессии 2026 года"),
+    date: t("homePage.planCalendar.items.item3.date"),
+    content: t("homePage.planCalendar.items.item3.content"),
   },
   {
     id: 4,
-    date: t("Апрель 2026"),
-    content: t("Определение новых инициатив"),
+    date: t("homePage.planCalendar.items.item4.date"),
+    content: t("homePage.planCalendar.items.item4.content"),
   },
   {
     id: 5,
-    date: t("Июль - Ноябрь 2025"),
-    content: t("Разработка утвержденных инициатив"),
+    date: t("homePage.planCalendar.items.item5.date"),
+    content: t("homePage.planCalendar.items.item5.content"),
   },
 ]);
 

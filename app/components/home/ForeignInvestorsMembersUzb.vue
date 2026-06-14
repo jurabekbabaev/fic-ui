@@ -104,7 +104,7 @@ watch(marqueeCopies, () => {
           <div class="uzb-members-title-wrap">
             <h2 class="title-26 lg:text-2xl text-2xl mb-3 uppercase">
               {{
-                t("Участники Совета Иностранных Инвесторов с узбекской стороны")
+                t("homePage.uzbMembers.title")
               }}
             </h2>
           </div>

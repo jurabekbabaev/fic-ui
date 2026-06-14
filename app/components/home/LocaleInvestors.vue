@@ -3,7 +3,7 @@
     <div class="mainContainer">
       <div class="mb-[50px]" v-if="route.path != '/maininfo'">
         <h2 class="title-64 lg:text-[64px] text-[32px] mb-3">
-          {{ t("Инвестиции в Узбекистан") }}
+          {{ t("homePage.localeInvestors.title") }}
         </h2>
       </div>
 
@@ -13,14 +13,10 @@
             <i class="icon-chart-combinate"></i>
           </div>
           <div class="font-bold mb-1 text-[18px]">
-            {{ t("Краткое руководство инвестора") }}
+            {{ t("homePage.localeInvestors.guide.title") }}
           </div>
           <div class="text-grey">
-            {{
-              t(
-                "В руководстве представлена ​​исчерпывающая информация о формах корпоративного присутствия, правилах и процедурах регистрации"
-              )
-            }}
+            {{ t("homePage.localeInvestors.guide.description") }}
           </div>
         </div>
         <div class="card-item p-4 pb-5">
@@ -28,14 +24,10 @@
             <i class="icon-map-uzb"></i>
           </div>
           <div class="font-bold mb-1 text-[18px]">
-            {{ t("Инвестиционный климат Узбекистана") }}
+            {{ t("homePage.localeInvestors.climate.title") }}
           </div>
           <div class="text-grey">
-            {{
-              t(
-                "Узбекистан активно работает над улучшением условий для иностранных инвесторов и модернизацией своей экономики, предоставляя перспективные инвестиционные возможности"
-              )
-            }}
+            {{ t("homePage.localeInvestors.climate.description") }}
           </div>
         </div>
         <div class="card-item p-4 pb-5">
@@ -43,14 +35,10 @@
             <i class="icon-circle-dollar"></i>
           </div>
           <div class="font-bold mb-1 text-[18px]">
-            {{ t("Региональные новости для инвесторов") }}
+            {{ t("homePage.localeInvestors.regional.title") }}
           </div>
           <div class="text-grey">
-            {{
-              t(
-                "Текущий выпуск Investor Regional Update посвящен Наманганской области. В дальнейшем будут и другие обновления, охватывающие и другие регионы"
-              )
-            }}
+            {{ t("homePage.localeInvestors.regional.description") }}
           </div>
         </div>
       </div>
