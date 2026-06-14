@@ -1802,5 +1802,46 @@
         ]
       }
     }
+  },
+  "secretariat": {
+    "hero": {
+      "title": "Kotibiyat"
+    },
+    "intro": {
+      "p1": "Xorijiy investorlar kengashi Kotibiyati — sessiyalar orasida Kengash ishining uzluksizligi va tizimliligini ta'minlovchi doimiy faoliyat yurituvchi operatsion organ. Kotibiyat yalpi va oraliq majlislarni tashkil etadi, o'n oltita ishchi guruh faoliyatini muvofiqlashtiradi, Kengash a'zolari va xorijiy investorlar bilan kundalik muloqot olib boradi, investitsiya muhitini yaxshilash bo'yicha tashabbuslarni yig'adi va tahlil qiladi hamda ularning tegishli davlat siyosatiga ilgari surilishini ta'minlaydi.",
+      "p2": "Yuridik shaxs maqomiga ega bo'lishi bilan Kotibiyat o'z vakolatini samarali bajarish va xalqaro moliya institutlari bilan hamkorlik qilish uchun zarur institutsional mustaqillikka ega bo'ldi."
+    },
+    "members": {
+      "aziz": {
+        "fullname": "Aziz Gafurov",
+        "position": "Kotibiyat rahbari",
+        "description": "Iqtisodiyot fanlari doktori, korporativ boshqaruv, investitsiya siyosati va strategik konsalting sohalarida 20 yildan ortiq tajribaga ega. U xalqaro investorlar, rivojlanish banklari va davlat tuzilmalari bilan ishlash bo'yicha keng tajribaga ega. Investorlar bilan aloqalarni rivojlantirish, siyosatni muvofiqlashtirish va institutsional rivojlanishga rahbarlik qiladi."
+      },
+      "avazbek": {
+        "fullname": "Avazbek Mullajonov",
+        "position": "Dasturiy koordinator",
+        "description": "Avazbek Mullajonov — tashqi iqtisodiy aloqalar, investitsiyalar va energetika sohalarida 15 yildan ortiq tajribaga ega mutaxassis. U O'zbekiston Investitsiyalar va tashqi savdo vazirligida Investitsiya iqlimi departamenti rahbari o'rinbosari hamda Turkiya Respublikasi bilan hamkorlik bo'limi rahbari lavozimlarida faoliyat yuritgan. Xalqaro biznes bo'yicha Ajou universitetida hamda menejment yo'nalishida Toshkent davlat iqtisodiyot universitetida magistr darajalariga ega."
+      },
+      "hakimniyaz": {
+        "fullname": "Hakimniyaz Kaipbergenov",
+        "position": "Dasturiy koordinator",
+        "description": "Hakimniyaz Kaipbergenov Moskvadagi MGIMO universitetida xalqaro huquq bo'yicha bakalavriat va magistraturani imtiyozli tamomlagan. U O'zbekiston Tashqi ishlar vazirligida, shuningdek xalqaro yuridik firmada ishlash tajribasiga ega."
+      },
+      "vladislav": {
+        "fullname": "Vladislav Li",
+        "position": "Dasturiy koordinator",
+        "description": "Xalqaro Vestminster universitetining Toshkent filialini \"Biznes‑menejment va moliya\" yo'nalishida tamomlagan va uchta tilni bevosita boshqaradi. Shuningdek, u mijozlar bilan samarali ishlash, muzokaralar o'tkazish, ishonchli munosabatlarni shakllantirish va muammolarni samarali hal qilish bo'yicha amaliy ko'nikmalarga ega."
+      },
+      "jurabek": {
+        "fullname": "Jurabek Babaev",
+        "position": "PR & Marketing eksperti",
+        "description": "Jurabek Babaev — marketing, PR va xalqaro biznes sohalarida tajribaga ega mutaxassis. U hozirda O'zbekiston Prezidenti huzuridagi Xorijiy investorlar kengashida PR va kommunikatsiyalar yo'nalishini boshqaradi. Faoliyati davomida biznes rivojlantirish, xalqaro savdo va to'qimachilik sohalarida ishlagan, hamda Toshkent Davlat Iqtisodiyot Universitetida o'qituvchi bo'lib faoliyat yuritgan."
+      },
+      "madina": {
+        "fullname": "Madinaxon Abidova",
+        "position": "Ma'muriy xodim",
+        "description": "Madinaxon biznes va iqtisodiyot yo'nalishi bo'yicha bakalavr hamda agrobiznes va investitsion faoliyat bo'yicha magistr darajasiga ega. U O'zbekiston Xususiy Turistik Tashkilotlar Assotsiatsiyasida menejer sifatida faoliyat yuritgan va milliy hamda xalqaro turizmni rivojlantirishga qaratilgan tadbirlarni muvofiqlashtirgan."
+      }
+    }
   }
 }
