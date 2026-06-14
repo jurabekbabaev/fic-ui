@@ -75,7 +75,7 @@ import PageHero from "~/components/shared/PageHero.vue";
 import Management1 from "@/assets/images/management/image11.png";
 import Management2 from "@/assets/images/management/image12.png";
 import EBank from "@/assets/images/brands/e-bank.png";
-import FICLogo from "../../../public/images/pr.png";
+import FICLogo from "@/assets/images/pr.png";
 
 const { t } = useI18n();
 

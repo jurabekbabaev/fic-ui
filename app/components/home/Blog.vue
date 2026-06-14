@@ -36,7 +36,7 @@
             <div
               class="card-item-image"
               style="
-                background-image: url('/images/6f652409742b7e603d7432bbc3dfde3bf3217b7f.png');
+                background-image: url('@/assets/images/home/6f652409742b7e603d7432bbc3dfde3bf3217b7f.png');
               "
             ></div>
             <div class="card-item-body">
@@ -56,7 +56,7 @@
           <div class="card-item">
             <div
               class="card-item-image"
-              style="background-image: url('/images/blogs1.png')"
+              style="background-image: url('@/assets/images/home/blogs1.png')"
             ></div>
             <div class="card-item-body">
               <div class="font-medium text-grey mb-1">

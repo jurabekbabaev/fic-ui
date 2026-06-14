@@ -3,7 +3,8 @@ const opened = ref(false);
 const toggle = () => {
   opened.value = !opened.value;
 };
-const icoSrc = ref("/images/icons/nav.svg");
+import navIcon from "@/assets/icons/nav.svg";
+const icoSrc = ref(navIcon);
 
 const isMobile = ref(false);
 
