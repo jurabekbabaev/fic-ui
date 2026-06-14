@@ -55,9 +55,8 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay } from "swiper/modules";
 import { computed, onMounted, onUnmounted, ref } from "vue";
 import "swiper/css";
-
-const bgImage1 = "/images/cb5dddcfe5111a3955f8298972b7716a7bd6bdbc.png";
-const bgImage2 = "/images/27d62ffabcf325674a3da4e2930313a8ea1ad07b.png";
+import bgImage1 from "@/assets/images/home/cb5dddcfe5111a3955f8298972b7716a7bd6bdbc.png";
+import bgImage2 from "@/assets/images/home/27d62ffabcf325674a3da4e2930313a8ea1ad07b.png";
 
 const makeStyle = (img) => ({
   backgroundImage: `url('${img}')`,

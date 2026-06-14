@@ -6,7 +6,7 @@
   <div id="adminSidebar">
     <div class="mb-4">
       <NuxtLink to="/">
-        <img src="/images/logo-black.svg" alt="" class="w-[200px]">
+        <img src="~/assets/images/logo-black.svg" alt="" class="w-[200px]">
       </NuxtLink>
     </div>
     <div class="sidebarNav">

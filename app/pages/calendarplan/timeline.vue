@@ -68,6 +68,7 @@ import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
 const localePath = useLocalePath();
+const router = useRouter();
 
 const eventTitle = (event) =>
   (event.lines || [])
@@ -77,18 +78,18 @@ const eventTitle = (event) =>
 
 function handleTimelineLink(link) {
   if (link?.path) {
-    navigateTo(localePath(link.path));
+    router.push(localePath(link.path));
     return;
   }
 
   if (!link?.target) return;
 
-  const to = localePath({
-    path: "/plenarysessions",
-    query: { target: link.target },
-  });
-
-  navigateTo(to);
+  router.push(
+    localePath({
+      path: "/plenarysessions",
+      query: { target: link.target },
+    })
+  );
 }
 
 const events = computed(() => [
@@ -97,56 +98,56 @@ const events = computed(() => [
     month: t("timeline_month_november"),
     filled: false,
     lines: [t("timeline_established_intermediate")],
-    links: [{ label: t("timeline_learn_more"), path: "/result" }],
+    links: [{ label: t("timeline_learn_more"), path: "/reports" }],
   },
   {
     year: t("timeline_year_2022"),
     month: t("timeline_month_november"),
     filled: true,
     lines: [t("timeline_plenary_1_held")],
-    links: [{ label: t("timeline_learn_more"), path: "/result" }],
+    links: [{ label: t("timeline_learn_more"), path: "/reports" }],
   },
   {
     year: t("timeline_year_2023"),
     month: t("timeline_month_august"),
     filled: false,
     lines: [t("timeline_intermediate_held")],
-    links: [{ label: t("timeline_learn_more"), path: "/result" }],
+    links: [{ label: t("timeline_learn_more"), path: "/reports" }],
   },
   {
     year: t("timeline_year_2024"),
     month: t("timeline_month_may"),
     filled: true,
     lines: [t("timeline_plenary_2_held")],
-    links: [{ label: t("timeline_learn_more"), path: "/result" }],
+    links: [{ label: t("timeline_learn_more"), path: "/reports" }],
   },
   {
     year: t("timeline_year_2024"),
     month: t("timeline_month_november"),
     filled: false,
     lines: [t("timeline_intermediate_held")],
-    links: [{ label: t("timeline_learn_more"), path: "/result" }],
+    links: [{ label: t("timeline_learn_more"), path: "/reports" }],
   },
   {
     year: t("timeline_year_2025"),
     month: t("timeline_month_june"),
     filled: true,
     lines: [t("timeline_plenary_3_held")],
-    links: [{ label: t("timeline_learn_more"), path: "/result" }],
+    links: [{ label: t("timeline_learn_more"), path: "/reports" }],
   },
   {
     year: t("timeline_year_2025"),
     month: t("timeline_month_november"),
     filled: true,
     lines: [t("timeline_association_registered")],
-    links: [{ label: t("timeline_learn_more"), path: "/result" }],
+    links: [{ label: t("timeline_learn_more"), path: "/reports" }],
   },
   {
     year: "2026",
     month: t("timeline_month_june"),
     filled: true,
     lines: [t("timeline_plenary_4_held")],
-    links: [{ label: t("timeline_learn_more"), path: "/result" }],
+    links: [{ label: t("timeline_learn_more"), path: "/reports" }],
   },
 ]);
 

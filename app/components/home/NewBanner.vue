@@ -194,10 +194,10 @@ import Management2 from "@/assets/images/management/image12.png";
 import EBank from "@/assets/images/brands/e-bank.png";
 import EbrdLogo from "@/assets/images/brands/ebrd.png";
 
-const desktopImg = "/images/60f66bb43e415a780b96ef1fc99600ee027b94c4.png";
-const mobileImg = "/images/banner-img-mobile.png";
-const secondHeroImg = "/images/l2.png";
-const ficLogo = "/images/pr.png";
+import desktopImg from "@/assets/images/home/60f66bb43e415a780b96ef1fc99600ee027b94c4.png";
+import mobileImg from "@/assets/images/home/banner-img-mobile.png";
+import secondHeroImg from "@/assets/images/home/l2.png";
+import ficLogo from "@/assets/images/pr.png";
 const presidentLink = "https://president.uz/en/lists/view/7194";
 
 const HERO_ONE_HOLD_END = 0.04;

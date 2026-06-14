@@ -11,7 +11,7 @@ import WLocaleLink from "~/components/shared/WLocaleLink.vue";
       <div class="w-full flex justify-between items-center">
         <div>
           <WLocaleLink to="/">
-            <img src="/images/logo-black.svg" class="w-[200px]" />
+            <img src="~/assets/images/logo-black.svg" class="w-[200px]" />
           </WLocaleLink>
         </div>
         <div class="flex items-center gap-10">
