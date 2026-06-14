@@ -4,7 +4,7 @@
     <h1
       class="lg:text-[64px] uppercase text-center text-[32px] font-extrabold mb-12 text-black"
     >
-      Календарь совета
+      {{ t('Календарь совета') }}
     </h1>
 
     <section class="evFlow">

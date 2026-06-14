@@ -855,7 +855,7 @@ onBeforeUnmount(() => catObservers.forEach((o) => o.disconnect()));
 <template>
   <div>
     <client-only>
-      <page-hero title="Инициативы" />
+      <page-hero :title="t('Инициативы')" />
       <div class="container">
         <h1 class="lg:text-[64px] text-[32px] uppercase font-black mt-24">
           {{ t("Инициативы по улучшению инвестиционного климата") }}

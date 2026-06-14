@@ -1,6 +1,8 @@
 <script setup>
 import { nextTick, watch } from "vue";
+import { useI18n } from "vue-i18n";
 import PageHero from "~/components/shared/PageHero3.vue";
+const { t } = useI18n();
 import MainGroup from "./maingroup.vue";
 import InterWorkingGroup from "./interworkinggroup.vue";
 import LeadersGroup from '../leadersgroup/index.vue'
@@ -45,7 +47,7 @@ watch(
 <template>
   <div>
     <client-only>
-      <PageHero title="Сильные рядом, которые идут с нами вперёд" />
+      <PageHero :title="t('Сильные рядом, которые идут с нами вперёд')" />
       <div class="container">
         <LeadersGroup />
         <PlenarySessionGroups section-id="advice-plenary-working-groups" />

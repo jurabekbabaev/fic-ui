@@ -1,6 +1,9 @@
 <script setup>
 import { nextTick } from "vue";
+import { useI18n } from "vue-i18n";
 import PageHero from "~/components/shared/PageHero.vue";
+
+const { t } = useI18n();
 import ResultSection from "./result.vue";
 import HeroImage from "@/assets/images/plenarysessions/image 4.png";
 
@@ -43,7 +46,7 @@ watch(
 <template>
   <client-only>
     <div>
-      <PageHero title="Результаты промежуточной сессии" :image="HeroImage" />
+      <PageHero :title="t('Результаты промежуточной сессии')" :image="HeroImage" />
       <div class="container">
         <ResultSection />
       </div>

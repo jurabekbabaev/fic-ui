@@ -148,7 +148,7 @@ watch(
 <template>
   <div>
     <client-only>
-      <PageHero title="Члены Совета" />
+      <PageHero :title="t('Члены Совета')" />
       <div class="container">
         <p class="lg:max-w-[900px] w-full text-base lg:text-lg text-[#505A63] font-normal leading-[170%]">
           {{

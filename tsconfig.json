@@ -4,7 +4,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "~": ["./app"],
+      "~/*": ["./app/*"]
     },
     "moduleResolution": "node",
     "typeRoots": ["./types", "./node_modules/@types"]

@@ -35,7 +35,7 @@ const goBack = async () => {
 <template>
   <div class="pb-20 lg:pb-28">
     <client-only>
-      <PageHero title="VI промежуточная сессия Совета" :image="HeroImage" />
+      <PageHero :title="t('VI промежуточная сессия Совета')" :image="HeroImage" />
 
       <div class="container">
         <!-- Back link -->

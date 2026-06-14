@@ -97,7 +97,7 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoClass: "investor-profile-logo-image--sm",
     image: LazizImage,
     name: t("Лазиз Кудратов"),
-    role: t("Председатель\n исполнительного комитета"),
+    role: t("Председатель исполнительного комитета"),
     // role2: t("Председатель "),
     position: t(
       "Министр инвестиций, промышленности и торговли Республики Узбекистан"
@@ -114,7 +114,7 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoAlt: "EBRD",
     image: AndiImage,
     name: t("Анди Аранитаси"),
-    role: t("Член\nисполнительного комитета"),
+    role: t("Член исполнительного комитета"),
     // role2: t("Исполнительный комитет"),
     position: t(
       "Глава представительства Европейского банка реконструкции и развития в Узбекистане"
@@ -131,7 +131,7 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoAlt: "ADB",
     image: KanokpanImage,
     name: t("Канокпан Лао-Арая"),
-    role: t("Член\nисполнительного комитета"),
+    role: t("Член исполнительного комитета"),
     // role2: t("Исполнительный комитет"),
     position: t("Председатель Совета управляющих Азиатского банка развития"),
     quote: t(
@@ -146,7 +146,7 @@ const investorCards = computed<InvestorCard[]>(() => [
     logoAlt: "IFC",
     image: NeilImage,
     name: t("Нил Маккейн"),
-    role: t("Член\nисполнительного комитета"),
+    role: t("Член исполнительного комитета"),
     // role2: t("Исполнительный комитет"),
     position: t(
       "Директор офиса Международной финансовой корпорации по Узбекистану и Туркменистану"

@@ -66,7 +66,7 @@ onBeforeUnmount(() => observer?.disconnect());
 <template>
   <div>
     <client-only>
-      <PageHero title="Эксперты" />
+      <PageHero :title="t('Эксперты')" />
       <div class="container">
         <div class="lg:max-w-[900px] w-full mb-10">
           <p

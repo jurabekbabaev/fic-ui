@@ -3,7 +3,7 @@
     <client-only>
       <!-- <ForeignInvestors /> -->
 
-      <PageHero title="Руководство" />
+      <PageHero :title="t('Руководство')" />
       <div class="container">
         <div>
           <div class="text-center mb-[28px] fade-in-down fade-in-down--soft">

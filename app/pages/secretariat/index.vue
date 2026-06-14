@@ -441,8 +441,9 @@ const members = computed(() => [
     image: Vladislav,
     fullname: t("Владислав Ли"),
     position: t("Программный координатор"),
-    description:
-      "Окончил филиал Международного университета Вестминстера в Ташкенте по направлению «Бизнес-менеджмент и финансы» и свободно владеет тремя языками. Также владеет практическими навыками эффективной работы с клиентами, проведения переговоров и решения комплексных задач.",
+    description: t(
+      "Окончил филиал Международного университета Вестминстера в Ташкенте по направлению «Бизнес-менеджмент и финансы» и свободно владеет тремя языками. Также владеет практическими навыками эффективной работы с клиентами, проведения переговоров и решения комплексных задач."
+    ),
     biography: getVladislavBiography(),
     contacts: createContacts("+998 88 099 88 88", "coord3@fics.uz"),
   },
@@ -466,13 +467,13 @@ const members = computed(() => [
     biography: getMadinaBiography(),
     contacts: createContacts("+998 88 099 88 88", "admin@fics.uz"),
   },
-]);
+]) as any;
 </script>
 
 <template>
   <div class="secretariat-page">
     <client-only>
-      <PageHero title="Секретариат" />
+      <PageHero :title="t('Секретариат')" />
       <section class="container secretariat-page__container">
         <div class="w-full">
           <p

@@ -134,7 +134,7 @@ onBeforeUnmount(() => observers.forEach((o) => o.disconnect()));
 <template>
   <div>
     <client-only>
-      <PageHero title="Результаты Совета" />
+      <PageHero :title="t('Результаты Совета')" />
       <div class="container">
         <div class="bg-[#F7F7F7] rounded-2xl p-6 lg:p-8">
           <p

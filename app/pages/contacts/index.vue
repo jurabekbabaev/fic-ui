@@ -103,10 +103,10 @@ async function sendForm() {
                 />
               </el-form-item>
               <div v-if="status === 'success'" class="mb-4 p-3 rounded-lg bg-green-50 text-green-700 text-sm">
-                {{ t('Xabaringiz yuborildi!') }}
+                {{ t('message_sent') }}
               </div>
               <div v-if="status === 'error'" class="mb-4 p-3 rounded-lg bg-red-50 text-red-700 text-sm">
-                {{ t('Xatolik yuz berdi. Qayta urinib ko\'ring.') }}
+                {{ t('error_try_again') }}
               </div>
               <div class="w-full">
                 <button

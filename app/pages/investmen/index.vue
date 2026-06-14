@@ -317,7 +317,7 @@ const timeline = [
 <template>
   <div>
     <client-only>
-      <PageHero title="Инвестиции в Узбекистан" />
+      <PageHero :title="t('Инвестиции в Узбекистан')" />
 
       <div class="container pb-20 lg:pb-28">
         <!-- Intro / overview -->

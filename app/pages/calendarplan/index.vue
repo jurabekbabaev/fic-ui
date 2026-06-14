@@ -1,7 +1,7 @@
 <template>
   <div>
     <client-only>
-      <page-hero title="календарный план" />
+      <page-hero :title="t('календарный план')" />
       <div class="container">
         <timeline />
 
