@@ -8,8 +8,7 @@ const model = {
   date: "03.04.2026",
   image_path: "",
   title: "Lorem ipsum dolor sit amet",
-  content:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 };
 </script>
 
@@ -31,9 +30,9 @@ const model = {
             <p class="text-base font-normal text-[#505A63]">
               {{ model.date }}
             </p>
-            <div class="text-base font-normal text-[#505A63] block mt-3.5">
+            <!-- <div class="text-base font-normal text-[#505A63] block mt-3.5">
               {{ model.content }}
-            </div>
+            </div> -->
           </div>
         </div>
       </template>

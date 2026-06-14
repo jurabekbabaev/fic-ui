@@ -137,8 +137,7 @@ Core Principles
 •  Strict adherence to confidentiality and ethical standards.`,
 };
 
-const getJurabekDuties = () =>
-  jurabekDuties[locale.value] ?? jurabekDuties.ru;
+const getJurabekDuties = () => jurabekDuties[locale.value] ?? jurabekDuties.ru;
 
 const vladislavBiographies: Record<string, string> = {
   uz: `Kengash dasturlari koordinatsiyasini va Kotibiyatning kundalik faoliyatini ta’minlovchi biznes va moliya sohasidagi mutaxassis. Ishtirokchilar bilan muloqot, muzokaralar va kommunikatsiya ko’nikmalariga ega bo’lib, sotuv, logistika va ta’lim sohalarida amaliy tajribaga ega. Rus, ingliz va o’zbek tillarini mukammal biladi.`,
@@ -356,8 +355,7 @@ Competencies and Languages:
 • Personal Qualities: Multitasking, stress tolerance, result-oriented, and client-focused approach.`,
 };
 
-const getMadinaDuties = () =>
-  madinaDuties[locale.value] ?? madinaDuties.ru;
+const getMadinaDuties = () => madinaDuties[locale.value] ?? madinaDuties.ru;
 
 const madinaBiographies: Record<string, string> = {
   uz: `Tadbirlar, loyihalar va ishtirokchilar bilan o’zaro aloqalarni qo’llab-quvvatlash bo’yicha 7 yildan ortiq tajribaga ega ma’muriy va koordinatsion mutaxassis. Milliy va xalqaro tadbirlarni tashkil etish hamda YeI va USAID tomonidan moliyalashtiriladigan rivojlanish dasturlarini muvofiqlashtirish sohasida isbotlangan natijalar mavjud. Madaniyatlararo kommunikatsiya, hujjat aylanishi va ko’p tomonlama hamkorlik tajribasiga ega.`,
@@ -405,10 +403,6 @@ const createContacts = (phone: string, email: string) => [
     type: "email" as const,
     value: email,
     href: `mailto:${email}`,
-  },
-  {
-    type: "hours" as const,
-    value: "Du-Ju 9:00 - 18:00",
   },
 ];
 
@@ -481,11 +475,23 @@ const members = computed(() => [
       <PageHero title="Секретариат" />
       <section class="container secretariat-page__container">
         <div class="secretariat-page__intro w-full">
-          <p class="text-base lg:text-lg text-[#505A63] font-normal leading-[170%] pb-5">
-            {{ t("Секретариат Совета иностранных инвесторов — постоянно действующий операционный орган, обеспечивающий преемственность и системность работы Совета между сессиями. Секретариат организует пленарные и промежуточные заседания, координирует деятельность шестнадцати рабочих групп, ведёт ежедневный диалог с членами Совета и иностранными инвесторами, собирает и анализирует инициативы по улучшению инвестиционного климата и обеспечивает их продвижение в профильную государственную политику.") }}
+          <p
+            class="text-base lg:text-lg text-[#505A63] font-normal leading-[170%] pb-5"
+          >
+            {{
+              t(
+                "Секретариат Совета иностранных инвесторов — постоянно действующий операционный орган, обеспечивающий преемственность и системность работы Совета между сессиями. Секретариат организует пленарные и промежуточные заседания, координирует деятельность шестнадцати рабочих групп, ведёт ежедневный диалог с членами Совета и иностранными инвесторами, собирает и анализирует инициативы по улучшению инвестиционного климата и обеспечивает их продвижение в профильную государственную политику."
+              )
+            }}
           </p>
-          <p class="text-base lg:text-lg text-[#505A63] font-normal leading-[170%]">
-            {{ t("С обретением статуса юридического лица Секретариат получил необходимую институциональную самостоятельность для эффективного выполнения своего мандата и взаимодействия с международными финансовыми институтами.") }}
+          <p
+            class="text-base lg:text-lg text-[#505A63] font-normal leading-[170%]"
+          >
+            {{
+              t(
+                "С обретением статуса юридического лица Секретариат получил необходимую институциональную самостоятельность для эффективного выполнения своего мандата и взаимодействия с международными финансовыми институтами."
+              )
+            }}
           </p>
         </div>
 
