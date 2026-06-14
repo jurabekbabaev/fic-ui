@@ -10,7 +10,7 @@
         <div class="introTextOverlay__glow" />
         <div class="introTextOverlay__content" :style="textOverlayStyle">
           <div class="introTextOverlay__text">
-            {{ t("Совет поддерживается ЕБРР!") }}
+            {{ t("homePage.newBanner.ebrdOverlay") }}
           </div>
           <img
             :src="EbrdLogo"
@@ -123,15 +123,11 @@
             <div class="introCouncilShell">
               <div class="text-center mb-[36px] d-hide">
                 <h2 class="title-64 mb-3 lg:text-[64px] text-[32px]">
-                  {{ t("Совет Иностранных Инвесторов") }}
+                  {{ t("homePage.newBanner.councilTitle") }}
                 </h2>
                 <div class="w-full flex justify-center">
                   <div class="lg:text-[20px] text-base lg:w-3/5">
-                    {{
-                      t(
-                        "barqaror rivojlanish va iqtisodiy islohotlarni qo‘llab-quvvatlash maqsadidagi tashkilotlarni birlashtiradi."
-                      )
-                    }}
+                    {{ t("homePage.newBanner.councilDescription") }}
                   </div>
                 </div>
               </div>
@@ -139,7 +135,7 @@
               <h2
                 class="introCouncilLeadersTitle text-center uppercase font-black text-[#191C1F] lg:text-[32px] text-2xl mb-6"
               >
-                {{ t("Руководство") }}
+                {{ t("homePage.newBanner.leaderTitle") }}
               </h2>
 
               <div class="introCouncilLeaders">
@@ -235,9 +231,9 @@ let textOverlayFrameId = 0;
 const heroSlides = computed(() => [
   {
     id: "first",
-    quote: t("Мы создадим все условия"),
-    name: t("Шавкат Миромонович Мирзиёев"),
-    position: t("Президент Республики Узбекистан"),
+    quote: t("homePage.newBanner.slide1.quote"),
+    name: t("homePage.newBanner.slide1.name"),
+    position: t("homePage.newBanner.slide1.position"),
     image: isMobile.value ? mobileImg : desktopImg,
     imagePosition: isMobile.value ? "center bottom" : "center 58%",
     imageSize: "cover",
@@ -246,11 +242,9 @@ const heroSlides = computed(() => [
   },
   {
     id: "second",
-    quote: t(
-      "Мы готовы внести свой вклад везде, где наш опыт и инвестиции могут принести дополнительную ценность."
-    ),
-    name: t("Одил Рено-Бассо"),
-    position: t("Президент Европейского банка реконструкции и развития"),
+    quote: t("homePage.newBanner.slide2.quote"),
+    name: t("homePage.newBanner.slide2.name"),
+    position: t("homePage.newBanner.slide2.position"),
     image: secondHeroImg,
     imagePosition: isMobile.value ? "center center" : "center center",
     imageSize: "cover",
@@ -265,8 +259,8 @@ const leaders = computed(() => [
     logoAlt: "FIC",
     logoClass: "introCouncilCard__logoImage--sm",
     image: Management2,
-    fullname: t("Шавкат Миромонович Мирзиёев"),
-    position: t("Председатель Совета — Президент Республики Узбекистан"),
+    fullname: t("homePage.newBanner.leader1.name"),
+    position: t("homePage.newBanner.leader1.position"),
   },
   {
     id: 2,
@@ -274,8 +268,8 @@ const leaders = computed(() => [
     logoAlt: "EBRD",
     logoClass: "introCouncilCard__logoImage--ebrd",
     image: Management1,
-    fullname: t("Одиль Рено-Бассо"),
-    position: t("Сопредседатель Совета — Президент ЕБРР"),
+    fullname: t("homePage.newBanner.leader2.name"),
+    position: t("homePage.newBanner.leader2.position"),
   },
 ]);
 

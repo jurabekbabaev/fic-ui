@@ -1135,6 +1135,30 @@
     "aboutUs": {
       "heading": "About Us",
       "description": "Representatives of international organizations shared their impressions and results of participating in the Foreign Investors Council."
+    },
+    "newBanner": {
+      "ebrdOverlay": "The Council is supported by the EBRD!",
+      "slide1": {
+        "quote": "Our main goal is to make Uzbekistan a reliable and long-term partner for foreign investors.",
+        "name": "Shavkat Miromonovich Mirziyoyev",
+        "position": "President of the Republic of Uzbekistan"
+      },
+      "slide2": {
+        "quote": "We stand ready to contribute wherever our experience and investment can add value.",
+        "name": "Odil Reno-Basso",
+        "position": "Co-chairman of the Council"
+      },
+      "councilTitle": "The Foreign Investors Council",
+      "councilDescription": "brings together organizations aimed at supporting sustainable development and economic reforms.",
+      "leaderTitle": "Leadership",
+      "leader1": {
+        "name": "Shavkat Miromonovich Mirziyoyev",
+        "position": "Chairman of the Council - President of the Republic of Uzbekistan"
+      },
+      "leader2": {
+        "name": "Odil Reno-Basso",
+        "position": "Co-Chairman of the Council - President of the EBRD"
+      }
     }
   }
 }

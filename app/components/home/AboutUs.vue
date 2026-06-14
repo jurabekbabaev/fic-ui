@@ -7,14 +7,10 @@
           <h2
             class="text-[32px] lg:text-[64px] leading-[100%] font-extrabold uppercase text-[#191C1F] lg:w-[413px] w-full"
           >
-            {{ t("about_us") }}
+            {{ t("homePage.aboutUs.heading") }}
           </h2>
           <p class="text-[#191C1F] lg:text-lg text-base font-normal">
-            {{
-              t(
-                "Руководители международных организаций поделились своими впечатлениями и результатами участия в Совете иностранных инвесторов."
-              )
-            }}
+            {{ t("homePage.aboutUs.description") }}
           </p>
         </div>
 

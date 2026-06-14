@@ -1104,6 +1104,30 @@
     "aboutUs": {
       "heading": "Biz haqida",
       "description": "Xalqaro tashkilotlarning rahbarlari Chet el investorlari Kengashida ishtirok etishning taassurotlari va natijalarini baham koshishdi."
+    },
+    "newBanner": {
+      "ebrdOverlay": "Kengash EBRD tomonidan qo'llab-quvvatlanadi!",
+      "slide1": {
+        "quote": "Biz Uzbekistanni xorijiy investorlar uchun ishonchli va uzoq muddatli hamkor qilish shartlarini yaratamiz.",
+        "name": "Shavkat Miromonovich Mirziyoyev",
+        "position": "Uzbekiston Respublikasi Prezidenti"
+      },
+      "slide2": {
+        "quote": "Biz bizning tajribalari va investitsiyalarimiz qo'shimcha qiymat qo'sha olgan barcha joyda hissa qo'shishga tayyormiz.",
+        "name": "Odil Reno-Basso",
+        "position": "Kengashning Sobasharpasi — EBRD Prezidenti"
+      },
+      "councilTitle": "Chet el investorlari Kengashi",
+      "councilDescription": "barqaror rivojlanish va iqtisodiy islohotlarni qo'llab-quvvatlash maqsadidagi tashkilotlarni birlashtiradi.",
+      "leaderTitle": "Rahbariyat",
+      "leader1": {
+        "name": "Shavkat Miromonovich Mirziyoyev",
+        "position": "Kengash Rahbari — Uzbekiston Respublikasi Prezidenti"
+      },
+      "leader2": {
+        "name": "Odil Reno-Basso",
+        "position": "Kengashning Sobasharpasi — EBRD Prezidenti"
+      }
     }
   },
   "association": {
