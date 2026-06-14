@@ -47,7 +47,7 @@
         </div> -->
 
         <!-- Desktop Grid -->
-        <div v-if="!isMobile" class="mt-8 mb-16 flex flex-col gap-10">
+        <!-- <div v-if="!isMobile" class="mt-8 mb-16 flex flex-col gap-10">
           <div v-for="group in groupedData" :key="group.dayLabel">
             <div class="flex items-center gap-3 mb-5">
               <span
@@ -108,7 +108,7 @@
           </div>
         </div>
 
-        <!-- Mobile -->
+        Mobile
         <div v-else class="mt-8 mb-16 flex flex-col gap-8">
           <div v-for="group in groupedData" :key="group.dayLabel">
             <div class="flex items-center gap-3 mb-4">
@@ -168,7 +168,7 @@
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Button -->
         <!-- <div class="text-center mt-[50px]">

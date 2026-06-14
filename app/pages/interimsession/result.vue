@@ -50,7 +50,7 @@ const interimRows = ref<IInterimRow[]>([
 
 const openDocument = async (path?: string) => {
   if (!path) return;
-  await navigateTo({ path: localePath(path), query: { source: "interim" } });
+  await navigateTo(localePath(path));
 };
 </script>
 
@@ -104,7 +104,7 @@ const openDocument = async (path?: string) => {
               >
                 <td class="px-6 py-5 align-top">
                   <span class="font-bold text-sm lg:text-base text-[#1a1a1a]">
-                    {{ row.no }}
+                    {{ t(row.no) }}
                   </span>
                 </td>
                 <td

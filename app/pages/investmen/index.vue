@@ -325,7 +325,7 @@ const timeline = [
           <div class="invest-intro__aside">
             <span class="invest-eyebrow">{{ t("Обзор") }}</span>
             <h2 class="invest-intro__heading">
-              {{ t("Одна из самых динамичных экономик Евразии") }}
+              {{ t("Узбекистан одна из самых динамичных экономик Евразии") }}
             </h2>
           </div>
           <div class="invest-intro__body">
