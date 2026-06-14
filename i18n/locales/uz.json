@@ -7,7 +7,8 @@
   },
   "management": {
     "hero": {
-      "title": "Rahbariyat"
+      "title": "Rahbariyat",
+      "description": "O'zbekiston Respublikasi Prezidenti huzuridagi Xorijiy investorlar kengashi barqaror rivojlanish va iqtisodiy islohotlarni qo'llab-quvvatlash maqsadida yetakchi xalqaro kompaniyalar va tashkilotlarni birlashtiradi."
     },
     "heading": "Kengash rahbarligi",
     "leaders": [
@@ -17,7 +18,7 @@
       },
       {
         "fullname": "Odil Reno-Basso",
-        "position": "Kengash hamraisi — Yevropa tiklanish va taraqqiyot banki Prezidenti"
+        "position": "Kengash hamraisi — YEITI Prezidenti"
       }
     ],
     "executiveCommittee": {
@@ -61,6 +62,113 @@
           "bio": "Uyushma rahbari va Kengash Kotibiyati boshlig‘i. Korporativ boshqaruv, risklarni boshqarish va investitsiya siyosati sohalarida 20 yildan ortiq tajribaga ega top-menejer."
         }
       ]
+    },
+    "meta": {
+      "titleSuffix": "XFK"
+    },
+    "council": {
+      "title": "Xorijiy investorlar kengashi",
+      "sectionTitle": "Kengash rahbariyati",
+      "members": {
+        "mirziyoyev": {
+          "fullname": "Shavkat Miromonovich Mirziyoyev",
+          "position": "Kengash raisi — O'zbekiston Respublikasi Prezidenti"
+        },
+        "renaudBasso": {
+          "fullname": "Odil Reno-Basso",
+          "position": "Kengash hamraisi — YEITI Prezidenti"
+        }
+      },
+      "foreignSide": {
+        "title": "Xorijiy tomon",
+        "fullMembers": "To'liq a'zolar",
+        "founders": "Asoschilар",
+        "observers": "Kuzatuvchilar",
+        "learnMore": "Batafsil"
+      },
+      "uzbekSide": {
+        "title": "O'zbek tomoni",
+        "participants": "Ishtirokchilar",
+        "learnMore": "Batafsil"
+      }
+    },
+    "committee": {
+      "title": "Ijroiya qo'mita",
+      "learnMore": "Batafsil",
+      "members": {
+        "kudratov": {
+          "fullname": "Laziz Kudratov",
+          "position": "Ijroiya qo'mita raisi"
+        },
+        "aranitasi": {
+          "fullname": "Endi Aranitasi",
+          "position": "O'zbekistondagi YEITI vakili"
+        },
+        "aranitasiAlt": {
+          "fullname": "Endi Aranitasi",
+          "position": "O'zbekistondagi YEITI vakili"
+        },
+        "gafurov": {
+          "fullname": "Aziz G'afurov",
+          "position": "XFK kotibiyati rahbari"
+        },
+        "laoAraya": {
+          "fullname": "Kanokpan Lao-Araya",
+          "position": "ADB mamlakat direktori"
+        },
+        "mccain": {
+          "fullname": "Neil McCain",
+          "position": "IFC O'zbekiston va Turkmaniston bo'yicha direktori"
+        },
+        "masatoKanda": {
+          "fullname": "Masato Kanda",
+          "position": "YEITI Prezidenti"
+        }
+      }
+    },
+    "association": {
+      "title": "Assotsiatsiya",
+      "learnMore": "Batafsil",
+      "members": {
+        "mullajonov": {
+          "fullname": "Akbar Mullajonov",
+          "position": "XFK kotibiyati rahbari"
+        },
+        "abidova": {
+          "fullname": "Madinaxon Abidova",
+          "position": "Dastur koordinatori"
+        },
+        "gafurov": {
+          "fullname": "Aziz G'afurov",
+          "position": "XFK kotibiyati rahbari"
+        }
+      }
+    },
+    "workingGroups": {
+      "title": "Ishchi guruhlar",
+      "mainTitle": "Kengash ishchi guruhlari",
+      "interagencyTitle": "Idoralararo ishchi guruhlar",
+      "learnMore": "Batafsil",
+      "main": {
+        "energy": "Energetika sektori",
+        "finance": "Moliyaviy sektor va bank faoliyati",
+        "talent": "Iste'dod va inson kapitali",
+        "digital": "Raqamlashtirish va AKT",
+        "creative": "Ijodiy sohalar",
+        "climate": "Investitsion muhit"
+      },
+      "interagency": {
+        "tax": "Soliq siyosati",
+        "land": "Yer munosabatlari",
+        "governance": "Korporativ boshqaruv",
+        "pledge": "Garov va ta'minot",
+        "personnel": "Kadrlar siyosati",
+        "circular": "Tsiklik iqtisodiyot",
+        "energyIwg": "Energetika (IAG)",
+        "ai": "Sun'iy intellekt",
+        "aif": "Muqobil investitsiya fondlari",
+        "rbc": "Mas'uliyatli biznes yuritish"
+      }
     }
   },
   "ALMANAC": "ALMANAC",
@@ -71,8 +179,6 @@
   "Jon Zaidi": "Jon Zaidi",
   "SEO of Acwa Uzbekistan": "Acwa Uzbekistan SEO",
   "Vaclav Harant": "Vaclav Harant",
-  "12 июля 2025": "2025-Yil 12-iyul",
-  "5 июля 2025": "2025-Yil 5-iyul",
   "Actions": "Amallar",
   "timeline_main_events": "ASOSIY VOQEALAR",
   "timeline_year_2025": "2025-Yil",
@@ -832,6 +938,74 @@
         "fullname": "John Zaidi",
         "position": "O'zbekistonda Acwa bosh direktori",
         "direction": "Energetika sektori bo'yicha IshG"
+      },
+      "tetrashvili": {
+        "fullname": "Spartak Tetrashvili",
+        "position": "TBC Bank Uzbekistan kengashi raisi",
+        "direction": "Moliyaviy sektor va bank faoliyati bo'yicha IshG"
+      },
+      "rukavishnikov": {
+        "fullname": "Aleksey Rukavishnikov",
+        "position": "Bosh direktor",
+        "direction": "Iste'dod va inson kapitali bo'yicha IshG"
+      },
+      "salikov": {
+        "fullname": "Sergey Salikov",
+        "position": "Uzum, bosh yuridik maslahatchi",
+        "direction": "Raqamlashtirish va AKT bo'yicha IshG"
+      },
+      "umerova": {
+        "fullname": "Gayane Umerova",
+        "position": "Madaniyat va san'at rivojlantirish jamg'armasi raisi",
+        "direction": "Ijodiy sohalar bo'yicha IshG"
+      },
+      "dosimbekov": {
+        "fullname": "Erlan Dosimbekov",
+        "position": "EY, Kavkaz va Markaziy Osiyo bo'yicha boshqaruvchi hamkor",
+        "direction": "Investitsion muhit bo'yicha IshG"
+      },
+      "zaidi": {
+        "fullname": "John Zaidi",
+        "position": "O'zbekistonda Acwa bosh direktori",
+        "direction": "Energetika sektori bo'yicha IshG"
+      }
+    },
+    "pageTitle": "Ishchi guruh rahbarlari",
+    "role": "Ishchi guruh raisi",
+    "workingGroups": {
+      "title": "ISHCHI GURUHLAR",
+      "subtitle": "KENGASH ISHCHI GURUHLARI"
+    },
+    "groups": {
+      "energy": {
+        "content": "Energetika sektori. Elektr energiyasini ishlab chiqarish, uzatish va taqsimlashga xususiy investitsiyalarni jalb etishga ko'maklashish, qayta tiklanadigan energiya manbalari va aralash moliyalashtirish mexanizmlarini rivojlantirish.",
+        "fullname": "John Zaidi",
+        "position": "O'zbekistonda Acwa bosh direktori"
+      },
+      "finance": {
+        "content": "Moliyaviy sektor va bank faoliyati. Moliyaviy va bank sektorini rivojlantirish, investitsiya loyihalarini moliyalashtirish vositalarini kengaytirish va investorlarning moliyaviy tizimga ishonchini mustahkamlash.",
+        "fullname": "Spartak Tetrashvili",
+        "position": "TBC Bank Uzbekistan kengashi raisi"
+      },
+      "talent": {
+        "content": "Iste'dod va inson kapitali. Xorijiy kompaniyalar uchun malakali kadrlar tayyorlash: uzluksiz ta'lim dasturlari, xalqaro kasbiy sertifikatlash va universitetlar-biznes hamkorligi.",
+        "fullname": "Sandro Rtveladze",
+        "position": "Ipoteka Bank OTP Group bosh direktori"
+      },
+      "digital": {
+        "content": "Raqamlashtirish va AKT. Investorlar-davlat o'zaro munosabatlarini raqamli transformatsiya qilish, elektron xizmat ko'rsatish platformalari va zamonaviy raqamli infratuzilmani rivojlantirish.",
+        "fullname": "Sergey Salikov",
+        "position": "Uzum, bosh yuridik maslahatchi"
+      },
+      "creative": {
+        "content": "Ijodiy sohalar. Ijodiy tarmoqlarni keyingi besh yil ichida investitsiya va eksportga yo'naltirilgan iqtisodiyot sektoriga aylantirish.",
+        "fullname": "Gayane Umerova",
+        "position": "O'zbekiston madaniyat va san'at rivojlantirish jamg'armasi raisi"
+      },
+      "investment": {
+        "content": "Investitsion muhit. Investitsion muhitni tizimli yaxshilash: ma'muriy to'siqlarni bartaraf etish, tartibgа solishning shaffofligi va bashorat qilish mumkinligini oshirish.",
+        "fullname": "Erlan Dosimbekov",
+        "position": "EY, Kavkaz va Markaziy Osiyo bo'yicha boshqaruvchi hamkor"
       }
     }
   },
@@ -1523,7 +1697,13 @@
     },
     "blog": {
       "filterTopics": "Barcha mavzular",
-      "filterYears": "Barcha yillar"
+      "filterYears": "Barcha yillar",
+      "topic1": "Soliq siyosati",
+      "article1": "Soliq tizimi qanday o'zgarmoqda",
+      "topic2": "Raqamlashtirish",
+      "article2": "Davlat boshqaruvida raqamli yechimlar",
+      "date1": "2025-yil 12-iyul",
+      "date2": "2025-yil 5-iyul"
     }
   },
   "contacts": {

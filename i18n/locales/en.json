@@ -7,7 +7,8 @@
   },
   "management": {
     "hero": {
-      "title": "Management"
+      "title": "Management",
+      "description": "The Foreign Investors' Council under the President of the Republic of Uzbekistan brings together leading international companies and organizations to support sustainable development and economic reforms."
     },
     "heading": "Council Leadership",
     "leaders": [
@@ -16,7 +17,7 @@
         "position": "Chairman of the Council — President of the Republic of Uzbekistan"
       },
       {
-        "fullname": "Odil Reno-Basso",
+        "fullname": "Odil Renaud-Basso",
         "position": "Co-Chairman of the Council — President of the EBRD"
       }
     ],
@@ -61,11 +62,116 @@
           "bio": "Head of the Association and Head of the Council Secretariat. A top manager with over 20 years of experience in corporate governance, risk management and investment policy."
         }
       ]
+    },
+    "meta": {
+      "titleSuffix": "FIC"
+    },
+    "council": {
+      "title": "Foreign Investors' Council",
+      "sectionTitle": "Council Leadership",
+      "members": {
+        "mirziyoyev": {
+          "fullname": "Shavkat Miromonovich Mirziyoyev",
+          "position": "Chairman of the Council — President of the Republic of Uzbekistan"
+        },
+        "renaudBasso": {
+          "fullname": "Odil Renaud-Basso",
+          "position": "Co-Chairman of the Council — President of the EBRD"
+        }
+      },
+      "foreignSide": {
+        "title": "Foreign Members",
+        "fullMembers": "Full Members",
+        "founders": "Founders",
+        "observers": "Observers",
+        "learnMore": "Learn more"
+      },
+      "uzbekSide": {
+        "title": "Uzbek Side",
+        "participants": "Participants",
+        "learnMore": "Learn more"
+      }
+    },
+    "committee": {
+      "title": "Executive Committee",
+      "learnMore": "Learn more",
+      "members": {
+        "kudratov": {
+          "fullname": "Laziz Kudratov",
+          "position": "Chairman of the Executive Committee"
+        },
+        "aranitasi": {
+          "fullname": "Andi Aranitasi",
+          "position": "Head of the EBRD in Uzbekistan"
+        },
+        "aranitasiAlt": {
+          "fullname": "Andi Aranitasi",
+          "position": "Head of the EBRD in Uzbekistan"
+        },
+        "gafurov": {
+          "fullname": "Aziz Gafurov",
+          "position": "Head of the FIC Secretariat"
+        },
+        "laoAraya": {
+          "fullname": "Kanokpan Lao-Araya",
+          "position": "Country Director of the ADB"
+        },
+        "mccain": {
+          "fullname": "Neil McCain",
+          "position": "Director of the IFC Office for Uzbekistan and Turkmenistan"
+        },
+        "masatoKanda": {
+          "fullname": "Masato Kanda",
+          "position": "President of the EBRD"
+        }
+      }
+    },
+    "association": {
+      "title": "Association",
+      "learnMore": "Learn more",
+      "members": {
+        "mullajonov": {
+          "fullname": "Akbar Mullajonov",
+          "position": "Head of the FIC Secretariat"
+        },
+        "abidova": {
+          "fullname": "Madinakhon Abidova",
+          "position": "Program Coordinator"
+        },
+        "gafurov": {
+          "fullname": "Aziz Gafurov",
+          "position": "Head of the FIC Secretariat"
+        }
+      }
+    },
+    "workingGroups": {
+      "title": "Working Groups",
+      "mainTitle": "Council Working Groups",
+      "interagencyTitle": "Interagency Working Groups",
+      "learnMore": "Learn more",
+      "main": {
+        "energy": "Energy Sector",
+        "finance": "Financial Sector and Banking",
+        "talent": "Talent and Human Capital",
+        "digital": "Digitalization and ICT",
+        "creative": "Creative Industries",
+        "climate": "Investment Climate"
+      },
+      "interagency": {
+        "tax": "Tax Policy",
+        "land": "Land Relations",
+        "governance": "Corporate Governance",
+        "pledge": "Pledge and Collateral",
+        "personnel": "Personnel and HR",
+        "circular": "Circular Economy",
+        "energyIwg": "Energy (IWG)",
+        "ai": "Artificial Intelligence",
+        "aif": "Alternative Investment Funds",
+        "rbc": "Responsible Business Conduct"
+      }
     }
   },
   "ALMANAC": "ALMANAC",
-  "12 июля 2025": "July 12, 2025",
-  "5 июля 2025": "July 5, 2025",
   "Instagram": "Instagram",
   "Yopish": "Show less",
   "Primkulov Akmal": "Primkulov Akmal",
@@ -832,6 +938,74 @@
         "fullname": "John Zaidi",
         "position": "Acwa CEO in Uzbekistan",
         "direction": "WG on Energy Sector"
+      },
+      "tetrashvili": {
+        "fullname": "Spartak Tetrashvili",
+        "position": "Chairman of the Board of TBC Bank Uzbekistan",
+        "direction": "WG on Financial Sector and Banking"
+      },
+      "rukavishnikov": {
+        "fullname": "Alexey Rukavishnikov",
+        "position": "General Director",
+        "direction": "WG on Talent and Human Capital"
+      },
+      "salikov": {
+        "fullname": "Sergey Salikov",
+        "position": "Uzum, General Legal Counsel",
+        "direction": "WG on Digitalization and ICT"
+      },
+      "umerova": {
+        "fullname": "Gayane Umerova",
+        "position": "Chairman of the Fund for Culture and Art Development",
+        "direction": "WG on Creative Industries"
+      },
+      "dosimbekov": {
+        "fullname": "Erlan Dosimbekov",
+        "position": "EY, Managing Partner for the Caucasus and Central Asia",
+        "direction": "WG on Investment Climate"
+      },
+      "zaidi": {
+        "fullname": "John Zaidi",
+        "position": "Acwa CEO in Uzbekistan",
+        "direction": "WG on Energy Sector"
+      }
+    },
+    "pageTitle": "Working Group Leaders",
+    "role": "Working Group Chair",
+    "workingGroups": {
+      "title": "WORKING GROUPS",
+      "subtitle": "COUNCIL WORKING GROUPS"
+    },
+    "groups": {
+      "energy": {
+        "content": "Energy sector. Promoting private investment in electricity generation, transmission and distribution, developing renewable energy sources and blended-finance mechanisms for energy projects.",
+        "fullname": "John Zaidi",
+        "position": "Acwa CEO in Uzbekistan"
+      },
+      "finance": {
+        "content": "Financial sector and banking. Developing the financial and banking sector, expanding financing instruments for investment projects, and strengthening investor confidence in the country's financial system.",
+        "fullname": "Spartak Tetrashvili",
+        "position": "Chairman of the Board of TBC Bank Uzbekistan"
+      },
+      "talent": {
+        "content": "Talent attraction and human capital. Training qualified personnel for foreign companies: continuing education programs, international professional certification, and university-business collaboration.",
+        "fullname": "Sandro Rtveladze",
+        "position": "General Director of Ipoteka Bank OTP Group"
+      },
+      "digital": {
+        "content": "Digitalization and ICT. Digital transformation of investor-government interaction, development of electronic service-delivery platforms and modern digital infrastructure.",
+        "fullname": "Sergey Salikov",
+        "position": "Uzum, General Legal Counsel"
+      },
+      "creative": {
+        "content": "Creative industries. Transforming creative industries into an investment- and export-oriented sector of the economy within the next five years.",
+        "fullname": "Gayane Umerova",
+        "position": "Chairman of the Fund for Culture and Art Development"
+      },
+      "investment": {
+        "content": "Investment climate. Systematic improvement of the investment climate: removing administrative barriers and enhancing the transparency and predictability of regulation.",
+        "fullname": "Erlan Dosimbekov",
+        "position": "EY, Managing Partner for the Caucasus and Central Asia"
       }
     }
   },
@@ -1523,7 +1697,13 @@
     },
     "blog": {
       "filterTopics": "All topics",
-      "filterYears": "All years"
+      "filterYears": "All years",
+      "topic1": "Tax Policy",
+      "article1": "How the tax system is changing",
+      "topic2": "Digitalization",
+      "article2": "Digital solutions in public administration",
+      "date1": "July 12, 2025",
+      "date2": "July 5, 2025"
     }
   },
   "contacts": {

@@ -48,7 +48,7 @@
               >
                 {{ t("home.blog.article1") }}
               </div>
-              <div>{{ t("12 июля 2025") }}</div>
+              <div>{{ t("home.blog.date1") }}</div>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
               >
                 {{ t("home.blog.article2") }}
               </div>
-              <div>{{ t("5 июля 2025") }}</div>
+              <div>{{ t("home.blog.date2") }}</div>
             </div>
           </div>
         </div>
