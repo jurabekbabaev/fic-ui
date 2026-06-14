@@ -10,8 +10,8 @@ interface IType {
   bgcolor: string;
   txtcolor: string;
   groups: string[];
-  isView: boolean
-};
+  isView: boolean;
+}
 
 const data = ref<IType[]>([
   {
@@ -23,7 +23,9 @@ const data = ref<IType[]>([
     txtcolor: "text-white",
     isView: true,
     groups: [
-      t("МРГ по разработке законопроекта Об альтернативных инвестиционных фондах"),
+      t(
+        "МРГ по разработке законопроекта Об альтернативных инвестиционных фондах"
+      ),
       t("МРГ по совершенствованию залогового законодательства"),
       t("МРГ по внедрению принципов ответственного ведения бизнеса"),
       t("МРГ по подготовке профессиональных кадров для иностранных компаний"),
@@ -44,14 +46,9 @@ const data = ref<IType[]>([
     txtcolor: "text-[#040C2A]",
     isView: false,
     groups: [
-      t("Цифровизации ИКТ"),
-      t("Финансовый сектор и банковское дело"),
-      t("Зеленая экономика и энергетика"),
-      t("Инвестирование через границы"),
-      t("Приватизации и ГЧП"),
-      t("Альтернативные инвестиционные фонды"),
-      t("Развития рынка и капитала"),
-      t("Введение бизнеса"),
+      t(
+        "Состоялась в рамках III ТМИФ под председательством Президента. По итогам — ПП-179 с дорожной картой из 14 инициатив, включая создание четырёх рабочих групп"
+      ),
     ],
   },
   {
@@ -63,13 +60,9 @@ const data = ref<IType[]>([
     txtcolor: "text-[#040C2A]",
     isView: false,
     groups: [
-      t("Цифровизации ИКТ"),
-      t("Финансовый сектор и банковское дело"),
-      t("Зеленая экономика и энергетика"),
-      t("Инвестирование через границы"),
-      t("Приоритетные отрасли"),
-      t("Приватизации и ГЧП"),
-      t("Залоговое законодательство"),
+      t(
+        "Резиденция «Куксарой». Более 150 участников, свыше 40 предложений. Приоритеты: деловая среда, налоговая стабильность, ГЧП, зелёная экономика, цифровизация."
+      ),
     ],
   },
 ]);
@@ -92,8 +85,15 @@ function ViewReadMore(item: IType) {
   <section>
     <client-only>
       <div class="mb-12" id="rops">
-        <h2 class="lg:text-[54px] text-[32px] uppercase font-black mb-12 mt-24" section-id="rops">
-          {{ t("Межведомственные рабочие группы, созданные по итогам пленарных заседаний") }}
+        <h2
+          class="lg:text-[54px] text-[32px] uppercase font-black mb-12 mt-24"
+          section-id="rops"
+        >
+          {{
+            t(
+              "Межведомственные рабочие группы, созданные по итогам пленарных заседаний"
+            )
+          }}
         </h2>
         <div class="flex flex-col gap-5">
           <div
@@ -106,17 +106,28 @@ function ViewReadMore(item: IType) {
               class="w-full sm:w-[220px] shrink-0 flex flex-col justify-center items-center py-8 px-6 uppercase"
               :class="[item.bgcolor, item.txtcolor]"
             >
-              <div class="font-black text-[40px] sm:text-[60px] lg:text-[80px] leading-none text-center">
+              <div
+                class="font-black text-[40px] sm:text-[60px] lg:text-[80px] leading-none text-center"
+              >
                 {{ item.sessionid }}
               </div>
-              <p class="text-sm font-medium mt-2 text-center">{{ t(item.sessionTitleKey) }}</p>
-              <p class="text-xs font-normal mt-1 text-center opacity-80">{{ t(item.yearKey) }}</p>
+              <p class="text-sm font-medium mt-2 text-center">
+                {{ t(item.sessionTitleKey) }}
+              </p>
+              <p class="text-xs font-normal mt-1 text-center opacity-80">
+                {{ t(item.yearKey) }}
+              </p>
             </div>
 
             <!-- Right: content -->
             <div class="flex-1 p-5 flex flex-col">
-              <ul class="list-disc pl-5 text-[#505A63] font-normal text-base flex-1">
-                <li v-for="(list, i) in item.groups" :key="i" class="mb-1">{{ list }}</li>
+              <ul
+                :class="item.id === 1 ? 'list-disc pl-5' : 'list-none'"
+                class="text-[#505A63] font-normal text-base flex-1"
+              >
+                <li v-for="(list, i) in item.groups" :key="i" class="mb-1">
+                  {{ list }}
+                </li>
               </ul>
               <span
                 @click="ViewReadMore(item)"
@@ -128,6 +139,32 @@ function ViewReadMore(item: IType) {
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="flex items-center gap-3 mt-4 px-4 py-3 rounded-xl bg-[#F7F7F7] border border-[#0000000D]"
+      >
+        <i class="icon-file-text text-[#505A63] text-lg shrink-0 mt-0.5"></i>
+        <div class="flex-1 min-w-0">
+          <span
+            class="block text-xs font-semibold text-[#191C1F] uppercase tracking-wide mb-0.5"
+          >
+            {{ t("Правовая основа") }}
+          </span>
+          <span class="text-sm text-[#505A63] font-normal leading-relaxed">
+            {{
+              t(
+                "По Итогам Постонавление Президента от 18.07.2025 (вступила в силу 21.07.2025) - ПП-226"
+              )
+            }}
+          </span>
+        </div>
+        <button
+          @click.stop="navigateTo(localePath('/reports'))"
+          class="shrink-0 cursor-pointer flex items-center gap-1 text-sm font-medium text-[#191C1F] hover:opacity-70 transition-opacity whitespace-nowrap"
+        >
+          {{ t("Подробнее") }}
+          <i class="icon-move-right text-base"></i>
+        </button>
       </div>
     </client-only>
   </section>
