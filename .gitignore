@@ -25,7 +25,17 @@ logs
 .env.*
 !.env.example
 
-# Large media — kept locally, NOT pushed to keep repo small
+# Large media — kept locally + uploaded to cPanel manually, NOT pushed.
+# Code never imports these at build time anymore; it loads them at runtime
+# from `${siteUrl}/images/...` via the img() helper (app/composables/helpers.js).
 app/assets/images/
 public/images/
 public/documents/
+
+# Merged folder built locally for manual upload to cPanel /images (see DEPLOYMENT.md)
+deploy-images/
+
+# Deploy archives built locally for manual cPanel upload
+images.zip
+documents.zip
+site.zip

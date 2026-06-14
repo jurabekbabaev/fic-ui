@@ -30,10 +30,10 @@
 <script setup>
 import Carousel from "@/components/base/Carousel.vue"
 import WLocaleLink from "~/components/shared/WLocaleLink.vue";
-import img1 from "@/assets/images/plenarysessions/info3_4.png"
-import img2 from "@/assets/images/plenarysessions/info2_4.png"
-import img3 from "@/assets/images/plenarysessions/info3_2.png"
-import img4 from "@/assets/images/plenarysessions/ps_2.png"
+const img1 = img("plenarysessions/info3_4.png")
+const img2 = img("plenarysessions/info2_4.png")
+const img3 = img("plenarysessions/info3_2.png")
+const img4 = img("plenarysessions/ps_2.png")
 
 const items = [
   img1,

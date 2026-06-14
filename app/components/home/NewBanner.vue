@@ -189,15 +189,15 @@
 
 <script setup>
 import { useI18n } from "vue-i18n";
-import Management1 from "@/assets/images/management/image11.png";
-import Management2 from "@/assets/images/management/image12.png";
-import EBank from "@/assets/images/brands/e-bank.png";
-import EbrdLogo from "@/assets/images/brands/ebrd.png";
+const Management1 = img("management/image11.png");
+const Management2 = img("management/image12.png");
+const EBank = img("brands/e-bank.png");
+const EbrdLogo = img("brands/ebrd.png");
 
-import desktopImg from "@/assets/images/home/60f66bb43e415a780b96ef1fc99600ee027b94c4.png";
-import mobileImg from "@/assets/images/home/banner-img-mobile.png";
-import secondHeroImg from "@/assets/images/home/l2.png";
-import ficLogo from "@/assets/images/pr.png";
+const desktopImg = img("home/60f66bb43e415a780b96ef1fc99600ee027b94c4.png");
+const mobileImg = img("home/banner-img-mobile.png");
+const secondHeroImg = img("home/l2.png");
+const ficLogo = img("pr.png");
 const presidentLink = "https://president.uz/en/lists/view/7194";
 
 const HERO_ONE_HOLD_END = 0.04;

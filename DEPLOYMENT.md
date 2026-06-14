@@ -1,75 +1,97 @@
-# Deployment to cPanel
+# Deployment to cPanel (GitHub Actions auto-deploy)
 
 Bu loyiha **Nuxt 4** static SPA (`ssr: false`, `nitro.preset = 'static'`).
-Build natijasi oddiy HTML/CSS/JS fayllardan iborat — cPanel-ga shunchaki
-ko'chirib tashlash kifoya. Node.js server **kerak emas**.
+`main` branchga push qilinganda **GitHub Actions** avtomatik build qilib,
+SSH/rsync orqali cPanel'ga deploy qiladi.
+
+## Rasmlar qanday ishlaydi (MUHIM)
+
+Rasmlar **git'ga push qilinmaydi** (juda katta, ~290MB). Kod ularni build
+paytida `import` qilmaydi — runtime'da `${siteUrl}/images/...` dan yuklaydi
+(`img()` helper, [app/composables/helpers.js](app/composables/helpers.js)).
+
+Demak:
+- **Kod** → git → GitHub Actions → cPanel (avtomatik, har push'da)
+- **Rasmlar** → cPanel'ga **bir marta qo'lda** yuklanadi, `/images/` papkaga.
+  rsync `--exclude '/images/'` qilgani uchun har deploy'da saqlanib qoladi.
 
 ---
 
-## 1. Lokal mashinada build qilish
+## 1. Bir martalik sozlash
+
+### 1a. Rasmlarni cPanel'ga yuklash (faqat birinchi marta)
+
+Lokalda birlashtirilgan `deploy-images/` papka yasaladi (app/assets/images +
+public/images birlashgan). Uni yangilash kerak bo'lsa:
 
 ```bash
-# 1) dependencylarni o'rnatish (faqat birinchi marta yoki o'zgarganda)
-npm install
-
-# 2) .env faylni tayyorlash (namuna: .env.example)
-cp .env.example .env
-#   -> ichidagi URL larni production qiymatlariga moslang
-
-# 3) static build
-npm run deploy:build
+rm -rf deploy-images && mkdir -p deploy-images
+cp -R public/images/. deploy-images/
+rsync -a --exclude '.DS_Store' app/assets/images/ deploy-images/
+find deploy-images -name '.DS_Store' -delete
 ```
 
-Natija: **`.output/public/`** papkasi. Deploy qilinadigan narsa shu papka ichidagi
-hamma narsa (ichidagi fayllar, jumladan `.htaccess` va `tgbot/`).
+So'ng `deploy-images/` **ichidagi** hamma narsani cPanel'da
+`public_html/fics.uz/images/` papkaga yuklang (ZIP qilib → Extract eng tez).
+Natijada cPanel'da `/images/leaders/`, `/images/brands/`, `/images/users/`,
+`/images/management/` va h.k. struktura paydo bo'ladi.
 
-> `deploy:build` ishga tushgach `.htaccess` va `tgbot/*.php` fayllar
-> avtomatik `.output/public/` ichiga ko'chiriladi (`copy:extras` skripti).
+> `public/documents/` (PDF'lar) ham xuddi shunday `public_html/fics.uz/documents/`
+> ga qo'lda yuklanadi.
+
+### 1b. GitHub Secrets (Settings → Secrets and variables → Actions)
+
+| Secret | Qiymat (namuna) |
+|--------|-----------------|
+| `CPANEL_HOST` | `fics.uz` yoki server IP |
+| `CPANEL_USER` | cPanel SSH username (masalan `l9n7wqq6cx22`) |
+| `CPANEL_SSH_PORT` | SSH port (cPanel'da ko'pincha `22` emas — tekshiring) |
+| `CPANEL_SSH_KEY` | Private SSH key (to'liq matn, BEGIN...END bilan) |
+| `CPANEL_TARGET_DIR` | `/home/<user>/public_html/fics.uz/` |
+| `NUXT_PUBLIC_SITE_URL` | `https://fics.uz` |
+| `NUXT_API_BASE_URL` | `https://fics.uz/api/api/v1` |
+| `NUXT_API_BASE_URL_ASSETS` | `https://fics.uz/api/` |
+
+> **SSH key:** cPanel → SSH Access → Manage SSH Keys → Generate yoki Import.
+> Public key **Authorized** bo'lishi kerak. Private key'ni `CPANEL_SSH_KEY`
+> secret'iga to'liq joylang.
 
 ---
 
-## 2. cPanel-ga yuklash
+## 2. Deploy qilish (har safar)
 
-### Variant A — ZIP orqali (tavsiya etiladi)
+Shunchaki `main` ga push qiling:
 
-1. `.output/public/` **ichidagi** hamma narsani ZIP qiling
-   (papkaning o'zini emas — ichidagi fayllarni; ya'ni `index.html` ZIP ildizida bo'lsin).
-   ```bash
-   cd .output/public && zip -r ../site.zip . && cd ../..
-   ```
-   ZIP fayl `.output/site.zip` da paydo bo'ladi.
-2. cPanel → **File Manager** → `public_html/` ga kiring.
-3. Eski fayllarni tozalang (kerak bo'lsa zaxira oling).
-4. `site.zip` ni `public_html/` ga yuklang → **Extract**.
-5. ZIP faylni o'chiring.
+```bash
+git add -A
+git commit -m "..."
+git push origin main
+```
 
-### Variant B — Fayl menejeri orqali qo'lda
-
-`.output/public/` ichidagi barcha fayl va papkalarni `public_html/` ichiga
-ko'chiring. **`.htaccess` yashirin fayl** — File Manager-da
-*Settings → Show Hidden Files (dotfiles)* yoqilganligiga ishonch hosil qiling.
+GitHub → **Actions** tab'da deploy jarayonini kuzating.
+Qo'lda ishga tushirish: Actions → "Deploy to cPanel" → **Run workflow**.
 
 ---
 
 ## 3. Tekshirish (deploydan keyin)
 
-- [ ] Bosh sahifa ochiladi: `https://SIZNING-DOMEN/`
-- [ ] Ichki sahifani **refresh** qilib ko'ring (masalan `/ru/maininfo`) —
-      404 bermasligi kerak (bu `.htaccess` SPA fallback ishlayotganini bildiradi).
-- [ ] Til almashtirish (`/ru`, `/uz`, `/en`) ishlaydi.
-- [ ] API chaqiruvlar ishlaydi (backend URL `.env` da to'g'ri bo'lsa, build ichida bog'lanadi).
-- [ ] `tgbot/` (hujjat yuklash) ishlaydi — PHP cPanel-da yoqilgan bo'lishi kerak.
+- [ ] `https://fics.uz/` ochiladi
+- [ ] **Rasmlar ko'rinadi** (ular `https://fics.uz/images/...` dan keladi)
+- [ ] Ichki sahifani **refresh** qiling (`/ru/maininfo`) — 404 bermasligi kerak
+      (`.htaccess` SPA fallback)
+- [ ] Til almashtirish `/ru` `/uz` `/en` ishlaydi
+- [ ] Hujjat yuklash (`tgbot/`) — PHP cPanel'da yoqilgan bo'lishi kerak
 
 ---
 
 ## Eslatmalar
 
-- **Subdomenga deploy** qilsangiz (masalan `app.domen.uz`), o'sha subdomen
-  papkasiga yuklang. Subfolderga joylasangiz (`domen.uz/app`), `.htaccess`
-  ichidagi `RewriteBase /` ni `RewriteBase /app/` ga o'zgartiring.
-- **HTTPS majburlash**: SSL o'rnatilgach `.htaccess` ichidagi "Force HTTPS"
-  blokini izohdan chiqaring (uncomment).
-- API URL build paytida (`.env`) ichiga bog'lanadi — URL o'zgarsa
-  **qayta build qilish** kerak.
-- `.htaccess` `mod_rewrite`, `mod_deflate`, `mod_expires`, `mod_headers`
-  modullariga tayanadi — cPanel/Apache-da odatda yoqilgan.
+- **Yangi rasm qo'shsangiz:** kodda `img('subpath')` deb chaqiring va shu
+  rasmni cPanel `/images/subpath` ga qo'lda yuklang. Git/deploy talab etilmaydi
+  (lekin lokal dev uchun `app/assets/images` yoki `public/images` ga ham qo'ying).
+- **Domen o'zgarsa:** faqat `NUXT_PUBLIC_SITE_URL` secret'ini o'zgartiring —
+  `img()` avtomatik yangi domendan rasm oladi.
+- **Subfolderga** deploy qilsangiz, [public/.htaccess](public/.htaccess) dagi
+  `RewriteBase /` ni moslang.
+- `.htaccess` va `tgbot/*.php` build paytida avtomatik `.output/public/` ga
+  ko'chiriladi (`copy:extras` skripti).

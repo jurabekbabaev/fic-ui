@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useI18n } from "vue-i18n";
 import PageHero from "~/components/shared/PageHero.vue";
-import HeroImage from "@/assets/images/plenarysessions/ps_5.png";
+const HeroImage = img("plenarysessions/ps_5.png");
 
 const { t } = useI18n();
 

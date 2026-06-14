@@ -2,12 +2,12 @@
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 import { ref } from "vue";
-import LeaderImage1 from "@/assets/images/leaders/leader1.png";
-import LeaderImage2 from "@/assets/images/leaders/leader2.png";
-import LeaderImage3 from "@/assets/images/leaders/leader3.png";
-import LeaderImage4 from "@/assets/images/leaders/leader4.png";
-import LeaderImage5 from "@/assets/images/leaders/leader5.png";
-import LeaderImage6 from "@/assets/images/leaders/leader6.png";
+const LeaderImage1 = img("leaders/leader1.png");
+const LeaderImage2 = img("leaders/leader2.png");
+const LeaderImage3 = img("leaders/leader3.png");
+const LeaderImage4 = img("leaders/leader4.png");
+const LeaderImage5 = img("leaders/leader5.png");
+const LeaderImage6 = img("leaders/leader6.png");
 import WorkingGroup from "./workinggroup.vue";
 
 

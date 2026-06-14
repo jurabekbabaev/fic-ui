@@ -1,29 +1,29 @@
-import plenary2025Image1 from "@/assets/images/plenarysessions/plenary2025/STU_8900_.jpg";
-import plenary2025Image2 from "@/assets/images/plenarysessions/plenary2025/ATM_9667.JPG";
-import plenary2025Image3 from "@/assets/images/plenarysessions/plenary2025/ATM_9764.JPG";
-import plenary2025Image4 from "@/assets/images/plenarysessions/plenary2025/DSC_2538.JPG";
-import plenary2025Image5 from "@/assets/images/plenarysessions/plenary2025/XPI_2417.JPG";
-import plenary2025Image6 from "@/assets/images/plenarysessions/plenary2025/IMG_0036.JPG";
-import plenary2025Image7 from "@/assets/images/plenarysessions/plenary2025/SUT_7962.JPG";
-import plenary2025Image8 from "@/assets/images/plenarysessions/plenary2025/SUT_8193.JPG";
+const plenary2025Image1 = img("plenarysessions/plenary2025/STU_8900_.jpg");
+const plenary2025Image2 = img("plenarysessions/plenary2025/ATM_9667.JPG");
+const plenary2025Image3 = img("plenarysessions/plenary2025/ATM_9764.JPG");
+const plenary2025Image4 = img("plenarysessions/plenary2025/DSC_2538.JPG");
+const plenary2025Image5 = img("plenarysessions/plenary2025/XPI_2417.JPG");
+const plenary2025Image6 = img("plenarysessions/plenary2025/IMG_0036.JPG");
+const plenary2025Image7 = img("plenarysessions/plenary2025/SUT_7962.JPG");
+const plenary2025Image8 = img("plenarysessions/plenary2025/SUT_8193.JPG");
 
-import plenary2024Image1 from "@/assets/images/plenarysessions/info2_1.png";
-import plenary2024Image2 from "@/assets/images/plenarysessions/info2_2.png";
-import plenary2024Image3 from "@/assets/images/plenarysessions/info2_3.png";
-import plenary2024Image4 from "@/assets/images/plenarysessions/info2_4.png";
-import plenary2024Image5 from "@/assets/images/plenarysessions/info2_5.png";
-import plenary2024Image6 from "@/assets/images/plenarysessions/info2_6.png";
-import plenary2024Image7 from "@/assets/images/plenarysessions/info2_7.png";
-import plenary2024Image8 from "@/assets/images/plenarysessions/info2_8.png";
+const plenary2024Image1 = img("plenarysessions/info2_1.png");
+const plenary2024Image2 = img("plenarysessions/info2_2.png");
+const plenary2024Image3 = img("plenarysessions/info2_3.png");
+const plenary2024Image4 = img("plenarysessions/info2_4.png");
+const plenary2024Image5 = img("plenarysessions/info2_5.png");
+const plenary2024Image6 = img("plenarysessions/info2_6.png");
+const plenary2024Image7 = img("plenarysessions/info2_7.png");
+const plenary2024Image8 = img("plenarysessions/info2_8.png");
 
-import plenary2023Image1 from "@/assets/images/plenarysessions/info3_1.png";
-import plenary2023Image2 from "@/assets/images/plenarysessions/info3_2.png";
-import plenary2023Image3 from "@/assets/images/plenarysessions/info3_3.png";
-import plenary2023Image4 from "@/assets/images/plenarysessions/info3_4.png";
-import plenary2023Image5 from "@/assets/images/plenarysessions/info3_5.png";
-import plenary2023Image6 from "@/assets/images/plenarysessions/info3_6.png";
-import plenary2023Image7 from "@/assets/images/plenarysessions/info3_7.png";
-import plenary2023Image8 from "@/assets/images/plenarysessions/info3_8.png";
+const plenary2023Image1 = img("plenarysessions/info3_1.png");
+const plenary2023Image2 = img("plenarysessions/info3_2.png");
+const plenary2023Image3 = img("plenarysessions/info3_3.png");
+const plenary2023Image4 = img("plenarysessions/info3_4.png");
+const plenary2023Image5 = img("plenarysessions/info3_5.png");
+const plenary2023Image6 = img("plenarysessions/info3_6.png");
+const plenary2023Image7 = img("plenarysessions/info3_7.png");
+const plenary2023Image8 = img("plenarysessions/info3_8.png");
 
 export type PlenarySessionYear = "2025" | "2024" | "2022";
 

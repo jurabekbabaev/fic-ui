@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 import PageHero from "~/components/shared/PageHero.vue";
 const { t } = useI18n();
-import Main from "@/assets/images/main-info.png";
+const Main = img("main-info.png");
 
 const chronologyRows = [
   {

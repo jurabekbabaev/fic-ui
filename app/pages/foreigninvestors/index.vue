@@ -77,10 +77,10 @@ import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 import Investors from "./investors.vue";
 import PageHero from "~/components/shared/PageHero.vue";
-import Management1 from "@/assets/images/management/image11.png";
-import Management2 from "@/assets/images/management/image12.png";
-import EBank from "@/assets/images/brands/e-bank.png";
-import FICLogo from "@/assets/images/pr.png";
+const Management1 = img("management/image11.png");
+const Management2 = img("management/image12.png");
+const EBank = img("brands/e-bank.png");
+const FICLogo = img("pr.png");
 
 const { t } = useI18n();
 

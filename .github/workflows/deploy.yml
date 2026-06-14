@@ -1,0 +1,59 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+# Bir vaqtda faqat bitta deploy ishlasin; yangisi kelsa eskisi to'xtaydi
+concurrency:
+  group: deploy-cpanel
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Rasmlar (app/assets/images, public/images) git'da YO'Q va build'da
+      # kerak emas — kod ularni runtime'da `${siteUrl}/images/...` dan oladi.
+      # Shuning uchun bu build rasmsiz muvaffaqiyatli o'tadi.
+      - name: Build static site
+        run: npm run deploy:build
+        env:
+          NUXT_PUBLIC_SITE_URL: ${{ secrets.NUXT_PUBLIC_SITE_URL }}
+          NUXT_API_BASE_URL: ${{ secrets.NUXT_API_BASE_URL }}
+          NUXT_API_BASE_URL_ASSETS: ${{ secrets.NUXT_API_BASE_URL_ASSETS }}
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.CPANEL_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${{ secrets.CPANEL_SSH_PORT || '22' }}" -H "${{ secrets.CPANEL_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
+
+      # rsync --delete eski kod fayllarini tozalaydi, LEKIN
+      # --exclude bilan cPanel'dagi qo'lda yuklangan rasm/hujjatlarga TEGMAYDI.
+      - name: Deploy via rsync
+        run: |
+          rsync -avz --delete \
+            --exclude '/images/' \
+            --exclude '/documents/' \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.CPANEL_SSH_PORT || '22' }}" \
+            .output/public/ \
+            "${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }}:${{ secrets.CPANEL_TARGET_DIR }}"
+
+      - name: Cleanup SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key

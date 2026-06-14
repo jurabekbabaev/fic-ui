@@ -2,15 +2,15 @@
 import { ref, computed, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
-import Management1 from "@/assets/images/management/image11.png";
-import Management2 from "@/assets/images/management/image12.png";
-import User1 from "@/assets/images/management/mng1.png";
-import User2 from "@/assets/images/management/mng2.png";
-import User3 from "@/assets/images/management/mng3.png";
-import User4 from "@/assets/images/management/mng4.png";
-import User5 from "@/assets/images/management/mng5.png";
-import User6 from "@/assets/images/management/mng6.png";
-import User7 from "@/assets/images/management/mng7.png";
+const Management1 = img("management/image11.png");
+const Management2 = img("management/image12.png");
+const User1 = img("management/mng1.png");
+const User2 = img("management/mng2.png");
+const User3 = img("management/mng3.png");
+const User4 = img("management/mng4.png");
+const User5 = img("management/mng5.png");
+const User6 = img("management/mng6.png");
+const User7 = img("management/mng7.png");
 import WLocaleLink from "~/components/shared/WLocaleLink.vue";
 import {
   companyLogoFiles,

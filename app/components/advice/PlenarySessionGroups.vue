@@ -1,24 +1,24 @@
 <script lang="ts" setup>
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import Image1 from "@/assets/images/leaders/jurabek.png";
-import Image2 from "@/assets/images/leaders/leader6.png";
-import Image3 from "@/assets/images/leaders/farrux.png";
-import Image4 from "@/assets/images/leaders/aziz.png";
-import Image5 from "@/assets/images/leaders/asadbek.png";
-import Image6 from "@/assets/images/leaders/leader5.png";
-import Image7 from "@/assets/images/leaders/ilhom.png";
-import Image8 from "@/assets/images/leaders/marius.png";
-import Image9 from "@/assets/images/leaders/kongratbay.png";
-import Image10 from "@/assets/images/leaders/sandro.png";
-import Image11 from "@/assets/images/leaders/laziz.png";
-import Image12 from "@/assets/images/leaders/vera.png";
-import Image13 from "@/assets/images/leaders/timur.png";
-import Image14 from "@/assets/images/leaders/davron.png";
-import Image15 from "@/assets/images/leaders/kazbek.png";
-import Image16 from "@/assets/images/leaders/olimjon.jpg";
-import Image17 from "@/assets/images/leaders/aziz-a.png";
-import Image18 from "@/assets/images/leaders/mukae.png";
+const Image1 = img("leaders/jurabek.png");
+const Image2 = img("leaders/leader6.png");
+const Image3 = img("leaders/farrux.png");
+const Image4 = img("leaders/aziz.png");
+const Image5 = img("leaders/asadbek.png");
+const Image6 = img("leaders/leader5.png");
+const Image7 = img("leaders/ilhom.png");
+const Image8 = img("leaders/marius.png");
+const Image9 = img("leaders/kongratbay.png");
+const Image10 = img("leaders/sandro.png");
+const Image11 = img("leaders/laziz.png");
+const Image12 = img("leaders/vera.png");
+const Image13 = img("leaders/timur.png");
+const Image14 = img("leaders/davron.png");
+const Image15 = img("leaders/kazbek.png");
+const Image16 = img("leaders/olimjon.jpg");
+const Image17 = img("leaders/aziz-a.png");
+const Image18 = img("leaders/mukae.png");
 
 const props = defineProps<{
   sectionId?: string;

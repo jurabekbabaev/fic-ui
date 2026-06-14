@@ -2,12 +2,12 @@
 import { useI18n } from "vue-i18n";
 import SecretariatProfileBlock from "~/components/secretariat/SecretariatProfileBlock.vue";
 import PageHero from "~/components/shared/PageHero.vue";
-import Aziz from "@/assets/images/experts/aziz.png";
-import Avaz from "@/assets/images/experts/Avazbek.jpg";
-import Madina from "@/assets/images/experts/Madina1.png";
-import Jurabek from "@/assets/images/experts/jorabek.png";
-import Hakimniyaz from "@/assets/images/experts/Hakimniyaz.png";
-import Vladislav from "@/assets/images/experts/Vladislav.png";
+const Aziz = img("experts/aziz.png");
+const Avaz = img("experts/Avazbek.jpg");
+const Madina = img("experts/Madina1.png");
+const Jurabek = img("experts/jorabek.png");
+const Hakimniyaz = img("experts/Hakimniyaz.png");
+const Vladislav = img("experts/Vladislav.png");
 
 const { t, locale } = useI18n();
 

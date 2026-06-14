@@ -10,6 +10,9 @@
     "deploy:build": "nuxt generate && npm run copy:extras",
     "postbuild": "npm run copy:extras",
     "copy:extras": "mkdir -p .output/public/tgbot && cp -f tgbot/sendDocument.php .output/public/tgbot/sendDocument.php && cp -f tgbot/send.php .output/public/tgbot/send.php && cp -f tgbot/.user.ini .output/public/tgbot/.user.ini && cp -f public/.htaccess .output/public/.htaccess",
+    "zip:images": "rm -rf deploy-images && mkdir -p deploy-images && cp -R public/images/. deploy-images/ && rsync -a --exclude '.DS_Store' app/assets/images/ deploy-images/ && find deploy-images -name '.DS_Store' -delete && rm -f images.zip && cd deploy-images && COPYFILE_DISABLE=1 zip -rqX ../images.zip . -x '.DS_Store' '*/.DS_Store' '__MACOSX*' '*/._*' '._*' && cd .. && echo 'images.zip tayyor -> cPanel public_html/fics.uz/images/'",
+    "zip:documents": "rm -f documents.zip && find public/documents -name '.DS_Store' -delete && cd public/documents && COPYFILE_DISABLE=1 zip -rqX ../../documents.zip . -x '.DS_Store' '*/.DS_Store' '__MACOSX*' '*/._*' '._*' && cd ../.. && echo 'documents.zip tayyor -> cPanel public_html/fics.uz/documents/'",
+    "zip:site": "cd .output/public && rm -f ../site.zip && COPYFILE_DISABLE=1 zip -rqX ../site.zip . -x '.DS_Store' '*/.DS_Store' '__MACOSX*' '*/._*' '._*' 'images/*' 'documents/*' 'brands/*' && cd ../.. && echo 'site.zip tayyor (.output/site.zip) -> cPanel public_html/fics.uz/'",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
