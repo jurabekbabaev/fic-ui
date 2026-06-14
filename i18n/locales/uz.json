@@ -1122,6 +1122,15 @@
   "invest": {
     "since_2017": "<strong>2017</strong> yildan buyon O‘zbekiston Yevrosiyodagi eng yirik iqtisodiy transformatsiyalardan birini amalga oshirdi. Valyuta bozorining liberallashtirilishi, soliq va sud-huquq islohotlari, kapital bozorlarining ochilishi hamda xususiylashtirish ilgari yopiq bo‘lgan iqtisodiyotni mintaqaning eng jadal rivojlanayotgan investitsiya yo‘nalishlaridan biriga aylantirdi. Bugungi kunda mamlakat Markaziy Osiyodagi eng yirik aholi bozoriga ega bo‘lib, aholisi taxminan <strong>37,7 million</strong> kishini tashkil etadi va ichki talab barqaror o‘sib bormoqda.",
     "sources": "XVF (Article IV, 2026), Jahon banki, YTTB; Fitch, S&P, Moody's; 2025 yil yakunlari bo‘yicha Prezident murojaati; invest.gov.uz / MIFT; PwC investorlarga qo‘llanma.",
+    "alt_funds_desc": "Muqobil investitsiya fondlari. Alternativ (venchur) investitsiyalar bo‘yicha qonunchilikni ishlab chiqish va O‘zbekistonni xususiy hamda venchur kapitalni jalb qilish bo‘yicha mintaqaviy markazga aylantirish.",
+    "body_before_1": "120 ta tashabbus ishlab chiqildi. Tematik bloklar Kengash a’zolari tomonidan mamlakat investitsiya muhitini rivojlantirishning keyingi bosqichi uchun muhim deb belgilangan ustuvor yo‘nalishlarni qamrab oldi — regulyator va ma’muriy islohotlardan tortib tarmoq va transchegaraviy masalalargacha.",
+    "body_before_2": "Har bir blok ishchi guruh rahbarlarining takliflari bilan ochildi, so‘ngra hukumat tomoni javobi va ishtirokchilar bilan ochiq muhokama o‘tkazildi.",
     "year_2025": "<strong>2025</strong> yil ushbu yo‘nalishning to‘g‘riligini yana bir bor tasdiqladi. <strong>YAIM</strong> o‘sishi <strong>7,7%</strong> ga yetib, aksariyat prognozlardan yuqori bo‘ldi; inflyatsiya <strong>7,3%</strong> gacha pasaydi, ishsizlik darajasi esa <strong>4,8%</strong> ni tashkil etdi. <strong>Fitch</strong> yetti yil ichida ilk bor suveren reytingni <strong>BB</strong> darajasiga oshirdi, <strong>S&P</strong> <strong>BB</strong> reytingini tasdiqladi, <strong>Moody's</strong> esa <strong>Ba3</strong> reytingini saqlab qolib, prognozni «ijobiy»ga yaxshiladi. Jahon Savdo Tashkilotiga a'zo bo‘lish jarayoni yakunlanish arafasida bo‘lib, bu <strong>2017</strong> yilgi valyuta liberallashuvidan buyon iqtisodiyotning eng muhim tarkibiy ochilishidir."
+  },
+  "uzb": {
+    "footer": {
+      "government_composition": "Kengashning hukumat tomonidan rasmiy tarkibi.",
+      "presidential_decree": "Prezidentning PP-226-son qarori, 2-ilova."
+    }
   }
 }

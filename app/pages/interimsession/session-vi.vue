@@ -10,11 +10,7 @@ const lead =
   "18 мая Совет иностранных инвесторов при Президенте Республики Узбекистан провёл Промежуточную сессию с Заместителем Премьер-министра Республики Узбекистан Е.П. господином Джамшидом Ходжаевым посвященную рассмотрению инициатив членов Совета в преддверии IV Пленарного заседания.";
 
 // Body paragraphs before the highlighted outcome.
-const bodyBefore: string[] = [
-  "Было разработано 120 инициатив. Тематические блоки охватили приоритеты, которые члены Совета определили как ключевые для следующего этапа развития инвестиционного климата страны, — от регуляторной и административной реформы до отраслевых и трансграничных вопросов.",
-  "Каждый блок открывался предложениями руководителей рабочих групп, после чего следовал ответ правительственной стороны и открытая дискуссия с участниками.",
-];
-
+const bodyBefore = ["invest.body_before_1", "invest.body_before_2"];
 // Highlighted outcome.
 const outcome =
   "Итог: инициативы получили поддержку Правительства по всем направлениям, а пути их реализации найдут отражение в документах Пленарного заседания.";
@@ -35,7 +31,10 @@ const goBack = async () => {
 <template>
   <div class="pb-20 lg:pb-28">
     <client-only>
-      <PageHero :title="t('VI промежуточная сессия Совета')" :image="HeroImage" />
+      <PageHero
+        :title="t('VI промежуточная сессия Совета')"
+        :image="HeroImage"
+      />
 
       <div class="container">
         <!-- Back link -->
@@ -62,11 +61,11 @@ const goBack = async () => {
         <!-- Article body -->
         <article class="prose-body mt-10 lg:mt-12">
           <p
-            v-for="(paragraph, index) in bodyBefore"
+            v-for="(key, index) in bodyBefore"
             :key="`b-${index}`"
             class="prose-body__p"
           >
-            {{ t(paragraph) }}
+            {{ t(key) }}
           </p>
 
           <!-- Outcome highlight -->

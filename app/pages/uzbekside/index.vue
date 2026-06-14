@@ -50,10 +50,11 @@ onMounted(() => {
         </div>
         <div class="uzb-members-footer-copy">
           <div class="uzb-members-footer-text !mb-0">
-            {{ t(`Официальный состав правительственной стороны Совета.`) }}
+            {{ t("uzb.footer.government_composition") }}
           </div>
+
           <div class="uzb-members-footer-text">
-            {{ t(`Постановление Президента № ПП-226, Приложение № 2.`) }}
+            {{ t("uzb.footer.presidential_decree") }}
           </div>
           <a
             href="https://lex.uz/ru/docs/7637571"

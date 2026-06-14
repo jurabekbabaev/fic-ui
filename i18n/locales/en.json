@@ -38,7 +38,7 @@
   "Азиз Магрупов": "",
   "Представитель президента по вопросам иностранных инвестиций": "",
   "Тимур Ишметов": "Timur Ishmetov",
-  "Официальный состав правительственной стороны Совета. Основание — Постановление Президента № ПП-226, Приложение № 2.": "Official composition of the Council's government side. Based on Presidential Resolution No. PP-226, Appendix No. 2.",
+  "Официальный состав правительственной стороны Совета. Основание — Постановление Президента № ПП-226, Приложение № 2": "Official composition of the Council's government side. Based on Presidential Resolution No. PP-226, Appendix No. 2.",
   "календарный план": "Calendar Plan",
   "Календарь совета": "Council Calendar",
   "Разработка утвержденных инициатив": "Development of approved initiatives",
@@ -1114,6 +1114,15 @@
   "invest": {
     "since_2017": "Since <strong>2017</strong>, Uzbekistan has undergone one of the most significant economic transformations in Eurasia. Liberalization of the foreign exchange market, tax and judicial reforms, capital market development, and privatization have transformed a previously closed economy into one of the region's most dynamic investment destinations. Today, it is the largest market in Central Asia by population, with approximately <strong>37.7 million</strong> people and steadily growing domestic demand.",
     "sources": "IMF (Article IV, 2026), World Bank, EBRD; Fitch, S&P, Moody's; Presidential address on the 2025 results; invest.gov.uz / MIFT; PwC Investor Guide.",
+    "alt_funds_desc": "Alternative investment funds. Development of legislation on alternative (venture) investments and transforming Uzbekistan into a regional hub for private and venture capital attraction.",
+    "body_before_1": "120 initiatives were developed. The thematic blocks covered priorities identified by Council members as key for the next stage of investment climate development — from regulatory and administrative reform to sectoral and cross-border issues.",
+    "body_before_2": "Each block opened with proposals from working group leaders, followed by responses from the government side and open discussion with participants.",
     "year_2025": "<strong>2025</strong> reaffirmed this trajectory. <strong>GDP</strong> growth reached <strong>7.7%</strong>, exceeding most forecasts; inflation declined to <strong>7.3%</strong>, while unemployment fell to <strong>4.8%</strong>. <strong>Fitch</strong> upgraded the sovereign rating to <strong>BB</strong> for the first time in seven years, <strong>S&P</strong> reaffirmed its <strong>BB</strong> rating, and <strong>Moody's</strong> maintained <strong>Ba3</strong> while improving the outlook to positive. The country's accession process to the World Trade Organization is nearing completion, marking the most significant structural opening of the economy since the currency liberalization reforms of <strong>2017</strong>."
+  },
+  "uzb": {
+    "footer": {
+      "government_composition": "Official composition of the government side of the Council.",
+      "presidential_decree": "Presidential Decree No. PP-226, Appendix No. 2."
+    }
   }
 }
