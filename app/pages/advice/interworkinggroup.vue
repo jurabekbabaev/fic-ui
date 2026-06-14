@@ -140,32 +140,6 @@ function ViewReadMore(item: IType) {
           </div>
         </div>
       </div>
-      <div
-        class="flex items-center gap-3 mt-4 px-4 py-3 rounded-xl bg-[#F7F7F7] border border-[#0000000D]"
-      >
-        <i class="icon-file-text text-[#505A63] text-lg shrink-0 mt-0.5"></i>
-        <div class="flex-1 min-w-0">
-          <span
-            class="block text-xs font-semibold text-[#191C1F] uppercase tracking-wide mb-0.5"
-          >
-            {{ t("Правовая основа") }}
-          </span>
-          <span class="text-sm text-[#505A63] font-normal leading-relaxed">
-            {{
-              t(
-                "По Итогам Постонавление Президента от 18.07.2025 (вступила в силу 21.07.2025) - ПП-226"
-              )
-            }}
-          </span>
-        </div>
-        <button
-          @click.stop="navigateTo(localePath('/reports'))"
-          class="shrink-0 cursor-pointer flex items-center gap-1 text-sm font-medium text-[#191C1F] hover:opacity-70 transition-opacity whitespace-nowrap"
-        >
-          {{ t("Подробнее") }}
-          <i class="icon-move-right text-base"></i>
-        </button>
-      </div>
     </client-only>
   </section>
 </template>

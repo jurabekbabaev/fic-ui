@@ -29,7 +29,7 @@ const admissionSteps = [
 const membershipTiers = [
   {
     key: "exec",
-    title: "Исполнительный комитет / Учредители (МФО)",
+    title: "Исполнительный комитет",
     featured: false,
     points: [
       "Стратегическая роль в управлении",
