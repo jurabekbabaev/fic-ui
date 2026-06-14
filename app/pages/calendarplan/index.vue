@@ -11,7 +11,7 @@
           {{ t("календарный план") }}
         </h1>
 
-        <div>
+        <!-- <div>
           <div class="flex gap-2 mb-6 items-center lg:w-1/4 w-full mt-8">
             <el-select
               v-model="periodid"
@@ -44,7 +44,7 @@
               />
             </el-select>
           </div>
-        </div>
+        </div> -->
 
         <!-- Desktop Grid -->
         <div v-if="!isMobile" class="mt-8 mb-16 flex flex-col gap-10">
@@ -90,9 +90,7 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <path
-                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                    />
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                     <circle cx="12" cy="10" r="3" />
                   </svg>
                   <span>{{ item.address }}</span>
@@ -156,9 +154,7 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <path
-                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                    />
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                     <circle cx="12" cy="10" r="3" />
                   </svg>
                   <span>{{ item.address }}</span>
