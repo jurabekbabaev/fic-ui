@@ -3,13 +3,13 @@
     <div class="w-full mb-[0px]">
       <div class="mainContainer lg:text-center sm:text-left text-black">
         <h2 class="title-64 lg:text-[64px] text-[32px] mb-5">
-          {{ $t("Сильные рядом, которые идут с нами вперёд") }}
+          {{ $t("workingGroups.title") }}
         </h2>
         <div class="lg:text-xl text-base mb-4">
-          {{ $t("Вместе мы создаём результат, которым можно гордиться.") }}
+          {{ $t("workingGroups.subtitle") }}
         </div>
         <WLocaleLink to="/advice" class="btn btn-secondary">
-          {{ $t("Рабочие группы") }}
+          {{ $t("workingGroups.buttonLabel") }}
         </WLocaleLink>
       </div>
       <div class="w-full">

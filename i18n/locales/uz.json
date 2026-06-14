@@ -1048,5 +1048,10 @@
     "hero": {
       "title": "Bizning bilan oldinga boruvchi kuchli sekodchilar"
     }
+  },
+  "workingGroups": {
+    "title": "Bizning bilan oldinga boruvchi kuchli sekodchilar",
+    "subtitle": "Biz birgalikda faxrlanadigan natija yaratamiz.",
+    "buttonLabel": "Ishchi guruhlar"
   }
 }

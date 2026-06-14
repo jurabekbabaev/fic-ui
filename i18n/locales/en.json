@@ -1043,5 +1043,10 @@
     "hero": {
       "title": "Strong allies moving forward with us"
     }
+  },
+  "workingGroups": {
+    "title": "Strong allies moving forward with us",
+    "subtitle": "Together we create results we can be proud of.",
+    "buttonLabel": "Working Groups"
   }
 }
