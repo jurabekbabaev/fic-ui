@@ -9,8 +9,7 @@ import { useI18n } from "vue-i18n";
 import AppHeaderNav from "./AppHeaderNav.vue";
 import AppMenu from "./AppMenu.vue";
 import LanguageSwitcher from "../widgets/LanguageSwitcher.vue";
-import LogoWhite from "/images/logo-white.svg";
-import LogoBlack from "/images/ba12d8ddde154e568c101e56e4a917883a60b20a.png";
+import GroupLogo from "@/assets/icons/Group.svg";
 import WLocaleLink from "~/components/shared/WLocaleLink.vue";
 
 const { t } = useI18n();
@@ -42,9 +41,15 @@ onMounted(() => {
       <div class="mainContainer">
         <div class="w-full flex justify-between items-center">
           <div>
-            <WLocaleLink to="/">
-              <img :src="LogoWhite" v-if="props.isHome && !isTabletOrMobile" class="w-[160px] lg:w-[200px]" />
-              <img :src="LogoBlack" v-else class="w-[160px] lg:w-[200px]" />
+            <WLocaleLink to="/" class="flex items-center gap-3 no-underline">
+              <img :src="GroupLogo" class="w-10 h-10 shrink-0" alt="FIC" />
+              <span
+                class="text-[11px] font-bold leading-tight max-w-[220px] uppercase"
+                :class="(props.isHome && !isTabletOrMobile) ? 'text-white' : 'text-[#191C1F]'"
+                style="font-family: 'Spline Sans', sans-serif; text-wrap: balance;"
+              >
+                {{ t("org_full_name") }}
+              </span>
             </WLocaleLink>
           </div>
           <div class="flex-1 flex justify-center" v-if="!isTabletOrMobile">

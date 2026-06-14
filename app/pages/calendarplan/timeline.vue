@@ -1,8 +1,10 @@
 <template>
   <div class="w-full bg-white mt-[100px]">
     <!-- Title -->
-    <h1 class="lg:text-[64px] text-[32px] font-extrabold mb-12 text-black">
-      {{ t('timeline_main_events') }}
+    <h1
+      class="lg:text-[64px] text-center text-[32px] font-extrabold mb-12 text-black"
+    >
+      Основные вехи
     </h1>
 
     <section class="evFlow">
@@ -17,14 +19,11 @@
           @click="select(index)"
         >
           <div class="evFlow__cardBody">
+            <span class="evFlow__year">{{ event.year }}</span>
             <span class="evFlow__accent" aria-hidden="true"></span>
             <span class="evFlow__month">{{ event.month }}</span>
-            <span class="evFlow__year">{{ event.year }}</span>
             <p class="evFlow__event">{{ eventTitle(event) }}</p>
-            <div
-              v-if="event.links && event.links.length"
-              class="evFlow__links"
-            >
+            <div v-if="event.links && event.links.length" class="evFlow__links">
               <a
                 v-for="(link, j) in event.links"
                 :key="j"
@@ -64,146 +63,120 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { ref, computed } from "vue";
+import { useI18n } from "vue-i18n";
 
-const { t } = useI18n()
-const localePath = useLocalePath()
+const { t } = useI18n();
+const localePath = useLocalePath();
 
 const eventTitle = (event) =>
   (event.lines || [])
-    .map((l) => (l || '').replace(/‎/g, '').trim())
+    .map((l) => (l || "").replace(/‎/g, "").trim())
     .filter(Boolean)
-    .join(' ')
+    .join(" ");
 
 function handleTimelineLink(link) {
-  if (link?.href) {
-    if (typeof window !== 'undefined') {
-      window.open(link.href, '_blank', 'noopener,noreferrer')
-    }
-    return
+  if (link?.path) {
+    navigateTo(localePath(link.path));
+    return;
   }
 
-  if (!link?.target) return
+  if (!link?.target) return;
 
   const to = localePath({
-    path: '/plenarysessions',
-    query: { target: link.target }
-  })
+    path: "/plenarysessions",
+    query: { target: link.target },
+  });
 
-  navigateTo(to)
+  navigateTo(to);
 }
 
 const events = computed(() => [
   {
-    year: t('timeline_year_2019'),
-    month: t('timeline_month_november'),
+    year: t("timeline_year_2019"),
+    month: t("timeline_month_november"),
     filled: false,
-    lines: [t('‎ '), t('timeline_fic_established')],
-    links: [{ label: t('timeline_learn_more'), href: 'https://lex.uz/docs/4593913' }]
+    lines: [t("timeline_established_intermediate")],
+    links: [{ label: t("timeline_learn_more"), path: "/result" }],
   },
   {
-    year: t('timeline_year_2019'),
-    month: t('timeline_month_november'),
+    year: t("timeline_year_2022"),
+    month: t("timeline_month_november"),
+    filled: true,
+    lines: [t("timeline_plenary_1_held")],
+    links: [{ label: t("timeline_learn_more"), path: "/result" }],
+  },
+  {
+    year: t("timeline_year_2023"),
+    month: t("timeline_month_august"),
     filled: false,
-    lines: [t('‎ '), t('timeline_intermediate_session')],
-    links: [{ label: t('timeline_learn_more'), target: 'plenary-2022' }]
+    lines: [t("timeline_intermediate_held")],
+    links: [{ label: t("timeline_learn_more"), path: "/result" }],
   },
   {
-    year: t('timeline_year_2022'),
-    month: t('timeline_month_november'),
+    year: t("timeline_year_2024"),
+    month: t("timeline_month_may"),
     filled: true,
-    lines: [t('timeline_roman_i'), t('timeline_plenary_session')],
-    links: [{ label: t('timeline_pp_170') }]
+    lines: [t("timeline_plenary_2_held")],
+    links: [{ label: t("timeline_learn_more"), path: "/result" }],
   },
   {
-    year: t('timeline_year_2023'),
-    month: t('timeline_month_august'),
+    year: t("timeline_year_2024"),
+    month: t("timeline_month_november"),
     filled: false,
-    lines: [t('‎ '), t('timeline_intermediate_session')],
-    links: [{ label: t('timeline_learn_more'), target: 'plenary-2024' }]
+    lines: [t("timeline_intermediate_held")],
+    links: [{ label: t("timeline_learn_more"), path: "/result" }],
   },
   {
-    year: t('timeline_year_2024'),
-    month: t('timeline_month_may'),
+    year: t("timeline_year_2025"),
+    month: t("timeline_month_june"),
     filled: true,
-    lines: [t('timeline_roman_ii'), t('timeline_plenary_session')],
-    links: [{ label: t('timeline_pp_170') }]
+    lines: [t("timeline_plenary_3_held")],
+    links: [{ label: t("timeline_learn_more"), path: "/result" }],
   },
   {
-    year: t('timeline_year_2024'),
-    month: t('timeline_month_november'),
-    filled: false,
-    lines: [t('‎ '), t('timeline_intermediate_session')],
-    links: [
-      { label: t('timeline_learn_more'), target: 'plenary-2024' },
-      { label: t('timeline_posts'), target: 'plenary-2024' }
-    ]
-  },
-  {
-    year: t('timeline_year_2025'),
-    month: t('timeline_month_june'),
+    year: t("timeline_year_2025"),
+    month: t("timeline_month_november"),
     filled: true,
-    lines: [t('timeline_roman_iii'), t('timeline_plenary_session')],
-    links: [{ label: t('timeline_pp_226') }, { label: t('timeline_posts'), target: 'plenary-2025' }]
+    lines: [t("timeline_association_registered")],
+    links: [{ label: t("timeline_learn_more"), path: "/result" }],
   },
   {
-    year: t('timeline_year_2025'),
-    month: t('timeline_month_november'),
+    year: "2026",
+    month: t("timeline_month_june"),
     filled: true,
-    lines: [t('‎ '), t('timeline_association')],
-    links: [
-      { label: t('timeline_pp_226'), href: 'https://www.lex.uz/ru/docs/-7637571' },
-      { label: t('timeline_posts'), target: 'plenary-2025' }
-    ]
+    lines: [t("timeline_plenary_4_held")],
+    links: [{ label: t("timeline_learn_more"), path: "/result" }],
   },
-  {
-    year: t('timeline_year_2025'),
-    month: t('timeline_month_november'),
-    filled: false,
-    lines: [t('‎ '), t('timeline_intermediate_session')],
-    links: [
-      { label: t('timeline_learn_more'), target: 'plenary-2025' },
-      { label: t('timeline_posts'), target: 'plenary-2025' }
-    ]
-  },
-  {
-    year: '2026',
-    month: t('timeline_month_june'),
-    filled: true,
-    lines: ['IV', t('timeline_plenary_session')],
-    links: [
-      { label: t('timeline_learn_more'), target: 'plenary-2026' },
-      { label: t('timeline_posts'), target: 'plenary-2026' }
-    ]
-  }
-])
+]);
 
-const active = ref(2)
-const count = computed(() => events.value.length)
+const active = ref(2);
+const count = computed(() => events.value.length);
 
 const select = (i) => {
-  active.value = i
-}
+  active.value = i;
+};
 const prev = () => {
-  active.value = (active.value - 1 + count.value) % count.value
-}
+  active.value = (active.value - 1 + count.value) % count.value;
+};
 const next = () => {
-  active.value = (active.value + 1) % count.value
-}
+  active.value = (active.value + 1) % count.value;
+};
 
 const cardStyle = (i) => {
-  const offset = i - active.value
-  const abs = Math.abs(offset)
-  const hidden = abs > 2
-  const scale = abs === 0 ? 1 : Math.max(0.78, 1 - abs * 0.1)
+  const offset = i - active.value;
+  const abs = Math.abs(offset);
+  const hidden = abs > 2;
+  const scale = abs === 0 ? 1 : Math.max(0.78, 1 - abs * 0.1);
   return {
-    transform: `translateX(${offset * 72}%) translateZ(${-abs * 140}px) rotateY(${offset * -5}deg) scale(${scale})`,
+    transform: `translateX(${offset * 72}%) translateZ(${
+      -abs * 140
+    }px) rotateY(${offset * -5}deg) scale(${scale})`,
     zIndex: String(100 - abs),
-    opacity: hidden ? '0' : '1',
-    pointerEvents: hidden ? 'none' : 'auto'
-  }
-}
+    opacity: hidden ? "0" : "1",
+    pointerEvents: hidden ? "none" : "auto",
+  };
+};
 </script>
 
 <style scoped>
@@ -241,11 +214,8 @@ const cardStyle = (i) => {
   box-shadow: 0 30px 70px -34px rgba(25, 28, 31, 0.35);
   cursor: pointer;
   transform-style: preserve-3d;
-  transition:
-    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.55s ease,
-    box-shadow 0.55s ease,
-    filter 0.55s ease;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.55s ease,
+    box-shadow 0.55s ease, filter 0.55s ease;
 }
 
 .evFlow__card.is-active {
@@ -347,11 +317,8 @@ const cardStyle = (i) => {
   color: #191c1f;
   font-size: 18px;
   cursor: pointer;
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.2s ease;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease, transform 0.2s ease;
 }
 
 .evFlow__navBtn:hover {

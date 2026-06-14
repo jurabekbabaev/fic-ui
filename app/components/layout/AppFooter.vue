@@ -2,6 +2,7 @@
 import { useI18n } from "vue-i18n";
 import WLocaleLink from "~/components/shared/WLocaleLink.vue";
 import { mainMenuSections } from "~/constants/mainMenu";
+import GroupLogo from "@/assets/icons/Group.svg";
 
 const { t } = useI18n();
 </script>
@@ -9,7 +10,15 @@ const { t } = useI18n();
 <template>
   <footer class="bg-[#191C1F] pt-12 pb-8 mt-24">
     <div class="container">
-      <img src="/images/logo-white.svg" alt="FIC" class="w-[200px] mb-8" />
+      <WLocaleLink to="/" class="flex items-center gap-3 no-underline mb-8">
+        <img :src="GroupLogo" class="w-12 h-12 shrink-0" alt="FIC" />
+        <span
+          class="text-[11px] font-bold leading-tight max-w-[220px] uppercase text-white"
+          style="font-family: 'Spline Sans', sans-serif; text-wrap: balance;"
+        >
+          {{ t("org_full_name") }}
+        </span>
+      </WLocaleLink>
 
       <div class="flex flex-col lg:flex-row items-stretch gap-12">
         <!-- Left: Socials + Copyright -->

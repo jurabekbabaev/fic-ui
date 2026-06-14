@@ -1,6 +1,7 @@
 <template>
   <div>
     <client-only>
+      <page-hero title="календарный план" />
       <div class="container">
         <timeline />
 
@@ -46,87 +47,129 @@
         </div>
 
         <!-- Desktop Grid -->
-        <div
-          v-if="!isMobile"
-          class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-3 mt-8"
-        >
-          <div
-            v-for="item in data"
-            :key="item.id"
-            class="bg-[#F7F7F7] p-4 rounded-xl flex flex-col justify-between lg:min-h-[200px] min-h-[148px]"
-          >
-            <div>
+        <div v-if="!isMobile" class="mt-8 mb-16 flex flex-col gap-10">
+          <div v-for="group in groupedData" :key="group.dayLabel">
+            <div class="flex items-center gap-3 mb-5">
               <span
-                class="text-[#191C1F] bg-[#191C1F1A] px-4 py-1 rounded-[4px] text-base font-normal"
+                class="text-[11px] font-bold uppercase tracking-wider bg-[#191C1F] text-white px-4 py-2 rounded-full whitespace-nowrap"
               >
-                {{ item.date }}
+                {{ group.dayLabel }}
               </span>
-              <div class="font-medium lg:text-2xl text-[#191C1F] text-xl mt-4">
-                {{ item.content }}
-              </div>
+              <div class="flex-1 border-t border-[#0000001A]"></div>
             </div>
-            <div>
-              <span
-                class="text-sm font-normal text-[#505A63] flex items-center gap-2.5 cursor-pointer mt-2"
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+              <a
+                v-for="item in group.items"
+                :key="item.id"
+                :href="item.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="event-card bg-[#F7F7F7] p-5 rounded-2xl flex flex-col gap-3 hover:bg-[#EFEFEF] transition-colors duration-200 group no-underline"
               >
-                <span>{{ t("Подробнее (календарь)") }}</span>
-                <i class="icon-move-right"></i>
-              </span>
+                <span
+                  class="text-[10px] font-semibold text-[#505A63] bg-white px-3 py-1.5 rounded-full border border-[#0000001A] self-start"
+                >
+                  {{ item.date }}
+                </span>
+                <p
+                  class="font-semibold text-[#191C1F] text-sm leading-snug flex-1"
+                >
+                  {{ item.content }}
+                </p>
+                <div
+                  class="flex items-start gap-2 text-xs text-[#9AA4AE] leading-snug"
+                >
+                  <svg
+                    class="shrink-0 mt-0.5"
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>{{ item.address }}</span>
+                </div>
+                <div
+                  class="flex items-center gap-1.5 text-sm font-medium text-[#191C1F] pt-3 border-t border-[#0000001A]"
+                >
+                  <span>{{ t("Подробнее") }}</span>
+                  <i
+                    class="icon-move-right text-base group-hover:translate-x-1 transition-transform duration-200"
+                  ></i>
+                </div>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Mobile Carousel (custom, without external lib) -->
-        <div v-else class="mt-8">
-          <div class="relative">
-            <!-- Slider -->
-            <div
-              ref="slider"
-              class="carousel flex gap-4 overflow-x-auto snap-x snap-mandatory touch-pan-x scrollbar-hidden py-2"
-              @scroll="onScroll"
-            >
-              <div
-                v-for="(item, index) in data"
-                :key="item.id"
-                class="slide snap-start flex-shrink-0 w-[90%]"
+        <!-- Mobile -->
+        <div v-else class="mt-8 mb-16 flex flex-col gap-8">
+          <div v-for="group in groupedData" :key="group.dayLabel">
+            <div class="flex items-center gap-3 mb-4">
+              <span
+                class="text-[11px] font-bold uppercase tracking-wider bg-[#191C1F] text-white px-4 py-2 rounded-full whitespace-nowrap"
               >
-                <div
-                  class="bg-[#F7F7F7] p-4 rounded-xl flex flex-col justify-between min-h-[148px] h-full"
-                >
-                  <div>
-                    <span
-                      class="text-white bg-[#191C1F] px-4 py-1 rounded-[30px] text-base font-normal"
-                    >
-                      {{ item.date }}
-                    </span>
-                    <div class="font-medium text-xl text-[#191C1F] mt-4">
-                      {{ item.content }}
-                    </div>
-                  </div>
-                  <div>
-                    <span
-                      class="text-sm font-normal text-[#505A63] flex items-center gap-2.5 cursor-pointer mt-2"
-                    >
-                      <span>{{ t("Подробнее (календарь)") }}</span>
-                      <i class="icon-move-right"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
+                {{ group.dayLabel }}
+              </span>
+              <div class="flex-1 border-t border-[#0000001A]"></div>
             </div>
-
-            <!-- Dots -->
-            <div class="dots mt-3 flex justify-center gap-2">
-              <button
-                v-for="(item, i) in data"
-                :key="i"
-                @click="goTo(i)"
-                :class="[
-                  'dot w-3 h-3 rounded-full',
-                  currentIndex === i ? 'active' : '',
-                ]"
-                aria-label="'Go to slide ' + (i+1)"
-              />
+            <div
+              class="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hidden pb-2"
+            >
+              <a
+                v-for="item in group.items"
+                :key="item.id"
+                :href="item.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="event-card snap-start flex-shrink-0 w-[82vw] bg-[#F7F7F7] p-5 rounded-2xl flex flex-col gap-3 no-underline group"
+              >
+                <span
+                  class="text-[10px] font-semibold text-[#505A63] bg-white px-3 py-1.5 rounded-full border border-[#0000001A] self-start"
+                >
+                  {{ item.date }}
+                </span>
+                <p
+                  class="font-semibold text-[#191C1F] text-sm leading-snug flex-1"
+                >
+                  {{ item.content }}
+                </p>
+                <div
+                  class="flex items-start gap-2 text-xs text-[#9AA4AE] leading-snug"
+                >
+                  <svg
+                    class="shrink-0 mt-0.5"
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>{{ item.address }}</span>
+                </div>
+                <div
+                  class="flex items-center gap-1.5 text-sm font-medium text-[#191C1F] pt-3 border-t border-[#0000001A]"
+                >
+                  <span>{{ t("Подробнее") }}</span>
+                  <i class="icon-move-right text-base"></i>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -138,7 +181,7 @@
           </router-link>
         </div> -->
 
-        <div class="m-pagination mt-6">
+        <!-- <div class="m-pagination mt-6">
           <div class="w-full flex justify-center">
             <el-pagination
               background
@@ -146,16 +189,17 @@
               :total="1000"
             />
           </div>
-        </div>
+        </div> -->
       </div>
     </client-only>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 import Timeline from "./timeline.vue";
 import { useI18n } from "vue-i18n";
+import PageHero from "~/components/shared/PageHero.vue";
 const { t } = useI18n();
 
 const periodid = ref();
@@ -175,31 +219,153 @@ const industryList = ref([
 const data = ref([
   {
     id: 1,
-    date: t("Июль - Ноябрь 2025"),
-    content: t("Разработка утвержденных инициатив"),
+    day: "Day: 0 – 16 JUNE 2026",
+    date: "Time: 09:00–15:00",
+    content: "Business breakfast – Energy Sector",
+    address:
+      "Venue: JW Marriott Hotel Tashkent, Grand Ballroom,‌28th floor, roof-top ‌ ‌ ‌ ‌ ‌ ‌",
+    link: "https://foreigninvestorscouncil.uz/p/11366ca/",
   },
   {
     id: 2,
-    date: t("Ноябрь 2025"),
-    content: t("Привлечение креативных инвестиций в узбекистан"),
+    day: "DAY: 0 – 16 JUNE 2026",
+    date: "Time: 09:00–15:00",
+    content: "RAIC-CAC Strategic Session",
+    address: "Venue: JW Marriott Hotel Tashkent‌",
+    link: "https://foreigninvestorscouncil.uz/p/11364b2/",
   },
   {
     id: 3,
-    date: t("Ноябрь 2025 - Апрель 2026"),
-    content: t("Коллекция новых инициатив к пленарной сессии 2026 года"),
+    day: "Day: 0 – 16 JUNE 2026",
+    date: "Time: 16:45–18:45",
+    content:
+      "RAIC-CAC Panel Session‌ Regional Alliance of Investment Councils of Central Asia and the Caucasus: Unlocking Regional Investment Potential",
+    address: "Venue : CAEx Center ‌ ‌ ‌ ‌",
+    link: "https://foreigninvestorscouncil.uz/p/1136b0c/",
   },
-  { id: 4, date: t("Апрель 2026"), content: t("Определение новых инициатив") },
+  {
+    id: 4,
+    day: "DAY: 0 – 16 JUNE 2026",
+    date: "Time: 20:00–22:00",
+    content: "Silk Road Night Run",
+    address: "Venue: New Uzbekistan Park ‌ ‌ ‌ ‌",
+    link: "https://foreigninvestorscouncil.uz/p/1136b40/",
+  },
   {
     id: 5,
-    date: t("Апрель - Июнь 2026"),
-    content: t("Разработка утвержденных инициатив"),
+    day: "DAY: 1 – 17 JUNE 2026",
+    date: "Time: 07:30–09:00",
+    content: "Business breakfast - Digitalization and AI",
+    address: "‌Venue: Hilton Tashkent City Room Tashkent 1−2, 2nd floor",
+    link: "https://foreigninvestorscouncil.uz/p/1136a13/",
   },
   {
     id: 6,
-    date: t("Июнь 2026"),
-    content: t("Отчет рабочих групп и секретариата на пленарном заседании"),
+    day: "DAY: 1 – 17 JUNE 2026",
+    date: "T‌ime: 10:00–11:30",
+    content: "OPENING CEREMONY OF THE FORUM Plenary Session‌*By Invitation",
+    address: "Venue: Congress Hall, Tashkent city",
+    link: "https://foreigninvestorscouncil.uz/p/1136a62/",
+  },
+  {
+    id: 7,
+    day: "DAY: 1 – 17 JUNE 2026",
+    date: "Time: 12:00–13:30",
+    content:
+      "Panel Session ‌TIFC on the Map: The Global View of Financial Centre Leaders and Investors",
+    address: "‌Venue: CAEx Centre",
+    link: "https://foreigninvestorscouncil.uz/p/1136b83/",
+  },
+  {
+    id: 8,
+    day: "DAY: 1 – 17 JUNE 2026",
+    date: "Time: 18:00–20:30",
+    content: "ESG Award Ceremony & ESG Review Report Presentation",
+    address:
+      "Venue: Japanese Garden (near UzExpoCentre, entrance from the Azimut Hotel)",
+    link: "https://foreigninvestorscouncil.uz/p/1136b85/",
+  },
+  {
+    id: 9,
+    day: "DAY: 1 – 17 JUNE 2026",
+    date: "Time: 18:30–21:00",
+    content:
+      "“Wildberries” in Uzbekistan: From Market Entry to the Next Phase of Growt‌h",
+    address: "‌Venue: Rooftop Hall, Piramid Tower",
+    link: "https://foreigninvestorscouncil.uz/p/113a6cd/",
+  },
+  {
+    id: 10,
+    day: "DAY: 1 – 17 JUNE 2026",
+    date: "‌Time: 20:00–00:00",
+    content: "Exclusive Yandex Uzbekistan Night",
+    address: "Venue: Zo’r TV",
+    link: "https://foreigninvestorscouncil.uz/p/1136c15/",
+  },
+  {
+    id: 11,
+    day: "DAY: 2 – 18 JUNE 2026",
+    date: "‌Time: 07:30–09:00",
+    content: "Uzum Business Breakfast: The Power of Local Expertise",
+    address: "Venue: Suzani by Kasimbaeva, 35 Suzuk-Ota str",
+    link: "https://foreigninvestorscouncil.uz/p/113a6fd/",
+  },
+  {
+    id: 12,
+    day: "DAY: 2 – 18 JUNE 2026",
+    date: "Time: 10:00–13:00",
+    content:
+      "IV Plenary Session of the Foreign Investors Council under the President of the Republic of Uzbekistan",
+    address: "Venue: Congress Hall Tashkent city",
+    link: "https://foreigninvestorscouncil.uz/p/1136c23/",
+  },
+  {
+    id: 13,
+    day: "DAY: 2 – 18 JUNE 2026",
+    date: "Time: 11:30–13:00",
+    content:
+      "Fireside Chat , “From Transactions to Ecosystems: Uzbekistan’s Fintech Inflection Point”",
+    address: "Venue: CAEx Center ‌ ‌ ",
+    link: "https://foreigninvestorscouncil.uz/p/113a713/",
+  },
+  {
+    id: 14,
+    day: "DAY: 2 – 18 JUNE 2026",
+    date: "Time: 15:30–17:00",
+    content:
+      "Panel Session,“Alternative Investment Funds: Regulatory Frameworks for Institutional Capital” (By Foreign Investors Council and Vision Invest)",
+    address: "Venue: CAEx Centre‌ ‌ ",
+    link: "https://foreigninvestorscouncil.uz/p/1136c47/",
+  },
+  {
+    id: 15,
+    day: "DAY: 2 – 18 JUNE 2026",
+    date: "Time: 17:30–19:00",
+    content:
+      "Panel session, “Circular Economy in Uzbekistan: Waste, Water, and Emissions as Catalysts for Sustainable Growth”",
+    address: "Venue: CAEx Centre‌ ‌ ",
+    link: "https://foreigninvestorscouncil.uz/p/1136c50/",
+  },
+  {
+    id: 16,
+    day: "DAY: 2 – 18 JUNE 2026",
+    date: "Time: 20:00–02:30",
+    content: "FIC Special Event - TIIF After-Party",
+    address: "Venue: Nukus 89‌ ",
+    link: "https://foreigninvestorscouncil.uz/p/1136c5e/",
   },
 ]);
+
+const groupedData = computed(() => {
+  const groups = {};
+  data.value.forEach((item) => {
+    const match = item.day.match(/DAY[:\s]+(\d+)/i);
+    const key = match ? match[1] : "0";
+    if (!groups[key]) groups[key] = { dayLabel: item.day, items: [] };
+    groups[key].items.push(item);
+  });
+  return Object.values(groups);
+});
 
 // Responsive
 const isMobile = ref(false);
@@ -208,59 +374,9 @@ function handleResize() {
     typeof window !== "undefined" ? window.innerWidth <= 768 : false;
 }
 
-// Slider refs & state
-const slider = (ref < HTMLElement) | (null > null);
-const currentIndex = ref(0);
-const slideGap = 16; // px — css gap between slides
-
-function onScroll() {
-  if (!slider.value) return;
-  const slides = slider.value.querySelectorAll < HTMLElement > ".slide";
-  if (!slides.length) return;
-  const firstW = slides[0].getBoundingClientRect().width;
-  const scrollLeft = slider.value.scrollLeft;
-  const step = firstW + slideGap;
-  const idx = Math.round(scrollLeft / step);
-  currentIndex.value = Math.min(Math.max(idx, 0), slides.length - 1);
-}
-
-function next() {
-  if (!slider.value) return;
-  const slides = slider.value.querySelectorAll < HTMLElement > ".slide";
-  if (!slides.length) return;
-  const firstW = slides[0].getBoundingClientRect().width;
-  const step = firstW + slideGap;
-  slider.value.scrollBy({ left: step, behavior: "smooth" });
-}
-
-function prev() {
-  if (!slider.value) return;
-  const slides = slider.value.querySelectorAll < HTMLElement > ".slide";
-  if (!slides.length) return;
-  const firstW = slides[0].getBoundingClientRect().width;
-  const step = firstW + slideGap;
-  slider.value.scrollBy({ left: -step, behavior: "smooth" });
-}
-
-function goTo(index) {
-  if (!slider.value) return;
-  const slides = slider.value.querySelectorAll < HTMLElement > ".slide";
-  if (!slides.length) return;
-  const firstW = slides[0].getBoundingClientRect().width;
-  const step = firstW + slideGap;
-  const left = index * step;
-  slider.value.scrollTo({ left, behavior: "smooth" });
-  currentIndex.value = index;
-}
-
 onMounted(() => {
   handleResize();
   window.addEventListener("resize", handleResize);
-
-  // ensure slider ref is ready and set initial index
-  nextTick(() => {
-    onScroll();
-  });
 });
 
 onUnmounted(() => {

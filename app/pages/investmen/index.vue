@@ -2,16 +2,16 @@
 import { useI18n } from "vue-i18n";
 import { ref, watch, onBeforeUnmount } from "vue";
 import PageHero from "~/components/shared/PageHero.vue";
-
 const { t, locale } = useI18n();
+const localePath = useLocalePath();
 
 useHead({
   title: `${t("Инвестиции в Узбекистан")} | FIC`,
 });
 
 const intro = [
-  "С 2017 года Узбекистан осуществил одну из самых масштабных экономических трансформаций в Евразии. Либерализация валютного рынка, налоговая и судебная реформы, открытие рынков капитала и приватизация превратили прежде закрытую экономику в одно из наиболее динамичных инвестиционных направлений региона. Сегодня это крупнейший по населению рынок Центральной Азии — около 37,7 млн человек — с устойчиво растущим внутренним спросом.",
-  "2025 год подтвердил эту траекторию. Рост ВВП достиг 7,7% — выше большинства прогнозов; инфляция снизилась до 7,3%, безработица — до 4,8%. Fitch впервые за семь лет повысил суверенный рейтинг до BB, S&P подтвердил уровень BB, Moody's сохранил Ba3 с улучшением прогноза до «позитивного». Завершается процесс вступления во Всемирную торговую организацию — крупнейшее структурное открытие экономики со времён валютной либерализации 2017 года.",
+  "С <strong>2017</strong> года Узбекистан осуществил одну из самых масштабных экономических трансформаций в Евразии. Либерализация валютного рынка, налоговая и судебная реформы, открытие рынков капитала и приватизация превратили прежде закрытую экономику в одно из наиболее динамичных инвестиционных направлений региона. Сегодня это крупнейший по населению рынок Центральной Азии — около <strong>37,7 млн</strong> человек — с устойчиво растущим внутренним спросом.",
+  "<strong>2025</strong> год подтвердил эту траекторию. Рост <strong>ВВП</strong> достиг <strong>7,7%</strong> — выше большинства прогнозов; инфляция снизилась до <strong>7,3%</strong>, безработица — до <strong>4,8%</strong>. <strong>Fitch</strong> впервые за семь лет повысил суверенный рейтинг до <strong>BB</strong>, <strong>S&amp;P</strong> подтвердил уровень <strong>BB</strong>, <strong>Moody's</strong> сохранил <strong>Ba3</strong> с улучшением прогноза до «позитивного». Завершается процесс вступления во Всемирную торговую организацию — крупнейшее структурное открытие экономики со времён валютной либерализации <strong>2017</strong> года.",
 ];
 
 type Stat = {
@@ -109,9 +109,7 @@ function formatStat(stat: Stat, currentVal: number): string {
 }
 
 const displayValues = ref(
-  stats.map((stat) =>
-    stat.raw !== undefined ? stat.raw : formatStat(stat, 0),
-  ),
+  stats.map((stat) => (stat.raw !== undefined ? stat.raw : formatStat(stat, 0)))
 );
 const statsContainer = ref<HTMLElement | null>(null);
 const statsVisible = ref(false);
@@ -170,11 +168,11 @@ watch(
           observer?.disconnect();
         }
       },
-      { threshold: 0.25 },
+      { threshold: 0.25 }
     );
     observer.observe(el);
   },
-  { immediate: true },
+  { immediate: true }
 );
 
 onBeforeUnmount(() => {
@@ -334,9 +332,8 @@ const timeline = [
             <p
               v-for="(paragraph, index) in intro"
               :key="`invest-intro-${index}`"
-            >
-              {{ t(paragraph) }}
-            </p>
+              v-html="paragraph"
+            ></p>
           </div>
         </section>
 
@@ -365,90 +362,6 @@ const timeline = [
           </div>
         </section>
 
-        <!-- Guarantees -->
-        <section class="invest-section">
-          <div class="invest-head">
-            <span class="invest-eyebrow">{{ t("Защита") }}</span>
-            <h2 class="invest-title">{{ t("Гарантии для инвесторов") }}</h2>
-            <p class="invest-sub">
-              {{ t("Правовая и институциональная защита капитала") }}
-            </p>
-          </div>
-
-          <div class="invest-guarantees">
-            <article
-              v-for="(item, index) in guarantees"
-              :key="`invest-guarantee-${index}`"
-              class="invest-guarantee"
-            >
-              <span class="invest-iconBox" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    v-for="(d, di) in item.icon"
-                    :key="di"
-                    :d="d"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <p class="invest-guarantee__text">
-                <span class="invest-guarantee__term">{{ t(item.term) }}</span>
-                {{ t(item.text) }}
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <!-- Sectors -->
-        <section class="invest-section">
-          <div class="invest-head">
-            <span class="invest-eyebrow">{{ t("Возможности") }}</span>
-            <h2 class="invest-title">{{ t("Секторы для инвестиций") }}</h2>
-            <p class="invest-sub">
-              {{ t("Приоритетные направления с поддержкой государства") }}
-            </p>
-          </div>
-
-          <div class="invest-sectors">
-            <article
-              v-for="(sector, index) in sectors"
-              :key="`invest-sector-${index}`"
-              class="invest-sector"
-            >
-              <div class="invest-sector__head">
-                <span class="invest-iconBox" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path
-                      v-for="(d, di) in sector.icon"
-                      :key="di"
-                      :d="d"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-                <h3 class="invest-sector__title">{{ t(sector.title) }}</h3>
-              </div>
-              <ul class="invest-sector__list">
-                <li
-                  v-for="(point, pIndex) in sector.points"
-                  :key="`invest-sector-${index}-point-${pIndex}`"
-                >
-                  {{ t(point) }}
-                </li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <!-- Reform trajectory timeline -->
         <section class="invest-section">
           <div class="invest-head">
             <span class="invest-eyebrow">{{ t("Девять лет реформ") }}</span>
@@ -517,6 +430,117 @@ const timeline = [
             </li>
           </ol>
         </section>
+
+        <section class="invest-section">
+          <div class="invest-head">
+            <span class="invest-eyebrow">{{ t("Секторы возможностей") }}</span>
+            <h2 class="invest-title">{{ t("Секторы для инвестиций") }}</h2>
+            <p class="invest-sub">
+              {{ t("Приоритетные направления с поддержкой государства") }}
+            </p>
+          </div>
+
+          <div class="invest-sectors">
+            <article
+              v-for="(sector, index) in sectors"
+              :key="`invest-sector-${index}`"
+              class="invest-sector"
+            >
+              <div class="invest-sector__head">
+                <span class="invest-iconBox" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      v-for="(d, di) in sector.icon"
+                      :key="di"
+                      :d="d"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h3 class="invest-sector__title">{{ t(sector.title) }}</h3>
+              </div>
+              <ul class="invest-sector__list">
+                <li
+                  v-for="(point, pIndex) in sector.points"
+                  :key="`invest-sector-${index}-point-${pIndex}`"
+                >
+                  {{ t(point) }}
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+        <!-- Guarantees -->
+        <section class="invest-section">
+          <div class="invest-head">
+            <!-- <span class="invest-eyebrow">{{ t("Защита") }}</span> -->
+            <h2 class="invest-title">{{ t("Гарантии для инвесторов") }}</h2>
+            <p class="invest-sub">
+              {{ t("Правовая и институциональная защита капитала") }}
+            </p>
+          </div>
+
+          <div class="invest-guarantees">
+            <article
+              v-for="(item, index) in guarantees"
+              :key="`invest-guarantee-${index}`"
+              class="invest-guarantee"
+            >
+              <span class="invest-iconBox" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    v-for="(d, di) in item.icon"
+                    :key="di"
+                    :d="d"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <p class="invest-guarantee__text">
+                <span class="invest-guarantee__term">{{ t(item.term) }}</span>
+                {{ t(item.text) }}
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <div
+          class="flex items-center gap-3 mt-10 px-4 py-3 rounded-xl bg-[#F7F7F7] border border-[#0000000D]"
+        >
+          <i class="icon-file-text text-[#505A63] text-lg shrink-0 mt-0.5"></i>
+          <div class="flex-1 min-w-0">
+            <span
+              class="block text-xs font-semibold text-[#191C1F] uppercase tracking-wide mb-0.5"
+            >
+              {{ t("Источники данных") }}
+            </span>
+            <span class="text-sm text-[#505A63] font-normal leading-relaxed">
+              {{
+                t(
+                  "МВФ (Article IV, 2026), Всемирный банк, ЕБРР; Fitch, S&P, Moody's; обращение Президента по итогам 2025 года; invest.gov.uz / МИПТ; Руководство инвестора PwC."
+                )
+              }}
+            </span>
+          </div>
+          <button
+            @click.stop="navigateTo(localePath('/reports'))"
+            class="shrink-0 cursor-pointer flex items-center gap-1 text-sm font-medium text-[#191C1F] hover:opacity-70 transition-opacity whitespace-nowrap"
+          >
+            {{ t("Подробнее") }}
+            <i class="icon-move-right text-base"></i>
+          </button>
+        </div>
+        <!-- Sectors -->
+
+        <!-- Reform trajectory timeline -->
       </div>
     </client-only>
   </div>
@@ -578,9 +602,7 @@ const timeline = [
   border: 1px solid rgba(25, 28, 31, 0.08);
   background: #f4f5f7;
   color: #191c1f;
-  transition:
-    background-color 0.28s ease,
-    color 0.28s ease,
+  transition: background-color 0.28s ease, color 0.28s ease,
     transform 0.28s ease;
 }
 
@@ -653,11 +675,8 @@ const timeline = [
   box-shadow: 0 16px 40px -28px rgba(25, 28, 31, 0.3);
   opacity: 0;
   transform: translateY(18px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .invest-stats.is-visible .invest-stat {
@@ -720,10 +739,7 @@ const timeline = [
   border: 1px solid rgba(25, 28, 31, 0.08);
   background: #fff;
   box-shadow: 0 16px 40px -30px rgba(25, 28, 31, 0.28);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .invest-guarantee:hover {
@@ -778,10 +794,7 @@ const timeline = [
   border: 1px solid rgba(25, 28, 31, 0.08);
   background: #fff;
   box-shadow: 0 16px 40px -30px rgba(25, 28, 31, 0.28);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .invest-sector:hover {
