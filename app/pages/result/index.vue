@@ -2,7 +2,9 @@
 import { useI18n } from "vue-i18n";
 import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 import PageHero from "~/components/shared/PageHero5.vue";
-const { t } = useI18n();
+import FicImage from "@/assets/images/news/FIC+-1.jpg";
+const { t, locale } = useI18n();
+const localePath = useLocalePath();
 
 const platformStats = [
   { prefix: "×", target: 5, label: "рост вовлечённости компаний" },
@@ -20,6 +22,20 @@ const environmentStats = [
   { target: 8, label: "НПА разработано при участии Совета" },
   { target: 3, label: "стратегические инициативы" },
   { target: 5, label: "социальных инициатив" },
+];
+
+const analyticsReports = [
+  {
+    icon: "icon-chart-pie",
+    title: "Комплексная оценка эффектов инвестиционной деятельности",
+  },
+  { icon: "icon-board", title: "Креативные инвестиции" },
+  { icon: "icon-users-dollar", title: "Развитие управленческих компетенций" },
+  {
+    icon: "icon-investment-dollar",
+    title: "Обзор инвестиционной среды Центральной Азии и Кавказа",
+  },
+  { icon: "icon-reload-zap", title: "Циркулярная экономика" },
 ];
 
 const npaList = [
@@ -208,9 +224,107 @@ onBeforeUnmount(() => observers.forEach((o) => o.disconnect()));
             </div>
           </div>
         </div>
+
+        <div class="mt-12 mb-24">
+          <h2
+            class="lg:text-[32px] text-[24px] uppercase font-black text-[#191C1F] mb-2"
+          >
+            {{ t("Новые подходы — пять аналитических докладов") }}
+          </h2>
+          <div
+            class="reports-slider"
+            :class="{ 'is-many': analyticsReports.length > 5 }"
+          >
+            <div
+              v-for="(report, i) in analyticsReports"
+              :key="i"
+              class="reports-card p-4 rounded-xl bg-[#F7F7F7]"
+            >
+              <img :src="FicImage" alt="" class="w-full rounded-lg" />
+              <div class="flex justify-between items-center mt-3">
+                <p class="text-[#00000080] text-sm font-normal">14 июня 2026</p>
+                <span
+                  @click="navigateTo(localePath('/publications'))"
+                  class="text-[#191C1F] text-sm font-normal flex items-center gap-1 cursor-pointer hover:opacity-70 transition-opacity"
+                >
+                  <span>{{ t("Подробнее") }}</span>
+                  <i class="icon-move-right ml-1"></i>
+                </span>
+              </div>
+              <p class="text-base font-medium mt-2 text-[#191C1F] leading-snug">
+                {{ t(report.title) }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#F7F7F7] rounded-2xl p-6 lg:p-8 mb-10 border-l-4 border-[#1a1a1a]"
+        >
+          <p
+            class="lg:text-sm text-xs font-bold text-[#1a1a1a] uppercase tracking-widest mb-3"
+          >
+            {{
+              locale.startsWith("uz")
+                ? "Strategik tashabbus"
+                : locale.startsWith("en")
+                ? "Strategic Initiative"
+                : "Стратегическая инициатива"
+            }}
+          </p>
+          <p
+            class="lg:text-lg text-base font-normal text-[#1a1a1a] leading-relaxed"
+          >
+            {{
+              locale.startsWith("uz")
+                ? "Raqobatbardosh investitsiya muhitini shakllantirish va chegaralararo muvofiqlashtirish uchun Markaziy Osiyo va Kavkaz Mintaqaviy Investitsiya Kengashlari Alyansini (RAIC-CAC) tashkil etish."
+                : locale.startsWith("en")
+                ? "Creation of the Regional Alliance of Investment Councils of Central Asia and the Caucasus (RAIC-CAC) to form a competitive investment environment and cross-border coordination."
+                : "Cоздание Регионального альянса инвестиционных советов Центральной Азии и Кавказа (RAIC-CAC) для формирования конкурентоспособной инвестиционной среды и трансграничной координации."
+            }}
+          </p>
+        </div>
       </div>
     </client-only>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.reports-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.reports-slider::-webkit-scrollbar {
+  display: none;
+}
+.reports-card {
+  flex-shrink: 0;
+  width: 75vw;
+  scroll-snap-align: start;
+}
+@media (min-width: 640px) {
+  .reports-card {
+    width: 44vw;
+  }
+}
+@media (min-width: 1024px) {
+  .reports-slider:not(.is-many) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow: visible;
+    scroll-snap-type: none;
+    padding-bottom: 0;
+  }
+  .reports-slider:not(.is-many) .reports-card {
+    width: auto;
+    flex-shrink: unset;
+    scroll-snap-align: none;
+  }
+}
+</style>
