@@ -30,105 +30,9 @@ const buildBiography = (name: string, role: string) =>
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."`;
 
 const jurabekBiographies: Record<string, string> = {
-  uz: `O‘zbekiston Respublikasi Prezidenti huzuridagi Xorijiy investorlar kengashi Kotibiyatining strategik kommunikatsiyalar bo‘yicha maslahatchisi
-
-Jurabek Babaev — strategik kommunikatsiyalar, PR va boshqaruv sohalarida ko‘p yillik xalqaro tajribaga ega mutaxassis. O‘zbekiston Respublikasi Prezidenti huzuridagi Xorijiy investorlar kengashining raqamli ishtiroki va xalqaro imijini rivojlantirish, shuningdek, xorijiy investorlar hamda xalqaro hamkorlar bilan aloqalarni yo‘lga qo‘yish uchun mas’uldir.
-
-Ta’lim:
-• O‘zbek-Yapon markazi — Professional Management Program, Toshkent, 2018
-• Toshkent davlat iqtisodiyot universiteti — “Xalqaro turizm menejmenti” yo‘nalishi bo‘yicha PhD, 2017–2019
-• Toshkent davlat iqtisodiyot universiteti — magistratura, “Xalqaro turizm menejmenti”, 2015–2017
-• Buxoro davlat universiteti — bakalavriat, ijtimoiy-iqtisodiy fakultet, “Turizm va mehmonxona menejmenti”, 2011–2015
-• International Center of Modern Education — Praga, Chexiya, 2009–2011
-• Karlov College — ABE dasturi “Travel, Tourism and Hospitality Business”, Praga, Chexiya, 2007–2009
-
-Malaka oshirish va sertifikatlar:
-• Vena iqtisodiyot va biznes universiteti, 2013
-• Oerlikon GmbH, Nyurnberg, Germaniya, 2013
-• O‘zbekiston Banklar assotsiatsiyasi, Buxoro, 2003–2006
-
-Kasbiy tajriba
-• Babaev Services LLC — direktor, Toshkent (2019-yil sentabrdan hozirgacha)
-• Toshkent davlat iqtisodiyot universiteti — “Turizm va servis” kafedrasi o‘qituvchisi, 2017–2021
-• Meridian Service Bukhara LLC — TIF va logistika menejeri, Buxoro, 2015–2017
-• “Bukhara Gilam” QK MChJ — TIF va logistika bo‘yicha mutaxassis, Buxoro, 2011–2014
-• Hotel Karlo IV (Boscolo, 5★) — F&B menejeri assistenti, Praga, Chexiya, 2010
-• Hotel Inturprag (3★) — administrator, Praga, Chexiya, 2009–2010
-
-Jamoatchilik faoliyati
-• Birlashgan Millatlar Tashkiloti Taraqqiyot Dasturi volontyori, Buxorodagi turizm loyihalari bo‘yicha, 2013–2015
-• “Kelajak ovozi” Yosh tadbirkorlar maktabi trener-volontyori, 2012–2013
-• Kamolot yoshlar ijtimoiy harakati yetakchisi va volontyori, 2011–2015
-
-Kompetensiyalar va tillar
-• Tillar: o‘zbek — ona tili; rus va ingliz — erkin; chex va turk — boshlang‘ich daraja
-• Kasbiy ko‘nikmalar: PR, marketing, strategik menejment, sun’iy intellekt vositalari bilan ishlash, Microsoft Office dasturlari.`,
-  ru: `Советник по стратегическим коммуникациям Секретариата Совета иностранных инвесторов при Президенте Республики Узбекистан
-
-Журабек Бабаев — специалист в области стратегических коммуникаций, PR и управления с многолетним международным опытом. Отвечает за развитие цифрового присутствия и международного имиджа Совета иностранных инвесторов при Президенте Республики Узбекистан, а также за налаживание взаимодействия с иностранными инвесторами и международными партнёрами.
-
-Образование:
-• Узбекско-Японский центр — Professional Management Program, Ташкент, 2018
-• Ташкентский государственный экономический университет — PhD по направлению «Международный туристический менеджмент», 2017–2019
-• Ташкентский государственный экономический университет — магистратура, «Международный туристический менеджмент», 2015–2017
-• Бухарский государственный университет — бакалавриат, социально-экономический факультет, «Туризм и гостиничный менеджмент», 2011–2015
-• International Center of Modern Education — Прага, Чехия, 2009–2011
-• Karlov College — программа ABE «Travel, Tourism and Hospitality Business», Прага, Чехия, 2007–2009
-
-Повышение квалификации и сертификаты:
-• Венский университет экономики и бизнеса, 2013
-• Oerlikon GmbH, Нюрнберг, Германия, 2013
-• Ассоциация банков Узбекистана, Бухара, 2003–2006
-
-Профессиональный опыт
-• Babaev Services LLC — директор, Ташкент (с сентября 2019 года по настоящее время)
-• Ташкентский государственный экономический университет — преподаватель кафедры «Туризм и сервис», 2017–2021
-• Meridian Service Bukhara LLC — менеджер по ВЭД и логистике, Бухара, 2015–2017
-• «Bukhara Gilam» СП ООО — специалист по ВЭД и логистике, Бухара, 2011–2014
-• Hotel Karlo IV (Boscolo, 5★) — ассистент менеджера F&B, Прага, Чехия, 2010
-• Hotel Inturprag (3★) — администратор, Прага, Чехия, 2009–2010
-
-Общественная деятельность
-• Волонтёр Программы развития Организация Объединённых Наций по туристическим проектам в Бухаре, 2013–2015
-• Тренер-волонтёр Школы молодых предпринимателей «Келажак овози», 2012–2013
-• Лидер и волонтёр общественного движения Камолот, 2011–2015
-
-Компетенции и языки
-• Языки: узбекский — родной; русский и английский — свободно; чешский и турецкий — начальный уровень
-• Профессиональные навыки: PR, маркетинг, стратегический менеджмент, работа с инструментами искусственного интеллекта, программы Microsoft Office.`,
-  en: `Strategic Communications Advisor of the Secretariat of the Foreign Investors Council under the President of the Republic of Uzbekistan
-
-Jurabek Babaev is a specialist in strategic communications, PR, and management with many years of international experience. He is responsible for developing the digital presence and international image of the Foreign Investors Council under the President of the Republic of Uzbekistan, as well as establishing cooperation with foreign investors and international partners.
-
-Education:
-• Uzbek-Japanese Center — Professional Management Program, Tashkent, 2018
-• Tashkent State University of Economics — PhD in International Tourism Management, 2017–2019
-• Tashkent State University of Economics — Master’s degree, International Tourism Management, 2015–2017
-• Bukhara State University — Bachelor’s degree, Faculty of Socio-Economics, Tourism and Hotel Management, 2011–2015
-• International Center of Modern Education — Prague, Czech Republic, 2009–2011
-• Karlov College — ABE Program “Travel, Tourism and Hospitality Business”, Prague, Czech Republic, 2007–2009
-
-Professional Development and Certificates:
-• Vienna University of Economics and Business, 2013
-• Oerlikon GmbH, Nuremberg, Germany, 2013
-• Banking Association of Uzbekistan, Bukhara, 2003–2006
-
-Professional Experience
-• Babaev Services LLC — Director, Tashkent (from September 2019 to present)
-• Tashkent State University of Economics — Lecturer, Department of Tourism and Service, 2017–2021
-• Meridian Service Bukhara LLC — Foreign Economic Activity and Logistics Manager, Bukhara, 2015–2017
-• “Bukhara Gilam” JV LLC — Foreign Economic Activity and Logistics Specialist, Bukhara, 2011–2014
-• Hotel Karlo IV (Boscolo, 5★) — Assistant F&B Manager, Prague, Czech Republic, 2010
-• Hotel Inturprag (3★) — Administrator, Prague, Czech Republic, 2009–2010
-
-Public Activities
-• Volunteer of the United Nations Development Programme (UNDP) for tourism projects in Bukhara, 2013–2015
-• Volunteer Trainer at the “Kelajak Ovozi” School of Young Entrepreneurs, 2012–2013
-• Leader and volunteer of the Kamolot Youth Social Movement, 2011–2015
-
-Competencies and Languages
-• Languages: Uzbek — native; Russian and English — fluent; Czech and Turkish — beginner level
-• Professional skills: PR, marketing, strategic management, working with artificial intelligence tools, Microsoft Office programs.`,
+  uz: `Jamoatchilik bilan aloqalar, raqamli marketing va xizmatlar sohalarida tajribaga ega kommunikatsiyalar mutaxassisi. Xalqaro ta’lim va boshqaruv sohasidagi akademik tayyorgarlik bilan mustahkamlangan brend rivojlantirish, media bilan o’zaro aloqa va raqamli ilgari surish sohasida isbotlangan natijalar mavjud. Jamoatchilik bilan muloqot va manfaatdor tomonlar bilan kommunikatsiya tajribasiga ega.`,
+  ru: `Специалист в области коммуникаций с опытом в связях с общественностью, цифровом маркетинге и сфере услуг. Подтверждённый опыт в развитии бренда, медийном взаимодействии и цифровом продвижении, подкреплённый международным образованием и академической подготовкой в области управления. Опыт публичного взаимодействия и коммуникации с заинтересованными сторонами.`,
+  en: `Communications professional with experience across public relations, digital marketing, and the services sector. Proven track record in brand development, media engagement, and digital promotion, supported by an international education and an academic background in management. Experienced in public engagement and stakeholder communication.`,
 };
 
 const getJurabekBiography = () =>
@@ -237,114 +141,9 @@ const getJurabekDuties = () =>
   jurabekDuties[locale.value] ?? jurabekDuties.ru;
 
 const vladislavBiographies: Record<string, string> = {
-  uz: `O‘zbekiston Respublikasi Prezidenti huzuridagi Xorijiy investorlar kengashi Kotibiyatining dasturiy koordinatori
-
-Vladislav Li — jarayonlarni muvofiqlashtirish, loyiha ishtirokchilari bilan o‘zaro aloqalarni o‘rnatish va samarali kommunikatsiyani ta’minlash bo‘yicha mutaxassis. Mijozlar bilan ishlash, tadbirlarni tashkil etish va loyihalarni kuzatib borish bo‘yicha amaliy ko‘nikmalarga ega. Yuqori moslashuvchanlik, mas’uliyat va dinamik muhitda ishlash qobiliyati bilan ajralib turadi.
-
-Ta’lim:
-• Toshkentdagi Xalqaro Vestminster universiteti — Bakalavriat, “Biznes menejmenti va moliya”, 2021–2025
-
-Kasbiy tajriba:
-• XIK Kotibiyati — Dasturiy koordinator (hozirgi vaqtda)
- • Loyihalar va ichki jarayonlarni muvofiqlashtirish;
- • Ishtirokchilar va hamkorlar bilan aloqalarni bog‘lash;
- • Ish jarayonlarini tashkil etish va vazifalar ijrosini nazorat qilish.
-• “Tashagrochem” MChJ — Logistika bo‘yicha menejer, 2024–2025
- • Yuk tashishni tashkil etish va kuzatish;
- • Ta’minot monitoringi va operatsion masalalarni hal qilish;
- • Mijozlar va haydovchilar bilan aloqa o‘rnatish.
-• “Tashagrochem” MChJ — Sotuv bo‘yicha mutaxassis, 2023–2025
- • Muzokaralar olib borish va mijozlar bilan ishlash;
- • Uzoq muddatli hamkorlik aloqalarini o‘rnatish;
- • Sotuvdan keyingi xizmatlarni muvofiqlashtirish.
-• Scholastic Academy Group — Ingliz tili o‘qituvchisi assistenti, 2021–2023
- • O‘quv jarayonini tashkil etish;
- • Talabalar o‘zlashtirishini nazorat qilish;
- • O‘qituvchini qo‘llab-quvvatlash va dars mashg‘ulotlarini o‘tkazish.
-
-Kompetensiyalar va tillar:
-• Tillar: rus, ingliz va o‘zbek tillari — erkin (fluently)
-• Kasbiy ko‘nikmalar: Loyihalarni muvofiqlashtirish, kommunikatsiya va mijozlar bilan ishlash, muzokaralar va taqdimotlar o‘tkazish, logistika va operatsion boshqaruv, jamoada ishlash, stressga chidamlilik va natijadorlik.`,
-  ru: `Владислав Ли — программный координатор Секретариата, специализируется на координации процессов, взаимодействии с участниками проектов и обеспечении эффективной коммуникации.
-
-Обладает практическими навыками работы с клиентами, организации мероприятий и сопровождения проектов. Отличается высокой адаптивностью, ответственностью и умением работать в динамичной среде.
-
-Образование
-
-Международный Вестминстерский университет в Ташкенте
-Бакалавриат — Бизнес менеджмент и финансы (2021–2025)
-
-Профессиональный опыт
-
-Секретариат (текущая позиция)
-Программный координатор
-
-• Координация проектов и внутренних процессов
-• Взаимодействие с участниками и партнёрами
-• Организация рабочих процессов и контроль выполнения задач
-
-ООО “Tashagrochem”
-Менеджер по логистике (2024–2025)
-
-• Организация и сопровождение грузоперевозок
-• Мониторинг поставок и решение операционных вопросов
-• Взаимодействие с клиентами и водителями
-
-Специалист по продажам (2023–2025)
-
-• Проведение переговоров и работа с клиентами
-• Построение долгосрочных отношений
-• Постпродажное сопровождение
-
-Scholastic Academy Group
-Ассистент преподавателя английского языка (2021–2023)
-
-• Организация учебного процесса
-• Контроль успеваемости студентов
-• Поддержка преподавателя и проведение занятий
-
-Компетенции
-
-• Координация проектов
-• Коммуникации и работа с клиентами
-• Переговоры и презентации
-• Логистика и операционное управление
-• Работа в команде и адаптивность
-• Стрессоустойчивость и ориентация на результат
-
-Языки
-
-• Русский — свободно
-• Английский — свободно
-• Узбекский — свободно`,
-  en: `Program Coordinator of the Secretariat of the Foreign Investors Council under the President of the Republic of Uzbekistan
-
-Vladislav Li is a specialist in process coordination, stakeholder engagement, and ensuring effective communication. He possesses practical skills in client relations, event organization, and project support. He is distinguished by high adaptability, responsibility, and the ability to work in dynamic environments.
-
-Education:
-• Westminster International University in Tashkent — Bachelor of Arts in Business Management and Finance, 2021–2025
-
-Professional Experience:
-• FIC Secretariat — Program Coordinator (Current position)
- • Coordinating projects and internal processes;
- • Interacting with participants and partners;
- • Organizing workflows and monitoring task execution.
-• Tashagrochem LLC — Logistics Manager, 2024–2025
- • Organizing and supervising freight transportation;
- • Monitoring supplies and resolving operational issues;
- • Liaising with clients and drivers.
-• Tashagrochem LLC — Sales Specialist, 2023–2025
- • Conducting negotiations and client management;
- • Building long-term professional relationships;
- • Providing after-sales support.
-• Scholastic Academy Group — English Teacher Assistant, 2021–2023
- • Organizing the educational process;
- • Monitoring student performance;
- • Assisting teachers and conducting lessons.
-
-Competencies and Languages:
-• Languages: Russian, English, and Uzbek — Fluent.
-• Professional Skills: Project coordination, communication and client relations, negotiations and presentations, logistics and operational management, teamwork, stress tolerance, and result orientation.`,
+  uz: `Kengash dasturlari koordinatsiyasini va Kotibiyatning kundalik faoliyatini ta’minlovchi biznes va moliya sohasidagi mutaxassis. Ishtirokchilar bilan muloqot, muzokaralar va kommunikatsiya ko’nikmalariga ega bo’lib, sotuv, logistika va ta’lim sohalarida amaliy tajribaga ega. Rus, ingliz va o’zbek tillarini mukammal biladi.`,
+  ru: `Специалист в области бизнеса и финансов, обеспечивающий координацию программ Совета и текущую операционную деятельность Секретариата. Развитые навыки взаимодействия с участниками, ведения переговоров и коммуникации; практический опыт в продажах, логистике и образовании. Свободно владеет русским, английским и узбекским языками.`,
+  en: `Business and finance professional supporting the coordination of Council programs and day-to-day operations of the Secretariat. Skilled in stakeholder engagement, negotiation, and communication, with hands-on experience across sales, logistics, and education. Fluent in Russian, English, and Uzbek.`,
 };
 
 const getVladislavBiography = () =>
@@ -561,117 +360,36 @@ const getMadinaDuties = () =>
   madinaDuties[locale.value] ?? madinaDuties.ru;
 
 const madinaBiographies: Record<string, string> = {
-  uz: `O‘zbekiston Respublikasi Prezidenti huzuridagi Xorijiy investorlar kengashi Kotibiyatining ma’muriy masalalar bo‘yicha xodimi
-
-Madinaxon Abidova — loyihalarni boshqarish, xalqaro tadbirlarni tashkil etish va turizmni rivojlantirish sohasida boy tajribaga ega mutaxassis. Xalqaro tashkilotlar, davlat tuzilmalari va notijorat sektordagi faoliyati davomida chuqur akademik bilimlarni amaliy tajriba bilan samarali uyg‘unlashtirib kelmoqda. Hozirda Xorijiy investorlar kengashining ma’muriy jarayonlarini muvofiqlashtirish va investorlar bilan aloqalarni ta’minlash uchun mas’uldir.
-
-Ta’lim:
-• Xalqaro agrar universiteti / Qirollik agrar universiteti — Magistratura, “Agrobiznesni boshqarish”, 2023–2025
-• Toshkentdagi Singapur menejmentni rivojlantirish instituti — Bakalavriat, “Biznes va iqtisodiyot”, 2015–2020
-• Toshkent davlat iqtisodiyot universiteti qoshidagi akademik litsey — 2012–2015
-
-Kasbiy tajriba:
-• XIK Kotibiyati — Ma’muriy xodim(2025-yil iyundan hozirgacha)
- • Kotibiyatning barcha hujjatlar aylanishi va ish yuritish jarayonlarini boshqarish.
- • Ishchi guruhlar yig‘ilishlari, investorlar bilan uchrashuvlar va rasmiy tadbirlarni tashkil etish.
- • Investorlar va tegishli davlat organlari o‘rtasidagi aloqalarni muvofiqlashtirish.
-• XIK Kotibiyati — Stajyor (2025-yil fevral – iyun)
-• O‘zbekiston xususiy sayyohlik tashkilotlari uyushmasi (APTA) — Menejer, 2016–2024
- • 15 dan ortiq milliy va xalqaro tadbirlarni (B2B, Road-show) muvofiqlashtirish.
- • Yevropa Ittifoqi (YeI) va USAID loyihalarida loyiha assistenti va aloqa ofitseri (Liaison Officer) sifatida ishtirok etish.
- • "Tashkent Travel Mart" B2B ko‘rgazmasi va YeI tomonidan qo‘llab-quvvatlangan xalqaro konferensiyalar tashkilotchisi.
-• Denova Agro — Tadbirlar tashkilotchisi (Vena, Avstriya), 2019
-• WEST CAMP — Ingliz tili o‘qituvchisi va yoshlar dasturlari rahbari, 2017
-
-Jamoatchilik va ko‘ngillilik faoliyati:
-• Iteca-Exhibitions — Xalqaro ko‘rgazmalar ko‘ngillisi, 2017–2018
-
-Kompetensiyalar va tillar:
-• Tillar: o‘zbek — ona tili; rus va ingliz tillari — erkin.
-• Kasbiy ko‘nikmalar: Event management (tadbirlar boshqaruvi), xalqaro logistika, B2B muloqot, strategik rejalashtirish, loyihalar monitoringi va YeI/USAID standartlari asosida hisobot tayyorlash.`,
-  ru: `Административный сотрудник Секретариата Совета иностранных инвесторов при Президенте Республики Узбекистан
-
-Мадинахон Абидова — специалист с богатым опытом в области управления проектами, организации международных мероприятий и развития туризма. В своей деятельности в международных организациях, государственных структурах и некоммерческом секторе она эффективно сочетает глубокие академические знания с практическим опытом. В настоящее время отвечает за координацию административных процессов Совета иностранных инвесторов и обеспечение связи с инвесторами.
-
-Образование:
-• Международный аграрный университет / Королевский аграрный университет — Магистратура, «Управление агробизнесом», 2023–2025
-• Сингапурский институт развития менеджмента в Ташкенте — Бакалавриат, «Бизнес и экономика», 2015–2020
-• Академический лицей при Ташкентском государственном экономическом университете — 2012–2015
-
-Профессиональный опыт:
-• Секретариат СИИ — Административный сотрудник (с июня 2025 года по настоящее время)
- • Управление всеми процессами документооборота и делопроизводства Секретариата.
- • Организация заседаний рабочих групп, встреч с инвесторами и официальных мероприятий.
- • Координация взаимодействия между инвесторами и соответствующими государственными органами.
-• Секретариат СИИ — Стажер (февраль – июнь 2025)
-• Ассоциация частных туристических организаций Узбекистана (APTA) — Менеджер, 2016–2024
- • Координация более 15 национальных и международных мероприятий (B2B, Road-show).
- • Участие в проектах Европейского Союза (ЕС) и USAID в качестве ассистента проекта и офицера по связям (Liaison Officer).
- • Организатор B2B выставки «Tashkent Travel Mart» и международных конференций при поддержке ЕС.
-• Denova Agro — Организатор мероприятий (Вена, Австрия), 2019
-• WEST CAMP — Преподаватель английского языка и руководитель молодежных программ, 2017
-
-Общественная и волонтерская деятельность:
-• Iteca-Exhibitions — Волонтер международных выставок, 2017–2018
-
-Компетенции и языки:
-• Языки: узбекский — родной; русский и английский — свободно.
-• Профессиональные навыки: Event management (управление мероприятиями), международная логистика, B2B коммуникации, стратегическое планирование, мониторинг проектов и подготовка отчетов по стандартам ЕС/USAID.`,
-  en: `Administrative Officer of the Secretariat of the Foreign Investors Council under the President of the Republic of Uzbekistan
-
-Madinaxon Abidova is a professional with extensive experience in project management, international event organization, and tourism development. Throughout her career in international organizations, government structures, and the non-profit sector, she has effectively combined deep academic knowledge with practical experience. Currently, she is responsible for coordinating administrative processes of the Foreign Investors Council and ensuring liaison with investors.
-
-Education:
-• International Agriculture University / Royal Agricultural University — Master’s in Agribusiness Management, 2023–2025
-• Management Development Institute of Singapore in Tashkent — Bachelor’s in Business and Economics, 2015–2020
-• Academic Lyceum under Tashkent State University of Economics — 2012–2015
-
-Professional Experience:
-• FIC Secretariat — Administrative Officer (June 2025 – Present)
- • Managing all document flow and clerical processes of the Secretariat.
- • Organizing working group meetings, investor sessions, and official events.
- • Coordinating interaction between investors and relevant state authorities.
-• FIC Secretariat — Intern (February – June 2025)
-• Association of Private Tourism Agencies of Uzbekistan (APTA) — Manager, 2016–2024
- • Coordinating more than 15 national and international events (B2B, Road-shows).
- • Participating in European Union (EU) and USAID projects as a project assistant and Liaison Officer.
- • Organizer of the "Tashkent Travel Mart" B2B exhibition and international conferences supported by the EU.
-• Denova Agro — Event Organizer (Vienna, Austria), 2019
-• WEST CAMP — English teacher and youth program leader, 2017
-
-Public and Volunteer Activities:
-• Iteca-Exhibitions — Volunteer for international exhibitions, 2017–2018
-
-Competencies and Languages:
-• Languages: Uzbek — native; Russian and English — fluent.
-• Professional Skills: Event management, international logistics, B2B communication, strategic planning, project monitoring, and reporting based on EU/USAID standards.`,
+  uz: `Tadbirlar, loyihalar va ishtirokchilar bilan o’zaro aloqalarni qo’llab-quvvatlash bo’yicha 7 yildan ortiq tajribaga ega ma’muriy va koordinatsion mutaxassis. Milliy va xalqaro tadbirlarni tashkil etish hamda YeI va USAID tomonidan moliyalashtiriladigan rivojlanish dasturlarini muvofiqlashtirish sohasida isbotlangan natijalar mavjud. Madaniyatlararo kommunikatsiya, hujjat aylanishi va ko’p tomonlama hamkorlik tajribasiga ega.`,
+  ru: `Специалист по административной работе и координации с более чем 7-летним опытом сопровождения мероприятий, проектов и взаимодействия с участниками. Подтверждённый опыт организации национальных и международных мероприятий и координации программ развития, финансируемых ЕС и USAID. Опыт межкультурной коммуникации, документооборота и многостороннего взаимодействия.`,
+  en: `Administrative and coordination professional with 7+ years of experience supporting events, projects, and stakeholder engagement. Proven track record in organizing national and international events and coordinating EU- and USAID-funded development programs. Experienced in cross-cultural communication, documentation, and multi-stakeholder collaboration.`,
 };
 
 const getMadinaBiography = () =>
   madinaBiographies[locale.value] ?? madinaBiographies.ru;
 
 const azizBiographies: Record<string, string> = {
-  uz: `Iqtisodiyot fanlari doktori, korporativ boshqaruv, investitsiya siyosati va strategik konsalting sohalarida 20 yildan ortiq tajribaga ega. U xalqaro investorlar, rivojlanish banklari va davlat tuzilmalari bilan ishlash bo‘yicha keng tajribaga ega. Investorlar bilan aloqalarni rivojlantirish, siyosatni muvofiqlashtirish va institutsional rivojlanishga rahbarlik qiladi.`,
-  ru: `Доктор экономических наук, более 20 лет опыта в сферах корпоративного управления, инвестиционной политики и стратегического консалтинга. Обладает обширным опытом работы с международными инвесторами, банками развития и государственными структурами. Руководит развитием отношений с инвесторами, координацией политики и институциональным развитием.`,
-  en: `Doctor of Economic Sciences with over 20 years of experience in corporate governance, investment policy, and strategic consulting. He has extensive experience working with international investors, development banks, and government institutions. He leads the development of investor relations, policy coordination, and institutional development.`,
+  uz: `Korporativ boshqaruv, risklar menejmenti, investitsion maslahat va davlat-xususiy sektor hamkorligi sohasida 20 yildan ortiq tajribaga ega yuqori darajali rahbar. Murakkab tashkilotlarni o’zgartirishdan o’tkazish, mustahkam korporativ boshqaruv tizimlarini qurish hamda moliya, energetika va infratuzilma sohalarida strategik o’zgarishlarni amalga oshirishda isbotlangan natijalar mavjud. Investorlar, regulyatorlar va xalqaro institutlar bilan yuqori darajadagi muloqot tajribasiga ega. Iqtisodiyot fanlari doktori (PhD).`,
+  ru: `Руководитель высшего звена с более чем 20-летним опытом в корпоративном управлении, управлении рисками, инвестиционном консультировании и взаимодействии государственного и частного секторов. Подтверждённый опыт проведения сложных организаций через трансформацию, выстраивания надёжных систем корпоративного управления и реализации стратегических преобразований в сферах финансов, энергетики и инфраструктуры. Опыт взаимодействия на высоком уровне с инвесторами, регуляторами и международными институтами. Доктор философии (PhD) по экономическим наукам.`,
+  en: `Executive-level professional with 20+ years of experience across corporate leadership, risk management, investment advisory, and public-private sector collaboration. Proven track record in steering complex organizations through transformation, establishing robust governance frameworks, and delivering strategic transformation across finance, energy, and infrastructure sectors. Experienced in high-level stakeholder engagement, including investors, regulators, and international institutions. Holds a Ph.D. in Economic Sciences.`,
 };
 
 const getAzizBiography = () =>
   azizBiographies[locale.value] ?? azizBiographies.ru;
 
 const avazbekBiographies: Record<string, string> = {
-  uz: `Tashqi iqtisodiy aloqalar, investitsiyalar va energetika sohalarida 15 yildan ortiq kasbiy tajribaga ega. Yirik investitsiya loyihalarini muvofiqlashtirish va xalqaro hamkorlikni rivojlantirish bo‘yicha keng amaliyotga ega. Xorijiy investorlar kengashi Kotibiyatida dasturlarni muvofiqlashtirish va loyihalar ijrosini ta’minlash uchun mas’ul.`,
-  ru: `Более 15 лет профессионального опыта в области внешнеэкономических связей, инвестиций и энергетики. Обладает обширной практикой координации крупных инвестиционных проектов и развития международного сотрудничества. В Секретариате Совета иностранных инвесторов отвечает за координацию программ и обеспечение реализации проектов.`,
-  en: `Over 15 years of professional experience in foreign economic relations, investment, and energy. He has extensive practice in coordinating major investment projects and developing international cooperation. At the Secretariat of the Foreign Investors Council, he is responsible for program coordination and ensuring project implementation.`,
+  uz: `Investitsion muhitni rivojlantirish, xususiy-davlat hamkorligi va iqtisodiy siyosat sohasida 15 yildan ortiq tajribaga ega mutaxassis. To’g’ridan-to’g’ri xorijiy investitsiyalarni jalb etish, investitsion va KXH loyihalarini tuzish, investitsion muhit islohotlarini ilgari surish — jumladan, investor-davlat muloqoti platformasini yaratishda poydevor ishlarni olib borish sohasida isbotlangan natijalar mavjud. Xalqaro moliya institutlari, davlat organlari va xususiy investorlar bilan o’zaro aloqada ishlash tajribasiga ega.`,
+  ru: `Специалист по инвестиционному климату с более чем 15-летним опытом в привлечении инвестиций, государственно-частном взаимодействии и экономической политике. Подтверждённый опыт привлечения прямых иностранных инвестиций, структурирования инвестиционных проектов и проектов ГЧП, продвижения реформ инвестиционного климата — включая работу у истоков платформы диалога инвесторов и государства. Опыт взаимодействия с международными финансовыми институтами, государственными органами и частными инвесторами.`,
+  en: `Investment-climate specialist with 15+ years of experience across investment promotion, public-private collaboration, and economic policy. Proven track record in attracting foreign direct investment, structuring investment and PPP projects, and advancing investment-climate reforms — including foundational work on the platform for investor–government dialogue. Experienced in engagement with international financial institutions, government bodies, and private investors.`,
 };
 
 const getAvazbekBiography = () =>
   avazbekBiographies[locale.value] ?? avazbekBiographies.ru;
 
 const hakimniyazBiographies: Record<string, string> = {
-  uz: `MGIMO (Moskva) bakalavriat va magistraturasini xalqaro huquq yo‘nalishi bo‘yicha imtiyozli diplom bilan tamomlagan. O‘zbekiston Tashqi ishlar vazirligida hamda xalqaro yuridik firmada ishlash tajribasiga ega. Xorijiy investorlar kengashi Kotibiyatida huquqiy masalalar va dasturlarni muvofiqlashtirish bilan shug‘ullanadi.`,
-  ru: `С отличием окончил бакалавриат и магистратуру МГИМО (Москва) по международному праву. Имеет опыт работы в МИД Узбекистана, а также в международной юридической фирме. В Секретариате Совета иностранных инвесторов занимается правовыми вопросами и координацией программ.`,
-  en: `Graduated with honors from MGIMO (Moscow) with bachelor's and master's degrees in international law. He has experience working at the Ministry of Foreign Affairs of Uzbekistan and at an international law firm. At the Secretariat of the Foreign Investors Council, he handles legal matters and program coordination.`,
+  uz: `Investitsiyalar, savdo va JTT ga qo’shilish masalalarida ixtisoslashgan xalqaro huquqshunos. Xalqaro huquq bo’yicha akademik yutuqlari bilan mustahkamlangan huquqiy va tahliliy qo’llab-quvvatlash, shartnoma-huquqiy ish va chegaralararo huquqiy jarayonlar sohasida isbotlangan natijalar mavjud. Davlat organlari, diplomatik missiyalar va xalqaro yuridik firmalar bilan ishlash tajribasiga ega.`,
+  ru: `Юрист-международник, специализирующийся на вопросах инвестиций, торговли и вступления в ВТО. Подтверждённый опыт правовой и аналитической поддержки, договорно-правовой работы и трансграничных юридических процессов, подкреплённый отличными академическими результатами в области международного права. Опыт взаимодействия с государственными органами, дипломатическими миссиями и международными юридическими фирмами.`,
+  en: `International law professional specializing in investment, trade, and WTO-accession matters. Proven track record in legal and analytical support, treaty work, and cross-border legal processes, underpinned by academic distinction in international law. Experienced in engagement with government bodies, diplomatic missions, and international law firms.`,
 };
 
 const getHakimniyazBiography = () =>
@@ -700,7 +418,7 @@ const members = computed(() => [
     fullname: t("Азиз Гафуров"),
     position: t("Руководитель секретариата"),
     description: t(
-      "Азиз Гафуров – топ-менеджер с более чем 20-летним опытом в сфере корпоративного управления, управления рисками, инвестиционной политики и стратегического консалтинга."
+      "Руководитель высшего звена с более чем 20-летним опытом в корпоративном управлении, управлении рисками, инвестиционном консультировании и взаимодействии государственного и частного секторов."
     ),
     biography: getAzizBiography(),
     contacts: createContacts("+998 88 099 88 88", "head@fics.uz"),
@@ -710,7 +428,7 @@ const members = computed(() => [
     fullname: t("Авазбек Муллажонов"),
     position: t("Программный координатор"),
     description: t(
-      "Авазбек имеет более чем 15-летний профессиональный опыт в области внешнеэкономических связей, инвестиций и энергетики."
+      "Специалист по инвестиционному климату с более чем 15-летним опытом в привлечении инвестиций, государственно-частном взаимодействии и экономической политике."
     ),
     biography: getAvazbekBiography(),
     contacts: createContacts("+998 88 099 88 88", "coord1@fics.uz"),
@@ -720,7 +438,7 @@ const members = computed(() => [
     fullname: t("Хакимнияз Каипбергенов"),
     position: t("Программный координатор"),
     description: t(
-      "Хакимнияз Каипбергенов с отличием окончил бакалавриат и магистратуру МГИМО в Москве по международному праву. Имеет опыт работы в МИД Узбекистана, а также в международной юридической фирме."
+      "Юрист-международник, специализирующийся на вопросах инвестиций, торговли и вступления в ВТО. Опыт взаимодействия с государственными органами, дипломатическими миссиями и международными юридическими фирмами."
     ),
     biography: getHakimniyazBiography(),
     contacts: createContacts("+998 88 099 88 88", "coord2@fics.uz"),
@@ -739,7 +457,7 @@ const members = computed(() => [
     fullname: t("Журабек Бабаев"),
     position: t("ПР & Эксперт по маркетингу"),
     description: t(
-      "Журабек Бабаев — маркетолог нового поколения, соединяющий стратегическое мышление с глубоким пониманием бизнес-ландшафта Узбекистана"
+      "Специалист в области коммуникаций с опытом в связях с общественностью, цифровом маркетинге и сфере услуг. Подтверждённый опыт в развитии бренда, медийном взаимодействии и цифровом продвижении, подкреплённый международным образованием и академической подготовкой в области управления. Опыт публичного взаимодействия и коммуникации с заинтересованными сторонами."
     ),
     biography: getJurabekBiography(),
     contacts: createContacts("+998 88 099 88 88", "marketing@fics.uz"),
@@ -749,7 +467,7 @@ const members = computed(() => [
     fullname: t("Мадинахон Абидова"),
     position: t("Административный ассистент"),
     description: t(
-      "До присоединения к Секретариату СИИ Мадинахон работала менеджером в Ассоциации частных туристических организаций Узбекистана"
+      "Специалист по административной работе и координации с более чем 7-летним опытом сопровождения мероприятий, проектов и взаимодействия с участниками. Подтверждённый опыт организации национальных и международных мероприятий и координации программ развития, финансируемых ЕС и USAID. Опыт межкультурной коммуникации, документооборота и многостороннего взаимодействия."
     ),
     biography: getMadinaBiography(),
     contacts: createContacts("+998 88 099 88 88", "admin@fics.uz"),
