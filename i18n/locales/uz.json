@@ -1053,5 +1053,10 @@
     "title": "Bizning bilan oldinga boruvchi kuchli sekodchilar",
     "subtitle": "Biz birgalikda faxrlanadigan natija yaratamiz.",
     "buttonLabel": "Ishchi guruhlar"
+  },
+  "newsPage": {
+    "title": "Yangiliklar",
+    "moreLabel": "Batafsil",
+    "loadMoreButton": "Ko'proq ko'rish"
   }
 }

@@ -1048,5 +1048,10 @@
     "title": "Strong allies moving forward with us",
     "subtitle": "Together we create results we can be proud of.",
     "buttonLabel": "Working Groups"
+  },
+  "newsPage": {
+    "title": "News",
+    "moreLabel": "Learn more",
+    "loadMoreButton": "View more"
   }
 }
