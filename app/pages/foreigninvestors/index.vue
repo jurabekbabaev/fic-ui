@@ -73,7 +73,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import Investors from "./investors.vue";
 import PageHero from "~/components/shared/PageHero.vue";
@@ -84,7 +84,7 @@ import FICLogo from "@/assets/images/pr.png";
 
 const { t } = useI18n();
 
-const leaders = ref([
+const leaders = computed(() => [
   {
     id: 1,
     logo: FICLogo,

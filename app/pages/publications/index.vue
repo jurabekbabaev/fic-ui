@@ -63,7 +63,7 @@ const analyticsReports = [
   <div>
     <div class="container">
       <h1
-        class="lg:text-[64px] text-[32px] uppercase font-black text-center mt-[100px] mb-[24px]"
+        class="lg:text-[64px] text-[32px] uppercase font-black text-center mt-[50px] lg:mt-[100px] mb-[24px]"
       >
         {{ t("Публикации") }}
       </h1>

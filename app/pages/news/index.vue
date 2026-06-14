@@ -26,7 +26,7 @@ const toNextPage = () => {
   <div>
     <div class="container">
       <h1
-        class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[100px] mb-14"
+        class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[50px] lg:mt-[100px] mb-8 lg:mb-14"
       >
         {{ t('Новости') }}
       </h1>
@@ -36,7 +36,7 @@ const toNextPage = () => {
           v-for="(model, index) in models"
           :key="index"
         >
-          <img :src="model.image_path" alt="" />
+          <img :src="model.image_path" alt="" class="w-full h-[200px] object-cover rounded-t-xl" />
           <div class="flex justify-between mt-3">
             <p class="text-[#00000080] text-sm font-normal">
               {{ date(model.date, "MONTH DAY, YYYY") }}

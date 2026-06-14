@@ -717,10 +717,12 @@ img{
 }
 .filters{
   display: flex;
-  gap: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 .filter-field{
-  flex: 0 0 150px;
+  flex: 1 1 130px;
+  min-width: 120px;
   .el-select{
     .el-select__wrapper{
       height: 52px;

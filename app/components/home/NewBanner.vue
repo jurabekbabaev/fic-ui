@@ -249,7 +249,7 @@ const heroSlides = computed(() => [
     quote: t(
       "Мы готовы внести свой вклад везде, где наш опыт и инвестиции могут принести дополнительную ценность."
     ),
-    name: t("Одил Рено-Бассо"),
+    name: t("Одиль Рено-Бассо"),
     position: t("Президент Европейского банка реконструкции и развития"),
     image: secondHeroImg,
     imagePosition: isMobile.value ? "center center" : "center center",

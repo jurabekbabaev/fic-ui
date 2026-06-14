@@ -1,7 +1,7 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
-import { ref } from "vue";
+import { computed } from "vue";
 import LeaderImage1 from "@/assets/images/leaders/leader1.png";
 import LeaderImage2 from "@/assets/images/leaders/leader2.png";
 import LeaderImage3 from "@/assets/images/leaders/leader3.png";
@@ -11,7 +11,7 @@ import LeaderImage6 from "@/assets/images/leaders/leader6.png";
 import WorkingGroup from "./workinggroup.vue";
 
 
-const leaderList = ref([
+const leaderList = computed(() => [
   {
     id: 1,
     image: LeaderImage1,

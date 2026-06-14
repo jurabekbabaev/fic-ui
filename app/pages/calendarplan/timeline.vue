@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-white mt-[100px]">
+  <div class="w-full bg-white mt-[50px] lg:mt-[100px]">
     <!-- Title -->
     <h1
       class="lg:text-[64px] uppercase text-center text-[32px] font-extrabold mb-12 text-black"

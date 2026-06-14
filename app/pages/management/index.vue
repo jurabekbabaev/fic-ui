@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 import Management1 from "@/assets/images/management/image11.png";
@@ -13,7 +13,7 @@ import User6 from "@/assets/images/management/mng6.png";
 import User7 from "@/assets/images/management/mng7.png";
 import WLocaleLink from "~/components/shared/WLocaleLink.vue";
 
-const data = ref([
+const data = computed(() => [
   {
     id: 1,
     image: Management2,
@@ -28,7 +28,7 @@ const data = ref([
   },
 ]);
 
-const comitetdata = ref([
+const comitetdata = computed(() => [
   {
     id: 1,
     image: User1,
@@ -72,7 +72,7 @@ const comitetdata = ref([
           <!-- руководство сии -->
           <div>
             <h1
-              class="lg:text-[64px] text-[32px] uppercase font-black text-center mt-[100px] mb-8"
+              class="lg:text-[64px] text-[32px] uppercase font-black text-center mt-[50px] lg:mt-[100px] mb-8"
             >
               {{ t("руководство сии") }}
             </h1>

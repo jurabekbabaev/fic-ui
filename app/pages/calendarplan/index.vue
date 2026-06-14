@@ -201,12 +201,12 @@ const { t } = useI18n();
 const periodid = ref();
 const industryid = ref();
 
-const periodList = ref([
+const periodList = computed(() => [
   { id: 0, name: t("за 7 дней") },
   { id: 1, name: t("за 3 дней") },
   { id: 2, name: t("за 2 дней") },
 ]);
-const industryList = ref([
+const industryList = computed(() => [
   { id: 0, name: t("Отрасль") },
   { id: 1, name: t("Отрасль 1") },
   { id: 2, name: t("Отрасль 2") },

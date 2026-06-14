@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-[100px]">
+  <div class="mt-[50px] lg:mt-[100px]">
     <div class="container mx-auto">
       <div class="lg:flex block gap-12 items-center">
         <!-- Left Content -->
@@ -53,7 +53,7 @@
                   class="home-feedback-card bg-white rounded-xl shadow-lg overflow-hidden relative cursor-pointer"
                   @click="goToSlide(index)"
                 >
-                  <div class="relative h-[500px]">
+                  <div class="relative h-[360px] md:h-[500px]">
                     <div v-if="selectedVideoLink === slide?.video_source" class="absolute inset-0 z-50 bg-black rounded-xl w-full h-full">
                       <iframe
                         :src="getEmbedUrl(slide.video_source)"

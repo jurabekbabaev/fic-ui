@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 import { getLeaderList } from "../../../../data/leaderList";
 import type { ILeaderGroup } from "../../../../types/leaders";
 
-const leaderList = ref<ILeaderGroup[]>(getLeaderList(t));
+const leaderList = computed<ILeaderGroup[]>(() => getLeaderList(t));
 
 const route = useRoute();
 const leaderId = computed(() => parseInt(route.params.id as string));
@@ -147,7 +147,7 @@ function goBack() {
           </div>
         </div>
 
-        <div v-else class="text-center mt-[100px]">
+        <div v-else class="text-center mt-[50px] lg:mt-[100px]">
           <h2 class="text-2xl font-bold text-[#191C1F] mb-4">
             {{ t("Лидер не найден") }}
           </h2>
@@ -164,7 +164,7 @@ function goBack() {
         <!-- Назначенные руководители -->
         <div>
           <h1
-            class="text-left lg:text-[64px] text-[32px] text-[#191C1F] uppercase font-extrabold mb-12 mt-[100px]"
+            class="text-left lg:text-[64px] text-[32px] text-[#191C1F] uppercase font-extrabold mb-8 lg:mb-12 mt-[50px] lg:mt-[100px]"
           >
             {{ t("Со стороны государства") }}
           </h1>
@@ -189,7 +189,7 @@ function goBack() {
         <!--  -->
         <div>
           <h1
-            class="text-left lg:text-[64px] text-[32px] text-[#191C1F] uppercase font-extrabold mb-12 mt-[100px]"
+            class="text-left lg:text-[64px] text-[32px] text-[#191C1F] uppercase font-extrabold mb-8 lg:mb-12 mt-[50px] lg:mt-[100px]"
           >
             {{ t("со стороны совета") }}
           </h1>
@@ -197,9 +197,9 @@ function goBack() {
             <div
               v-for="(item, index) in currentLeader?.brands"
               :key="index"
-              class="border border-solid border-gray-500 rounded-xl bg-white flex items-center justify-center h-[162px]"
+              class="border border-solid border-gray-500 rounded-xl bg-white flex items-center justify-center h-[162px] overflow-hidden p-4"
             >
-              <img :src="item" alt="" />
+              <img :src="item" alt="" class="max-w-full max-h-full object-contain" />
             </div>
           </div>
         </div>

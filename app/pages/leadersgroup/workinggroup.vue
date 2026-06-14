@@ -349,8 +349,8 @@ function ViewReadMore(item: IType) {
 .diamond-inner-old {
   width: 100%;
   height: 100%;
-  transform: rotate(-45deg) scale(1);
-  background-size: cover;
+  transform: rotate(-45deg) scale(1.4);
+  background-size: 80%;
   background-position: center;
   background-repeat: no-repeat;
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto px-4">
-    <div class="text-center mb-12 fade-in-down mt-[100px]">
+    <div class="text-center mb-12 fade-in-down mt-[50px] lg:mt-[100px]">
       <h2 class="lg:text-[64px] text-[32px] font-bold mb-4 text-gray-900">
         {{ t("Исполнительный комитет") }}
       </h2>

@@ -52,7 +52,7 @@ async function sendForm() {
     <client-only>
       <div class="container">
         <h1
-          class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[100px] mb-14"
+          class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[50px] lg:mt-[100px] mb-8 lg:mb-14"
         >
           {{ t('Контакты') }}
         </h1>
