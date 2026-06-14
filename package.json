@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postbuild": "mkdir -p .output/public/tgbot && cp -f tgbot/sendDocument.php .output/public/tgbot/sendDocument.php && cp -f tgbot/.user.ini .output/public/tgbot/.user.ini",
+    "deploy:build": "nuxt generate && npm run copy:extras",
+    "postbuild": "npm run copy:extras",
+    "copy:extras": "mkdir -p .output/public/tgbot && cp -f tgbot/sendDocument.php .output/public/tgbot/sendDocument.php && cp -f tgbot/send.php .output/public/tgbot/send.php && cp -f tgbot/.user.ini .output/public/tgbot/.user.ini && cp -f public/.htaccess .output/public/.htaccess",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
