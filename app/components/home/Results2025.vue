@@ -3,14 +3,14 @@
     <div class="mainContainer">
       <div class="mb-[50px]">
         <h2 class="title-64 lg:text-[64px] text-[32px] mb-3">
-          {{ t('результаты за 2025 год') }}
+          {{ t('home.results2025.heading') }}
         </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
         <div>
           <div class="font-medium lg:text-[32px] text-xl mb-4">
-            {{ t('Результаты по Инвесторам') }}
+            {{ t('home.results2025.investors.title') }}
           </div>
           <div class="card-primary p-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -24,7 +24,7 @@
                   102
                 </div>
                 <div class="lg:text-lg text-base text-grey font-bold">
-                  {{ t('Инвесторов/участников совета') }}
+                  {{ t('home.results2025.investors.members') }}
                 </div>
               </div>
               <div class="card-f7">
@@ -33,10 +33,10 @@
                 </div>
                 <div class="font-black leading-normal">
                   <b class="lg:text-[44px] text-[32px]">90$</b>
-                  <span class="text-xl pl-2">{{ t('млрд.') }}</span>
+                  <span class="text-xl pl-2">{{ t('common.bn') }}</span>
                 </div>
                 <div class="lg:text-lg text-base text-grey font-bold">
-                  {{ t('Текущих инвестиций') }}
+                  {{ t('home.results2025.investors.currentInvestments') }}
                 </div>
               </div>
               <div class="card-f7">
@@ -45,10 +45,10 @@
                 </div>
                 <div class="font-black leading-normal">
                   <b class="lg:text-[44px] text-[32px]">200$ </b>
-                  <span class="text-xl pl-2">{{ t('млрд.') }}</span>
+                  <span class="text-xl pl-2">{{ t('common.bn') }}</span>
                 </div>
                 <div class="lg:text-lg text-base text-grey font-bold">
-                  {{ t('Планируемых инвестиций') }}
+                  {{ t('home.results2025.investors.plannedInvestments') }}
                 </div>
               </div>
               <div class="card-f7">
@@ -61,18 +61,18 @@
                   80,000
                 </div>
                 <div class="lg:text-lg text-base text-grey font-bold">
-                  {{ t('Рабочих мест') }}
+                  {{ t('home.results2025.investors.jobs') }}
                 </div>
               </div>
             </div>
             <WLocaleLink to="/result" class="btn btn-outline-w w-full mt-4">
-              {{ t('Посмотреть статистику') }}
+              {{ t('home.results2025.viewStats') }}
             </WLocaleLink>
           </div>
         </div>
         <div>
           <div class="font-medium lg:text-[32px] text-xl mb-4">
-            {{ t('Результаты по Совету') }}
+            {{ t('home.results2025.council.title') }}
           </div>
           <div class="card-primary p-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -86,7 +86,7 @@
                   242
                 </div>
                 <div class="lg:text-lg text-base text-grey font-bold">
-                  {{ t('Проекта, свыше 32 700 рабочих мест') }}
+                  {{ t('home.results2025.council.projects') }}
                 </div>
               </div>
               <div class="card-f7">
@@ -95,10 +95,10 @@
                 </div>
                 <div class="font-black leading-normal">
                   <b class="lg:text-[44px] text-[32px]">30,5$</b>
-                  <span class="text-xl pl-2">{{ t('млрд.') }}</span>
+                  <span class="text-xl pl-2">{{ t('common.bn') }}</span>
                 </div>
                 <div class="lg:text-lg text-base text-grey font-bold">
-                  {{ t('Подписанные соглашения') }}
+                  {{ t('home.results2025.council.agreements') }}
                 </div>
               </div>
               <div class="card-f7">
@@ -107,10 +107,10 @@
                 </div>
                 <div class="font-black leading-normal">
                   <b class="lg:text-[44px] text-[32px]">17</b>
-                  <span class="text-xl pl-2">{{ t('предложений') }}</span>
+                  <span class="text-xl pl-2">{{ t('home.results2025.council.proposals') }}</span>
                 </div>
                 <div class="lg:text-lg text-base text-grey font-bold">
-                  {{ t('Утверждено президентом') }}
+                  {{ t('home.results2025.council.proposalsApproved') }}
                 </div>
               </div>
               <div class="card-f7">
@@ -119,15 +119,15 @@
                 </div>
                 <div class="font-black leading-normal">
                   <b class="lg:text-[44px] text-[32px]">17</b>
-                  <span class="text-xl pl-2">{{ t('рабочих группы') }}</span>
+                  <span class="text-xl pl-2">{{ t('home.results2025.council.workingGroups') }}</span>
                 </div>
                 <div class="lg:text-lg text-base text-grey font-bold">
-                  {{ t('Реструктурирован и активирован') }}
+                  {{ t('home.results2025.council.workingGroupsActivated') }}
                 </div>
               </div>
             </div>
             <WLocaleLink to="/result" class="btn btn-outline-w w-full mt-4">
-              {{ t('Посмотреть статистику') }}
+              {{ t('home.results2025.viewStats') }}
             </WLocaleLink>
           </div>
         </div>
@@ -135,14 +135,14 @@
 
       <div class="card-eb mt-[50px]">
         <div class="lg:text-[32px] text-xl font-bold mb-1">
-          {{ t('Инициативы по улучшению инвестиционного климата') }}
+          {{ t('home.results2025.initiatives.title') }}
         </div>
         <div class="lg:text-lg text-sm mb-4">
-          {{ t('Каждая инициатива направлена на реформы в налогообложении, энергетике, инвестициях, трудоустройстве и корпоративном управлении') }}
+          {{ t('home.results2025.initiatives.subtitle') }}
         </div>
         <WLocaleLink to="/initiatives">
             <span class="flex items-center">
-              <span class="lg:text-sm text-xs"> {{ t('Подробнее о каждом шаге') }} </span>
+              <span class="lg:text-sm text-xs"> {{ t('home.results2025.initiatives.learnMore') }} </span>
             <i class="icon-move-right ms-2 mt-1"></i>
           </span>
           </WLocaleLink>

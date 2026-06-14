@@ -12,7 +12,7 @@
           <el-select
             clearable
             v-model="filter.subject_id"
-            :placeholder="t('Все темы')"
+            :placeholder="t('home.blog.filterTopics')"
           >
             <el-option
               v-for="item in subjects"
@@ -23,7 +23,7 @@
           </el-select>
         </div>
         <div class="filter-field">
-          <el-select clearable v-model="filter.year" :placeholder="t('Все годы')">
+          <el-select clearable v-model="filter.year" :placeholder="t('home.blog.filterYears')">
             <el-option label="2025" value="2025" />
             <el-option label="2024" value="2024" />
           </el-select>
@@ -41,12 +41,12 @@
             ></div>
             <div class="card-item-body">
               <div class="font-medium text-grey mb-1">
-                {{ t("Налоговая политика") }}
+                {{ t("home.blog.topic1") }}
               </div>
               <div
                 class="font-medium mb-2 lg:text-[32px] text-xl leading-normal"
               >
-                {{ t("Как меняется налоговая система") }}
+                {{ t("home.blog.article1") }}
               </div>
               <div>{{ t("12 июля 2025") }}</div>
             </div>
@@ -60,12 +60,12 @@
             ></div>
             <div class="card-item-body">
               <div class="font-medium text-grey mb-1">
-                {{ t("Цифровизация") }}
+                {{ t("home.blog.topic2") }}
               </div>
               <div
                 class="font-medium mb-2 lg:text-[32px] text-xl leading-normal"
               >
-                {{ t("Цифровые решения в госуправлении") }}
+                {{ t("home.blog.article2") }}
               </div>
               <div>{{ t("5 июля 2025") }}</div>
             </div>

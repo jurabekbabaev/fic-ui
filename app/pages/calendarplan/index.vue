@@ -69,7 +69,7 @@
               <span
                 class="text-sm font-normal text-[#505A63] flex items-center gap-2.5 cursor-pointer mt-2"
               >
-                <span>{{ t("Подробнее (календарь)") }}</span>
+                <span>{{ t("common.learnMore") }}</span>
                 <i class="icon-move-right"></i>
               </span>
             </div>

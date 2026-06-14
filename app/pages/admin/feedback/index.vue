@@ -29,19 +29,19 @@ onMounted(() => {
 
 <template>
   <div class="flex justify-between mb-4">
-    <h1 class="text-[24px] font-medium">{{ t('Обращений') }}</h1>
+    <h1 class="text-[24px] font-medium">{{ t('admin.feedback.list') }}</h1>
   </div>
   <div class="x-table">
     <table>
       <thead>
         <tr>
           <th>#</th>
-          <th>{{ t('Имя') }}</th>
-          <th>{{ t('Фамилия') }}</th>
-          <th>{{ t('Телефон') }}</th>
+          <th>{{ t('admin.firstName') }}</th>
+          <th>{{ t('admin.lastName') }}</th>
+          <th>{{ t('admin.phone') }}</th>
           <th>E-mail</th>
-          <th>{{ t('Сообщение') }}</th>
-          <th>{{ t('Дата') }}</th>
+          <th>{{ t('admin.message') }}</th>
+          <th>{{ t('admin.date') }}</th>
         </tr>
       </thead>
       <tbody>

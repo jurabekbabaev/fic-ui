@@ -15,7 +15,7 @@ const getModels = () => {
   store.getList();
 }
 const deleteModel = (id) => {
-  if(confirm(t("Вы уверены?"))){
+  if(confirm(t("admin.confirm"))){
     store.delete(id).then(res => {
       getModels();
     })
@@ -28,9 +28,9 @@ onMounted(() => {
 
 <template>
   <div class="flex justify-between mb-4">
-    <h1 class="text-[24px] font-medium">{{ t('Голос членов СИИ') }}</h1>
+    <h1 class="text-[24px] font-medium">{{ t('admin.expertFeedbacks.list') }}</h1>
     <div>
-      <NuxtLink class="btn btn-primary btn-sm" to="/admin/expert-feedbacks/create">{{ t('Добавить новую') }}</NuxtLink>
+      <NuxtLink class="btn btn-primary btn-sm" to="/admin/expert-feedbacks/create">{{ t('admin.addNew') }}</NuxtLink>
     </div>
   </div>
   <div class="x-table">
@@ -38,8 +38,8 @@ onMounted(() => {
       <thead>
         <tr>
           <th>#</th>
-          <th>{{ t('Фото') }}</th>
-          <th>{{ t('Видео линк') }}</th>
+          <th>{{ t('admin.photo') }}</th>
+          <th>{{ t('admin.videoLink') }}</th>
           <th class="!text-center">{{ t("Actions") }}</th>
         </tr>
       </thead>
@@ -63,7 +63,7 @@ onMounted(() => {
                 class="text-blue-600"
               >
                 <el-tooltip
-                  :content="t('Редактировать')"
+                  :content="t('admin.edit')"
                   placement="top"
                 >
                   <el-icon :size="18"><EditPen /></el-icon>
@@ -74,7 +74,7 @@ onMounted(() => {
                 class="link text-red-700"
                 @click.prevent="deleteModel(model.id)"
               >
-              <el-tooltip :content="t('Удалить')" placement="top">
+              <el-tooltip :content="t('admin.delete')" placement="top">
                 <el-icon :size="18">
                   <Delete />
                 </el-icon>

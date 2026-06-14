@@ -96,9 +96,9 @@ const leaderList = ref<ILeaderGroup[]>([
   {
     id: 1,
     image: LeaderImage1,
-    fullname: t("Спартак Тетрашвили"),
-    position: t("Председатель правления TBC Bank Uzbekistan"),
-    direction: t("РГ по финансовому сектору и банковской деятельности"),
+    fullname: t("leadersgroup.leaders.spartak.fullname"),
+    position: t("leadersgroup.leaders.spartak.position"),
+    direction: t("leadersgroup.leaders.spartak.direction"),
     directiondesc: t(
       "Финансовый сектор и банковская деятельность. Развитие финансового и банковского сектора, расширение инструментов финансирования инвестиционных проектов и укрепление доверия инвесторов к финансовой системе страны."
     ),
@@ -125,8 +125,8 @@ const leaderList = ref<ILeaderGroup[]>([
   {
     id: 2,
     image: sandro,
-    fullname: t("Сандро Ртвеладзе"),
-    position: t("Генеральный директор Ipoteka Bank OTP Group"),
+    fullname: t("leadersgroup.leaders.sandro.fullname"),
+    position: t("leadersgroup.leaders.sandro.position"),
     direction: t(
       "РГ по привлечению талантов и развитию человеческого капитала"
     ),
@@ -190,9 +190,9 @@ const leaderList = ref<ILeaderGroup[]>([
   {
     id: 3,
     image: LeaderImage3,
-    fullname: t("Сергей Саликов"),
-    position: t("Uzum, генеральный юрисконсульт"),
-    direction: t("РГ по цифровизации и ИКТ"),
+    fullname: t("leadersgroup.leaders.sergey.fullname"),
+    position: t("leadersgroup.leaders.sergey.position"),
+    direction: t("leadersgroup.leaders.sergey.direction"),
     directiondesc: t(
       "Цифровизация и ИКТ. Цифровая трансформация взаимодействия инвесторов с государством, развитие электронных платформ оказания услуг и современной цифровой инфраструктуры."
     ),
@@ -222,11 +222,11 @@ const leaderList = ref<ILeaderGroup[]>([
   {
     id: 4,
     image: LeaderImage4,
-    fullname: t("Гаянэ Умерова"),
+    fullname: t("leadersgroup.leaders.gayane.fullname"),
     position: t(
       "Председатель Фонда развития культуры и искусства Узбекистана при Кабинете Министров Республики Узбекистан"
     ),
-    direction: t("РГ по креативным индустриям"),
+    direction: t("leadersgroup.leaders.gayane.direction"),
     directiondesc: t(
       "Креативные индустрии. Преобразование креативных отраслей в инвестиционно- и экспортно-ориентированный сектор экономики в течение ближайших пяти лет."
     ),
@@ -249,9 +249,9 @@ const leaderList = ref<ILeaderGroup[]>([
   {
     id: 5,
     image: LeaderImage5,
-    fullname: t("Ерлан Досымбеков"),
-    position: t("EY, управляющий партнер EY по Кавказу и Центральной Азии"),
-    direction: t("РГ по инвестиционному климату"),
+    fullname: t("leadersgroup.leaders.erlan.fullname"),
+    position: t("leadersgroup.leaders.erlan.position"),
+    direction: t("leadersgroup.leaders.erlan.direction"),
     directiondesc: t(
       "Инвестиционный климат. Системное совершенствование инвестиционного климата: устранение административных барьеров, повышение прозрачности и предсказуемости регулирования."
     ),
@@ -283,9 +283,9 @@ const leaderList = ref<ILeaderGroup[]>([
   {
     id: 6,
     image: LeaderImage6,
-    fullname: t("Джон Заиди"),
-    position: t("CEO Acwa в Узбекистане"),
-    direction: t("РГ по энергетическому сектору"),
+    fullname: t("leadersgroup.leaders.john.fullname"),
+    position: t("leadersgroup.leaders.john.position"),
+    direction: t("leadersgroup.leaders.john.direction"),
     directiondesc: t(
       "Энергетический сектор. Содействие привлечению частных инвестиций в генерацию, передачу и распределение электроэнергии, развитие возобновляемых источников и механизмов смешанного финансирования энергетических проектов."
     ),
@@ -361,7 +361,7 @@ function goBack() {
                 stroke-linejoin="round"
               />
             </svg>
-            {{ t("Назад к списку лидеров") }}
+            {{ t("leadersgroup.backToList") }}
           </button>
         </div>
         <div v-if="currentLeader" class="">
@@ -392,7 +392,7 @@ function goBack() {
               <div class="ml-5 lg:mt-0 mt-5">
                 <div>
                   <p class="text-sm text-[#000000] mb-0.5 font-normal">
-                    {{ t("Руководитель рабочей группы.") }}
+                    {{ t("leadersgroup.groupLeader") }}
                   </p>
                 </div>
                 <h1
@@ -420,23 +420,23 @@ function goBack() {
 
         <div v-else class="text-center mt-[100px]">
           <h2 class="text-2xl font-bold text-[#191C1F] mb-4">
-            {{ t("Лидер не найден") }}
+            {{ t("leadersgroup.notFound.title") }}
           </h2>
           <p class="text-[#505A63] mb-8">
-            {{ t("Запрашиваемый лидер не существует") }}
+            {{ t("leadersgroup.notFound.description") }}
           </p>
           <button
             @click="goBack"
             class="bg-[#191C1F] text-white px-6 py-3 rounded-lg hover:bg-[#2a2f33] transition-colors"
           >
-            {{ t("Вернуться к списку") }}
+            {{ t("leadersgroup.notFound.backButton") }}
           </button>
         </div>
         <div>
           <h1
             class="text-center lg:text-[32px] text-2xl text-[#191C1F] font-extrabold mb-12 mt-16 uppercase"
           >
-            {{ t("Участники рабочей группы") }}
+            {{ t("leadersgroup.groupMembers") }}
           </h1>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <div

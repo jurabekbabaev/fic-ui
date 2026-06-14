@@ -22,7 +22,7 @@ const { t } = useI18n();
                 <p
                   class="text-[10px] font-normal uppercase tracking-wide text-[#FFFFFF66] mb-0.5"
                 >
-                  {{ t("Телефон номер") }}
+                  {{ t("contacts.info.phone") }}
                 </p>
                 <a
                   href="tel:+998880998888"
@@ -35,7 +35,7 @@ const { t } = useI18n();
                 <p
                   class="text-[10px] font-normal uppercase tracking-wide text-[#FFFFFF66] mb-0.5"
                 >
-                  {{ t("Электронная почта") }}
+                  {{ t("contacts.info.email") }}
                 </p>
                 <a
                   href="mailto:secretariat@fics.uz"
@@ -48,10 +48,10 @@ const { t } = useI18n();
                 <p
                   class="text-[10px] font-normal uppercase tracking-wide text-[#FFFFFF66] mb-0.5"
                 >
-                  {{ t("Адресс") }}
+                  {{ t("contacts.info.address") }}
                 </p>
                 <p class="text-[13px] font-medium text-white">
-                  {{ t("BoMI Finance Center, 100135, Tashkent") }}
+                  {{ t("footer.address") }}
                 </p>
               </li>
             </ul>
@@ -81,9 +81,7 @@ const { t } = useI18n();
           </div>
           <p class="text-xs font-normal text-[#FFFFFF80] mt-8 lg:mt-auto">
             {{
-              t(
-                "©2019-2026 – Совет иностранных инвесторов при Президенте Республики Узбекистан"
-              )
+              t("footer.copyright")
             }}
           </p>
         </div>

@@ -8,7 +8,7 @@ const { t } = useI18n()
 </script>
 <template>
   <div class="flex justify-between">
-    <h1 class="text-[24px] font-medium mb-4">{{ t('Добавить еженедельные события') }}</h1>
+    <h1 class="text-[24px] font-medium mb-4">{{ t('admin.weeklyEvents.add') }}</h1>
   </div>
   <FormsWeeklyEvents />
 </template>

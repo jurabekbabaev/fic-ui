@@ -56,7 +56,7 @@ onMounted(() => {
               to="/contacts"
               class="btn btn-primary"
               v-if="!isTabletOrMobile"
-              >{{ t("Связаться") }}</WLocaleLink
+              >{{ t("common.contactUs") }}</WLocaleLink
             >
             <AppMenu v-if="isTabletOrMobile" />
           </div>

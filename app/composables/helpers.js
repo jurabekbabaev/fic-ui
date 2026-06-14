@@ -202,9 +202,9 @@ export function getResponseText(n){
 }
 export function getYear(n){
   const i18n = useI18n({ useScope: 'global' })
-  let str1 = i18n.t('год');
-  let str2 = i18n.t('года');
-  let str5 = i18n.t('лет');
+  let str1 = i18n.t('plural.year.one');
+  let str2 = i18n.t('plural.year.few');
+  let str5 = i18n.t('plural.year.many');
   return ((((n%10)==1)&&((n%100)!=11))?(str1):(((((n%10)>=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(str2):(str5)))
 }
 export function getAge(n){
@@ -216,9 +216,9 @@ export function getAge(n){
 }
 export function getMonthRu(n){
   const i18n = useI18n({ useScope: 'global' })
-  let str1 = i18n.t('месяц');
-  let str2 = i18n.t('месяца');
-  let str5 = i18n.t('месяцев');
+  let str1 = i18n.t('plural.month.one');
+  let str2 = i18n.t('plural.month.few');
+  let str5 = i18n.t('plural.month.many');
   return ((((n%10)==1)&&((n%100)!=11))?(str1):(((((n%10)>=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(str2):(str5)))
 }
 export function firstCharUppercase(string) {

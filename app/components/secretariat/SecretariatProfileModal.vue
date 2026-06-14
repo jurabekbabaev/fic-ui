@@ -139,7 +139,7 @@ onBeforeUnmount(() => {
           </header>
 
           <div class="sec-modal__body">
-            <p class="sec-modal__eyebrow">{{ t("Биография") }}</p>
+            <p class="sec-modal__eyebrow">{{ t("secretariat.bioLabel") }}</p>
             <p
               v-for="(paragraph, i) in paragraphs"
               :key="i"

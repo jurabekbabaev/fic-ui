@@ -134,7 +134,7 @@ const closeModal = () => {
 
       <div class="sec-card__actions">
         <button type="button" class="sec-btn" @click="openModal">
-          <span>{{ t("Биография") }}</span>
+          <span>{{ t("secretariat.bioLabel") }}</span>
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path
               d="M5 12h14M13 6l6 6-6 6"

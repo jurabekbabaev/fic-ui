@@ -9,7 +9,7 @@ const ruleRequired = (rule, value, callback) => {
 }
 export function vRequired() {
   const i18n = useI18n({ useScope: 'global' })
-  return { validator: ruleRequired, msg: i18n.t('Поле не может быть пустым') }
+  return { validator: ruleRequired, msg: i18n.t('validation.required') }
 }
 
 const requiredList = (rule, value, callback) => {
@@ -21,7 +21,7 @@ const requiredList = (rule, value, callback) => {
 }
 export function vRequiredList() {
   const i18n = useI18n({ useScope: 'global' })
-  return { validator: requiredList, msg: i18n.t('Пожалуйста, выберите хотя бы одно значение') }
+  return { validator: requiredList, msg: i18n.t('validation.requiredList') }
 }
 
 const requiredNotNull = (rule, value, callback) => {
@@ -33,7 +33,7 @@ const requiredNotNull = (rule, value, callback) => {
 }
 export function vRequiredGender() {
   const i18n = useI18n({ useScope: 'global' })
-  return { validator: requiredNotNull, msg: i18n.t('Поле не может быть пустым') }
+  return { validator: requiredNotNull, msg: i18n.t('validation.required') }
 }
 
 var requiredNumber = (rule, value, callback) => {
@@ -45,11 +45,11 @@ var requiredNumber = (rule, value, callback) => {
 };
 export function vRequiredNumber() {
   const i18n = useI18n({ useScope: 'global' })
-  return { validator: requiredNumber, msg: i18n.t('Поле не может быть пустым') }
+  return { validator: requiredNumber, msg: i18n.t('validation.required') }
 }
 export function vConfomPass(pass) {
   const i18n = useI18n({ useScope: 'global' })
-  return { validator: compare, pass: pass, msg: i18n.t('Пожалуйста, введите пароль еще раз') }
+  return { validator: compare, pass: pass, msg: i18n.t('validation.confirmPassword') }
 }
 var compare = (rule, value, callback) => {
   if (value != rule.pass) {
@@ -68,5 +68,5 @@ var requiredRadio = (rule, value, callback) => {
 };
 export function vRequiredRadio(){
   const i18n = useI18n({ useScope: 'global' })
-  return { validator: requiredRadio, msg: i18n.t('Пожалуйста, выберите одно значение') }
+  return { validator: requiredRadio, msg: i18n.t('validation.requiredRadio') }
 } 

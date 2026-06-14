@@ -51,11 +51,11 @@
 
           <!-- <div class="text-center mb-[50px] fade-in-down">
             <h2 class="title-64 mb-3 lg:text-[64px] text-[32px]">
-              {{ t('Совет Иностранных Инвесторов') }}
+              {{ t('foreigninvestors.councilName') }}
             </h2>
             <div class="w-full flex justify-center">
               <div class="lg:text-[20px] text-base lg:w-2/4">
-                {{ t('barqaror rivojlanish va iqtisodiy islohotlarni qo‘llab-quvvatlash maqsadidagi tashkilotlarni birlashtiradi.') }}
+                {{ t("foreigninvestors.ebrdSupport") }}
               </div>
             </div>
           </div> -->

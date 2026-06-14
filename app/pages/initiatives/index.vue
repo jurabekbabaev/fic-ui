@@ -824,7 +824,7 @@ const categoryStartIndex = computed(() => {
       <page-hero title="Инициативы" />
       <div class="container">
         <h1 class="lg:text-[64px] text-[32px] uppercase font-black mt-24">
-          {{ t("Инициативы по улучшению инвестиционного климата") }}
+          {{ t("initiatives.heading") }}
         </h1>
         <span
           class="block lg:text-lg text-sm font-normal text-[#505A63] lg:pb-12 sm:pb-8 lg:w-[638px] w-full"

@@ -26,10 +26,10 @@ onMounted(() => {
       <!-- Header -->
       <div class="mb-[50px] flex justify-between items-center">
         <h1 class="lg:text-[64px] text-[32px] font-black text-white leading-1">
-          {{ t('Новости') }}
+          {{ t('home.news.title') }}
         </h1>
         <WLocaleLink to="/news" class="btn btn-secondary btn-sm !bg-white !text-[#191C1F] hover:!bg-[#F7F7F7] hover:!text-[#191C1F]">
-          {{ t('Все новости') }}
+          {{ t('home.news.allNews') }}
         </WLocaleLink>
       </div>
 
@@ -39,7 +39,7 @@ onMounted(() => {
           <div class="flex justify-between mt-3">
             <p class="text-[#00000080] text-sm font-normal">{{ date(model.date, 'MONTH DAY, YYYY') }}</p>
             <a :href="model.other_link" target="_blank" class="text-[#191C1F] text-sm font-normal flex items-center">
-              <span>{{$t('Подробнее')}}</span> <i class="icon-move-right ml-1"></i>
+              <span>{{ t('home.news.learnMore') }}</span> <i class="icon-move-right ml-1"></i>
             </a>
           </div>
           <p class="text-base font-medium mt-3 text-[#191C1F]">

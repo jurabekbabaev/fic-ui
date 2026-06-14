@@ -54,31 +54,31 @@ async function sendForm() {
         <h1
           class="lg:text-[64px] text-[32px] uppercase font-black lg:text-center sm:text-left mt-[100px] mb-14"
         >
-          {{ t('Контакты') }}
+          {{ t('contacts.heading') }}
         </h1>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-20">
           <div class="mb-10">
             <el-form :model="form" @submit.prevent="sendForm">
               <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-2 ">
                 <el-form-item>
-                  <label>{{ t('Имя') }}</label>
+                  <label>{{ t('contacts.form.firstName') }}</label>
                   <el-input
                     v-model="form.surname"
-                    :placeholder="t('Ваша имя')"
+                    :placeholder="t('contacts.form.firstNamePlaceholder')"
                     size="large"
                   />
                 </el-form-item>
                 <el-form-item>
-                  <label>{{ t('Фамилия') }}</label>
+                  <label>{{ t('contacts.form.lastName') }}</label>
                   <el-input
                     v-model="form.lastname"
-                    :placeholder="t('Ваша фамилия')"
+                    :placeholder="t('contacts.form.lastNamePlaceholder')"
                     size="large"
                   />
                 </el-form-item>
               </div>
               <el-form-item class="mb-6">
-                <label>{{ t('Телефон номер') }}</label>
+                <label>{{ t('contacts.form.phone') }}</label>
                 <el-input
                   v-model="form.phonenumber"
                   placeholder="+998 99 999 99 99"
@@ -86,7 +86,7 @@ async function sendForm() {
                 />
               </el-form-item>
               <el-form-item class="mb-6">
-                <label>{{ t('Электронная почта') }}</label>
+                <label>{{ t('contacts.form.email') }}</label>
                 <el-input
                   v-model="form.email"
                   placeholder="example@gmail.com"
@@ -94,19 +94,19 @@ async function sendForm() {
                 />
               </el-form-item>
               <el-form-item class="mb-6">
-                <label>{{ t('Сообщения') }}</label>
+                <label>{{ t('contacts.form.message') }}</label>
                 <el-input
                   v-model="form.details"
                   :rows="4"
                   type="textarea"
-                  :placeholder="t('Пожалуйста, расскажите нам, что вы думаете. У вас есть к нам вопрос? Задайте его')"
+                  :placeholder="t('contacts.form.messagePlaceholder')"
                 />
               </el-form-item>
               <div v-if="status === 'success'" class="mb-4 p-3 rounded-lg bg-green-50 text-green-700 text-sm">
-                {{ t('Xabaringiz yuborildi!') }}
+                {{ t('contacts.form.success') }}
               </div>
               <div v-if="status === 'error'" class="mb-4 p-3 rounded-lg bg-red-50 text-red-700 text-sm">
-                {{ t('Xatolik yuz berdi. Qayta urinib ko\'ring.') }}
+                {{ t('contacts.form.error') }}
               </div>
               <div class="w-full">
                 <button
@@ -115,22 +115,22 @@ async function sendForm() {
                   :disabled="loading"
                   @click="sendForm"
                 >
-                  {{ loading ? '...' : t('Отправить') }}
+                  {{ loading ? '...' : t('contacts.form.submit') }}
                 </button>
               </div>
             </el-form>
           </div>
           <div class="sm:mt-10">
             <div class="mb-4">
-              <label class="text-[#9094A2] text-base font-normal">{{ t('Телефон номер') }}</label>
+              <label class="text-[#9094A2] text-base font-normal">{{ t('contacts.form.phone') }}</label>
               <div class="lg:text-2xl text-2xl text-[#191C1F] font-normal">+998 88 099 88 88</div>
             </div>
             <div class="mb-4">
-              <label class="text-[#9094A2] text-base font-normal">{{ t('Электронная почта') }}</label>
+              <label class="text-[#9094A2] text-base font-normal">{{ t('contacts.form.email') }}</label>
               <div class="lg:text-2xl text-2xl text-[#191C1F] font-normal">secretariat@fics.uz</div>
             </div>
             <div class="mb-4">
-              <label class="text-[#9094A2] text-base font-normal">{{ t('Адресс') }}</label>
+              <label class="text-[#9094A2] text-base font-normal">{{ t('contacts.info.address') }}</label>
               <div class="lg:text-2xl text-2xl text-[#191C1F] font-normal">BoMI Finance Center, 100135, Tashkent</div>
             </div>
             <div class="mb-4 flex gap-2">

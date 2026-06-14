@@ -9,21 +9,21 @@ const { t } = useI18n()
   <div class="authPage">
     <div class="authPageContainer">
       <div class="authPageForm">
-        <h1 class="text-center text-[24px]">{{ t('Вход') }}</h1>
+        <h1 class="text-center text-[24px]">{{ t('auth.login.heading') }}</h1>
         <el-form
           ref="form"
           :model="form"
           label-position="top"
           @submit.prevent="submit"
         >
-          <el-form-item :label="t('Логин')" prop="username" :rules="[vRequired()]">
+          <el-form-item :label="t('auth.login.username')" prop="username" :rules="[vRequired()]">
             <el-input
               v-model="form.username"
               size="large"
             />
           </el-form-item>
 
-          <el-form-item :label="t('Пароль')" prop="password" :rules="[vRequired()]">
+          <el-form-item :label="t('auth.login.password')" prop="password" :rules="[vRequired()]">
             <el-input
               v-model="form.password"
               type="password"
@@ -32,7 +32,7 @@ const { t } = useI18n()
           </el-form-item>
 
           <div class="w-full">
-            <button class="btn btn-primary w-full">{{ t('Отправить') }}</button>
+            <button class="btn btn-primary w-full">{{ t('auth.login.submit') }}</button>
           </div>
         </el-form>
       </div>

@@ -8,7 +8,7 @@ const { t } = useI18n()
 </script>
 <template>
   <div class="flex justify-between">
-    <h1 class="text-[24px] font-medium mb-4">{{ t('Добавить участника совета') }}</h1>
+    <h1 class="text-[24px] font-medium mb-4">{{ t('admin.councilMembers.add') }}</h1>
   </div>
   <FormsCouncilMembers />
 </template>

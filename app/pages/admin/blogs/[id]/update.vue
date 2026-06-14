@@ -8,7 +8,7 @@ const { t } = useI18n()
 </script>
 <template>
   <div class="flex justify-between">
-    <h1 class="text-[24px] font-medium mb-4">{{ t('Редактировать Статьи') }}</h1>
+    <h1 class="text-[24px] font-medium mb-4">{{ t('admin.blogs.edit') }}</h1>
   </div>
   <FormsBlogs />
 </template>
