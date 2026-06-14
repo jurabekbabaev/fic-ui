@@ -36,7 +36,6 @@
   "III Пленарная сессия": "III Plenar sessiya",
   "Регистрация Ассоциации": "Assotsiatsiya ro'yxatdan o'tkazilishi",
   "IV Пленарная сессия, V ТМИФ": "IV Plenar sessiya, V TXIF",
-  "Статьи": "Maqola",
   "Статьи": "Maqolalar",
   "Отчеты": "Hisobotlar",
   "Контакты": "Aloqa",
@@ -49,7 +48,7 @@
   "Еженедельные события": "Haftalik tadbirlar",
   "Промежуточные события": "Oraliq tadbirlar",
   "Рабочие группы Совета": "Kengash ishchi guruhlari",
-  "Межведрабочие группы": "Idoralararo ishchi guruhlar",
+  "Межведрабочие группы": "Oraliq ishchi guruhlar",
   "Медиа": "Media",
   "Новости": "Yangiliklar",
   "Все новости": "Barcha yangiliklar",
@@ -116,7 +115,7 @@
   "Блог": "Blog",
   "Результаты и развитие": "Natijalar va taraqqiyot",
   "Результаты всей деятельности СИИ": "XIK faoliyati natijalari",
-  "Инвестиции в Узбекистан": "O‘zbekistonga investitsiyalar",
+  "Инвестиции в Узбекистан": "O'zbekistonga investitsiyalar",
   "Добавить Статьи": "Blog qo‘shish",
   "Редактировать Статьи": "Blogni tahrirlash",
   "Обращений": "Murojaatlar",
@@ -174,7 +173,7 @@
   "Авазбек Муллажонов": "Avazbek Mullajonov",
   "Программный координатор": "Dasturiy koordinator",
   "Авазбек имеет более чем 15-летний профессиональный опыт в области внешнеэкономических связей, инвестиций и энергетики.": "Avazbek Mullajonov — tashqi iqtisodiy aloqalar, investitsiyalar va energetika sohalarida 15 yildan ortiq tajribaga ega mutaxassis. U O‘zbekiston Investitsiyalar va tashqi savdo vazirligida Investitsiya iqlimi departamenti rahbari o‘rinbosari hamda Turkiya Respublikasi bilan hamkorlik bo‘limi rahbari lavozimlarida faoliyat yuritgan. Xalqaro biznes bo‘yicha Ajou universitetida hamda menejment yo‘nalishida Toshkent davlat iqtisodiyot universitetida magistr darajalariga ega.",
-  "Мадинахон Абидова": "Madinakhon Abidova",
+  "Мадинахон Абидова": "Madinaxon Abidova",
   "Административный ассистент": "Ma'muriy xodim",
   "До присоединения к Секретариату СИИ Мадинахон работала менеджером в Ассоциации частных туристических организаций Узбекистана": "Madinaxon biznes va iqtisodiyot yo‘nalishi bo‘yicha bakalavr hamda agrobiznes va investitsion faoliyat bo‘yicha magistr darajasiga ega. U O‘zbekiston Xususiy Turistik Tashkilotlar Assotsiatsiyasida menejer sifatida faoliyat yuritgan va milliy hamda xalqaro turizmni rivojlantirishga qaratilgan tadbirlarni muvofiqlashtirgan.",
   "Журабек Бабаев": "Jurabek Babaev",
@@ -182,12 +181,11 @@
   "Руководитель секретариата": "Kotibiyat rahbari",
   "Журабек Бабаев — маркетолог нового поколения, соединяющий стратегическое мышление с глубоким пониманием бизнес-ландшафта Узбекистана": "Jurabek Babaev — marketing, PR va xalqaro biznes sohalarida tajribaga ega mutaxassis. U hozirda O‘zbekiston Prezidenti huzuridagi Xorijiy investorlar kengashida PR va kommunikatsiyalar yo‘nalishini boshqaradi. Faoliyati davomida biznes rivojlantirish, xalqaro savdo va to‘qimachilik sohalarida ishlagan, hamda Toshkent Davlat Iqtisodiyot Universitetida o‘qituvchi bo‘lib faoliyat yuritgan.",
   "Хакимнияз Каипбергенов": "Hakimniyaz Kaipbergenov",
-  "Программный координатор": "Dasturlar koordinatori",
   "Хакимнияз Каипбергенов с отличием окончил бакалавриат и магистратуру МГИМО в Москве по международному праву. Имеет опыт работы в МИД Узбекистана, а также в международной юридической фирме.": "Hakimniyaz Kaipbergenov Moskvadagi MGIMO universitetida xalqaro huquq bo'yicha bakalavriat va magistraturani imtiyozli tamomlagan. U O'zbekiston Tashqi ishlar vazirligida, shuningdek xalqaro yuridik firmada ishlash tajribasiga ega.",
   "объединяет ведущие международные организации ради устойчивого": "barqaror va iqtisodiy islohotlar uchun",
   "развития и экономических реформ": "yetakchi xalqaro tashkilotlarni birlashtiradi",
   "Министр инвестиций, промышленности и торговли Республики Узбекистан": "Investitsiyalar, Savdo va Sanoat Vaziri",
-  "Лазиз Кудратов": "Laziz Kudratov",
+  "Лазиз Кудратов": "Laziz Qudratov",
   "Глава представительства Европейского банка реконструкции и развития в Узбекистане": "YTTBning O'zbekistondagi rahbari",
   "Директор, Глава представительства Европейского банка реконструкции и развития в Узбекистане": "YTTBning O'zbekistondagi rahbari",
   "Анди Аранитаси": "Andi Aranitasi",
@@ -290,7 +288,7 @@
   "еженедельные события": "Haftalik voqealar",
   "Руководство": "Boshqaruv",
   "Итоги недели Совета Иностранных Инвесторов": "Xorijiy investorlar kengashining haftalik natijalari",
-  "Итоги недели": "Haftaning natijalari",
+  "Итоги недели": "Hafta yakunlari",
   "Посмотреть еще": "Yana ko‘rish",
   "Yopish": "Yopish",
   "Что говорят о нас": "XIK a’zolari fikri",
@@ -301,7 +299,6 @@
   "Участники рабочей группы": "Ishchi guruh qatnashchilari",
   "Межведрабочие группы, созданные по итогам плеранных заседаний": "Yalpi majlislar yakunlariga ko‘ra tuzilgan guruhlararo ishchi guruhlar",
   "Посмотреть": "Ko‘rish",
-  "Подробнее": "Batafsil",
   "Еженедельные обзоры Совета иностранных инвесторов": "Xorijiy investorlar kengashining haftalik sharhlari",
   "На этой неделе Секретариат продолжил активную работу по продвижению инициатив инвесторов и укреплению сотрудничества с ключевыми экспертами и организациями.": "Ushbu haftada Sekretariat investorlar tashabbuslarini ilgari surish va asosiy ekspertlar hamda tashkilotlar bilan hamkorlikni mustahkamlash bo‘yicha faoliyatini davom ettirdi.",
   "Повестка дня включала:": "Kun tartibiga kiritilganlar:",
@@ -352,7 +349,6 @@
   "Циркулярная экономика": "Aylanma iqtisodiyot",
   "По искусственному интеллекту": "Sun’iy intellekt bo'yicha",
   "Улучшение процедур выделения земель": "Yer ajratish tartiblarini takomillashtirish",
-  "Налоговое администрирование": "Soliq ma’murchiligi",
   "Корпоративное управление в локальных компаниях": "Mahalliy kompaniyalarda korporativ boshqaruv",
   "Подготовка кадров для иностранных компаний": "Xorijiy kompaniyalar uchun kadrlar tayyorlash",
   "Ответственное ведение бизнеса": "Mas’uliyatli biznes yuritish",
@@ -365,13 +361,11 @@
   "Инвестирование через границы": "Chegara orqali investitsiya qilish",
   "Приватизации и ГЧП": "Xususiylashtirish va DXSh",
   "Приоритетные отрасли": "Ustuvor tarmoqlar",
-  "Рабочие группы Совета": "Kengash ishchi guruhlari",
   "рабочие группы": "Ishchi guruhlar",
   "ОСНОВНЫЕ": "ASOSIY",
   "Приватизация и частно-государственное партнерство": "Xususiylashtirish va davlat-xususiy sheriklik",
   "Секторы экономики": "Iqtisodiyot tarmoqlari",
   "года": "Yili",
-  "Межведрабочие группы": "Oraliq ishchi guruhlar",
   "Текущий выпуск Investor Regional Update посвящен Наманганской области. В дальнейшем будут и другие обновления, охватывающие и другие регионы": "Investor Regional Update joriy soni Namangan viloyatiga bag‘ishlangan. Keyinchalik boshqa viloyatlarni ham qamrab olgan yangilanishlar bo‘ladi.",
   "Публикации": "Nashrlar",
   "Ближайшие события": "Kelgusidagi tadbirlar",
@@ -420,7 +414,6 @@
   "20 июня 2025": "2025-Yil 20-iyun",
   "Почему инвесторы выбирают Узбекистан": "Nima uchun investorlar O'zbekistonni tanlaydi",
   "8 июня 2025": "2025-Yil 8-iyun",
-  "Инвестиции в Узбекистан": "O'zbekistonga investitsiyalar",
   "В руководстве представлена ​​исчерпывающая информация о формах корпоративного присутствия, правилах и процедурах регистрации": "Qo'llanmada korporativ mavjudlik shakllari, ro'yxatdan o'tish qoidalari va tartiblari haqida to'liq ma'lumot keltirilgan",
   "Инвестиционный климат Узбекистана": "O'zbekistonning investitsiya muhiti",
   "Узбекистан активно работает над улучшением условий для иностранных инвесторов и модернизацией своей экономики, предоставляя перспективные инвестиционные возможности": "O'zbekiston xorijiy investorlar uchun sharoitlarni yaxshilash va o'z iqtisodiyotini modernizatsiya qilish bo'yicha faol ish olib bormoqda, istiqbolli investitsiya imkoniyatlarini taqdim etmoqda",
@@ -493,7 +486,7 @@
   "ПО ПОДГОТОВКЕ КАДРОВ ДЛЯ ИНОСТРАННЫХ КОМПАНИЙ": "Xorijiy kompaniyalar uchun professional kadrlar tayyorlash bo'yicha",
   "ПО ВНЕДРЕНИЮ ПРИНЦИПОВ ОТВЕТСТВЕННОГО ВЕДЕНИЯ БИЗНЕСА": "Mas'uliyatli biznes yuritish qoidalarini joriy etish bo'yicha",
   "ПО СОВЕРШЕНСТВОВАНИЮ ЗАКОНОДАТЕЛЬСТВА О ЗАЛОГЕ": "GAROV TO‘G‘RISIDAGI QONUNCHILIKNI TAKOMILLASHTIRISH BO‘YICHA",
-  "ПО ПОДГОТОВКЕ ЗАКОНОПРОЕКТА “ОБ АЛЬТЕРНАТИВНЫХ ИНВЕСТИЦИЯХ”": "“MUQOBIL INVESTITSIYA JAMG'ARMALARI TO‘G‘RISIDA“GI QONUN LOYIHASINI TAYYORLASH BO'YICHA",
+  "ПО ПОДГОТОВКЕ ЗАКОНОПРОЕКТА “ОБ АЛЬТЕРНАТИВНЫХ ИНВЕСТИЦИЯХ”": "MUQOBIL INVESTITSIYALAR TO‘G‘RISIDAGI QONUN LOYIHASINI TAYYORLASH BO'YICHA",
   "Мирзамахмудов Джурабек": "Mirzamahmudov Jo‘rabek",
   "Министр энергетики Республики Узбекистан Журабек Турсунпулатович Мирзамахмудов с 2022 года возглавляет Министерство энергетики и отвечает за стратегическое развитие отрасли, внедрение инноваций и реализацию крупных инвестиционных проектов в энергосекторе. Он обладает значительным опытом в сфере атомной, возобновляемой и традиционной энергетики, способствует международному сотрудничеству и интеграции современных технологий для устойчивого роста экономики страны. Под его управлением энергетический комплекс Узбекистана делает акцент на инвестициях, переходе к «зеленой» энергетике и повышении эффективности инфраструктуры.": "O‘zbekiston Respublikasi Energetika vaziri Jo‘rabek Tursunpo‘latovich Mirzamahmudov 2022-yildan buyon Energetika vazirligini boshqarib, sohani strategik rivojlantirish, innovatsiyalarni joriy etish va energetika sohasida yirik investitsiya loyihalarini amalga oshirishga mas’ul etib belgilangan. U atom, qayta tiklanadigan va an’anaviy energetika sohasida katta tajribaga ega bo‘lib, mamlakat iqtisodiyotining barqaror o‘sishi uchun xalqaro hamkorlik va zamonaviy texnologiyalarni joriy etishga hissa qo‘shmoqda. Uning boshqaruvi ostida O‘zbekiston energetika majmuasi investitsiyalar, \"yashil\" energetikaga o‘tish va infratuzilma samaradorligini oshirishga e’tibor qaratmoqda.",
   "Со стороны государства": "Davlat tomonidan",
@@ -557,23 +550,16 @@
   "Обиджон Кудратов": "Obidjon Qudratov",
   "Заместитель Министра экологии, охраны окружающей среды и изменения климата": "Ekologiya, atrof-muhitni muhofaza qilish va iqlim o‘zgarishi vazirining o‘rinbosari",
   "Тимур ишметов": "Timur Ishmetov",
-  "Председатель Центрального банка": "Markaziy bank raisi",
   "Тимур Аминджанович Ишметов  — председатель Центрального банка Республики Узбекистан  с декабря 2024 года. Имеет более 19 лет опыта в банковском секторе, занимал ключевые позиции в Центральном банке и Министерстве финансов. Под его руководством ведутся реформы, направленные на повышение прозрачности, эффективности и устойчивого развития финансовой системы страны. Тимур Ишметов активно поддерживает развитие рыночных механизмов, привлечение инвестиций и стабилизацию экономики Узбекистана.": "Timur Amindjanovich Ishmetov - 2024-yil dekabr oyidan buyon O‘zbekiston Respublikasi Markaziy banki raisi. Bank sohasida 19 yildan ortiq tajribaga ega, Markaziy bank va Moliya vazirligida mas’ul lavozimlarda ishlagan. Uning rahbarligida mamlakat moliya tizimining shaffofligi, samaradorligi va barqaror rivojlanishini oshirishga qaratilgan islohotlar amalga oshirilmoqda. Timur Ishmetov O‘zbekistonda bozor mexanizmlarini rivojlantirish, investitsiyalarni jalb qilish va iqtisodiyotni barqarorlashtirishni faol qo‘llab-quvvatlamoqda.",
   "Даврон Якубов": "Davron Yoqubov",
   "Управляющий партнёр BDO Uzbekistan": "BDO Uzbekistan boshqaruvchi hamkori",
   "Даврон Лятифович Якубов является управляющим партнёром BDO Uzbekistan . Он обладает обширным опытом в области аудита и консалтинга как на местном рынке Узбекистана, так и в международной практике. Под его руководством компания предоставляет профессиональные услуги высокого качества в сферах аудита, налогового консультирования, бухгалтерского аутсорсинга и бизнес-консалтинга. Он активно способствует развитию финансового сектора и укреплению стандартов корпоративного управления в стране, обеспечивая клиентам инновационные и интегрированные решения, соответствующие мировым стандартам.": "Davron Latifovich Yakubov BDO Uzbekistan boshqaruvchi hamkori hisoblanadi. U audit va konsalting sohasida O‘zbekistonning mahalliy bozorida ham, xalqaro amaliyotda ham katta tajribaga ega. Uning rahbarligida kompaniya audit, soliq maslahati, buxgalteriya autsorsingi va biznes-konsalting sohalarida yuqori sifatli professional xizmatlar ko‘rsatadi. U mijozlarga jahon standartlariga mos keladigan innovatsion va integratsiyalashgan yechimlarni taqdim etish orqali mamlakatda moliya sektorini rivojlantirish va korporativ boshqaruv standartlarini mustahkamlashga faol hissa qo‘shmoqda.",
   "Заместитель Министра Юстиции": "Adliya vazirining o‘rinbosari",
   "Ахадбек Хайдаров": "Ahadbek Haydarov",
-  "Заместитель Министра Экономики и Финансов": "Iqtisodiyot va moliya vazirining o‘rinbosari",
   "Жахонгир Абдиев": "Jahongir Abdiyev",
   "Заместитель председателя Налогового комитета": "Soliq qo‘mitasi raisining o‘rinbosari",
   "Должностное лицо": "Mansabdor shaxs",
   "Ответственное должностное лицо Министерства инвестиций, промышленности и торговли": "Investitsiyalar, sanoat va savdo vazirligining mas’ul xodimi",
-  "Председатель правления Республиканской фондовой биржи «Тошкент»": "Toshkent Respublika fond birjasi boshqaruvi raisi",
-  "ПО ПОДГОТОВКЕ ЗАКОНОПРОЕКТА “ОБ АЛЬТЕРНАТИВНЫХ ИНВЕСТИЦИЯХ”": "MUQOBIL INVESTITSIYALAR TO‘G‘RISIDAGI QONUN LOYIHASINI TAYYORLASH BO'YICHA",
-  "Председатель": "Rais",
-  "Лазиз Кудратов": "Laziz Qudratov",
-  "Министр Инвестиций, Промышленности и Торговли": "Investitsiyalar, sanoat va savdo vaziri",
   "Лазиз Шавкатович Кудратов — министр инвестиций, промышленности и торговли Республики Узбекистан с декабря 2022 года. Обладает богатым опытом работы в сфере внешнеэкономических связей и инвестиций, занимал ключевые должности в Министерстве внешних экономических связей, инвестиций и торговли, а также в посольстве Узбекистана в США. Под его руководством осуществляется реализация стратегических реформ, направленных на увеличение инвестиционной привлекательности страны, развитие промышленного сектора и стимулирование внешней торговли. Министр активно участвует в международных инициативах, способствуя интеграции Узбекистана в глобальную экономику и укреплению позиций страны на мировом рынке.": "Laziz Qudratov 2022 yil dekabridan buyon O‘zbekiston Respublikasi investitsiyalar, sanoat va savdo vaziri lavozimida ishlab kelmoqda. Tashqi iqtisodiy aloqalar va investitsiyalar sohasida katta tajribaga ega, Tashqi iqtisodiy aloqalar, investitsiyalar va savdo vazirligida, shuningdek, O‘zbekistonning AQShdagi elchixonasida muhim lavozimlarda ishlagan. Uning rahbarligida mamlakatning investitsiyaviy jozibadorligini oshirish, sanoatni rivojlantirish va tashqi savdoni rag‘batlantirishga qaratilgan strategik islohotlar amalga oshirilmoqda. Vazir xalqaro tashabbuslarda faol ishtirok etib, O‘zbekistonning jahon iqtisodiyotiga integratsiyalashuviga va jahon bozoridagi mavqeini mustahkamlashga hissa qo‘shmoqda.",
   "Сопредседатель": "Hamrais",
   "Казбек бассиев": "Kazbek Bassiyev",
@@ -583,11 +569,8 @@
   "Министр Юстиции": "Adliya vaziri",
   "Шерзод Шерматов": "Sherzod Shermatov",
   "министр цифровых технологий": "Raqamli texnologiyalar vaziri",
-  "Илхом Норкулов": "Ilhom Norqulov",
-  "Заместитель министра экономики и финансов": "Iqtisodiyot va moliya vazirining o‘rinbosari",
   "Шухрат Вафаев": "Shuhrat Vafayev",
   "Исполнительный директор Фонда реконструкции и развития": "Tiklanish va taraqqiyot jamg‘armasining ijrochi direktori",
-  "Фаррух Пулатов": "Farrux Po‘latov",
   "Председатель Налогового комитета": "Soliq qo‘mitasi raisi",
   "руководство сии": "XIK rahbariyati",
   "Сопредседатель совета": "Kengash hamraisi",
@@ -595,18 +578,13 @@
   "Председатель совета": "Kengash raisi",
   "Главная": "Bosh sahifa",
   "Одиль Рено-Бассо": "Odil Reno-Basso",
-  "Президент ЕБРР": "EBRD Boshqaruvchi raisi",
   "совет": "Kengash",
   "иНОСТРАННАЯ СТОРОНА": "XORIJIY VAKILLAR",
   "31 действительные члены": "31 Ta to'laqonli a'zolar",
   "60 наблюдателей": "8 Nafar kuzatuvchi",
-  "Подробнее": "Batafsil",
   "Узбекская сторона": "O‘zbek vakillar",
   "16 участников": "16 Ta ishtirokchi",
   "Секретариат ": "Kotibiyat",
-  "Авазбек Муллажонов": "Avazbek Mullajonov",
-  "Программный координатор": "Dasturiy koordinator",
-  "Мадинахон Абидова": "Madinaxon Abidova",
   "Руководитель Административный ассистент": "Ma'muriy xodim",
   "Азиз Гафуров": "Aziz Gafurov",
   "Обязанности": "Vazifalari",
@@ -654,7 +632,6 @@
   "Загрузите документы в формате PDF, .xlsx или .zip": "PDF, .xlsx yoki .zip formatlarini yuklang",
   "Перетащите файлы сюда или": "Fayllarni shu yerga sudrang yoki",
   "выберите файлы": "Fayllarni tanlang",
-  "Отправить": "Yuborish",
   "Документ успешно отправлен": "Hujjat muvaffaqiyatli yuborildi",
   "Xatolik yuz berdi. Qayta urinib ko'ring.": "Xatolik yuz berdi. Qayta urinib ko'ring.",
   "on artificial intelligence": "Sun’iy intellekt bo'yicha",
@@ -695,7 +672,6 @@
   "Первое пленарное заседание совета иностранных инвесторов": "Xorijiy investorlar kengashining birinchi yalpi majlisi",
   "Tретье пленарное заседание совета иностранных инвесторов": "Xorijiy investorlar kengashining uchinchi yalpi majlisi",
   "Второе пленарное заседание совета иностранных инвесторов": "Xorijiy investorlar kengashining ikkinchi yalpi majlisi",
-  "Первое пленарное заседание совета иностранных инвесторов": "Xorijiy investorlar kengashining birinchi yalpi majlisi",
   "ВВП 2025 (МВФ)": "YaIM 2025 (XVF)",
   "Рост ВВП 2025": "YaIM o'sishi 2025",
   "Население": "Aholi",
@@ -730,9 +706,7 @@
   "О Совете": "Kengash haqida",
   "Участники Совета": "Kengash ishtirokchilari",
   "Члены Совета": "Kengash a'zolari",
-  "Стать членом": "A'zo bo'lish",
   "Обзор": "Umumiy ko'rinish",
-  "Рабочие группы Совета": "Kengash ishchi guruhlari",
   "Межведомственные": "Idoralararo",
   "По итогам сессий": "Sessiyalar yakunlari bo'yicha",
   "Результаты": "Natijalar",
@@ -741,19 +715,15 @@
   "Документы": "Hujjatlar",
   "Промежуточные": "Oraliq sessiyalar",
   "Встречи": "Uchrashuvlar",
-  "Итоги недели": "Hafta yakunlari",
   "Аналитика и статьи": "Tahlil va maqolalar",
   "Совет иностранных инвесторов при Президенте Республики Узбекистан — институциональная площадка для прямого диалога между Правительством Узбекистана и инвесторами, осуществляющими деятельность в стране. Учреждён Постановлением Президента № ПП-4519 от 13 ноября 2019 года.": "O‘zbekiston Respublikasi Prezidenti huzuridagi Xorijiy investorlar kengashi — O‘zbekiston hukumati va mamlakatda faoliyat yuritayotgan investorlar o‘rtasida to‘g‘ridan-to‘g‘ri muloqot qilish uchun institutsional maydondir. Prezidentning 2019-yil 13-noyabrdagi PQ-4519-son qarori bilan tashkil etilgan.",
   "Деятельность Совета направлена на выявление ключевых препятствий для привлечения инвестиций, разработку совместно с государственными органами решений по их устранению и обеспечение благоприятного инвестиционного климата. Председатель Совета — Президент Республики Узбекистан; сопредседатель — Президент ЕБРР.": "Kengash faoliyati investitsiyalarni jalb qilishdagi asosiy to‘siqlarni aniqlash, ularni bartaraf etish bo‘yicha davlat organlari bilan hamkorlikda yechimlar ishlab chiqish va qulay investitsiya muhitini ta’minlashga qaratilgan. Kengash raisi — O‘zbekiston Respublikasi Prezidenti; hamraisi — YTTB Prezidenti.",
-  "Хронология": "Xronologiya",
   "Период": "Davr",
   "Событие": "Voqea",
   "Ноябрь 2019": "2019-Yil noyabr",
   "Ноябрь 2022": "2022-Yil noyabr",
   "Май 2024": "2024-Yil may",
   "Июнь 2025": "2025-Yil iyun",
-  "Ноябрь 2025": "2025-Yil noyabr",
-  "Июнь 2026": "2026-Yil iyun",
   "Учреждение Совета (ПП-4519). Первая промежуточная сессия — 20 ноября": "Kengashning tashkil etilishi (PQ-4519). Birinchi oraliq sessiya — 20-noyabr",
   "I Пленарная сессия — 16 ноября": "I yalpi sessiya — 16-noyabr",
   "II Пленарная сессия — 3 мая, в рамках III ТМИФ. ПП-179 — создание четырёх рабочих групп": "II yalpi sessiya — 3-may, III Toshkent xalqaro investitsiya forumi doirasida. PQ-179 — to‘rtta ishchi guruh tashkil etilishi",
@@ -773,7 +743,6 @@
   "Общее собрание учредителей — высший орган": "Ta’sischilarning umumiy yig‘ilishi — oliy organ",
   "Исполнительный комитет — коллегиальный орган": "Ijroiya qo‘mitasi — kollegial organ",
   "Глава Ассоциации / Руководитель Секретариата": "Assotsiatsiya rahbari / Kotibiyat rahbari",
-  "Документы": "Hujjatlar",
   "Членами Совета иностранных инвесторов являются ведущие международные компании, банки и финансовые институты, осуществляющие стратегические инвестиции в экономику Узбекистана. Членство отражает долгосрочную приверженность развитию страны и предоставляет прямой канал диалога с Правительством по вопросам инвестиционной политики. Совет объединяет 41 члена из 19 стран, представляющих 23 сектора экономики.": "Xorijiy investorlar kengashi a’zolari — O‘zbekiston iqtisodiyotiga strategik investitsiya kiritayotgan yetakchi xalqaro kompaniyalar, banklar va moliya institutlaridir. A’zolik mamlakat taraqqiyotiga uzoq muddatli sodiqlikni aks ettiradi va investitsiya siyosati masalalari bo‘yicha Hukumat bilan to‘g‘ridan-to‘g‘ri muloqot kanalini taqdim etadi. Kengash 23 ta iqtisodiyot tarmog‘ini ifodalovchi 19 ta davlatdan 41 a’zoni birlashtiradi.",
   "Деятельность Совета строится на модели совместного председательства, отражающей партнёрский характер диалога между государством и международными инвесторами. Совет возглавляет Президент Республики Узбекистан; сопредседателем выступает Президент Европейского банка реконструкции и развития. Оперативное руководство осуществляет Исполнительный комитет, в состав которого входят представители трёх международных финансовых институтов-учредителей — ЕБРР, АБР и МФК — наряду с профильным министром и Главой Ассоциации.": "Kengash faoliyati davlat va xalqaro investorlar o‘rtasidagi muloqotning hamkorlik xususiyatini aks ettiruvchi birgalikda raislik qilish modeliga asoslanadi. Kengashga O‘zbekiston Respublikasi Prezidenti raislik qiladi; hamrais sifatida Yevropa Tiklanish va Taraqqiyot Banki Prezidenti faoliyat yuritadi. Operatsion boshqaruvni Ijroiya qo‘mitasi amalga oshiradi, uning tarkibiga uchta xalqaro moliya instituti-ta’sischisi — YTTB, ADB va XMK — vakillari, shuningdek tegishli vazir va Assotsiatsiya rahbari kiradi.",
   "Секретариат Совета иностранных инвесторов — постоянно действующий операционный орган, обеспечивающий преемственность и системность работы Совета между сессиями. Секретариат организует пленарные и промежуточные заседания, координирует деятельность шестнадцати рабочих групп, ведёт ежедневный диалог с членами Совета и иностранными инвесторами, собирает и анализирует инициативы по улучшению инвестиционного климата и обеспечивает их продвижение в профильную государственную политику.": "Xorijiy investorlar kengashi Kotibiyati — sessiyalar orasida Kengash ishining uzluksizligi va tizimliligini ta’minlovchi doimiy faoliyat yurituvchi operatsion organ. Kotibiyat yalpi va oraliq majlislarni tashkil etadi, o‘n oltita ishchi guruh faoliyatini muvofiqlashtiradi, Kengash a’zolari va xorijiy investorlar bilan kundalik muloqot olib boradi, investitsiya muhitini yaxshilash bo‘yicha tashabbuslarni yig‘adi va tahlil qiladi hamda ularning tegishli davlat siyosatiga ilgari surilishini ta’minlaydi.",
@@ -921,5 +890,134 @@
   "Завершение вступления в ВТО; создание Ташкентского международного финансового центра; цель — ВВП свыше $150 млрд. За девять лет привлечено около $125 млрд иностранных инвестиций против ~$4,5 млрд в 2017 году.": "JSTga a’zo bo’lishning yakunlanishi; Toshkent xalqaro moliya markazining tashkil etilishi; maqsad — YaIM $150 mlrddan ortiq. To’qqiz yil ichida 2017 yildagi ~$4,5 mlrdga qarshi taxminan $125 mlrd xorijiy investitsiya jalb qilindi.",
   " млрд": " mlrd",
   "Пленарные сессии в цифрах": "Yalpi majlislar raqamlarda",
-  "Все пленарные сессии": "Barcha yalpi majlislar"
+  "Все пленарные сессии": "Barcha yalpi majlislar",
+  "investments": {
+    "hero": {
+      "title": "O'zbekistonga investitsiyalar"
+    },
+    "intro": {
+      "eyebrow": "Umumiy ko'rinish",
+      "heading": "Yevrosiyodagi eng dinamik iqtisodiyotlardan biri",
+      "p1": "2017 Yildan beri O’zbekiston Yevrosiyodagi eng yirik iqtisodiy transformatsiyalardan birini amalga oshirdi. Valyuta bozorini liberallashtirish, soliq va sud islohotlari, kapital bozorlarining ochilishi va xususiylashtirish ilgari yopiq bo’lgan iqtisodiyotni mintaqaning eng dinamik investitsiya yo’nalishlaridan biriga aylantirdi. Bugungi kunda bu — aholisi bo’yicha Markaziy Osiyodagi eng yirik bozor (taxminan 37,7 million kishi) bo’lib, ichki talab barqaror o’sib bormoqda.",
+      "p2": "2025 Yil bu traektoriyani tasdiqladi. YaIM o’sishi 7,7% ga yetdi — ko’pchilik prognozlardan yuqori; inflyatsiya 7,3% gacha, ishsizlik 4,8% gacha pasaydi. Fitch yetti yil ichida birinchi marta suveren reytingni BB darajasiga ko’tardi, S&P BB darajasini tasdiqladi, Moody's esa Ba3 darajasini saqlab, prognozni «ijobiy»ga yaxshiladi. Jahon savdo tashkilotiga (JST) a’zo bo’lish jarayoni yakunlanmoqda — bu 2017 yilgi valyuta liberallashtirilishidan beri iqtisodiyotning eng yirik strukturaviy ochilishidir."
+    },
+    "units": {
+      "bln": " mlrd",
+      "percent": "%"
+    },
+    "indicators": {
+      "eyebrow": "Makroiqtisodiyot",
+      "title": "Asosiy ko’rsatkichlar",
+      "subtitle": "2025 Yil yakunlari"
+    },
+    "stats": {
+      "gdpTarget": "YaIM (2026 maqsadi — >$150 mlrd)",
+      "gdpGrowth": "YaIM o'sishi (XVF, 2025)",
+      "fdiInflow": "Xorijiy investitsiyalar oqimi",
+      "rating": "Fitch va S&P reytingi; Moody's Ba3 (prognoz ijobiy)",
+      "reserves": "Oltin-valyuta zaxiralari (+35%)",
+      "inflation": "Inflyatsiya (bir yil avval 9,8% edi)",
+      "exportGrowth": "Eksport o'sishi (~$32 mlrd)",
+      "totalInvestment": "YaIMga nisbatan jami investitsiyalar",
+      "unemployment": "Ishsizlik (minimal daraja)"
+    },
+    "guarantees": {
+      "eyebrow": "Himoya",
+      "title": "Investorlar uchun kafolatlar",
+      "subtitle": "Kapitalning huquqiy va institutsional himoyasi",
+      "legal": {
+        "term": "Huquqiy kafolatlar.",
+        "text": "«Investitsiyalar va investitsiya faoliyati to’g’risida»gi qonun mablag’larni mamlakatdan tashqariga erkin o’tkazishni va investitsiyalarni milliylashtirishdan himoya qilishni kafolatlaydi."
+      },
+      "tax": {
+        "term": "Soliq barqarorligi.",
+        "text": "Biznes uchun asosiy soliq stavkalari 2028 yilgacha o’zgarmaydi."
+      },
+      "dialogue": {
+        "term": "To’g’ridan-to’g’ri muloqot.",
+        "text": "Prezident huzuridagi Xorijiy investorlar kengashi — investorlar masalalarini eng yuqori darajada hal etishning institutsional kanali."
+      },
+      "disputes": {
+        "term": "Nizolarni hal etish.",
+        "text": "Toshkent xalqaro arbitraj markazi; Toshkent xalqaro tijorat sudi."
+      },
+      "perks": {
+        "term": "Kengash a’zolari uchun imtiyozlar.",
+        "text": "Kengash a’zolari va ularning oila a’zolari uchun vizasiz kirish."
+      }
+    },
+    "sectors": {
+      "eyebrow": "Imkoniyatlar",
+      "title": "Investitsiya uchun sektorlar",
+      "subtitle": "Davlat tomonidan qo’llab-quvvatlanadigan ustuvor yo’nalishlar",
+      "greenEnergy": {
+        "title": "Yashil energetika",
+        "points": {
+          "0": "ACWA Power, Masdar, TotalEnergies, EDF, Voltalia",
+          "1": "QTEga $8 mlrddan ortiq investitsiya",
+          "2": "Quyosh, shamol, vodorod, energiya saqlash"
+        }
+      },
+      "digital": {
+        "title": "Raqamli infratuzilma va sun’iy intellekt",
+        "points": {
+          "0": "DataVolt — mintaqadagi eng yirik «yashil» ma’lumotlar markazi",
+          "1": "VEON — sun’iy intellektga asoslangan superilova",
+          "2": "Yandex — xaritalar va raqamli xizmatlar"
+        }
+      },
+      "infra": {
+        "title": "Infratuzilma va DXSh",
+        "points": {
+          "0": "2025 Yilda $4,5 mlrd DXSh loyihalari",
+          "1": "Yo’llar, transport, suv ta’minoti, irrigatsiya",
+          "2": "Xalqaro moliya institutlari (XMI) bilan aralash moliyalashtirish"
+        }
+      },
+      "finance": {
+        "title": "Moliyaviy xizmatlar",
+        "points": {
+          "0": "Toshkent xalqaro moliya markazi",
+          "1": "Islom moliyasi (Green Sukuk, Takaful)",
+          "2": "So’mdagi debyut suveren obligatsiyalar"
+        }
+      },
+      "manufacturing": {
+        "title": "Qayta ishlash sanoati",
+        "points": {
+          "0": "Kimyo va o’g’itlar (Indorama)",
+          "1": "To’qimachilik, qurilish materiallari (Knauf)",
+          "2": "Eksportga yo’naltirilgan ishlab chiqarish"
+        }
+      },
+      "minerals": {
+        "title": "Kritik minerallar va kon qazib olish",
+        "points": {
+          "0": "Salmoqli xomashyo bazasi",
+          "1": "Qo’shilgan qiymatli qayta ishlash loyihalari",
+          "2": "Xalqaro ESG standartlari"
+        }
+      }
+    },
+    "timeline": {
+      "eyebrow": "To’qqiz yillik islohotlar",
+      "title": "Islohotlar traektoriyasi",
+      "subtitle": "Iqtisodiyotni ochishdan kapital bozoriga",
+      "y2017": {
+        "text": "Valyuta bozorini liberallashtirish, tizimli islohotlar boshlanishi; YaIM taxminan $56 mlrd."
+      },
+      "y2019": {
+        "text": "Prezident huzuridagi Xorijiy investorlar kengashining tashkil etilishi — investorlar bilan muloqotning institutsional maydoni."
+      },
+      "y2024": {
+        "text": "Energetika islohotlari; xalqaro kompaniyalarning yashil iqtisodiyotga rekord darajadagi sarmoyalari."
+      },
+      "y2025": {
+        "text": "Fitch va S&P reytinglarining BB darajasiga ko’tarilishi; xorijiy investitsiyalar oqimi ~$42 mlrd; YaIM o’sishi 7,7%."
+      },
+      "y2026": {
+        "text": "JSTga a’zo bo’lishning yakunlanishi; Toshkent xalqaro moliya markazining tashkil etilishi; maqsad — YaIM $150 mlrddan ortiq. To’qqiz yil ichida 2017 yildagi ~$4,5 mlrdga qarshi taxminan $125 mlrd xorijiy investitsiya jalb qilindi."
+      }
+    }
+  }
 }

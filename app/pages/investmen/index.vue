@@ -6,12 +6,12 @@ import PageHero from "~/components/shared/PageHero.vue";
 const { t, locale } = useI18n();
 
 useHead({
-  title: `${t("Инвестиции в Узбекистан")} | FIC`,
+  title: `${t("investments.hero.title")} | FIC`,
 });
 
 const intro = [
-  "С 2017 года Узбекистан осуществил одну из самых масштабных экономических трансформаций в Евразии. Либерализация валютного рынка, налоговая и судебная реформы, открытие рынков капитала и приватизация превратили прежде закрытую экономику в одно из наиболее динамичных инвестиционных направлений региона. Сегодня это крупнейший по населению рынок Центральной Азии — около 37,7 млн человек — с устойчиво растущим внутренним спросом.",
-  "2025 год подтвердил эту траекторию. Рост ВВП достиг 7,7% — выше большинства прогнозов; инфляция снизилась до 7,3%, безработица — до 4,8%. Fitch впервые за семь лет повысил суверенный рейтинг до BB, S&P подтвердил уровень BB, Moody's сохранил Ba3 с улучшением прогноза до «позитивного». Завершается процесс вступления во Всемирную торговую организацию — крупнейшее структурное открытие экономики со времён валютной либерализации 2017 года.",
+  "investments.intro.p1",
+  "investments.intro.p2",
 ];
 
 type Stat = {
@@ -28,70 +28,70 @@ const stats: Stat[] = [
   {
     value: 135,
     prefix: ">$",
-    suffix: " млрд",
+    suffix: "investments.units.bln",
     decimals: 0,
-    label: "ВВП (цель 2026 — >$150 млрд)",
+    label: "investments.stats.gdpTarget",
     accent: "light",
   },
   {
     value: 7.7,
     prefix: "",
-    suffix: "%",
+    suffix: "investments.units.percent",
     decimals: 1,
-    label: "рост ВВП (МВФ, 2025)",
+    label: "investments.stats.gdpGrowth",
     accent: "light",
   },
   {
     value: 42,
     prefix: "~$",
-    suffix: " млрд",
+    suffix: "investments.units.bln",
     decimals: 0,
-    label: "приток иностранных инвестиций",
+    label: "investments.stats.fdiInflow",
     accent: "light",
   },
   {
     raw: "BB",
-    label: "рейтинг Fitch и S&P; Moody's Ba3 (прогноз позитивный)",
+    label: "investments.stats.rating",
     accent: "light",
   },
   {
     value: 55,
     prefix: "$",
-    suffix: " млрд",
+    suffix: "investments.units.bln",
     decimals: 0,
-    label: "золотовалютные резервы (+35%)",
+    label: "investments.stats.reserves",
     accent: "light",
   },
   {
     value: 7.3,
     prefix: "",
-    suffix: "%",
+    suffix: "investments.units.percent",
     decimals: 1,
-    label: "инфляция (с 9,8% годом ранее)",
+    label: "investments.stats.inflation",
     accent: "light",
   },
   {
     value: 23,
     prefix: "+",
-    suffix: "%",
+    suffix: "investments.units.percent",
     decimals: 0,
-    label: "рост экспорта (~$32 млрд)",
+    label: "investments.stats.exportGrowth",
     accent: "light",
   },
   {
     value: 31.9,
     prefix: "",
-    suffix: "%",
+    suffix: "investments.units.percent",
     decimals: 1,
-    label: "совокупные инвестиции к ВВП",
+    label: "investments.stats.totalInvestment",
     accent: "light",
   },
   {
     value: 4.8,
     prefix: "",
-    suffix: "%",
+    suffix: "investments.units.percent",
     decimals: 1,
-    label: "безработица (минимум)",
+    label: "investments.stats.unemployment",
     accent: "light",
   },
 ];
@@ -184,8 +184,8 @@ onBeforeUnmount(() => {
 const guarantees = [
   {
     icon: ["M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z", "M9 12l2 2 4-4"],
-    term: "Правовые гарантии.",
-    text: "Закон «Об инвестициях и инвестиционной деятельности» гарантирует свободный перевод средств за пределы страны и защиту инвестиций от национализации.",
+    term: "investments.guarantees.legal.term",
+    text: "investments.guarantees.legal.text",
   },
   {
     icon: [
@@ -193,16 +193,16 @@ const guarantees = [
       "M7.5 5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z",
       "M16.5 14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z",
     ],
-    term: "Налоговая стабильность.",
-    text: "Базовые ставки налогов для бизнеса не изменятся до 2028 года.",
+    term: "investments.guarantees.tax.term",
+    text: "investments.guarantees.tax.text",
   },
   {
     icon: [
       "M5 5h13a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H10l-4 3v-3H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z",
       "M8 9h7M8 12h4",
     ],
-    term: "Прямой диалог.",
-    text: "Совет иностранных инвесторов при Президенте — институциональный канал решения вопросов инвесторов на высшем уровне.",
+    term: "investments.guarantees.dialogue.term",
+    text: "investments.guarantees.dialogue.text",
   },
   {
     icon: [
@@ -212,8 +212,8 @@ const guarantees = [
       "M5 8l-2.5 5a2.5 2.5 0 0 0 5 0z",
       "M19 8l-2.5 5a2.5 2.5 0 0 0 5 0z",
     ],
-    term: "Разрешение споров.",
-    text: "Ташкентский международный арбитражный центр; Ташкентский международный коммерческий суд.",
+    term: "investments.guarantees.disputes.term",
+    text: "investments.guarantees.disputes.text",
   },
   {
     icon: [
@@ -221,19 +221,19 @@ const guarantees = [
       "M3.5 9h17M3.5 15h17",
       "M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18",
     ],
-    term: "Льготы для членов Совета.",
-    text: "Безвизовый въезд для членов Совета и членов их семей.",
+    term: "investments.guarantees.perks.term",
+    text: "investments.guarantees.perks.text",
   },
 ];
 
 const sectors = [
   {
     icon: ["M13 2L4 14h7l-1 8 9-12h-7z"],
-    title: "Зелёная энергетика",
+    title: "investments.sectors.greenEnergy.title",
     points: [
-      "ACWA Power, Masdar, TotalEnergies, EDF, Voltalia",
-      "свыше $8 млрд инвестиций в ВИЭ",
-      "солнце, ветер, водород, накопление энергии",
+      "investments.sectors.greenEnergy.points.0",
+      "investments.sectors.greenEnergy.points.1",
+      "investments.sectors.greenEnergy.points.2",
     ],
   },
   {
@@ -242,11 +242,11 @@ const sectors = [
       "M10 10h4v4h-4z",
       "M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3",
     ],
-    title: "Цифровая инфраструктура и ИИ",
+    title: "investments.sectors.digital.title",
     points: [
-      "DataVolt — крупнейший «зелёный» дата-центр региона",
-      "VEON — суперприложение на базе ИИ",
-      "Yandex — карты и цифровые сервисы",
+      "investments.sectors.digital.points.0",
+      "investments.sectors.digital.points.1",
+      "investments.sectors.digital.points.2",
     ],
   },
   {
@@ -256,62 +256,62 @@ const sectors = [
       "M13 21V9l6 2v10",
       "M8 8h2M8 12h2M8 16h2",
     ],
-    title: "Инфраструктура и ГЧП",
+    title: "investments.sectors.infra.title",
     points: [
-      "$4,5 млрд проектов ГЧП в 2025",
-      "дороги, транспорт, водоснабжение, ирригация",
-      "смешанное финансирование с МФИ",
+      "investments.sectors.infra.points.0",
+      "investments.sectors.infra.points.1",
+      "investments.sectors.infra.points.2",
     ],
   },
   {
     icon: ["M3 10l9-6 9 6", "M5 10v8M9 10v8M15 10v8M19 10v8", "M3 21h18"],
-    title: "Финансовые услуги",
+    title: "investments.sectors.finance.title",
     points: [
-      "Ташкентский международный финансовый центр",
-      "исламские финансы (Green Sukuk, Takaful)",
-      "дебютные суверенные облигации в сумах",
+      "investments.sectors.finance.points.0",
+      "investments.sectors.finance.points.1",
+      "investments.sectors.finance.points.2",
     ],
   },
   {
     icon: ["M3 21V10l6 4V10l6 4V7l6 4v10z", "M3 21h18"],
-    title: "Обрабатывающая промышленность",
+    title: "investments.sectors.manufacturing.title",
     points: [
-      "химия и удобрения (Indorama)",
-      "текстиль, стройматериалы (Knauf)",
-      "экспортно-ориентированное производство",
+      "investments.sectors.manufacturing.points.0",
+      "investments.sectors.manufacturing.points.1",
+      "investments.sectors.manufacturing.points.2",
     ],
   },
   {
     icon: ["M6 3h12l3 6-9 12L3 9z", "M3 9h18M9 3l-3 6 6 12M15 3l3 6-6 12"],
-    title: "Критические минералы и горнодобыча",
+    title: "investments.sectors.minerals.title",
     points: [
-      "значительная сырьевая база",
-      "проекты переработки с добавленной стоимостью",
-      "международные стандарты ESG",
+      "investments.sectors.minerals.points.0",
+      "investments.sectors.minerals.points.1",
+      "investments.sectors.minerals.points.2",
     ],
   },
 ];
 
 const timeline = [
   {
-    year: "2017.",
-    text: "Либерализация валютного рынка, старт системных реформ; ВВП около $56 млрд.",
+    year: "2017",
+    text: "investments.timeline.y2017.text",
   },
   {
-    year: "2019.",
-    text: "Учреждение Совета иностранных инвесторов при Президенте — институциональная площадка диалога с инвесторами.",
+    year: "2019",
+    text: "investments.timeline.y2019.text",
   },
   {
-    year: "2024.",
-    text: "Энергетические реформы; рекордные вложения международных компаний в зелёную экономику.",
+    year: "2024",
+    text: "investments.timeline.y2024.text",
   },
   {
-    year: "2025.",
-    text: "Повышение рейтингов Fitch и S&P до BB; приток иностранных инвестиций ~$42 млрд; рост ВВП 7,7%.",
+    year: "2025",
+    text: "investments.timeline.y2025.text",
   },
   {
-    year: "2026.",
-    text: "Завершение вступления в ВТО; создание Ташкентского международного финансового центра; цель — ВВП свыше $150 млрд. За девять лет привлечено около $125 млрд иностранных инвестиций против ~$4,5 млрд в 2017 году.",
+    year: "2026",
+    text: "investments.timeline.y2026.text",
   },
 ];
 </script>
@@ -319,15 +319,15 @@ const timeline = [
 <template>
   <div>
     <client-only>
-      <PageHero title="Инвестиции в Узбекистан" />
+      <PageHero title="investments.hero.title" />
 
       <div class="container pb-20 lg:pb-28">
         <!-- Intro / overview -->
         <section class="invest-intro">
           <div class="invest-intro__aside">
-            <span class="invest-eyebrow">{{ t("Обзор") }}</span>
+            <span class="invest-eyebrow">{{ t("investments.intro.eyebrow") }}</span>
             <h2 class="invest-intro__heading">
-              {{ t("Одна из самых динамичных экономик Евразии") }}
+              {{ t("investments.intro.heading") }}
             </h2>
           </div>
           <div class="invest-intro__body">
@@ -343,9 +343,9 @@ const timeline = [
         <!-- Key indicators -->
         <section class="invest-section">
           <div class="invest-head">
-            <span class="invest-eyebrow">{{ t("Макроэкономика") }}</span>
-            <h2 class="invest-title">{{ t("Ключевые показатели") }}</h2>
-            <p class="invest-sub">{{ t("Итоги 2025 года") }}</p>
+            <span class="invest-eyebrow">{{ t("investments.indicators.eyebrow") }}</span>
+            <h2 class="invest-title">{{ t("investments.indicators.title") }}</h2>
+            <p class="invest-sub">{{ t("investments.indicators.subtitle") }}</p>
           </div>
 
           <div
@@ -368,10 +368,10 @@ const timeline = [
         <!-- Guarantees -->
         <section class="invest-section">
           <div class="invest-head">
-            <span class="invest-eyebrow">{{ t("Защита") }}</span>
-            <h2 class="invest-title">{{ t("Гарантии для инвесторов") }}</h2>
+            <span class="invest-eyebrow">{{ t("investments.guarantees.eyebrow") }}</span>
+            <h2 class="invest-title">{{ t("investments.guarantees.title") }}</h2>
             <p class="invest-sub">
-              {{ t("Правовая и институциональная защита капитала") }}
+              {{ t("investments.guarantees.subtitle") }}
             </p>
           </div>
 
@@ -406,10 +406,10 @@ const timeline = [
         <!-- Sectors -->
         <section class="invest-section">
           <div class="invest-head">
-            <span class="invest-eyebrow">{{ t("Возможности") }}</span>
-            <h2 class="invest-title">{{ t("Секторы для инвестиций") }}</h2>
+            <span class="invest-eyebrow">{{ t("investments.sectors.eyebrow") }}</span>
+            <h2 class="invest-title">{{ t("investments.sectors.title") }}</h2>
             <p class="invest-sub">
-              {{ t("Приоритетные направления с поддержкой государства") }}
+              {{ t("investments.sectors.subtitle") }}
             </p>
           </div>
 
@@ -451,10 +451,10 @@ const timeline = [
         <!-- Reform trajectory timeline -->
         <section class="invest-section">
           <div class="invest-head">
-            <span class="invest-eyebrow">{{ t("Девять лет реформ") }}</span>
-            <h2 class="invest-title">{{ t("Траектория реформ") }}</h2>
+            <span class="invest-eyebrow">{{ t("investments.timeline.eyebrow") }}</span>
+            <h2 class="invest-title">{{ t("investments.timeline.title") }}</h2>
             <p class="invest-sub">
-              {{ t("От открытия экономики к рынку капитала") }}
+              {{ t("investments.timeline.subtitle") }}
             </p>
           </div>
 
@@ -486,7 +486,7 @@ const timeline = [
                     </svg>
                   </span>
                   <span class="reformTimeline__yearTag">
-                    {{ t(item.year).replace(".", "") }}
+                    {{ item.year }}
                   </span>
                 </div>
                 <p class="text-base leading-7 text-grey lg:text-[17px]">
@@ -499,7 +499,7 @@ const timeline = [
 
               <!-- Big faded year on the opposite side (desktop) -->
               <span class="reformTimeline__bigYear" aria-hidden="true">
-                {{ t(item.year).replace(".", "") }}
+                {{ item.year }}
               </span>
             </li>
 
