@@ -7,7 +7,7 @@ const { t } = useI18n();
 const platformStats = [
   { prefix: "×", target: 5, label: "рост вовлечённости компаний" },
   { from: 54, target: 85, label: "активных компаний-участников" },
-  { target: 41, highlight: true, label: "компания — члены Совета" },
+  { target: 43, highlight: true, label: "компания — члены Совета" },
   { target: 19, label: "стран-участников" },
   { target: 4, label: "международных института (3 в Исполкоме)" },
   { target: 23, label: "сектора экономики" },
