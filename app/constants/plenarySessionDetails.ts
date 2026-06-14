@@ -121,14 +121,6 @@ const plenarySession2024Roadmap: Record<PlenarySessionLocale, PlenarySessionRoad
           "цифровизация системы работы с инвесторами — электронная платформа",
         ],
       },
-      {
-        title: "Статус исполнения",
-        items: [
-          "дорожная карта закреплена Приложением № 3 к ПП-179",
-          "ответственные исполнители — МИПТ, МЭФ, АСР, Минцифры",
-          "на странице показывать инициативы со статусом реализации",
-        ],
-      },
     ],
   },
   uz: {
@@ -163,14 +155,6 @@ const plenarySession2024Roadmap: Record<PlenarySessionLocale, PlenarySessionRoad
           "mas'uliyatli biznes yuritish (OECD tamoyillari)",
           "muqobil (venchur) investitsiyalar — qonun loyihasini ishlab chiqish",
           "investorlar bilan ishlash tizimini raqamlashtirish — elektron platforma",
-        ],
-      },
-      {
-        title: "Bajarilish holati",
-        items: [
-          "yo'l xaritasi PP-179ning 3-ilovasi bilan mustahkamlangan",
-          "mas'ul ijrochilar — IPTV, IMV, TUA, Raqamli rivojlanish vazirligi",
-          "sahifada tashabbuslar amalga oshirilish holati bilan ko'rsatilsin",
         ],
       },
     ],
@@ -209,14 +193,6 @@ const plenarySession2024Roadmap: Record<PlenarySessionLocale, PlenarySessionRoad
           "digitalizing the investor relations system — electronic platform",
         ],
       },
-      {
-        title: "Implementation status",
-        items: [
-          "the roadmap is enshrined in Annex No. 3 to PP-179",
-          "responsible implementers — MIIT, MEF, ARS, Ministry of Digital Technologies",
-          "show initiatives with their implementation status on the page",
-        ],
-      },
     ],
   },
 };
@@ -225,6 +201,9 @@ const plenarySession2025Roadmap: Record<PlenarySessionLocale, PlenarySessionRoad
   ru: {
     title: "Что закреплено постановлением ПП-226",
     stats: [
+      { value: "14", label: "инициатив в дорожной карте" },
+      { value: "4", label: "рабочие группы (инициатива № 8)" },
+      { value: "ПП-179", label: "от 16 мая 2024 года" },
       { value: "40+", label: "инициатив отобрано к сессии" },
       { value: "2028", label: "базовые ставки налогов заморожены до" },
       { value: "16 000", label: "предприятий с иностранным капиталом" },
@@ -245,6 +224,9 @@ const plenarySession2025Roadmap: Record<PlenarySessionLocale, PlenarySessionRoad
   uz: {
     title: "PP-226 qarori bilan nima mustahkamlangan",
     stats: [
+      { value: "14", label: "yo'l xaritasidagi tashabbuslar" },
+      { value: "4", label: "ishchi guruhlar (8-tashabbus)" },
+      { value: "PP-179", label: "2024-yil 16-may" },
       { value: "40+", label: "sessiyaga tanlangan tashabbuslar" },
       { value: "2028", label: "asosiy soliq stavkalari muzlatilgan" },
       { value: "16 000", label: "xorijiy kapitalli korxonalar" },
@@ -265,6 +247,9 @@ const plenarySession2025Roadmap: Record<PlenarySessionLocale, PlenarySessionRoad
   en: {
     title: "What was enshrined by Decree PP-226",
     stats: [
+      { value: "14", label: "initiatives in the roadmap" },
+      { value: "4", label: "working groups (initiative No. 8)" },
+      { value: "PP-179", label: "of May 16, 2024" },
       { value: "40+", label: "initiatives selected for the session" },
       { value: "2028", label: "basic tax rates frozen until" },
       { value: "16,000", label: "enterprises with foreign capital" },

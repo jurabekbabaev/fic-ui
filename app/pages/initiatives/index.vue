@@ -986,32 +986,6 @@ const categoryStartIndex = computed(() => {
             </tbody>
           </table>
         </div>
-        <div
-          class="bg-[#F7F7F7] rounded-2xl p-6 lg:p-8 mb-10 border-l-4 border-[#1a1a1a]"
-        >
-          <p
-            class="lg:text-sm text-xs font-bold text-[#1a1a1a] uppercase tracking-widest mb-3"
-          >
-            {{
-              locale.startsWith("uz")
-                ? "Strategik tashabbus"
-                : locale.startsWith("en")
-                ? "Strategic Initiative"
-                : "Стратегическая инициатива"
-            }}
-          </p>
-          <p
-            class="lg:text-lg text-base font-normal text-[#1a1a1a] leading-relaxed"
-          >
-            {{
-              locale.startsWith("uz")
-                ? "Raqobatbardosh investitsiya muhitini shakllantirish va chegaralararo muvofiqlashtirish uchun Markaziy Osiyo va Kavkaz Mintaqaviy Investitsiya Kengashlari Alyansini (RAIC-CAC) tashkil etish."
-                : locale.startsWith("en")
-                ? "Creation of the Regional Alliance of Investment Councils of Central Asia and the Caucasus (RAIC-CAC) to form a competitive investment environment and cross-border coordination."
-                : "Cоздание Регионального альянса инвестиционных советов Центральной Азии и Кавказа (RAIC-CAC) для формирования конкурентоспособной инвестиционной среды и трансграничной координации."
-            }}
-          </p>
-        </div>
         <div class="w-full mb-10">
           <p class="lg:text-xl text-base font-normal">
             <span class="text-[#505A63]">
