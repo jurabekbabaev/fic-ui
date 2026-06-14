@@ -108,24 +108,6 @@ const closeModal = () => {
               />
             </svg>
 
-            <svg v-else viewBox="0 0 24 24">
-              <path
-                d="M12 6.75v5.25l3 3"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.6"
-              />
-              <circle
-                cx="12"
-                cy="12"
-                r="8.25"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-              />
-            </svg>
           </span>
 
           <span class="sec-contact__text">{{ contact.value }}</span>
@@ -234,16 +216,16 @@ const closeModal = () => {
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #191c1f;
+  margin-top: 6px;
 }
 
 /* contacts */
 .sec-card__contacts {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px 22px;
+  flex-direction: column;
+  gap: 10px;
   margin-top: auto;
   padding: 18px 0 20px;
-  border-top: 1px solid rgba(25, 28, 31, 0.07);
 }
 
 .sec-contact {

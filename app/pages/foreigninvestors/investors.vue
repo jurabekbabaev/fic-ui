@@ -4,15 +4,6 @@
       <h2 class="lg:text-[64px] text-[32px] font-bold mb-4 text-gray-900">
         {{ t("Исполнительный комитет") }}
       </h2>
-      <div class="w-full flex justify-center">
-        <div class="text-base lg:text-xl lg:w-1/2 text-gray-600">
-          {{
-            t(
-              "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            )
-          }}
-        </div>
-      </div>
     </div>
 
     <div class="investor-grid">
