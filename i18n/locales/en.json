@@ -1,4 +1,10 @@
 {
+  "homeEvent": {
+    "upcomingEvents": "UPCOMING EVENTS",
+    "defaultDate": "JUNE 18",
+    "defaultTitle": "Plenary Session",
+    "learnMore": "LEARN MORE"
+  },
   "management": {
     "hero": {
       "title": "Management"
@@ -1167,6 +1173,123 @@
         "description": "The requested leader does not exist",
         "backButton": "Return to list"
       }
+    },
+    "plenaryGroups": {
+      "sectionTitle": "Interagency Working Groups (IWG)",
+      "chairLabel": "Working Group Chair.",
+      "coChairLabel": "Co-Chair",
+      "groups": {
+        "g1": {
+          "title": "IWG On Energy-Related Issues",
+          "chair": {
+            "fullname": "Jurabek Mirzamahmudov",
+            "position": "Minister Of Energy Of The Republic Of Uzbekistan"
+          },
+          "cochair": {
+            "fullname": "John Zaidi",
+            "position": "CEO Of ACWA Power In Uzbekistan"
+          }
+        },
+        "g2": {
+          "title": "IWG On The Improvement Of Land Allocation Procedures",
+          "chair": {
+            "fullname": "Farrukh Pulatov",
+            "position": "Director Of The Cadastral Agency"
+          },
+          "cochair": {
+            "fullname": "Azizbek Ahmadjonov",
+            "position": "Managing Partner, Kosta Legal"
+          }
+        },
+        "g3": {
+          "title": "IWG On The Improvement Of Tax Administration",
+          "chair": {
+            "fullname": "Ahadbek Haydarov",
+            "position": "Deputy Minister Of Economy And Finance"
+          },
+          "cochair": {
+            "fullname": "Yerlan Dosymbekov",
+            "position": "EY Managing Partner For Caucasus And Central Asia"
+          }
+        },
+        "g4": {
+          "title": "IWG On The Enhancement Of Corporate Governance In Local Companies",
+          "chair": {
+            "fullname": "Ilhom Norkulov",
+            "position": "Deputy Minister Of Economy And Finance"
+          },
+          "cochair": {
+            "fullname": "Marius Dan",
+            "position": "CEO Of Franklin Templeton For Central Asia"
+          }
+        },
+        "g5": {
+          "title": "IWG On The Training Of Professional Personnel For Foreign Companies",
+          "chair": {
+            "fullname": "Kongratbay Sharipov",
+            "position": "Minister Of Higher Education, Science And Innovation"
+          },
+          "cochair": {
+            "fullname": "Sandro Rtveladze",
+            "position": "CEO Of Ipoteka Bank OTP Group"
+          }
+        },
+        "g6": {
+          "title": "IWG On The Implementation Of Responsible Business Conduct Principles",
+          "chair": {
+            "fullname": "Laziz Kudratov",
+            "position": "Minister Of Investment, Industry And Trade"
+          },
+          "cochair": {
+            "fullname": "Vera Bell",
+            "position": "Managing Partner, Crowe Uzbekistan"
+          }
+        },
+        "g7": {
+          "title": "IWG On The Improvement Of Pledge Legislation",
+          "chair": {
+            "fullname": "Timur Ishmetov",
+            "position": "Chairman Of The Central Bank"
+          },
+          "cochair": {
+            "fullname": "Davron Yakubov",
+            "position": "Managing Partner, BDO Uzbekistan"
+          }
+        },
+        "g8": {
+          "title": "IWG For Drafting The Law On Alternative Investment Funds",
+          "chair": {
+            "fullname": "Laziz Kudratov",
+            "position": "Minister Of Investment, Industry And Trade"
+          },
+          "cochair": {
+            "fullname": "Kazbek Bassiev",
+            "position": "Senior Vice President Of Vision Invest And Head Of Uzbekistan Office"
+          }
+        },
+        "g9": {
+          "title": "IWG On Circular Economy",
+          "chair": {
+            "fullname": "Aziz Abduhakimov",
+            "position": "Chairman Of The National Committee On Ecology And Climate Change"
+          },
+          "cochair": {
+            "fullname": "Kazumasa Mukae",
+            "position": "General Manager, Coca-Cola Uzbekistan"
+          }
+        },
+        "g10": {
+          "title": "IWG On Artificial Intelligence Development",
+          "chair": {
+            "fullname": "Olimjon Umarov",
+            "position": "Deputy Minister Of Digital Technologies"
+          },
+          "cochair": {
+            "fullname": "Yerlan Dosymbekov",
+            "position": "EY Managing Partner For EU, Caucasus And Central Asia"
+          }
+        }
+      }
     }
   },
   "workingGroups": {
@@ -1285,6 +1408,133 @@
         "name": "Odil Reno-Basso",
         "position": "Co-Chairman of the Council - President of the EBRD"
       }
+    },
+    "almanac": {
+      "title": "ALMANAC",
+      "description": "An open catalog of council members' initiatives for the development of the creative economy and support of small and medium businesses.",
+      "tabDirections": "By Creative Economy Directions",
+      "tabDirectionsMobile": "By Directions",
+      "tabMembers": "By Council Members",
+      "ficMembers": "FIC Members",
+      "allFicMembers": "All FIC Members",
+      "sportInitiatives": "Sport Development Initiatives",
+      "familyInitiatives": "Family Support Initiatives",
+      "filmInitiatives": "Film Industry Initiatives",
+      "entertainmentInitiatives": "Entertainment Initiatives",
+      "agricultureInitiatives": "Agriculture Initiatives",
+      "techInitiatives": "Technology Initiatives",
+      "leisureInitiatives": "Leisure Initiatives"
+    },
+    "blog": {
+      "title": "Articles",
+      "learnMore": "Learn More"
+    },
+    "councilStats": {
+      "title": "Key Figures",
+      "members": "Council Members",
+      "companies": "Active Companies",
+      "countries": "Countries",
+      "workingGroups": "Working Groups",
+      "initiatives": "Initiatives",
+      "initiativesPlenary": "Initiatives Before The IV Plenary Session"
+    },
+    "executiveCommittee": {
+      "title": "Executive Committee",
+      "subtitle": "Brings together organizations aimed at supporting sustainable development and economic reforms.",
+      "learnMore": "Learn More",
+      "laziz": {
+        "name": "Laziz Kudratov",
+        "position": "Minister of Investments, Industry and Trade of the Republic of Uzbekistan",
+        "quote": "“Uzbekistan demonstrates steady growth in investment activity thanks to ongoing reforms and the creation of favorable conditions for foreign investors.”"
+      },
+      "andi": {
+        "name": "Andy Aranitasi",
+        "position": "Head of the EBRD Representative Office in Uzbekistan",
+        "quote": "“We attach great importance to improving the business climate in the country, which President Mirziyoyev has defined as a strategic national priority.”"
+      },
+      "kanokpan": {
+        "name": "Kanokpan Lao-Araya",
+        "position": "Country Director of the Asian Development Bank",
+        "quote": "“The government demonstrates a strong commitment to reforms and seeks to engage all stakeholders in the country, including the private sector, in the development process.”"
+      },
+      "neil": {
+        "name": "Neil McCain",
+        "position": "Director of the IFC Office for Uzbekistan and Turkmenistan",
+        "quote": "“Uzbekistan’s key competitive advantages are the largest population in Central Asia and the most diversified economy.”"
+      },
+      "aziz": {
+        "name": "Aziz Gafurov",
+        "position": "Head of the FIC Secretariat",
+        "quote": "“We attach great importance to improving the business climate in the country, which President Mirziyoyev has defined as a strategic national priority.”"
+      }
+    },
+    "foreignMembers": {
+      "compositionTitle": "Council Composition",
+      "foreignTitle": "Foreign Members of the Foreign Investors’ Council"
+    },
+    "uzbMembers": {
+      "title": "Uzbek Members of the Foreign Investors’ Council"
+    },
+    "investmentStats": {
+      "title": "Investments in Uzbekistan",
+      "learnMore": "Learn More",
+      "gdp": "GDP (2026 Target — >$150 Bn)",
+      "gdpGrowth": "GDP Growth (IMF, 2025)",
+      "fdiInflow": "Foreign Investment Inflow",
+      "rating": "Fitch And S&P Rating; Moody’s Ba3 (Positive Outlook)",
+      "reserves": "Gold And Foreign Exchange Reserves (+35%)",
+      "inflation": "Inflation (From 9.8% A Year Earlier)",
+      "exportGrowth": "Export Growth (~$32 Bn)",
+      "totalInvestment": "Total Investment To GDP",
+      "unemployment": "Unemployment (Record Low)",
+      "unitBln": " bn",
+      "unitPct": "%"
+    },
+    "localeInvestors": {
+      "title": "Investments in Uzbekistan",
+      "guide": {
+        "title": "Investor’s Quick Guide",
+        "description": "The guide provides comprehensive information on forms of corporate presence, registration rules and procedures."
+      },
+      "climate": {
+        "title": "Uzbekistan’s Investment Climate",
+        "description": "Uzbekistan is actively improving conditions for foreign investors and modernizing its economy, offering promising investment opportunities."
+      },
+      "regional": {
+        "title": "Regional News for Investors",
+        "description": "The current issue of Investor Regional Update is dedicated to Namangan region. Further updates covering other regions will follow."
+      }
+    },
+    "planCalendar": {
+      "title": "Calendar Plan",
+      "allEvents": "All Events",
+      "items": {
+        "item1": {
+          "date": "July — November 2025",
+          "content": "Development of Approved Initiatives"
+        },
+        "item2": {
+          "date": "November 2025",
+          "content": "Attraction of Creative Investments in Uzbekistan"
+        },
+        "item3": {
+          "date": "November 2025 — April 2026",
+          "content": "Collection of New Initiatives for the 2026 Plenary Session"
+        },
+        "item4": {
+          "date": "April 2026",
+          "content": "Identification of New Initiatives"
+        },
+        "item5": {
+          "date": "July — November 2025",
+          "content": "Development of Approved Initiatives"
+        }
+      }
+    },
+    "videoSection": {
+      "title": "Plenary Sessions in Focus",
+      "description": "A dialogue between the state and investors, where reforms are discussed, key decisions are made, and the investment future of Uzbekistan is shaped.",
+      "learnMore": "Learn More"
     }
   },
   "blog": {
@@ -2061,5 +2311,19 @@
         ]
       }
     }
+  },
+  "uploadDocuments": {
+    "title": "Upload Completed Documents",
+    "subtitle": "Upload Files In PDF, XLSX Or ZIP Format.",
+    "dropzone": "Drag Your Files Here Or Browse Files",
+    "formats": "Supported: PDF, XLSX, ZIP",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Document Sent Successfully",
+    "invalidType": "Only PDF, XLSX And ZIP Files Are Accepted.",
+    "fileTooLarge": "File Size Must Not Exceed 25 MB.",
+    "uploadError": "Something Went Wrong. Please Try Again.",
+    "remove": "Remove File",
+    "close": "Close"
   }
 }

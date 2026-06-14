@@ -1,4 +1,10 @@
 {
+  "homeEvent": {
+    "upcomingEvents": "KELGUSIDAGI TADBIRLAR",
+    "defaultDate": "18 IYUN",
+    "defaultTitle": "Yalpi Majlis",
+    "learnMore": "BATAFSIL"
+  },
   "management": {
     "hero": {
       "title": "Rahbariyat"
@@ -1172,6 +1178,123 @@
         "description": "So'ralgan rahbar mavjud emas",
         "backButton": "Ro'yxatga qaytish"
       }
+    },
+    "plenaryGroups": {
+      "sectionTitle": "Idoralararo Ishchi Guruhlar (IIG)",
+      "chairLabel": "Ishchi Guruh Raisi.",
+      "coChairLabel": "Hamrais",
+      "groups": {
+        "g1": {
+          "title": "Energetika Masalalari Bo'yicha IIG",
+          "chair": {
+            "fullname": "Jurabek Mirzamahmudov",
+            "position": "O'zbekiston Respublikasi Energetika Vaziri"
+          },
+          "cochair": {
+            "fullname": "John Zaidi",
+            "position": "O'zbekistondagi ACWA Power Bosh Direktori"
+          }
+        },
+        "g2": {
+          "title": "Yer Ajratish Tartibini Takomillashtirish Bo'yicha IIG",
+          "chair": {
+            "fullname": "Farrukh Pulatov",
+            "position": "Kadastr Agentligi Direktori"
+          },
+          "cochair": {
+            "fullname": "Azizbek Ahmadjonov",
+            "position": "Kosta Legal Boshqaruvchi Sherigi"
+          }
+        },
+        "g3": {
+          "title": "Soliq Ma'murchiligini Takomillashtirish Bo'yicha IIG",
+          "chair": {
+            "fullname": "Ahadbek Haydarov",
+            "position": "Iqtisodiyot Va Moliya Vaziri O'rinbosari"
+          },
+          "cochair": {
+            "fullname": "Yerlan Dosymbekov",
+            "position": "EY Kavkaz Va Markaziy Osiyo Bo'yicha Boshqaruvchi Sherigi"
+          }
+        },
+        "g4": {
+          "title": "Mahalliy Kompaniyalarda Korporativ Boshqaruvni Takomillashtirish Bo'yicha IIG",
+          "chair": {
+            "fullname": "Ilhom Norkulov",
+            "position": "Iqtisodiyot Va Moliya Vaziri O'rinbosari"
+          },
+          "cochair": {
+            "fullname": "Marius Dan",
+            "position": "Franklin Templeton Markaziy Osiyo Bo'yicha Bosh Direktori"
+          }
+        },
+        "g5": {
+          "title": "Xorijiy Kompaniyalar Uchun Professional Kadrlar Tayyorlash Bo'yicha IIG",
+          "chair": {
+            "fullname": "Kongratbay Sharipov",
+            "position": "Oliy Ta'lim, Fan Va Innovatsiyalar Vaziri"
+          },
+          "cochair": {
+            "fullname": "Sandro Rtveladze",
+            "position": "Ipoteka Bank OTP Group Bosh Direktori"
+          }
+        },
+        "g6": {
+          "title": "Mas'uliyatli Biznes Yuritish Qoidalarini Joriy Etish Bo'yicha IIG",
+          "chair": {
+            "fullname": "Laziz Kudratov",
+            "position": "Investitsiyalar, Sanoat Va Savdo Vaziri"
+          },
+          "cochair": {
+            "fullname": "Vera Bell",
+            "position": "Crowe Uzbekistan Boshqaruvchi Sherigi"
+          }
+        },
+        "g7": {
+          "title": "Garov To'g'risidagi Qonunchilikni Takomillashtirish Bo'yicha IIG",
+          "chair": {
+            "fullname": "Timur Ishmetov",
+            "position": "Markaziy Bank Raisi"
+          },
+          "cochair": {
+            "fullname": "Davron Yakubov",
+            "position": "BDO Uzbekistan Boshqaruvchi Sherigi"
+          }
+        },
+        "g8": {
+          "title": "Muqobil Investitsiya Jamg'armalari To'g'risidagi Qonun Loyihasini Tayyorlash Bo'yicha IIG",
+          "chair": {
+            "fullname": "Laziz Kudratov",
+            "position": "Investitsiyalar, Sanoat Va Savdo Vaziri"
+          },
+          "cochair": {
+            "fullname": "Kazbek Bassiev",
+            "position": "Vision Invest Katta Vitse-Prezidenti Va O'zbekistondagi Vakolatxona Rahbari"
+          }
+        },
+        "g9": {
+          "title": "Aylanma Iqtisodiyot Bo'yicha IIG",
+          "chair": {
+            "fullname": "Aziz Abduhakimov",
+            "position": "Ekologiya Va Iqlim O'zgarishi Bo'yicha Milliy Qo'mita Raisi"
+          },
+          "cochair": {
+            "fullname": "Kazumasa Mukae",
+            "position": "Coca-Cola Uzbekistan Bosh Menejeri"
+          }
+        },
+        "g10": {
+          "title": "Sun'iy Intellektni Rivojlantirish Bo'yicha IIG",
+          "chair": {
+            "fullname": "Olimjon Umarov",
+            "position": "Raqamli Texnologiyalar Vaziri O'rinbosari"
+          },
+          "cochair": {
+            "fullname": "Yerlan Dosymbekov",
+            "position": "EY YI, Kavkaz Va Markaziy Osiyo Bo'yicha Boshqaruvchi Sherigi"
+          }
+        }
+      }
     }
   },
   "workingGroups": {
@@ -1254,6 +1377,133 @@
         "name": "Odil Reno-Basso",
         "position": "Kengashning Sobasharpasi — EBRD Prezidenti"
       }
+    },
+    "almanac": {
+      "title": "ALMANAC",
+      "description": "Kengash a'zolarining kreativ iqtisodiyotni rivojlantirish va kichik hamda o'rta biznesni qo'llab-quvvatlash bo'yicha tashabbuslarining ochiq katalogi.",
+      "tabDirections": "Kreativ iqtisodiyot yo'nalishlari bo'yicha",
+      "tabDirectionsMobile": "Yo'nalishlar bo'yicha",
+      "tabMembers": "Kengash a'zolari bo'yicha",
+      "ficMembers": "XIK a'zolari",
+      "allFicMembers": "Barcha XIK a'zolari",
+      "sportInitiatives": "Sport rivojlanishi bo'yicha tashabbuslar",
+      "familyInitiatives": "Oilani qo'llab-quvvatlash bo'yicha tashabbuslar",
+      "filmInitiatives": "Kino sanoatidagi tashabbuslar",
+      "entertainmentInitiatives": "Ko'ngil ochar sohasidagi tashabbuslar",
+      "agricultureInitiatives": "Qishloq xo'jaligi bo'yicha tashabbuslar",
+      "techInitiatives": "Texnologiyalar sohasidagi tashabbuslar",
+      "leisureInitiatives": "Dam olishni tashkil etish bo'yicha tashabbuslar"
+    },
+    "blog": {
+      "title": "Maqolalar",
+      "learnMore": "Ko'proq bilish"
+    },
+    "councilStats": {
+      "title": "Ko'rsatkichlar",
+      "members": "Kengash a'zolari",
+      "companies": "Faol kompaniyalar",
+      "countries": "Davlatlar",
+      "workingGroups": "Ishchi guruhlar",
+      "initiatives": "Tashabbuslar",
+      "initiativesPlenary": "IV Yalpi majlisgacha bo'lgan tashabbuslar"
+    },
+    "executiveCommittee": {
+      "title": "Ijroiya qo'mita",
+      "subtitle": "Barqaror rivojlanish va iqtisodiy islohotlarni qo'llab-quvvatlash maqsadidagi tashkilotlarni birlashtiradi.",
+      "learnMore": "Batafsil",
+      "laziz": {
+        "name": "Laziz Qudratov",
+        "position": "Investitsiyalar, Savdo va Sanoat Vaziri",
+        "quote": "“O‘zbekiston amalga oshirilayotgan islohotlar va chet el investorlari uchun qulay sharoitlar yaratish natijasida investitsiya faolligining barqaror o‘sishini namoyish etmoqda.”"
+      },
+      "andi": {
+        "name": "Andi Aranitasi",
+        "position": "YTTBning O‘zbekistondagi rahbari",
+        "quote": "“Biz Prezident Mirziyoyev strategik milliy ustuvorlik sifatida belgilagan mamlakatdagi ishbilarmonlik muhitini yaxshilashga katta ahamiyat beramiz.”"
+      },
+      "kanokpan": {
+        "name": "Kanokpan Lao-Araya",
+        "position": "Osiyo Taraqqiyot Banki mamlakat direktori",
+        "quote": "“Hukumat islohotlarga kuchli sodiqligini namoyish etadi va rivojlanish jarayoniga xususiy sektor ham jumlasida barcha manfaatdor tomonlarni jalb etishga intiladi.”"
+      },
+      "neil": {
+        "name": "Neil McCain",
+        "position": "XMKning O‘zbekiston va Turkmaniston bo‘yicha ofisi direktori",
+        "quote": "“O‘zbekistonning asosiy raqobat afzalliklari — Markaziy Osiyodagi eng ko‘p aholi va eng xilma-xil iqtisodiyot.”"
+      },
+      "aziz": {
+        "name": "Aziz Gafurov",
+        "position": "XIK Kotibiyati boshlig‘i",
+        "quote": "“Biz Prezident Mirziyoyev strategik milliy ustuvorlik sifatida belgilagan mamlakatdagi ishbilarmonlik muhitini yaxshilashga katta ahamiyat beramiz.”"
+      }
+    },
+    "foreignMembers": {
+      "compositionTitle": "Kengash tarkibi",
+      "foreignTitle": "Xorijiy investorlar kengashining chet el a'zolari"
+    },
+    "uzbMembers": {
+      "title": "Xorijiy investorlar kengashining o'zbek vakillari a'zolari"
+    },
+    "investmentStats": {
+      "title": "O'zbekistonga investitsiyalar",
+      "learnMore": "Batafsil",
+      "gdp": "YaIM (2026 maqsadi — >$150 mlrd)",
+      "gdpGrowth": "YaIM o'sishi (XVF, 2025)",
+      "fdiInflow": "Xorijiy investitsiyalar oqimi",
+      "rating": "Fitch va S&P reytingi; Moody's Ba3 (prognoz ijobiy)",
+      "reserves": "Oltin-valyuta zaxiralari (+35%)",
+      "inflation": "Inflyatsiya (bir yil avval 9,8% edi)",
+      "exportGrowth": "Eksport o'sishi (~$32 mlrd)",
+      "totalInvestment": "YaIMga nisbatan jami investitsiyalar",
+      "unemployment": "Ishsizlik (minimal daraja)",
+      "unitBln": " mlrd",
+      "unitPct": "%"
+    },
+    "localeInvestors": {
+      "title": "O'zbekistonga investitsiyalar",
+      "guide": {
+        "title": "Investorning qisqa qo'llanmasi",
+        "description": "Qo'llanmada korporativ mavjudlik shakllari, ro'yxatdan o'tish qoidalari va tartiblari haqida to'liq ma'lumot berilgan."
+      },
+      "climate": {
+        "title": "O'zbekistonning investitsiya muhiti",
+        "description": "O'zbekiston xorijiy investorlar uchun sharoitlarni yaxshilash va o'z iqtisodiyotini modernizatsiya qilish ustida faol ishlaydi, istiqbolli investitsiya imkoniyatlarini taklif etadi."
+      },
+      "regional": {
+        "title": "Investorlar uchun mintaqaviy yangiliklar",
+        "description": "Investor Regional Update joriy soni Namangan viloyatiga bag'ishlangan. Keyinchalik boshqa viloyatlarni qamrab oluvchi yangilanishlar ham bo'ladi."
+      }
+    },
+    "planCalendar": {
+      "title": "Taqvim",
+      "allEvents": "Barcha tadbirlar",
+      "items": {
+        "item1": {
+          "date": "2025-Yil iyul — noyabr",
+          "content": "Tasdiqlangan tashabbuslarni ishlab chiqish"
+        },
+        "item2": {
+          "date": "2025-Yil noyabr",
+          "content": "O'zbekistonga kreativ investitsiyalarni jalb qilish"
+        },
+        "item3": {
+          "date": "2025-Yil noyabr — 2026-yil aprel",
+          "content": "2026-Yilgi Yalpi majlis uchun yangi tashabbuslar to'plami"
+        },
+        "item4": {
+          "date": "2026-Yil aprel",
+          "content": "Yangi tashabbuslarni aniqlash"
+        },
+        "item5": {
+          "date": "2025-Yil iyul — noyabr",
+          "content": "Tasdiqlangan tashabbuslarni ishlab chiqish"
+        }
+      }
+    },
+    "videoSection": {
+      "title": "Yalpi majlislardan lavhalar",
+      "description": "Islohotlar muhokama qilinadigan, asosiy qarorlar qabul qilinadigan va O'zbekistonning investitsiya kelajagi shakllanadigan davlat va investorlar o'rtasidagi muloqot.",
+      "learnMore": "Batafsil"
     }
   },
   "association": {
@@ -1815,33 +2065,270 @@
       "aziz": {
         "fullname": "Aziz Gafurov",
         "position": "Kotibiyat rahbari",
-        "description": "Iqtisodiyot fanlari doktori, korporativ boshqaruv, investitsiya siyosati va strategik konsalting sohalarida 20 yildan ortiq tajribaga ega. U xalqaro investorlar, rivojlanish banklari va davlat tuzilmalari bilan ishlash bo'yicha keng tajribaga ega. Investorlar bilan aloqalarni rivojlantirish, siyosatni muvofiqlashtirish va institutsional rivojlanishga rahbarlik qiladi."
+        "description": "Iqtisodiyot fanlari doktori, korporativ boshqaruv, investitsiya siyosati va strategik konsalting sohalarida 20 yildan ortiq tajribaga ega. U xalqaro investorlar, rivojlanish banklari va davlat tuzilmalari bilan ishlash bo'yicha keng tajribaga ega. Investorlar bilan aloqalarni rivojlantirish, siyosatni muvofiqlashtirish va institutsional rivojlanishga rahbarlik qiladi.",
+        "biography": "Doctor Of Economic Sciences, With Over 20 Years Of Experience In Corporate Governance, Investment Policy, And Strategic Consulting. He Has Extensive Experience Working With International Investors, Development Banks, And Government Institutions. He Leads The Development Of Investor Relations, Policy Coordination, And Institutional Development."
       },
       "avazbek": {
         "fullname": "Avazbek Mullajonov",
         "position": "Dasturiy koordinator",
-        "description": "Avazbek Mullajonov — tashqi iqtisodiy aloqalar, investitsiyalar va energetika sohalarida 15 yildan ortiq tajribaga ega mutaxassis. U O'zbekiston Investitsiyalar va tashqi savdo vazirligida Investitsiya iqlimi departamenti rahbari o'rinbosari hamda Turkiya Respublikasi bilan hamkorlik bo'limi rahbari lavozimlarida faoliyat yuritgan. Xalqaro biznes bo'yicha Ajou universitetida hamda menejment yo'nalishida Toshkent davlat iqtisodiyot universitetida magistr darajalariga ega."
+        "description": "Avazbek Mullajonov — tashqi iqtisodiy aloqalar, investitsiyalar va energetika sohalarida 15 yildan ortiq tajribaga ega mutaxassis. U O'zbekiston Investitsiyalar va tashqi savdo vazirligida Investitsiya iqlimi departamenti rahbari o'rinbosari hamda Turkiya Respublikasi bilan hamkorlik bo'limi rahbari lavozimlarida faoliyat yuritgan. Xalqaro biznes bo'yicha Ajou universitetida hamda menejment yo'nalishida Toshkent davlat iqtisodiyot universitetida magistr darajalariga ega.",
+        "biography": "Over 15 Years Of Professional Experience In Foreign Economic Relations, Investment, And Energy. He Has Extensive Practice In Coordinating Major Investment Projects And Developing International Cooperation. At The Secretariat Of The Foreign Investors Council, He Is Responsible For Program Coordination And Ensuring Project Implementation."
       },
       "hakimniyaz": {
         "fullname": "Hakimniyaz Kaipbergenov",
         "position": "Dasturiy koordinator",
-        "description": "Hakimniyaz Kaipbergenov Moskvadagi MGIMO universitetida xalqaro huquq bo'yicha bakalavriat va magistraturani imtiyozli tamomlagan. U O'zbekiston Tashqi ishlar vazirligida, shuningdek xalqaro yuridik firmada ishlash tajribasiga ega."
+        "description": "Hakimniyaz Kaipbergenov Moskvadagi MGIMO universitetida xalqaro huquq bo'yicha bakalavriat va magistraturani imtiyozli tamomlagan. U O'zbekiston Tashqi ishlar vazirligida, shuningdek xalqaro yuridik firmada ishlash tajribasiga ega.",
+        "biography": "Graduated With Honors From MGIMO (Moscow) With Bachelor's And Master's Degrees In International Law. He Has Experience Working At The Ministry Of Foreign Affairs Of Uzbekistan And At An International Law Firm. At The Secretariat Of The Foreign Investors Council, He Handles Legal Matters And Program Coordination."
       },
       "vladislav": {
         "fullname": "Vladislav Li",
         "position": "Dasturiy koordinator",
-        "description": "Xalqaro Vestminster universitetining Toshkent filialini \"Biznes‑menejment va moliya\" yo'nalishida tamomlagan va uchta tilni bevosita boshqaradi. Shuningdek, u mijozlar bilan samarali ishlash, muzokaralar o'tkazish, ishonchli munosabatlarni shakllantirish va muammolarni samarali hal qilish bo'yicha amaliy ko'nikmalarga ega."
+        "description": "Xalqaro Vestminster universitetining Toshkent filialini \"Biznes‑menejment va moliya\" yo'nalishida tamomlagan va uchta tilni bevosita boshqaradi. Shuningdek, u mijozlar bilan samarali ishlash, muzokaralar o'tkazish, ishonchli munosabatlarni shakllantirish va muammolarni samarali hal qilish bo'yicha amaliy ko'nikmalarga ega.",
+        "biography": "Program Coordinator Of The Secretariat Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan.\n\nVladislav Li Is A Specialist In Process Coordination, Stakeholder Engagement, And Ensuring Effective Communication. He Possesses Practical Skills In Client Relations, Event Organization, And Project Support. He Is Distinguished By High Adaptability, Responsibility, And The Ability To Work In Dynamic Environments.\n\nEducation:\n• Westminster International University In Tashkent — Bachelor Of Arts In Business Management And Finance, 2021–2025\n\nProfessional Experience:\n• FIC Secretariat — Program Coordinator (Current Position)\n  • Coordinating Projects And Internal Processes;\n  • Interacting With Participants And Partners;\n  • Organizing Workflows And Monitoring Task Execution.\n• Tashagrochem LLC — Logistics Manager, 2024–2025\n  • Organizing And Supervising Freight Transportation;\n  • Monitoring Supplies And Resolving Operational Issues;\n  • Liaising With Clients And Drivers.\n• Tashagrochem LLC — Sales Specialist, 2023–2025\n  • Conducting Negotiations And Client Management;\n  • Building Long-Term Professional Relationships;\n  • Providing After-Sales Support.\n• Scholastic Academy Group — English Teacher Assistant, 2021–2023\n  • Organizing The Educational Process;\n  • Monitoring Student Performance;\n  • Assisting Teachers And Conducting Lessons.\n\nCompetencies And Languages:\n• Languages: Russian, English, And Uzbek — Fluent.\n• Professional Skills: Project Coordination, Communication And Client Relations, Negotiations And Presentations, Logistics And Operational Management, Teamwork, Stress Tolerance, And Result Orientation.",
+        "duties": "Program Coordinator\nSecretariat Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan\n\nAbout The Position\nThe Program Coordinator Is Responsible For Organizing, Coordinating, And Monitoring The Projects And Initiatives Of The Foreign Investors Council, Ensuring Effective Cooperation Between Government Agencies, International Partners, And The Business Community. This Role Involves Overseeing Program Implementation, Supporting Operational Processes, And Ensuring The Timely Execution Of Tasks Within The Scope Of The Secretariat's Activities.\n\nKey Responsibilities:\n\nProject And Program Coordination\n• Planning And Monitoring FIC Projects At All Stages Of Implementation.\n• Monitoring The Execution Of Tasks, Deadlines, And Key Milestones (Control Points).\n• Facilitating Interaction Between Internal And External Project Participants.\n• Supporting The Preparation And Management Of Events, Meetings, And Working Groups.\n\nOperational Activities\n• Organizing The Daily Workflows Of The Secretariat.\n• Preparing Meeting Materials, Agendas, And Minutes.\n• Ensuring Effective Document Flow And Monitoring The Implementation Of Assignments.\n• Coordinating Interaction Between Departments And Stakeholders.\n\nCommunication And Collaboration\n• Maintaining Constant Communication With Foreign Investors And Partners.\n• Ensuring The Prompt Exchange Of Information Between All Parties.\n• Preparing Official Correspondence And Working Materials In Multiple Languages.\n• Assisting In The Development Of Sustainable Professional Relationships.\n\nAnalytics And Reporting\n• Collecting And Systematizing Information Regarding Projects And Initiatives.\n• Preparing Regular Progress Reports On The Status Of Task Execution.\n• Monitoring Progress And Identifying Potential Risks.\n\nEvent Organization\n• Coordinating FIC Business Events, Forums, And High-Level Meetings.\n• Supporting Logistics And Administrative Processes.\n• Overseeing The Preparation Of Participants And Relevant Materials.\n\nCore Principles\n• High Professionalism And Precision In Task Execution.\n• Maintaining An Official And Diplomatic Tone In All Communications.\n• Strict Adherence To Confidentiality And Ethical Standards."
       },
       "jurabek": {
         "fullname": "Jurabek Babaev",
         "position": "PR & Marketing eksperti",
-        "description": "Jurabek Babaev — marketing, PR va xalqaro biznes sohalarida tajribaga ega mutaxassis. U hozirda O'zbekiston Prezidenti huzuridagi Xorijiy investorlar kengashida PR va kommunikatsiyalar yo'nalishini boshqaradi. Faoliyati davomida biznes rivojlantirish, xalqaro savdo va to'qimachilik sohalarida ishlagan, hamda Toshkent Davlat Iqtisodiyot Universitetida o'qituvchi bo'lib faoliyat yuritgan."
+        "description": "Jurabek Babaev — marketing, PR va xalqaro biznes sohalarida tajribaga ega mutaxassis. U hozirda O'zbekiston Prezidenti huzuridagi Xorijiy investorlar kengashida PR va kommunikatsiyalar yo'nalishini boshqaradi. Faoliyati davomida biznes rivojlantirish, xalqaro savdo va to'qimachilik sohalarida ishlagan, hamda Toshkent Davlat Iqtisodiyot Universitetida o'qituvchi bo'lib faoliyat yuritgan.",
+        "biography": "Strategic Communications Advisor Of The Secretariat Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan\n\nJurabek Babaev Is A Specialist In Strategic Communications, PR, And Management With Many Years Of International Experience. He Is Responsible For Developing The Digital Presence And International Image Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan, As Well As Establishing Cooperation With Foreign Investors And International Partners.\n\nEducation:\n• Uzbek-Japanese Center — Professional Management Program, Tashkent, 2018\n• Tashkent State University Of Economics — PhD In International Tourism Management, 2017–2019\n• Tashkent State University Of Economics — Master's Degree, International Tourism Management, 2015–2017\n• Bukhara State University — Bachelor's Degree, Faculty Of Socio-Economics, Tourism And Hotel Management, 2011–2015\n• International Center Of Modern Education — Prague, Czech Republic, 2009–2011\n• Karlov College — ABE Program \"Travel, Tourism And Hospitality Business\", Prague, Czech Republic, 2007–2009\n\nProfessional Development And Certificates:\n• Vienna University Of Economics And Business, 2013\n• Oerlikon GmbH, Nuremberg, Germany, 2013\n• Banking Association Of Uzbekistan, Bukhara, 2003–2006\n\nProfessional Experience\n• Babaev Services LLC — Director, Tashkent (From September 2019 To Present)\n• Tashkent State University Of Economics — Lecturer, Department Of Tourism And Service, 2017–2021\n• Meridian Service Bukhara LLC — Foreign Economic Activity And Logistics Manager, Bukhara, 2015–2017\n• \"Bukhara Gilam\" JV LLC — Foreign Economic Activity And Logistics Specialist, Bukhara, 2011–2014\n• Hotel Karlo IV (Boscolo, 5★) — Assistant F&B Manager, Prague, Czech Republic, 2010\n• Hotel Inturprag (3★) — Administrator, Prague, Czech Republic, 2009–2010\n\nPublic Activities\n• Volunteer Of The United Nations Development Programme (UNDP) For Tourism Projects In Bukhara, 2013–2015\n• Volunteer Trainer At The \"Kelajak Ovozi\" School Of Young Entrepreneurs, 2012–2013\n• Leader And Volunteer Of The Kamolot Youth Social Movement, 2011–2015\n\nCompetencies And Languages\n• Languages: Uzbek — Native; Russian And English — Fluent; Czech And Turkish — Beginner Level\n• Professional Skills: PR, Marketing, Strategic Management, Working With Artificial Intelligence Tools, Microsoft Office Programs.",
+        "duties": "Strategic Communications Expert\nSecretariat Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan\n\nAbout The Position\nThe Advisor Is Responsible For Strengthening The International Image And Public Visibility Of The Foreign Investors Council (FIC), Developing Its Digital Presence, And Managing Strategic Communications With Foreign Investors, International Financial Institutions, And A Broad Audience In Uzbek, Russian, And English.\n\nKey Responsibilities:\n\nStrategy And Analytics\n•  Conducting A Digital Presence Audit Of The FIC Secretariat.\n•  Developing And Implementing An International SMM Strategy Aligned With The FIC's Objectives And Target Audience.\n•  Selecting And Justifying The Optimal Platforms (LinkedIn, Telegram, Instagram, Facebook).\n\nContent Development And Publication\n•  Preparing Monthly Multilingual Content: Analytical Posts, Expert Commentary, Infographics, Visual Storytelling, And Event Announcements.\n•  Producing Short Videos (Interviews, Event Coverage, Initiative Digests) And Animated Clips Regarding Reforms And Key Updates.\n•  Establishing And Maintaining A Unified Visual Identity Across The FIC's Digital Platforms.\n\nPromotion And Account Management\n•  Daily Management Of The FIC's Social Media: Planning, Posting, Moderating Discussions, And Responding To Comments In A Diplomatic Tone.\n•  Launching And Optimizing Paid Advertising Campaigns.\n•  Weekly Monitoring Of Performance And Tactical Adjustment Of Communications.\n\nReporting And Analytics\n•  Monthly Analytical Reports On Reach, Engagement, And Post Effectiveness.\n•  Developing Strategic Recommendations For The Growth Of Digital Communication Channels.\n•  Technical Support For Key Online Events And Live Broadcasts.\n\nCore Principles\n•  Compliance With International Standards Of Strategic Digital Communication.\n•  Official And Diplomatic Tone Of Communication.\n•  Strict Adherence To Confidentiality And Ethical Standards."
       },
       "madina": {
         "fullname": "Madinaxon Abidova",
         "position": "Ma'muriy xodim",
-        "description": "Madinaxon biznes va iqtisodiyot yo'nalishi bo'yicha bakalavr hamda agrobiznes va investitsion faoliyat bo'yicha magistr darajasiga ega. U O'zbekiston Xususiy Turistik Tashkilotlar Assotsiatsiyasida menejer sifatida faoliyat yuritgan va milliy hamda xalqaro turizmni rivojlantirishga qaratilgan tadbirlarni muvofiqlashtirgan."
+        "description": "Madinaxon biznes va iqtisodiyot yo'nalishi bo'yicha bakalavr hamda agrobiznes va investitsion faoliyat bo'yicha magistr darajasiga ega. U O'zbekiston Xususiy Turistik Tashkilotlar Assotsiatsiyasida menejer sifatida faoliyat yuritgan va milliy hamda xalqaro turizmni rivojlantirishga qaratilgan tadbirlarni muvofiqlashtirgan.",
+        "biography": "Administrative Officer Of The Secretariat Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan\n\nMadinaxon Abidova Is A Professional With Extensive Experience In Project Management, International Event Organization, And Tourism Development. Throughout Her Career In International Organizations, Government Structures, And The Non-Profit Sector, She Has Effectively Combined Deep Academic Knowledge With Practical Experience. Currently, She Is Responsible For Coordinating Administrative Processes Of The Foreign Investors Council And Ensuring Liaison With Investors.\n\nEducation:\n• International Agriculture University / Royal Agricultural University — Master's In Agribusiness Management, 2023–2025\n• Management Development Institute Of Singapore In Tashkent — Bachelor's In Business And Economics, 2015–2020\n• Academic Lyceum Under Tashkent State University Of Economics — 2012–2015\n\nProfessional Experience:\n• FIC Secretariat — Administrative Officer (June 2025 – Present)\n  • Managing All Document Flow And Clerical Processes Of The Secretariat.\n  • Organizing Working Group Meetings, Investor Sessions, And Official Events.\n  • Coordinating Interaction Between Investors And Relevant State Authorities.\n• FIC Secretariat — Intern (February – June 2025)\n• Association Of Private Tourism Agencies Of Uzbekistan (APTA) — Manager, 2016–2024\n  • Coordinating More Than 15 National And International Events (B2B, Road-Shows).\n  • Participating In European Union (EU) And USAID Projects As A Project Assistant And Liaison Officer.\n  • Organizer Of The \"Tashkent Travel Mart\" B2B Exhibition And International Conferences Supported By The EU.\n• Denova Agro — Event Organizer (Vienna, Austria), 2019\n• WEST CAMP — English Teacher And Youth Program Leader, 2017\n\nPublic And Volunteer Activities:\n• Iteca-Exhibitions — Volunteer For International Exhibitions, 2017–2018\n\nCompetencies And Languages:\n• Languages: Uzbek — Native; Russian And English — Fluent.\n• Professional Skills: Event Management, International Logistics, B2B Communication, Strategic Planning, Project Monitoring, And Reporting Based On EU/USAID Standards.",
+        "duties": "Administrative Officer Of The Secretariat Of The Foreign Investors Council Under The President Of The Republic Of Uzbekistan\n\nProfessional Experience And Key Responsibilities:\n\nDocument Flow And Clerical Work\n• Managing Incoming And Outgoing Correspondence Of The Secretariat In Uzbek, Russian, And English.\n• Registration, Systematization, And Archiving Of Documents In Accordance With Established Regulations.\n• Preparation Of Official Letters, Certificates, Minutes, And Internal Memos.\n• Monitoring The Timely Execution Of Assignments And Compliance With Document Processing Deadlines.\n• Ensuring The Confidentiality And Security Of Official Information.\n\nOrganization Of Events And Meetings\n• Planning And Organizational Support For Working Group Meetings, Plenary Sessions, And Bilateral Meetings.\n• Managing Event Logistics: Hall Bookings, Preparation Of Materials, And Technical Support.\n• Drafting Agendas, Taking Minutes Of Meetings, And Monitoring The Implementation Of Decisions.\n• Liaising With Foreign Delegations And Ensuring Protocol Support For Official Visits.\n\nCoordination And Analysis\n• Ensuring Prompt Communication Between Investors And Ministries, Receiving And Monitoring The Processing Of Investor Inquiries.\n• Preparing Regular Administrative Reports On Secretariat Activities And Presentation Materials For Management.\n• Technical Support For Online Events And Video Conferences.\n\nCompetencies And Languages:\n• Languages: Uzbek And Russian — Fluent; English — Professional.\n• Professional Skills: State Clerical Standards, Strategic And Diplomatic Communication, Professional Proficiency In MS Office Programs.\n• Personal Qualities: Multitasking, Stress Tolerance, Result-Oriented, And Client-Focused Approach."
+      }
+    },
+    "meta": {
+      "titleSuffix": "SII"
+    }
+  },
+  "initiatives": {
+    "hero": {
+      "title": "Tashabbuslar"
+    },
+    "page": {
+      "heading": "Investitsiya muhitini yaxshilash bo'yicha tashabbuslar",
+      "subheading": "Har bir tashshabus soliqqa tortish, energetika, investitsiyalar, bandlik va korporativ boshqaruv sohasidagi islohotlarga qaratilgan"
+    },
+    "table": {
+      "session": "Sessiya",
+      "document": "Hujjat",
+      "workingGroups": "Ishchi guruhlar",
+      "initiatives": "Tashabbuslar"
+    },
+    "sessions": {
+      "plenary1": {
+        "label": "I Yalpi (2022)",
+        "groups": "Birinchi tematik yo'nalishlar"
+      },
+      "plenary2": {
+        "label": "II Yalpi (2024)",
+        "groups": "To'rt guruh: kapital bozori va XMK · mas'uliyatli biznes yuritish · muqobil investitsiyalar · investor munosabatlarini raqamlashtirish"
+      },
+      "plenary3": {
+        "label": "III Yalpi (2025)",
+        "groups": "Idoralararo guruhlar; umumiy soni 16 taga yetkazildi"
+      }
+    },
+    "strategicBanner": {
+      "label": "Strategik tashshabus",
+      "text": "Markaziy Osiyo va Kavkaz investitsiya kengashlari mintaqaviy alyansi (RAIC-CAC) ni raqobatbardosh investitsiya muhiti va chegaralararo muvofiqlashtirishni shakllantirish maqsadida tuzish."
+    },
+    "count": {
+      "label": "Tashabbuslar soni:"
+    },
+    "tableItem": {
+      "initiative": "Tashshabus"
+    },
+    "categories": {
+      "strategic": {
+        "title": "STRATEGIK TASHABBUSLAR",
+        "items": {
+          "i0": "Markaziy Osiyo va Kavkaz investitsiya kengashlari mintaqaviy alyansi tuzish va yillik kengash forumlarini o'tkazish",
+          "i1": "Ustuvor investitsiya tashabbuslarini amalga oshirishni muvofiqlashtirish uchun qonuniy mustahkamlangan Loyiha ofisi tuzish",
+          "i2": "Investitsiya faoliyatini kompleks baholash uchun «FIC Investment Dashboard» ochiq raqamli platformasini yaratish"
+        }
+      },
+      "energy": {
+        "title": "ENERGETIKA SEKTORI",
+        "items": {
+          "i0": "Xususiy sektorni elektr energiyasini taqsimlash faoliyatiga yo'l ochish (qonunchilikka o'zgartirish kiritish)",
+          "i1": "Xorijiy moliyalashtirish bilan loyihalarni ichki qayta sug'urta talablaridan ozod qilish",
+          "i2": "Energetika sektorini rivojlantirish milliy bosh rejasini (ishlab chiqarish, uzatish, taqsimlash) ishlab chiqish va nashr etish",
+          "i3": "Elektr energiyasini ishlab chiqarish uchun litsenziya to'lovi stavkalarini belgilash va muntazam qayta ko'rib chiqish",
+          "i4": "Elektr energiyasini ishlab chiqarish litsenziyalash tartibini isloh qilish: hujjatlarni bosqichma-bosqich topshirish va muddatlarni muvofiqlashtirish"
+        }
+      },
+      "finance": {
+        "title": "MOLIYAVIY SEKTOR VA BANK ISHI",
+        "items": {
+          "i0": "Banklar uchun masofaviy kirish qoidalarida risk-asosida moslashuvchanlikni joriy etish",
+          "i1": "Milliy moliyaviy institutlarning imkoniyatlarini oshirish va kapital bozori infratuzilmasini rivojlantirish",
+          "i2": "Aralash moliyalashtirish vositalarini kengaytirish va xalqaro moliyaviy institutlar bilan hamkorlikni chuqurlashtirish",
+          "i3": "Bank islohotlarini energetika sektorida infratuzilmani moliyalashtirish ehtiyojlari bilan muvofiqlashtirish",
+          "i4": "Kredit portfellarini moslashuvchan sotib olish va sotish uchun huquqiy baza joriy etish",
+          "i5": "Islomiy sug'urta qonunchiligini (takaful) joriy etish",
+          "i6": "Ilgari sotib olingan xorijiy valyuta va to'langan import avanslaridan foydalanish huquqini berish",
+          "i7": "Xorijiy kapitalga soliq yukini kamaytirish: manba solig'i va kapital o'simi solig'i",
+          "i8": "Kapital bozorida mahalliy investorlar ishtirokini rag'batlantirish vositalarini joriy etish (jismoniy va yuridik shaxslar uchun soliq imtiyozlari)",
+          "i9": "Kredit portfellarini moslashuvchan sotib olish va sotishni ta'minlovchi huquqiy baza joriy etish",
+          "i10": "Ko'chmas mulk garoviga ipoteka kreditlari uchun tartibga solish bazasini joriy etish",
+          "i11": "Muammoli kredit portfellarini (NPL) sotish uchun tartibga solish bazasi yaratish"
+        }
+      },
+      "taxes": {
+        "title": "SOLIQLAR VA SOLIQ MA'MURLIGI",
+        "items": {
+          "i0": "Davlat-xususiy sheriklik (DXSh) shartnomalari uchun soliq qoidalarini ishlab chiqish",
+          "i1": "Energiya to'plash tizimi loyihalari uchun yer solig'i va mulk solig'i imtiyozlarini aniqlashtirish",
+          "i2": "Har bir mavjudlik mintaqasida doimiy vakolatxona ro'yxatdan o'tkazish talabini bekor qilish (Soliq kodeksining 36-moddasiga o'zgartirish)",
+          "i3": "Yer uchastkasi uchun to'lovlarni amalga oshirish mexanizmini takomillashtirish",
+          "i4": "O'zbekistonda ishlab chiqarilmaydigan uskunalarni import qilishda QQSdan ozod qilish mexanizmini joriy etish",
+          "i5": "Offlayn va onlayn savdo uchun alohida QQS chegaralarini joriy etish (yakka tartibdagi tadbirkorlar va o'z-o'zini band qilganlar)",
+          "i6": "Qurilish davrida yer solig'i imtiyozlari berish tartibini qayta ko'rib chiqish",
+          "i7": "Lalmikor va yaylov zonalari uchun yer solig'iga 0,3 koeffitsientini qo'llash mexanizmini qayta ko'rib chiqish",
+          "i8": "YQE loyihalari uchun yer solig'idan ozod qilishni yer ajratmaning butun maydoniga tatbiq etish",
+          "i9": "Korporativ ijtimoiy mas'uliyat (KIM) loyihalariga sarflangan xarajatlar uchun soliq chegirilmasini joriy etish"
+        }
+      },
+      "climate": {
+        "title": "INVESTITSIYA MUHITINI YAXSHILASH",
+        "items": {
+          "i0": "Passport almashtiriladigan xorijiy investorlar uchun viza tartiblarini soddalashtirish",
+          "i1": "Tamaki ishlab chiqarish uchun xom ashyo bojxona bojlarini kamaytirish",
+          "i2": "Tamaki mahsulotlaridagi aktsiz markalarning yangilangan dizaynini joriy etish muddatini uzaytirish",
+          "i3": "Xorijiy investitsiyalar uchun huquqiy barqarorlik kafolati mexanizmini joriy etish",
+          "i4": "Investitsiya va DXSh loyihalari uchun qonunchilik barqarorligini qonuniy mustahkamlash",
+          "i5": "Emissiya daromadiga (aksiya mukofotiga) hissalar hisobini tartibga solish",
+          "i6": "Investitsiya qonunlariga ikkilamchi qonunchilik aktlarini qabul qilish uchun majburiy muddatlar belgilash",
+          "i7": "DXSh loyihalarini amalga oshirishni qo'llab-quvvatlash mexanizmini takomillashtirish",
+          "i8": "DXSh loyihalarini ko'rib chiqish va imzolash tartibini optimallashtirish",
+          "i9": "Shaharsozlikdagi ekologik standartlarni tahlil qilish uchun Idoralararo ekspert qo'mitasini tuzish",
+          "i10": "Yashil infratuzilma va binolar uchun xalqaro standartlarni joriy etish imkoniyatini ko'rib chiqish",
+          "i11": "«PQ-46 qo'llanilishining o'tish qoidalari to'g'risida»gi Prezident farmoni loyihasini ishlab chiqish va qabul qilish"
+        }
+      },
+      "corporate": {
+        "title": "KORPORATIV BOSHQARUV",
+        "items": {
+          "i0": "Korporativ boshqaruv kodeksining yangi tahririni tayyorlash",
+          "i1": "Ochiq aktsiyadorlik jamiyatlari direktorlar kengashlarida minimal gender standartini belgilash",
+          "i2": "Davlat korxonalari va banklarda MBY joriy etish orqali korporativ boshqaruvni o'zgartirish",
+          "i3": "Aksiyadorlarning umumiy yig'ilishida ishtirok etish va tegishli aksiyadorlik huquqlarini amalga oshirish qulayligini ta'minlash",
+          "i4": "To'liq faoliyat ko'rsatuvchi nazorat kengashlarini tuzish",
+          "i5": "Aktsiyadorlik jamiyatining boshqaruv organlari va nazorat qiluvchi shaxslarining aktsiyadorlik jamiyati manfaatlarida vijdonan va oqilona harakat qilish majburiyatini ta'minlash",
+          "i6": "Affillangan shaxslar bilan tuzilgan bitimlar va yirik bitimlarni tartibga solishni kuchaytirish",
+          "i7": "Aksiyadorlarni o'z ulushi va huquqlarining kamayishidan himoya qilish",
+          "i8": "Aktsiyadorlik jamiyatlarida korporativ shartnomalar (aksiyadorlik shartnomalari) tartibga solishini ishlab chiqish",
+          "i9": "Yirik pakt sotib olishda qolgan aksiyadorlarga aktsiyalarni sotish taklifini e'lon qilish qoidalarini takomillashtirish",
+          "i10": "Aktsiyalari ochiq muomalada bo'lgan aktsiyadorlik jamiyatlarining shaffofligini oshirishni davom ettirish",
+          "i11": "Barqaror rivojlanish sohasida ma'lumotlarni oshkor qilish va shaffoflik masalalari",
+          "i12": "Ozchilik aksiyadorlar manfaatlarini himoya qiluvchi huquqni qo'llashni ta'minlash"
+        }
+      },
+      "ai": {
+        "title": "SUN'IY INTELLEKT VA RAQAMLI IQTISODIYOT",
+        "items": {
+          "i0": "O'zbekiston Respublikasining «Sun'iy intellekt to'g'risida»gi qonunini ishlab chiqish va qabul qilish",
+          "i1": "Xorijiy investorlar kengashi doirasida SI bo'yicha idoralararo ishchi guruh tuzish",
+          "i2": "SI yordamida fuqarolar shaxsiy ma'lumotlarini qayta ishlash uchun normativ-huquqiy baza ishlab chiqish",
+          "i3": "Yer ma'lumotlarining mavjudligi va aniqligini oshirish uchun kadastr tizimini raqamlashtirish va rivojlantirish",
+          "i4": "Yoshi cheklangan tovarlar savdo nuqtalarida xaridorlar yoshini raqamli tekshirish uchun SI tizimini joriy etish",
+          "i5": "Korporativ guruhlar ichida xavfsiz ma'lumot almashish uchun huquqiy mexanizm yaratish",
+          "i6": "SI sohasida milliy axloqiy tamoyillarni tasdiqlash va SI Axloq Kengashini tuzish",
+          "i7": "SI sohasida kadrlar tayyorlash va qayta tayyorlash tizimini yaratish",
+          "i8": "SI sohasida tartibga solish «qum qo'rg'onlari» uchun normativ-huquqiy baza ishlab chiqish",
+          "i9": "Davlat xaridlari qonunchiligiga SI yechimlarini joriy etishni rag'batlantirish uchun o'zgartirish kiritish",
+          "i10": "Bozor maydonlariga axborot vositachisi maqomini berish va platforma va sotuvchi javobgarligini farqlash",
+          "i11": "Raqamli platforma operatorlarining monopoliyaga qarshi tartibga solishini takomillashtirish",
+          "i12": "Elektron tijorat uchun logistika infratuzilmasini rivojlantirish davlat dasturi",
+          "i13": "Elektron tijoratda iste'molchilar huquqlarini himoya qilish mexanizmlarini mustahkamlash",
+          "i14": "«Kelajak ko'nikmalari» milliy ochiq onlayn ta'lim platformasini shakllantirish",
+          "i15": "O'zbekiston boshqaruv kompetentsiyalari barometrini va boshqaruv ta'limini o'zgartirish yo'l xaritasini ishlab chiqish",
+          "i16": "«Elektron tijorat uchun raqamli ko'nikmalar» dasturi: aholini va KO'Bni o'qitish",
+          "i17": "Katta ma'lumotlar va sun'iy intellektni boshqarish milliy platformasini shakllantirish",
+          "i18": "SI asosida fuqaro muhofazasi xavflarini boshqarish platformasini ishlab chiqish",
+          "i19": "Qishloq xo'jaligi mahsulotlarini savdo qilish va sertifikatlash uchun yagona raqamli platforma yaratish (AgriTrade Platform)"
+        }
+      },
+      "land": {
+        "title": "YER MASALALARI",
+        "items": {
+          "i0": "Investorlarga yer uchastkalari berishning keng qamrovli tartibini belgilovchi yagona normativ aktni ishlab chiqish",
+          "i1": "Tender boshlanishidan oldin yerlarni qayta toifalashning maqsadga muvofiqligini majburiy oldindan tasdiqlashni joriy etish",
+          "i2": "Yer uchastkalarini tayyorlash va sotib olish uchun yagona huquqiy tartib o'rnatish",
+          "i3": "Investorning yer uchastkasini tayyorlash bilan bog'liq xarajatlarni moliyalashtirish huquqini mustahkamlash",
+          "i4": "Ijarachining ijaradagi yer uchastkasida qurgan ob'ektlarining taqdiri uchun huquqiy rejimni belgilash",
+          "i5": "Investorga yer uchastkasiga vaqtinchalik kirish imkoniyatini beruvchi soddalashtirilgan mexanizmni joriy etish",
+          "i6": "Ko'chmas mulk bilan tuzilgan bitimlarni ro'yxatdan o'tkazish va ko'chmas mulkka bo'lgan huquqlarni ro'yxatdan o'tkazishni farqlash",
+          "i7": "Xorijiy investorlar uchun doimiy foydalanish huquqini ijara huquqiga o'tkazish tartibini mustahkamlash",
+          "i8": "Yer siyosatini ishlab chiqishga nodavlat dehqon uyushmalarini jalb etish",
+          "i9": "Investorlar huquqlarini himoya qilish uchun yer ombudsmeni instituti tuzish",
+          "i10": "Yer nizolarini sudgacha hal qilish uchun apellyatsiya komissiyalari instituti tuzish",
+          "i11": "Investorlarning qishloq xo'jaligi yerlariga kirishini ta'minlash",
+          "i12": "Haqiqiy ishlab chiqaruvchilarning qishloq xo'jaligi yerlariga kirish mexanizmlarini takomillashtirish",
+          "i13": "Yerdan foydalanishning ortiqcha parchalanishining oldini olish",
+          "i14": "Qishloq xo'jaligi yerlarining ortiqcha konsentratsiyasining oldini olish",
+          "i15": "Qishloq xo'jaligi yerlarini baholash tartiblarini takomillashtirish",
+          "i16": "Yerdan foydalanish sohasida ekologik va suv siyosatini takomillashtirish",
+          "i17": "Yer huquqlari tugatiliganda yer foydalanuvchilar huquqlarini kafolatlash va himoya qilishni takomillashtirish",
+          "i18": "Zaif toifadagi yer foydalanuvchilarning yer nizolarida adalatga murojaat imkoniyatini ta'minlash",
+          "i19": "Ijarachilar va davlat tuzilmalari o'rtasidagi yer nizolarida tomonlar tengligini ta'minlash",
+          "i20": "Ijarachilarning yerdan foydalanish huquqi muddatidan oldin tugatilganda adolatli kompensatsiya olishini ta'minlash",
+          "i21": "Qishloq xo'jaligi yeridan foydalanish huquqlari garovi asosida kreditlash mexanizmlarini ishlab chiqish"
+        }
+      },
+      "alternative": {
+        "title": "MUQOBIL INVESTITSIYALAR",
+        "items": {
+          "i0": "O'zbekistonni mintaqaviy PE/VC markaziga aylantirish bo'yicha yo'l xaritasi ishlab chiqish",
+          "i1": "Muqobil investitsiya jamg'armalari (MIJ) va ularning investorlari uchun maxsus tartibga solish va soliq rejimini joriy etish",
+          "i2": "O'zbekistonda muqobil investitsiyalar bo'yicha yillik xalqaro sammit o'tkazish",
+          "i3": "Mahalliy boshqaruvchi kompaniyalar va investitsiya jamg'armalarini rivojlantirish"
+        }
+      },
+      "sustainable": {
+        "title": "BARQAROR RIVOJLANISH",
+        "items": {
+          "i0": "Aylanma iqtisodiyot masalalari bo'yicha idoralararo ishchi guruh va kengash doirasida yillik ixtisoslashtirilgan ESG mukofotini tuzish",
+          "i1": "Qaror qabul qilish sifatining milliy standartini joriy etish (Tayanch O'zbekiston)",
+          "i2": "Milliy tartibga solish ta'sirini baholash tizimini (RTB) va majburiy keyingi ko'rib chiqishni joriy etish",
+          "i3": "Megaloyihalar uchun milliy Pre-Mortem va After-Action Review (AAR) tizimini joriy etish (MBY Strategik Ko'rib Chiqish Tizimi)",
+          "i4": "MBY kontekstida milliy KPI, hisobdorlik va «diqqat arxitekturasi» tizimini shakllantirish (O'zbekiston–2030)",
+          "i5": "MBY tamoyillariga asoslangan milliy etkazib beruvchi malaka standartini joriy etish",
+          "i6": "Milliy MBY siyosati va shikoyatlarni ko'rib chiqish mexanizmini ishlab chiqish (MKP modeli asosida)",
+          "i7": "MBY tamoyillari bo'yicha shikoyatlarni ko'rib chiqish va nizolarni hal etishning milliy tizimini yaratish (MBY Shikoyat Mexanizmi)",
+          "i8": "Kompaniyalar uchun yagona ESG ma'lumotlarini oshkor qilish standartlarini joriy etish",
+          "i9": "Mas'uliyatli biznes yuritish registriga tashkilotlarni kiritish mezonlarini belgilash",
+          "i10": "Kompaniya darajasida iqlim rejalashtirish va iqlim xavflarini boshqarish talablarini joriy etish",
+          "i11": "«Yashil sukuk» chiqarish uchun huquqiy va institutsional bazani yaratish",
+          "i12": "«Yashil» kreditlar uchun milliy yorliqlash standartlari va metodologiyasini ishlab chiqish",
+          "i13": "Yashil va barqaror kreditlash uchun prudensial rag'batlantirish choralarini ishlab chiqish",
+          "i14": "Yashil va barqaror loyihalarning keng qamrovli reyestrini ishlab chiqish («Yashil Loyihalar Kitobi»)",
+          "i15": "O'zbekiston Respublikasining Milliy Barqaror Moliya Strategiyasini ishlab chiqish",
+          "i16": "Davlat korxonalari va ochiq emitentlarning global agentliklardagi ESG reytinglarini ishlab chiqish",
+          "i17": "Xalqaro tajriba hisobga olingan holda energetika sektoridagi ekologik va ijtimoiy standartlarni modernizatsiya qilish",
+          "i18": "Investorga ekologik atributlarga egalik huquqini berish"
+        }
       }
     }
+  },
+  "uploadDocuments": {
+    "title": "To'ldirilgan Hujjatlarni Yuklash",
+    "subtitle": "PDF, XLSX Yoki ZIP Fayllarni Yuklang.",
+    "dropzone": "Fayllarni Shu Yerga Tashlang Yoki Fayllarni Tanlang",
+    "formats": "Qo'llab-quvvatlanadi: PDF, XLSX, ZIP",
+    "send": "Yuborish",
+    "sending": "Yuborilmoqda...",
+    "success": "Hujjat Muvaffaqiyatli Yuborildi",
+    "invalidType": "Faqat PDF, XLSX Va ZIP Fayllar Qabul Qilinadi.",
+    "fileTooLarge": "Fayl Hajmi 25 MB Dan Oshmasligi Kerak.",
+    "uploadError": "Xatolik Yuz Berdi. Qayta Urinib Ko'ring.",
+    "remove": "Faylni Olib Tashlash",
+    "close": "Yopish"
   }
 }

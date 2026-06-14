@@ -3,15 +3,11 @@
     <div>
       <div class="text-center mb-[50px]">
         <h2 class="title-64 mb-3 lg:text-[64px] text-[32px]">
-          {{ t("Исполнительный комитет") }}
+          {{ t("homePage.executiveCommittee.title") }}
         </h2>
         <div class="w-full flex justify-center">
           <div class="lg:text-[20px] text-base lg:w-2/4">
-            {{
-              t(
-                "barqaror rivojlanish va iqtisodiy islohotlarni qo‘llab-quvvatlash maqsadidagi tashkilotlarni birlashtiradi."
-              )
-            }}
+            {{ t("homePage.executiveCommittee.subtitle") }}
           </div>
         </div>
       </div>
@@ -55,7 +51,7 @@
 
       <div class="text-center mt-[50px]">
         <WLocaleLink to="/foreigninvestors" class="btn btn-secondary">
-          {{ t("Подробно") }}
+          {{ t("homePage.executiveCommittee.learnMore") }}
         </WLocaleLink>
       </div>
     </div>
@@ -84,58 +80,42 @@ const investorCards = computed(() => [
     logoAlt: "MIIT",
     logoClass: "investor-profile-logo-image--sm",
     image: LazizImage,
-    name: t("Лазиз Кудратов"),
-    position: t(
-      "Министр инвестиций, промышленности и торговли Республики Узбекистан"
-    ),
-    quote: t(
-      "“Узбекистан демонстрирует устойчивый рост инвестиционной активности благодаря проводимым реформам, созданию благоприятных условий для иностранных инвесторов.”"
-    ),
+    name: t("homePage.executiveCommittee.laziz.name"),
+    position: t("homePage.executiveCommittee.laziz.position"),
+    quote: t("homePage.executiveCommittee.laziz.quote"),
   },
   {
     logo: EBank,
     logoAlt: "EBRD",
     image: AndiImage,
-    name: t("Анди Аранитаси"),
-    position: t(
-      "Глава представительства Европейского банка реконструкции и развития в Узбекистане"
-    ),
-    quote: t(
-      "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”"
-    ),
+    name: t("homePage.executiveCommittee.andi.name"),
+    position: t("homePage.executiveCommittee.andi.position"),
+    quote: t("homePage.executiveCommittee.andi.quote"),
   },
   {
     logo: AdBank,
     logoAlt: "ADB",
     image: KanokpanImage,
-    name: t("Канокпан Лао-Арая"),
-    position: t("Председатель Совета управляющих Азиатского банка развития"),
-    quote: t(
-      "“Правительство демонстрирует сильную приверженность реформам и стремится вовлекать все заинтересованные стороны страны, включая частный сектор, в процесс развития.”"
-    ),
+    name: t("homePage.executiveCommittee.kanokpan.name"),
+    position: t("homePage.executiveCommittee.kanokpan.position"),
+    quote: t("homePage.executiveCommittee.kanokpan.quote"),
   },
   {
     logo: IfcBank,
     logoAlt: "IFC",
     image: NeilImage,
-    name: t("Нил Маккейн"),
-    position: t(
-      "Директор офиса Международной финансовой корпорации по Узбекистану и Туркменистану"
-    ),
-    quote: t(
-      "“Ключевые конкурентные преимущества Узбекистана — крупнейшее население в Центральной Азии и наиболее диверсифицированная экономика.”"
-    ),
+    name: t("homePage.executiveCommittee.neil.name"),
+    position: t("homePage.executiveCommittee.neil.position"),
+    quote: t("homePage.executiveCommittee.neil.quote"),
   },
   {
     logo: FICLogo,
     logoAlt: "FIC",
     logoClass: "investor-profile-logo-image--sm",
     image: AzizImage,
-    name: t("Азиз Гафуров"),
-    position: t("Глава ассоциации СИИ"),
-    quote: t(
-      "“Мы придаем большое значение улучшению делового климата в стране, которое Президент Мирзиёев определил как стратегический национальный приоритет.”"
-    ),
+    name: t("homePage.executiveCommittee.aziz.name"),
+    position: t("homePage.executiveCommittee.aziz.position"),
+    quote: t("homePage.executiveCommittee.aziz.quote"),
   },
 ]);
 </script>

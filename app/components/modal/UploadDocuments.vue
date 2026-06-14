@@ -3,7 +3,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const emit = defineEmits(['close'])
-const { locale } = useI18n()
+const { t } = useI18n()
 const config = useRuntimeConfig()
 
 const fileInput = ref(null)
@@ -13,82 +13,14 @@ const isUploading = ref(false)
 const successVisible = ref(false)
 const errorLines = ref([])
 
-const copy = {
-  title: {
-    uz: 'To‘ldirilgan hujjatlarni yuklash',
-    ru: 'Загрузка заполненных документов',
-    en: 'Upload completed documents'
-  },
-  subtitle: {
-    uz: 'PDF, XLSX yoki ZIP fayllarni yuklang.',
-    ru: 'Загрузите файлы в формате PDF, XLSX или ZIP.',
-    en: 'Upload files in PDF, XLSX or ZIP format.'
-  },
-  dropzone: {
-    uz: 'Fayllarni shu yerga tashlang yoki fayllarni tanlang',
-    ru: 'Перетащите файлы сюда или выберите файлы',
-    en: 'Drag your files here or browse files'
-  },
-  formats: {
-    uz: 'Qo‘llab-quvvatlanadi: PDF, XLSX, ZIP',
-    ru: 'Поддерживаются: PDF, XLSX, ZIP',
-    en: 'Supported: PDF, XLSX, ZIP'
-  },
-  send: {
-    uz: 'Yuborish',
-    ru: 'Отправить',
-    en: 'Send'
-  },
-  sending: {
-    uz: 'Yuborilmoqda...',
-    ru: 'Отправка...',
-    en: 'Sending...'
-  },
-  success: {
-    uz: 'Hujjat muvaffaqiyatli yuborildi',
-    ru: 'Документ успешно отправлен',
-    en: 'Document sent successfully'
-  },
-  invalidType: {
-    uz: 'Faqat PDF, XLSX va ZIP fayllar qabul qilinadi.',
-    ru: 'Принимаются только файлы PDF, XLSX и ZIP.',
-    en: 'Only PDF, XLSX and ZIP files are accepted.'
-  },
-  fileTooLarge: {
-    uz: 'Fayl hajmi 25 MB dan oshmasligi kerak.',
-    ru: 'Размер файла не должен превышать 25 МБ.',
-    en: 'File size must not exceed 25 MB.'
-  },
-  uploadError: {
-    uz: 'Xatolik yuz berdi. Qayta urinib ko‘ring.',
-    ru: 'Произошла ошибка. Попробуйте снова.',
-    en: 'Something went wrong. Please try again.'
-  },
-  remove: {
-    uz: 'Faylni olib tashlash',
-    ru: 'Удалить файл',
-    en: 'Remove file'
-  },
-  close: {
-    uz: 'Yopish',
-    ru: 'Закрыть',
-    en: 'Close'
-  }
-}
-
-const acceptedExtensions = ['pdf', 'xlsx', 'zip']
+const acceptedExtensions = [‘pdf’, ‘xlsx’, ‘zip’]
 const maxFileSizeBytes = 25 * 1024 * 1024 // 25 MB
 let successTimer = null
 let errorTimer = null
 
 const hasFiles = computed(() => files.value.length > 0)
-const currentLocale = computed(() => (['uz', 'ru', 'en'].includes(locale.value) ? locale.value : 'ru'))
 const configuredUploadEndpoint = computed(() => config.public?.NUXT_DOCUMENT_UPLOAD_URL || '')
 const defaultUploadEndpoint = 'https://6935988eacba7.xvest1.ru/fic_bot_test/sendDocument.php'
-
-function localized(key) {
-  return copy[key][currentLocale.value] || copy[key].ru
-}
 
 function getLocalUploadEndpoint() {
   if (typeof window === 'undefined') {
@@ -142,9 +74,9 @@ function pushFiles(fileList) {
   const tooLargeExists = nextFiles.some((file) => file.size > maxFileSizeBytes)
 
   if (invalidExists) {
-    showError(localized('invalidType'))
+    showError(t('uploadDocuments.invalidType'))
   } else if (tooLargeExists) {
-    showError(localized('fileTooLarge'))
+    showError(t('uploadDocuments.fileTooLarge'))
   }
 
   const existingKeys = new Set(files.value.map(getFileKey))
@@ -301,7 +233,7 @@ async function submit() {
         }
 
         if (response.status === 413) {
-          throw new Error(localized('fileTooLarge'))
+          throw new Error(t('uploadDocuments.fileTooLarge'))
         }
 
         if (!response.ok || !payload?.success) {
@@ -320,7 +252,7 @@ async function submit() {
     throw lastError || new Error('Upload failed')
   } catch (error) {
     console.error('Document upload failed:', error)
-    showError(error instanceof Error && error.message ? error.message : localized('uploadError'))
+    showError(error instanceof Error && error.message ? error.message : t('uploadDocuments.uploadError'))
   } finally {
     isUploading.value = false
   }
@@ -349,7 +281,7 @@ onBeforeUnmount(() => {
   <Teleport to="body">
     <div class="ud-backdrop" @click.self="closeModal">
       <div class="ud-card" role="dialog" aria-modal="true">
-        <button class="ud-close" type="button" :aria-label="localized('close')" @click="closeModal">
+        <button class="ud-close" type="button" :aria-label="t('uploadDocuments.close')" @click="closeModal">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M18 6L6 18M6 6l12 12" stroke="#191C1F" stroke-width="1.8" stroke-linecap="round" />
           </svg>
@@ -357,10 +289,10 @@ onBeforeUnmount(() => {
 
         <div class="ud-heading">
           <h2 class="ud-title">
-            <span class="ud-title-line">{{ localized('title') }}</span>
+            <span class="ud-title-line">{{ t('uploadDocuments.title') }}</span>
           </h2>
           <p class="ud-subtitle">
-            <span class="ud-subtitle-line">{{ localized('subtitle') }}</span>
+            <span class="ud-subtitle-line">{{ t('uploadDocuments.subtitle') }}</span>
           </p>
         </div>
 
@@ -390,11 +322,11 @@ onBeforeUnmount(() => {
             </div>
 
             <div class="ud-copy-block ud-copy-block--primary">
-              <span class="ud-copy-line">{{ localized('dropzone') }}</span>
+              <span class="ud-copy-line">{{ t('uploadDocuments.dropzone') }}</span>
             </div>
 
             <div class="ud-copy-block ud-copy-block--muted">
-              <span class="ud-copy-line">{{ localized('formats') }}</span>
+              <span class="ud-copy-line">{{ t('uploadDocuments.formats') }}</span>
             </div>
           </div>
         </div>
@@ -416,7 +348,7 @@ onBeforeUnmount(() => {
             <button
               class="ud-file-remove"
               type="button"
-              :aria-label="localized('remove')"
+              :aria-label="t('uploadDocuments.remove')"
               @click.stop="removeFile(index)"
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -432,7 +364,7 @@ onBeforeUnmount(() => {
               <path d="M4 9l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
             <div class="ud-alert-copy">
-              <span class="ud-alert-line">{{ localized('success') }}</span>
+              <span class="ud-alert-line">{{ t('uploadDocuments.success') }}</span>
             </div>
           </div>
         </Transition>
@@ -451,8 +383,8 @@ onBeforeUnmount(() => {
 
         <Transition name="ud-button">
           <button v-if="hasFiles" class="btn btn-primary ud-submit" type="button" :disabled="isUploading" @click="submit">
-            <span v-if="!isUploading">{{ localized('send') }}</span>
-            <span v-else>{{ localized('sending') }}</span>
+            <span v-if="!isUploading">{{ t('uploadDocuments.send') }}</span>
+            <span v-else>{{ t('uploadDocuments.sending') }}</span>
           </button>
         </Transition>
       </div>
