@@ -39,3 +39,4 @@ deploy-images/
 images.zip
 documents.zip
 site.zip
+dist/

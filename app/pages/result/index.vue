@@ -282,7 +282,7 @@ onBeforeUnmount(() => observers.forEach((o) => o.disconnect()));
         >
           <div class="shrink-0 flex items-center justify-center w-[120px] h-[120px] lg:w-[140px] lg:h-[140px]">
             <img
-              src="/documents/raic.png"
+              :src="doc('raic.png')"
               alt="RAIC-CAC"
               class="w-full h-full object-contain"
             />
