@@ -700,7 +700,7 @@ export const becomeMemberCompanies = [
   },
   {
     id: "F-32",
-    filename: "coca-cola.png",
+    filename: "cola.png",
     name: "Coca-Cola",
     website: "https://www.coca-cola.com",
   },

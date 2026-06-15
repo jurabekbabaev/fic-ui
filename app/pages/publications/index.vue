@@ -53,7 +53,7 @@ const analyticsReports = [
   {
     icon: "icon-reload-zap",
     title: "Циркулярная экономика",
-    image: FicImage,
+    image: "/documents/report-5.jpg",
     file: "/documents/report-5.pdf",
     date: "17.06.2026",
   },
