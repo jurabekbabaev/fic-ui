@@ -46,7 +46,7 @@ const analyticsReports = [
   {
     icon: "icon-investment-dollar",
     title: "Центральная Азия и Кавказ: инвестиционные приоритеты",
-    image: FicImage,
+    image: "/documents/report-4.jpg",
     file: "/documents/report-4.pdf",
     date: "15.06.2026",
   },
