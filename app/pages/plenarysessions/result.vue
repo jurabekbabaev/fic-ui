@@ -83,7 +83,7 @@ const openSessionDetail = async (path: string) => {
           </article>
         </div>
       </div>
-      <div class="mt-16 lg:mt-24">
+      <!-- <div class="mt-16 lg:mt-24">
         <h2
           class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]"
         >
@@ -113,7 +113,7 @@ const openSessionDetail = async (path: string) => {
             </h5>
           </div>
         </div>
-      </div>
+      </div> -->
     </client-only>
   </section>
 </template>

@@ -257,16 +257,12 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         {
           image: NoImage,
           fullname: t("members.cadastre.fullname"),
-          position: t(
-            "members.cadastre.mift_position"
-          ),
+          position: t("members.cadastre.mift_position"),
         },
         {
           image: NoImage,
           fullname: t("members.cadastre.fullname"),
-          position: t(
-            "members.cadastre.position"
-          ),
+          position: t("members.cadastre.position"),
         },
       ],
     },
@@ -335,16 +331,12 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         {
           image: NoImage,
           fullname: t("members.cadastre.fullname"),
-          position: t(
-            "members.cadastre.mift_position"
-          ),
+          position: t("members.cadastre.mift_position"),
         },
         {
           image: NoImage,
           fullname: t("members.cadastre.fullname"),
-          position: t(
-            "members.cadastre.position"
-          ),
+          position: t("members.cadastre.position"),
         },
       ],
     },
@@ -401,16 +393,12 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         {
           image: NoImage,
           fullname: t("members.cadastre.fullname"),
-          position: t(
-            "members.cadastre.mift_position"
-          ),
+          position: t("members.cadastre.mift_position"),
         },
         {
           image: NoImage,
           fullname: t("members.cadastre.fullname"),
-          position: t(
-            "members.cadastre.position"
-          ),
+          position: t("members.cadastre.position"),
         },
       ],
     },
@@ -498,16 +486,12 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         {
           image: NoImage,
           fullname: t("members.cadastre.fullname"),
-          position: t(
-            "members.cadastre.mift_position"
-          ),
+          position: t("members.cadastre.mift_position"),
         },
         {
           image: NoImage,
           fullname: t("members.cadastre.fullname"),
-          position: t(
-            "members.cadastre.position"
-          ),
+          position: t("members.cadastre.position"),
         },
       ],
     },
@@ -626,9 +610,7 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         {
           image: NoImage,
           fullname: t("members.cadastre.fullname"),
-          position: t(
-            "members.cadastre.position"
-          ),
+          position: t("members.cadastre.position"),
         },
       ],
     },
@@ -690,16 +672,12 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         {
           image: NoImage,
           fullname: t("members.cadastre.fullname"),
-          position: t(
-            "members.cadastre.mift_position"
-          ),
+          position: t("members.cadastre.mift_position"),
         },
         {
           image: NoImage,
           fullname: t("members.cadastre.fullname"),
-          position: t(
-            "members.cadastre.position"
-          ),
+          position: t("members.cadastre.position"),
         },
       ],
     },
@@ -719,7 +697,7 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
       team_position: t("Председатель рабочей группы."),
       partner_team_position: t("Сопредседатель"),
       partner_text: t(
-        "Ерлан Беркинович Досимбеков - управляющий партнер EY в странах Кавказа и Центральной Азии, имеет более 25 лет опыта в области налогообложения, налоговой эффективности и управления рисками. Он активно участвует в инициативах по улучшению деловой среды, развитию институциональной среды, продвижению проектов в области декарбонизации и чистых технологий. Ерлан является председателем правления Ассоциации 'Совет иностранных инвесторов Казахстана' и членом ряда ключевых деловых советов, включая Совет по улучшению инвестиционного климата при Премьер-министре Казахстана. Она регулярно выступает на международных форумах и предоставляет консультационные услуги клиентам ЕС в Центральной Азии и на Кавказе. Его профессиональное лидерство и вклад способствуют развитию региона и укреплению устойчивой экономики."
+        "Ерлан Беркинович Досымбеков — управляющий партнёр EY в странах Кавказа и Центральной Азии с более чем 25-летним опытом работы в области налогообложения, налоговой эффективности и управления рисками. Он активно участвует в инициативах по улучшению делового климата, развитию институциональной среды и продвижению проектов в сферах декарбонизации и чистых технологий. Ерлан является председателем правления Ассоциации «Казахстанский Совет иностранных инвесторов» и членом ряда важных деловых советов, в том числе Совет по улучшению инвестиционного климата при Премьер-министре Казахстана. Он регулярно выступает на международных форумах и оказывает консультационные услуги клиентам EY в Центральной Азии и Кавказе. Его профессиональное лидерство и вклад способствуют развитию региона и укреплению устойчивой экономики."
       ),
       text: t(
         "Олимжон Умаров - заместитель министра цифровых технологий. Имеет многолетний опыт в области информационной политики, массовых коммуникаций и цифрового развития. В разные годы работал на ответственных должностях в системе государственного управления и информационно-коммуникационной сфере. Под его руководством выдвигаются инициативы, направленные на повышение открытости и прозрачности деятельности государственных органов, налаживание эффективного диалога с общественностью и широкое внедрение современных информационных технологий. Олимжон Умаров активно способствует ускорению процессов цифровой трансформации в стране, повышению эффективности государственного управления и совершенствованию информационной политики."
@@ -749,8 +727,8 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         },
         {
           image: Axadbek,
-          fullname: t("Акбар Ташкулов"),
-          position: t("Министр Юстиции"),
+          fullname: t("Ахадбек Хайдаров"),
+          position: t("Заместитель Министра Экономики и Финансов"),
         },
         {
           image: Sherzod,
@@ -775,9 +753,7 @@ export function getLeaderList(t: (key: string) => string): ILeaderGroup[] {
         {
           image: NoImage,
           fullname: t("members.cadastre.fullname"),
-          position: t(
-            "members.cadastre.position"
-          ),
+          position: t("members.cadastre.position"),
         },
       ],
     },

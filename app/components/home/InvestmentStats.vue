@@ -6,29 +6,80 @@ const { t, locale } = useI18n();
 const localePath = useLocalePath();
 
 const stats = [
-  { value: 135, prefix: ">$", suffix: " млрд", decimals: 0, label: "ВВП (цель 2026 — >$150 млрд)" },
-  { value: 7.7,  prefix: "",   suffix: "%",      decimals: 1, label: "рост ВВП (МВФ, 2025)" },
-  { value: 42,   prefix: "~$", suffix: " млрд",  decimals: 0, label: "приток иностранных инвестиций" },
-  { raw: "BB",                                                 label: "рейтинг Fitch и S&P; Moody's Ba3 (прогноз позитивный)" },
-  { value: 55,   prefix: "$",  suffix: " млрд",  decimals: 0, label: "золотовалютные резервы (+35%)" },
-  { value: 7.3,  prefix: "",   suffix: "%",      decimals: 1, label: "инфляция (с 9,8% годом ранее)" },
-  { value: 23,   prefix: "+",  suffix: "%",      decimals: 0, label: "рост экспорта (~$32 млрд)" },
-  { value: 31.9, prefix: "",   suffix: "%",      decimals: 1, label: "совокупные инвестиции к ВВП" },
-  { value: 4.8,  prefix: "",   suffix: "%",      decimals: 1, label: "безработица (минимум)" },
+  {
+    value: 135,
+    prefix: ">$",
+    suffix: " млрд",
+    decimals: 0,
+    label: "ВВП (цель 2026 — >$150 млрд)",
+  },
+  {
+    value: 7.7,
+    prefix: "",
+    suffix: "%",
+    decimals: 1,
+    label: "рост ВВП (МВФ, 2025)",
+  },
+  {
+    value: 42,
+    prefix: "~$",
+    suffix: " млрд",
+    decimals: 0,
+    label: "приток иностранных инвестиций",
+  },
+  { raw: "BB", label: "рейтинг Fitch и S&P; Moody's Ba3 (прогноз позитивный)" },
+  {
+    value: 55,
+    prefix: "$",
+    suffix: " млрд",
+    decimals: 0,
+    label: "золотовалютные резервы (+35%)",
+  },
+  {
+    value: 7.3,
+    prefix: "",
+    suffix: "%",
+    decimals: 1,
+    label: "инфляция (с 9,8% годом ранее)",
+  },
+  {
+    value: 23,
+    prefix: "+",
+    suffix: "%",
+    decimals: 0,
+    label: "рост экспорта (~$32 млрд)",
+  },
+  {
+    value: 31.9,
+    prefix: "",
+    suffix: "%",
+    decimals: 1,
+    label: "совокупные инвестиции к ВВП",
+  },
+  {
+    value: 4.8,
+    prefix: "",
+    suffix: "%",
+    decimals: 1,
+    label: "безработица (минимум)",
+  },
 ];
 
-function formatStat(stat: typeof stats[number], currentVal: number): string {
+function formatStat(stat: (typeof stats)[number], currentVal: number): string {
   const decimals = (stat as any).decimals ?? 0;
   const sep = locale.value === "en" ? "." : ",";
-  const formatted = decimals > 0
-    ? currentVal.toFixed(decimals).replace(".", sep)
-    : Math.floor(currentVal).toString();
+  const formatted =
+    decimals > 0
+      ? currentVal.toFixed(decimals).replace(".", sep)
+      : Math.floor(currentVal).toString();
   const suffix = (stat as any).suffix ? t((stat as any).suffix) : "";
   return `${(stat as any).prefix ?? ""}${formatted}${suffix}`;
 }
 
 const displayValues = ref(
-  stats.map((s) => ((s as any).raw !== undefined ? (s as any).raw : formatStat(s, 0)))
+  stats.map((s) =>
+    (s as any).raw !== undefined ? (s as any).raw : formatStat(s, 0)
+  )
 );
 
 const statsContainer = ref<HTMLElement | null>(null);
@@ -94,10 +145,12 @@ onBeforeUnmount(() => observer?.disconnect());
 <template>
   <div class="bg-white py-[80px]">
     <div class="container">
-      <h2 class="title-64 text-center mb-8 text-[32px] lg:mb-12 lg:text-[64px]">
+      <h2 class="title-64 text-center mb-4 text-[32px] lg:mb-12 lg:text-[64px]">
         {{ t("Инвестиции в Узбекистан") }}
       </h2>
-
+      <p class="text-center mx-auto lg:text-xl text-base mb-8">
+        Key Macroeconomic Indicators
+      </p>
       <div
         ref="statsContainer"
         class="iStats"
@@ -155,11 +208,8 @@ onBeforeUnmount(() => observer?.disconnect());
   box-shadow: 0 14px 36px -24px rgba(25, 28, 31, 0.28);
   opacity: 0;
   transform: translateY(16px);
-  transition:
-    opacity 0.55s ease,
-    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.28s ease,
-    border-color 0.28s ease;
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s ease, border-color 0.28s ease;
 }
 
 .iStats.is-visible .iStats__card {

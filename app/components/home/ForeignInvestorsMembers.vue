@@ -30,6 +30,11 @@
             </div>
           </div>
         </div>
+        <div class="flex justify-center mt-10">
+          <NuxtLink :to="localePath('/result')" class="btn btn-secondary">
+            {{ t("Batafsil") }}
+          </NuxtLink>
+        </div>
       </div>
       <div class="mainContainer">
         <div

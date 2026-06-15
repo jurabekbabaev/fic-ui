@@ -44,7 +44,7 @@ onMounted(() => {
           v-for="(model, index) in models"
           :key="index"
         >
-          <img :src="model.image_path" alt="" class="object-cover" />
+          <img :src="model.image_path" alt="" />
           <div class="p-4">
             <div class="flex justify-between mt-1">
               <p class="text-[#00000080] text-sm font-normal">
