@@ -19,11 +19,11 @@ const analyticsReports = [
     icon: "icon-users-dollar",
     title:
       "Управленческие компетенции в Республике Узбекистан: интерес к цифровизации и уверенный рост",
-    image: "/documents/report-3.jpg",
+    image: doc("report-3.jpg"),
     files: {
-      ru: "/documents/report-3-ru.pdf",
-      en: "/documents/report-3-en.pdf",
-      uz: "/documents/report-3-uz.pdf",
+      ru: doc("report-3-ru.pdf"),
+      en: doc("report-3-en.pdf"),
+      uz: doc("report-3-uz.pdf"),
     },
     date: "19.11.2025",
   },
@@ -31,8 +31,8 @@ const analyticsReports = [
     icon: "icon-board",
     title:
       "Привлечение креативных инвестиций: мировой опыт и его адаптация в Узбекистане",
-    image: "/documents/report-2.jpg",
-    file: "/documents/report-2.pdf",
+    image: doc("report-2.jpg"),
+    file: doc("report-2.pdf"),
     date: "26.11.2025",
   },
   {
@@ -40,21 +40,21 @@ const analyticsReports = [
     title:
       "Комплексная оценка социально-экономического воздействия инвестиций в Узбекистане",
     image: FicImage,
-    file: "/documents/report-1.pdf",
+    file: doc("report-1.pdf"),
     date: "23.12.2025",
   },
   {
     icon: "icon-investment-dollar",
     title: "Центральная Азия и Кавказ: инвестиционные приоритеты",
-    image: "/documents/report-4.jpg",
-    file: "/documents/report-4.pdf",
+    image: doc("report-4.jpg"),
+    file: doc("report-4.pdf"),
     date: "15.06.2026",
   },
   {
     icon: "icon-reload-zap",
     title: "Циркулярная экономика",
-    image: "/documents/report-5.jpg",
-    file: "/documents/report-5.pdf",
+    image: doc("report-5.jpg"),
+    file: doc("report-5.pdf"),
     date: "17.06.2026",
   },
 ];

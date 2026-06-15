@@ -28,13 +28,13 @@ const analyticsReports = [
   {
     icon: "icon-users-dollar",
     title: "Развитие управленческих компетенций",
-    image: "/documents/report-3.jpg",
+    image: doc("report-3.jpg"),
     date: "19.11.2025",
   },
   {
     icon: "icon-board",
     title: "Креативные инвестиции",
-    image: "/documents/report-2.jpg",
+    image: doc("report-2.jpg"),
     date: "26.11.2025",
   },
   {
@@ -46,13 +46,13 @@ const analyticsReports = [
   {
     icon: "icon-investment-dollar",
     title: "Центральная Азия и Кавказ: инвестиционные приоритеты",
-    image: "/documents/report-4.jpg",
+    image: doc("report-4.jpg"),
     date: "15.06.2026",
   },
   {
     icon: "icon-reload-zap",
     title: "Циркулярная экономика",
-    image: "/documents/report-5.jpg",
+    image: doc("report-5.jpg"),
     date: "17.06.2026",
   },
 ];

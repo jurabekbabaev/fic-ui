@@ -306,3 +306,16 @@ export function img(path) {
   base = base.replace(/\/+$/, '')
   return `${base}/images/${clean}`
 }
+
+export function doc(path) {
+  const clean = String(path || '').replace(/^\/+/, '').replace(/^documents\//, '')
+  let base = ''
+  try {
+    const cfg = useRuntimeConfig().public
+    base = cfg.imageBaseUrl || cfg.siteUrl || ''
+  } catch (e) {
+    base = ''
+  }
+  base = base.replace(/\/+$/, '')
+  return `${base}/documents/${clean}`
+}
