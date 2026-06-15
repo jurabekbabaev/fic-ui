@@ -62,7 +62,7 @@ const openDocument = async (path?: string) => {
         <h2
           class="title-64 mb-8 text-center text-[32px] lg:mb-12 lg:text-[64px]"
         >
-          {{ t("За прошедшие годы") }}
+          {{ t("interm_session") }}
         </h2>
 
         <h3

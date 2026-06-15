@@ -97,7 +97,7 @@ const eligibilityFullMembers = [
           >
             {{
               t(
-                "СИИ — основная институциональная платформа для структурированного диалога между иностранными инвесторами и Правительством Узбекистана.",
+                "СИИ — основная институциональная платформа для структурированного диалога между иностранными инвесторами и Правительством Узбекистана."
               )
             }}
           </h3>
@@ -146,7 +146,7 @@ const eligibilityFullMembers = [
           >
             {{
               t(
-                "Приём и форматы участия определяются в соответствии с Уставом, Положением о членстве и применимыми протокольными правилами.",
+                "Приём и форматы участия определяются в соответствии с Уставом, Положением о членстве и применимыми протокольными правилами."
               )
             }}
           </p>
@@ -222,14 +222,14 @@ const eligibilityFullMembers = [
                     tier.featured ? 'bg-white/10' : 'bg-[#191C1F]/5',
                   ]"
                 >
-                  <span
+                  <!-- <span
                     :class="[
                       'text-xs uppercase tracking-wide font-semibold',
                       tier.featured ? 'text-white/55' : 'text-[#9AA3AC]',
                     ]"
                   >
                     {{ t("Лимит мест") }}
-                  </span>
+                  </span> -->
                   <span
                     :class="[
                       'text-sm lg:text-base font-black',
@@ -245,7 +245,7 @@ const eligibilityFullMembers = [
         </section>
 
         <!-- Participation principles + key eligibility thresholds -->
-        <section
+        <!-- <section
           class="mt-[60px] grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5"
         >
           <div
@@ -317,7 +317,7 @@ const eligibilityFullMembers = [
               </ul>
             </div>
           </div>
-        </section>
+        </section> -->
       </div>
     </client-only>
   </div>

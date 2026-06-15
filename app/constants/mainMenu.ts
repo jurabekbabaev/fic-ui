@@ -54,6 +54,7 @@ export const mainMenuSections = [
       { label: "Календарный план", to: "/calendarplan" },
       { label: "Пленарные сессии", to: "/plenarysessions" },
       { label: "Промежуточные сессии", to: "/interimsession" },
+      { label: "Сессии рабочих групп", to: "/" },
       { label: "Встречи", to: "/weeklyevents/blog" },
       { label: "Итоги недели", to: "/weeklyevents" },
     ],

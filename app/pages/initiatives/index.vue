@@ -849,7 +849,6 @@ onMounted(async () => {
 });
 
 onBeforeUnmount(() => catObservers.forEach((o) => o.disconnect()));
-
 </script>
 
 <template>
@@ -1009,7 +1008,7 @@ onBeforeUnmount(() => catObservers.forEach((o) => o.disconnect()));
                     locale.startsWith("uz")
                       ? "Idoralararo guruhlar; umumiy soni 16 ga yetkazildi"
                       : locale.startsWith("en")
-                      ? "Interdepartmental groups; total number brought to 16"
+                      ? "Interagency working groups; total number brought to 16"
                       : "Межведомственные группы; общее число доведено до 16"
                   }}
                 </td>
@@ -1020,6 +1019,15 @@ onBeforeUnmount(() => catObservers.forEach((o) => o.disconnect()));
             </tbody>
           </table>
         </div>
+        <h2 class="lg:text-[48px] text-[32px] uppercase font-black mt-24">
+          {{
+            locale.startsWith("uz")
+              ? "To'plangan tashabbuslar soni (2025–2026)"
+              : locale.startsWith("en")
+              ? "Number of collected initiatives (2025–2026)"
+              : "Количество собранных инициатив (2025–2026)"
+          }}
+        </h2>
         <div class="w-full mb-10">
           <p class="lg:text-xl text-base font-normal">
             <span class="text-[#505A63]">
@@ -1035,13 +1043,20 @@ onBeforeUnmount(() => catObservers.forEach((o) => o.disconnect()));
           </p>
         </div>
 
-        <div ref="statsCardsRef" class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+        <div
+          ref="statsCardsRef"
+          class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12"
+        >
           <div
             v-for="(category, ci) in categories"
             :key="ci"
             @click="activeTab = ci"
             class="rounded-2xl p-6 flex flex-col justify-between min-h-[140px] cursor-pointer transition-all duration-200"
-            :class="activeTab === ci ? 'bg-[#191C1F]' : 'bg-[#F7F7F7] hover:bg-[#EFEFEF]'"
+            :class="
+              activeTab === ci
+                ? 'bg-[#191C1F]'
+                : 'bg-[#F7F7F7] hover:bg-[#EFEFEF]'
+            "
           >
             <div
               class="text-[44px] lg:text-[52px] font-black leading-none tabular-nums"
@@ -1060,62 +1075,62 @@ onBeforeUnmount(() => catObservers.forEach((o) => o.disconnect()));
 
         <div class="pb-24">
           <template v-for="(category, ci) in categories" :key="ci">
-          <div v-if="activeTab === ci">
-            <h2
-              class="lg:text-2xl text-lg font-black uppercase text-[#1a1a1a] mb-4 pb-3 border-b-2 border-[#1a1a1a]"
-            >
-              {{ getText(category) }}
-            </h2>
-            <div class="w-full overflow-x-auto">
-              <table class="w-full border-collapse">
-                <thead>
-                  <tr class="bg-[#F7F7F7] text-[#1a1a1a]">
-                    <th
-                      class="text-left lg:text-sm text-xs font-semibold px-4 py-3 w-12 rounded-tl-xl"
+            <div v-if="activeTab === ci">
+              <h2
+                class="lg:text-2xl text-lg font-black uppercase text-[#1a1a1a] mb-4 pb-3 border-b-2 border-[#1a1a1a]"
+              >
+                {{ getText(category) }}
+              </h2>
+              <div class="w-full overflow-x-auto">
+                <table class="w-full border-collapse">
+                  <thead>
+                    <tr class="bg-[#F7F7F7] text-[#1a1a1a]">
+                      <th
+                        class="text-left lg:text-sm text-xs font-semibold px-4 py-3 w-12 rounded-tl-xl"
+                      >
+                        №
+                      </th>
+                      <th
+                        class="text-left lg:text-sm text-xs font-semibold px-4 py-3"
+                      >
+                        {{
+                          locale.startsWith("uz")
+                            ? "Tafsiya"
+                            : locale.startsWith("en")
+                            ? "Initiative"
+                            : "Инициатива"
+                        }}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      v-for="(item, ii) in category.items"
+                      :key="ii"
+                      class="border-b border-[#E5E5E5] hover:bg-[#F7F7F7] transition-colors"
                     >
-                      №
-                    </th>
-                    <th
-                      class="text-left lg:text-sm text-xs font-semibold px-4 py-3"
-                    >
-                      {{
-                        locale.startsWith("uz")
-                          ? "Tafsiya"
-                          : locale.startsWith("en")
-                          ? "Initiative"
-                          : "Инициатива"
-                      }}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr
-                    v-for="(item, ii) in category.items"
-                    :key="ii"
-                    class="border-b border-[#E5E5E5] hover:bg-[#F7F7F7] transition-colors"
-                  >
-                    <td
-                      class="px-4 py-4 lg:text-sm text-xs text-[#505A63] font-medium align-top"
-                    >
-                      {{ ii + 1 }}
-                    </td>
-                    <td
-                      class="px-4 py-4 lg:text-sm text-xs text-[#1a1a1a] leading-relaxed align-top"
-                    >
-                      {{ getText(item) }}
-                    </td>
-                    <!-- <td class="px-4 py-4 align-top">
+                      <td
+                        class="px-4 py-4 lg:text-sm text-xs text-[#505A63] font-medium align-top"
+                      >
+                        {{ ii + 1 }}
+                      </td>
+                      <td
+                        class="px-4 py-4 lg:text-sm text-xs text-[#1a1a1a] leading-relaxed align-top"
+                      >
+                        {{ getText(item) }}
+                      </td>
+                      <!-- <td class="px-4 py-4 align-top">
                       <span
                         class="inline-block font-bold bg-transparent rounded-[30px] px-4 py-1 text-[#1a1a1a] lg:text-xs text-[11px] whitespace-nowrap"
                       >
                         {{ item.speaker }}
                       </span>
                     </td> -->
-                  </tr>
-                </tbody>
-              </table>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
           </template>
         </div>
       </div>

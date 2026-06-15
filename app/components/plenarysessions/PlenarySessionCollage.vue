@@ -21,12 +21,12 @@ const collageClasses = [
 
 <template>
   <div>
-    <div class="mb-5 flex flex-col gap-3 px-1 lg:mb-7 lg:flex-row lg:items-end lg:justify-between">
+    <div v-if="eyebrow || title" class="mb-5 flex flex-col gap-3 px-1 lg:mb-7 lg:flex-row lg:items-end lg:justify-between">
       <div class="max-w-[720px]">
-        <span class="inline-flex rounded-md bg-[#191C1F0A] px-3 py-1 text-xs uppercase tracking-[0.18em] text-[#505A63]">
+        <span v-if="eyebrow" class="inline-flex rounded-md bg-[#191C1F0A] px-3 py-1 text-xs uppercase tracking-[0.18em] text-[#505A63]">
           {{ eyebrow }}
         </span>
-        <h1 class="mt-3 text-[24px] font-black leading-[1.04] text-[#191C1F] lg:text-[44px]">
+        <h1 v-if="title" class="mt-3 text-[24px] font-black leading-[1.04] text-[#191C1F] lg:text-[44px]">
           {{ title }}
         </h1>
       </div>

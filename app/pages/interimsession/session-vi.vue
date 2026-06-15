@@ -1,7 +1,11 @@
 <script lang="ts" setup>
 import { useI18n } from "vue-i18n";
 import PageHero from "~/components/shared/PageHero.vue";
+import PlenarySessionCollage from "@/components/plenarysessions/PlenarySessionCollage.vue";
+import { getPlenarySessionDetail } from "@/constants/plenarySessionDetails";
+
 const HeroImage = img("plenarysessions/ps_5.png");
+const session2025 = getPlenarySessionDetail("2025");
 
 const { t } = useI18n();
 
@@ -48,8 +52,13 @@ const goBack = async () => {
           </button>
         </div>
 
+        <PlenarySessionCollage
+          :images="session2025.collageImages"
+          eyebrow=""
+          title=""
+        />
         <!-- Section title -->
-        <h2 class="section-head">
+        <h2 class="section-head mt-8">
           {{ t("18 мая 2026") }}
         </h2>
 

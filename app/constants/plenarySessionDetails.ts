@@ -256,9 +256,9 @@ const plenarySession2025Roadmap: Record<
   en: {
     title: "What was enshrined by Decree PP-226",
     stats: [
-      { value: "14", label: "initiatives in the roadmap" },
-      { value: "4", label: "working groups (initiative No. 8)" },
-      { value: "PP-179", label: "of May 16, 2024" },
+      { value: "22", label: "initiatives " },
+      { value: "8", label: "working groups " },
+      { value: "PP-226", label: "18-07-2025 year" },
       { value: "40+", label: "initiatives selected for the session" },
       { value: "2028", label: "basic tax rates frozen until" },
       { value: "16,000", label: "enterprises with foreign capital" },
